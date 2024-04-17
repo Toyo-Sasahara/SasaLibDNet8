@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Diagnostics.EventLog" Version="9.0.0-preview.3.24172.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\..\SasaLibTestFrame\SasaLib.Barcode\bin\Debug\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SasaLib.Barcode">
+      <HintPath>..\..\SasaLibTestFrame\SasaLib.Barcode\bin\Debug\SasaLib.Barcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
