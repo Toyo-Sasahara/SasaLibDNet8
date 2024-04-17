@@ -6,6 +6,7 @@ using Microsoft.Win32.SafeHandles;
 using System.Runtime.ConstrainedExecution;
 using System.Security;
 using System.Runtime.CompilerServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SasaLibDNet8
 {
@@ -243,6 +244,38 @@ namespace SasaLibDNet8
             {
                 bool result = Logoff();
             }
+        }
+    }
+
+    public class ClsLogonDnet
+    {
+        [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern bool LogonUser(String lpszUsername, String lpszDomain, String lpszPassword,
+        int dwLogonType, int dwLogonProvider, out SafeAccessTokenHandle phToken);
+
+        static void testMthod(string userName, string domainName)
+        {
+
+            const int LOGON32_PROVIDER_DEFAULT = 0;
+            //This parameter causes LogonUser to create a primary token.   
+            const int LOGON32_LOGON_INTERACTIVE = 2;
+
+
+            // Call LogonUser to obtain a handle to an access token.   
+            SafeAccessTokenHandle safeAccessTokenHandle;
+            bool returnValue = LogonUser(userName, domainName, Console.ReadLine(),
+                LOGON32_LOGON_INTERACTIVE, LOGON32_PROVIDER_DEFAULT,
+                out safeAccessTokenHandle);
+
+            // Impersonate the specified user and execute the action
+            WindowsIdentity.RunImpersonated(
+               safeAccessTokenHandle,
+                () =>
+                {
+                    // ここに実行したいアクションを記述
+                    Console.WriteLine($"I'm running as {WindowsIdentity.GetCurrent().Name}");
+                }
+            );
         }
     }
 }
