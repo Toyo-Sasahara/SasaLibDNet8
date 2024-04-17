@@ -43,4 +43,12 @@ namespace SasaLibDNet8
 
         }
     }
+
+    class Person
+    {
+        internal string FullName;
+        internal int Age;
+        internal string FavoriteThings;
+        internal string Memo;
+    }
 }

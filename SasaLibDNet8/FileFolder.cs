@@ -1,10 +1,12 @@
-﻿using System;
+﻿using IWshRuntimeLibrary;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SasaLibDNet8
 {
@@ -413,7 +415,7 @@ namespace SasaLibDNet8
             }
             catch (IOException e1)
             {
-                SasaLib.Eventlog.Log.WriteEntry("SasaLib FileFolder Class", EventLogEntryType.Error, 0, $"▲MoveFile({sourceFileName}, {destFileName}),失敗,IOException={e1.Message}");
+                    Eventlog.Log.WriteEntry("SasaLib FileFolder Class", EventLogEntryType.Error, 0, $"▲MoveFile({sourceFileName}, {destFileName}),失敗,IOException={e1.Message}");
                 return false;
             }
 

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// SasaLIb イベントループ処理
+
+using System.Windows.Threading;
 
 namespace SasaLibDNet8
 {
@@ -10,20 +8,20 @@ namespace SasaLibDNet8
     /// MainWindowの部分クラス 
     /// 重要参照 PresentationCore, PresentationFramework System.Windows
     /// </summary>
-    //public partial class MainWindow : System.Windows.Window
-    //{
-    //    public static void DoEvents()
-    //    {
-    //        //DispatcherFrame frame = new DispatcherFrame();
-    //        //var callback = new DispatcherOperationCallback(obj =>
-    //        //{
-    //        //    ((DispatcherFrame)obj).Continue = false;
-    //        //    return null;
-    //        //});
-    //        //Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, callback, frame);
-    //        //Dispatcher.PushFrame(frame);
-    //    }
-    //}
+    public partial class MainWindow : System.Windows.Window
+    {
+        public static void DoEvents()
+        {
+            DispatcherFrame frame = new DispatcherFrame();
+            var callback = new DispatcherOperationCallback(obj =>
+            {
+                ((DispatcherFrame)obj).Continue = false;
+                return null;
+            });
+            Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, callback, frame);
+            Dispatcher.PushFrame(frame);
+        }
+    }
 
     /// <summary>
     /// イベントループを回す
@@ -34,14 +32,15 @@ namespace SasaLibDNet8
         //
         public static void Run()
         {
-            //DispatcherFrame frame = new DispatcherFrame();
-            //var callback = new DispatcherOperationCallback(obj =>
-            //{
-            //    ((DispatcherFrame)obj).Continue = false;
-            //    return null;
-            //});
-            //Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, callback, frame);
-            //Dispatcher.PushFrame(frame);
+            DispatcherFrame frame = new DispatcherFrame();
+            var callback = new DispatcherOperationCallback(obj =>
+            {
+                ((DispatcherFrame)obj).Continue = false;
+                return null;
+            });
+            Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, callback, frame);
+            Dispatcher.PushFrame(frame);
         }
     }
+
 }
