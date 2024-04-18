@@ -4,3 +4,9 @@ https://tech.guitarrapc.com/entry/2019/04/30/203522
 <PropertyGroup>
   <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
 </PropertyGroup>
+
+
+https://shikaku-sh.hatenablog.com/entry/c-sharp-clear-oledb-ca1416-warning-in-visualstudio
+
+[SupportedOSPlatform("windows")]
+これをメソッドの前やusing名前空間の下

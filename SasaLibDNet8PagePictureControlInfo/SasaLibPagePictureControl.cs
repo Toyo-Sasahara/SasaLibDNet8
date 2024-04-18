@@ -7,9 +7,12 @@ using System.ComponentModel.Design;
 using System.Drawing.Imaging;
 using System.IO;
 using SasaLib;
+using System.Runtime.Versioning;
+using SasaLibDNet8;
 
 namespace SasaLibPictureBoxControlLibrary
 {
+    [SupportedOSPlatform("windows")]
     [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
     public partial class SasaLibPagePictureControl : UserControl
     {

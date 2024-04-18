@@ -1,9 +1,13 @@
-﻿using System;
+﻿using SasaLibDNet8;
+using System;
 using System.Drawing;
 using System.IO;
+using System.Runtime.Versioning;
 // イメージから線画を描画
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
+
     /// <summary>
     /// 画像の輪郭抽出
     /// Copyright https://algorithm.joho.info/
