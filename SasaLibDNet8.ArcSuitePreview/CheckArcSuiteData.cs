@@ -424,7 +424,7 @@ namespace SasaLib.ArcSuitePreview
                     FullFileName = System.IO.Path.Combine(PreviewImageFolder, System.IO.Path.ChangeExtension(ZUBAN, "tif"));
                     delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) イメージのファイル名を組立ました :{FullFileName}");
 
-                    bool result = SasaLib.FileFolder.RemoveFile(FullFileName);
+                    bool result =   FileFolder.RemoveFile(FullFileName);
                     delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 念のためﾞ {FullFileName} を削除しました 結果:{result}");
 
                     img.Save(FullFileName);
@@ -482,7 +482,7 @@ namespace SasaLib.ArcSuitePreview
                 FullFileName = System.IO.Path.Combine(PreviewImageCacheFolder, System.IO.Path.ChangeExtension(ZUBAN, extension));
                 delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 保存ファイルﾊﾟｽは {FullFileName} を強制します");
 
-                bool removeOk = SasaLib.FileFolder.RemoveFile(FullFileName);
+                bool removeOk = FileFolder.RemoveFile(FullFileName);
                 delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 念のため{FullFileName} を削除します。削除結果は{removeOk}でした");
 
                 string ResultMsg;
