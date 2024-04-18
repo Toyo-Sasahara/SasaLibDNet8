@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static partial class TextFile
     {

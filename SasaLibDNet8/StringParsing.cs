@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class StringParsing
     {

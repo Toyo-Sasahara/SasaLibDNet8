@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class ContorlValidate
     {

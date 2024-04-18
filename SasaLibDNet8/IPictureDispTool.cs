@@ -2,7 +2,7 @@
 using System.IO;
 using SIP = System.IO.Path;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// アセンブリ stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a を使用している

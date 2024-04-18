@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class MessageSend
     {

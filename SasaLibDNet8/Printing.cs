@@ -1,4 +1,4 @@
-﻿using SasaLibDNet8.PrintConfig;
+﻿using SasaLib.PrintConfig;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Xml.Serialization;
 using static System.Drawing.Printing.PrinterSettings;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
 
     /// <summary>

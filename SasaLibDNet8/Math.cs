@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     ///  目的の値に最も近い値を返します

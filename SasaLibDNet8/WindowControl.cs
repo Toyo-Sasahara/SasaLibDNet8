@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Forms;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// https://tech.sanwasystem.com/entry/2015/11/25/171004
 

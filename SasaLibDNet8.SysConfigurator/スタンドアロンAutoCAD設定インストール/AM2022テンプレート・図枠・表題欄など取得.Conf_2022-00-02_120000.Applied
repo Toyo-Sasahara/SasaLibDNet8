@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SysConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <COMMENT01>【DATETIME】 この命令ファイルの適用日時</COMMENT01>
+  <DATETIME>2022-09-02T00:00:00</DATETIME>
+  <COMMENT02>【AES_iv_Base64】 この命令ファイルで暗号化された文字列のためのIV値</COMMENT02>
+  <AES_iv_Base64>b9+YAGc2fTv/yTt5TdSBcg==</AES_iv_Base64>
+  <COMMENT03>【LogFileName】ログファイル名を指定 </COMMENT03>
+  <LogFileName>AM2022テンプレート・図枠・表題欄など取得.log</LogFileName>
+  <COMMENT04>【GetFileLists】 指定したファイルをサーバより取得します</COMMENT04>
+  <COMMENT06>【GetFileLists】 指定したファイルをサーバより取得します</COMMENT06>
+  <GetFileLists>
+    <GetFulFileName>
+      <Comment>[1.1]テンプレートファイル</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Template\am2022_JIS-TOYO.dwt</ServerSideFullFileName>
+      <LocalSideFullFileName>%LOCALAPPDATA%\Autodesk\AutoCAD Mechanical 2022\R24.1\jpn\Acadm\Template\am_JIS-TOYO.dwt</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[1.2]テンプレートファイル TOYO-PageSetUP.dwt</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Template\am2022_TOYO-PageSetUP.dwt</ServerSideFullFileName>
+      <LocalSideFullFileName>%LOCALAPPDATA%\Autodesk\AutoCAD Mechanical 2022\R24.1\jpn\Acadm\Template\TOYO-PageSetUP.dwt</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[1.3]テンプレートファイル am2022_トレサビリティマトリックス説明図用.dwt</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Template\am2022_トレサビリティマトリックス説明図用.dwt</ServerSideFullFileName>
+      <LocalSideFullFileName>%LOCALAPPDATA%\Autodesk\AutoCAD Mechanical 2022\R24.1\jpn\Acadm\Template\am2022_トレサビリティマトリックス説明図用.dwt</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[2.1]部品図用表題欄</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\TITLE\Title_2022_TOYO-TYPE A.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Title\TOYO\TOYO-TYPE A.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[2.2]組立図レイアウト図用表題欄</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\TITLE\Title_2022_TOYO-TYPE B.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Title\TOYO\TOYO-TYPE B.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[2.3]テーブル部品図用表題欄</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\TITLE\Title_2022_TOYO-TYPE-テーブル.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Title\TOYO\TOYO-TYPE-テーブル.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[2.4]薄板部品図用表題欄</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\TITLE\Title_2022_TOYO-TYPE-薄板.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Title\TOYO\TOYO-TYPE-薄板.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.1]図面シートフォーマット 組立・レイアウト図用 A0横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A0L-ASSY.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A0L-ASSY.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.2]図面シートフォーマット 部品図用 A0横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A0L-PARTS.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A0L-PARTS.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.3]図面シートフォーマット 組立・レイアウト図用 A1横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A1L-ASSY.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A1L-ASSY.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.4]図面シートフォーマット 部品図用 A1横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A1L-PARTS.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A1L-PARTS.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.5]図面シートフォーマット 組立・レイアウト図用 A2横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A2L-ASSY.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A2L-ASSY.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.6]図面シートフォーマット 部品図用 A2横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A2L-PARTS.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A2L-PARTS.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.7]図面シートフォーマット 組立・レイアウト図用 A3横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A3L-ASSY.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A3L-ASSY.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.8]図面シートフォーマット 部品図用 A3横</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A3L-PARTS.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A3L-PARTS.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.9]図面シートフォーマット 組立・レイアウト図用 A4縦</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A4R-ASSY.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A4R-ASSY.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[3.10]図面シートフォーマット 部品図用 A4縦</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Format\Format_2022_TOYO-A4R-PARTS.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Format\TOYO\TOYO-A4R-PARTS.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+    <GetFulFileName>
+      <Comment>[4.1]ﾘﾋﾞｼﾞｮﾝテーブル</Comment>
+      <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Autocad\Revisionlist\Revisionlist_2022_TOYO_REVLIST.dwg</ServerSideFullFileName>
+      <LocalSideFullFileName>%PUBLIC%\Documents\Autodesk\AutoCAD Mechanical 2022\Acadm\Gen\Dwg\Revisionlist\TOYO\TOYO_REVLIST.dwg</LocalSideFullFileName>
+      <LocalSideFileWriteMode>ForceOverwrite</LocalSideFileWriteMode>
+      <UnZip>false</UnZip>
+      <DeleteZipFileAfterUnzipped>false</DeleteZipFileAfterUnzipped>
+    </GetFulFileName>
+  </GetFileLists>
+  <COMMENT07>【SetAttributeFiles】 指定したファイルの属性を設定</COMMENT07>
+  <SetAttributeFiles />
+  <COMMENT08>【RemoveFiles】 指定したファイルを削除</COMMENT08>
+  <RemoveFiles />
+  <COMMENT09>【SetRegistries】 レジストリを設定</COMMENT09>
+  <SetRegistries />
+  <COMMENT10>【RemoveRegistries】 レジストリを削除</COMMENT10>
+  <RemoveRegistries />
+  <COMMENT11>【ExecuteProcess】 指定したプロセスを実行</COMMENT11>
+  <ExecuteProcesses />
+  <!--
+    ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    ■ 書式説明
+　　　条件
+　　　① <SysConfiguration>～</SysConfiguration> が1つで構成されていること。
+　　　② SysConfiguration タグの中に必要なタグ
+
+    ① DATETIME タグ
+    例
+    <DATETIME>2022-08-31T00:00:14</DATETIME>
+    
+    DATETIME ﾀｸﾞ は この追加設定ファイルが適用後 各PC の適用済み追加設定ﾌｧｲﾙ(*.Applied)のﾌｧｲﾙ名の一部として使用される。TOYOｱﾄﾞｲﾝはこのﾌｧｲﾙが存在していた場合は適応済みとしてスキップする
+    
+　　② AES_iv_Base64　タグ
+　　例
+　　<AES_iv_Base64>b9+YAGc2fTv/yTt5TdSBcg==</AES_iv_Base64>
+
+　　AES_iv_Base64 ﾀｸﾞ は このファイル内で使用されたAES暗号を複合するためのiv値。
+
+
+　　③ LogFileName  タグ
+　　このコントロールファイルの記述を実行したときに記録ログとして保存するファイル名
+
+　　④ LogFolderName タグ
+
+
+    ■ ファイル取り込みブロック
+    <GetFileLists> GetFileLists ﾀｸﾞは設定ﾌｧｲﾙ内で１つのみ
+        <GetFulFileName> ﾌｧｲﾙ取込指定ﾌﾞﾛｯｸ開始
+            <ServerSideFullFileName> ｻｰﾊﾞｰ側から受信するﾌﾙﾊﾟｽﾌｧｲﾙ名 </ServerSideFullFileName> 必須項目
+            <LocalSideFullFileName> ｸﾗｲｱﾝﾄ側に再現するﾌﾙﾊﾟｽﾌｧｲﾙ名（環境変数対応） </LocalSideFullFileName>　必須項目
+            <UnZip>true ならzipﾌｧｲﾙとして解凍する</UnZip>
+            <UnZipLocalFolder> UnZipがtrueなら 解凍するフォルダ名（環境変数対応）</UnZipLocalFolder> UnZiP=trueなら必須項目 すでにﾛｰｶﾙｻｲﾄﾞに存在した場合は解凍しません
+            <DeleteZipFileAfterUnzipped> trueなら解凍後zipﾌｧｲﾙは消去されます（テスト用。次にこの設定ﾌｧｲﾙが読み込まれた際にｻｰﾊﾞｰから再度読み込まれ解凍されます） </DeleteZipFileAfterUnzipped>
+        </GetFulFileName> ﾌｧｲﾙ取込指定ﾌﾞﾛｯｸ終了
+        
+        // 例
+        <GetFulFileName>  命令行の開始
+            <ServerSideFullFileName>C:\ProgramData\TOYOCOMMON\Inventor\Searches0505.zip</ServerSideFullFileName>
+            <LocalSideFullFileName>%APPDATA%\Autodesk\VaultCommon\Servers\Services_Security_1_7_2019\acvlt3\Vaults\MainVault\Searches0505.zip</LocalSideFullFileName>
+            <UnZip>true</UnZip>
+            <UnZipLocalFolder>%APPDATA%\Autodesk\VaultCommon\Servers\Services_Security_1_7_2019\acvlt3\Vaults\MainVault</UnZipLocalFolder>               
+        </GetFulFileName>
+
+        <GetFulFileName>
+            以下同様
+        </GetFulFileName>
+    </GetFileLists>
+
+    ■ ファイル削除ブロック
+	<RemoveFiles> // RemoveFiles ﾀｸﾞは設定ﾌｧｲﾙ内で１つのみ
+		<RemoveFile> 
+			<LocalSideFullFileName>C:\TOYO Inventor\Template\standard.dwg</LocalSideFullFileName>
+		</RemoveFile>
+		<RemoveFile>
+			<LocalSideFullFileName>C:\TOYO Inventor\Template</LocalSideFullFileName> // LocalSideFullFileName ﾀｸﾞの文字列が ディレクトリの場合 サブディレクトリも削除の対象とします
+		</RemoveFile>
+	</RemoveFiles>
+
+    ■ レジストリ設定ブロック
+    <SetRegistries> // SetRegistries ﾀｸﾞは設定ﾌｧｲﾙ内で１つのみ
+        <SetRegistry>
+            <KeyName>キー名</KeyName> // HKEY_CURRENT_USER\ではじまること（現在の仕様）
+            <ValueName>値の名前</ValueName >
+            <RegistryValueKind>値の種類</RegistryValueKind> // 現状 String , DWord,  Binary
+            <Value>C:\Program Files\Autodesk\Vault Client 2022\Explorer\JobProcessor.exe</Value> // 文字列として扱われる <RegistryValueKind>Binary</RegistryValueKind>とするとByte配列として渡される(UTF-8)
+        </SetRegistry> // <SetRegistry>～</SetRegistry>を1ブロックとして記述する。
+        
+        // 例
+        <SetRegistry>  命令行の開始
+            <KeyName>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run</KeyName>
+            <ValueName>JobProcessor</ValueName >
+            <RegistryValueKind>String</RegistryValueKind>
+            <Value>C:\Program Files\Autodesk\Vault Client 2022\Explorer\JobProcessor.exe</Value>
+        </SetRegistry>
+        
+        <SetRegistry>
+            <KeyName>HKEY_CURRENT_USER\SOFTWARE\Autodesk\AutoCAD\R23.1\ACAD-3005:411\Profiles\&lt;&lt;ACADMPP&gt;&gt;\General</KeyName>
+            <ValueName>UseStartUpDialog</ValueName >
+            <RegistryValueKind>DWord</RegistryValueKind>
+            <Value>2</Value>
+        </SetRegistry>
+
+        <SetRegistry>
+            以下同様
+        </SetRegistry>
+    </SetRegistries>
+
+    ■ レジストリ削除ブロック
+    <RemoveRegistries> // RemoveRegistries ﾀｸﾞは設定ﾌｧｲﾙ内で１つのみ
+        <RemoveRegistry>  命令行の開始
+            <OpenKeyName>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R23.1\ACAD-3005:411\Profiles\&lt;&lt;ACADMPP&gt;&gt;\Editor Configuration</OpenKeyName>
+            <ValueName>NAV2DVCUBEDISPLAYSETTING</ValueName> // 値を削除する場合
+        </RemoveRegistry> <RemoveRegistry>～<RemoveRegistry>を1ブロックとして記述する。
+        
+        <RemoveRegistry>  命令行の開始
+            <OpenKeyName>HKEY_CURRENT_USER\Software\SASAHASOFTWARE</OpenKeyName>
+            <SubKeyName>TESTTOOL</SubKeyName> // サブキーを削除する場合
+        </RemoveRegistry>
+
+        <RemoveRegistry>
+            以下同様
+        </RemoveRegistry>
+    </RemoveRegistries>
+
+    ■ 外部コマンド実行ブロック
+    <ExecuteProcesses> // ExecuteProcesses ﾀｸﾞは設定ﾌｧｲﾙ内で１つのみ
+        <ExecuteProcess>  命令行の開始
+            <FileName>c:\windows\system32\cmd.exe</FileName>
+            <Arguments>/c Dir D:\</Arguments>
+            <UserName>Administrator</UserName>
+            <StdOut>true</StdOut>
+            <Password>xxxxx</Password> // パスワードは <Password></Password> か<EncryptedPassword></EncryptedPassword> のどちらかのみに記述すること
+            <EncryptedPassword>3VjfY/EbJZ78XZlfjGJkOiq6yDxxxxxxxxxx=</EncryptedPassword>
+            <Domain>SS</Domain>
+        </ExecuteProcess>
+        
+        <ExecuteProcess>
+            以下同様
+        </ExecuteProcess>
+    </ExecuteProcesses>
+
+
+    ■補足 よく使われるエスケープ文字
+    < → &lt;
+    > → &gt;
+    & → &amp;
+    " →  &quot;
+    ' →  &apos;
+    ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    -->
+</SysConfiguration>

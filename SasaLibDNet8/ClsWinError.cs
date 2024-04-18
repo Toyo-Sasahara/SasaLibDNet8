@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// Code from https://qiita.com/h-ymmr/items/48aa308b8219f35f7255

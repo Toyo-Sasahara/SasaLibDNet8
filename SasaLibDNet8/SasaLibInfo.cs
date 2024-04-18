@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// 

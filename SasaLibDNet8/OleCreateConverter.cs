@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class OleCreateConverter
     {

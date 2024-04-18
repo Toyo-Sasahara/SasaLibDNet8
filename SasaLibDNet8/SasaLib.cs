@@ -3,7 +3,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
 
 

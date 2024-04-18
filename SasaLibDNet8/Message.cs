@@ -1,7 +1,7 @@
 ﻿using System;
 
 // テスト用・これをオブジェクトとしてパイプを通す
-namespace SasaLibDNet8.PIPE
+namespace SasaLib.PIPE
 {
     // メッセージ
     [Serializable]

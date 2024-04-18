@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.IO;
 // イメージから線画を描画
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// 画像の輪郭抽出

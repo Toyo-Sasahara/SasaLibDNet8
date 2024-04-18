@@ -1,5 +1,5 @@
 ﻿using NeoSmart.AsyncLock;
-using SasaLibDNet8;
+using SasaLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,9 +8,9 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SasaLibDNet8.Eventlog;
+using SasaLib.Eventlog;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// ストリームを使って文字列をread/writeするクラス

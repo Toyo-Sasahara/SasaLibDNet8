@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing.Printing;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class PrinterSimple
     {

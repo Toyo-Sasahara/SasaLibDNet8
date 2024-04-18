@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class Encryption
     {

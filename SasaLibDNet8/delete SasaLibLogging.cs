@@ -7,7 +7,7 @@ using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// ログクラス

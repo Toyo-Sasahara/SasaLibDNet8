@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SasaLibDNet8.PIPE
+namespace SasaLib.PIPE
 {
     // BinaryReaderの拡張メソッドを定義
     // https://gist.github.com/ichiroku11/80faa8675c5354245001759733df1348

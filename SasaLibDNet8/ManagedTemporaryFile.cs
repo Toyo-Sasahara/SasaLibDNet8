@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// 一時ファイルm名を取得する取得。使用後削除される機能付き

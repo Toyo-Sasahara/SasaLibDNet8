@@ -4,7 +4,7 @@
 // Wordリスト変換ツール
 //
 using BarcodeLib;
-using SasaLibDNet8;
+using SasaLib;
 using System;
 using System.Drawing;
 
@@ -32,7 +32,7 @@ namespace SasaLib
             // ImageオブジェクトからGraphicsオブジェクトを生成
             System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(image);
             //
-            Barcode b = new Barcode();
+            BarcodeLib.Barcode b = new BarcodeLib.Barcode();
             //
             System.Drawing.Color btnForeColor = System.Drawing.Color.Black;
             System.Drawing.Color btnBackColor = System.Drawing.Color.White;

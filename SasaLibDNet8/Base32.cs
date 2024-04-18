@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /*
      * Derived from https://github.com/google/google-authenticator-android/blob/master/AuthenticatorApp/src/main/java/com/google/android/apps/authenticator/Base32String.java
@@ -26,9 +26,11 @@ namespace SasaLibDNet8
 
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Versioning;
     using System.Text;
     using System.Text.RegularExpressions;
 
+    [SupportedOSPlatform("windows")]
     public static class Base32
     {
 

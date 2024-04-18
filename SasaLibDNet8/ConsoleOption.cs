@@ -2,7 +2,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class ConsoleOption
     {

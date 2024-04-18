@@ -1,4 +1,4 @@
-﻿namespace SasaLibDNet8
+﻿namespace SasaLib
 {
     /// <summary>
     /// 共通ﾃﾞﾘｹﾞｰﾄ宣言

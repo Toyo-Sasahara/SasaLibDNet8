@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class Logging
     {

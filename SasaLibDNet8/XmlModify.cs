@@ -1,8 +1,8 @@
-﻿using SasaLibDNet8;
+﻿using SasaLib;
 using System;
 using System.IO;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class XmlModify
     {

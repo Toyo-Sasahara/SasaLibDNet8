@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// Code from https://qiita.com/h-ymmr/items/48aa308b8219f35f7255

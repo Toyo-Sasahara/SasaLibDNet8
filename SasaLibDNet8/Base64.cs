@@ -1,7 +1,10 @@
-﻿using System.Text;
+﻿using System.Runtime.Versioning;
+using System.Text;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
+
     /// <summary>
     /// BASE64に関するConvertクラスのラッパー
     /// </summary>

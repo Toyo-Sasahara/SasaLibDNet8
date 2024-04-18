@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Timers;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// 現在のメモリ使用状況を一定時間ごとに取得するクラス

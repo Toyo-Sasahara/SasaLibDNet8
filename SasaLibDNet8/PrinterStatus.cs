@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class PrinterStatus
     {

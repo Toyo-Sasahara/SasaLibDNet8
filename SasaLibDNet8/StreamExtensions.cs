@@ -3,7 +3,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.IO;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class StreamExtensions
     {
@@ -139,7 +139,7 @@ namespace SasaLibDNet8
             }
             catch (IOException ioe)
             {
-                Eventlog.Log.WriteEntry("SaSaLib", EventLogEntryType.Information, 9700, $"SaSaLib.StreamExtensions.StreamToFile(..)にて例外検知 {ioe.Message}");
+                Eventlog.Log.WriteEntry("SaSaLib", EventLogEntryType.Information, 9700, $"SasaLib.StreamExtensions.StreamToFile(..)にて例外検知 {ioe.Message}");
             }
         }
 

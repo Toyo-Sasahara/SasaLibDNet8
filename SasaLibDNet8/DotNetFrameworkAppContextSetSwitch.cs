@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// System.Runtime.Serialization.ObjectManager で、オブジェクトのシリアル化と逆シリアル化の間に、より大きな配列サイズを使用するかどうかを制御します。 BinaryFormatter などの型による大きなオブジェクト グラフのシリアル化と逆シリアル化のパフォーマンスを向上させるには、このスイッチを true に設定します。

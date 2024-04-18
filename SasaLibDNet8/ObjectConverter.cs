@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace SasaLibDNet8.PIPE
+namespace SasaLib.PIPE
 {
     // オブジェクトとバイト配列の変換
     public class ObjectConverter<TObject>

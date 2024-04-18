@@ -7,7 +7,7 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
 
-namespace SasaLibDNet8.PIPE
+namespace SasaLib.PIPE
 {
     /// <summary>
     /// 名前付きパイプサーバーのストリーム作成

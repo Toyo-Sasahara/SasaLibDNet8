@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 using System.Security.AccessControl;
 using System.Security.Principal;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// https://takamints.hatenablog.jp/entry/save-the-app-settings-to-editable-xml-from-csharp

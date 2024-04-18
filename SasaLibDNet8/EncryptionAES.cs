@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Markup;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
 
     /// <summary>

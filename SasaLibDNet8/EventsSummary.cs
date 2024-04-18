@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Interop;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// イベントをまとめて一括処理するためのクラス

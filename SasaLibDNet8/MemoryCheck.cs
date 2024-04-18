@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class MemCheck
     {

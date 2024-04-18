@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 /// <summary>
 /// Copylight ささはそふとうぇあ C#標準ツールクラス
 /// </summary>
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// 文字列操作メソッド

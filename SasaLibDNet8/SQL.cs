@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 // usingが必要
 
 
-namespace SasaLibDNet8.SQL
+namespace SasaLib.SQL
 {
     /// <summary>
     /// 

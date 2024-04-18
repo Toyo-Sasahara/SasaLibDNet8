@@ -1,11 +1,11 @@
-﻿using SasaLibDNet8;
+﻿using SasaLib;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace SasaLibDNet8.PJL
+namespace SasaLib.PJL
 {
     /// <summary>
     /// PJL言語で記述されたプリンタ印刷データをデコードするクラス

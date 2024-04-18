@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// プリンタに固有な設定を保持する構造体`

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace SasaLibDNet8.Eventlog
+namespace SasaLib.Eventlog
 {
     static public class Log
     {

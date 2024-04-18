@@ -4,7 +4,7 @@ using System.Drawing.Printing;
 using System.Runtime.Serialization;
 using System.Xml;
 
-namespace SasaLibDNet8.PrintConfig
+namespace SasaLib.PrintConfig
 {
     /// <summary>
     /// 標準用紙

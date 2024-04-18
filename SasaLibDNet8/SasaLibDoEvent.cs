@@ -2,7 +2,7 @@
 
 using System.Windows.Threading;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// MainWindowの部分クラス 

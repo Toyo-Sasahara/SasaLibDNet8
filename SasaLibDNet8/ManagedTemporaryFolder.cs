@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// 作業後に自動的に一時フォルダが消える。フォルダ内のファイルも消すことが出来る

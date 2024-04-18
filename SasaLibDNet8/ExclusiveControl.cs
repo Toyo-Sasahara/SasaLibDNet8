@@ -1,9 +1,9 @@
-﻿namespace SasaLibDNet8
+﻿namespace SasaLib
 {
     /// <summary>
     /// 排他的制御コントロールクラス
     /// </summary>
-    public class SasaLibDNet8
+    public class SasaLib
     {
         static bool busy { get; set; }
         static string Msg { get; set; }

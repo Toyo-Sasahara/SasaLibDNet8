@@ -1,7 +1,7 @@
-﻿using SasaLibDNet8;
+﻿using SasaLib;
 using System;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class CallIntervalMonitor
     {

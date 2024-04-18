@@ -2,7 +2,7 @@
 using System.IO;
 using System.IO.Compression;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public static class Compress
     {

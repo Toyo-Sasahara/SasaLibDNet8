@@ -1,0 +1,6 @@
+AssemblyInfoの自動生成を止める Assebly属性の重複によるビルドエラーが解消
+https://tech.guitarrapc.com/entry/2019/04/30/203522
+
+<PropertyGroup>
+  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+</PropertyGroup>

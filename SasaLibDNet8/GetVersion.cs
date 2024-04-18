@@ -6,12 +6,12 @@ using System.Reflection;
 using System.Web;
 using System.Xml;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class Asm
     {
         /// <summary>
-        /// 2019年4月時点obsolete。SaSaLib.AssemblyInfo.GetFileVersion(string AsmPath)を使用のこと。
+        /// 2019年4月時点obsolete。SasaLib.AssemblyInfo.GetFileVersion(string AsmPath)を使用のこと。
         /// </summary>
         /// <returns></returns>
         public static string GetFileVersion()
@@ -92,7 +92,7 @@ namespace SasaLibDNet8
 
         /// <summary>
         /// 名前とバージョンを取得して表示する
-        /// 2019年4月時点obsolete。SaSaLib.AssemblyInfo.GetAssemlblyVersion()を使用のこと。
+        /// 2019年4月時点obsolete。SasaLib.AssemblyInfo.GetAssemlblyVersion()を使用のこと。
         /// </summary>
         /// <returns></returns>
         public static string GetAsmVersion()

@@ -10,7 +10,7 @@ using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     public class Net
     {
