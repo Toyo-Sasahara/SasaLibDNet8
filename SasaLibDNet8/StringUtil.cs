@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -200,6 +201,7 @@ namespace SasaLib
         /// <param name="orgValue"></param>
         /// <param name="sizeOfByte"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static string StringReSizeByteCount(string orgValue, int sizeOfByte)
         {
             try

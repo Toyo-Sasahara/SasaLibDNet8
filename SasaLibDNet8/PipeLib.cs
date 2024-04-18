@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO.Pipes;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
@@ -20,6 +21,7 @@ namespace SasaLib.PIPE
         /// <param name="piepName"></param>
         /// <param name="maxInstances"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static NamedPipeServerStream Create(string piepName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
         {
             SecurityIdentifier sid = new SecurityIdentifier(WellKnownSidType.AuthenticatedUserSid, null);
@@ -47,6 +49,7 @@ namespace SasaLib.PIPE
         /// <param name="name"></param>
         /// <param name="maxInstances"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static NamedPipeServerStream Create2(string pipeName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
         {
             #region ネットワークパイプ接続のためのセキュリティ指定
@@ -204,6 +207,7 @@ namespace SasaLib.PIPE
         /// <param name="serverId">任意のしきべつばんごう</param>
         /// <param name="pipeSrvStream"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static string GetClientHostAndUser(NamedPipeServerStream pipeSrvStream, int serverId = 0)
         {
 

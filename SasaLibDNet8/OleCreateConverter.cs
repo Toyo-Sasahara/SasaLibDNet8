@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -27,6 +28,7 @@ namespace SasaLib
 
 
         [StructLayout(LayoutKind.Sequential)]
+        [SupportedOSPlatform("windows")]
         internal class PictDescBitmap
         {
 
@@ -55,6 +57,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="image"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static stdole.IPictureDisp ImageToPictureDisp(Image image)
         {
             if (image == null || !(image is Bitmap))
@@ -86,6 +89,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="pictureDisp"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static Image PictureDispToImage(stdole.IPictureDisp pictureDisp)
         {
             Image image = null;

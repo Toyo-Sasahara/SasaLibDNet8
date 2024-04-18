@@ -7,6 +7,7 @@ using System.Management;
 using System.Net;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
@@ -187,6 +188,7 @@ namespace SasaLib
             }
         }
 
+        [SupportedOSPlatform("windows")]
         public static string[] DnsSetServer(string[] newDnsServers)
         {
             try
@@ -277,6 +279,7 @@ namespace SasaLib
         /// <param name="SMTPport">SMTPサーバーのポート番号</param>
         /// <param name="UserName">SMTPサーバに接続するユーザー名(平文)</param>
         /// <param name="Password">SMTPサーバに接続するパスワード(平文)</param>
+        [SupportedOSPlatform("windows")]
         public Mail(string SMTPHostname, int SMTPport = 25, string UserName = "", string Password = "")
         {
             if (UserName == null)
@@ -332,6 +335,7 @@ namespace SasaLib
         /// <param name="WaitTime"></param>
         /// <param name="eventViewVerbose">イベントビューアに詳細な送信情報を送る場合true</param>
         /// <param name="sendInterLockTimeSec">指定秒数以内に 送信元 ,送信先 ,件名,送信内容が同じものを送ろうとした場合に無視しイベントビューアに記録する</param>
+        [SupportedOSPlatform("windows")]
         public bool MsgSend(string FromAddress, string ToAddress, string subject, string Message, bool eventViewVerbose = false, int sendInterLockTimeSec = 120)
         {          
 
@@ -480,6 +484,7 @@ namespace SasaLib
             return true;
         }
 
+        [SupportedOSPlatform("windows")]
         public void Close()
         {
             try

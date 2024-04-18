@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -46,6 +47,7 @@ namespace SasaLib
         /// <returns>
         ///     検索パターンに一致したすべてのファイルパス。</returns>
         /// ---------------------------------------------------------------------------------------
+        [SupportedOSPlatform("windows")]
         public static string[] GetFilesMostDeep(string stRootPath, string stPattern)
         {
             System.Collections.Specialized.StringCollection hStringCollection = (
@@ -337,6 +339,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="path">作成するディレクトリパス</param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool MakeDirectory(string path)
         {
             // 文字列の最後はディレクトリせぱーれたでない場合は追加
@@ -366,6 +369,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="filepath"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool RemoveFile(string filepath)
         {
             try
@@ -385,6 +389,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="filepath"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool RemoveFolder(string filepath, bool recursive = false)
         {
             try
@@ -406,6 +411,7 @@ namespace SasaLib
         /// <param name="sourceFileName"></param>
         /// <param name="destFileName"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool MoveFile(string sourceFileName, string destFileName)
         {
             try
@@ -428,6 +434,7 @@ namespace SasaLib
         /// <param name="sourceFilePath">ソースファイル・フルパス</param>
         /// <param name="dist">保存先フォルダ.末尾に\はなし</param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool CopyWithRotatedBackup(string sourceFilePath, string dist)
         {
             try
@@ -468,6 +475,7 @@ namespace SasaLib
         /// <param name="distFilePath"></param>
         /// <param name="overwrite"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool CopyFile(string sourceFilePath, string distFilePath, bool overwrite = true)
         {
             try
@@ -490,6 +498,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="sourceFilePath"></param>
         /// <param name="targetFolderPath"></param>
+        [SupportedOSPlatform("windows")]
         public static bool CopyFileWithIncrementedFileName(string sourceFilePath, string targetFolderPath)
         {
             try
@@ -669,6 +678,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="sourcePath"></param>
         /// <param name="destinationPath"></param>
+        [SupportedOSPlatform("windows")]
         public static void DirectoryCopy(string sourcePath, string destinationPath)
         {
             DirectoryInfo sourceDirectory = new DirectoryInfo(sourcePath);
@@ -760,6 +770,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="fullpath"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static string GetFileNameWithoutExtension(string fullpath)
         {
             try { return System.IO.Path.GetFileNameWithoutExtension(fullpath); }
@@ -867,6 +878,7 @@ namespace SasaLib
         /// <param name="filename"></param>
         /// <param name="dict"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static ResultAndMsg ReadCSVtoDictionary(string filename, Dictionary<string, string> dict)
         {
             Logging log = new Logging(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), @"SasaLib.log");
@@ -956,6 +968,7 @@ namespace SasaLib
         /// <param name="filename"></param>
         /// <param name="LoadFileData"></param>
         /// <returns>ResultAndMsg</returns>
+        [SupportedOSPlatform("windows")]
         public static ResultAndMsg ReadCSVtoList(string filename, List<List<string>> LoadFileData)
         {
             Logging log = new Logging(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), @"SasaLib.log");
@@ -1077,6 +1090,7 @@ namespace SasaLib
         /// <param name="oldPath"></param>
         /// <param name="extension"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool ChangeExtensionExcute(string oldPath, string extension)
         {
             bool ans = false;
@@ -1102,6 +1116,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="SelectedPath">ユーザーが選択したパスを指定</param>
         /// <returns>フォルダーパスを返す</returns>
+        [SupportedOSPlatform("windows")]
         public static string FolderSelect(string SelectedPath = "")
         {
             //FolderBrowserDialogクラスのインスタンスを作成
@@ -1135,6 +1150,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="FilePath"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static string GetTargetPath(string FilePath)
         {
             try
@@ -1253,6 +1269,7 @@ namespace SasaLib
         }
 
         // ファイル名のサフィックスに時刻を追加
+        [SupportedOSPlatform("windows")]
         public static string AppendTimeStampToFilename(string source, DateTime dt)
         {
             string basename = FileFolder.GetFileNameWithoutExtension(source);
@@ -1464,6 +1481,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static string GetMD5FileHash(string filePath)
         {
             System.Security.Cryptography.HashAlgorithm hashProvider = new System.Security.Cryptography.MD5CryptoServiceProvider();

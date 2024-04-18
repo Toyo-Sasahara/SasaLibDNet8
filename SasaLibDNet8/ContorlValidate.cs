@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Runtime.Versioning;
+using System.Windows.Forms;
 
 namespace SasaLib
 {
@@ -9,6 +10,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [SupportedOSPlatform("windows")]
         public static void CheckInputNumeric(object sender, KeyPressEventArgs e)
         {
             // 制御文字は入力可

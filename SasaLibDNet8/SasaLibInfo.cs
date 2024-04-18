@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SasaLibDNet8;
+using System;
 using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -63,6 +65,7 @@ namespace SasaLib
         /// 
         /// </summary>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static string GetAssemblyFileMD5()
         {
             System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);

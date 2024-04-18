@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace SasaLib
         /// <param name="cl"></param>
         /// <param name="count"></param>
         /// <param name="delay"></param>
+        [SupportedOSPlatform("windows")]
         public static async void Blink(object cl, int count = 3, int delay = 200)
         {
 

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using SasaLib.Eventlog;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -154,6 +155,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="outString"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public int WriteString(string outString)
         {
             try
@@ -195,12 +197,15 @@ namespace SasaLib
         /// </summary>
         /// <param name="outString"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public int WriteString(string outString, int timeoutmsec = 10000, SasaLibDelegateWriteLine WriteLine = null)
         {
             bool OperationCanceledException;
             bool AggregateException;
             return WriteString(outString, timeoutmsec, out OperationCanceledException, out AggregateException, WriteLine);
         }
+
+        [SupportedOSPlatform("windows")]
 
         public int WriteString(string outString, int timeoutmsec, out bool OperationCanceledException, out bool AggregateException, SasaLibDelegateWriteLine WriteLine = null)
         {

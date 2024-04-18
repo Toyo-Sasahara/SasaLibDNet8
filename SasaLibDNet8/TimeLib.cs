@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -50,6 +51,7 @@ namespace SasaLib
             return sw.Elapsed;
         }
 
+        [SupportedOSPlatform("windows")]
         public TimeSpan Stop(string Comment = "", bool consoleShow = false)
         {
             if (consoleShow)

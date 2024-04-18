@@ -66,6 +66,7 @@ namespace SasaLib
     /// <summary>
     /// SasaLibのプリンタ制御クラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class Printing
     {
         static public XMLconfigPrinterPreparation confSet = new XMLconfigPrinterPreparation();

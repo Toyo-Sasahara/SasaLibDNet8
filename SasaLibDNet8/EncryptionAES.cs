@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -217,6 +218,7 @@ namespace SasaLib
         /// <param name="key"></param>
         /// <param name="iv"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static async Task<string> DecryptFromBase64(string base64Text, byte[] key, byte[] iv)
         {
             try
@@ -264,6 +266,7 @@ namespace SasaLib
         /// <param name="key"></param>
         /// <param name="iv"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static string DecryptFromBase64NoAsync(string base64Text, byte[] key, byte[] iv)
         {
             try

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public static class REGutils
     {
         /// <summary>
@@ -92,6 +94,7 @@ namespace SasaLib
         /// <param name="ProcessName"></param>
         /// <param name="forced"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool RemoveHKCU_CurrentVersionRun(string ProcessName, bool forced = false)
         {
 
@@ -137,6 +140,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="ProcessName">調査するプロセス名</param>
         /// <returns>true:登録済み</returns>
+        [SupportedOSPlatform("windows")]
         public static bool CheckHKCU_CurrentVersionRun(string ProcessName)
         {
             string keyName = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run";

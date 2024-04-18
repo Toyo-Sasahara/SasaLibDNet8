@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace SasaLib
@@ -18,6 +19,7 @@ namespace SasaLib
         /// <param name="targetButton">盾アイコンを表示するボタンコントロール</param>
         /// <param name="showShield">盾アイコンを表示する時はtrue。
         /// 非表示にする時はfalse1。</param>
+        [SupportedOSPlatform("windows")]
         public static void SetShieldIcon(Button targetButton, bool showShield)
         {
             if (targetButton == null)
@@ -46,6 +48,7 @@ namespace SasaLib
         /// UACの盾アイコンをボタンコントロールに表示する
         /// </summary>
         /// <param name="targetButton">盾アイコンを表示するボタンコントロール</param>
+        [SupportedOSPlatform("windows")]
         public static void SetShieldIcon(Button targetButton)
         {
             SetShieldIcon(targetButton, true);
@@ -54,6 +57,7 @@ namespace SasaLib
         /// <summary>
         /// 自分自身を管理者として起動する
         /// </summary>
+        [SupportedOSPlatform("windows")]
         public static void Adminstart()
         {
 
@@ -137,6 +141,7 @@ namespace SasaLib
         /// </summary>
         /// <returns>昇格トークンの種類を示すTOKEN_ELEVATION_TYPE。
         /// 取得に失敗した時でもTokenElevationTypeDefaultを返す。</returns>
+        [SupportedOSPlatform("windows")]
         public static TOKEN_ELEVATION_TYPE GetTokenElevationType()
         {
             TOKEN_ELEVATION_TYPE returnValue =
@@ -176,6 +181,7 @@ namespace SasaLib
         }
     }
 
+    [SupportedOSPlatform("windows")]
     public static  class AppAuthority
     {
         /// <summary>

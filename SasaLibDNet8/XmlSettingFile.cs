@@ -8,6 +8,8 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Security.AccessControl;
 using System.Security.Principal;
+using SasaLibDNet8;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -29,6 +31,7 @@ namespace SasaLib
         ///     ファイル名。
         ///     省略時はクラス名を採用する</param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static XmlSettingFile Load(Environment.SpecialFolder folderId, XmlSettingFile initial, string filename = null)
         {
             //ファイル名を生成
@@ -52,6 +55,7 @@ namespace SasaLib
         /// <param name="initial">ファイルがない場合の既定値を持つインスタンス</param>
         /// <param name="Filename">ファイル名</param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static XmlSettingFile Load(string FolderPath, XmlSettingFile initial, string Filename)
         {
             //拡張子がXMLでない場合はXMLに変更する
@@ -90,6 +94,7 @@ namespace SasaLib
         /// 設定ファイルへ書き戻す。
         /// プログラムから設定値を変更した場合などに使用。
         /// </summary>
+        [SupportedOSPlatform("windows")]
         public void Save()
         {
             //Console.WriteLine($"SasaLib.XmlSettingFile.Save({Filename})");
@@ -163,6 +168,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="filename"></param>
         /// <param name="setting"></param>
+        [SupportedOSPlatform("windows")]
         static private void Save(string filename, XmlSettingFile setting)
         {
             try
@@ -185,6 +191,7 @@ namespace SasaLib
         /// <param name="type">設定データの型</param>
         /// <returns>type型のインスタンス。
         /// ファイルない場合はnullを返す。</returns>
+        [SupportedOSPlatform("windows")]
         static private XmlSettingFile Read(string filename, Type type)
         {
             var reader = new StreamReader(filename, new UTF8Encoding(false));
@@ -216,6 +223,7 @@ namespace SasaLib
         /// 指定ファイルにUsersグループのユーザーの読み書き権限を与える
         /// </summary>
         /// <param name="filename"></param>
+        [SupportedOSPlatform("windows")]
         static private void AllowUsersReadAndWrite(string filename)
         {
             FileSystemAccessRule rule = new FileSystemAccessRule(

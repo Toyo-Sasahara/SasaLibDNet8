@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -40,6 +41,7 @@ namespace SasaLib
         /// 
         /// </summary>
         /// <param name="PrinterName"></param>
+        [SupportedOSPlatform("windows")]
         internal PrinterSimpleConfigData(string PrinterName, List<PaperSizeAndSource> paperSizeAndSources)
         {
             this.printerSimpleConfig.PaperSizeAndSources = paperSizeAndSources;
@@ -72,6 +74,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="commonPaperSize">CommonPaperSize paperSize</param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         internal PaperSize GetPaperSize(PrintConfig.CommonPaperSize commonPaperSize)
         {
             List<PaperSizeAndSource> paperSizeAndSourceList = printerSimpleConfig.PaperSizeAndSources;
@@ -101,6 +104,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="commonPaperSize"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         internal PrinterSimple.BeforeExtractType GetBeforePrintExtractMode(PrintConfig.CommonPaperSize commonPaperSize)
         {
             foreach (PaperSizeAndSource paperSizeAndSource in printerSimpleConfig.PaperSizeAndSources)
@@ -125,6 +129,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="paperSize"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         internal PaperSource GetPaperSource(PrintConfig.CommonPaperSize paperSize)
         {
             if (systemDrawingPrintingPaperSourceList != null)

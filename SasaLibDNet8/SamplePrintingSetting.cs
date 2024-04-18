@@ -1,6 +1,8 @@
 ﻿using SasaLib;
+using SasaLibDNet8;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Versioning;
 
 namespace Samps
 {
@@ -79,6 +81,7 @@ namespace Samps
     public class TestProg
     {
         //シリアライズのテスト
+        [SupportedOSPlatform("windows")]
         public static void SerializeTest()
         {
             //シリアライズする為のPersonsインスタンスを生成

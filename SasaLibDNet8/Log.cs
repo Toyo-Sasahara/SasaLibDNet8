@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 
 namespace SasaLib.Eventlog
 {
@@ -12,6 +13,7 @@ namespace SasaLib.Eventlog
         /// <param name="source">出力ソース名</param>
         /// <param name="format">出力文字列フォーマット</param>
         /// <param name="args">変数</param>
+        [SupportedOSPlatform("windows")]
         static public void WriteEntry(string source, string format, params object[] args)
         {
             var stringFormated = string.Format(format, args);
@@ -31,6 +33,7 @@ namespace SasaLib.Eventlog
         /// <param name="sourceFilePath">指定しないこと</param>
         /// <param name="sourceLineNumber">指定しないこと</param>
         [DebuggerHidden()]
+        [SupportedOSPlatform("windows")]
         static public void WriteEntry(string source, EventLogEntryType eventType, int eventID, string format, bool CallerMemmberName = true, bool OutConsole = true, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
         {
             var stringFormated = default(string);

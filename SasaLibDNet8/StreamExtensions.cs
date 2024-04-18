@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -113,6 +114,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="input">保存するストリーム</param>
         /// <param name="savepath">ファイルパス</param>
+        [SupportedOSPlatform("windows")]
         public static void StreamToFile(Stream input, string savepath)
         {
             input.Position = 0;

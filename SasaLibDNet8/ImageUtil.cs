@@ -4,14 +4,11 @@
 // Wordリスト変換ツール
 //
 //using BarcodeLib;
+using SasaLib.PrintConfig;
 using SasaLibDNet8;
-using SasaLibDNet8.PrintConfig;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
 using System.Runtime.Versioning;
 using System.Windows.Media.Imaging;
 

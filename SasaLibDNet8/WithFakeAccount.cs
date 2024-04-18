@@ -7,6 +7,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Security;
 using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -253,6 +254,7 @@ namespace SasaLib
         public static extern bool LogonUser(String lpszUsername, String lpszDomain, String lpszPassword,
         int dwLogonType, int dwLogonProvider, out SafeAccessTokenHandle phToken);
 
+        [SupportedOSPlatform("windows")]
         public WithFakeAccount(string domainName, string userName, string password, bool UsingClsLogon ,Action acton, bool debugConsoleMsg = false, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
         {
             if (UsingClsLogon == false)
@@ -281,6 +283,8 @@ namespace SasaLib
         public void Dispose()
         {
         }
+
+        [SupportedOSPlatform("windows")]
 
         public static void test()
         {

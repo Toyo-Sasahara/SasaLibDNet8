@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -227,6 +228,7 @@ namespace SasaLib
         /// <param name="switchTime"></param>
         /// <param name="DebugWriteLineSwitch"></param>
         /// <param name="ConsoleWriteLineSwitch"></param>
+        [SupportedOSPlatform("windows")]
         public async void LogRotateWriteLine(object value, string switchTime = "Day", bool DebugWriteLineSwitch = false, bool ConsoleWriteLineSwitch = false, bool FlashSync = false)
         {
             using (await _asyncLock.LockAsync())
@@ -330,6 +332,7 @@ namespace SasaLib
             }
         }
 
+        [SupportedOSPlatform("windows")]
         public async Task<string> ResultLogRotateWriteLine(object value, string switchTime = "Day", bool DebugWriteLineSwitch = false, bool ConsoleWriteLineSwitch = false, bool FlashSync = false)
         {
             using (await _asyncLock.LockAsync())

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Versioning;
 using SIP = System.IO.Path;
 
 namespace SasaLib
@@ -17,6 +18,7 @@ namespace SasaLib
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static System.Drawing.Image OriginalImage(stdole.IPictureDisp Thumbnail, int width, int height, bool debug = true)
         {
             //System.Drawing.Image image = IPictuireUtil.GetPictureFromIPicture(Thumbnail);
@@ -47,6 +49,7 @@ namespace SasaLib
         /// <param name="height"></param>
         /// <param name="fname"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static System.Drawing.Image PartsListImageConvert(stdole.IPictureDisp Thumbnail, int width, int height, string fname = null, bool debug = true)
         {
             string folder = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
@@ -103,6 +106,7 @@ namespace SasaLib
         /// <param name="height"></param>
         /// <param name="fname"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static System.Drawing.Image PartsListImageConvert(System.Drawing.Image Image, int width, int height, string fname)
         {
             string folder = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);

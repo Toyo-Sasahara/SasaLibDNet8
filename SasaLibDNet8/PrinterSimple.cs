@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -60,6 +61,7 @@ namespace SasaLib
         /// 
         /// </summary>
         /// <param name="printerImage"></param>
+        [SupportedOSPlatform("windows")]
         public PrinterSimple(System.Drawing.Image printerImage, string WindowsPrinterName, List<PaperSizeAndSource> paperSizeAndSources)
         {
             this.printerConfigData = new PrinterSimpleConfigData(WindowsPrinterName, paperSizeAndSources);
@@ -90,6 +92,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="PrinterOutputFileNameFullPath"></param>
         /// <param name="BeforePrintImageFullPath"></param>
+        [SupportedOSPlatform("windows")]
         public bool PrintExecute(string DocumentName, string PrinterOutputFileNameFullPath = "")
         {
             if (this.Ready == false)
@@ -169,6 +172,7 @@ namespace SasaLib
         /// <param name="RenderinType">1=,2=,3=ChangePixelFormat()を使用</param>
         /// <param name="dXmm">印刷時のオフセット位置 X</param>
         /// <param name="dYmm">印刷時のオフセット位置 Y</param>
+        [SupportedOSPlatform("windows")]
         void CreatePrintingBitmap(System.Drawing.Image image,
             System.Drawing.Imaging.PixelFormat _printDrawingPixelFormat = System.Drawing.Imaging.PixelFormat.Format24bppRgb,
             int RenderinType = 3,
@@ -232,6 +236,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [SupportedOSPlatform("windows")]
         private void Pd_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Console.WriteLine("◆プリンタイベントハンドラ Pd_PrintPage() 開始");

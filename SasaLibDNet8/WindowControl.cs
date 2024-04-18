@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Windows;
 using System.Windows.Forms;
@@ -123,6 +124,8 @@ namespace SasaLib
 
             return new Point(width, height);
         }
+
+        [SupportedOSPlatform("windows")]
 
         public IWin32Window GetWindowFromHost(int hwnd)
         {

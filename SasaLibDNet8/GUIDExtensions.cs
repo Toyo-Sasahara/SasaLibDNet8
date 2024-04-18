@@ -2,6 +2,7 @@
 using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace SasaLib
     /// <summary>
     /// GUID
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class GUIDExtensions
     {
         /// <summary>
@@ -39,14 +41,17 @@ namespace SasaLib
         /// コンストラクタ
         /// </summary>
         /// <param name="sw">true:GUIDを生成,falseGUIDを生成しない</param>
+        [SupportedOSPlatform("windows")]
         public GUIDExtensions(bool sw)
         {
             if (sw) SetNewGUID();
         }
+        [SupportedOSPlatform("windows")]
         public GUIDExtensions()
         {
             // なにもしない
         }
+        [SupportedOSPlatform("windows")]
         public GUIDExtensions(string s)
         {
             _guidobj = new Guid(s);

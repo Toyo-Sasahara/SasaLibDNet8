@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Runtime.Versioning;
+using System.Windows.Forms;
 
 namespace SasaLib
 {
@@ -7,6 +8,7 @@ namespace SasaLib
         /// <summary>
         /// DataGridViewでクリックしたセル情報を取得
         /// </summary>
+        [SupportedOSPlatform("windows")]
         public static void ShowCellContentClickHandler(object sender, DataGridViewCellEventArgs args)
         {
             DataGridView g = sender as DataGridView;

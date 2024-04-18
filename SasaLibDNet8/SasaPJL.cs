@@ -1,8 +1,10 @@
 ﻿using SasaLib;
+using SasaLibDNet8;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace SasaLib.PJL
@@ -243,6 +245,9 @@ namespace SasaLib.PJL
         /// ページ数が多いとメモリオーバーフロー
         /// </summary>
         /// <returns></returns>
+        /// 
+        [SupportedOSPlatform("windows")]
+
         public System.Drawing.Image[] GetTiffImages()
         {
             List<System.Drawing.Image> imageList = new List<System.Drawing.Image>();
@@ -261,6 +266,7 @@ namespace SasaLib.PJL
         /// TiffStreamToImage2()を使用してストリームをImageにする場合
         /// </summary>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public System.Drawing.Image[] GetTiffImages2()
         {
             List<System.Drawing.Image> imageList = new List<System.Drawing.Image>();
@@ -282,6 +288,7 @@ namespace SasaLib.PJL
         /// <param name="msPJLrawdata">PJLデータのストリーム</param>
         /// <param name="savePathFile">保存先フォルダ</param>
         /// <param name="rotateFlipType">回転</param>
+        [SupportedOSPlatform("windows")]
         public static void WriteTiffFiles(MemoryStream msPJLrawdata, string savePath,
            System.Drawing.RotateFlipType rotateFlipType = System.Drawing.RotateFlipType.RotateNoneFlipNone)
         {
@@ -332,6 +339,7 @@ namespace SasaLib.PJL
         /// </summary>
         /// <param name="msPJLrawdata"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool ExtractTIFFstream(MemoryStream msPJLrawdata, out Stream tiffStream1st)
         {
             // PJLdecodeオブジェクトを生成

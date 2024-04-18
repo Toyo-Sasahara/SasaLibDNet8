@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace SasaLib.PIPE
 {
     // BinaryWriterの拡張メソッドを定義
     // https://gist.github.com/ichiroku11/80faa8675c5354245001759733df1348
+    [SupportedOSPlatform("windows")]
     public static class BinaryWriterExtensions
     {
         // 2024年1月22日 不用と判断したためコメント・様子見
@@ -83,8 +85,9 @@ namespace SasaLib.PIPE
 
             return length;
         }
-        
+
         //分割せずに送出する。OSによって送られるデータの最大値がちがうっぽい？
+        [SupportedOSPlatform("windows")]
         public static void WriteObjectNotSplit<TObject>(this BinaryWriter writer, TObject obj, int writebufsize = 2048, bool Verbose = false)
         {
             int length = 0;

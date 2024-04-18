@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Runtime.Serialization;
+using System.Runtime.Versioning;
 using System.Xml;
 
 namespace SasaLib.PrintConfig
@@ -134,6 +135,7 @@ namespace SasaLib.PrintConfig
         /// <param name="size"></param>
         /// <param name="gosa"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static CommonPaperSize GetJISpaperSize(PM size, double gosa)
         {
             return (GetJISpaperSize(size.Width, size.Height, gosa));
@@ -175,6 +177,7 @@ namespace SasaLib.PrintConfig
     /// <summary>
     /// コンフィグレーションクラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class RootConfigClass
     {
         public string Tittle;
@@ -186,6 +189,7 @@ namespace SasaLib.PrintConfig
     /// <summary>
     /// プリンタークラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class PrinterClass
     {
         public string PrinterName;
@@ -196,6 +200,7 @@ namespace SasaLib.PrintConfig
     /// <summary>
     /// 用紙クラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class PaperClass
     {
         public CommonPaperSize CommonPaperSize;
@@ -208,6 +213,7 @@ namespace SasaLib.PrintConfig
     /// <summary>
     /// 保存内容の保持クラス（孫）
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class ConfigClass
     {
         public string プリンタ名 { get; }
@@ -245,6 +251,7 @@ namespace SasaLib.PrintConfig
         /// <summary>
         /// 設定管理クラスのコンストラクタ
         /// </summary>
+        [SupportedOSPlatform("windows")]
         public ConfigInit()
         {
             Root = new RootConfigClass();
@@ -274,6 +281,7 @@ namespace SasaLib.PrintConfig
         /// </summary>
         /// <param name="PrinterName"></param>
         /// <param name="ID"></param>
+        [SupportedOSPlatform("windows")]
         public bool AddPrinterConfig(string PrinterName, int ID)
         {
             if (Root.Printer.ContainsKey(PrinterName) == false)
@@ -304,6 +312,7 @@ namespace SasaLib.PrintConfig
         /// 標準用紙をリストで取得
         /// </summary>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static List<PaperClass> GetCommonPaperSize()
         {
             List<PaperClass> obj = new List<PaperClass>()
@@ -333,6 +342,7 @@ namespace SasaLib.PrintConfig
         /// <param name="Margin">印刷マージン設定の選択</param>
         /// <param name="Xoffset">印刷時オフセット横方向</param>
         /// <param name="Yoffset">印刷時オフセット縦方向</param>
+        [SupportedOSPlatform("windows")]
         public void ModifySetting(string a1, CommonPaperSize aa)
         {
             if (Root.Printer[a1].Paper.ContainsKey(aa))

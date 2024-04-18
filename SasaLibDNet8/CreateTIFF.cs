@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,7 @@ namespace SasaLib
         /// <param name="msPJLrawdata">PJLデータのストリーム</param>
         /// <param name="saveFile">保存先パスファイル名</param>
         /// <param name="rotateFlipType">回転</param>
+        [SupportedOSPlatform("windows")]
         static bool ExtractTiffFile(MemoryStream msPJLrawdata, string Path, string saveFile, RotateFlipType rotateFlipType = RotateFlipType.RotateNoneFlipNone, int debug = 1)
         {
             // PJLdecodeオブジェクトを生成
@@ -88,6 +90,7 @@ namespace SasaLib
         /// <param name="baseFileName"></param>
         /// <param name="rotate"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static bool MakeImageFromPJL(string PlotNativeWriteFilePath, string SaveFolder, string baseFileName, RotateFlipType rotate = RotateFlipType.RotateNoneFlipNone)
         {
             int debug = 0;

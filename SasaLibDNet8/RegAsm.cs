@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Runtime.Versioning;
 using System.Text.RegularExpressions;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
+
     public static class RegAsm
     {
 

@@ -1,6 +1,8 @@
 ﻿// SasaLib メインクラス
+using SasaLibDNet8;
 using System;
 using System.Diagnostics;
+using System.Runtime.Versioning;
 
 
 namespace SasaLib
@@ -82,6 +84,7 @@ namespace SasaLib
         /// <param name="stdErrStr"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
+        [SupportedOSPlatform("windows")]
         public static int ExcuteBatchCMD2B(string batchfilepath, string param, out string stdoutStr, out string stdErrStr, SasaLibDelegateWriteLine WriteLine = null)
         {
             if (WriteLine != null)
