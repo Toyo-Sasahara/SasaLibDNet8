@@ -286,7 +286,7 @@ namespace SasaLibDNet8.PJL
            System.Drawing.RotateFlipType rotateFlipType = System.Drawing.RotateFlipType.RotateNoneFlipNone)
         {
             // PJLdecodeオブジェクトを生成
-            SasaLibDNet8.PJL.PJLdecode pJLdecode = new SasaLibDNet8.PJL.PJLdecode(msPJLrawdata);
+            PJL.PJLdecode pJLdecode = new PJL.PJLdecode(msPJLrawdata);
 
 
             // PJLデータか検証後実行
@@ -335,7 +335,7 @@ namespace SasaLibDNet8.PJL
         public static bool ExtractTIFFstream(MemoryStream msPJLrawdata, out Stream tiffStream1st)
         {
             // PJLdecodeオブジェクトを生成
-            SasaLibDNet8.PJL.PJLdecode pJLdecode = new SasaLibDNet8.PJL.PJLdecode(msPJLrawdata);
+            PJL.PJLdecode pJLdecode = new PJL.PJLdecode(msPJLrawdata);
 
             // PJLデータか検証後実行
             if (pJLdecode.IsPJL)

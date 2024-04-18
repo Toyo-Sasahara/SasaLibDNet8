@@ -76,7 +76,7 @@ namespace SasaLibDNet8
             }
             catch (Exception ex)
             {
-                Eventlog.Log.WriteEntry("SasaLib FileFolder Class.", EventLogEntryType.Error, 0, $"SasaLib.FileFolder.GetFilesMostDeep(..)にて 例外検知 {ex.Message}");
+                Eventlog.Log.WriteEntry("SasaLib FileFolder Class.", EventLogEntryType.Error, 0, $"FileFolder.GetFilesMostDeep(..)にて 例外検知 {ex.Message}");
                 return null;
             }
 
@@ -701,7 +701,7 @@ namespace SasaLibDNet8
             }
             catch (Exception ex)
             {
-                Eventlog.Log.WriteEntry("SasaLib FileFolder Class", EventLogEntryType.Error, 0, $"▲SasaLib.FileFolder.DirectoryCopy(..) sourcePath:{sourcePath} 例外検知：{ex.Message}");
+                Eventlog.Log.WriteEntry("SasaLib FileFolder Class", EventLogEntryType.Error, 0, $"▲FileFolder.DirectoryCopy(..) sourcePath:{sourcePath} 例外検知：{ex.Message}");
             }
         }
 
@@ -1066,7 +1066,7 @@ namespace SasaLibDNet8
             }
             catch (IOException ioe)
             {
-                DebugConsole.WriteLine($"SasaLib.FileFolder.Touch({filePath})にて例外発生 {ioe.Message}");
+                DebugConsole.WriteLine($"FileFolder.Touch({filePath})にて例外発生 {ioe.Message}");
                 return false;
             }
         }
@@ -1299,7 +1299,7 @@ namespace SasaLibDNet8
             }
             catch (Exception ex)
             {
-                DebugConsole.WriteLine($"SasaLib.FileFolder.IsReadOnly にて例外発生.out bool IsReadOnly は falseを返します。例外理由 {ex.Message}");
+                DebugConsole.WriteLine($"FileFolder.IsReadOnly にて例外発生.out bool IsReadOnly は falseを返します。例外理由 {ex.Message}");
                 IsReadOnly = false;
                 return false;
             }
@@ -1322,7 +1322,7 @@ namespace SasaLibDNet8
             }
             catch (Exception ex)
             {
-                DebugConsole.WriteLine($"SasaLib.FileFolder.SetReadOnlyにて例外発生{ex.Message}");
+                DebugConsole.WriteLine($"FileFolder.SetReadOnlyにて例外発生{ex.Message}");
                 return false;
             }
         }
@@ -1353,7 +1353,7 @@ namespace SasaLibDNet8
                     }
                     catch (Exception ex)
                     {
-                        DebugConsole.WriteLine($"SasaLib.FileFolder.SetReadOnlyにて例外発生{ex.Message}");
+                        DebugConsole.WriteLine($"FileFolder.SetReadOnlyにて例外発生{ex.Message}");
                     }
                 });
 
@@ -1366,7 +1366,7 @@ namespace SasaLibDNet8
                 }
                 catch (Exception ex)
                 {
-                    DebugConsole.WriteLine($"SasaLib.FileFolder.SetReadOnlyにて例外発生{ex.Message}");
+                    DebugConsole.WriteLine($"FileFolder.SetReadOnlyにて例外発生{ex.Message}");
                 }
 
             }

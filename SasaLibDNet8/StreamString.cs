@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SasaLibDNet8.Eventlog;
 
 namespace SasaLibDNet8
 {
@@ -163,7 +164,7 @@ namespace SasaLibDNet8
 
                     DebugConsole.WriteLine($"SasaLib.StreamString.WriteString(string outString)にnull値が渡されました。\n 空行に変換します");
 
-                    SasaLibDNet8.Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Information, 9300, $"SasaLib.StreamString.WriteString(string outString)にnull値が渡されました。\n 空行に変換します");
+                    Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Information, 9300, $"SasaLib.StreamString.WriteString(string outString)にnull値が渡されました。\n 空行に変換します");
                 }
 
                 byte[] outBuffer = streamEncoding.GetBytes(outString);
@@ -183,7 +184,7 @@ namespace SasaLibDNet8
             }
             catch (Exception ex)
             {
-                SasaLibDNet8.Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Error, 9300, $"SasaLib.StreamString.WriteString(string outString) 送信しようとした文字列 \"{outString}\" ,例外発生。 -1 を返します ({ex.Message})");
+                Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Error, 9300, $"SasaLib.StreamString.WriteString(string outString) 送信しようとした文字列 \"{outString}\" ,例外発生。 -1 を返します ({ex.Message})");
                 return -1;
             }
         }
@@ -219,7 +220,7 @@ namespace SasaLibDNet8
                     {
                         outString = "";
 
-                        SasaLibDNet8.Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Error, 9300, $"SasaLib.StreamString.WriteString(string outString)にnull値が渡されました。\n 空行に変換します");
+                        Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Error, 9300, $"SasaLib.StreamString.WriteString(string outString)にnull値が渡されました。\n 空行に変換します");
                     }
 
                     byte[] outBuffer = streamEncoding.GetBytes(outString);

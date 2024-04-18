@@ -1711,7 +1711,7 @@ namespace SasaLibDNet8
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"SasaLib.ImageUtil.FromFile({filename})にて例外発生. 内容{ex.Message}");
+                Console.WriteLine($"ImageUtil.FromFile({filename})にて例外発生. 内容{ex.Message}");
                 fs.Close();
                 return null;
             }

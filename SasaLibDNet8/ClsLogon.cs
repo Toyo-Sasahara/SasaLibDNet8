@@ -247,13 +247,13 @@ namespace SasaLibDNet8
     //    }
     //}
 
-    public class ClsLogon
+    public class ClsLogon : IDisposable
     {
         [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern bool LogonUser(String lpszUsername, String lpszDomain, String lpszPassword,
         int dwLogonType, int dwLogonProvider, out SafeAccessTokenHandle phToken);
 
-        public ClsLogon(string domainName, string userName, string password, bool UsingClsLogon = false, bool debugConsoleMsg = false, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
+        public ClsLogon(string domainName, string userName, string password, bool UsingClsLogon ,Action acton, bool debugConsoleMsg = false, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
         {
             if (UsingClsLogon == false)
                 return;
@@ -272,12 +272,27 @@ namespace SasaLibDNet8
             // Impersonate the specified user and execute the action
             WindowsIdentity.RunImpersonated(
                safeAccessTokenHandle,
-                () =>
-                {
-                    // ここに実行したいアクションを記述
-                    Console.WriteLine($"I'm running as {WindowsIdentity.GetCurrent().Name}");
-                }
-            );
+                acton);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Dispose()
+        {
+        }
+
+        public static void test()
+        {
+            new ClsLogon("AD", "Sekkei-User", "sk", true, () =>
+            {
+                Console.WriteLine("During impersonation: " + WindowsIdentity.GetCurrent().Name);
+            });
+
+            // Check the identity again.  
+            Console.WriteLine("After impersonation: " + WindowsIdentity.GetCurrent().Name);
+
         }
     }
+
 }

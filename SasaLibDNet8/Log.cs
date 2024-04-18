@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SasaLibDNet8.Eventlog
 {
@@ -43,7 +39,7 @@ namespace SasaLibDNet8.Eventlog
                 if (CallerMemmberName)
                 {
                     sourceFilePath = FileFolder.GetFileName(sourceFilePath);
-                    stringFormated = format + $"\n　呼び出し元:ソースファイル:{sourceFilePath},{sourceLineNumber}行,メンバー名：{memberName}";
+                    stringFormated =format + $"\n　呼び出し元:ソースファイル:{sourceFilePath},{sourceLineNumber}行,メンバー名：{memberName}";
                 }
                 else
                 {
@@ -85,26 +81,26 @@ namespace SasaLibDNet8.Eventlog
                 switch (eventType)
                 {
                     case EventLogEntryType.Information:
-                        DebugConsole.WriteLine($"□SasaLib.Eventlog.Log.WriteEntry(..)情報({datetime}):" + source + ":" + stringFormated);
+                        DebugConsole.WriteLine($"□Eventlog.Log.WriteEntry(..)情報({datetime}):" + source + ":" + stringFormated);
                         Console.ResetColor();
                         break;
                     case EventLogEntryType.Warning:
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine($"△SasaLib.Eventlog.Log.WriteEntry(..)警告({datetime}):" + source + ":" + stringFormated);
+                        Console.WriteLine($"△Eventlog.Log.WriteEntry(..)警告({datetime}):" + source + ":" + stringFormated);
                         Console.ResetColor();
                         break;
                     case EventLogEntryType.Error:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"▲SasaLib.Eventlog.Log.WriteEntry(..)エラー({datetime}):" + source + ":" + stringFormated);
+                        Console.WriteLine($"▲Eventlog.Log.WriteEntry(..)エラー({datetime}):" + source + ":" + stringFormated);
                         Console.ResetColor();
                         break;
                     case EventLogEntryType.SuccessAudit:
-                        Console.WriteLine($"□SasaLib.Eventlog.Log.WriteEntry(..)成功({datetime}):" + source + ":" + stringFormated);
+                        Console.WriteLine($"□Eventlog.Log.WriteEntry(..)成功({datetime}):" + source + ":" + stringFormated);
                         Console.ResetColor();
                         break;
                     case EventLogEntryType.FailureAudit:
                         Console.ForegroundColor = ConsoleColor.DarkRed;
-                        Console.WriteLine($"▲SasaLib.Eventlog.Log.WriteEntry(..)失敗({datetime}):" + source + ":" + stringFormated);
+                        Console.WriteLine($"▲Eventlog.Log.WriteEntry(..)失敗({datetime}):" + source + ":" + stringFormated);
                         Console.ResetColor();
                         break;
                     default:

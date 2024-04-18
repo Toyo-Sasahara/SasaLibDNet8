@@ -6,7 +6,8 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
 using System.Xml.Serialization;
-
+using System.Security.AccessControl;
+using System.Security.Principal;
 
 namespace SasaLibDNet8
 {
@@ -221,9 +222,15 @@ namespace SasaLibDNet8
                 new NTAccount("Users"),
                 FileSystemRights.Write | FileSystemRights.Read,
                 AccessControlType.Allow);
-            FileSecurity security = File.GetAccessControl(filename);
-            security.AddAccessRule(rule);
-            File.SetAccessControl(filename, security);
+
+            var info = new FileInfo(filename);
+
+            FileSecurity security = info.GetAccessControl();
+
+            security.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null),
+                FileSystemRights.FullControl, AccessControlType.Allow));
+
+            info.SetAccessControl(security);
         }
 
         #endregion

@@ -4,37 +4,57 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="NeoSmart.AsyncLock" Version="3.2.1" />
+    <PackageReference Include="runtime.native.System.IO.Compression" Version="4.3.2" />
+    <PackageReference Include="stdole" Version="17.9.37000" />
+    <PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Diagnostics.EventLog" Version="9.0.0-preview.3.24172.9" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
+    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="5.0.0" />
+    <PackageReference Include="System.IO.FileSystem.DriveInfo" Version="4.3.1" />
+    <PackageReference Include="System.IO.FileSystem.Watcher" Version="4.3.0" />
+    <PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
+    <PackageReference Include="System.IO.Packaging" Version="8.0.0" />
+    <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
+    <PackageReference Include="System.IO.UnmanagedMemoryStream" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="System.ObjectModel" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
+    <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+    <PackageReference Include="Uno.UI" Version="5.3.0-dev.422" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Interop.IWshRuntimeLibrary">
       <HintPath>..\..\SasaLibTestFrame\SasaLib\obj\Debug\Interop.IWshRuntimeLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.4\ref\net8.0\mscorlib.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\PresentationCore.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationCore.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\PresentationFramework.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationFramework.dll</HintPath>
     </Reference>
-    <Reference Include="SasaLib.Barcode">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.Barcode\bin\Debug\SasaLib.Barcode.dll</HintPath>
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Common">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Drawing.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.Common.dll</HintPath>
     </Reference>
-    <Reference Include="System.IO.Packaging">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.IO.Packaging.dll</HintPath>
+    <Reference Include="System.Drawing.Design">
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.Design.dll</HintPath>
     </Reference>
     <Reference Include="System.Printing">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Printing.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Printing.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.Extensions">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Resources.Extensions.dll</HintPath>
@@ -73,5 +93,5 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
     </Reference>
   </ItemGroup>
-
+ 
 </Project>
