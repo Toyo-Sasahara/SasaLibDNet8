@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using SasaLib.NumberingSupport;
 using StageServerRemote;
+using SasaLibDNet8;
 
 namespace SasaLib.ArcSuitePreview
 {
@@ -697,7 +698,7 @@ namespace SasaLib.ArcSuitePreview
                 }
                 catch (Exception ex)
                 {
-                    SasaLib.Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuiteSearchAndVew_button_Click(..)  にて例外 {ex.Message}");
+                    Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuiteSearchAndVew_button_Click(..)  にて例外 {ex.Message}");
                 }
             }
         }
@@ -1033,7 +1034,7 @@ namespace SasaLib.ArcSuitePreview
             InvokeRequired_Control_Text(modelcreationonorder_label, "");
 
 
-            SasaLib.DoEvents.Run();
+            DoEvents.Run();
         }
 
         /// <summary>
@@ -1044,7 +1045,7 @@ namespace SasaLib.ArcSuitePreview
             if (string.IsNullOrWhiteSpace(this.recent_temporalyDrawingImageFullFileName) == false)
             {
                 string removeFolder = System.IO.Path.GetDirectoryName(this.recent_temporalyDrawingImageFullFileName);
-                var result = SasaLib.FileFolder.RemoveFolder(removeFolder, true);
+                var result = FileFolder.RemoveFolder(removeFolder, true);
                 if (result == true)
                     DebugConsole.WriteLine($"■ArcSuiteイメージﾌﾟﾚﾋﾞｭｰﾌｧｲﾙ {this.recent_temporalyDrawingImageFullFileName}をフォルダごと削除しました");
                 else
@@ -1147,7 +1148,7 @@ namespace SasaLib.ArcSuitePreview
                         this.recent_temporalyDrawingImageFullFileName = stArcSuitePreview.temporalyDrawingImageFullFileName;
 
                         // イメージファイルの読み込みとセット
-                        sourceBitmap = (Bitmap)SasaLib.ImageUtil.FromFile(stArcSuitePreview.temporalyDrawingImageFullFileName);
+                        sourceBitmap = (Bitmap)ImageUtil.FromFile(stArcSuitePreview.temporalyDrawingImageFullFileName);
                         orignalResolution = System.Math.Max(sourceBitmap.HorizontalResolution, sourceBitmap.VerticalResolution);
                         // インデックス付き対策のため
                         sourceBitmap = (Bitmap)sourceBitmap.GetThumbnailImage(sourceBitmap.Width, sourceBitmap.Height, new Image.GetThumbnailImageAbort(_dummy), IntPtr.Zero);

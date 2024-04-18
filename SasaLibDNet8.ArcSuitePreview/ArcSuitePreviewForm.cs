@@ -10,6 +10,7 @@ using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SasaLib;
+using SasaLibDNet8;
 
 namespace SasaLib.ArcSuitePreview
 {
@@ -1467,7 +1468,7 @@ namespace SasaLib.ArcSuitePreview
 
             InvokeRequired_Control_Text(SavedMsg_label, "");
 
-            SasaLib.DoEvents.Run();
+            DoEvents.Run();
         }
 
         /// <summary>
@@ -1487,7 +1488,7 @@ namespace SasaLib.ArcSuitePreview
             if (string.IsNullOrWhiteSpace(this.recent_temporalyDrawingImageFullFileName) == false)
             {
                 string removeFolder = System.IO.Path.GetDirectoryName(this.recent_temporalyDrawingImageFullFileName);
-                var result = SasaLib.FileFolder.RemoveFolder(removeFolder, true);
+                var result = FileFolder.RemoveFolder(removeFolder, true);
                 if (result == true)
                     DebugConsole.WriteLine($"■ArcSuiteイメージﾌﾟﾚﾋﾞｭｰﾌｧｲﾙ {this.recent_temporalyDrawingImageFullFileName}をフォルダごと削除しました");
                 else
@@ -1693,9 +1694,9 @@ namespace SasaLib.ArcSuitePreview
                 if (System.IO.File.Exists(saveFullFileName))
                 {
                     //　強制的に書き込み可能へ
-                    SasaLib.FileFolder.SetReadOnly(saveFullFileName, false);
+                    FileFolder.SetReadOnly(saveFullFileName, false);
 
-                    SasaLib.FileFolder.RemoveFile(saveFullFileName);
+                    FileFolder.RemoveFile(saveFullFileName);
                 }
 
                 sourceBitmap.Save(saveFullFileName, ImageFormat.Png);
@@ -1728,7 +1729,7 @@ namespace SasaLib.ArcSuitePreview
             if (System.IO.File.Exists(saveFullFileName))
             {
                 // イメージファイルの読み込みとセット
-                sourceBitmap = (Bitmap)SasaLib.ImageUtil.FromFile(saveFullFileName);
+                sourceBitmap = (Bitmap)ImageUtil.FromFile(saveFullFileName);
                 //orignalResolution = System.Math.Max(sourceBitmap.HorizontalResolution, sourceBitmap.VerticalResolution);
 
                 // 初期化の為リサイズイベントを強制的に実行
@@ -1777,10 +1778,10 @@ namespace SasaLib.ArcSuitePreview
                 if (System.IO.File.Exists(saveFullFileName))
                 {
                     //　強制的に書き込み可能へ
-                    SasaLib.FileFolder.SetReadOnly(saveFullFileName, false);
+                    FileFolder.SetReadOnly(saveFullFileName, false);
 
                     // 既存図削除
-                    SasaLib.FileFolder.RemoveFile(saveFullFileName);
+                    FileFolder.RemoveFile(saveFullFileName);
                 }
 
                 // チェックインするためのファイルを生成
@@ -1832,7 +1833,7 @@ namespace SasaLib.ArcSuitePreview
                 if (System.IO.File.Exists(savefullFileName))
                 {
                     // イメージファイルの読み込みとセット
-                    sourceBitmap = (Bitmap)SasaLib.ImageUtil.FromFile(savefullFileName);
+                    sourceBitmap = (Bitmap)ImageUtil.FromFile(savefullFileName);
 
                     // 初期化の為リサイズイベントを強制的に実行
                     //ArcSuitePreviewForm_Resize(null, null);

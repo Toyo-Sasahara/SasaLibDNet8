@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Net.NetworkInformation;
 using System.Linq;
+using SasaLibDNet8;
 
 namespace SasaLib.ArcSuitePreview
 {
@@ -226,8 +227,8 @@ namespace SasaLib.ArcSuitePreview
 
             try
             {
-                string headder = SasaLib.Csv.CsvArrayListToString((ArrayList)CsvData[0]);
-                string data = SasaLib.Csv.CsvArrayListToString((ArrayList)CsvData[1]);
+                string headder = Csv.CsvArrayListToString((ArrayList)CsvData[0]);
+                string data = Csv.CsvArrayListToString((ArrayList)CsvData[1]);
 
                 delegateWriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)   ﾍｯﾀﾞ部 CsvData[0] = {headder}");
                 delegateWriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)   ﾃﾞｰﾀ部 CsvData[1] = {data}");
@@ -295,31 +296,31 @@ namespace SasaLib.ArcSuitePreview
 
             try
             {
-                string user_zuban = SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:zuban", ii, true);
+                string user_zuban = Csv.GetFromCsvArrayList(CsvData, "user:zuban", ii, true);
 
                 if (String.IsNullOrEmpty(user_zuban) == false)
                 {
-                    string _serviceId = SasaLib.Csv.GetFromCsvArrayList(CsvData, "serviceId", ii, true);
-                    string _cabinetId = SasaLib.Csv.GetFromCsvArrayList(CsvData, "cabinetId", ii, true);
-                    string _drepId = SasaLib.Csv.GetFromCsvArrayList(CsvData, "drepId", ii, true);
+                    string _serviceId = Csv.GetFromCsvArrayList(CsvData, "serviceId", ii, true);
+                    string _cabinetId = Csv.GetFromCsvArrayList(CsvData, "cabinetId", ii, true);
+                    string _drepId = Csv.GetFromCsvArrayList(CsvData, "drepId", ii, true);
 
-                    string _system_filename = SasaLib.Csv.GetFromCsvArrayList(CsvData, "system:filename", ii, true);
-                    string _system_contentsizebytes = SasaLib.Csv.GetFromCsvArrayList(CsvData, "system:contentsizebytes", ii, true);
-                    string _system_contentType = SasaLib.Csv.GetFromCsvArrayList(CsvData, "system:contentType", ii, true);
+                    string _system_filename = Csv.GetFromCsvArrayList(CsvData, "system:filename", ii, true);
+                    string _system_contentsizebytes = Csv.GetFromCsvArrayList(CsvData, "system:contentsizebytes", ii, true);
+                    string _system_contentType = Csv.GetFromCsvArrayList(CsvData, "system:contentType", ii, true);
 
-                    string _system_editionnumber = SasaLib.Csv.GetFromCsvArrayList(CsvData, "system:editionnumber", ii, true);
-                    string _system_createdon = SasaLib.Csv.GetFromCsvArrayList(CsvData, "system:createdon", ii, true);
-                    string _system_status = SasaLib.Csv.GetFromCsvArrayList(CsvData, "system:status", ii, true);
+                    string _system_editionnumber = Csv.GetFromCsvArrayList(CsvData, "system:editionnumber", ii, true);
+                    string _system_createdon = Csv.GetFromCsvArrayList(CsvData, "system:createdon", ii, true);
+                    string _system_status = Csv.GetFromCsvArrayList(CsvData, "system:status", ii, true);
 
-                    string _system_latestEditionFlag = SasaLib.Csv.GetFromCsvArrayList(CsvData, "system:latesteditionflag", ii, true);
+                    string _system_latestEditionFlag = Csv.GetFromCsvArrayList(CsvData, "system:latesteditionflag", ii, true);
 
-                    string _user_torokubi = SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:torokubi", ii, true);
-                    string _user_drawingrevision = SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:drawingrevision", ii, true);
-                    string _user_guidticketcode = SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:guidticketcode", ii, true);
-                    string _user_partname = SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:partname", ii, true);
-                    string _user_description = SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:description", ii, true);
-                    string _user_modelcreationonorder = SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:modelcreationonorder", ii, true);
-                    CadType user_cadtype = GetCadtypes(SasaLib.Csv.GetFromCsvArrayList(CsvData, "user:cadtype", ii, true));
+                    string _user_torokubi = Csv.GetFromCsvArrayList(CsvData, "user:torokubi", ii, true);
+                    string _user_drawingrevision = Csv.GetFromCsvArrayList(CsvData, "user:drawingrevision", ii, true);
+                    string _user_guidticketcode = Csv.GetFromCsvArrayList(CsvData, "user:guidticketcode", ii, true);
+                    string _user_partname = Csv.GetFromCsvArrayList(CsvData, "user:partname", ii, true);
+                    string _user_description = Csv.GetFromCsvArrayList(CsvData, "user:description", ii, true);
+                    string _user_modelcreationonorder = Csv.GetFromCsvArrayList(CsvData, "user:modelcreationonorder", ii, true);
+                    CadType user_cadtype = GetCadtypes(Csv.GetFromCsvArrayList(CsvData, "user:cadtype", ii, true));
 
                     string arcSuitePrevewCreateString;
 
