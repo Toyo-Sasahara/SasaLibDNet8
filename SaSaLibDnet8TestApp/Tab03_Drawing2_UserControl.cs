@@ -1,5 +1,5 @@
 ﻿using SasaLib;
-//using StageServerRemote;
+using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab03_Drawing2_UserControl : UserControl
     {
         Form1 mainForm;
 
-        //ImageMagicWrapper imageMagic;
+        ImageMagicWrapper imageMagic;
 
         public Tab03_Drawing2_UserControl(Form1 form)
         {
@@ -107,9 +107,9 @@ namespace SasaLibTestApp
                 {
                     string fileName = openFileDialog1.FileName;
 
-                    //imageMagic = new ImageMagicWrapper(fileName, out bmp, ImageFormat.Bmp);
+                    imageMagic = new ImageMagicWrapper(fileName, out bmp, ImageFormat.Bmp);
 
-                    //pictureBox1.Image = bmp;
+                    pictureBox1.Image = bmp;
 
                 }
             }
@@ -167,9 +167,9 @@ namespace SasaLibTestApp
                 {
                     string fileName = openFileDialog1.FileName;
 
-                    //imageMagic = new ImageMagicWrapper(fileName, out bmp, ImageFormat.Bmp);
+                    imageMagic = new ImageMagicWrapper(fileName, out bmp, ImageFormat.Bmp);
 
-                    //pictureBox2.Image = bmp;
+                    pictureBox2.Image = bmp;
 
                 }
 
@@ -181,9 +181,9 @@ namespace SasaLibTestApp
         {
             System.Drawing.Bitmap bmp;
 
-            //imageMagic.Process2(out bmp, ImageFormat.Bmp, 400, 400, 10);
+            imageMagic.Process2(out bmp, ImageFormat.Bmp, 400, 400, 10);
 
-            //pictureBox2.Image = bmp;
+            pictureBox2.Image = bmp;
 
         }
 

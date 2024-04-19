@@ -1,5 +1,5 @@
 ﻿
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     partial class Tab06_StringProcessing_UserControl
     {

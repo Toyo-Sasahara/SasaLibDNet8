@@ -43,7 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AplicationOpenFile_button = new System.Windows.Forms.Button();
-            this.sasaLibBasicPageControl = new SasaLib.SasaLibBasicPageControl();
+            this.sasaLibBasicPageControl = new SasaLibBasicPageControl();
             this.ArcsuitePreviewForm_Msg_label = new System.Windows.Forms.Label();
             this.ArcSuite_Status_label = new System.Windows.Forms.Label();
             this.ArcSuitePreviewPictureBox = new System.Windows.Forms.PictureBox();

@@ -1,5 +1,5 @@
 ﻿
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     partial class Tab08_SolidworksPDM_UserControl
     {

@@ -1,8 +1,6 @@
 ﻿using SasaLib;
 using SasaLibPictureBoxControlLibrary;
-using SaSaLibTestApp.Properties;
-
-//using StageServerRemote;
+using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +12,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab02_Drawing1_UserControl : UserControl
     {
         Form1 mainForm;
 
         System.Drawing.Image[] globalImages;
-        System.Drawing.Image currentImage = Resources.TESTIMAGE_A4;
+        System.Drawing.Image currentImage = Properties.Resources.TESTIMAGE_A4;
 
         public Tab02_Drawing1_UserControl(Form1 form)
         {
@@ -217,7 +215,7 @@ namespace SasaLibTestApp
             }
             else
             {
-                imagePictureBox.Image = Resources.TESTIMAGE_A4;
+                imagePictureBox.Image = Properties.Resources.TESTIMAGE_A4;
             }
             SetImageInfo();
         }
@@ -416,7 +414,7 @@ namespace SasaLibTestApp
 
         private void button7_Click(object sender, EventArgs e)
         {
-           currentImage = Resources.TESTIMAGE_A4;
+           currentImage = Properties.Resources.TESTIMAGE_A4;
             imagePictureBox.Image = currentImage;
             SetImageInfo();
 

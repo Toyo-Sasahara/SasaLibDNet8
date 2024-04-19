@@ -1,5 +1,5 @@
-﻿//using DevExpress.Internal.WinApi.Windows.UI.Notifications;
-//using DevExpress.Office.PInvoke;
+﻿using DevExpress.Internal.WinApi.Windows.UI.Notifications;
+using DevExpress.Office.PInvoke;
 using SasaLib;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static SasaLib.Mail;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab15_Networks_UserControl : UserControl
     {

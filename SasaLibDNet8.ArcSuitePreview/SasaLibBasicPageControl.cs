@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Windows.UI.Xaml.Controls;
 
 namespace SasaLib
 {
 
-    public partial class SasaLibBasicPageControl: UserControl
+    public partial class SasaLibBasicPageControl: System.Windows.Forms.UserControl
     {
         public event EventHandler<EventArgs> CurrentPageChanged;
 

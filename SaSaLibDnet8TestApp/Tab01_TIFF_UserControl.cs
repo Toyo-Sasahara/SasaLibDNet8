@@ -1,7 +1,6 @@
 ﻿using SasaLib;
-
 using SasaLib.PrintConfig;
-//using SasaLib.ArcSuitePreview;
+using SasaLib.ArcSuitePreview;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,16 +8,15 @@ using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
-using SaSaLibTestApp.Properties;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab01_TIFF_UserControl : UserControl
     {
         /// フィールド変数
 
         System.Drawing.Image[] globalImages;
-        System.Drawing.Image currentImage = Resources.TESTIMAGE_A4;
+        System.Drawing.Image currentImage = Properties.Resources.TESTIMAGE_A4;
 
         string currnetPrinterName;
         List<string> globalPrinterCollection = new List<string>();
@@ -368,30 +366,30 @@ namespace SasaLibTestApp
         /// <param name="e"></param>
         private void ShowArcSuitePreviewForm_button_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    ArcsuitePreview arcSuitePreview = new SasaLib.ArcSuitePreview.ArcsuitePreview();
-            //    arcSuitePreview.temporalyDrawingImageFullFileName = ImageFileName;
+            try
+            {
+                ArcsuitePreview arcSuitePreview = new SasaLib.ArcSuitePreview.ArcsuitePreview();
+                arcSuitePreview.temporalyDrawingImageFullFileName = ImageFileName;
 
-            //    // NativeWindow クラスの初期化
-            //    NativeWindow owner = new System.Windows.Forms.NativeWindow();
+                // NativeWindow クラスの初期化
+                NativeWindow owner = new System.Windows.Forms.NativeWindow();
 
-            //    // Inventorアプリケーションのウィンドハンドル取得
-            //    //owner.AssignHandle((System.IntPtr)InventorApp.MainFrameHWND);
+                // Inventorアプリケーションのウィンドハンドル取得
+                //owner.AssignHandle((System.IntPtr)InventorApp.MainFrameHWND);
 
-            //    ArcSuitePreviewForm ArcSuitePreviewForm = new ArcSuitePreviewForm(new System.Windows.Forms.NativeWindow());
-            //    ArcSuitePreviewForm.DebugMode = checkBox1.Checked;
-            //    ArcSuitePreviewForm.Show();
+                ArcSuitePreviewForm ArcSuitePreviewForm = new ArcSuitePreviewForm(new System.Windows.Forms.NativeWindow());
+                ArcSuitePreviewForm.DebugMode = checkBox1.Checked;
+                ArcSuitePreviewForm.Show();
 
-            //    ArcSuitePreviewForm.Text = $"ダミー";
-            //    ArcSuitePreviewForm.PreviewSet(arcSuitePreview, "ダミー", "");
+                ArcSuitePreviewForm.Text = $"ダミー";
+                ArcSuitePreviewForm.PreviewSet(arcSuitePreview, "ダミー", "");
 
-            //    //ArcSuitePreviewForm_ButtonContextMenu.ArcSuitePreviewForm.PreviewSet()
-            //}
-            //catch (Exception ex)
-            //{
-            //    DebugConsole.WriteLine($"ArcSuitePreviewFormTest_Button()にて例外検知 {ex.Message}");
-            //}
+                //ArcSuitePreviewForm_ButtonContextMenu.ArcSuitePreviewForm.PreviewSet()
+            }
+            catch (Exception ex)
+            {
+                DebugConsole.WriteLine($"ArcSuitePreviewFormTest_Button()にて例外検知 {ex.Message}");
+            }
 
         }
 

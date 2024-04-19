@@ -1,7 +1,7 @@
 ﻿// EPDM.Interop.epdm.dll
 using SasaLib;
 using SasaLib.PrintConfig;
-//using SasaLib.SolidWorks;
+using SasaLib.SolidWorks;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,9 +9,9 @@ using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static SasaLib.MSIDLL_Utility;
+using static SasaLib.MSIDLL_Utility;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Form1 : Form
     {
@@ -47,13 +47,13 @@ namespace SasaLibTestApp
 
             AddTabPages(tabControl, "SysConfigurator", new Tab11_SysConfigurator_UserControl(this));
 
-            //AddTabPages(tabControl, "MSIDLL", new Tab10_MSIDLL_UserControl(this));
+            AddTabPages(tabControl, "MSIDLL", new Tab10_MSIDLL_UserControl(this));
 
             AddTabPages(tabControl, "MySQL", new Tab09_MySQL_UserControl(this));
 
             AddTabPages(tabControl, "SolidworksPDM", new Tab08_SolidworksPDM_UserControl(this));
 
-            //AddTabPages(tabControl, "AutoDeskVault", new Tab07_AutodeskVault_UserControl(this));
+            AddTabPages(tabControl, "AutoDeskVault", new Tab07_AutodeskVault_UserControl(this));
 
             AddTabPages(tabControl, "文字列加工", new Tab06_StringProcessing_UserControl(this));
 

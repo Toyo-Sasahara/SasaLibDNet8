@@ -11,7 +11,6 @@ using System.Diagnostics;
 using System.Threading;
 using System.Net.NetworkInformation;
 using System.Linq;
-using SasaLibDNet8;
 
 namespace SasaLib.ArcSuitePreview
 {
@@ -252,8 +251,8 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="CsvData"></param>
         /// <param name="delegateWriteLine"></param>
         /// <returns>
-        /// 検索結果が 1件以上存在する場合：List<ArcSuitePreview.ArcsuitePreview>を返す（.Count() > 0）
-        /// 検索結果が 0 の場合 List<ArcSuitePreview.ArcsuitePreview>を返す（.Count() == 0）
+        /// 検索結果が 1件以上存在する場合：List<SasaLib.ArcSuitePreview.ArcsuitePreview>を返す（.Count() > 0）
+        /// 検索結果が 0 の場合 List<SasaLib.ArcSuitePreview.ArcsuitePreview>を返す（.Count() == 0）
         /// 検索失敗の場合 null を返す
         /// </returns>
         private List<ArcSuitePreview.ArcsuitePreview> analyzeResultsCSV(ArrayList CsvData, SasaLibDelegateWriteLine delegateWriteLine = null)
@@ -424,7 +423,7 @@ namespace SasaLib.ArcSuitePreview
                     FullFileName = System.IO.Path.Combine(PreviewImageFolder, System.IO.Path.ChangeExtension(ZUBAN, "tif"));
                     delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) イメージのファイル名を組立ました :{FullFileName}");
 
-                    bool result =   FileFolder.RemoveFile(FullFileName);
+                    bool result = FileFolder.RemoveFile(FullFileName);
                     delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 念のためﾞ {FullFileName} を削除しました 結果:{result}");
 
                     img.Save(FullFileName);

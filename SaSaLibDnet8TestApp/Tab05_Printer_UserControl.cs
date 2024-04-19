@@ -1,7 +1,7 @@
 ﻿using SasaLib;
 using SasaLib.PrintConfig;
 //using SasaLib.Winlogon;
-//using StageServerRemote;
+using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,15 +16,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //using static SasaLib.Winlogon.ClsLogon;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using SaSaLibTestApp.Properties;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab05_Printer_UserControl : UserControl
     {
         Form1 mainForm;
 
-        System.Drawing.Image currentImage = Resources.TESTIMAGE_A4;
+        System.Drawing.Image currentImage = Properties.Resources.TESTIMAGE_A4;
 
         List<string> globalPrinterCollection = new List<string>();
 
@@ -362,18 +361,16 @@ namespace SasaLibTestApp
             }
 
 
-            var ps = new PrinterSettings();
-            // works fine
+            var ps = new PrinterSettings(); // works fine
             //using (var i = new ImpersonatedUser("Administrator", "SS", "Fuminano8"))
             //{
             //    // 印刷処理を実行
             //    printingObj.PrintImage(currnetPrinterName, currentPapserSize, currentLandScape, currentPaperSource);
             //}
 
-            var dummy = new WithFakeAccount("Administrator", "SS", "Fuminano8", true, () =>
-            {
-                printingObj.PrintImage(currnetPrinterName, currentPapserSize, currentLandScape, currentPaperSource);
-            });
         }
+
+
+
     }
 }

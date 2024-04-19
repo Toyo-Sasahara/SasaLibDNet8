@@ -1,5 +1,5 @@
 ﻿using SasaLib;
-//using StageServerRemote;
+using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab13_UserControl : UserControl
     {
@@ -91,7 +91,7 @@ namespace SasaLibTestApp
 
         private void StrongNameAssemblyTestButton_Click(object sender, EventArgs e)
         {
-            // アセンブリのファイルパスを取得する
+            //// アセンブリのファイルパスを取得する
             //var FullName = StrongNameAssemblyTest.Library.GetAsmFullName();
             //UpdateText($"FullName:{FullName}");
 

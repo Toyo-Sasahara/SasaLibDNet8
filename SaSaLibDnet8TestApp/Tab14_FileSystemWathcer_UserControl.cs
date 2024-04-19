@@ -1,6 +1,6 @@
-﻿//using DevExpress.XtraEditors.Senders;
+﻿using DevExpress.XtraEditors.Senders;
 using SasaLib;
-//using StageServerRemote;
+using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab14_FileSystemWathcer_UserControl : UserControl
     {
@@ -206,7 +206,7 @@ namespace SasaLibTestApp
 
 
 
-            FileFolder.CopyFile(e.FullPath, distFolder);
+            SasaLib.FileFolder.CopyFile(e.FullPath, distFolder);
 
         }
 

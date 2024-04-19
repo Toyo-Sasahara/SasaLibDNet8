@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5BFE76A1-28F4-4E28-BD4F-E570493431F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SaSaLibTestApp</RootNamespace>
+    <AssemblyName>SaSaLibTestApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>SaSaLib</ProductName>
+    <PublisherName>ささはそふと</PublisherName>
+    <SuiteName>テストツール</SuiteName>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7A06B3A93650FA90888D2A29A1B3DFC786A1BA71</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SaSaLibTestFrame_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autodesk.Connectivity.AdSSOWrapper">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.AdSSOWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Connectivity.Extensibility.Framework">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Connectivity.JobProcessor.Extensibility">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.JobProcessor.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Connectivity.LicenseWrapper">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.LicenseWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Connectivity.WebServices">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Connectivity.WebServices.WCF">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.WebServices.WCF.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.DataManagement.Client.Framework">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.DataManagement.Client.Framework.Forms">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.DataManagement.Server.Extensibility">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Data.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.1.Core">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Office.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Pdf.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Printing.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.1.Core">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.RichEdit.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v19.1.Core">
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Sparkline.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Utils.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraBars.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraEditors.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraGrid.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraLayout.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraPrinting.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraTreeList.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="EPDM.Interop.epdm">
+      <HintPath>..\SasaLib.SolidWorks\SolidworksSDK\SolidWorks2018 EPDM\EPDM.Interop.epdm.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EPDM.Interop.EPDMResultCode">
+      <HintPath>SasaLib.SolidWorks\SolidworksSDK\SolidWorks2018 EPDM\EPDM.Interop.EPDMResultCode.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="StrongNameAssemblyTest, Version=1.2.3.4, Culture=neutral, PublicKeyToken=879c1ae7f1675dbc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\StrongNameAssemblyTest\v4.0_1.2.3.4__879c1ae7f1675dbc\StrongNameAssemblyTest.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImpersonatedUser.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tab14_FileSystemWathcer_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab14_FileSystemWathcer_UserControl.Designer.cs">
+      <DependentUpon>Tab14_FileSystemWathcer_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab13_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab13_UserControl.Designer.cs">
+      <DependentUpon>Tab13_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab12_FileHandling_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab12_FileHandling_UserControl.Designer.cs">
+      <DependentUpon>Tab12_FileHandling_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab11_SysConfigurator_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab11_SysConfigurator_UserControl.Designer.cs">
+      <DependentUpon>Tab11_SysConfigurator_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab10_MSIDLL_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab10_MSIDLL_UserControl.Designer.cs">
+      <DependentUpon>Tab10_MSIDLL_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab09_MySQL_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab09_MySQL_UserControl.Designer.cs">
+      <DependentUpon>Tab09_MySQL_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab04_Drawing3_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab04_Drawing3_UserControl.Designer.cs">
+      <DependentUpon>Tab04_Drawing3_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab07_AutodeskVault_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab07_AutodeskVault_UserControl.Designer.cs">
+      <DependentUpon>Tab07_AutodeskVault_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab08_SolidworksPDM_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab08_SolidworksPDM_UserControl.Designer.cs">
+      <DependentUpon>Tab08_SolidworksPDM_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab06_StringProcessing_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab06_StringProcessing_UserControl.Designer.cs">
+      <DependentUpon>Tab06_StringProcessing_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab05_Printer_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab05_Printer_UserControl.Designer.cs">
+      <DependentUpon>Tab05_Printer_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab03_Drawing2_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab03_Drawing2_UserControl.Designer.cs">
+      <DependentUpon>Tab03_Drawing2_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab02_Drawing1_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab02_Drawing1_UserControl.Designer.cs">
+      <DependentUpon>Tab02_Drawing1_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab01_TIFF_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab01_TIFF_UserControl.Designer.cs">
+      <DependentUpon>Tab01_TIFF_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab15_Networks_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tab15_Networks_UserControl.Designer.cs">
+      <DependentUpon>Tab15_Networks_UserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab14_FileSystemWathcer_UserControl.resx">
+      <DependentUpon>Tab14_FileSystemWathcer_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab13_UserControl.resx">
+      <DependentUpon>Tab13_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab12_FileHandling_UserControl.resx">
+      <DependentUpon>Tab12_FileHandling_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab11_SysConfigurator_UserControl.resx">
+      <DependentUpon>Tab11_SysConfigurator_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab10_MSIDLL_UserControl.resx">
+      <DependentUpon>Tab10_MSIDLL_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab09_MySQL_UserControl.resx">
+      <DependentUpon>Tab09_MySQL_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab04_Drawing3_UserControl.resx">
+      <DependentUpon>Tab04_Drawing3_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab07_AutodeskVault_UserControl.resx">
+      <DependentUpon>Tab07_AutodeskVault_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab08_SolidworksPDM_UserControl.resx">
+      <DependentUpon>Tab08_SolidworksPDM_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab06_StringProcessing_UserControl.resx">
+      <DependentUpon>Tab06_StringProcessing_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab05_Printer_UserControl.resx">
+      <DependentUpon>Tab05_Printer_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab03_Drawing2_UserControl.resx">
+      <DependentUpon>Tab03_Drawing2_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab02_Drawing1_UserControl.resx">
+      <DependentUpon>Tab02_Drawing1_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab01_TIFF_UserControl.resx">
+      <DependentUpon>Tab01_TIFF_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tab15_Networks_UserControl.resx">
+      <DependentUpon>Tab15_Networks_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SwCommands">
+      <Guid>{0AC1DE9F-3FBC-4C25-868D-7D4E9139CCE0}</Guid>
+      <VersionMajor>26</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SwConst">
+      <Guid>{4687F359-55D0-4CD3-B6CF-2EB42C11F989}</Guid>
+      <VersionMajor>26</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TESTIMAGE-A4.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TESTIMAGE-A0.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TESTIMAGE-A1.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TESTIMAGE-A2.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TESTIMAGE-A3.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="マルチページ&amp;カラーTIFFサンプル.tif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\CommonTicketClassLibrary\CommonTicketClassLibrary.csproj">
+      <Project>{3109ce05-b1dc-41a2-887c-0c47fed2524f}</Project>
+      <Name>CommonTicketClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\FieldValueSet\FieldValueSet.csproj">
+      <Project>{da8719c0-7cf0-484f-b5a6-0b38e2c70072}</Project>
+      <Name>FieldValueSet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClient\RemoteClient.csproj">
+      <Project>{180d3675-0b69-48fd-9b9d-a96c360d25fa}</Project>
+      <Name>RemoteClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Barcode_src_1.0.0.21\BarcodeLib\BarcodeLib.csproj">
+      <Project>{f8646414-0c9c-49bb-9da3-3923bf78a398}</Project>
+      <Name>BarcodeLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeleteFilesTool\DeleteFilesTool.csproj">
+      <Project>{35474087-5807-4d6c-844a-7966f6891c67}</Project>
+      <Name>DeleteFilesTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QRCode\QRCodeLib\QRCodeLib.csproj">
+      <Project>{e98126b2-af17-4783-96b9-856d6744dca3}</Project>
+      <Name>QRCodeLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QRCode\QRCodeSampleApp\QRCodeSampleApp.csproj">
+      <Project>{41e1cfde-bfa0-4274-9267-b129b46bc312}</Project>
+      <Name>QRCodeSampleApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.Apprentice\SasaLib.Apprentice.csproj">
+      <Project>{4f2145ce-f27c-472a-be4f-d8cc077542ca}</Project>
+      <Name>SasaLib.Apprentice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.ArcSuitePreview\SasaLib.ArcSuitePreview.csproj">
+      <Project>{432e0f0a-6a0a-4e70-802d-1b6f391cfbf3}</Project>
+      <Name>SasaLib.ArcSuitePreview</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.Barcode\SasaLib.Barcode.csproj">
+      <Project>{8ee5891a-8ef4-437e-96ee-d015b814f1ba}</Project>
+      <Name>SasaLib.Barcode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.ExcelControl\SaSaLib.ExcelControl.csproj">
+      <Project>{a95daeee-d120-45d0-80cd-530001fdc482}</Project>
+      <Name>SaSaLib.ExcelControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLIb.Gzip\SasaLIb.Gzip.csproj">
+      <Project>{027411da-325c-4303-af98-294a38744065}</Project>
+      <Name>SasaLIb.Gzip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.ImageMagic\SasaLib.ImageMagic.csproj">
+      <Project>{4ca4aeb4-2c13-4a94-85d9-efce2328f800}</Project>
+      <Name>SasaLib.ImageMagic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.Inventor2022\SasaLib.Inventor2022.csproj">
+      <Project>{efd8ce98-defa-4dce-85b4-87c03929a6f5}</Project>
+      <Name>SasaLib.Inventor2022</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.MSIDLL\SasaLIb.MSIDLL.csproj">
+      <Project>{6309c97d-f62e-4f12-89c4-bcb22d6958c9}</Project>
+      <Name>SasaLIb.MSIDLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.MySQLConnect\SasaLib.MySQLConnect.csproj">
+      <Project>{67980bf7-8ed1-4707-8721-96efbc60a3ae}</Project>
+      <Name>SasaLib.MySQLConnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.NumberingSupport\SasaLib.NumberingSupport.csproj">
+      <Project>{cb330cca-732f-46f9-bc04-c74a4cd5aa04}</Project>
+      <Name>SasaLib.NumberingSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.PageControl\SasaLib.PageControl.csproj">
+      <Project>{a99e40d3-2bfd-4e95-9ebc-279f5aecaf30}</Project>
+      <Name>SasaLib.PageControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.PictureBoxControlLibrary\SasaLib.PictureBoxControlLibrary.csproj">
+      <Project>{633ecaa2-7944-479d-8784-4518d7681dd5}</Project>
+      <Name>SasaLib.PictureBoxControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.QRcode\SasaLib.QRcode.csproj">
+      <Project>{d2cd77be-02b7-4d1a-b193-3a07223e7474}</Project>
+      <Name>SasaLib.QRcode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.SolidWorks\SasaLib.SolidWorks.csproj">
+      <Project>{eea02290-7303-4ba6-b390-c2224d3916e5}</Project>
+      <Name>SasaLib.SolidWorks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.Speech\SasaLib.Speech.csproj">
+      <Project>{e903a5db-757f-46b0-8728-f898d8d327c2}</Project>
+      <Name>SasaLib.Speech</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.SysConfigurator\SasaLib.SysConfigurator.csproj">
+      <Project>{82ad80dc-e4f9-4528-936e-78bd5fcf6615}</Project>
+      <Name>SasaLib.SysConfigurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer.csproj">
+      <Project>{16059f11-65f8-4359-9ed6-c93002c098ac}</Project>
+      <Name>SasaLib.VariableControlPipeServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sasalib\SasaLib.csproj">
+      <Project>{c802aaee-9a95-4408-a042-3bffb00e20d9}</Project>
+      <Name>SasaLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\中国語文字列分割テスト\中国語文字列分割テスト.csproj">
+      <Project>{48081eac-047f-4054-bb91-fb423fccf805}</Project>
+      <Name>中国語文字列分割テスト</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\SasaLib.AssemblyVersion\SasaLib.AssemblyVersion.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\AdskLicensingSDK_*.dll" "$(TargetDir)" /y
+xcopy "C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\AdSSOServices.dll" "$(TargetDir)" /y
+xcopy "C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\SSOClient.config" "$(TargetDir)" /y</PreBuildEvent>
+  </PropertyGroup>
+</Project>

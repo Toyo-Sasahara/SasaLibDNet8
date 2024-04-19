@@ -1,5 +1,5 @@
 ﻿using SasaLib;
-//using StageServerRemote;
+using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab04_Drawing3_UserControl : UserControl
     {
@@ -109,7 +109,7 @@ namespace SasaLibTestApp
                     string fileName = openFileDialog1.FileName;
 
                     InputImageFIleTextBox.Text = fileName;
-                    TIFFFILEFULLPATHLabel.Text = FileFolder.ChangeExtension(fileName, "TIF");
+                    TIFFFILEFULLPATHLabel.Text = SasaLib.FileFolder.ChangeExtension(fileName, "TIF");
 
                     OrgPictureBox.Image = System.Drawing.Image.FromFile(fileName);
                 }

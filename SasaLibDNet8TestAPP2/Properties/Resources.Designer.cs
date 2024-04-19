@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SasaLib.ArcSuitePreview.Properties {
+namespace SasaLibDNet8TestAPP2.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SasaLib.ArcSuitePreview.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SasaLib.ArcSuitePreview.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SasaLibDNet8TestAPP2.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,12 @@ namespace SasaLib.ArcSuitePreview.Properties {
         }
         
         /// <summary>
-        ///   _検図 に類似しているローカライズされた文字列を検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static string ArcSuiteImageSuffix {
+        internal static System.Drawing.Bitmap Image1 {
             get {
-                return ResourceManager.GetString("ArcSuiteImageSuffix", resourceCulture);
+                object obj = ResourceManager.GetObject("Image1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

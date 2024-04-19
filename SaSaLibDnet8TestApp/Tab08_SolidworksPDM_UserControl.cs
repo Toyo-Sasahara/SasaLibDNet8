@@ -1,7 +1,7 @@
-﻿//using EPDM.Interop.epdm;
+﻿using EPDM.Interop.epdm;
 using SasaLib;
-//using SasaLib.SolidWorks;
-//using StageServerRemote;
+using SasaLib.SolidWorks;
+using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     public partial class Tab08_SolidworksPDM_UserControl : UserControl
     {
@@ -89,14 +89,14 @@ namespace SasaLibTestApp
 
         private void PDMSEARCH_button_Click(object sender, EventArgs e)
         {
-            //SwPDM swPDM = new SwPDM();
-            //List<string> results = new List<string>();
-            //var ans = swPDM.FindFullFilename(ref results, SEARCH_Text_textBox.Text);
+            SwPDM swPDM = new SwPDM();
+            List<string> results = new List<string>();
+            var ans = swPDM.FindFullFilename(ref results, SEARCH_Text_textBox.Text);
 
-            //foreach (var aa in results)
-            //{
-            //    LogWindowWriteLine(aa);
-            //}
+            foreach (var aa in results)
+            {
+                LogWindowWriteLine(aa);
+            }
         }
     }
 

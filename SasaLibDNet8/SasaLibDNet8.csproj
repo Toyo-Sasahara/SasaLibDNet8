@@ -46,6 +46,9 @@
     <Reference Include="PresentationFramework">
       <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationFramework.dll</HintPath>
     </Reference>
+    <Reference Include="SasaLibDelegateWriteLine">
+      <HintPath>..\..\SasaLibTestFrame\SasaLibDelegateWriteLine\bin\Debug\SasaLibDelegateWriteLine.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing">
       <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.dll</HintPath>
     </Reference>

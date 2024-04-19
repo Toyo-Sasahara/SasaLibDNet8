@@ -1,5 +1,5 @@
 ﻿
-namespace SasaLibTestApp
+namespace SaSaLibTestApp
 {
     partial class Tab03_Drawing2_UserControl
     {

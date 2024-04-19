@@ -29,374 +29,352 @@ namespace SasaLib.ArcSuitePreview
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.PreviewPanel = new System.Windows.Forms.Panel();
-            this.ArcSuite_Status_label = new System.Windows.Forms.Label();
-            this.Debug_panel = new System.Windows.Forms.Panel();
-            this.FindTimeStamp_label = new System.Windows.Forms.Label();
-            this.SCALE_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Y_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.X_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblDst = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ArcsuitePreviewForm_Msg_label = new System.Windows.Forms.Label();
-            this.ArcSuitePreviewPictureBox = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DrawingInfoLabel3 = new System.Windows.Forms.Label();
-            this.DrawingInfoLabel2 = new System.Windows.Forms.Label();
-            this.modelcreationonorder_label = new System.Windows.Forms.Label();
-            this.DrawingInfoLabel4 = new System.Windows.Forms.Label();
-            this.ArcSuiteCreatedOn_label = new System.Windows.Forms.Label();
-            this.TitleBlockScale_button = new System.Windows.Forms.Button();
-            this.Hide_button = new System.Windows.Forms.Button();
-            this.ArcSuiteWebSearchAndView_button = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ClipBoardTextSearch_button = new System.Windows.Forms.Button();
-            this.PreviewPanel.SuspendLayout();
-            this.Debug_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SCALE_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Y_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArcSuitePreviewPictureBox)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            PreviewPanel = new Panel();
+            ArcSuite_Status_label = new Label();
+            Debug_panel = new Panel();
+            FindTimeStamp_label = new Label();
+            SCALE_numericUpDown = new NumericUpDown();
+            Y_numericUpDown = new NumericUpDown();
+            X_numericUpDown = new NumericUpDown();
+            button1 = new Button();
+            label2 = new Label();
+            lblDst = new Label();
+            label1 = new Label();
+            ArcsuitePreviewForm_Msg_label = new Label();
+            ArcSuitePreviewPictureBox = new PictureBox();
+            groupBox1 = new GroupBox();
+            DrawingInfoLabel3 = new Label();
+            DrawingInfoLabel2 = new Label();
+            modelcreationonorder_label = new Label();
+            DrawingInfoLabel4 = new Label();
+            ArcSuiteCreatedOn_label = new Label();
+            TitleBlockScale_button = new Button();
+            Hide_button = new Button();
+            ArcSuiteWebSearchAndView_button = new Button();
+            toolTip1 = new ToolTip(components);
+            ClipBoardTextSearch_button = new Button();
+            PreviewPanel.SuspendLayout();
+            Debug_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SCALE_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Y_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)X_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ArcSuitePreviewPictureBox).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // PreviewPanel
             // 
-            this.PreviewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PreviewPanel.Controls.Add(this.ArcSuite_Status_label);
-            this.PreviewPanel.Controls.Add(this.Debug_panel);
-            this.PreviewPanel.Controls.Add(this.ArcsuitePreviewForm_Msg_label);
-            this.PreviewPanel.Controls.Add(this.ArcSuitePreviewPictureBox);
-            this.PreviewPanel.Location = new System.Drawing.Point(9, 9);
-            this.PreviewPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.PreviewPanel.Name = "PreviewPanel";
-            this.PreviewPanel.Size = new System.Drawing.Size(506, 338);
-            this.PreviewPanel.TabIndex = 12;
+            PreviewPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PreviewPanel.Controls.Add(ArcSuite_Status_label);
+            PreviewPanel.Controls.Add(Debug_panel);
+            PreviewPanel.Controls.Add(ArcsuitePreviewForm_Msg_label);
+            PreviewPanel.Controls.Add(ArcSuitePreviewPictureBox);
+            PreviewPanel.Location = new Point(10, 11);
+            PreviewPanel.Margin = new Padding(0);
+            PreviewPanel.Name = "PreviewPanel";
+            PreviewPanel.Size = new Size(590, 422);
+            PreviewPanel.TabIndex = 12;
             // 
             // ArcSuite_Status_label
             // 
-            this.ArcSuite_Status_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcSuite_Status_label.BackColor = System.Drawing.Color.Transparent;
-            this.ArcSuite_Status_label.Enabled = false;
-            this.ArcSuite_Status_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ArcSuite_Status_label.ForeColor = System.Drawing.Color.Red;
-            this.ArcSuite_Status_label.Location = new System.Drawing.Point(65, 223);
-            this.ArcSuite_Status_label.Name = "ArcSuite_Status_label";
-            this.ArcSuite_Status_label.Size = new System.Drawing.Size(403, 64);
-            this.ArcSuite_Status_label.TabIndex = 2;
-            this.ArcSuite_Status_label.Text = "...";
-            this.ArcSuite_Status_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            ArcSuite_Status_label.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ArcSuite_Status_label.BackColor = Color.Transparent;
+            ArcSuite_Status_label.Enabled = false;
+            ArcSuite_Status_label.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ArcSuite_Status_label.ForeColor = Color.Red;
+            ArcSuite_Status_label.Location = new Point(76, 279);
+            ArcSuite_Status_label.Margin = new Padding(4, 0, 4, 0);
+            ArcSuite_Status_label.Name = "ArcSuite_Status_label";
+            ArcSuite_Status_label.Size = new Size(470, 80);
+            ArcSuite_Status_label.TabIndex = 2;
+            ArcSuite_Status_label.Text = "...";
+            ArcSuite_Status_label.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Debug_panel
             // 
-            this.Debug_panel.Controls.Add(this.FindTimeStamp_label);
-            this.Debug_panel.Controls.Add(this.SCALE_numericUpDown);
-            this.Debug_panel.Controls.Add(this.Y_numericUpDown);
-            this.Debug_panel.Controls.Add(this.X_numericUpDown);
-            this.Debug_panel.Controls.Add(this.button1);
-            this.Debug_panel.Controls.Add(this.label2);
-            this.Debug_panel.Controls.Add(this.lblDst);
-            this.Debug_panel.Controls.Add(this.label1);
-            this.Debug_panel.Location = new System.Drawing.Point(12, 114);
-            this.Debug_panel.Name = "Debug_panel";
-            this.Debug_panel.Size = new System.Drawing.Size(400, 96);
-            this.Debug_panel.TabIndex = 21;
+            Debug_panel.Controls.Add(FindTimeStamp_label);
+            Debug_panel.Controls.Add(SCALE_numericUpDown);
+            Debug_panel.Controls.Add(Y_numericUpDown);
+            Debug_panel.Controls.Add(X_numericUpDown);
+            Debug_panel.Controls.Add(button1);
+            Debug_panel.Controls.Add(label2);
+            Debug_panel.Controls.Add(lblDst);
+            Debug_panel.Controls.Add(label1);
+            Debug_panel.Location = new Point(14, 142);
+            Debug_panel.Margin = new Padding(4, 4, 4, 4);
+            Debug_panel.Name = "Debug_panel";
+            Debug_panel.Size = new Size(467, 120);
+            Debug_panel.TabIndex = 21;
             // 
             // FindTimeStamp_label
             // 
-            this.FindTimeStamp_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FindTimeStamp_label.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.FindTimeStamp_label.Location = new System.Drawing.Point(7, 73);
-            this.FindTimeStamp_label.Name = "FindTimeStamp_label";
-            this.FindTimeStamp_label.Size = new System.Drawing.Size(221, 19);
-            this.FindTimeStamp_label.TabIndex = 34;
-            this.FindTimeStamp_label.Text = "-";
+            FindTimeStamp_label.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            FindTimeStamp_label.Font = new Font("MS UI Gothic", 9F);
+            FindTimeStamp_label.Location = new Point(8, 91);
+            FindTimeStamp_label.Margin = new Padding(4, 0, 4, 0);
+            FindTimeStamp_label.Name = "FindTimeStamp_label";
+            FindTimeStamp_label.Size = new Size(258, 24);
+            FindTimeStamp_label.TabIndex = 34;
+            FindTimeStamp_label.Text = "-";
             // 
             // SCALE_numericUpDown
             // 
-            this.SCALE_numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SCALE_numericUpDown.DecimalPlaces = 3;
-            this.SCALE_numericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.SCALE_numericUpDown.Location = new System.Drawing.Point(344, 50);
-            this.SCALE_numericUpDown.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.SCALE_numericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.SCALE_numericUpDown.Name = "SCALE_numericUpDown";
-            this.SCALE_numericUpDown.Size = new System.Drawing.Size(53, 19);
-            this.SCALE_numericUpDown.TabIndex = 33;
-            this.SCALE_numericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            SCALE_numericUpDown.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            SCALE_numericUpDown.DecimalPlaces = 3;
+            SCALE_numericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 196608 });
+            SCALE_numericUpDown.Location = new Point(401, 62);
+            SCALE_numericUpDown.Margin = new Padding(4, 4, 4, 4);
+            SCALE_numericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            SCALE_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 196608 });
+            SCALE_numericUpDown.Name = "SCALE_numericUpDown";
+            SCALE_numericUpDown.Size = new Size(62, 23);
+            SCALE_numericUpDown.TabIndex = 33;
+            SCALE_numericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // Y_numericUpDown
             // 
-            this.Y_numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Y_numericUpDown.Location = new System.Drawing.Point(297, 50);
-            this.Y_numericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.Y_numericUpDown.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            -2147483648});
-            this.Y_numericUpDown.Name = "Y_numericUpDown";
-            this.Y_numericUpDown.Size = new System.Drawing.Size(41, 19);
-            this.Y_numericUpDown.TabIndex = 32;
+            Y_numericUpDown.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Y_numericUpDown.Location = new Point(346, 62);
+            Y_numericUpDown.Margin = new Padding(4, 4, 4, 4);
+            Y_numericUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            Y_numericUpDown.Minimum = new decimal(new int[] { 10000, 0, 0, int.MinValue });
+            Y_numericUpDown.Name = "Y_numericUpDown";
+            Y_numericUpDown.Size = new Size(48, 23);
+            Y_numericUpDown.TabIndex = 32;
             // 
             // X_numericUpDown
             // 
-            this.X_numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.X_numericUpDown.Location = new System.Drawing.Point(248, 50);
-            this.X_numericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.X_numericUpDown.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            -2147483648});
-            this.X_numericUpDown.Name = "X_numericUpDown";
-            this.X_numericUpDown.Size = new System.Drawing.Size(41, 19);
-            this.X_numericUpDown.TabIndex = 31;
+            X_numericUpDown.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            X_numericUpDown.Location = new Point(289, 62);
+            X_numericUpDown.Margin = new Padding(4, 4, 4, 4);
+            X_numericUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            X_numericUpDown.Minimum = new decimal(new int[] { 10000, 0, 0, int.MinValue });
+            X_numericUpDown.Name = "X_numericUpDown";
+            X_numericUpDown.Size = new Size(48, 23);
+            X_numericUpDown.TabIndex = 31;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(248, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 18);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.Transparent;
+            button1.Location = new Point(289, 88);
+            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(174, 22);
+            button1.TabIndex = 30;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.label2.Location = new System.Drawing.Point(6, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 19);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "-";
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.Font = new Font("MS UI Gothic", 9F);
+            label2.Location = new Point(7, 66);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(258, 24);
+            label2.TabIndex = 29;
+            label2.Text = "-";
             // 
             // lblDst
             // 
-            this.lblDst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDst.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDst.Location = new System.Drawing.Point(7, 6);
-            this.lblDst.Name = "lblDst";
-            this.lblDst.Size = new System.Drawing.Size(390, 19);
-            this.lblDst.TabIndex = 20;
-            this.lblDst.Text = "ﾎｲｰﾙﾎﾞﾀﾝﾄﾞﾗｯｸﾞで移動。ﾎｲｰﾙ回転で拡縮. ";
+            lblDst.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            lblDst.Font = new Font("MS UI Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            lblDst.Location = new Point(8, 8);
+            lblDst.Margin = new Padding(4, 0, 4, 0);
+            lblDst.Name = "lblDst";
+            lblDst.Size = new Size(455, 24);
+            lblDst.TabIndex = 20;
+            lblDst.Text = "ﾎｲｰﾙﾎﾞﾀﾝﾄﾞﾗｯｸﾞで移動。ﾎｲｰﾙ回転で拡縮. ";
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.label1.Location = new System.Drawing.Point(6, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 19);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "-";
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Font = new Font("MS UI Gothic", 9F);
+            label1.Location = new Point(7, 32);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(258, 24);
+            label1.TabIndex = 28;
+            label1.Text = "-";
             // 
             // ArcsuitePreviewForm_Msg_label
             // 
-            this.ArcsuitePreviewForm_Msg_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcsuitePreviewForm_Msg_label.BackColor = System.Drawing.Color.Transparent;
-            this.ArcsuitePreviewForm_Msg_label.Enabled = false;
-            this.ArcsuitePreviewForm_Msg_label.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ArcsuitePreviewForm_Msg_label.Location = new System.Drawing.Point(12, 15);
-            this.ArcsuitePreviewForm_Msg_label.Name = "ArcsuitePreviewForm_Msg_label";
-            this.ArcsuitePreviewForm_Msg_label.Size = new System.Drawing.Size(481, 156);
-            this.ArcsuitePreviewForm_Msg_label.TabIndex = 1;
-            this.ArcsuitePreviewForm_Msg_label.Text = "しばらくお待ちください";
-            this.ArcsuitePreviewForm_Msg_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            ArcsuitePreviewForm_Msg_label.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ArcsuitePreviewForm_Msg_label.BackColor = Color.Transparent;
+            ArcsuitePreviewForm_Msg_label.Enabled = false;
+            ArcsuitePreviewForm_Msg_label.Font = new Font("メイリオ", 18F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ArcsuitePreviewForm_Msg_label.Location = new Point(14, 19);
+            ArcsuitePreviewForm_Msg_label.Margin = new Padding(4, 0, 4, 0);
+            ArcsuitePreviewForm_Msg_label.Name = "ArcsuitePreviewForm_Msg_label";
+            ArcsuitePreviewForm_Msg_label.Size = new Size(561, 195);
+            ArcsuitePreviewForm_Msg_label.TabIndex = 1;
+            ArcsuitePreviewForm_Msg_label.Text = "しばらくお待ちください";
+            ArcsuitePreviewForm_Msg_label.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ArcSuitePreviewPictureBox
             // 
-            this.ArcSuitePreviewPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArcSuitePreviewPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.ArcSuitePreviewPictureBox.Name = "ArcSuitePreviewPictureBox";
-            this.ArcSuitePreviewPictureBox.Size = new System.Drawing.Size(506, 338);
-            this.ArcSuitePreviewPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ArcSuitePreviewPictureBox.TabIndex = 0;
-            this.ArcSuitePreviewPictureBox.TabStop = false;
-            this.ArcSuitePreviewPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.ArcSuitePreviewPictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.ArcSuitePreviewPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            ArcSuitePreviewPictureBox.Dock = DockStyle.Fill;
+            ArcSuitePreviewPictureBox.Location = new Point(0, 0);
+            ArcSuitePreviewPictureBox.Margin = new Padding(4, 4, 4, 4);
+            ArcSuitePreviewPictureBox.Name = "ArcSuitePreviewPictureBox";
+            ArcSuitePreviewPictureBox.Size = new Size(590, 422);
+            ArcSuitePreviewPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            ArcSuitePreviewPictureBox.TabIndex = 0;
+            ArcSuitePreviewPictureBox.TabStop = false;
+            ArcSuitePreviewPictureBox.MouseDown += pictureBox1_MouseDown;
+            ArcSuitePreviewPictureBox.MouseMove += pictureBox1_MouseMove;
+            ArcSuitePreviewPictureBox.MouseUp += pictureBox1_MouseUp;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.DrawingInfoLabel3);
-            this.groupBox1.Controls.Add(this.DrawingInfoLabel2);
-            this.groupBox1.Controls.Add(this.modelcreationonorder_label);
-            this.groupBox1.Controls.Add(this.DrawingInfoLabel4);
-            this.groupBox1.Controls.Add(this.ArcSuiteCreatedOn_label);
-            this.groupBox1.Location = new System.Drawing.Point(12, 350);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 139);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ｱｰｸｽｲｰﾄでの属性値";
+            groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox1.Controls.Add(DrawingInfoLabel3);
+            groupBox1.Controls.Add(DrawingInfoLabel2);
+            groupBox1.Controls.Add(modelcreationonorder_label);
+            groupBox1.Controls.Add(DrawingInfoLabel4);
+            groupBox1.Controls.Add(ArcSuiteCreatedOn_label);
+            groupBox1.Location = new Point(14, 438);
+            groupBox1.Margin = new Padding(4, 4, 4, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4, 4, 4, 4);
+            groupBox1.Size = new Size(442, 174);
+            groupBox1.TabIndex = 25;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "ｱｰｸｽｲｰﾄでの属性値";
             // 
             // DrawingInfoLabel3
             // 
-            this.DrawingInfoLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawingInfoLabel3.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.DrawingInfoLabel3.Location = new System.Drawing.Point(6, 67);
-            this.DrawingInfoLabel3.Name = "DrawingInfoLabel3";
-            this.DrawingInfoLabel3.Size = new System.Drawing.Size(367, 18);
-            this.DrawingInfoLabel3.TabIndex = 19;
-            this.DrawingInfoLabel3.Text = "---";
+            DrawingInfoLabel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DrawingInfoLabel3.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            DrawingInfoLabel3.Location = new Point(7, 84);
+            DrawingInfoLabel3.Margin = new Padding(4, 0, 4, 0);
+            DrawingInfoLabel3.Name = "DrawingInfoLabel3";
+            DrawingInfoLabel3.Size = new Size(428, 22);
+            DrawingInfoLabel3.TabIndex = 19;
+            DrawingInfoLabel3.Text = "---";
             // 
             // DrawingInfoLabel2
             // 
-            this.DrawingInfoLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawingInfoLabel2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.DrawingInfoLabel2.Location = new System.Drawing.Point(6, 44);
-            this.DrawingInfoLabel2.Name = "DrawingInfoLabel2";
-            this.DrawingInfoLabel2.Size = new System.Drawing.Size(367, 18);
-            this.DrawingInfoLabel2.TabIndex = 16;
-            this.DrawingInfoLabel2.Text = "---";
+            DrawingInfoLabel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DrawingInfoLabel2.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            DrawingInfoLabel2.Location = new Point(7, 55);
+            DrawingInfoLabel2.Margin = new Padding(4, 0, 4, 0);
+            DrawingInfoLabel2.Name = "DrawingInfoLabel2";
+            DrawingInfoLabel2.Size = new Size(428, 22);
+            DrawingInfoLabel2.TabIndex = 16;
+            DrawingInfoLabel2.Text = "---";
             // 
             // modelcreationonorder_label
             // 
-            this.modelcreationonorder_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modelcreationonorder_label.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.modelcreationonorder_label.Location = new System.Drawing.Point(6, 23);
-            this.modelcreationonorder_label.Name = "modelcreationonorder_label";
-            this.modelcreationonorder_label.Size = new System.Drawing.Size(367, 18);
-            this.modelcreationonorder_label.TabIndex = 17;
-            this.modelcreationonorder_label.Text = "---";
+            modelcreationonorder_label.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            modelcreationonorder_label.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            modelcreationonorder_label.Location = new Point(7, 29);
+            modelcreationonorder_label.Margin = new Padding(4, 0, 4, 0);
+            modelcreationonorder_label.Name = "modelcreationonorder_label";
+            modelcreationonorder_label.Size = new Size(428, 22);
+            modelcreationonorder_label.TabIndex = 17;
+            modelcreationonorder_label.Text = "---";
             // 
             // DrawingInfoLabel4
             // 
-            this.DrawingInfoLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawingInfoLabel4.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.DrawingInfoLabel4.Location = new System.Drawing.Point(6, 113);
-            this.DrawingInfoLabel4.Name = "DrawingInfoLabel4";
-            this.DrawingInfoLabel4.Size = new System.Drawing.Size(367, 18);
-            this.DrawingInfoLabel4.TabIndex = 18;
-            this.DrawingInfoLabel4.Text = "---";
+            DrawingInfoLabel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DrawingInfoLabel4.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            DrawingInfoLabel4.Location = new Point(7, 141);
+            DrawingInfoLabel4.Margin = new Padding(4, 0, 4, 0);
+            DrawingInfoLabel4.Name = "DrawingInfoLabel4";
+            DrawingInfoLabel4.Size = new Size(428, 22);
+            DrawingInfoLabel4.TabIndex = 18;
+            DrawingInfoLabel4.Text = "---";
             // 
             // ArcSuiteCreatedOn_label
             // 
-            this.ArcSuiteCreatedOn_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcSuiteCreatedOn_label.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ArcSuiteCreatedOn_label.Location = new System.Drawing.Point(6, 90);
-            this.ArcSuiteCreatedOn_label.Name = "ArcSuiteCreatedOn_label";
-            this.ArcSuiteCreatedOn_label.Size = new System.Drawing.Size(367, 18);
-            this.ArcSuiteCreatedOn_label.TabIndex = 21;
-            this.ArcSuiteCreatedOn_label.Text = "---";
+            ArcSuiteCreatedOn_label.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ArcSuiteCreatedOn_label.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ArcSuiteCreatedOn_label.Location = new Point(7, 112);
+            ArcSuiteCreatedOn_label.Margin = new Padding(4, 0, 4, 0);
+            ArcSuiteCreatedOn_label.Name = "ArcSuiteCreatedOn_label";
+            ArcSuiteCreatedOn_label.Size = new Size(428, 22);
+            ArcSuiteCreatedOn_label.TabIndex = 21;
+            ArcSuiteCreatedOn_label.Text = "---";
             // 
             // TitleBlockScale_button
             // 
-            this.TitleBlockScale_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TitleBlockScale_button.Location = new System.Drawing.Point(417, 353);
-            this.TitleBlockScale_button.Name = "TitleBlockScale_button";
-            this.TitleBlockScale_button.Size = new System.Drawing.Size(98, 28);
-            this.TitleBlockScale_button.TabIndex = 25;
-            this.TitleBlockScale_button.Text = "右下部拡大";
-            this.TitleBlockScale_button.UseVisualStyleBackColor = true;
-            this.TitleBlockScale_button.Click += new System.EventHandler(this.TitleBlockScale_button_Click);
+            TitleBlockScale_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            TitleBlockScale_button.Location = new Point(486, 441);
+            TitleBlockScale_button.Margin = new Padding(4, 4, 4, 4);
+            TitleBlockScale_button.Name = "TitleBlockScale_button";
+            TitleBlockScale_button.Size = new Size(114, 35);
+            TitleBlockScale_button.TabIndex = 25;
+            TitleBlockScale_button.Text = "右下部拡大";
+            TitleBlockScale_button.UseVisualStyleBackColor = true;
+            TitleBlockScale_button.Click += TitleBlockScale_button_Click;
             // 
             // Hide_button
             // 
-            this.Hide_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hide_button.Location = new System.Drawing.Point(417, 463);
-            this.Hide_button.Name = "Hide_button";
-            this.Hide_button.Size = new System.Drawing.Size(98, 28);
-            this.Hide_button.TabIndex = 26;
-            this.Hide_button.Text = "閉じる";
-            this.Hide_button.UseVisualStyleBackColor = true;
-            this.Hide_button.Click += new System.EventHandler(this.Hide_button_Click);
+            Hide_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Hide_button.Location = new Point(486, 579);
+            Hide_button.Margin = new Padding(4, 4, 4, 4);
+            Hide_button.Name = "Hide_button";
+            Hide_button.Size = new Size(114, 35);
+            Hide_button.TabIndex = 26;
+            Hide_button.Text = "閉じる";
+            Hide_button.UseVisualStyleBackColor = true;
+            Hide_button.Click += Hide_button_Click;
             // 
             // ArcSuiteWebSearchAndView_button
             // 
-            this.ArcSuiteWebSearchAndView_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcSuiteWebSearchAndView_button.Location = new System.Drawing.Point(417, 394);
-            this.ArcSuiteWebSearchAndView_button.Name = "ArcSuiteWebSearchAndView_button";
-            this.ArcSuiteWebSearchAndView_button.Size = new System.Drawing.Size(98, 28);
-            this.ArcSuiteWebSearchAndView_button.TabIndex = 27;
-            this.ArcSuiteWebSearchAndView_button.Text = "Web版で再検索";
-            this.ArcSuiteWebSearchAndView_button.UseVisualStyleBackColor = true;
-            this.ArcSuiteWebSearchAndView_button.Click += new System.EventHandler(this.ArcSuiteWebSearchAndView_button_Click);
+            ArcSuiteWebSearchAndView_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ArcSuiteWebSearchAndView_button.Location = new Point(486, 492);
+            ArcSuiteWebSearchAndView_button.Margin = new Padding(4, 4, 4, 4);
+            ArcSuiteWebSearchAndView_button.Name = "ArcSuiteWebSearchAndView_button";
+            ArcSuiteWebSearchAndView_button.Size = new Size(114, 35);
+            ArcSuiteWebSearchAndView_button.TabIndex = 27;
+            ArcSuiteWebSearchAndView_button.Text = "Web版で再検索";
+            ArcSuiteWebSearchAndView_button.UseVisualStyleBackColor = true;
+            ArcSuiteWebSearchAndView_button.Click += ArcSuiteWebSearchAndView_button_Click;
             // 
             // ClipBoardTextSearch_button
             // 
-            this.ClipBoardTextSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClipBoardTextSearch_button.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.ClipBoardTextSearch_button.Location = new System.Drawing.Point(417, 425);
-            this.ClipBoardTextSearch_button.Name = "ClipBoardTextSearch_button";
-            this.ClipBoardTextSearch_button.Size = new System.Drawing.Size(98, 33);
-            this.ClipBoardTextSearch_button.TabIndex = 29;
-            this.ClipBoardTextSearch_button.Text = "ｸﾘｯﾌﾟﾎﾞｰﾄﾞ\r\n文字列を検索";
-            this.ClipBoardTextSearch_button.UseVisualStyleBackColor = false;
-            this.ClipBoardTextSearch_button.Click += new System.EventHandler(this.ClipBoardTextSearch_button_Click);
+            ClipBoardTextSearch_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ClipBoardTextSearch_button.Font = new Font("MS UI Gothic", 9F);
+            ClipBoardTextSearch_button.Location = new Point(486, 531);
+            ClipBoardTextSearch_button.Margin = new Padding(4, 4, 4, 4);
+            ClipBoardTextSearch_button.Name = "ClipBoardTextSearch_button";
+            ClipBoardTextSearch_button.Size = new Size(114, 41);
+            ClipBoardTextSearch_button.TabIndex = 29;
+            ClipBoardTextSearch_button.Text = "ｸﾘｯﾌﾟﾎﾞｰﾄﾞ\r\n文字列を検索";
+            ClipBoardTextSearch_button.UseVisualStyleBackColor = false;
+            ClipBoardTextSearch_button.Click += ClipBoardTextSearch_button_Click;
             // 
             // ArcSuitePreviewOnlyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 501);
-            this.ControlBox = false;
-            this.Controls.Add(this.ClipBoardTextSearch_button);
-            this.Controls.Add(this.ArcSuiteWebSearchAndView_button);
-            this.Controls.Add(this.Hide_button);
-            this.Controls.Add(this.TitleBlockScale_button);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.PreviewPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "ArcSuitePreviewOnlyForm";
-            this.Text = "■東陽ﾂｰﾙ ArcSuite登録済み図面";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArcSuitePreviewForm_FormClosing);
-            this.Load += new System.EventHandler(this.ArcSuitePreviewForm_Load);
-            this.Shown += new System.EventHandler(this.ArcSuitePreviewForm_Shown);
-            this.PreviewPanel.ResumeLayout(false);
-            this.Debug_panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SCALE_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Y_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.X_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArcSuitePreviewPictureBox)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(611, 626);
+            ControlBox = false;
+            Controls.Add(ClipBoardTextSearch_button);
+            Controls.Add(ArcSuiteWebSearchAndView_button);
+            Controls.Add(Hide_button);
+            Controls.Add(TitleBlockScale_button);
+            Controls.Add(groupBox1);
+            Controls.Add(PreviewPanel);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "ArcSuitePreviewOnlyForm";
+            Text = "■東陽ﾂｰﾙ ArcSuite登録済み図面";
+            FormClosing += ArcSuitePreviewForm_FormClosing;
+            Load += ArcSuitePreviewForm_Load;
+            Shown += ArcSuitePreviewForm_Shown;
+            PreviewPanel.ResumeLayout(false);
+            Debug_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)SCALE_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Y_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)X_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ArcSuitePreviewPictureBox).EndInit();
+            groupBox1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

@@ -1,4 +1,4 @@
-﻿namespace SasaLibTestApp
+﻿namespace SaSaLibTestApp
 {
     partial class Form1
     {

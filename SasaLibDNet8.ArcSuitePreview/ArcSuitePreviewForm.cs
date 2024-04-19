@@ -1,6 +1,4 @@
 ﻿using SasaLib.NumberingSupport;
-using SasaLib;
-using SasaLib.Eventlog;
 using StageServerRemote;
 using System;
 using System.Diagnostics;
@@ -9,8 +7,6 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SasaLib;
-using SasaLibDNet8;
 
 namespace SasaLib.ArcSuitePreview
 {
