@@ -75,7 +75,7 @@ namespace SasaLib.NumberingSupport
                 NumberingRecordAvaliableFinulAnser = false;
                 findMessage = null;
 
-                if (SasaLib.Net.CheckPing(this.NumberingServerName) == false)
+                if (Net.CheckPing(this.NumberingServerName) == false)
                 {
                     delegateWriteLine($"※CheckAcquiredNumbered(..) 採番ｻｰﾊﾞｰ{this.NumberingServerName} はPINGに応答しませんでした。falseで抜けます");
                     return false;

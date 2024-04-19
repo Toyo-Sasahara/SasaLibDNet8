@@ -206,7 +206,7 @@ namespace SasaLibTestApp
 
 
 
-            SasaLib.FileFolder.CopyFile(e.FullPath, distFolder);
+            FileFolder.CopyFile(e.FullPath, distFolder);
 
         }
 

@@ -30,7 +30,7 @@ namespace SasaLib.NumberingSupport
             bool removeresult;
             if (remake)
             {
-                removeresult = SasaLib.FileFolder.RemoveFile(materialCodeConfigFullPath);
+                removeresult = FileFolder.RemoveFile(materialCodeConfigFullPath);
             }
 
             System.IO.StreamReader sr = null;
@@ -73,7 +73,7 @@ namespace SasaLib.NumberingSupport
             catch (Exception ex)
             {
                 LogWrite($"※MaterialCodeConfigWork.PreparationConfigData(...)で例外発生 {ex.Message} {ex.InnerException} ");
-                SasaLib.Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※MaterialCodeConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{materialCodeConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
+                Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※MaterialCodeConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{materialCodeConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
                 sr.Close();
 
                 return false;
@@ -226,13 +226,13 @@ namespace SasaLib.NumberingSupport
 
             List<MaterialCodeData> matchMaterialCodeDatas = new List<MaterialCodeData>();
 
-            MATERIALNAME = SasaLib.StringUtil.Zen2Han(MATERIALNAME);
+            MATERIALNAME = StringUtil.Zen2Han(MATERIALNAME);
 
             string MATERIALCODE = null;
 
             foreach (var MaterialCodeData in MaterialCodeConfig.Config.MaterialCodeDatas)
             {
-                string pattern = SasaLib.StringUtil.Zen2Han(MaterialCodeData.Pattern);
+                string pattern = StringUtil.Zen2Han(MaterialCodeData.Pattern);
 
                 bool result = Regex.IsMatch(MATERIALNAME, pattern, RegexOptions.IgnoreCase);
                 if (result == true)

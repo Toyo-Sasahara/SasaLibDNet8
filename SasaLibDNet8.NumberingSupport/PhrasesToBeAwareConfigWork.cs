@@ -26,7 +26,7 @@ namespace SasaLib.NumberingSupport
             bool removeresult;
             if (remake)
             {
-                removeresult = SasaLib.FileFolder.RemoveFile(configFIleFullPath);
+                removeresult = FileFolder.RemoveFile(configFIleFullPath);
             }
 
             System.IO.StreamReader sr = null;
@@ -55,7 +55,7 @@ namespace SasaLib.NumberingSupport
             catch (Exception ex)
             {
                 LogWrite($"※PhrasesToBeAwareConfigWork.PreparationConfigData(...)で例外発生 {ex.Message} {ex.InnerException} ");
-                SasaLib.Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※PhrasesToBeAwareConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{configFIleFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
+                Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※PhrasesToBeAwareConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{configFIleFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
                 sr.Close();
 
                 return false;

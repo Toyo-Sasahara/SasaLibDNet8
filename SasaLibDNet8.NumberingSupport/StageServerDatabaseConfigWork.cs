@@ -27,7 +27,7 @@ namespace SasaLib.NumberingSupport
             bool removeresult;
             if (remake)
             {
-                removeresult = SasaLib.FileFolder.RemoveFile(stageServerDatabaseConfigFullPath);
+                removeresult = FileFolder.RemoveFile(stageServerDatabaseConfigFullPath);
             }
 
             System.IO.StreamReader sr = null;
@@ -56,7 +56,7 @@ namespace SasaLib.NumberingSupport
             catch (Exception ex)
             {
                 LogWrite($"※StageServerDatabaseConfigWork.PreparationConfigData(...)で例外発生 {ex.Message} {ex.InnerException} ");
-                SasaLib.Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※StageServerDatabaseConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{stageServerDatabaseConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
+                Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※StageServerDatabaseConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{stageServerDatabaseConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
                 sr.Close();
 
                 return false;
@@ -242,7 +242,7 @@ namespace SasaLib.NumberingSupport
                 using (StreamWriter sw = new StreamWriter(stageServerDatabaseConfigFullPath, false, Encoding.UTF8))
                 {
                     serializer.Serialize(sw, StageServerDatabaseConfig.Config);
-                    SasaLib.Eventlog.Log.WriteEntry("ToyoSTAGESERVICEDATABASEconfig", EventLogEntryType.Information, 9100,
+                    Eventlog.Log.WriteEntry("ToyoSTAGESERVICEDATABASEconfig", EventLogEntryType.Information, 9100,
                         $"図面承認・登録システム {AssemblyInternalName}\nSave() 設定ファイル {stageServerDatabaseConfigFullPath} を現在の変数で保存しました");
                 }
             }

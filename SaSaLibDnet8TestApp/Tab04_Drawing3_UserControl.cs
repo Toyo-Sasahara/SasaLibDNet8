@@ -109,7 +109,7 @@ namespace SasaLibTestApp
                     string fileName = openFileDialog1.FileName;
 
                     InputImageFIleTextBox.Text = fileName;
-                    TIFFFILEFULLPATHLabel.Text = SasaLib.FileFolder.ChangeExtension(fileName, "TIF");
+                    TIFFFILEFULLPATHLabel.Text = FileFolder.ChangeExtension(fileName, "TIF");
 
                     OrgPictureBox.Image = System.Drawing.Image.FromFile(fileName);
                 }

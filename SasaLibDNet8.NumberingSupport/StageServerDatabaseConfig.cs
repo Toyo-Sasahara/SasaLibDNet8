@@ -73,7 +73,7 @@ namespace SasaLib.NumberingSupport
             }
             catch(Exception ex)
             {
-                SasaLib.Eventlog.Log.WriteEntry("StageServerDatabaseConfig.DrawingClassEnum", EventLogEntryType.Error, 0, $"※StageServerDatabaseConfig.DrawingClassEnum(...) 。例外発生{ex.Message}");
+                Eventlog.Log.WriteEntry("StageServerDatabaseConfig.DrawingClassEnum", EventLogEntryType.Error, 0, $"※StageServerDatabaseConfig.DrawingClassEnum(...) 。例外発生{ex.Message}");
 
                 return DrawingClassEnum.Unknown;
 

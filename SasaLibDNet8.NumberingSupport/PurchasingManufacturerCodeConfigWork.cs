@@ -30,7 +30,7 @@ namespace SasaLib.NumberingSupport
             bool removeresult;
             if (remake)
             {
-                removeresult = SasaLib.FileFolder.RemoveFile(purchasingManufacturerCodeConfigFullPath);
+                removeresult = FileFolder.RemoveFile(purchasingManufacturerCodeConfigFullPath);
             }
 
             System.IO.StreamReader sr = null;
@@ -59,7 +59,7 @@ namespace SasaLib.NumberingSupport
             catch (Exception ex)
             {
                 LogWrite($"※PurchasingManufacturerCodeConfigWork.PreparationConfigData(...)で例外発生 {ex.Message} {ex.InnerException} ");
-                SasaLib.Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※PurchasingManufacturerCodeConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{purchasingManufacturerCodeConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
+                Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※PurchasingManufacturerCodeConfigWork.PreparationConfigData(...)で例外発生 設定ﾌｧｲﾙ{purchasingManufacturerCodeConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
                 sr.Close();
 
                 PurchasingManufacturerCodeConfig.Config = new PurchasingManufacturerCodeConfig();
@@ -135,12 +135,12 @@ namespace SasaLib.NumberingSupport
         {
             if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
 
-            NAME = SasaLib.StringUtil.Zen2Han(NAME);
+            NAME = StringUtil.Zen2Han(NAME);
 
             string CODE = null;
             foreach (var PurchasingManufacturer in PurchasingManufacturerCodeConfig.Config.PurchasingManufacturerDatas)
             {
-                string pattern = SasaLib.StringUtil.Zen2Han(PurchasingManufacturer.Pattern);
+                string pattern = StringUtil.Zen2Han(PurchasingManufacturer.Pattern);
 
                 bool result = Regex.IsMatch(NAME, pattern, RegexOptions.IgnoreCase);
                 if (result == true)

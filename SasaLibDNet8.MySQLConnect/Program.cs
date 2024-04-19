@@ -79,7 +79,7 @@ namespace SasaLibMySQLConnect
     //                   Console.WriteLine($"バージョン番号={versionNo}");
 
     //                   // SQLを実行します。
-    //                   byte[] NAMEBYTE = SasaLib.StringUtil.StringToSystemByteArraySJIS("");
+    //                   byte[] NAMEBYTE = StringUtil.StringToSystemByteArraySJIS("");
     //                   //command.CommandText = "SET NAMES binary;SELECT * FROM t01prefecture WHERE PREF_NAME LIKE 'XX-1234%';";
     //                   command.CommandText = "SET NAMES binary;SELECT * FROM t01prefecture WHERE PREF_YOTEI LIKE '笹%';";
 
@@ -98,10 +98,10 @@ namespace SasaLibMySQLConnect
     //                       Console.WriteLine($"{aa["PREF_CD"]},{STR(aa, "PREF_NAME")},{STR(aa, "PREF_RL")},{STR(aa, "PREF_YOTEI")},{STR(aa, "PREF_HYOU")},{aa["PREF_DATE"]},{STR(aa, "PREF_PLUS")}");
 
     //                       //Console.WriteLine($"{results["PREF_CD"]} {STR("PREF_NAME")} {STR("PREF_CUSTOMER")}  {STR("PREF_MATHINE")} {STR("PREF_YOTEI")}");
-    //                       //                        Console.WriteLine($"{SasaLib.StringUtil.SystemByteArraySJIStoString(results["PREF_NAME"])}");
-    //                       //                      Console.WriteLine($"{SasaLib.StringUtil.SystemByteArraySJIStoString(results["PREF_CUSTOMER"])}");
+    //                       //                        Console.WriteLine($"{StringUtil.SystemByteArraySJIStoString(results["PREF_NAME"])}");
+    //                       //                      Console.WriteLine($"{StringUtil.SystemByteArraySJIStoString(results["PREF_CUSTOMER"])}");
     //                       //  Console.WriteLine($"");
-    //                       //    Console.WriteLine($"{SasaLib.StringUtil.SystemByteArraySJIStoString(results["PREF_YOTEI"])}");
+    //                       //    Console.WriteLine($"{StringUtil.SystemByteArraySJIStoString(results["PREF_YOTEI"])}");
     //                       Console.WriteLine($"---------------------------------------\n");
     //                   }
 
@@ -118,12 +118,12 @@ namespace SasaLibMySQLConnect
     //       }
     //       public static string STR(System.Data.Common.DbDataRecord dr, string KEY)
     //       {
-    //           return SasaLib.StringUtil.SystemByteArraySJIStoString(dr[KEY]);
+    //           return StringUtil.SystemByteArraySJIStoString(dr[KEY]);
     //       }
 
     //       public static string STR(string KEY)
     //       {
-    //           return SasaLib.StringUtil.SystemByteArraySJIStoString(results[KEY]);
+    //           return StringUtil.SystemByteArraySJIStoString(results[KEY]);
     //       }
 
     //       /// <summary>

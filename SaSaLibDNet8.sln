@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8", "SasaLibDNet
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C1EC68D-9410-4D48-8559-E6C198418ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8.Barcode", "SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj", "{EDA92B4D-E155-47EE-B276-47C740DA470D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.Barcode", "SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj", "{EDA92B4D-E155-47EE-B276-47C740DA470D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaSaLibDNet8TestAPP", "SaSaLibDnet8TestApp\SaSaLibDNet8TestAPP.csproj", "{7A2FCF51-7330-439D-A3E9-301891FCD311}"
 EndProject
@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8.ArcSuitePrevie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8.NumberingSupport", "SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj", "{BE182471-DD6A-4663-B824-0EB89458D7AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8.MySQLConnect", "SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj", "{E0EC73E9-8B60-4026-8557-A84C8B8285A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.MySQLConnect", "SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj", "{E0EC73E9-8B60-4026-8557-A84C8B8285A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8PagePictureControlInfo", "SasaLibDNet8PagePictureControlInfo\SasaLibDNet8PagePictureControlInfo.csproj", "{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.PictureBoxControlLibrary", "SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj", "{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8.MSIDLL", "SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj", "{A3D24F97-0015-435C-B935-8DDB953040EE}"
 EndProject
@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ソリューション項目
 	ProjectSection(SolutionItems) = preProject
 		覚えておくこと・リンク.txt = 覚えておくこと・リンク.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8TestAPP2", "SasaLibDNet8TestAPP2\SasaLibDNet8TestAPP2.csproj", "{90EC1E0D-943C-4100-8ABC-6C4DE10E91A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +72,10 @@ Global
 		{FEA7BA5C-8BF7-49DA-A505-6F818D3A0642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA7BA5C-8BF7-49DA-A505-6F818D3A0642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA7BA5C-8BF7-49DA-A505-6F818D3A0642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90EC1E0D-943C-4100-8ABC-6C4DE10E91A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90EC1E0D-943C-4100-8ABC-6C4DE10E91A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90EC1E0D-943C-4100-8ABC-6C4DE10E91A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90EC1E0D-943C-4100-8ABC-6C4DE10E91A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

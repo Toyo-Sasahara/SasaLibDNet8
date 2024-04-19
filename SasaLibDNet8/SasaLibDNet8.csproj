@@ -5,7 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
-	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	  <AssemblyVersion>1.24.04.190</AssemblyVersion>
+	  <FileVersion>1.24.04.190</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

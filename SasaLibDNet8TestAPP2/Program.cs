@@ -1,6 +1,4 @@
-using SasaLibTestApp;
-
-namespace WinFormsApp1
+namespace SasaLibDNet8TestAPP2
 {
     internal static class Program
     {

@@ -22,7 +22,7 @@ namespace SasaLib.NumberingSupport
             bool removeresult;
             if (remake)
             {
-                removeresult = SasaLib.FileFolder.RemoveFile(SuffixZeroPadVariantNumberTypeConfigFullPath);
+                removeresult = FileFolder.RemoveFile(SuffixZeroPadVariantNumberTypeConfigFullPath);
             }
 
             System.IO.StreamReader sr = null;
@@ -53,7 +53,7 @@ namespace SasaLib.NumberingSupport
             catch (Exception ex)
             {
                 LogWrite($"※ConversionFormulaNumberConfigWork.PreparationConfigData(...)で例外発生 {ex.Message} {ex.InnerException} ");
-                SasaLib.Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※ConversionFormulaNumberConfigWork.PreparationConfigData(...)で例外発生 {ex.Message} {ex.InnerException}  設定ﾌｧｲﾙ{SuffixZeroPadVariantNumberTypeConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
+                Eventlog.Log.WriteEntry("SasaLibNumberingSupport", EventLogEntryType.Error, 0, $"※ConversionFormulaNumberConfigWork.PreparationConfigData(...)で例外発生 {ex.Message} {ex.InnerException}  設定ﾌｧｲﾙ{SuffixZeroPadVariantNumberTypeConfigFullPath}, 例外情報:{ex.Message} {ex.InnerException}");
                 sr.Close();
 
                 return false;

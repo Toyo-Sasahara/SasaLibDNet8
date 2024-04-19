@@ -1,12 +1,8 @@
-﻿using SasaLibDNet8;
-using System;
-using System.Collections.Generic;
+﻿using SasaLib.PrintConfig;
 using System.Diagnostics;
 using System.Drawing.Printing;
-using System.Linq;
 using System.Runtime.Versioning;
 using System.Xml.Serialization;
-using static SasaLib.PrinterSimple;
 using static System.Drawing.Printing.PrinterSettings;
 
 namespace SasaLib

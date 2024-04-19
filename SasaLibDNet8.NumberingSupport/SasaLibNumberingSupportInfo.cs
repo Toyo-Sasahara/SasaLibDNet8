@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SasaLib;
+using System;
 using System.Reflection;
 
 public static class SasaLibNumberingSupportInfo
@@ -60,7 +61,7 @@ public static class SasaLibNumberingSupportInfo
     public static string GetAssemblyFileMD5()
     {
         System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        string md5 = SasaLib.FileFolder.GetMD5FileHash(ver.FileName);
+        string md5 = FileFolder.GetMD5FileHash(ver.FileName);
         return md5;
     }
 

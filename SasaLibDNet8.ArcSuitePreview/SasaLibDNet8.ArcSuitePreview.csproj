@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="RemoteClient">
+      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClient\bin\Debug\RemoteClient.dll</HintPath>
+    </Reference>
+    <Reference Include="RemoteClientCADtype">
+      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClientCADtype\bin\Release\RemoteClientCADtype.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Drawing.dll</HintPath>
     </Reference>

@@ -23,7 +23,7 @@ namespace SasaLib.NumberingSupport
             bool isVariant = true;
             string suffixMIN = null;
             string suffixMAX = null;
-            PARTNUMBER = SasaLib.StringUtil.Zen2HanANK_ZenSpace2HanSpace(PARTNUMBER).Trim().Trim('\t', '"', '\\').ToUpper();
+            PARTNUMBER = StringUtil.Zen2HanANK_ZenSpace2HanSpace(PARTNUMBER).Trim().Trim('\t', '"', '\\').ToUpper();
             bool result = CheckNumber(PARTNUMBER, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName, delegateWriteLine);
 
             return result;
@@ -170,7 +170,7 @@ namespace SasaLib.NumberingSupport
                         TypeName = "分類不能";
                         if (verbose)
                             WriteLine($"\t【{DrawingNumber}】  第一トークン \"{FirstGroupStrings}\" を \"{drawingClass}\" と判定。 \"{drawingType}（{TypeName}）\" と認識されました");
-                        SasaLib.Eventlog.Log.WriteEntry("ToyoDATABASE", EventLogEntryType.Error, 9700, $"GetToyoDrawingType(..)にて【{DrawingNumber}】を '分類不能' と認識しました");
+                        Eventlog.Log.WriteEntry("ToyoDATABASE", EventLogEntryType.Error, 9700, $"GetToyoDrawingType(..)にて【{DrawingNumber}】を '分類不能' と認識しました");
                         return false;
                 }
                 return true;
