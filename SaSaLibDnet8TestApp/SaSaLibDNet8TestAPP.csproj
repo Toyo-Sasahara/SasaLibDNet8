@@ -22,7 +22,7 @@
     <ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.SysConfigurator\SasaLibDNet8.SysConfigurator.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.VariableControlPipeServer\SasaLibDNet8.VariableControlPipeServer\SasaLibDNet8.VariableControlPipeServer.csproj" />
+    <ProjectReference Include="..\SasaLibDNet8.VariableControlPipeServer\SasaLibDNet8.VariableControlPipeServer.csproj" />
     <ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
   </ItemGroup>
