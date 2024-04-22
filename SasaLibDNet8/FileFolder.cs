@@ -280,7 +280,9 @@ namespace SasaLib
             if (!completed)
             {
                 exists = false;
+#pragma warning disable SYSLIB0006 // 型またはメンバーが旧型式です
                 t.Abort();
+#pragma warning restore SYSLIB0006 // 型またはメンバーが旧型式です
             }
             return exists;
         }
@@ -1485,7 +1487,9 @@ namespace SasaLib
         [SupportedOSPlatform("windows")]
         public static string GetMD5FileHash(string filePath)
         {
+#pragma warning disable SYSLIB0021 // 型またはメンバーが旧型式です
             System.Security.Cryptography.HashAlgorithm hashProvider = new System.Security.Cryptography.MD5CryptoServiceProvider();
+#pragma warning restore SYSLIB0021 // 型またはメンバーが旧型式です
             using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 byte[] bs = hashProvider.ComputeHash(fs);

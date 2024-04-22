@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Markup;
 using static System.Net.Mime.MediaTypeNames;
 
+
+
 namespace SasaLib
 {
 
@@ -38,6 +40,7 @@ namespace SasaLib
                 // 出力例：平文のバイト型配列の長さ=60
 
                 // Encryptor（暗号化器）を用意する
+#pragma warning disable SYSLIB0021 // 型またはメンバーが旧型式です
                 using (var am = new AesManaged())
                 using (var encryptor = am.CreateEncryptor(key, iv))
                 // ファイルを入力とするなら、ここでファイルを開く
@@ -61,6 +64,7 @@ namespace SasaLib
                     // 出力サイズはBlockSize（既定値16バイト）の倍数になる
                     return Convert.ToBase64String(result);
                 }
+#pragma warning restore SYSLIB0021 // 型またはメンバーが旧型式です
 
             }
             catch (Exception ex)
@@ -88,6 +92,7 @@ namespace SasaLib
                 // 出力例：平文のバイト型配列の長さ=60
 
                 // Encryptor（暗号化器）を用意する
+#pragma warning disable SYSLIB0021 // 型またはメンバーが旧型式です
                 using (var am = new AesManaged())
                 using (var encryptor = am.CreateEncryptor(key, iv))
                 // ファイルを入力とするなら、ここでファイルを開く
@@ -111,6 +116,7 @@ namespace SasaLib
                     // 出力サイズはBlockSize（既定値16バイト）の倍数になる
                     return Convert.ToBase64String(result);
                 }
+#pragma warning restore SYSLIB0021 // 型またはメンバーが旧型式です
 
             }
             catch (Exception ex)
@@ -137,7 +143,9 @@ namespace SasaLib
                 var KEY_SIZE = 128;     // 128/192/256bit から選択
 
                 // AES暗号サービスを生成
+#pragma warning disable SYSLIB0021 // 型またはメンバーが旧型式です
                 var csp = new AesCryptoServiceProvider();
+#pragma warning restore SYSLIB0021 // 型またはメンバーが旧型式です
                 csp.BlockSize = BLOCK_SIZE;
                 csp.KeySize = KEY_SIZE;
                 csp.Mode = CipherMode.CBC;
@@ -186,14 +194,18 @@ namespace SasaLib
                 var KEY_SIZE = 128;     // 128/192/256bit から選択
 
                 // IV を生成
+#pragma warning disable SYSLIB0041 // 型またはメンバーが旧型式です
                 var rfcBlock = new Rfc2898DeriveBytes(ivPassword, BLOCK_SIZE / 8);
+#pragma warning restore SYSLIB0041 // 型またはメンバーが旧型式です
                 var arrBlock = rfcBlock.GetBytes(BLOCK_SIZE / 8);
 
                 ivByteArray = arrBlock;
                 ivBase64 = Convert.ToBase64String(arrBlock);
 
                 // Key を生成
+#pragma warning disable SYSLIB0041 // 型またはメンバーが旧型式です
                 var rfcKey = new Rfc2898DeriveBytes(keyPassword, KEY_SIZE / 8);
+#pragma warning restore SYSLIB0041 // 型またはメンバーが旧型式です
                 var arrKey = rfcKey.GetBytes(KEY_SIZE / 8);
 
                 keyByteArray = arrKey;
@@ -229,6 +241,7 @@ namespace SasaLib
                 byte[] src = Convert.FromBase64String(base64Text);
 
                 // Decryptor（復号器）を用意する
+#pragma warning disable SYSLIB0021 // 型またはメンバーが旧型式です
                 using (var am = new AesManaged())
                 using (var decryptor = am.CreateDecryptor(key, iv))
                 // 入力ストリームを開く
@@ -250,6 +263,7 @@ namespace SasaLib
                     byte[] result = outStream.ToArray();
                     return Encoding.Unicode.GetString(result);
                 }
+#pragma warning restore SYSLIB0021 // 型またはメンバーが旧型式です
 
             }
             catch (Exception ex)
@@ -278,6 +292,7 @@ namespace SasaLib
                 byte[] src = Convert.FromBase64String(base64Text);
 
                 // Decryptor（復号器）を用意する
+#pragma warning disable SYSLIB0021 // 型またはメンバーが旧型式です
                 using (var am = new AesManaged())
                 using (var decryptor = am.CreateDecryptor(key, iv))
                 // 入力ストリームを開く
@@ -299,6 +314,7 @@ namespace SasaLib
                     byte[] result = outStream.ToArray();
                     return Encoding.Unicode.GetString(result);
                 }
+#pragma warning restore SYSLIB0021 // 型またはメンバーが旧型式です
 
             }
             catch (Exception ex)

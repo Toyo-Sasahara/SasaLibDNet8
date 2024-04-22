@@ -361,12 +361,22 @@ namespace SaSaLibDNet8TestAPP
             }
 
 
-            var ps = new PrinterSettings(); // works fine
-            //using (var i = new ImpersonatedUser("Administrator", "SS", "Fuminano8"))
+            var ps = new PrinterSettings();
+
+            // works fine
+            //using (var i = new ImpersonatedUser("AD", "sasahara", "sasahara"))
             //{
             //    // 印刷処理を実行
             //    printingObj.PrintImage(currnetPrinterName, currentPapserSize, currentLandScape, currentPaperSource);
             //}
+
+            new WithFakeAccount("AD", "Sekkei-User", "sk", true, () =>
+            {
+                Console.WriteLine("During impersonation: " + WindowsIdentity.GetCurrent().Name);
+                // 印刷処理を実行
+                printingObj.PrintImage(currnetPrinterName, currentPapserSize, currentLandScape, currentPaperSource);
+            });
+
 
         }
 

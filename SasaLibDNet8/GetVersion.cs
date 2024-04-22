@@ -22,7 +22,9 @@ namespace SasaLib
             var assm = System.Reflection.Assembly.GetExecutingAssembly();
 
             // アセンブリのファイルパスを取得する
+#pragma warning disable SYSLIB0012 // 型またはメンバーが旧型式です
             var path = (new Uri(assm.CodeBase)).LocalPath;
+#pragma warning restore SYSLIB0012 // 型またはメンバーが旧型式です
 
             // アセンブリのFileVersionInfoを取得する
             var versionInfo = FileVersionInfo.GetVersionInfo(path);
@@ -212,7 +214,9 @@ namespace SasaLib
         {
             XmlDocument xmlDoc = new XmlDocument();
             System.Reflection.Assembly asmCurrent = System.Reflection.Assembly.GetExecutingAssembly();
+#pragma warning disable SYSLIB0044 // 型またはメンバーが旧型式です
             string expath = new Uri(asmCurrent.GetName().CodeBase).LocalPath;
+#pragma warning restore SYSLIB0044 // 型またはメンバーが旧型式です
             string exemanifest = expath + ".manifest";
             return GetPublishedVersion(exemanifest);
         }

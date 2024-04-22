@@ -1889,7 +1889,8 @@ namespace SasaLib
                 System.Drawing.Imaging.BitmapData convertedBitmapData = convertedBitmap.LockBits(rect, System.Drawing.Imaging.ImageLockMode.WriteOnly, pixelFormat);
                 try
                 {
-                    NativeMethods.CopyMemory(convertedBitmapData.Scan0, bitmapData.Scan0, (uint)bitmapData.Stride * (uint)bitmapData.Height);
+                    //NativeMethods.CopyMemory(convertedBitmapData.Scan0, bitmapData.Scan0, (uint)bitmapData.Stride * (uint)bitmapData.Height);
+                    NativeMethods.RtlCopyMemory(convertedBitmapData.Scan0, bitmapData.Scan0, (uint)bitmapData.Stride * (uint)bitmapData.Height);
                 }
                 finally
                 {
@@ -1909,8 +1910,17 @@ namespace SasaLib
 
             const string KERNEL32 = "Kernel32.dll";
 
+            //[System.Runtime.InteropServices.DllImport(KERNEL32)]
+            //public extern static void CopyMemory(IntPtr dest, IntPtr src, uint length);
+
+            /// <summary>
+            /// https://gazoyaro.com/cs_copy_memory_dotnetframework_dotnetcore/
+            /// </summary>
+            /// <param name="dest"></param>
+            /// <param name="src"></param>
+            /// <param name="length"></param>
             [System.Runtime.InteropServices.DllImport(KERNEL32)]
-            public extern static void CopyMemory(IntPtr dest, IntPtr src, uint length);
+            public extern static void RtlCopyMemory(IntPtr dest, IntPtr src, uint length);
 
         }
 

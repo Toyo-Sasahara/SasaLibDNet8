@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
-    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjects.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />

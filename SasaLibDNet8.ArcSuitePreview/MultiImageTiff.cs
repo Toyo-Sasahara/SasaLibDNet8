@@ -6,6 +6,9 @@ using System.IO;
 
 namespace SasaLib.ArcSuitePreview
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class MultiPage : IDisposable
     {
         /// <summary>
@@ -55,28 +58,6 @@ namespace SasaLib.ArcSuitePreview
         {
             return ImageBuffer[pageNo];
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="PageSelect"></param>
-        //public void ShowSelectPage(int PageSelect)
-        //{
-        //    if (ImageBuffer != null && ImageBuffer.Count > 0)
-        //    {
-        //        if (0 < PageSelect && PageSelect < ImageBuffer.Count + 1)
-        //        {
-        //            currentPage = PageSelect - 1;
-
-        //            //form.MiniPanelPictureBox.Image = ImageBuffer[currentPage];
-        //            //form.sourceBitmap = (System.Drawing.Bitmap)ImageBuffer[currentPage];
-        //            //form.IntegratedSearchForm_Resize(null, null);
-        //            //// ピクチャーボックスにフィット
-        //            //form.ViewFit();
-
-        //            //form.sasaLibPageControl1.PageNumberTextBox.Text = $"{currentPage + 1} / {ImageBuffer.Count}";
-        //        }
-        //    }
-        //}
 
         /// <summary>
         /// マルチページTiff対応のイメージファイルを読み込んで
@@ -93,14 +74,15 @@ namespace SasaLib.ArcSuitePreview
         }
 
         /// <summary>
-        /// 
+        /// マルチフレームのイメージをファイルから読み込む。マルチフレームか否かは System.Drawing.Image.GetFrameCount(..)にて判別
         /// </summary>
         /// <param name="fullfileName"></param>
         /// <returns></returns>
-        private List<Image> GetAllPages(string fullfileName)
+        private List<Image> GetAllPages(string fullfileName, SasaLibDelegateWriteLine WriteLine = null)
         {
             if (string.IsNullOrWhiteSpace(fullfileName) == false)
             {
+                if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
                 System.IO.FileStream fs = new System.IO.FileStream(fullfileName, System.IO.FileMode.Open, System.IO.FileAccess.Read);
                 try
@@ -109,6 +91,8 @@ namespace SasaLib.ArcSuitePreview
                     Bitmap bitmap = (Bitmap)System.Drawing.Image.FromStream(fs);
 
                     int count = bitmap.GetFrameCount(FrameDimension.Page);
+
+                    WriteLine($"GetAllPages()");
                     for (int idx = 0; idx < count; idx++)
                     {
                         // 各フレームをバイテストリームに保存
