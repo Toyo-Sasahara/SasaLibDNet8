@@ -3,11 +3,13 @@
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Versioning;
 using System.Web;
 using System.Xml;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public class Asm
     {
         /// <summary>
@@ -170,6 +172,7 @@ namespace SasaLib
         }
     }
 
+    [SupportedOSPlatform("windows")]
     public class ClickOnce
     {
         /// <summary>

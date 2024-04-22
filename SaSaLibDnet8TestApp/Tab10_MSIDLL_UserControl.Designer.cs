@@ -1,5 +1,5 @@
 ﻿
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     partial class Tab10_MSIDLL_UserControl
     {

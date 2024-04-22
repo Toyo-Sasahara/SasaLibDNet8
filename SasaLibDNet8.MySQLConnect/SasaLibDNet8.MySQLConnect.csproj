@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	  <Platforms>AnyCPU;x64</Platforms>
 
   </PropertyGroup>
 
@@ -15,13 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.MySQLConnect\Connector\mysql.data.dll</HintPath>
-    </Reference>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <PackageReference Include="MySql.Data" Version="8.3.0" />
   </ItemGroup>
 
 </Project>

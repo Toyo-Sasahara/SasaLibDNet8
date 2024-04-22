@@ -1,5 +1,5 @@
 ﻿
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     partial class Tab06_StringProcessing_UserControl
     {

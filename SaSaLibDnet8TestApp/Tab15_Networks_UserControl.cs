@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static SasaLib.Mail;
 
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     public partial class Tab15_Networks_UserControl : UserControl
     {

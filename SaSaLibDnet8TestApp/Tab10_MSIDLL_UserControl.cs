@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static SasaLib.MSIDLL_Utility;
 
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     public partial class Tab10_MSIDLL_UserControl : UserControl
     {

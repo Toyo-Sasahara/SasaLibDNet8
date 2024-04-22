@@ -17,7 +17,7 @@ using System.Windows.Forms;
 //using static SasaLib.Winlogon.ClsLogon;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     public partial class Tab05_Printer_UserControl : UserControl
     {

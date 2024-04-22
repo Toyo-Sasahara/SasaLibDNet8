@@ -1,4 +1,5 @@
 ﻿using SasaLib;
+using SasaLib.SysConfigurator;
 using StageServerRemote;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     public partial class Tab11_SysConfigurator_UserControl : UserControl
     {
@@ -91,7 +92,7 @@ namespace SaSaLibTestApp
 
         private void button22_Click(object sender, EventArgs e)
         {
-            SasaLib.SysConfigurator.TestRun.Execute(@"D:\TESTDATA.CONF");
+            TestRun.Execute(@"D:\TESTDATA.CONF");
 
         }
     }

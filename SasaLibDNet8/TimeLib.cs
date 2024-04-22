@@ -3,6 +3,7 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public class StopWatch
     {
         //Stopwatchオブジェクトを作成する

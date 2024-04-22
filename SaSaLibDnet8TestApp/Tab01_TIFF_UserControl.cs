@@ -9,7 +9,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     public partial class Tab01_TIFF_UserControl : UserControl
     {
@@ -394,6 +394,11 @@ namespace SaSaLibTestApp
         }
 
         private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sasaLibPagePictureControl1_Load(object sender, EventArgs e)
         {
 
         }

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text.RegularExpressions;
 using SasaLib;
 
 namespace SasaLib.NumberingSupport
 {
+    [SupportedOSPlatform("windows")]
     public static class ToyoDrawingTypeClassify
     {
         /// <summary>

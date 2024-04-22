@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public static class FormsControlUtil
     {
         static Color bk_Blink;

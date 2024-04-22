@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public class Encryption
     {
 

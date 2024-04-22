@@ -1,5 +1,5 @@
 ﻿
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     partial class Tab05_Printer_UserControl
     {

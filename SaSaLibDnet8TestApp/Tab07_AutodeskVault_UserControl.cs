@@ -14,7 +14,7 @@ using Autodesk.Connectivity.WebServicesTools;
 using VDF = Autodesk.DataManagement.Client.Framework;
 using ACW = Autodesk.Connectivity.WebServices;
 
-namespace SaSaLibTestApp
+namespace SaSaLibDNet8TestAPP
 {
     public partial class Tab07_AutodeskVault_UserControl : UserControl
     {

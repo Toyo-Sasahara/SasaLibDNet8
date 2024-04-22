@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace SasaLib.NumberingSupport
 {
+    [SupportedOSPlatform("windows")]
     public static class MaterialCodeCheck
     {
         /// <summary>

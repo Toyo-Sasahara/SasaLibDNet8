@@ -3,10 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
 	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
 	  <OutputType>Library</OutputType>
 	  <UseWindowsForms>True</UseWindowsForms>
+	  <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +26,9 @@
     </Reference>
     <Reference Include="ToyoMcMfg.Staging.RemoteObjects">
       <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteObjects\bin\Release\ToyoMcMfg.Staging.RemoteObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
     </Reference>
   </ItemGroup>
 

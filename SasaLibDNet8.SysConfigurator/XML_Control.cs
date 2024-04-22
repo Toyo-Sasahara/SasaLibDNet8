@@ -6,6 +6,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -89,6 +90,7 @@ namespace SasaLib.SysConfigurator
 
     public delegate bool Delegate_FileCopy(string Source, string Dist);
 
+    [SupportedOSPlatform("windows")]
     public class XML_Control
     {
         private string LogBaseFolder { get; set; }

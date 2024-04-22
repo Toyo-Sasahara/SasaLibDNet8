@@ -25,6 +25,7 @@ namespace SasaLib
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class FileFolder
     {
         public static bool IsDirectory(string path)

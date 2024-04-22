@@ -2,9 +2,11 @@
 using SasaLibDNet8;
 using System;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public static class XmlModify
     {
         /// <summary>

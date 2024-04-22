@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -8,6 +9,7 @@ namespace SasaLib
     /// 作業後に自動的に一時フォルダが消える。フォルダ内のファイルも消すことが出来る
     /// https://takap-tech.com/entry/2019/02/24/114210
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class ManagedTemporaryFolder
     {
         /// <summary>

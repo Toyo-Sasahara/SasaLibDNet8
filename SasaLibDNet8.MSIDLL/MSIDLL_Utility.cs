@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace SasaLib
     /// <summary>
     /// https://clown.cube-soft.jp/entry/20100329/1269844611
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public abstract class MSIDLL_Utility
     {
         /// <summary>
@@ -418,6 +420,7 @@ namespace SasaLib
         /// <summary>
         /// 
         /// </summary>
+        [SupportedOSPlatform("windows")]
         public class ProductInfo
         {
             public string ProductCode;

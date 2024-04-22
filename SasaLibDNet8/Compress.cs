@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public static class Compress
     {
         /// <summary>
@@ -78,6 +80,7 @@ namespace SasaLib
     /// <summary>
     /// ZIP拡張クラス。
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class MyZipFileExtensions
     {
         /// <summary>

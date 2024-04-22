@@ -1,4 +1,4 @@
-﻿namespace SaSaLibTestApp
+﻿namespace SaSaLibDNet8TestAPP
 {
     partial class Tab15_Networks_UserControl
     {

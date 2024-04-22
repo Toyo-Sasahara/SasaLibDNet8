@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
 
+    [SupportedOSPlatform("windows")]
     public class SasaLibMySqlConnect
     {
         string Server;

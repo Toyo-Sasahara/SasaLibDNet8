@@ -17,6 +17,7 @@ namespace SasaLib
     /// AES方式で文字列を暗号化／復号する
     /// https://atmarkit.itmedia.co.jp/ait/articles/1709/06/news020.html
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class EncryptionAES
     {
 

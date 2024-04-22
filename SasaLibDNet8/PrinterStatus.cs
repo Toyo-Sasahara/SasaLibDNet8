@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public static class PrinterStatus
     {
         public static int GetNumberofPrintQues(string PrinterName)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Windows.Interop;
 
@@ -9,6 +10,7 @@ namespace SasaLib
     /// <summary>
     /// イベントをまとめて一括処理するためのクラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class EventsSummary : IDisposable
     {
         private readonly StringBuilder sb1;

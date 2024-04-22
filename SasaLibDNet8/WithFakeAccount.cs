@@ -84,7 +84,7 @@ namespace SasaLib
     //        WinNT50
     //    }
 
-       
+
     //    private WindowsImpersonationContext _objContext = null;
     //    private String _strUserName = null;
     //    private String _strPassword = null;
@@ -248,6 +248,7 @@ namespace SasaLib
     //    }
     //}
 
+    [SupportedOSPlatform("windows")]
     public class WithFakeAccount : IDisposable
     {
         [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]

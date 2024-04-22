@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SaSaLibTestApp.Properties {
+namespace SaSaLibDNet8TestAPP.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SaSaLibTestApp.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SaSaLibTestApp.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SaSaLibDNet8TestAPP.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -65,7 +65,7 @@ namespace SaSaLibTestApp.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap TESTIMAGE_A0 {
             get {
-                object obj = ResourceManager.GetObject("TESTIMAGE_A0", resourceCulture);
+                object obj = ResourceManager.GetObject("TESTIMAGE-A0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +75,7 @@ namespace SaSaLibTestApp.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap TESTIMAGE_A1 {
             get {
-                object obj = ResourceManager.GetObject("TESTIMAGE_A1", resourceCulture);
+                object obj = ResourceManager.GetObject("TESTIMAGE-A1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,7 +85,7 @@ namespace SaSaLibTestApp.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap TESTIMAGE_A2 {
             get {
-                object obj = ResourceManager.GetObject("TESTIMAGE_A2", resourceCulture);
+                object obj = ResourceManager.GetObject("TESTIMAGE-A2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace SaSaLibTestApp.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap TESTIMAGE_A3 {
             get {
-                object obj = ResourceManager.GetObject("TESTIMAGE_A3", resourceCulture);
+                object obj = ResourceManager.GetObject("TESTIMAGE-A3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,17 +105,7 @@ namespace SaSaLibTestApp.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap TESTIMAGE_A4 {
             get {
-                object obj = ResourceManager.GetObject("TESTIMAGE_A4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap マルチページ_カラーTIFFサンプル {
-            get {
-                object obj = ResourceManager.GetObject("マルチページ_カラーTIFFサンプル", resourceCulture);
+                object obj = ResourceManager.GetObject("TESTIMAGE-A4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
