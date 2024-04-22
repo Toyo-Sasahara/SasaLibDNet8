@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
     <ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
@@ -21,9 +22,6 @@
     </Reference>
     <Reference Include="RemoteClientCADtype">
       <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClientCADtype\bin\Debug\RemoteClientCADtype.dll</HintPath>
-    </Reference>
-    <Reference Include="SasaLibDelegateWriteLine">
-      <HintPath>..\..\SasaLibTestFrame\SasaLibDelegateWriteLine\bin\Debug\SasaLibDelegateWriteLine.dll</HintPath>
     </Reference>
     <Reference Include="ToyoMcMfg.Staging.RemoteObjects">
       <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteObjects\bin\Release\ToyoMcMfg.Staging.RemoteObjects.dll</HintPath>
