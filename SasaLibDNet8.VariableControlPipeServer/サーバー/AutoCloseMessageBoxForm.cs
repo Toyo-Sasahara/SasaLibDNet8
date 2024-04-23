@@ -22,7 +22,9 @@ namespace SasaLib.VariableControlPipeServer
 
         MessageBoxButtons Buttons { get; set; }
 
+#pragma warning disable SYSLIB0003 // 型またはメンバーが旧型式です
         [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+#pragma warning restore SYSLIB0003 // 型またはメンバーが旧型式です
         protected override void WndProc(ref Message m)
         {
             const int WM_NCLBUTTONDBLCLK = 0xA3;
