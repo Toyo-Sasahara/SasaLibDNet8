@@ -16,7 +16,7 @@
     <PackageReference Include="stdole" Version="17.9.37000" />
     <PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-    <PackageReference Include="System.Diagnostics.EventLog" Version="9.0.0-preview.3.24172.9" />
+    <PackageReference Include="System.Diagnostics.EventLog" Version="8.0.0" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
     <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
     <PackageReference Include="System.IO.Compression" Version="4.3.0" />
