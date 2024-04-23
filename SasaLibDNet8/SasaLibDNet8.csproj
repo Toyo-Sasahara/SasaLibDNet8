@@ -1,104 +1,104 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
-	  <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
-	  <AssemblyVersion>1.24.04.190</AssemblyVersion>
-	  <FileVersion>1.24.04.190</FileVersion>
-	  <Platforms>AnyCPU;x64</Platforms>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+		<AssemblyVersion>1.24.04.190</AssemblyVersion>
+		<FileVersion>1.24.04.190</FileVersion>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="NeoSmart.AsyncLock" Version="3.2.1" />
-    <PackageReference Include="runtime.native.System.IO.Compression" Version="4.3.2" />
-    <PackageReference Include="stdole" Version="17.9.37000" />
-    <PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-    <PackageReference Include="System.Diagnostics.EventLog" Version="8.0.0" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
-    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
-    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
-    <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
-    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="5.0.0" />
-    <PackageReference Include="System.IO.FileSystem.DriveInfo" Version="4.3.1" />
-    <PackageReference Include="System.IO.FileSystem.Watcher" Version="4.3.0" />
-    <PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
-    <PackageReference Include="System.IO.Packaging" Version="8.0.0" />
-    <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
-    <PackageReference Include="System.IO.UnmanagedMemoryStream" Version="4.3.0" />
-    <PackageReference Include="System.Linq" Version="4.3.0" />
-    <PackageReference Include="System.Management" Version="8.0.0" />
-    <PackageReference Include="System.ObjectModel" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
-    <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
-    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
-    <PackageReference Include="Uno.UI" Version="5.3.0-dev.422" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="NeoSmart.AsyncLock" Version="3.2.1" />
+		<PackageReference Include="runtime.native.System.IO.Compression" Version="4.3.2" />
+		<PackageReference Include="stdole" Version="17.9.37000" />
+		<PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+		<PackageReference Include="System.Diagnostics.EventLog" Version="8.0.0" />
+		<PackageReference Include="System.Drawing.Common" Version="8.0.4" />
+		<PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+		<PackageReference Include="System.IO.Compression" Version="4.3.0" />
+		<PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
+		<PackageReference Include="System.IO.FileSystem.AccessControl" Version="5.0.0" />
+		<PackageReference Include="System.IO.FileSystem.DriveInfo" Version="4.3.1" />
+		<PackageReference Include="System.IO.FileSystem.Watcher" Version="4.3.0" />
+		<PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
+		<PackageReference Include="System.IO.Packaging" Version="8.0.0" />
+		<PackageReference Include="System.IO.Pipes" Version="4.3.0" />
+		<PackageReference Include="System.IO.UnmanagedMemoryStream" Version="4.3.0" />
+		<PackageReference Include="System.Linq" Version="4.3.0" />
+		<PackageReference Include="System.Management" Version="8.0.0" />
+		<PackageReference Include="System.ObjectModel" Version="4.3.0" />
+		<PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
+		<PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
+		<PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+		<PackageReference Include="Uno.UI" Version="5.3.0-dev.422" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Interop.IWshRuntimeLibrary">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib\obj\Debug\Interop.IWshRuntimeLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationCore">
-      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationCore.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationFramework">
-      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing">
-      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing.Common">
-      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing.Design">
-      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Printing">
-      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Printing.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Resources.Extensions">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Resources.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Pkcs">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.Pkcs.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.ProtectedData">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.ProtectedData.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Xml">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Permissions">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Permissions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.AccessControl">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Threading.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Controls.Ribbon">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Controls.Ribbon.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Extensions">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms.Design">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms.Primitives">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
-    </Reference>
-  </ItemGroup>
- 
+	<ItemGroup>
+		<Reference Include="Interop.IWshRuntimeLibrary">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib\obj\Debug\Interop.IWshRuntimeLibrary.dll</HintPath>
+		</Reference>
+		<Reference Include="PresentationCore">
+			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationCore.dll</HintPath>
+		</Reference>
+		<Reference Include="PresentationFramework">
+			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationFramework.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Drawing">
+			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Drawing.Common">
+			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Drawing.Design">
+			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.Design.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Printing">
+			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Printing.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Resources.Extensions">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Resources.Extensions.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Security.Cryptography.Pkcs">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.Pkcs.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Security.Cryptography.ProtectedData">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.ProtectedData.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Security.Cryptography.Xml">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.Xml.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Security.Permissions">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Permissions.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Threading.AccessControl">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Threading.AccessControl.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Windows.Controls.Ribbon">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Controls.Ribbon.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Windows.Extensions">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Extensions.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Windows.Forms">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Windows.Forms.Design">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.Design.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Windows.Forms.Primitives">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.Primitives.dll</HintPath>
+		</Reference>
+		<Reference Include="WindowsBase">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
 </Project>
