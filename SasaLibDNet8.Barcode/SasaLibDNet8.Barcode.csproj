@@ -1,26 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-	  <Platforms>AnyCPU;x64</Platforms>
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+		<Platforms>AnyCPU;x64</Platforms>
 
-  </PropertyGroup>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="8.0.4" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="BarcodeLib">
-      <HintPath>..\..\SasaLibTestFrame\Barcode_src_1.0.0.21\BarcodeLib\bin\Release\BarcodeLib.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="BarcodeLib">
+			<HintPath>..\..\SasaLibTestFrame\Barcode_src_1.0.0.21\BarcodeLib\bin\Release\BarcodeLib.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 
 </Project>

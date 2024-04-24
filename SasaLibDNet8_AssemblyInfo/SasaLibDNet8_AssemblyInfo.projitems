@@ -3,12 +3,12 @@
   <PropertyGroup>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>a4250941-5145-4c39-86f0-49634866353a</SharedGUID>
+    <SharedGUID>2cea5067-2cb0-4197-940a-3ff57cc55849</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>SasaLibDNet8.AssemblyVersion</Import_RootNamespace>
+    <Import_RootNamespace>SasaLibDNet8_AssemblyInfo</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AssembyInfo.cs" />
   </ItemGroup>
 </Project>

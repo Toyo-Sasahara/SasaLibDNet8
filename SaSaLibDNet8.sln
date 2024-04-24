@@ -47,6 +47,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteClientDNet8", "..\TOY
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteClientCADtypeDNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj", "{82509ED3-0161-4659-BC62-D050719CB9A7}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SasaLibDNet8_AssemblyInfo", "SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.shproj", "{2CEA5067-2CB0-4197-940A-3FF57CC55849}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -226,18 +228,21 @@ Global
 		SolutionGuid = {6B06B73B-759E-49CE-8B26-84A8711C77A1}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{1e993d9f-f7bd-440a-9d26-9e2c517f4c8e}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{1e993d9f-f7bd-440a-9d26-9e2c517f4c8e}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{2cea5067-2cb0-4197-940a-3ff57cc55849}*SharedItemsImports = 13
 		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{4594b5d0-7347-402e-8a4d-c75ad6a490b6}*SharedItemsImports = 5
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{66d95a78-c6c8-415b-a1fc-17dc7928c891}*SharedItemsImports = 5
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{78e811fd-ff1c-49f8-9c22-ecf66a924ce8}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{66d95a78-c6c8-415b-a1fc-17dc7928c891}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{78e811fd-ff1c-49f8-9c22-ecf66a924ce8}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{7a2fcf51-7330-439d-a3e9-301891fcd311}*SharedItemsImports = 5
 		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{82509ed3-0161-4659-bc62-d050719cb9a7}*SharedItemsImports = 5
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{8984f0fe-4534-4ec8-a86f-7e7cadb2d8b4}*SharedItemsImports = 5
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{a3d24f97-0015-435c-b935-8ddb953040ee}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{8984f0fe-4534-4ec8-a86f-7e7cadb2d8b4}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{a3d24f97-0015-435c-b935-8ddb953040ee}*SharedItemsImports = 5
 		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{b19b8e75-11a9-4da8-95d6-6f8ca507bacc}*SharedItemsImports = 5
 		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{b5a4886c-896c-4ce4-b8cd-2a612db95794}*SharedItemsImports = 5
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{be182471-dd6a-4663-b824-0eb89458d7aa}*SharedItemsImports = 5
-		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{c5983e79-2e43-4168-b237-dd723ee89115}*SharedItemsImports = 5
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{e0ec73e9-8b60-4026-8557-a84c8b8285a2}*SharedItemsImports = 5
-		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{fea7ba5c-8bf7-49da-a505-6f818d3a0642}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{be182471-dd6a-4663-b824-0eb89458d7aa}*SharedItemsImports = 5
+		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\STAGINGSYSTEM_Share.AssemblyInfo\STAGINGSYSTEM_Share.AssemblyInfo\STAGINGSYSTEM_Share.AssemblyInfo.projitems*{c5983e79-2e43-4168-b237-dd723ee89115}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{e0ec73e9-8b60-4026-8557-a84c8b8285a2}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{eda92b4d-e155-47ee-b276-47c740da470d}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{fea7ba5c-8bf7-49da-a505-6f818d3a0642}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

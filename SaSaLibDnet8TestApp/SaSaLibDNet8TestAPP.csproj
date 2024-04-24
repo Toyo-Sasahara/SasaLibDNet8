@@ -1,150 +1,154 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>disable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-　　<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute><Platforms>AnyCPU;x64</Platforms>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>disable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.IO" Version="4.3.0" />
-    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.IO" Version="4.3.0" />
+		<PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.SysConfigurator\SasaLibDNet8.SysConfigurator.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.VariableControlPipeServer\SasaLibDNet8.VariableControlPipeServer.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.SysConfigurator\SasaLibDNet8.SysConfigurator.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.VariableControlPipeServer\SasaLibDNet8.VariableControlPipeServer.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Autodesk.Connectivity.AdSSOWrapper">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.AdSSOWrapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Connectivity.Extensibility.Framework">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Connectivity.JobProcessor.Extensibility">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.JobProcessor.Extensibility.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Connectivity.LicenseWrapper">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.LicenseWrapper.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Connectivity.WebServices">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.WebServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Connectivity.WebServices.WCF">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.WebServices.WCF.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.DataManagement.Client.Framework">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.DataManagement.Client.Framework.Forms">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.DataManagement.Server.Extensibility">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Data.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Data.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Office.v19.1.Core">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Office.v19.1.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Pdf.v19.1.Core">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Pdf.v19.1.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Printing.v19.1.Core">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Printing.v19.1.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.RichEdit.v19.1.Core">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.RichEdit.v19.1.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Sparkline.v19.1.Core">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Sparkline.v19.1.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Utils.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Utils.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraBars.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraBars.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraEditors.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraEditors.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraGrid.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraGrid.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraLayout.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraLayout.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraPrinting.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v19.1">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraTreeList.v19.1.dll</HintPath>
-    </Reference>
-    <Reference Include="RemoteClient">
-      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClient\bin\Debug\RemoteClient.dll</HintPath>
-    </Reference>
-    <Reference Include="SasaLib.ImageMagic">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.ImageMagic\bin\Debug\SasaLib.ImageMagic.dll</HintPath>
-    </Reference>
-    <Reference Include="SasaLib.SolidWorks">
-      <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\bin\Debug\SasaLib.SolidWorks.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="Autodesk.Connectivity.AdSSOWrapper">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.AdSSOWrapper.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.Extensibility.Framework">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.JobProcessor.Extensibility">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.JobProcessor.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.LicenseWrapper">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.LicenseWrapper.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.WebServices">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.WebServices.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.WebServices.WCF">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.Connectivity.WebServices.WCF.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Forms">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Forms.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Server.Extensibility">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Data.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Data.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Office.v19.1.Core">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Office.v19.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Pdf.v19.1.Core">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Pdf.v19.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Printing.v19.1.Core">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Printing.v19.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.RichEdit.v19.1.Core">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.RichEdit.v19.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Sparkline.v19.1.Core">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Sparkline.v19.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Utils.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.Utils.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraBars.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraBars.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraEditors.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraEditors.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraGrid.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraGrid.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraLayout.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraLayout.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraPrinting.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraPrinting.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraTreeList.v19.1">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraTreeList.v19.1.dll</HintPath>
+		</Reference>
+		<Reference Include="RemoteClient">
+			<HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClient\bin\Debug\RemoteClient.dll</HintPath>
+		</Reference>
+		<Reference Include="SasaLib.ImageMagic">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.ImageMagic\bin\Debug\SasaLib.ImageMagic.dll</HintPath>
+		</Reference>
+		<Reference Include="SasaLib.SolidWorks">
+			<HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\bin\Debug\SasaLib.SolidWorks.dll</HintPath>
+		</Reference>
+		<Reference Include="WindowsBase">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 
 </Project>
