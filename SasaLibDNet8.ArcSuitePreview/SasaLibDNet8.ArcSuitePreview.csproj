@@ -4,7 +4,8 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  <Deterministic>false</Deterministic>
 	  <OutputType>Library</OutputType>
 	  <UseWindowsForms>True</UseWindowsForms>
 	  <Platforms>AnyCPU;x64</Platforms>
@@ -26,5 +27,7 @@
     <ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
   </ItemGroup>
+
+  <Import Project="..\..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 
 </Project>

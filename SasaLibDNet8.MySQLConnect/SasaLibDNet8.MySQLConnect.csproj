@@ -4,8 +4,8 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  <Deterministic>false</Deterministic>
 	  <Platforms>AnyCPU;x64</Platforms>
 
   </PropertyGroup>
@@ -22,5 +22,7 @@
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.3.0" />
   </ItemGroup>
+
+  <Import Project="..\..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 
 </Project>

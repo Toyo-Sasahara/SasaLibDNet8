@@ -4,8 +4,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SasaLib.VariableControlPipeServer</RootNamespace>
     <AssemblyName>SasaLib.VariableControlPipeServer</AssemblyName>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  <Deterministic>false</Deterministic>
+	  <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Platforms>AnyCPU;x64</Platforms>
     <Nullable>disable</Nullable>
@@ -43,4 +44,5 @@
     <ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
   </ItemGroup>
+  <Import Project="..\..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 </Project>

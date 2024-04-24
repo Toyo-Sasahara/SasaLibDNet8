@@ -1,42 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-	  <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-	  <Platforms>AnyCPU;x64</Platforms>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
-    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\FieldValueSet\FieldValueSetDNet8.csproj" />
-    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
-    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
-    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
-    <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
+		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\FieldValueSet\FieldValueSetDNet8.csproj" />
+		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
+		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
+		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="WindowsBase">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="WindowsBase">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+  <Import Project="..\..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 
 </Project>

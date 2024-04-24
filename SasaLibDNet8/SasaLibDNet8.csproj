@@ -5,9 +5,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
-		<AssemblyVersion>1.24.04.190</AssemblyVersion>
-		<FileVersion>1.24.04.190</FileVersion>
 		<Platforms>AnyCPU;x64</Platforms>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -100,5 +101,7 @@
 			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
 		</Reference>
 	</ItemGroup>
+
+	<Import Project="..\..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 
 </Project>
