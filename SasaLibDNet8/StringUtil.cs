@@ -190,7 +190,7 @@ namespace SasaLib
         {
             if (string.IsNullOrWhiteSpace(input)) return 0; // Keyの文字列が IsNullOrWhiteSpace なら 0
 
-            System.Text.Encoding sjis = System.Text.Encoding.GetEncoding("shift_jis");
+            System.Text.Encoding sjis = System.Text.Encoding.GetEncoding("shift_jis");　// TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
             int byteSize = sjis.GetByteCount(input);
             return byteSize;
         }
@@ -209,7 +209,7 @@ namespace SasaLib
 
                 if (string.IsNullOrWhiteSpace(orgValue)) return orgValue; // Keyの文字列が IsNullOrWhiteSpace なら 何もしない
 
-                System.Text.Encoding sjis = System.Text.Encoding.GetEncoding("shift_jis");
+                System.Text.Encoding sjis = System.Text.Encoding.GetEncoding("shift_jis");　// TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
                 int orginalSize = sjis.GetByteCount(orgValue);
                 if (sizeOfByte < orginalSize)
                 {
@@ -903,7 +903,7 @@ namespace SasaLib
         /// <returns></returns>
         public static string SystemByteArraySJIStoString(object input)
         {
-            string text = System.Text.Encoding.GetEncoding("shift_jis").GetString((byte[])input);
+            string text = System.Text.Encoding.GetEncoding("shift_jis").GetString((byte[])input);　// TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
             return text;
         }
 

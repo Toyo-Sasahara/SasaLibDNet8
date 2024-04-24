@@ -113,8 +113,12 @@ namespace SasaLib.PJL
             {
                 MemoryStream distst = new MemoryStream();
                 StreamExtensions.CopyOtherStream(msbufPrintData, endposEnter_OIDATTJOB_NAME, endposEnd_OIDATTJOB_NAME, distst);
+                
+                // TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
                 //Shift-jisとしてよみこみ
-                string JobName = Encoding.GetEncoding(932).GetString(distst.ToArray()).Trim(' ', '"');
+                //string JobName = Encoding.GetEncoding(932).GetString(distst.ToArray()).Trim(' ', '"');
+                string JobName = Encoding.GetEncoding("UTF-8").GetString(distst.ToArray()).Trim(' ', '"');
+                
                 Console.WriteLine(JobName);
                 distst.Dispose();
                 return JobName;

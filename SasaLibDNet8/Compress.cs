@@ -24,7 +24,7 @@ namespace SasaLib
                     distZipFileFullPath,
                     System.IO.Compression.CompressionLevel.Optimal,
                     true,
-                    System.Text.Encoding.GetEncoding("shift_jis"));
+                    System.Text.Encoding.GetEncoding("shift_jis"));　// TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
 
                 while (!File.Exists(distZipFileFullPath))
                 {
@@ -64,7 +64,7 @@ namespace SasaLib
                 System.IO.Compression.ZipFile.ExtractToDirectory(
                     sourceZipFileFullPath,
                     distFolder,
-                    System.Text.Encoding.GetEncoding("shift_jis")
+                    System.Text.Encoding.GetEncoding("shift_jis")　// TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
                     );
                 return true;
             }

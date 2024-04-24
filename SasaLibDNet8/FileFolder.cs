@@ -893,7 +893,7 @@ namespace SasaLib
             {
                 // ReadOnlyで読み込み
                 using (FileStream stream = new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (StreamReader sr = new StreamReader(stream, System.Text.Encoding.GetEncoding("Shift_JIS")))
+                using (StreamReader sr = new StreamReader(stream, System.Text.Encoding.GetEncoding("Shift_JIS")))　// TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
                 {
                     //sr.ReadLine(); 最初の一行分(表のヘッダ部分)を飛ばしたい場合
                     while (!sr.EndOfStream)
@@ -983,7 +983,7 @@ namespace SasaLib
             {
                 // ReadOnlyモードでファイルを開く
                 using (FileStream stream = new FileStream(filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (StreamReader sr = new StreamReader(stream, System.Text.Encoding.GetEncoding("Shift_JIS")))
+                using (StreamReader sr = new StreamReader(stream, System.Text.Encoding.GetEncoding("Shift_JIS")))　// TODO: Encoding.GetEncoding(932)は .NET Core にて例外が出てしまう
                 {
                     //sr.ReadLine(); 最初の一行分(表のヘッダ部分)を飛ばしたい場合
                     while (!sr.EndOfStream)
