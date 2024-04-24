@@ -35,11 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonTicketClassLibraryDNe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonCommitLogicDNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\CommonCommitLogic\CommonCommitLogicDNet8.csproj", "{C5983E79-2E43-4168-B237-DD723EE89115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedClassLibraryDNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\SharedClassLibrary\SharedClassLibraryDNet8.csproj", "{835C2668-0779-4CE7-9B3F-7832E063A144}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedClassLibraryDNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\SharedClassLibrary\SharedClassLibraryDNet8.csproj", "{835C2668-0779-4CE7-9B3F-7832E063A144}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FieldValueSetDNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\FieldValueSet\FieldValueSetDNet8.csproj", "{B19B8E75-11A9-4DA8-95D6-6F8CA507BACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefineCOMDS.DNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\DefineCOMDS\DefineCOMDS.DNet8.csproj", "{A29F537C-7FDA-4451-AA08-999FD5491DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefineCOMDS.DNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\DefineCOMDS\DefineCOMDS.DNet8.csproj", "{A29F537C-7FDA-4451-AA08-999FD5491DC9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteObjectsDNet8", "..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj", "{238B4D6C-FD69-4C87-AF83-E1BE767A4D35}"
 EndProject
@@ -224,5 +224,20 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B06B73B-759E-49CE-8B26-84A8711C77A1}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{1e993d9f-f7bd-440a-9d26-9e2c517f4c8e}*SharedItemsImports = 5
+		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{4594b5d0-7347-402e-8a4d-c75ad6a490b6}*SharedItemsImports = 5
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{66d95a78-c6c8-415b-a1fc-17dc7928c891}*SharedItemsImports = 5
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{78e811fd-ff1c-49f8-9c22-ecf66a924ce8}*SharedItemsImports = 5
+		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{82509ed3-0161-4659-bc62-d050719cb9a7}*SharedItemsImports = 5
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{8984f0fe-4534-4ec8-a86f-7e7cadb2d8b4}*SharedItemsImports = 5
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{a3d24f97-0015-435c-b935-8ddb953040ee}*SharedItemsImports = 5
+		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{b19b8e75-11a9-4da8-95d6-6f8ca507bacc}*SharedItemsImports = 5
+		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{b5a4886c-896c-4ce4-b8cd-2a612db95794}*SharedItemsImports = 5
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{be182471-dd6a-4663-b824-0eb89458d7aa}*SharedItemsImports = 5
+		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{c5983e79-2e43-4168-b237-dd723ee89115}*SharedItemsImports = 5
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{e0ec73e9-8b60-4026-8557-a84c8b8285a2}*SharedItemsImports = 5
+		..\AutocadTOYOaddinCommitDNet8\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{fea7ba5c-8bf7-49da-a505-6f818d3a0642}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
