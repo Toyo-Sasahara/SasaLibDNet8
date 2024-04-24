@@ -19,10 +19,10 @@ namespace SasaLib.PIPE
         /// <summary>
         /// パイプストリーム本命 コマンドラインAdministratorで同時起動可能2019-04-07時点
         /// </summary>
-        /// <param name="piepName"></param>
+        /// <param name="pipeName"></param>
         /// <param name="maxInstances"></param>
         /// <returns></returns>
-        public static NamedPipeServerStream Create(string piepName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
+        public static NamedPipeServerStream Create(string pipeName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
         {
             SecurityIdentifier sid = new SecurityIdentifier(WellKnownSidType.AuthenticatedUserSid, null);
             PipeAccessRule par = new PipeAccessRule(sid, PipeAccessRights.ReadWrite, System.Security.AccessControl.AccessControlType.Allow);
@@ -36,7 +36,7 @@ namespace SasaLib.PIPE
             ps.AddAccessRule(par);
 
             //return new NamedPipeServerStream(PipeName, PipeDirection.InOut, maxInstances, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 2048, 2048, ps);
-            var stream = new NamedPipeServerStream(piepName, PipeDirection.InOut, maxInstances, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 2048, 2048);
+            var stream = new NamedPipeServerStream(pipeName, PipeDirection.InOut, maxInstances, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 2048, 2048);
             stream.SetAccessControl(ps);
         
             return stream;
