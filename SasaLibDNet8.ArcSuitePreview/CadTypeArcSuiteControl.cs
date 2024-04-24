@@ -1,5 +1,4 @@
-﻿using SasaLib.NumberingSupport;
-using StageServerRemote;
+﻿using StageServerRemote;
 using System.Windows.Forms;
 
 namespace SasaLib.ArcSuitePreview
@@ -78,7 +77,7 @@ namespace SasaLib.ArcSuitePreview
                 bool result = rmcCadType.SetUnSetArcSuiteAttrCADType(arcSuiteZuban, NewSetCadType, true, ref CurrentCadType, ArcSuiteUserName, ArcSuiteUserPass);
                 if (result)
                 {
-                    CurrentCadTypeString = ArcSuiteSupport.GetCadTypeString(CurrentCadType);
+                    CurrentCadTypeString = NumberingSupport.ArcSuiteSupport.GetCadTypeString(CurrentCadType);
 
                     MsgText = $"ArcSuiteの属性 「CADコード user:CadType」に{NewSetCadType}を追加しました。\n" +
                             $"現在値{CurrentCadTypeString}";
@@ -98,7 +97,7 @@ namespace SasaLib.ArcSuitePreview
                 bool result = rmcCadType.SetUnSetArcSuiteAttrCADType(arcSuiteZuban, NewSetCadType, false, ref CurrentCadType, ArcSuiteUserName, ArcSuiteUserPass);
                 if (result)
                 {
-                    this.CurrentCadTypeString = ArcSuiteSupport.GetCadTypeString(CurrentCadType);
+                    this.CurrentCadTypeString = NumberingSupport.ArcSuiteSupport.GetCadTypeString(CurrentCadType);
 
                     MsgText = $"ArcSuiteの属性 「CADコード user:CadType」から{NewSetCadType}を除去しました。\n" +
                         $"現在値{CurrentCadTypeString}";

@@ -8,7 +8,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using SasaLib;
 using System.Runtime.Versioning;
-using SasaLibDNet8;
+using SasaLibDummy;
 
 namespace SasaLibPictureBoxControlLibrary
 {

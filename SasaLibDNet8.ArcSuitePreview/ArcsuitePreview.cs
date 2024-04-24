@@ -1,5 +1,4 @@
-﻿using SasaLib.NumberingSupport;
-using StageServerRemote;
+﻿using StageServerRemote;
 using System;
 using static StageServerRemote.RemoteClientCADtype;
 /// <summary>
@@ -100,7 +99,7 @@ namespace SasaLib.ArcSuitePreview
         {
             get
             {
-                return ArcSuiteSupport.GetCadTypeString(user_cadtype);
+                return NumberingSupport.ArcSuiteSupport.GetCadTypeString(user_cadtype);
             }
         }
 

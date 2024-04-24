@@ -1,5 +1,5 @@
 ﻿// SasaLib メインクラス
-using SasaLibDNet8;
+using SasaLibDummy;
 using System;
 using System.Diagnostics;
 using System.Runtime.Versioning;

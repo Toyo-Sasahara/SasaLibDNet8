@@ -5,7 +5,7 @@
 //
 //using BarcodeLib;
 using SasaLib.PrintConfig;
-using SasaLibDNet8;
+using SasaLibDummy;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;

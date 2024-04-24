@@ -18,24 +18,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\CommonTicketClassLibrary\CommonTicketClassLibraryDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
     <ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="RemoteClient">
-      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClient\bin\Debug\RemoteClient.dll</HintPath>
-    </Reference>
-    <Reference Include="RemoteClientCADtype">
-      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClientCADtype\bin\Debug\RemoteClientCADtype.dll</HintPath>
-    </Reference>
-    <Reference Include="ToyoMcMfg.Staging.RemoteObjects">
-      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteObjects\bin\Release\ToyoMcMfg.Staging.RemoteObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

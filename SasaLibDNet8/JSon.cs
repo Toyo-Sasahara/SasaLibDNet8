@@ -2,7 +2,7 @@
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Unicode;
-using SasaLibDNet8;
+using SasaLibDummy;
 using SasaLib;
 
 namespace SasaLib

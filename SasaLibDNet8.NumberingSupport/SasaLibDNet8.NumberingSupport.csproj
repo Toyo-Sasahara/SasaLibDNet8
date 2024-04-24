@@ -10,29 +10,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\FieldValueSet\FieldValueSetDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="RemoteClient">
-      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClient\bin\Debug\RemoteClient.dll</HintPath>
-    </Reference>
-    <Reference Include="RemoteClientCADtype">
-      <HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClientCADtype\bin\Debug\RemoteClientCADtype.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Extensions">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms.Design">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms.Primitives">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.Primitives.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
     </Reference>
