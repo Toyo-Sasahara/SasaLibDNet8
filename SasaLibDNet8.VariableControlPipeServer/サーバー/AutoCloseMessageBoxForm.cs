@@ -115,7 +115,8 @@ namespace SasaLib.VariableControlPipeServer
                     break;
             }
 
-            switch (icon)
+            switch (icon)　            //TODO: 恐らく WindowsFormsリソース関連でエラーとなる
+
             {
                 case MessageBoxIcon.None:
                     Icon_picturebox.Image = Properties.Resources.Asterisk;
