@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -11,6 +12,7 @@ using static SasaLib.NumberingSupport.PhrasesToBeAwareConfig;
 
 namespace SasaLib.NumberingSupport
 {
+    [SupportedOSPlatform("windows")]
     public class PhrasesToBeAwareConfigWork
     {
 

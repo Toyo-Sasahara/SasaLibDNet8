@@ -7,6 +7,7 @@ using BarcodeLib;
 using SasaLib;
 using System;
 using System.Drawing;
+using System.Runtime.Versioning;
 
 
 namespace SasaLib
@@ -14,6 +15,7 @@ namespace SasaLib
     /// <summary>
     /// イメージ関係処理メソッド（スタティック）
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static partial class ImageUtilBarcode
     {
         // 上書き描画関連
@@ -150,6 +152,7 @@ namespace SasaLib
         /// <summary>
         /// ミリメートル座標をピクセル座標に変換
         /// </summary>
+        [SupportedOSPlatform("windows")]
         private class MillimetreToDot
         {
             private readonly float rezolutionH;

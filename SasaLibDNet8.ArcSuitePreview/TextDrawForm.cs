@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SasaLib.ArcSuitePreview
 {
+    [SupportedOSPlatform("windows")]
     public partial class TextDrawForm : Form
     {
         ArcSuitePreviewForm arcsuitePreviewForm;

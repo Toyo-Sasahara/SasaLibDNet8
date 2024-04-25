@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.Versioning;
 
 namespace SasaLib.ArcSuitePreview
 {
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     class MultiPage : IDisposable
     {
         /// <summary>

@@ -11,9 +11,11 @@ using System.Diagnostics;
 using System.Threading;
 using System.Net.NetworkInformation;
 using System.Linq;
+using System.Runtime.Versioning;
 
 namespace SasaLib.ArcSuitePreview
 {
+    [SupportedOSPlatform("windows")]
     public class CheckArcSuiteData
     {
         RemoteClientDRAWREGIST remoteClientDR;

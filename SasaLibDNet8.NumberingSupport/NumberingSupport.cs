@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Runtime.Versioning;
 using System.Text.RegularExpressions;
 
 namespace SasaLib.NumberingSupport
 {
     //public delegate void DelegateWriteLine(string msg);
 
+    [SupportedOSPlatform("windows")]
     public class NumberingSupport
     {
         public string NumberingServerName { get; set; }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.Versioning;
 
 /// <summary>
 /// 図面種類を分類する
@@ -14,6 +15,7 @@ namespace SasaLib.NumberingSupport
     /// 変更時の影響に要注意
     /// </summary>
     [Serializable] // パイプでオブジェクトを送受信するため、シリアル化のマークが必要
+    [SupportedOSPlatform("windows")]
     public class StageServerDatabaseConfig
     {
         public static StageServerDatabaseConfig Config { set; get; }

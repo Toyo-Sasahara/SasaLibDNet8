@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace SasaLib.SysConfigurator
 {
+    [SupportedOSPlatform("windows")]
     public static class Program
     {
         public static void Main(string[] args)

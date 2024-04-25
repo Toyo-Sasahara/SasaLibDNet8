@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SaSaLibDNet8TestAPP
 {
+    [SupportedOSPlatform("windows")]
     public partial class Tab05_Printer_UserControl : UserControl
     {
         Form1 mainForm;

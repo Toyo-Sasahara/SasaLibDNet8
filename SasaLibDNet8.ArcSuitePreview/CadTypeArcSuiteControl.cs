@@ -1,4 +1,5 @@
 ﻿using StageServerRemote;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace SasaLib.ArcSuitePreview
@@ -6,6 +7,7 @@ namespace SasaLib.ArcSuitePreview
     /// <summary>
     /// user:CadType を設定
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class CadTypeArcSuiteControl
     {
         string StageServerHost;

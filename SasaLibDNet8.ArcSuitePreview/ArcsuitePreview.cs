@@ -1,5 +1,6 @@
 ﻿using StageServerRemote;
 using System;
+using System.Runtime.Versioning;
 using static StageServerRemote.RemoteClientCADtype;
 /// <summary>
 /// 
@@ -10,6 +11,7 @@ namespace SasaLib.ArcSuitePreview
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public struct ArcsuitePreview
     {
         public string ID;

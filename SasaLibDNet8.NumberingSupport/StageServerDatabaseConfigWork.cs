@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Xml.Serialization;
 
 namespace SasaLib.NumberingSupport
 {
+    [SupportedOSPlatform("windows")]
     public static class StageServerDatabaseConfigWork
     {
         static string AssemblyInternalName = FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).InternalName;

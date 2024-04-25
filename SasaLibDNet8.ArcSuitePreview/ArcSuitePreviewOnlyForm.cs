@@ -5,10 +5,12 @@ using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using SasaLib.NumberingSupport;
 using StageServerRemote;
+using System.Runtime.Versioning;
 
 namespace SasaLib.ArcSuitePreview
 {
 
+    [SupportedOSPlatform("windows")]
     public partial class ArcSuitePreviewOnlyForm : Form
     {
         static bool EnableLeftButtonDrag = false;

@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ using static SasaLib.MSIDLL_Utility;
 
 namespace SaSaLibDNet8TestAPP
 {
+    [SupportedOSPlatform("windows")]
     public partial class Tab10_MSIDLL_UserControl : UserControl
     {
         Form1 mainForm;

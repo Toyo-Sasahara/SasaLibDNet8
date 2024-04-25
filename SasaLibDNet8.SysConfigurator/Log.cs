@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace SasaLib.SysConfigurator
     //  SomeDelegate という名前のデリゲート型を定義
     public delegate void LogMsgDelegate(string logtext);
 
+    [SupportedOSPlatform("windows")]
     public class Log
     {
         /// <summary>

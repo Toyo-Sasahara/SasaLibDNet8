@@ -8,9 +8,11 @@ using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
+using System.Runtime.Versioning;
 
 namespace SaSaLibDNet8TestAPP
 {
+    [SupportedOSPlatform("windows")]
     public partial class Tab01_TIFF_UserControl : UserControl
     {
         /// フィールド変数

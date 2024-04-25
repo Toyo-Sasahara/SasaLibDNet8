@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SasaLib.SysConfigurator
 {
+    [SupportedOSPlatform("windows")]
     public static class TestRun
     {
         public static void Execute(string ControlFile, string baseFolder = null)

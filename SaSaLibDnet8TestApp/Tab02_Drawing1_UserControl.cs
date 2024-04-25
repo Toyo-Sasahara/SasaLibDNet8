@@ -8,12 +8,14 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SaSaLibDNet8TestAPP
 {
+    [SupportedOSPlatform("windows")]
     public partial class Tab02_Drawing1_UserControl : UserControl
     {
         Form1 mainForm;

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ using static SasaLib.Mail;
 
 namespace SaSaLibDNet8TestAPP
 {
+    [SupportedOSPlatform("windows")]
     public partial class Tab15_Networks_UserControl : UserControl
     {
         SasaLib.Mail mail;

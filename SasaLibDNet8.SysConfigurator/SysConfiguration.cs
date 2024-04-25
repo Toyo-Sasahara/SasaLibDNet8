@@ -3,10 +3,12 @@ using SasaLib.SysConfigurator;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
+[SupportedOSPlatform("windows")]
 public class SysConfiguration
 {
     public string COMMENT01 = @"【DATETIME】 この命令ファイルの適用日時";

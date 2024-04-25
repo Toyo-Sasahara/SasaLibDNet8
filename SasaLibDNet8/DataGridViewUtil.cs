@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
     public static class DataGridViewUtil
     {
         /// <summary>
         /// DataGridViewでクリックしたセル情報を取得
         /// </summary>
-        [SupportedOSPlatform("windows")]
         public static void ShowCellContentClickHandler(object sender, DataGridViewCellEventArgs args)
         {
             DataGridView g = sender as DataGridView;

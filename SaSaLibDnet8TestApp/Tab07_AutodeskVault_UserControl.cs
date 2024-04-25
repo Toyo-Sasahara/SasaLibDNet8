@@ -13,9 +13,11 @@ using Autodesk.Connectivity.WebServices;
 using Autodesk.Connectivity.WebServicesTools;
 using VDF = Autodesk.DataManagement.Client.Framework;
 using ACW = Autodesk.Connectivity.WebServices;
+using System.Runtime.Versioning;
 
 namespace SaSaLibDNet8TestAPP
 {
+    [SupportedOSPlatform("windows")]
     public partial class Tab07_AutodeskVault_UserControl : UserControl
     {
         Form1 mainForm;

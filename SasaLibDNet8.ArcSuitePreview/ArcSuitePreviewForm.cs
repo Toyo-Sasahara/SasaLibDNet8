@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -66,6 +67,7 @@ namespace SasaLib.ArcSuitePreview
     /// <summary>
     /// ArcSuite Previewフォームクラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public partial class ArcSuitePreviewForm : Form
     {
         /// <summary>

@@ -3,6 +3,7 @@ using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -12,6 +13,7 @@ namespace SasaLib.NumberingSupport
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class NumberingSuppportConfigs
     {
         /// <summary>

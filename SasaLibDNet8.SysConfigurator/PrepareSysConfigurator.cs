@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace SasaLib.SysConfigurator
 {
     public delegate bool Delegate_RemoteServerGeFileList(string ServerSourceFolder, string seachPattern, out List<string> files, SasaLibDelegateWriteLine WriteLine);
 
+    [SupportedOSPlatform("windows")]
     public class PrepareSysConfigurator
     {
         /// <summary>

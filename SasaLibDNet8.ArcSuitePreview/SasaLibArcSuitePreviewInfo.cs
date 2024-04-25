@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace SasaLib.ArcSuitePreview
 {
+    [SupportedOSPlatform("windows")]
     public static class SasaLibArcSuitePreviewInfo
     {
         /// <summary>
