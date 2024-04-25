@@ -11,7 +11,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
-		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\FieldValueSet\FieldValueSetDNet8.csproj" />
 		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
 		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
 		<ProjectReference Include="..\..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj" />
