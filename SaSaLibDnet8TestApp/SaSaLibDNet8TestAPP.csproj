@@ -108,9 +108,6 @@
 		<Reference Include="DevExpress.XtraTreeList.v19.1">
 			<HintPath>..\..\SasaLibTestFrame\SasaLib.AutodeskVault2022\Vault2022SDKcopy\DevExpress.XtraTreeList.v19.1.dll</HintPath>
 		</Reference>
-		<Reference Include="RemoteClient">
-			<HintPath>..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\RemoteClient\bin\Debug\RemoteClient.dll</HintPath>
-		</Reference>
 		<Reference Include="SasaLib.ImageMagic">
 			<HintPath>..\..\SasaLibTestFrame\SasaLib.ImageMagic\bin\Debug\SasaLib.ImageMagic.dll</HintPath>
 		</Reference>

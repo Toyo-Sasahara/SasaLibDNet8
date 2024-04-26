@@ -3,7 +3,7 @@
 		<TargetFramework>net8.0-windows</TargetFramework>
 		<OutputType>Library</OutputType>
 		<RootNamespace>SasaLib.VariableControlPipeServer</RootNamespace>
-		<AssemblyName>SasaLib.VariableControlPipeServer</AssemblyName>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Deterministic>false</Deterministic>
 		<UseWindowsForms>true</UseWindowsForms>
