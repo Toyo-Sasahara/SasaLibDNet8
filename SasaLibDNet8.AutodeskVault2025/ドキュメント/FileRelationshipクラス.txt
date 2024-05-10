@@ -1,0 +1,34 @@
+名前空間　Autodesk.DataManagement.Client.Framework.Vault.Currency.Entities
+クラス FileRelationship
+
+2つのファイルの親子関係を記述したオブジェクト 
+
+public FileRelationship( 
+   FileIteration parent,
+   FileIteration child,
+   System.string childPath,
+   System.string refId,
+   System.string relationshipType,
+   System.bool isAttachment,
+   System.bool pathChanged
+)
+ 
+parent 
+親子関係における親（例：アセンブリは部品の親）。
+
+child 
+The child in a parent-child relationship (ie. a part is a child of an assembly)
+childPath 
+親子関係における子（例：部品がアセンブリの子である場合）。
+
+refId 
+親子関係を一意に識別するためのID
+
+relationshipType 
+リレーションシップの種類を特定するオプション文字列。多くの場合、リレーションシップを作成したアプリケーションの名前になります。例えば、部品の親であるアセンブリの場合、relationshipTypeは "INVENTOR "となる。
+
+isAttachment 
+マニュアル的な関係（愛着）か、真の依存関係かを判断する。
+
+pathChanged 
+関係における親または子の位置が変更されたかどうかを判断する。変更された場合、親の参照を更新する必要がある。

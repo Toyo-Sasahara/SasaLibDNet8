@@ -1,0 +1,43 @@
+﻿Autodesk.Connectivity.WebServices Namespace : File Class
+
+Vault内のファイルに関連する情報が含まれています。
+
+備考
+ファイルがチェックアウトされると、新しいバージョンがプレースホルダーとして作成されます。チェックアウトされた状態では、すべての情報が完全ではありません。
+
+継承の階層
+システム.オブジェクト
+   Autodesk.Connectivity.WebServices.File
+
+File Class Members 
+
+Public Property Cat このファイルに関するカテゴリー情報です。None "カテゴリのファイルの場合、FileCat オブジェクトは 0 の ID を持つ。 
+Public Property CheckedOut true の場合、このファイルの最新バージョンは、チェックアウトされた状態である。ファイルがチェックアウトされるたびに、新しいバージョンがプレースホルダとして作成される。 
+Public Property CkInDate ファイルがチェックインされた日付と時刻。このプロパティは、CheckedOutがfalseの場合のみ有効である。 
+Public Property CkOutMach ファイルをチェックアウトしたコンピュータのネットワークID。このパラメータは、CheckedOutがtrueのときのみ有効です。 
+Public Property CkOutSpec ファイルがチェックアウトされたクライアントのコンピュータ上のパス。このパラメータは、CheckedOutがtrueの場合のみ有効です。 
+Public Property CkOutUserId ファイルをチェックアウトしたユーザの ID。このパラメータは、CheckedOutがtrueのときのみ有効です。 
+Public Property Cksum ファイルのチェックサムです。このパラメータは、CheckedOutがfalseのときのみ有効です。 
+Public Property Cloaked 真の場合、ログインしたユーザーはこのファイルを見ることができないように制限されます。クロークされたFileの有効なデータは、IdとMasterIdのみです。他のデータはすべて null または 0 になります。 
+Public Property Comm ユーザーによって設定されるコメント文字列です。CheckedOutがtrueの場合、このプロパティは、チェックアウト時に設定されたコメントを含みます。CheckedOutがfalseの場合、このプロパティは、チェックイン時に設定されたコメントを含みます。ファイルをチェックインすると、そのバージョンのコメントはリセットされます。 
+Public Property ControlledByChangeOrder True の場合、ファイルは変更指示書によって制御されます。Public Property ControlledByChangeOrder false の場合、そのファイルは変更指示によって制御されていません。 
+Public Property CreateDate このバージョンのファイルが Vault で作成された日時を知らせます。ファイルの最初のバージョンでは、この日付は CkInDate と一致します。それ以降のバージョンでは、この値は前のバージョンがチェックアウトされた時刻を持つことになります。 
+Public Property CreateUserId このファイルをチェックインまたはアップロードしたユーザーの ID。 
+Public Property CreateUserName このファイルをチェックインまたはアップロードしたユーザーの名前です。 
+Public Property DesignVisAttmtStatus デザインビジュアライゼーション（.dwf）ファイルのステータス。 
+Public Property FileClass ファイルの分類。 
+Public Property FileLfCyc このファイルに関するライフサイクル情報です。 
+Public Property FileRev このファイルに関するリビジョン情報です。NULL」リビジョンのファイルの場合、FileRev オブジェクトの ID は 0 になります。 
+Public Property FileSize ファイルのサイズ（バイト単位）です。このプロパティは、CheckedOut が false の場合のみ有効です。 
+Public Property FileStatus ファイルが更新を必要とするかどうかを示します。 
+Public Property FolderId 親フォルダの ID。 
+Public Property Hidden True の場合、ファイルはクライアントによって非表示にされる必要があります。 
+Public Property Id ファイルの一意な識別子です。 
+Public Property IsOnSite マルチサイト環境において、このプロパティはファイルがローカルサイト上にあるかどうかを示します。Trueは、ファイルがローカルサイト上にあることを意味します。Falseは、ファイルがローカルサイト上にないことを意味する。この値は、シングルサイト環境では常に真になります。 
+Public Property Locked ファイルがログインしているユーザーによって変更可能かどうかを示す。 
+Public Property MasterId ファイルのすべてのバージョンをグループ化するために使用される一意の識別子です。言い換えれば、ファイルの異なるバージョンは、異なる ID を持ちますが、同じ MasterId を持ちます。 
+Public Property MaxCkInVerNum このファイルの最大バージョンで、現在データ保管庫にチェックインしているもの。 
+Public Property ModDate ファイルの最終更新日。この値は、ファイルをアップロードしたクライアントによって設定されます。 
+パブリック プロパティ Name ファイルの名前です。この値は、そのファイルのすべてのバージョンに適用されます。'VerName'には、ファイルの特定のバージョンに対する名前が含まれます。 
+Public Property VerName ファイルのこのバージョンに一致する履歴名です。 
+Public Property VerNum ファイルのバージョン。Vaultに追加されたばかりのファイルは、VerNumとして1を持ちます。 

@@ -1,0 +1,3521 @@
+         Command Name                                                     Description
+
+3D-Sketch Constrain Visibility                        
+3daEditDimCmd                                         
+3daGeneralNoteEdit                                    
+3DAHideAllAnnotationsCtxCmd                           
+3daLeaderTextEdit                                     引出線注記記号を編集
+
+3daPromoteDimensionCmd                                
+3DAShowAllAnnotationsCtxCmd                           
+3daSingleSegmentLeader                                単一セグメントの引出線を切り替え
+
+3daSurfTxtEdit                                        面の指示記号を編集
+
+3DAVisibilityCtxCmd                                   寸法の表示設定
+
+3dSketchUngroundCmd                                   
+_DrawingCommitViewCmd                                 
+AcadBlockChangeInsPointToModelSpace                   挿入点をモデル原点に設定
+
+AcadBlockChangeInsPointToViewCenter                   挿入点をビューの中心に設定
+
+AcadBlockDefDelete                                    
+AcadBlockRefSort                                      名前順に並べ替え
+
+AcadBlockRefZoom                                      
+AcadInsertBlockInModelSpace                           
+AcadInsertExBlockRef                                  
+ActivateConfigurationCtxCmd                           
+ActivateDesignViewCmd                                 デザイン ビュー リプレゼンテーションをアクティブ化
+
+ActivateLODRepCtxCmd                                  詳細レベルを有効化
+
+ActivatePresentationCtxCmd                            
+ActivateUCSCtxCmd                                     
+AddVertexCtxCmd                                       新しい頂点を記号に追加
+
+AdjustAppearanceCmd                                   調整
+
+AliasExcludeLinkAliasFileCtxCmd                       
+AliasFindInBrowserLinkAliasFileCtxCmd                 
+AliasIncludeLinkAliasFileCtxCmd                       
+AliasRepairAssociationCtxCmd                          
+AliasWireCmd                                          CAD ファイルをインポート
+
+AllowNoneParticipation                                
+AllowSectionParticipation                             
+AllowSliceParticipation                               
+AMxJointOriginBetweenTwoFacesCmd                      2 つの平面間の仮想中点としてジョイントの原点を作成
+
+AMxJointOriginInferCmd                                選択した点からジョイントの原点を推定配置
+
+AMxJointOriginOffsetCmd                               選択した点からジョイントの原点をオフセット
+
+AMxJointRedefineOffsetOriginCmd                       既存のオフセット原点を再定義
+
+AMxUnconsumeWeldBeadFeatureCmd                        
+AMxUpdateTranslatedConstrCtxCmd                       
+Anno3DDimCmd                                          寸法を作成
+
+Anno3DGeneralNoteCmd                                  注記
+
+Anno3DGeneralProfileNoteCmd                           全般的な注記
+
+Anno3DHoleNoteCmd                                     穴注記を作成
+
+Anno3DLeaderTxtCmd                                    引出線注記
+
+Anno3DSurfTxtCmd                                      面の指示記号 
+
+App3DAnnotationsVisibilityCmd                         
+App3DCompAnnotationsVisibilityCmd                     
+App3DMR_MoveTriadOnlyCmd                              
+App3DMR_RedefineCmd                                   
+App3DMR_TentativeDragCmd                              
+App3DPrintEnterCmd                                    印刷前にモデルを設定
+
+App3DPrintExitCmd                                     3D プリントを終了
+
+App3DPrintExportCmd                                   STL にエクスポート
+
+App3DPrintOptionsCmd                                  3D プリント保存オプション
+
+App3DPrintSetOrientationCmd                           方向を設定
+
+App3DPrintSetPositionCmd                              位置を設定
+
+App3DPrintShowMeshEdgesCmd                            メッシュ エッジを表示/非表示
+
+App3DPrintShowMeshFeatureCmd                          
+App3DSketchesVisibilityCmd                            
+AppAboutInventorCmd                                   プログラム情報、バージョン番号、著作権情報を表示
+
+AppAddInManagerCmd                                    アドインの設定
+
+AppAddToFolderCtxCmd                                  
+AppAllShadowCmd                                       すべての影
+
+AppAllWorkfeaturesCmd                                 
+AppAlphaBetaCmd                                       
+AppAmbientShadowCmd                                   間接光の影
+
+AppAnalysisActivateCmd                                解析を有効化
+
+AppAnalysisCopyCmd                                    解析をコピー
+
+AppAnalysisEditCmd                                    解析を編集
+
+AppAnalyzeFacesCmd                                    解析の表示/非表示を切り替え
+
+AppAnnotationPriorityWrapperCmd                       操作する注記を選択
+
+AppApplicationOptionsCmd                              アプリケーション オプションを設定
+
+AppApplicationsMenuCmd                                
+AppAppManagerCmd                                      
+AppArrangeAllWindowsCmd                               
+AppAssembleWindowsCmd                                 
+AppAttachPointCloudCmd                                点群データをアタッチ。
+
+AppAUGICmd                                            オートデスク ユーザ グループにアクセス
+
+AppAutodeskAccountCmd                                 
+AppAutodeskOnlineCmd                                  Web サイトからオンライン サポートやその他の便利な情報にアクセス
+
+AppBackViewCmd                                        背面図
+
+AppBodyPriorityWrapperCmd                             操作するボディを選択
+
+AppBodySanityCheckCmd                                 ボディの整合性を確認
+
+AppBottomViewCmd                                      下面図
+
+AppBoxCropPointCloudCmd                               点群データを切り抜き。
+
+AppBrowserCollapseAllCmd                              すべてのブラウザ エントリを折りたたむ
+
+AppBrowserCollapseChildrenCmd                         選択した項目のすべての子を折りたたむ
+
+AppBrowserExpandAllCmd                                ブラウザ内で全項目を展開
+
+AppBrowserExpandAllFoldersCmd                         
+AppBrowserExpandChildrenCmd                           選択した項目のすべての子を展開
+
+AppBrowserExpandFolderCmd                             
+AppBrowserSearchCmd                                   
+AppCenterOfGravityCmd                                 
+AppCGUCS_CreateCmd                                    
+AppCGUCS_DoneCmd                                      
+AppCGUCS_RestartCmd                                   
+AppCleanScreenCmd                                     
+AppCloseAllCmd                                        すべてドキュメントを閉じる
+
+AppCloseDocTabsCmd                                    
+AppCommitGroundCmd                                    
+AppCommonViewCtxCmd                                   一般視点ツールに変更
+
+AppComponentOpacityOffCmd                             コンポーネントの不透明表示 - オフ
+
+AppComponentOpacityOnCmd                              コンポーネントの不透明表示 - オン
+
+AppComponentPriorityWrapperCmd                        アクティブなアセンブリで操作するコンポーネントを選択
+
+AppConstrainedRotateViewCmd                           モデル空間で緯度と経度に沿ってオービット
+
+AppConstructionSurfacesVisibilityCmd                  
+AppContextual_ApplyCmd                                適用
+
+AppContextual_BackCmd                                 戻る(&B)
+
+AppContextual_CancelCmd                               キャンセル(ESC)
+
+AppContextual_ContinueCmd                             続行(&C)
+
+AppContextual_CreateCmd                               作成(&C)
+
+AppContextual_DoneCmd                                 完了(&D) [ESC]
+
+AppContextual_OKCmd                                   OK (Enter)
+
+AppContextual_RemoveCmd                               削除(&R)
+
+AppContextual_RestartCmd                              再実行(&R)
+
+AppContinueCmd                                        次のステップに進む
+
+AppConvertMenuCmd                                     
+AppCopyCmd                                            選択箇所をコピーしてｸﾘｯﾌﾟﾎﾞｰﾄﾞに保存
+
+AppCreateCompositeiMateCtxCmd                         コンポジット iMate を作成
+
+AppCreateiMateCmd                                     iMate を作成
+
+AppCreateiPartCmd                                     iPart を作成
+
+AppCreateNewFolderCtxCmd                              
+AppCrossSectionAnalysisCmd                            断面解析
+
+AppCurvatureAnalysisCmd                               曲率コーム解析
+
+AppCustomizeCmd                                       Autodesk Inventor のユーザ インタフェースをカスタマイズ
+
+AppCustomizeUserCommandsCmd                           
+AppCutCmd                                             選択箇所を切り取ってｸﾘｯﾌﾟﾎﾞｰﾄﾞに保存
+
+AppDefaultStandardsCmd                                アクティブな規格を変更
+
+AppDeleteCmd                                          選択した項目を削除
+
+AppDeleteFolderCtxCmd                                 
+AppDesignAssistantCmd                                 
+AppDesignDoctorCmd                                    アクティブなドキュメントの問題を修復
+
+AppDesktopAnalyticsCmd                                
+AppDimensionEditCmd                                   
+AppDimensionSettingsCtxCmd                            寸法プロパティ
+
+AppDimensionWrapperCmd                                一般寸法を配置
+
+AppDisplayBrowserCmd                                  
+AppDockBrowserCmd                                     
+AppDocumentSettingsCmd                                ドキュメントの設定を変更
+
+AppDownloadLanguagePacksHelpCmd                       
+AppDraftAnalysisCmd                                   勾配解析
+
+AppDrawingStyleComboCmd                               スタイルの選択
+
+AppDynamicDropDownCmd                                 ダイナミック ドロップ ダウン リストのトップ コマンド
+
+AppearanceCmd                                         外観
+
+AppEditLinksCmd                                       リンクしたオブジェクトを編集
+
+AppExitCmd                                            アプリケーションを終了、ドキュメントを保存するようメッセージを表示
+
+AppExportDwgCmd                                       DWG ファイルにエクスポート
+
+AppExportObjectsCmd                                   
+AppExportObjectsCtxCmd                                派生オブジェクトをエクスポートします。
+
+AppFacePropertiesCmd                                  
+AppFeaturePriorityWrapperCmd                          操作するフィーチャを選択
+
+AppFile3DPrintPreviewCmd                              印刷する前にモデルをプレビュー
+
+AppFileCloseCmd                                       アクティブなドキュメントを閉じる
+
+AppFileExportCADFormatCmd                             
+AppFileExportImageCmd                                 
+AppFileExportPDFCmd                                   
+AppFileImportDwgCmd                                   DWG ファイルをインポート
+
+AppFileImportNewCmd                                   CAD ファイルをインポート
+
+AppFileMigrateCmd                                     ドキュメントとその参照先のドキュメントをすべてマイグレーションする
+
+AppFileNewCmd                                         新しいドキュメントを作成
+
+AppFileOpenCmd                                        既存のドキュメントを開く
+
+AppFileOpenDwgCmd                                     DWG ファイルを開く
+
+AppFilePrintCmd                                       アクティブなドキュメントを印刷
+
+AppFilePrintPreviewCmd                                ページ全体を表示
+
+AppFilePrintSetupCmd                                  プリンタと印刷オプションを変更
+
+AppFilePublishCmd                                     ドキュメントを DWF ファイルにパブリッシュ
+
+AppFileSaveAsCmd                                      アクティブなドキュメントに名前を付けて保存
+
+AppFileSaveCmd                                        アクティブなドキュメントを保存
+
+AppFileSaveCopyAsCmd                                  アクティブなドキュメントのコピーに名前を付けて保存
+
+AppFileSaveCopyAsTemplateCmd                          
+AppFileSendTo3DPrintServiceCmd                        ファイルを準備して 3D プリント サービスにポスト
+
+AppFindInBrowserCtxCmd                                選択した項目をブラウザ内で検索
+
+AppFindWeldingSymbolCmd                               ブラウザで使用している溶接記号を検索し、グラフィックス ウィンドウでズームします。
+
+AppFixedWorkPlaneEditCtxCmd                           
+AppFolderSelChildrenCtxCmd                            
+AppFreeRotateViewCmd                                  画面空間で垂直軸と水平軸に沿ってオービット
+
+AppFrontViewCmd                                       正面図
+
+AppGaussianAnalysisCmd                                サーフェス解析
+
+AppGeometryTextWrapperCmd                             ジオメトリ - 位置合わせした文字を作成または編集
+
+AppGetStartCmd                                        
+AppGlobalUpdateWrapperCmd                             ルート以下、すべてのアセンブリ内容を更新
+
+AppGraphicsDriversHelpCmd                             
+AppGripSnapBackupCmd                                  
+AppGripSnapCmd                                        再配置するコンポーネント ジオメトリを選択
+
+AppGripSnapContinueCmd                                
+AppGripSnapFlipCmd                                    
+AppGroundPlaneSettingCmd                              グラウンド面の設定を変更
+
+AppGroundPlaneToggleCmd                               グラウンド面を表示/非表示
+
+AppGroundReflectionsToggleCmd                         
+AppGroundShadowCmd                                    影付き
+
+AppHelpStudentPortalCmd                               学生用ポータル
+
+AppHelpSubscriptionReleaseHelp                        
+AppHelpTopicsCmd                                      ヘルプ トピック一覧
+
+AppHiddenEdgeDisplayCmd                               隠線エッジを表示
+
+AppHighlightNewAutoHideCmd                            
+AppHighlightNewCmd                                    
+AppHorizontalWindowsCmd                               
+AppHowToCmd                                           この項目のヘルプを表示
+
+AppHowToWindowsCmd                                    
+AppIdeaStationCmd                                     
+AppIllustrationDisplayCmd                             スケッチ イラスト表示
+
+AppiMateGlyphVisibilityCmd                            
+AppiMatePropertiesCtxCmd                              
+AppiMateSuppressCtxCmd                                省略状態を切り替え
+
+AppImportFileCmd                                      ファイル インポート
+
+AppInlineWorkAxisEditCtxCmd                           参照ジオメトリとして使用する作業軸を作成
+
+AppInlineWorkPlaneEditCtxCmd                          参照ジオメトリとして使用する作業平面を作成
+
+AppInlineWorkPointEditCtxCmd                          参照ジオメトリとして使用する作業点を作成
+
+AppInsertImageCmd                                     イメージを挿入
+
+AppInsertImageWrapperCmd                              ファイルからイメージを挿入
+
+AppInsertOLEObjectCmd                                 新しい埋め込みオブジェクトを挿入
+
+AppiPropertiesWrapperCmd                              ドキュメント プロパティ
+
+AppIsometricViewCmd                                   ホーム ビュー
+
+AppLaunchViaSpreadSheetCmd                            スプレッドシートを使用して編集
+
+AppLeafPriorityWrapperCmd                             リーフ パーツ優先
+
+AppLeftViewCmd                                        左側面図
+
+AppLightingStyleCmd                                   
+AppLinePlaneWorkPlaneEditCtxCmd                       
+AppLinePropertiesCmd                                  線分プロパティ
+
+AppLinePropertiesToggleCmd                            クリックして既定フォーマットとユーザ定義フォーマットを切り替え
+
+AppLocalUpdateCmd                                     更新
+
+AppLookAtCmd                                          選択した図形のビューの正面を表示
+
+AppLoopChainingWorkFeatureEditCtxCmd                  
+AppLoopWorkFeatureEditCtxCmd                          
+AppMacrosCmd                                          マクロを編集
+
+AppManufacturingWikiHelpCmd                           
+AppMaterialStyleComboCmd                              材料を選択
+
+AppMeasureDistanceCmd                                 モデルの要素間の距離を計測
+
+AppMeasureMomentCmd                                   閉じたループのモーメントを計測
+
+AppMenuHelpTopicsCmd                                  Autodesk Inventor ヘルプを参照
+
+AppMigrateSettingsCmd                                 
+AppMonochromeDisplayCmd                               モノクロ表示
+
+AppMTBVisibilityCmd                                   
+AppMyHomeBackCmd                                      
+AppNavigationBarCloseCmd                              
+AppNavigationBarCmd                                   
+AppNewWindowCmd                                       アクティブ ドキュメント用に別のウィンドウを開く
+
+AppNextViewCmd                                        
+AppNGX_ApplyCmd                                       コマンドを実行してリスタート
+
+AppNGX_CancelCmd                                      コマンドをキャンセル
+
+AppNGX_OKCmd                                          コマンドを実行
+
+AppNoGroundShadowCmd                                  影なし
+
+AppObjectShadowCmd                                    オブジェクトの影
+
+AppOLEBringForwardCtxCmd                              
+AppOLEChangeSourceCtxCmd                              
+AppOLEEditCtxCmd                                      埋め込みオブジェクトを編集
+
+AppOLEPropertiesCmd                                   
+AppOLESendBackCtxCmd                                  
+AppOLEVisibilityCmd                                   
+AppOpenCommandWindowCmd                               コマンド ウィンドウを開く
+
+AppOpenSampleFilesCmd                                 
+AppOrganizerCmd                                       このモデルのプロパティ、および他のモデル内のプロパティを編成
+
+AppOriginAxesVisibilityCmd                            
+AppOriginPlanesVisibilityCmd                          
+AppOriginPointsVisibilityCmd                          
+AppOrthographicCameraCmd                              正投影
+
+AppPackAndGoCmd                                       
+AppPanViewCmd                                         画面移動
+
+AppParametersCmd                                      パラメータと計算式の定義/修正
+
+AppPasteCmd                                           ｸﾘｯﾌﾟﾎﾞｰﾄﾞの内容を挿入
+
+AppPasteSpecialCmd                                    ｸﾘｯﾌﾟﾎﾞｰﾄﾞの内容をオプションを選択して挿入
+
+AppPerformanceMetricsCmd                              作業記録を使用してパフォーマンスを計測するツール
+
+AppPerformanceProfilingCmd                            
+AppPerspectiveCameraCmd                               パース
+
+AppPerspectiveOrthoCameraCmd                          
+AppPlanarFaceWorkPlaneEditCtxCmd                      
+AppPointCloudManagerCmd                               ナビゲータ
+
+AppPointCloudPlaneCmd                                 点群の平面から作業平面を作成
+
+AppPointCloudPointCmd                                 点群のポイントから作業点を作成。
+
+AppPreciseAlignCmd                                    正確な再定義
+
+AppPreciseDeltaInputCmd                               デルタ入力
+
+AppPreciseDistanceInputCmd                            
+AppPreciseInputCmd                                    座標入力
+
+AppPreciseRelativeOriginCmd                           原点にリセット
+
+AppPreciseXAngleInputCmd                              
+AppPreciseXYInputCmd                                  
+AppPreciseXYZInputCmd                                 
+AppPreciseYAngleInputCmd                              
+AppPresetVisualSettingCmd                             
+AppPreviousViewCmd                                    前のビューに戻る
+
+AppProgrammingHelpCmd                                 
+AppProjectGeometryWrapperCmd                          曲線をスケッチ平面上に投影
+
+AppProjectsCmd                                        プロジェクト ファイルを選択して現在のプロジェクトを変更
+
+AppProteinStyleOffCmd                                 
+AppProteinStyleOnCmd                                  
+AppRealisticShadingDisplayCmd                         リアリスティックな表示
+
+AppRebuildAllWrapperCmd                               アクティブなパーツに含まれるすべてのフィーチャを再構築
+
+AppRedoCmd                                            直前に取り消された操作をやり直す
+
+AppRefineAppearanceCmd                                外観をリファイン
+
+AppRefreshCmd                                         
+AppRemoveCompositeiMateMemberCtxCmd                   
+AppRenderStyleComboCmd                                スタイルの選択
+
+AppRepeatCmd                                          
+AppRepeatWorkFeatureEditCtxCmd                        
+AppReplayTranscriptCmd                                
+AppReplayTranscriptMultipleTimesCmd                   
+AppResetLayoutWindowsCmd                              
+AppRestartCommand                                     現在のコマンドを再実行
+
+AppReturnBaseEnv                                      
+AppReturnParentCmd                                    親に戻る
+
+AppReturnPreviousCmd                                  前の環境に戻る
+
+AppReturnTopCmd                                       最上位アセンブリに戻る
+
+AppRibbonCustomizeCmd                                 
+AppRibbonCustomizeDialogCmd                           
+AppRightViewCmd                                       右側面図
+
+AppRotateViewCmd                                      円弧オービット
+
+AppSaveAllCmd                                         アクティブなドキュメントとその従属を保存
+
+AppSelectLayerComboCmd                                画層を選択
+
+AppSelectNorthwestArrowCmd                            選択
+
+AppSelectOtherCmd                                     他の図形により隠された図形を選択
+
+AppSendEmailCmd                                       DWF ファイルを電子メール添付で送信
+
+AppSetPivotPointCmd                                   現在のビューの回転軸点を設定します
+
+AppShadedDisplayCmd                                   シェーディング表示オン/オフ
+
+AppShadedDisplayPopUpCmd                              シェーディング表示
+
+AppShadedWithEdgesDisplayCmd                          シェーディング、エッジを表示
+
+AppShadowSettingCmd                                   
+AppShowGettingStartedCmd                              
+AppShowHomeBaseCmd                                    
+AppShowHomeBaseHelpCmd                                
+AppShowHomeBaseOverlayCmd                             
+AppShowHomeBaseQatCmd                                 
+AppShowPanelsCmd                                      
+AppShowPreciseInputBarCmd                             
+AppShowTolAdvisorInfoCmd                              
+AppSketch2DWrapperCmd                                 2D スケッチを作成/編集
+
+AppSketch3DWrapperCmd                                 3D スケッチを作成/編集
+
+AppSketchDimensionsVisibilityCmd                      
+AppSketchesVisibilityCmd                              
+AppSketchToggleOpacityCmd                             スケッチの表示設定を切り替え
+
+AppSteeringWheelBasicBuildingCmd                      
+AppSteeringWheelBasicObjectCmd                        
+AppSteeringWheelCloseCmd                              
+AppSteeringWheelCmd                                   SteeringWheels 表示ツールを有効化
+
+AppSteeringWheelFitWindowCmd                          
+AppSteeringWheelFullNavCmd                            
+AppSteeringWheelHomeCmd                               
+AppSteeringWheelMiniBuildingCmd                       
+AppSteeringWheelMiniNavCmd                            
+AppSteeringWheelMiniObjectCmd                         
+AppSteeringWheelOptionsCmd                            
+AppSteeringWheelOrgCenterCmd                          
+AppStitchWrapperCmd                                   サーフェス ステッチ
+
+AppStyleCopyTableCmd                                  
+AppStyleDeleteColumnCmd                               
+AppStyleDeleteRowCmd                                  
+AppStyleInsertColumnCmd                               
+AppStyleInsertRowCmd                                  
+AppStyleLibraryManagerCmd                             スタイル ライブラリのスタイルの比較、コピー、名前変更、削除
+
+AppStylePasteDataCmd                                  
+AppStylePasteTableCmd                                 
+AppSwitchPanelBackwardCmd                             ブラウザ ペインを後方に切り替え
+
+AppSwitchPanelForwardCmd                              ブラウザ ペインを前方に切り替え
+
+AppTeamWebCmd                                         Team Web にアクセス
+
+AppTechnicalIllustrationDisplayCmd                    テクニカル イラスト表示
+
+AppTestPubAnnotationCmd                               
+AppTestPubDimensionCmd                                
+AppTexturesOffCmd                                     テクスチャをオフにします
+
+AppTexturesOnCmd                                      テクスチャをオンにします
+
+AppTextWrapperCmd                                     文字の作成と編集
+
+AppToggleProteinMaterialCmd                           
+AppTopViewCmd                                         平面図
+
+AppTriadCommitGroundCmd                               
+AppTutorialsCmd                                       Autodesk Inventor で効果的な設計方法を学習
+
+AppUCSAxesVisibilityCmd                               
+AppUCSPlanesVisibilityCmd                             
+AppUCSPointsVisibilityCmd                             
+AppUCSTriadsVisibilityCmd                             
+AppUncropPointCloudCmd                                点群データを切り抜き解除
+
+AppUndoCmd                                            最後の操作を元に戻す
+
+AppUpdateMassPropertiesCmd                            マス プロパティを更新
+
+AppUseRapidRTToggleCmd                                
+AppUserWorkAxesVisibilityCmd                          
+AppUserWorkPlanesVisibilityCmd                        
+AppUserWorkPointsVisibilityCmd                        
+AppValidateResizeWindowCmd                            
+AppValidationCheckpointCmd                            検証チェックポイントを挿入
+
+AppVBAEditorCmd                                       Visual Basic Editor を開く
+
+AppVerticalWindowsCmd                                 
+AppViewCubeCmd                                        ViewCube 表示ツールを有効化
+
+AppViewCubeHomeCmd                                    
+AppViewCubeOrthographicCmd                            
+AppViewCubePerspectiveCmd                             
+AppViewCubePerspectiveOrthoCmd                        
+AppViewCubePropertiesCmd                              
+AppViewCubeViewFrontCmd                               
+AppViewCubeViewHomeFixedCmd                           
+AppViewCubeViewHomeFloatingCmd                        
+AppViewCubeViewLockCurrentSelectionCmd                
+AppViewCubeViewResetToFrontCmd                        
+AppViewCubeViewTopCmd                                 
+AppViewDoctabCmd                                      
+AppViewMarkingMenuCmd                                 
+AppViewMoreWindowsCmd                                 
+AppViewStatusBarCmd                                   ステータス バーを表示/非表示
+
+AppVisualStyleSettingsCmd                             
+AppVisualSyllabusCmd                                  デザイン作業を素早く完了させる方法を学習
+
+AppWatercolorDisplayCmd                               水彩表示
+
+AppWhatsNewCmd                                        Autodesk Inventor の新機能を学習
+
+AppWireframeDisplayCmd                                ワイヤフレーム表示
+
+AppWireframeNoHiddenEdgesDisplayCmd                   ワイヤフレーム、表示エッジのみ表示
+
+AppWireframeWithHiddenEdgesDisplayCmd                 ワイヤフレーム、隠線エッジを表示
+
+AppWorkAxisEditCtxCmd                                 
+AppWorkPlaneDMUIEditCtxCmd                            
+AppWorkPlaneEditCtxCmd                                
+AppWorkPointEditCtxCmd                                
+AppXRayGroundShadowCmd                                透過
+
+AppZoomAllCmd                                         図形を全画面表示
+
+AppZoomCmd                                            ズーム
+
+AppZoomSelectCmd                                      選択図形をズーム
+
+AppZoomWindowCmd                                      詳細領域を拡大
+
+AssembleCmd                                           コンポーネントを配置するための拘束を作成
+
+Assembly2DKinematicsCtxCmd                            2D 運動学
+
+Assembly3DKinematicsCtxCmd                            3D 運動学
+
+AssemblyAdaptiveCtxCmd                                アダプティブ
+
+AssemblyAddFeatureParticipantCtxCmd                   
+AssemblyAllInvisibleDesignViewCmd                     
+AssemblyAllVisibleDesignViewCmd                       
+AssemblyAnalyzeInterferenceCmd                        
+AssemblyAssociateDesignViewCmd                        
+AssemblyBillOfMaterialsCmd                            部品表
+
+AssemblyBOMStructureDefaultCtxCmd                     
+AssemblyBOMStructureReferenceCtxCmd                   
+AssemblyChangeComponentCmd                            
+AssemblyComponentSelectionPriorityCmd                 アクティブなアセンブリで操作するコンポーネントを選択
+
+AssemblyComponentSettingsCtxCmd                       
+AssemblyCompSuppressionCtxCmd                         省略状態を切り替え
+
+AssemblyConstraintToLayoutPlaneCtxCmd                 レイアウト平面に拘束
+
+AssemblyConstraintVisibilityCtxCmd                    関係の表示設定
+
+AssemblyContactSetCtxCmd                              
+AssemblyContactSolverCmd                              
+AssemblyConvertToWeldmentDocCmd                       溶接に変換
+
+AssemblyCopyComponentCmd                              コピー コンポーネント
+
+AssemblyCopyDVToLODRepCommand                         ビュー リプレゼンテーションを詳細レベルにコピー
+
+AssemblyCopyLODRepCommand                             詳細レベルをコピー
+
+AssemblyCopyLODRepToViewRepCommand                    詳細レベルをビュー リプレゼンテーションにコピー
+
+AssemblyCreateComponentCmd                            アセンブリに新規コンポーネントを作成
+
+AssemblyCreatePresentationCmd                         プレゼンテーションを作成
+
+AssemblyCreateShrinkwrapCmd                           アセンブリのシュリンクラップを作成
+
+AssemblyDeferUpdateCmd                                
+AssemblyDegreesOfFreedomCmd                           
+AssemblyDegreesOfFreedomCtxCmd                        
+AssemblyDemoteCmd                                     コンポーネントの階層を新規サブアセンブリに移動
+
+AssemblyDiagnoseConstraintCtxCmd                      矛盾した拘束を診断
+
+AssemblyDriveConstraintCtxCmd                         
+AssemblyDrivePosition2DCtxCmd                         アセンブリ コントロール位置(2D)
+
+AssemblyDrivePosition3DCtxCmd                         アセンブリ コントロール位置(3D)
+
+AssemblyEditComponentCtxCmd                           選択されたオブジェクトを編集
+
+AssemblyEditComponentPatternCtxCmd                    選択したコンポーネント パターンを編集
+
+AssemblyEditConstraintCtxCmd                          編集
+
+AssemblyEditConstraintParameterCtxCmd                 修正
+
+AssemblyEditJointParameterCtxCmd                      ジョイント パラメータを編集
+
+AssemblyEnableElastic                                 診断
+
+AssemblyEndSectionViewCmd                             断面を終了
+
+AssemblyEnhSelAllOccurrencesCmd                       コンポーネントを選択 ...
+
+AssemblyEnhSelComponentBBCmd                          コンポーネント オフセットでコンポーネントを選択
+
+AssemblyEnhSelConstrainedCmd                          拘束対象のコンポーネントを選択 ...
+
+AssemblyEnhSelEnablePrehighlightCmd                   コンポーネントをプレハイライト表示しない
+
+AssemblyEnhSelInvertCmd                               コンポーネントの選択を反転
+
+AssemblyEnhSelSelectByPlaneCmd                        平面でコンポーネントを選択
+
+AssemblyEnhSelSizeCmd                                 サイズでコンポーネントを選択
+
+AssemblyEnhSelSphereCmd                               球オフセットでコンポーネントを選択
+
+AssemblyEnhSelUndoCmd                                 前のコンポーネント選択に戻す
+
+AssemblyEnhSelVisibleOnlyCmd                          非表示のコンポーネントは選択されません。
+
+AssemblyFindComponentsCmd                             
+AssemblyFinishEditCmd                                 編集終了
+
+AssemblyFinishEditConstraintCtxCmd                    編集終了
+
+AssemblyFreeMoveDeleteAllCmd                          すべての関係を削除
+
+AssemblyFreeMoveDeleteCmd                             関係を削除
+
+AssemblyFreeMoveEditRelationshipCmd                   編集
+
+AssemblyFreeMoveElasticDeleteAllCmd                   すべての関係を削除
+
+AssemblyFreeMoveElasticSuppressAllCmd                 すべての関係を省略
+
+AssemblyFreeMoveIsolateAllCmd                         すべてのコンポーネントを選択のみ表示
+
+AssemblyFreeMoveIsolateCmd                            コンポーネントを選択のみ表示
+
+AssemblyFreeMoveModifyRelationshipCmd                 修正
+
+AssemblyFreeMoveSuppressAllCmd                        すべての関係を省略
+
+AssemblyFreeMoveSuppressCmd                           関係を省略
+
+AssemblyFreeMoveUndoIsolateCmd                        選択のみ表示を取り消し
+
+AssemblyGlobalUpdateCmd                               ルート以下、すべてのアセンブリ内容を更新
+
+AssemblyGroundCtxCmd                                  固定状態を切り替え
+
+AssemblyHalfSectionViewCmd                            半断面図を作成
+
+AssemblyHideAllRelationshipsCmd                       すべての関係を非表示
+
+AssemblyIndependentPatternElementCtxCmd               
+AssemblyInferImatesCtxCmd                             アセンブリ拘束から iMate を推定配置
+
+AssemblyInferImatesFromConstraintsCtxCmd              
+AssemblyInsertConstraintCmd                           2 つのコンポーネント間に拘束を適用
+
+AssemblyiPropertiesCmd                                ドキュメント プロパティ
+
+AssemblyIsolateAndEditConstrCmd                       
+AssemblyIsolateBodyCtxCmd                             
+AssemblyIsolateCmd                                    選択されたコンポーネントのみ表示
+
+AssemblyIsolateComponentsCtxCmd                       
+AssemblyIsolatePointCloudCtxCmd                       
+AssemblyIsolateUndoCmd                                選択のみ表示の変更を取り消し
+
+AssemblyJointComponentCmd                             2 つのコンポーネント間にジョイントを適用
+
+AssemblyJointEditComponentCmd                         2 つのコンポーネント間のジョイントを編集
+
+AssemblyJointLockDOFCtxCmd                            ジョイントの自由度をロック
+
+AssemblyJointProtectCtxCmd                            ジョイントの自由度を保護
+
+AssemblyLayoutDrivePositionCtxCmd                     レイアウト コントロール位置
+
+AssemblyLeafPriorityCmd                               操作するパーツを選択
+
+AssemblyLockDesignViewCmd                             デザイン ビュー リプレゼンテーションをロック/ロック解除
+
+AssemblyMakeHeavyWeightCmd                            グラフィックスを完全ロード
+
+AssemblyMakeLayoutCmd                                 アセンブリでレイアウトを作成
+
+AssemblyMakeLightWeightCmd                            簡易モードに移行
+
+AssemblyMidplaneWorkPlaneCmd                          2 平面の中点平面で作業平面を作成
+
+AssemblyMirrorComponentCmd                            ミラー コンポーネント
+
+AssemblyMoveComponentCmd                              移動するコンポーネントを選択
+
+AssemblyNewLODRepCommand                              新しい詳細レベル
+
+AssemblyNewSubstituteDeriveRepCommand                 アセンブリを派生
+
+AssemblyNewSubstituteSelectRepCommand                 パーツ ファイルを選択
+
+AssemblyNewSubstituteShrinkwrapRepCommand             シュリンクラップを代替として作成
+
+AssemblyOpenBOMEditorCmd                              選択済みオブジェクトに対して部品表エディタを開きます
+
+AssemblyOpenComponentCmd                              選択オブジェクトのビューを開く
+
+AssemblyPatternComponentCmd                           アセンブリ コンポーネントからパターンを作成
+
+AssemblyPlaceCompGroundedOriginCmd                    コンポーネントを原点に固定して配置
+
+AssemblyPlaceComponentCmd                             アセンブリ内に既存のコンポーネントを配置
+
+AssemblyPlaceCompRotateX90Cmd                         X を 90 度回転
+
+AssemblyPlaceCompRotateY90Cmd                         Y を 90 度回転
+
+AssemblyPlaceCompRotateZ90Cmd                         Z を 90 度回転
+
+AssemblyPlaceDeselComponentCmd                        アセンブリに iPart を配置
+
+AssemblyPlaceImportCmd                                CAD コンポーネントをインポートして配置
+
+AssemblyPromoteCmd                                    コンポーネントを上位アセンブリに移動
+
+AssemblyPropertiesCmd                                 
+AssemblyQuarterSectionViewCmd                         4 分の 1 断面を作成
+
+AssemblyRebuildAllCmd                                 アクティブ パーツに含まれるすべてのフィーチャを再構築
+
+AssemblyRelationshipsWrapperCmd                       関係の表示/非表示を切り替え
+
+AssemblyRemoveColorsDesignViewCmd                     
+AssemblyRemoveFeatureParticipantCtxCmd                
+AssemblyRemoveFeatureParticipantsCtxCmd               
+AssemblyReplaceAllCmd                                 アクティブなアセンブリ内の、選択されたコンポーネントのすべてのオカレンスを置換
+
+AssemblyReplaceCmd                                    コンポーネント置換
+
+AssemblyRepositionMoveCompCmd                         コンポーネント移動の再配置コマンドを変更
+
+AssemblyRepositionMoveTriadCmd                        座標系移動の再配置コマンドを変更
+
+AssemblyRepresentationsCmd                            リプレゼンテーションを選択
+
+AssemblyRotateComponentCmd                            回転するコンポーネントを選択
+
+AssemblySetiMateVisibilityCtxCmd                      
+AssemblyShowAllSickRelationshipsCmd                   
+AssemblyShowAssemblyFeatureDimsCtxCmd                 フィーチャ寸法とスケッチ寸法を表示
+
+AssemblyShowRelationshipsCmd                          関係を表示するコンポーネントを選択
+
+AssemblyShrinkwrapSubCmd                              シュリンクラップを代替として作成
+
+AssemblyStopEditFeatureGroupCtxCmd                    編集終了
+
+AssemblySuppressConstraintCtxCmd                      関係を省略
+
+AssemblySuppressFeatureCtxCmd                         
+AssemblySuppressiMateCtxCmd                           
+AssemblySuppressPatternElementCtxCmd                  
+AssemblyThreeQuarterSectionViewCmd                    4 分の 3 断面を作成
+
+AssemblyToggleEnabledStateCtxCmd                      
+AssemblyToggleTransparentStateCtxCmd                  透明
+
+AssemblyUnisolateBodyCtxCmd                           
+AssemblyUnisolatePointCloudCtxCmd                     
+AssemblyVisibilityCheckerCmdAllInCamera               現在のカメラ ビューで表示されているすべてのコンポーネントを選択
+
+AssemblyVisibilityCheckerCmdExternal                  外側に出ているコンポーネントをすべて選択
+
+AssemblyVisibilityCheckerCmdInternal                  非表示のコンポーネントをすべて選択
+
+AssemblyVisibilityCtxCmd                              表示切り替え
+
+AssemblyWeldBeadFeatureGroupCmd                       溶接ビード フィーチャ グループをアクティブにする
+
+AssemblyWeldBeadReportCmd                             
+AssemblyWeldEndCapCmd                                 タグ溶接終端面
+
+AssemblyWeldMachineFeatureGroupCmd                    溶接機械加工フィーチャ グループをアクティブにする
+
+AssemblyWeldPrepFeatureGroupCmd                       溶接準備フィーチャ グループをアクティブにする
+
+AssemblyWeldSymbolVisibilityCtxCmd                    溶接記号の表示設定を切り替え
+
+AssmEditRelationshipWrapperCmd                        編集
+
+AssmModifyRelationshipWrapperCmd                      修正
+
+AssyBodyPropertiesCtxCmd                              
+AttributeHelper                                       View, edit, and create attributes.
+Autodesk:GeneralTools:CheckSpellingCmd                Check spelling and grammar
+Autodesk:GeneralTools:PitchHelixCmd                   Create Pitch Helix
+Back                                                  直前のポイントを再選択
+
+BossEditCtxCmd                                        
+BoundaryPatchUndoSelCmd                               最後の選択を元に戻す
+
+BreakLinkCmd                                          リンクを解除
+
+BrowserWeldBeadsShowAllFilterCtxCmd                   
+BrowserWeldBeadsShowConsumedFilterCtxCmd              
+BrowserWeldBeadsShowUnconsumedFilterCtxCmd            
+CCV2BatchPublishButton                                コンテンツ センターにバッチ パブリッシュ
+CCV2ChangeSizeButton                                  標準コンポーネントのサイズを変更
+CCV2ChangeSizeButtonCM                                標準コンポーネントのサイズを変更
+CCV2EditFamilyButton                                  ファミリ テーブルを編集/表示
+CCV2EditorButton                                      コンテンツ センター エディタを開きます
+CCV2OpenButton                                        コンテンツ センターからコンポーネントを開きます
+CCV2OpenCWButton                                      Autodesk Manufacturing Supplier Content Center にアクセスします
+CCV2OpenEditorButton                                  エディタ内を検索
+CCV2PlaceButton                                       コンテンツ センターからコンポーネントを配置します
+CCV2PlaceButtonCM                                     コンテンツ センターからコンポーネントを配置します
+CCV2PlaceFeatureButton                                コンテンツ センターからフィーチャを配置します
+CCV2PlaceFeatureButtonCM                              コンテンツ センターからフィーチャを配置します
+CCV2PublishButton                                     コンテンツ センターにパーツをパブリッシュ
+CCV2ReplaceButton                                     コンポーネントをコンテンツ センターからのコンポーネントに置き換えます
+CCV2ReplaceButtonCM                                   コンポーネントをコンテンツ センターからのコンポーネントに置き換えます
+CCV2RSCButton                                         標準コンポーネントを更新
+ChangeDetailCalloutShapeCmd                           
+ClearDiagnosisDataCmd                                 
+ClearOverridesCmd                                     クリア
+
+cmdCreateViewShare                                    共有ビューをアップロードしてオンラインで表示および共有する
+cmdPublishViewShare                                   共有
+CMx3DaLinDim1stArrowheadInsideCtxCmd                  
+CMx3DaLinDim2stArrowheadInsideCtxCmd                  
+CMx3DaLinDimArrowheadsInsideCtxCmd                    
+CMx3DPrintDocDeleteCmd                                
+CMx3DPrintDocEditCmd                                  
+CMxAttachPointCloudEditCmd                            
+CMxCheckForUpdatesCmd                                 
+CMxFeatureRelationshipsCmd                            関係
+
+CMxOpenDrawingCmd                                     図面を開く 
+
+CMxRegionScanPointCloudCtxMenuCmd                     
+CMxSubstituteCmd                                      
+ComponentSelectionMode                                ツイークするコンポーネントを選択
+
+ConfigsEditFamilyScopeCmd                             設定可能項目のキャプチャ範囲を切り替え
+
+ConfigsEditMemberScopeCmd                             設定可能項目のキャプチャ範囲を切り替え
+
+ConnOptionsCmdIntName                                 サーバの接続オプションを表示します。
+ContentLoginCmdIntName                                Vault サーバへのセキュアなアクセスを有効にします。
+ContentLogoutCmdIntName                               コンテンツ ライブラリ データベースからのみログアウトします。
+Continue                                              頂点の追加/平面の選択を完了
+
+ConvertSpline3dModeCtxCmd                             スプラインのタイプを変換
+
+ConvertSplineModeCtxCmd                               スプラインのタイプを変換
+
+CopyDesignViewCmd                                     デザイン ビュー リプレゼンテーションをコピー
+
+CreateDesignViewCmd                                   新規デザイン ビュー リプレゼンテーション
+
+CreateDwgUnderlayCmd                                  DWG をインポート
+
+CreateIFOCtxCmd                                       ボディを修復
+
+CreatePVOverrideCtxCmd                                
+CRxErrorGlyphCmd                                      
+CRxIsolateCmd                                         選択したジオメトリのみ表示
+
+CRxStitchSelectAllCmd                                 
+CRxTranserAdjacentCmd                                 
+CRxTranserSurfaceCmd                                  
+CRxUndoIsolateCmd                                     選択のみ表示の変更を取り消し
+
+CRxUnstitchSelectAllCmd                               
+DebugTranscriptCmd                                    
+DeleteVertexCtxCmd                                    記号から頂点を削除
+
+DeselAddRowCtxCmd                                     
+DeselBreakLinkCtxCmd                                  
+DeselCopyRowCtxCmd                                    
+DeselDeleteRowCtxCmd                                  
+DeselSpawnCtxCmd                                      
+DeselToggleTreeListCtxCmd                             
+DesignViewAnnoScale0Cmd                               
+DesignViewAnnoScale10Cmd                              
+DesignViewAnnoScale11Cmd                              
+DesignViewAnnoScale1Cmd                               
+DesignViewAnnoScale2Cmd                               
+DesignViewAnnoScale3Cmd                               
+DesignViewAnnoScale4Cmd                               
+DesignViewAnnoScale5Cmd                               
+DesignViewAnnoScale6Cmd                               
+DesignViewAnnoScale7Cmd                               
+DesignViewAnnoScale8Cmd                               
+DesignViewAnnoScale9Cmd                               
+DesignViewAutoSaveCameraCmd                           デザイン ビュー リプレゼンテーションにカメラを自動保存
+
+DesignViewPublishCmd                                  デザイン ビュー リプレゼンテーションのパブリッシュを切り替え
+
+DesignViewRestoreCameraCmd                            デザイン ビュー リプレゼンテーションにカメラを復元
+
+DesignViewSaveCameraCmd                               デザイン ビュー リプレゼンテーションに現在のカメラを適用
+
+DetachAcadXRefDef                                     
+DetachAttachedView                                    
+DetailViewBoundaryConnectionLineCtxCmd                
+DetailViewBoundaryDeleteVertexCtxCmd                  
+DetailViewBoundaryTypeCtxCmd                          
+DetailViewFenceTypeCtxCmd                             
+DetailViewLeaderCtxCmd                                
+Diamater                                              
+DimensionAligned                                      寸法の位置合わせ
+
+DimensionAutoDimEdit                                  寸法値を編集
+
+DimensionDameter                                      直径寸法
+
+DimensionDisplayEqn                                   
+DimensionDisplayName                                  
+DimensionDisplayPrecise                               
+DimensionDisplayTolerance                             
+DimensionDisplayValue                                 
+DimensionHorizontal                                   水平の寸法
+
+DimensionLinearDiametric                              
+DimensionRadial                                       半径寸法
+
+DimensionVertical                                     垂直の寸法
+
+DimensionVisibilityCmd                                
+DirectDeleteFeatureCmd                                削除操作
+
+DirectEditFeatureCmd                                  編集操作
+
+DisableCenterSnapping                                 中心のスナップ
+
+DisableEndpointSnapping                               終点のスナップ
+
+DisableMidpointSnapping                               中点のスナップ
+
+DisableMinMaxSnapping                                 スプライン最小点/最大点のスナップ
+
+DisableQuadrantSnapping                               四分円のスナップ
+
+DisplayModelSketchRefGeomCtxCmd                       参照ジオメトリを表示
+
+DisplayModelSketchTextCtxCmd                          スケッチのテキストを表示
+
+DLACxOpenInAcadCmd                                    
+DLxActivateSheetCmd                                   このシートをアクティブなシートにする
+
+DLxAnnoReconnectCmd                                   
+DLxAnnoWeldRecoverCmd                                 
+DLxAutoReattachSickAnnotationsCmd                     
+DLxBalloonSymAttachCustomCmd                          
+DLxBalloonSymRemoveCmd                                
+DLxBalloonSymSortCmd                                  
+DLxBreakoutViewCmd                                    部分断面図の定義を編集
+
+DLxChangeMSSheetBackgroundColorCmd                    背景色を変更
+
+DLxCopyDimPropertiesCmd                               
+DLxCopyDimPropertiesSettingsCmd                       
+DLxDatumTargetRemoveCmd                               バルーンを削除
+
+DLxGetWeldSymbolFromViewCmd                           
+DLxHoleTagHideLeaderCmd                               
+DLxHoleTagMatchCustomHoleCtxCmd                       
+DLxIncludeModelSketchCmd                              追加
+
+DLxMoveDimCmd                                         
+DLxOpenComponentCmd                                   コンポーネントを開く
+
+DLxOpenPartListCmd                                    
+DLxOpenViewCmd                                        ビュー コンポーネントを開く
+
+DLxSliceViewCmd                                       スライス ビューの定義を編集
+
+DLxThreadNoteCustomDesignationCtxCmd                  
+DLxWeldSymbolVisibilityCmd                            モデル溶接記号を表示/非表示
+
+Done                                                  
+DrawingACADBlockPasteCtxCmd                           
+DrawingACADBlockQuickCtxCmd                           
+DrawingAddRowToRevisionTableCtxCmd                    
+DrawingAlignViewHorizontallyCmd                       ビューを水平に位置合わせ
+
+DrawingAlignViewInPositionCmd                         ビューを位置合わせ
+
+DrawingAlignViewVerticallyCmd                         ビューを垂直に位置合わせ
+
+DrawingAngleDimensionArrowheadsInsideCtxCmd           内側矢印
+
+DrawingAngleDimensionLeaderCtxCmd                     引出線
+
+DrawingAngleDimensionLeftTopArrowheadInsideCtxCmd     1 番目の内側矢印
+
+DrawingAngleDimensionOppositeAngleCtxCmd              外角角度
+
+DrawingAngleDimensionRightBottomArrowheadInsideCtxCmd 2 番目の内側矢印
+
+DrawingAngleDimensionUseQuadrantCtxCmd                四半円点を使用
+
+DrawingAngularDimensionHide2ndArrowheadCtxCmd         
+DrawingAngularDimPrecision0CtxCmd                     角度寸法の精度を DD に設定
+
+DrawingAngularDimPrecision1CtxCmd                     角度寸法の精度を DD MM に設定
+
+DrawingAngularDimPrecision2CtxCmd                     角度寸法の精度を DD MM SS に設定
+
+DrawingAngularDimPrecision3CtxCmd                     角度寸法の精度 DD MM SS.1 に設定
+
+DrawingAngularDimPrecision4CtxCmd                     角度寸法の精度を DD MM SS.12 に設定
+
+DrawingAngularDimPrecision5CtxCmd                     角度寸法の精度を DD MM SS.123 に設定
+
+DrawingAngularDimPrecision6CtxCmd                     角度寸法の精度を DD MM SS.1234 に設定
+
+DrawingArcAngleCtxCmd                                 
+DrawingArcAngleForeshortenCtxCmd                      
+DrawingArcLengthCtxCmd                                
+DrawingArcLengthDimensionTypeCtxCmd                   円弧長
+
+DrawingArcLengthForeshortenCtxCmd                     
+DrawingArrangeDimensionsCmd                           寸法を整列
+
+DrawingAttachBalloonCtxCmd                            
+DrawingAttachBalloonToDatumTargetCtxCmd               データム ターゲット記号を作成 - スタック
+
+DrawingAttachTextToLeaderCtxCmd                       引出線に注記をアタッチ
+
+DrawingAutoBalloonSelectAll                           
+DrawingAutomatedCenterlinesCtxCmd                     ビューとスケッチに自動的に中心線とマークを作成します。
+
+DrawingAuxiliaryViewCmd                               ベース ビューで直線のエッジを選択して補助投影図を作成
+
+DrawingBalloonAlignHorOffset                          
+DrawingBalloonAlignVerOffset                          
+DrawingBalloonAllCmd                                  すべてのビュー コンポーネントにバルーンを作成
+
+DrawingBalloonCmd                                     バルーンを作成
+
+DrawingBalloonCustom                                  
+DrawingBaseLineDimensionAddMemberCtxCmd               メンバを追加
+
+DrawingBaseLineDimensionAddMemberDoneCtxCmd           
+DrawingBaselineDimensionCmd                           独立並列寸法を作成
+
+DrawingBaselineDimensionSetCmd                        関連並列寸法セットを作成
+
+DrawingBaseViewCmd                                    正投影ビューまたはアイソメ ビューを作成
+
+DrawingBaseViewCubeCustom                             
+DrawingBaseViewCubeHome                               
+DrawingBaseViewCubeOrtho                              
+DrawingBaseViewCubePersp                              
+DrawingBendNoteEditFormatCtxCmd                       曲げ注記の形式を編集
+
+DrawingBendNoteEditTextCtxCmd                         曲げ注記テキストを編集
+
+DrawingBendNoteHideValueCtxCmd                        曲げ注記値を非表示
+
+DrawingBendNotesCmd                                   曲げ注記を作成
+
+DrawingBlockFileCmd                                   AutoCAD ブロックをインポート
+
+DrawingBodyHiddenLinesCtxCmd                          
+DrawingBodyTransparentCtxCmd                          
+DrawingBorderEditCtxCmd                               
+DrawingBorderInsertCtxCmd                             この図面枠をアクティブなシートに挿入
+
+DrawingBorderInsertNoDlgCtxCmd                        この図面枠をアクティブなシートに挿入
+
+DrawingBorderInstEditCtxCmd                           
+DrawingBreakOutViewCmd                                部分断面図を作成
+
+DrawingBreakViewAlignmentCmd                          ビューの位置合わせを除去
+
+DrawingBrokenViewCmd                                  破断図を作成
+
+DrawingBrokenViewEditCtxCmd                           破断設定を編集
+
+DrawingCaterpillarWeldCmd                             溶接ビードの軌跡を作成
+
+DrawingCaterpillarWeldEditCtxCmd                      
+DrawingCenteredPatternCmd                             中央揃えパターンを作成
+
+DrawingCenterlineBisectorCmd                          2 等分中心線を作成
+
+DrawingCenterLineBisectorCtxCmd                       中心線を 2 等分
+
+DrawingCenterLineCenteredPatternCtxCmd                中央揃えパターンの中心線
+
+DrawingCenterLineCmd                                  中心線を作成
+
+DrawingCenterLineCreateCtxCmd                         
+DrawingCenterLineDoneCtxCmd                           
+DrawingCenterLineFreePointsCtxCmd                     自由位置の中心線
+
+DrawingCenterMarkAddRemoveDashedDoneCtxCmd            
+DrawingCenterMarkAddRemoveDashesCtxCmd                
+DrawingCenterMarkAlignToEdgeCtxCmd                    
+DrawingCenterMarkCmd                                  中心マークを作成
+
+DrawingCenterMarkCreateDoneCtxCmd                     
+DrawingCenterMarkExtensionLinesCtxCmd                 
+DrawingCenterMarkPunchCenterCtxCmd                    
+DrawingCenterMarktFitToCircleCtxCmd                   円にサイズ変更
+
+DrawingCenterMarkUniformDashesCtxCmd                  
+DrawingChainDimensionCmd                              独立直列寸法を作成
+
+DrawingChainDimensionSetCmd                           関連直列寸法セットを作成
+
+DrawingChamferNoteCmd                                 面取りの注記を作成
+
+DrawingChamferNoteEditFormatCtxCmd                    面取りの注記の形式を編集
+
+DrawingChamferNoteEditTextCtxCmd                      面取りの注記のテキストを編集
+
+DrawingChamferNoteHideValueCtxCmd                     面取りの注記の値を非表示
+
+DrawingChangeArrowheadCtxCmd                          矢印を編集
+
+DrawingChangeRevTagShapeCtxCmd                        
+DrawingChordLengthCtxCmd                              
+DrawingChordLengthDimensionTypeCtxCmd                 弦長
+
+DrawingCOGCtxCmd                                      ビューに重心を表示
+
+DrawingConstrainLabelToBorderCtxCmd                   ビュー境界に拘束
+
+DrawingCreateSheetFormatCtxCmd                        アクティブなシートの設定をシート スタイルとして保存
+
+DrawingCropCircularCtxCmd                             
+DrawingCropEdgeVisibilityCtxCmd                       
+DrawingCropRectangularCtxCmd                          
+DrawingCropSettingsCtxCmd                             
+DrawingCropViewCmd                                    切り抜き操作を追加
+
+DrawingCropViewPreferencesCmd                         ビュー切り抜き設定を変更
+
+DrawingCustomFiltersCmd                               カスタム フィルタを使用して選択
+
+DrawingDatumIdentifierEditCtxCmd                      データム ID 記号を編集
+
+DrawingDatumIdentifierSymbolCmd                       データム ID 記号を作成
+
+DrawingDatumTargetCircleCmd                           データム ターゲット記号を作成 - 円
+
+DrawingDatumTargetHiddenLeaderLineCtxCmd              隠れ引出線
+
+DrawingDatumTargetLeaderCmd                           データム ターゲット記号を作成 - 引出線
+
+DrawingDatumTargetLineCmd                             データム ターゲット記号を作成 - 線分
+
+DrawingDatumTargetPointCmd                            データム ターゲット記号を作成 - 点
+
+DrawingDatumTargetRectangleCmd                        データム ターゲット記号を作成 - 長方形
+
+DrawingDefineNewBasePointCmd                          新しいモデル空間基準点を定義
+
+DrawingDefineNewBorderCmd                             図面枠テンプレートを定義する新しいスケッチ
+
+DrawingDefineNewBorderZonedCmd                        図面枠テンプレートを定義する新しい前もって書き込まれたスケッチ
+
+DrawingDefineNewSketchedSymbolCmd                     スケッチ記号テンプレートを定義する新しいスケッチ
+
+DrawingDefineNewTitleBlockCmd                         図面表題欄テンプレートを定義する新しいスケッチ
+
+DrawingDeleteAttachTextCtxCmd                         アタッチしたテキストを削除
+
+DrawingDeleteLeaderCtxCmd                             
+DrawingDeleteSheetCtxCmd                              選択したシートを削除。
+
+DrawingDetailFiltersCmd                               詳細フィルタを使用して選択
+
+DrawingDetailViewCircularFenceCtxCmd                  円形状フェンス付きで作成
+
+DrawingDetailViewCmd                                  詳細図を作成
+
+DrawingDetailViewRectangularFenceCtxCmd               矩形状フェンス付きで作成
+
+DrawingDiameterDimensionArrowheadsInsideCtxCmd        内側矢印
+
+DrawingDiameterDimensionLeaderFromCenterCtxCmd        中心から引出線
+
+DrawingDiameterDimensionSingleDimensionLineCtxCmd     単一寸法線
+
+DrawingDimensionArrangeContourCtxCmd                  
+DrawingDimensionChainSetAddMemberCtxCmd               メンバを追加
+
+DrawingDimensionChainSetAddMemberDoneCtxCmd           完了 [ESC]
+
+DrawingDimensionChainSetArrangeCtxCmd                 整列
+
+DrawingDimensionChainSetArrowheadsInsideCtxCmd        内側矢印
+
+DrawingDimensionChainSetDeleteMemberCtxCmd            メンバを削除
+
+DrawingDimensionChainSetLeaderCtxCmd                  引出線
+
+DrawingDimensionChainSetLeftTopArrowheadInsideCtxCmd  1 番目の内側矢印
+
+DrawingDimensionChainSetLockChainCtxCmd               直列寸法セットをロック
+
+DrawingDimensionChainSetRightBottomArrowheadInsideCtxCmd
+                                                      2 番目の内側矢印
+
+DrawingDimensionSetArrangeCtxCmd                      文字
+
+DrawingDimensionSetArrowheadsInsideCtxCmd             内側矢印
+
+DrawingDimensionSetDeleteMemberCtxCmd                 メンバを削除
+
+DrawingDimensionSetDetachMemberCtxCmd                 メンバをアタッチ解除
+
+DrawingDimensionSetLeaderCtxCmd                       引出線を使用
+
+DrawingDimensionSetLeftTopArrowheadInsideCtxCmd       1 番目の内側矢印
+
+DrawingDimensionSetMakeOriginCtxCmd                   選択された寸法補助線上に原点を移動
+
+DrawingDimensionSetRightBottomArrowheadInsideCtxCmd   2 番目の内側矢印
+
+DrawingDimensionTextEditCtxCmd                        
+DrawingDimensionToleranceCtxCmd                       
+DrawingDisabledAlignmentMenu                          ビューの位置合わせを変更できません
+
+DrawingDisabledAnnotationVisibilityMenu               注記の表示設定を変更できません
+
+DrawingDisabledCreateViewMenu                         ビューを作成できません
+
+DrawingDisabledGetModelAnnotationsMenu                モデル注記を取得できません
+
+DrawingDisabledViewDimTypeMenu                        
+DrawingDLxUnsuppressViewEdgesDoneCtxCmd               
+DrawingDraftViewCmd                                   ドラフト ビューを作成
+
+DrawingDraftViewEditCtxCmd                            ドラフト ビューのプロパティを編集
+
+DrawingEditArrowhead1CtxCmd                           
+DrawingEditArrowhead2CtxCmd                           
+DrawingEditArrowheadsCtxCmd                           
+DrawingEditAttachTextCtxCmd                           アタッチしたテキストを編集
+
+DrawingEditBalloonCtxCmd                              
+DrawingEditDatumTargetSymbolCtxCmd                    
+DrawingEditDatumTgt02CtxCmd                           
+DrawingEditDatumTgt03CtxCmd                           
+DrawingEditDatumTgt04CtxCmd                           
+DrawingEditDatumTgt05CtxCmd                           
+DrawingEditDatumTgt06CtxCmd                           
+DrawingEditDatumTgt07CtxCmd                           
+DrawingEditDatumTgt08CtxCmd                           
+DrawingEditDatumTgt09CtxCmd                           
+DrawingEditDatumTgt10CtxCmd                           
+DrawingEditDatumTgt11CtxCmd                           
+DrawingEditDatumTgt12CtxCmd                           
+DrawingEditDatumTgt13CtxCmd                           
+DrawingEditDatumTgt14CtxCmd                           
+DrawingEditDatumTgt15CtxCmd                           
+DrawingEditDatumTgt16CtxCmd                           
+DrawingEditDatumTgt17CtxCmd                           
+DrawingEditDatumTgt18CtxCmd                           
+DrawingEditDatumTgt19CtxCmd                           
+DrawingEditFieldTextCmd                               
+DrawingEditModelDimensionCtxCmd                       
+DrawingEditOriginIndicatorCtxCmd                      原点インジケータを編集
+
+DrawingEditSelectFiltersCmd                           選択フィルタを編集
+
+DrawingEditSheetCtxCmd                                シートの設定を編集
+
+DrawingEditSketchCmd                                  スケッチを編集
+
+DrawingEditSketchCtxCmd                               
+DrawingEditStyleCtxCmd                                
+DrawingEndTreatmentEdit                               
+DrawingEntityVisibilityCtxCmd                         
+DrawingExitCustomViewCmd                              カスタム ビューを終了
+
+DrawingFeatureControlFrameCmd                         幾何公差記号を作成
+
+DrawingFeatureControlFrameEditCtxCmd                  幾何公差記号を編集
+
+DrawingFeatureControlFrameEditRotateCCWCtxCmd         
+DrawingFeatureControlFrameEditRotateCWCtxCmd          
+DrawingFeatureIdentifierEditCtxCmd                    フィーチャ ID 記号を編集
+
+DrawingFeatureIdentifierSymbolCmd                     フィーチャ ID 記号を作成
+
+DrawingFillHatchSketchRegionCmd                       スケッチ領域を色で塗り潰しまたはハッチング
+
+DrawingFinishSketchCmd                                現在のスケッチを作図補助として保存
+
+DrawingGeneralDimensionCmd                            入力にしたがって寸法を作成
+
+DrawingGeneralDimensionIntersectionCtxCmd             
+DrawingGeneralNoteCmd                                 文字を作成
+
+DrawingGeneralNoteEditCtxCmd                          注記を編集
+
+DrawingGeneralNoteRotate90ClockwiseCtxCmd             
+DrawingGeneralNoteRotate90CounterClockwiseCtxCmd      
+DrawingGeneralTableSplitCtxCmd                        
+DrawingGeneralTableUnsplitCtxCmd                      
+DrawingGetModelSketchesCtxCmd                         モデル スケッチを取得
+
+DrawingHatchByMaterialCtxCmd                          材料別ハッチング
+
+DrawingHatchEditCtxCmd                                
+DrawingHatchHideCtxCmd                                ハッチング パターンを非表示
+
+DrawingHideAnnoCtxCmd                                 選択した注記を非表示
+
+DrawingHideExtensionLineCtxCmd                        
+DrawingHideOriginIndicatorCtxCmd                      原点インジケータを非表示
+
+DrawingHoleNoteEditCtxCmd                             穴注記の形式を編集
+
+DrawingHoleNoteEditTextCtxCmd                         穴注記のテキストを編集
+
+DrawingHoleNoteHideValueCtxCmd                        穴注記の値を非表示
+
+DrawingHoleNoteSingleDimensionLineCtxCmd              単一寸法線
+
+DrawingHoleTableCreateTagCtxCmd                       
+DrawingHoleTableDeleteHoleCtxCmd                      
+DrawingHoleTableEditOptionsCtxCmd                     
+DrawingHoleTableExportCtxCmd                          
+DrawingHoleTableHideAllTagsCtxCmd                     
+DrawingHoleTableHideTagCtxCmd                         
+DrawingHoleTableResortCtxCmd                          
+DrawingHoleTableSelectedTypeCmd                       選択されたフィーチャ穴テーブルからのすべての穴を含む
+
+DrawingHoleTableSelectionCmd                          選択した穴から穴テーブルを作成
+
+DrawingHoleTableSetPrecision0CtxCmd                   
+DrawingHoleTableSetPrecision1CtxCmd                   
+DrawingHoleTableSetPrecision2CtxCmd                   
+DrawingHoleTableSetPrecision3CtxCmd                   
+DrawingHoleTableSetPrecision4CtxCmd                   
+DrawingHoleTableSetPrecision5CtxCmd                   
+DrawingHoleTableSetPrecision6CtxCmd                   
+DrawingHoleTableSetPrecision7CtxCmd                   
+DrawingHoleTableSetPrecision8CtxCmd                   
+DrawingHoleTableShowAllTagsCtxCmd                     
+DrawingHoleTableShowTagCtxCmd                         
+DrawingHoleTableSplitCtxCmd                           
+DrawingHoleTableUnsplitCtxCmd                         
+DrawingHoleTableViewCmd                               選択したビューから穴テーブルを作成
+
+DrawingHoleTagEditCtxCmd                              
+DrawingHoleTagHideCtxCmd                              
+DrawingHoleTagShowLeaderCtxCmd                        
+DrawingHoleThreadNotesCmd                             穴注記を作成
+
+DrawingIncludeIndividualWorkFeaturesCtxCmd            個々の作業フィーチャを包含または除外する
+
+DrawingIncludeWorkFeaturesCmd                         モデルに作業フィーチャを含む
+
+DrawingInsertBlockDoneCtxCmd                          
+DrawingInsertDefaultBorderCtxCmd                      パラメータ作成ダイアログ ボックスを使用して既定の図面枠を挿入
+
+DrawingInsertPictureCmd                               ピクチャを挿入
+
+DrawingInsertSheetCmd                                 新規シートを作成
+
+DrawingiPropertiesCmd                                 オブジェクト プロパティを編集
+
+DrawingLayoutFiltersCmd                               レイアウト フィルタを使用して選択
+
+DrawingLeaderAlignHor                                 
+DrawingLeaderAlignToEdge                              
+DrawingLeaderAlignVer                                 
+DrawingLeaderArrowheadEditCtxCmd                      矢印を編集
+
+DrawingLeaderEditTextCtxCmd                           引出線注記を編集
+
+DrawingLeaderTextCmd                                  引出線のあるテキストを作成
+
+DrawingLinearDiameterCtxCmd                           
+DrawingLinearDimensionArrowheadsInsideCtxCmd          内側矢印
+
+DrawingLinearDimensionFullDimLineCtxCmd               単一寸法線
+
+DrawingLinearDimensionHide2ndArrowheadCtxCmd          
+DrawingLinearDimensionLeaderCtxCmd                    引出線
+
+DrawingLinearDimensionLeftTopArrowheadInsideCtxCmd    1 番目の内側矢印
+
+DrawingLinearDimensionRightBottomArrowheadInsideCtxCmd2 番目の内側矢印
+
+DrawingLinearDimPrecision0CtxCmd                      長さ寸法の精度を 0 に設定
+
+DrawingLinearDimPrecision1CtxCmd                      長さ寸法の精度を 1 に設定
+
+DrawingLinearDimPrecision2CtxCmd                      長さ寸法の精度を 2 に設定
+
+DrawingLinearDimPrecision3CtxCmd                      長さ寸法の精度を 3 に設定
+
+DrawingLinearDimPrecision4CtxCmd                      長さ寸法の精度を 4 に設定
+
+DrawingLinearDimPrecision5CtxCmd                      長さ寸法の精度を 5 に設定
+
+DrawingLinearDimPrecision6CtxCmd                      長さ寸法の精度を 6 に設定
+
+DrawingLinearDimPrecision7CtxCmd                      長さ寸法の精度を 7 に設定
+
+DrawingLinearDimPrecision8CtxCmd                      長さ寸法の精度を 8 に設定
+
+DrawingLinearForeshortenCtxCmd                        
+DrawingLinearParallelCtxCmd                           
+DrawingLinearSymmetricCtxCmd                          
+DrawingMakeAllViewsPreciseCmd                         
+DrawingMakeAllViewsRasterCmd                          
+DrawingMakeViewPreciseCmd                             
+DrawingMakeViewRasterCmd                              
+DrawingNewDimensionStyleCtxCmd                        スタイルを編集
+
+DrawingNewSheetCtxCmd                                 新規シートを作成
+
+DrawingNewSheetFromFormatCtxCmd                       選択したスタイルから新規シートを作成
+
+DrawingObjectPropertiesCtxCmd                         オブジェクト プロパティを表示
+
+DrawingOrdinateCreateCtxCmd                           
+DrawingOrdinateDimensionAddMemberCtxCmd               メンバを追加
+
+DrawingOrdinateDimensionAddMemberDoneCtxCmd           
+DrawingOrdinateDimensionAlignMembersCtxCmd            メンバを位置合わせ
+
+DrawingOrdinateDimensionAllowBrokenLeadersCtxCmd      分割引出線を許可
+
+DrawingOrdinateDimensionCmd                           累進寸法を作成
+
+DrawingOrdinateDimensionContinuousRunningCtxCmd       寸法線表示の切り替え
+
+DrawingOrdinateDimensionDeleteMemberCtxCmd            メンバを削除
+
+DrawingOrdinateDimensionHideOriginIndicatorCtxCmd     原点インジケータを非表示
+
+DrawingOrdinateDimensionMakeOriginCtxCmd              選択された寸法補助線上に原点を移動
+
+DrawingOrdinateDimensionPositiveBothDirectionsCtxCmd  正の両方向
+
+DrawingOrdinateDimensionReverseDirectionCtxCmd        方向を反転
+
+DrawingOrdinateDimensionSetCmd                        入力に従って累進寸法セットを作成
+
+DrawingOrdinateDimensionShowDirectionCtxCmd           方向を表示
+
+DrawingOrdinateDimensionToggleXYDirectionCtxCmd       XY 方向を切り替え
+
+DrawingOrdinateDimensionUseOriginIndicatorCtxCmd      原点インジケータを表示
+
+DrawingOrdinateHoleOriginIndicatorCtxCmd              原点インジケータを非表示
+
+DrawingOverlayViewCmd                                 オーバーレイ ビュー作成
+
+DrawingOverrideBodyVisibilityCtxCmd                   
+DrawingOverrideMeshBodyVisibilityCtxCmd               
+DrawingPartListContinueCtxCmd                         
+DrawingPartListDoneCtxCmd                             
+DrawingPartsListCmd                                   パーツ一覧を作成
+
+DrawingPartsListConvertToBOMCtxCmd                    パーツ一覧を変換
+
+DrawingPartsListEditCtxCmd                            
+DrawingPartsListExportCtxCmd                          パーツ一覧をエクスポート
+
+DrawingPartsListPushbackIDsCmd                        部品表にオーバーライドする項目を保存
+
+DrawingPartsListUpdateCtxCmd                          パーツ一覧を更新
+
+DrawingPasteBlockRefDoneCtxCmd                        
+DrawingPasteUserSymbolDoneCtxCmd                      完了
+
+DrawingProjectedViewCmd                               投影ビューを作成
+
+DrawingProjectedViewCreateCtxCmd                      投影ビューを作成
+
+DrawingProjectGeometryCmd                             ビューのジオメトリをスケッチに投影
+
+DrawingPromoteDimensionToSketchCtxCmd                 
+DrawingPunchNoteEditFormatCtxCmd                      パンチ穴の注記の形式を編集
+
+DrawingPunchNoteEditTextCtxCmd                        パンチ穴の注記の文字を編集
+
+DrawingPunchNoteHideValueCtxCmd                       パンチ穴の注記の値を非表示
+
+DrawingPunchNotesCmd                                  パンチ穴の注記を作成
+
+DrawingRadialDimensionArrowheadsInsideCtxCmd          内側矢印
+
+DrawingRadialDimensionJoggedCtxCmd                    突出し
+
+DrawingRadialDimensionLeaderFromCenterCtxCmd          中心から引出線
+
+DrawingRAnnoPlanesAll                                 パーツの作業平面をすべて表示
+
+DrawingRAnnoPlanesUseSheet                            シート面を使用
+
+DrawingRAnnoPlanesVisible                             表示可能な作業平面をすべて表示
+
+DrawingRealignAuxiliaryViewsCtxCmd                    
+DrawingReopenFullCmd                                  
+DrawingReorderPromptedEntriesCmd                      
+DrawingReplaceModelReferenceCmd                       図面内のモデル参照を置換
+
+DrawingResourceSort                                   名前順に並べ替え
+
+DrawingRetrieveDimsCmd                                モデルまたは図面スケッチから注記を取得
+
+DrawingRevisionTableCmd                               履歴テーブルを作成
+
+DrawingRevisionTableDeleteRowCtxCmd                   
+DrawingRevisionTableEditCtxCmd                        
+DrawingRevisionTagCmd                                 履歴タグを作成
+
+DrawingRevisionTagEdit02CtxCmd                        
+DrawingRevisionTagEdit03CtxCmd                        
+DrawingRevisionTagEdit04CtxCmd                        
+DrawingRevisionTagEdit05CtxCmd                        
+DrawingRevisionTagEdit06CtxCmd                        
+DrawingRevisionTagEdit07CtxCmd                        
+DrawingRevisionTagEdit08CtxCmd                        
+DrawingRevisionTagEdit09CtxCmd                        
+DrawingRevisionTagEdit10CtxCmd                        
+DrawingRevisionTagEdit11CtxCmd                        
+DrawingRevisionTagEdit12CtxCmd                        
+DrawingRevisionTagEdit13CtxCmd                        
+DrawingRevisionTagEdit14CtxCmd                        
+DrawingRevisionTagEdit15CtxCmd                        
+DrawingRevisionTagEdit16CtxCmd                        
+DrawingRevisionTagEdit17CtxCmd                        
+DrawingRevisionTagEdit18CtxCmd                        
+DrawingRevisionTagEdit19CtxCmd                        
+DrawingRevisionTagEdit20CtxCmd                        
+DrawingRevisionTagEditCtxCmd                          
+DrawingRevisionTagEditDlgCtxCmd                       
+DrawingRotateViewCmd                                  モデルを角度増分で回転
+
+DrawingSaveUserDefinedSymbolsToLibraryCmd             ユーザ定義のシンボルをライブラリに保存
+
+DrawingSectionViewCmd                                 断面図を作成
+
+DrawingSectionViewReverseDirectionCtxCmd              切断線の方向を反転
+
+DrawingSectionViewShowEntireLineCtxCmd                切断線のパーツの表示/非表示
+
+DrawingSelectAllACadDimsCmd                           すべての AutoCAD 寸法を選択
+
+DrawingSelectAllACadObjectsCmd                        
+DrawingSelectAllCmd                                   フィルタを使わずに選択
+
+DrawingSelectAllInventorDimsCmd                       すべての Inventor 寸法を選択
+
+DrawingSelectAllModelDimsCmd                          すべてのモデル寸法を選択
+
+DrawingSelectAllOverriddenDimsCmd                     すべてのオーバーライド寸法を選択
+
+DrawingSelectBodyCmd                                  ボディを選択
+
+DrawingSelectEdgeCmd                                  エッジを選択
+
+DrawingSelectFeatureCmd                               フィーチャを選択
+
+DrawingSelectPartCmd                                  パーツを選択
+
+DrawingShowAnnoCtxCmd                                 非表示の注記を表示
+
+DrawingShowAnnoDoneCtxCmd                             これらの選択された注記を非表示
+
+DrawingShowAnnoShowAllCtxCmd                          非表示の注記をすべて表示
+
+DrawingShowHideDrawingDimensionsCtxCmd                図面寸法を表示/非表示
+
+DrawingShowHideModelDimensionsCtxCmd                  モデル寸法を表示/非表示
+
+DrawingShowHideTrailsCtxCmd                           
+DrawingSingleSegmentLeader                            
+DrawingSketch3dExtendCtxCmd                           選択した曲線を次の交差まで延長
+
+DrawingSketch3dSplitCtxCmd                            選択した曲線を次の交差まで分割
+
+DrawingSketch3dTrimCtxCmd                             選択した曲線を次の交差にトリム
+
+DrawingSketchConstrainOffsetCtxCmd                    拘束オフセットを作成
+
+DrawingSketchExtendCtxCmd                             選択した曲線を次の交差まで延長
+
+DrawingSketchLoopSelectCtxCmd                         曲線ループを作成
+
+DrawingSketchProjectEdgeCancelCtxCmd                  アクティブ コマンドをキャンセル
+
+DrawingSketchProjectEdgeCtxCmd                        曲線をスケッチ平面上に投影
+
+DrawingSketchSplitCtxCmd                              選択した曲線を次の交差で分割
+
+DrawingSketchSymbolInsertCtxCmd                       このスケッチ記号をアクティブなシートに挿入
+
+DrawingSketchTextAlignCtxCmd                          文字を水平または垂直に位置合わせ
+
+DrawingSketchTrimCtxCmd                               選択した曲線を次の交差にトリム
+
+DrawingSliceViewCmd                                   スライス図を作成
+
+DrawingSurfaceTextureSymbolCmd                        面の指示記号を作成
+
+DrawingSurfaceTextureSymbolEditCtxCmd                 面の指示記号を編集
+
+DrawingSymbolEditCtxCmd                               
+DrawingSymbolsCmd                                     ユーザ定義の記号
+
+DrawingSymbolUnitAttributesCtxCmd                     
+DrawingTableCmd                                       テーブルを作成
+
+DrawingTableEditCtxCmd                                
+DrawingTableHoleDescriptionTextEditCtxCmd             
+DrawingTableHoleNoteEditCtxCmd                        
+DrawingTableRotateClockwiseCtxCmd                     
+DrawingTableRotateCounterClockwiseCtxCmd              
+DrawingTableSelectBendViewCtxCmd                      
+DrawingTableSelectOtherCtxCmd                         他のテーブルを選択
+
+DrawingTableUpdateCtxCmd                              テーブルを更新
+
+DrawingTagEditCtxCmd                                  
+DrawingThreadNoteEditTextCtxCmd                       ねじ注記のテキストを編集
+
+DrawingThreadNoteHideValueCtxCmd                      ねじ注記の値を非表示
+
+DrawingTitleBlockEditCtxCmd                           
+DrawingTitleBlockInsertCtxCmd                         この表題欄をアクティブなシートに挿入
+
+DrawingToggleWeldAnnotationVisibilityCtxCmd           
+DrawingTools.AlphaSortSheets                          Alpha sort sheets
+DrawingTools.BatchUpdateStyles                        Batch Update Styles
+DrawingTools.ChainDimCmd                              Chain Dimension
+DrawingTools.RevisionCloud                            Revision Cloud
+DrawingUpdateAllSheetsCmd                             シートをすべて更新
+
+DrawingUpdateComponentCmd                             モデルを更新
+
+DrawingUpdateViewComponentCmd                         モデルを更新
+
+DrawingUserDefinedSymbolsCtxCmd                       このコールアウト記号をアクティブなシートに挿入
+
+DrawingUserDefinedSymbolsPatternCtxCmd                
+DrawingUserDefinedSymbolsQuickCtxCmd                  このコールアウト記号をアクティブなシートに挿入
+
+DrawingVertexLeaderCtxCmd                             
+DrawingViewAnnotationEditArrowhead1CtxCmd             
+DrawingViewAnnotationEditArrowhead2CtxCmd             
+DrawingViewAnnotationEditLeaderArrowheadCtxCmd        
+DrawingViewAppendTextToLetterCtxCmd                   
+DrawingViewApplyDesignViewCtxCmd                      
+DrawingViewDimTypeProjectedCtxCmd                     シート面に投影された一般寸法
+
+DrawingViewDimTypeTrueCtxCmd                          モデル平面に描画された一般寸法
+
+DrawingViewEditCtxCmd                                 ビューを編集
+
+DrawingViewEditCtxWrapperCmd                          
+DrawingViewEditTextOnDetialSectionAnnoCtxCmd          文字を編集
+
+DrawingViewEditTextOnFirstSectionAnnoCtxCmd           文字を編集
+
+DrawingViewEditTextOnSecondSectionAnnoCmd             文字を編集
+
+DrawingViewLabelEditCtxCmd                            
+DrawingViewRotateClockwiseCtxCmd                      
+DrawingViewRotateCounterClockwiseCtxCmd               
+DrawingViewRotateCtxCmd                               
+DrawingViewShortcutCtxCmd                             
+DrawingViewVisibilityCtxCmd                           ビューの省略状態を切り替え
+
+DrawingWeldAnnotationVisibilityInViewCtxCmd           溶接注記を表示/非表示
+
+DrawingWeldEndTreatmentCmd                            エンド フィルを作成
+
+DrawingWeldSymbolCmd                                  溶接記号を作成
+
+DrawingWeldSymbolEditCtxCmd                           
+DrawnigBaseViewCubePerspOrtho                         
+DrawOpenBOMEditorComponentCmd                         選択されたアセンブリの部品表エディタを開く
+
+DrawOpenBOMEditorPartListCmd                          選択されたパーツ一覧のアセンブリの部品表エディタを開く
+
+DrawOpenBOMEditorViewCmd                              選択されたビューのアセンブリの部品表エディタを開く
+
+DTxFindInPartCmd                                      ドキュメント内のフィーチャとスケッチを検索
+
+DuplicateConfigurationCtxCmd                          
+DXxOpenComponentCmd                                   選択オブジェクトのビューを開く
+
+DXxOpenDrawingCmd                                     図面を開く 
+
+EditAcadBlock                                         
+EditBlockAttribute                                    
+EditChamferCtxCmd                                     
+EditColorPropertiesCmd                                
+EditConfigurationTableCtxCmd                          
+EditCosmeticWeldFeatureCtxCmd                         
+EditEquationCurveCmd                                  計算式曲線を編集
+
+EditFeatureWrapperCmd                                 フィーチャを編集
+
+EditFilletCtxCmd                                      
+EditFilletWeldFeatureCtxCmd                           
+EditGrooveWeldFeatureCtxCmd                           
+EditLayersCmd                                         プロトタイプ画層エディタ
+
+EditLightingStylesCmd                                 
+EditLinkAliasFileCtxCmd                               
+EditMassPropertiesCmd                                 
+EditMaterialStylesCmd                                 
+EditPVOverrideCtxCmd                                  
+EditSectionViewDepthCmd                               
+EditStylesCmd                                         プロトタイプ スタイル エディタ
+
+EditTSplineCmd                                        
+EditUCSCtxCmd                                         
+EditWeldingSymbolCtxCmd                               溶接記号編集
+
+Enable2dSketchVisibilityCtxCmd                        表示の切り替え
+
+Enable3dSketchCurveResizeCtxCmd                       
+Enable3dSketchResizeLinesCtxCmd                       
+EquationCurveCmd                                      計算式から曲線を作成 
+
+EquationCurveEditCmd3D                                計算式曲線を編集
+
+ExcludeCtxCmd                                         
+FindCmd                                               ドキュメント内のフィーチャとスケッチを検索
+
+FindOverrideInAssemblyBrowserCtxCmd                   
+FindOverrideInPVBrowserCtxCmd                         
+Finish2dSketchCmd                                     スケッチを終了
+
+Finish3DSketch                                        3D スケッチの終了
+
+Finish3dSketchCmd                                     スケッチを終了
+
+FinishSketch                                          2D スケッチを終了
+
+FinishTSplineCmd                                      フリーフォームを終了
+
+flipSectionDir                                        
+FlipSpline3Cmd                                        端点でスプラインの方向を反転
+
+FlipSplineCmd                                         端点でスプラインの方向を反転
+
+FWxInventorHomeCmd                                    Autodesk Inventor Home にアクセス
+
+FWxParallelEnvCmd1                                    
+FWxParallelEnvCmd2                                    
+FWxParallelEnvCmd3                                    
+FWxParallelEnvCmd4                                    
+FWxParallelEnvCmd5                                    
+FWxRecentFileCmd1                                     
+FWxRecentFileCmd10                                    
+FWxRecentFileCmd11                                    
+FWxRecentFileCmd12                                    
+FWxRecentFileCmd13                                    
+FWxRecentFileCmd14                                    
+FWxRecentFileCmd15                                    
+FWxRecentFileCmd16                                    
+FWxRecentFileCmd2                                     
+FWxRecentFileCmd3                                     
+FWxRecentFileCmd4                                     
+FWxRecentFileCmd5                                     
+FWxRecentFileCmd6                                     
+FWxRecentFileCmd7                                     
+FWxRecentFileCmd8                                     
+FWxRecentFileCmd9                                     
+FWxSubtypeCmd1                                        
+FWxSubtypeCmd10                                       
+FWxSubtypeCmd2                                        
+FWxSubtypeCmd3                                        
+FWxSubtypeCmd4                                        
+FWxSubtypeCmd5                                        
+FWxSubtypeCmd6                                        
+FWxSubtypeCmd7                                        
+FWxSubtypeCmd8                                        
+FWxSubtypeCmd9                                        
+FWxToolbarVisibility1                                 
+FWxToolbarVisibility10                                
+FWxToolbarVisibility11                                
+FWxToolbarVisibility12                                
+FWxToolbarVisibility13                                
+FWxToolbarVisibility14                                
+FWxToolbarVisibility15                                
+FWxToolbarVisibility16                                
+FWxToolbarVisibility17                                
+FWxToolbarVisibility18                                
+FWxToolbarVisibility19                                
+FWxToolbarVisibility2                                 
+FWxToolbarVisibility20                                
+FWxToolbarVisibility21                                
+FWxToolbarVisibility22                                
+FWxToolbarVisibility23                                
+FWxToolbarVisibility24                                
+FWxToolbarVisibility25                                
+FWxToolbarVisibility26                                
+FWxToolbarVisibility27                                
+FWxToolbarVisibility28                                
+FWxToolbarVisibility29                                
+FWxToolbarVisibility3                                 
+FWxToolbarVisibility30                                
+FWxToolbarVisibility31                                
+FWxToolbarVisibility32                                
+FWxToolbarVisibility33                                
+FWxToolbarVisibility34                                
+FWxToolbarVisibility35                                
+FWxToolbarVisibility36                                
+FWxToolbarVisibility37                                
+FWxToolbarVisibility38                                
+FWxToolbarVisibility39                                
+FWxToolbarVisibility4                                 
+FWxToolbarVisibility40                                
+FWxToolbarVisibility41                                
+FWxToolbarVisibility42                                
+FWxToolbarVisibility43                                
+FWxToolbarVisibility44                                
+FWxToolbarVisibility45                                
+FWxToolbarVisibility46                                
+FWxToolbarVisibility47                                
+FWxToolbarVisibility48                                
+FWxToolbarVisibility49                                
+FWxToolbarVisibility5                                 
+FWxToolbarVisibility50                                
+FWxToolbarVisibility51                                
+FWxToolbarVisibility52                                
+FWxToolbarVisibility53                                
+FWxToolbarVisibility54                                
+FWxToolbarVisibility55                                
+FWxToolbarVisibility56                                
+FWxToolbarVisibility57                                
+FWxToolbarVisibility58                                
+FWxToolbarVisibility59                                
+FWxToolbarVisibility6                                 
+FWxToolbarVisibility60                                
+FWxToolbarVisibility61                                
+FWxToolbarVisibility62                                
+FWxToolbarVisibility63                                
+FWxToolbarVisibility64                                
+FWxToolbarVisibility65                                
+FWxToolbarVisibility66                                
+FWxToolbarVisibility67                                
+FWxToolbarVisibility68                                
+FWxToolbarVisibility69                                
+FWxToolbarVisibility7                                 
+FWxToolbarVisibility70                                
+FWxToolbarVisibility71                                
+FWxToolbarVisibility72                                
+FWxToolbarVisibility73                                
+FWxToolbarVisibility74                                
+FWxToolbarVisibility75                                
+FWxToolbarVisibility76                                
+FWxToolbarVisibility77                                
+FWxToolbarVisibility78                                
+FWxToolbarVisibility79                                
+FWxToolbarVisibility8                                 
+FWxToolbarVisibility80                                
+FWxToolbarVisibility81                                
+FWxToolbarVisibility9                                 
+GenerateNewConfigurationCtxCmd                        新規ポジション リプレゼンテーションを作成
+
+GeomToDXFCommand                                      スケッチまたは面のコピーを AutoCAD に保存
+
+GetPoint3dDone                                        アクティブなコマンドをキャンセル
+
+GetPointAbsoluteCoordinates                           絶対座標に変更
+
+GetPointApparentIntersect                             
+GetPointAutoproj                                      
+GetPointBackup                                        直前の点を再選択
+
+GetPointCartesianCoordinates                          直交座標に変更
+
+GetPointCenter                                        円弧の中心を選択
+
+GetPointContinue                                      曲線を作成
+
+GetPointDone                                          アクティブなコマンドをキャンセル
+
+GetPointEndpoint                                      
+GetPointIntersect                                     2 曲線の交差にある点を選択
+
+GetPointMid2Points                                    
+GetPointMidpoint                                      線分の中点を選択
+
+GetPointPolarCoordinates                              極座標に変更
+
+GetPointQuadrant                                      
+GetPointRelativeCoordinates                           相対座標に変更
+
+GetPointRestart                                       現在のコマンドを再起動
+
+GetPointTangent                                       
+GrillEditCtxCmd                                       
+GripSnapClearSnaps                                    
+GripSnapDisplayRibbon                                 
+GripSnapOptions                                       
+GRxZoomSelCmd                                         選択図形をズーム
+
+HideConstraintBox                                     非表示
+
+HideOtherBodiesCtxCmd                                 
+HideOtherPointCloudsCtxCmd                            
+HoleNote                                              
+HorizontalSelect                                      ジオメトリに位置合わせ
+
+HorizontalToggle                                      
+HUDDimensioDiameter                                   直径寸法
+
+HUDDimensionRadial                                    半径寸法
+
+iAssemblyAuthorCmd                                    iAssembly 作成
+
+iLogic.About                                          iLogic バージョン情報
+iLogic.AddForm                                        フォームを追加
+iLogic.AddRule                                        ルールを追加
+iLogic.AssignName                                     名前を割り当て...
+iLogic.Configuration                                  iLogic 環境設定
+iLogic.DeleteAllRules                                 すべてのルールを削除
+iLogic.DeleteName                                     名前を削除
+iLogic.EditName                                       名前を編集...
+iLogic.EditRule                                       ルールを編集
+iLogic.EventTriggers                                  イベント トリガ
+iLogic.FreeILogicMemory                               iLogic のメモリを解放
+iLogic.HideLabel                                      ラベルを非表示
+iLogic.HideLabels                                     ラベルを非表示
+iLogic.iCopy                                          iLogic デザイン コピー
+iLogic.PlaceComponent                                 iLogic コンポーネントを配置
+iLogic.RegenAllRules                                  すべてのルールを再生成
+iLogic.RuleBrowser                                    iLogic ブラウザ
+iLogic.ShowLabel                                      ラベルを表示
+iLogic.ShowLabels                                     ラベルを表示
+iLogic.Trigger                                        iTrigger
+iLogic.XmlExport                                      XML に書き出し
+iLogic.XmlImport                                      XML から読み込み
+IndependentAdaptiveCtxCmd                             
+IndicateWorkFeatureCmd                                
+InferIMatesFromFeatureCtxCmd                          
+InvChronicle.LaunchChronicle                          Launches the Screencast Recording Utility
+LaunchAppStoreCmd                                     
+LineCloseProfile                                      プロファイルを閉じる
+
+LinePropertiesCtxCmd                                  
+LinkFileCheckForUpdatesCtxCmd                         
+LipEditCtxCmd                                         
+LoftChainEdgeCmd                                      エッジ チェーン オン/オフ
+
+LoftDeleteAreaGraphSectionCmd                         
+LoftEditAreaGraphSectionCmd                           
+LoftSelectCenterlineCmd                               スケッチを選択
+
+LoftSelectPlacedSectionsCmd                           
+LoftSelectRailsCmd                                    スケッチを選択
+
+LoftSelectSectionsCmd                                 スケッチを選択
+
+LoginCmdIntName                                       サーバへのセキュアなアクセスを有効にします。
+LogoutCmdIntName                                      サーバからログアウトします。
+macro:AddOccurrenceParts.AddOccurrenceParts           
+macro:AddOccurrenceParts.AddPartsFromMemory           
+macro:AllComponentRenameReplaceTest.AllComponentRenameReplace
+                                                      
+macro:AllDocPhysicalPropertiesDump.DumpDocumentPhysicalProperties
+                                                      
+macro:AllDocumentMaterialWrite.DumpDocumentMaterials  
+macro:AllLibMaterialDump.DumpAllMaterialsInAllLibraries
+                                                      
+macro:AssemblyTraversal.AssemblyTraversal             
+macro:Module1.Material_change                         
+macro:Module2.SetOccurrenceMaterial                   
+macro:Module3.SetOccurrenceAppearance                 
+macro:PrintStructureX.PrintStructureX                 
+macro:ReplacePart.CheckAnyCADInAssembly               
+macro:ReplacePartTest2.ReplacePartTest2               
+macro:UseFileDump.UseFileDump                         
+MaterialCmd                                           材料
+
+MeasureComponentPriorityCmd                           
+MeasureFaceEdgePriorityCmd                            
+MeasureLeafPriorityCmd                                
+ModifyModelSketchTextColorCtxCmd                      スケッチ テキストの色を変更
+
+MonitorSegmentLoadCmd                                 
+NewFileTemplate1                                      
+NewFileTemplate10                                     
+NewFileTemplate2                                      
+NewFileTemplate3                                      
+NewFileTemplate4                                      
+NewFileTemplate5                                      
+NewFileTemplate6                                      
+NewFileTemplate7                                      
+NewFileTemplate8                                      
+NewFileTemplate9                                      
+NextCandidatePlane                                    次の対象平面を選択
+
+NGxCommandOption1                                     
+NGxCommandOption2                                     
+NotebookAlignLeftCmd                                  段落を左揃え
+
+NotebookAlignRightCmd                                 段落を右揃え
+
+NotebookArrangeNotesPopupCmd                          
+NotebookArrowCmd                                      ノートに矢印を作成
+
+NotebookArrowReverseCtxCmd                            
+NotebookBoldCmd                                       選択した文字を太字にする(切り替え)
+
+NotebookBulletsCmd                                    この行に箇条書きを挿入
+
+NotebookCenterCmd                                     段落を中央揃え
+
+NotebookCreateNoteCtxCmd                              選択したオブジェクト上にエンジニア ノートを作成
+
+NotebookCustomizeCmd                                  
+NotebookDefineNewNoteFolderCtxCmd                     
+NotebookDisplayNoteCtxCmd                             選択したノートを表示
+
+NotebookFinishNotebookCmd                             
+NotebookFontCmd                                       現在のフォントを選択
+
+NotebookFontSizeCmd                                   現在のフォント サイズを選択
+
+NotebookInsertCommentCmd                              ノートにコメントを挿入
+
+NotebookInsertFolderCmd                               
+NotebookInsertNewObjectCmd                            
+NotebookInsertViewCmd                                 ノートにビューを挿入
+
+NotebookItalicCmd                                     選択した文字を斜体にする(切り替え)
+
+NotebookNextNoteCmd                                   エンジニア ノートブックの次のノートを表示
+
+NotebookPreviousNoteCmd                               エンジニア ノートブックの前のノートを表示
+
+NotebookRestoreCamerasCmd                             最後に保存したカメラ ビューに復元
+
+NotebookTextColorCmdImage                             選択された文字の色を設定
+
+NotebookUnderlineCmd                                  選択した文字に実線の下線を設定(切り替え)
+
+NotebookViewFreezeCmd                                 ビューをフリーズ
+
+OpenCrossRefSourcesCtxCmd                             参照を開く
+
+OpenDocWindow1                                        
+OpenDocWindow10                                       
+OpenDocWindow11                                       
+OpenDocWindow2                                        
+OpenDocWindow3                                        
+OpenDocWindow4                                        
+OpenDocWindow5                                        
+OpenDocWindow6                                        
+OpenDocWindow7                                        
+OpenDocWindow8                                        
+OpenDocWindow9                                        
+OpenParentAssemblyCtxCmd                              
+PartAdaptiveFeatureCtxCmd                             フィーチャの調整を許可
+
+PartAnalyzeFacesDialogCmd                             ゼブラ解析
+
+PartBaseFeatDemoteCtxCmd                              
+PartBendCmd                                           曲げパーツ
+
+PartBendEditCtxCmd                                    
+PartBodyPropertiesCtxCmd                              プロパティを設定するボディを選択
+
+PartBoundarypatchCmd                                  境界パッチ
+
+PartBoxCmd                                            ボックスを押し出し
+
+PartBP3dEditCtxCmd                                    
+PartBreakLinkAliasFileCtxCmd                          
+PartBreakLinkDerivedAssyCtxCmd                        
+PartBreakLinkDerivedPartCtxCmd                        
+PartBreakLinkDerivedSBDefCtxCmd                       
+PartBreakLinkPromoteCtxCmd                            
+PartCatalogPlacementHelpCtxCmd                        プレースメント ヘルプにはこの埋め込みを使用
+
+PartCatalogPlaceReattachCtxCmd                        
+PartCatalogPopUpCmd                                   
+PartChamferClassicCmd                                 面取りエッジ
+
+PartChamferCmd                                        面取りエッジ
+
+PartCircularPatternCmd                                フィーチャの円形状パターンを作成
+
+PartCircularPatternEditCtxCmd                         
+PartCoilCmd                                           プロファイルと回転軸からコイルを作成
+
+PartCoilEditCtxCmd                                    
+PartCombineCmd                                        1 つまたは複数のボディを結合
+
+PartComputeiPartRowCtxCmd                             
+PartConstrEnvDiagnosticsVisCmd                        
+PartConstrEnvFacePropCmd                              
+PartConstrEnvSolidVisCmd                              
+PartConstrEnvSurfVisCmd                               
+PartConstrEnvWireVisCmd                               
+PartConstructionAnalysisSelectAllCmd                  
+PartConstructionBoundaryTrimCmd                       境界のトリム
+
+PartConstructionDeleteCtxCmd                          
+PartConstructionDeleteEdgesCmd                        
+PartConstructionDisBadGeomCmd                         Dis Bad Geom
+
+PartConstructionDisGapCmd                             
+PartConstructionEditLoopCmd                           領域編集
+
+PartConstructionExtendFaceCmd                         面を延長
+
+PartConstructionExtractLoopCmd                        ループを抽出
+
+PartConstructionFaceVisibilityCmd                     面の表示設定
+
+PartConstructionFinishCtxCmd                          コンストラクションを編集
+
+PartConstructionFixGeomCmd                            ジオメトリ修復
+
+PartConstructionGroupCreateCollectorCtxCmd            
+PartConstructionGroupDeleteContentCtxCmd              
+PartConstructionGroupDeleteEntityCtxCmd               エンティティを削除
+
+PartConstructionGroupMoveCtxCmd                       
+PartConstructionHealEdgeCmd                           
+PartConstructionHealFaceCmd                           
+PartConstructionIntersectFaceCmd                      面を交差
+
+PartConstructionPromoteWireCtxCmd                     
+PARTCONSTRUCTIONQUALITYCHECKCMD                       クオリティ チェック
+
+PartConstructionRemoveFaceCmd                         ステッチ解除
+
+PartConstructionReverseFaceCmd                        法線を反転
+
+PartConstructionStitchCmd                             ステッチと解析
+
+PartConstructionStitchSelectAllCmd                    
+PartConstructionUnstitchSelectAllCmd                  
+PartConstructionVisibleCtxCmd                         
+PartConvertToSheetMetalCmd                            シート メタル ドキュメントに変換
+
+PartConvertToStandardPartCmd                          標準パーツ ドキュメントに変換
+
+PartCoreCavityEditCtxCmd                              
+PartCRBoundaryTrimCmd                                 境界のトリム
+
+PartCRCheckModelCmd                                   エラーを検索
+
+PartCRDeleteFaceCmd                                   
+PartCreateIFOCmd                                      
+PartCreateMSBCmd                                      ステッチ
+
+PartCreateSketchBlockCmd                              選択したジオメトリからブロックを作成
+
+PartCRExtractLoopCmd                                  ループを抽出
+
+PartCRHealModelCmd                                    エラーをヒール
+
+PartCRIntersectFacesCmd                               面を交差
+
+PartCRMoveSurfaceCmd                                  サーフェスを転送
+
+PartCRNextCmd                                         次のエラー
+
+PartCRPreviousCmd                                     前のエラー
+
+PartCRThisCmd                                         エラーを修復
+
+PartCRTransientShowErrGlyphCmd                        
+PartCurveSurfaceWorkPointCmd                          サーフェスと曲線から作業点を作成
+
+PartCylinderCmd                                       円柱を押し出し
+
+PartCylindricalFaceWorkAxisCmd                        円柱サーフェスから作業軸を作成
+
+PartDecalCmd                                          デカールを作成 
+
+PartDecalEditCtxCmd                                   
+PartDeleteBelowStopNodeCtxCmd                         
+PartDeleteFaceCmd                                     面を削除
+
+PartDeleteFaceEditCtxCmd                              
+PartDerivedComponentCmd                               派生パーツまたはアセンブリ ジオメトリを作成
+
+PartDerivedPartOpenBaseComponentCmd                   
+PartDirectCmd                                         ダイレクト編集
+
+PartDirectMoveBodyCmd                                 ボディを直接移動
+
+PartDMChamferCmd                                      面取りエッジ
+
+PartDMExtrudeCmd                                      直線パスに沿ってプロファイルを押し出し
+
+PartDMFaceDraftCmd                                    選択した面に勾配角度を適用
+
+PartDMFilletCmd                                       フィレットとラウンド
+
+PartDMHoleCmd                                         穴フィーチャを作成
+
+PartDMPushFaceCmd                                     選択した面に一連の移動を適用
+
+PartDMRevolveCmd                                      軸を中心にプロファイルを回転
+
+PartDMShellCmd                                        薄肉パーツを作成
+
+PartDwgUnderlayAddInstanceCtxCmd                      インスタンスを追加
+
+PartDwgUnderlayBreakLinkCtxCmd                        
+PartDwgUnderlayCropCtxCmd                             DWG を切り抜き
+
+PartDwgUnderlayLayerVisibilityCtxCmd                  
+PartDwgUnderlayOpenInAutoCADCtxCmd                    
+PartDwgUnderlayRedefineCtxCmd                         DWG を再定義
+
+PartDwgUnderlaySuppressLinkCtxCmd                     
+PartDwgUnderlayTranslateCtxCmd                        DWG を変換
+
+PartDwgUnderlayUnsuppressLinkCtxCmd                   
+PartEdgeCenterWorkAxisCmd                             円形状エッジから作業軸を作成
+
+PartEditDerivedAssemblyCtxCmd                         
+PartEditDerivedPartCtxCmd                             
+PartEditFutureDerivedAssyCtxCmd                       
+PartEditFutureDerivedPartCtxCmd                       
+PartEditLoopCmd                                       領域編集
+
+PartEditShrinkwrapCtxCmd                              
+PartEditSolidCtxCmd                                   
+PartEmbossCmd                                         プロファイルと文字をエンボスまたは彫り込む
+
+PartEmbossEditCtxCmd                                  
+PartExplodePartitionCtxCmd                            
+PartExtendCmd                                         サーフェス延長
+
+PartExtendEditCtxCmd                                  
+PartExtendOrContractBodyCmd                           ボディを伸縮
+
+PartExtrudeCmd                                        直線パスに沿ってプロファイルを押し出し
+
+PartFaceDraftClassicCmd                               選択した面に勾配角度を適用
+
+PartFaceDraftCmd                                      選択した面に勾配角度を適用
+
+PartFaceDraftEditCtxCmd                               
+PartFeaturePasteCtxCmd                                
+PartFeaturePropertiesCtxCmd                           プロパティのフィーチャを選択
+
+PartFillDrainCmd                                      ボディを選択
+
+PartFillDrainEditCtxCmd                               
+PartFillDrainSelectAllMenu                            
+PartFilletClassicCmd                                  フィレットとラウンド
+
+PartFilletCmd                                         フィレットとラウンド
+
+PartFitSurfaceCmd                                     メッシュの面をフィット
+
+PartGlobalUpdateCmd                                   ルート以下、すべてのアセンブリ内容を更新
+
+PartGroundedWorkPointCmd                              固定作業点を作成
+
+PartGroundWorkFeatureCtxCmd                           固定
+
+PartHideAllOccurrenceSurfaceFeaturesCtxCmd            
+PartHideAllOccurrenceWorkFeaturesCtxCmd               
+PartHoleCmd                                           穴フィーチャを作成
+
+PartiFeatureAuthorTableCmd                            iFeature 作成テーブル
+
+PartiFeatureChangeIconCmd                             アイコンを変更
+
+PartiFeatureEditCtxCmd                                
+PartiFeatureExtractCmd                                iFeature を抽出
+
+PartiFeatureFileEditCmd                               iFeature の入力値を編集
+
+PartiFeatureInsertCmd                                 ファイルから iFeature を挿入
+
+PartiFeatureInsertGallery                             
+PartIFeaturePlacementHelpCtxCmd                       
+PartiPropertiesCmd                                    ドキュメント プロパティ
+
+PartKnitSelectAllMenu                                 
+PartLaunchIFeaturePlacementHelpCtxCmd                 
+PartLinePlaneWorkPlaneCmd                             線分と面から作業平面を作成
+
+PartLineSurfaceWorkPlaneCmd                           線分とサーフェスから作業平面を作成
+
+PartLineWorkAxisCmd                                   線分またはエッジから作業軸を作成
+
+PartLoftCmd                                           一連のプロファイルよりロフト フィーチャを作成
+
+PartLoftEditCtxCmd                                    
+PartLoopCenterWorkPointCmd                            エッジ ループから作業点を作成
+
+PartMakeComponentsCmd                                 コンポーネントを作成
+
+PartMakePartCmd                                       パーツを作成
+
+PartMidplaneWorkPlaneCmd                              2 平面の中点平面で作業平面を作成
+
+PartMirrorFeatureCmd                                  平面に関するミラー フィーチャ
+
+PartMirrorFeatureEditCtxCmd                           
+PartMoveEOPMarkerCmd                                  
+PartMoveEOPToEndCmd                                   
+PartMoveEOPToTopCmd                                   
+PartMoveFaceCmd                                       面を移動
+
+PartNew3DSketchCmd                                    選択して 3D スケッチを開始。選択解除して終了。
+
+PartNewSketchCmd                                      選択して 2D スケッチを開始してください。終了するには選択を解除してください。
+
+PartNGx3DPrintSetOrientationEditCtxCmd                
+PartNGx3DPrintSetPositionEditCtxCmd                   
+PartNGxChamferEditCtxCmd                              
+PartNGxDirectEditCtxCmd                               
+PartNGxEditRuledSurfaceCtxCmd                         
+PartNGxExtrudeEditCtxCmd                              
+PartNGxFaceDraftEditCtxCmd                            
+PartNGxFilletEditCtxCmd                               
+PartNGxHoleEditCtxCmd                                 
+PartNGxMoveFaceEditCtxCmd                             
+PartNGxPartitionEditCtxCmd                            
+PartNGxRevolveEditCtxCmd                              
+PartNGxShellEditCtxCmd                                
+PartOpaqueAllOccurrenceSurfaceFeaturesCtxCmd          
+PartPartitionCmd                                      パーティション
+
+PartPlanarPlaneWorkPlaneCmd                           平面から作業平面オフセットを作成
+
+PartPlanePointWorkAxisCmd                             平面と点から作業軸を作成
+
+PartPlaneSurfaceWorkPlaneCmd                          平面とサーフェスから作業平面を作成
+
+PartPointCurveWorkPlaneCmd                            点と曲線から作業平面を作成
+
+PartPointLineWorkAxisCmd                              点と線分から作業軸を作成
+
+PartPointLineWorkPlaneCmd                             点と線分から作業平面を作成
+
+PartPointPlaneWorkPlaneCmd                            点と平面から作業平面を作成
+
+PartPointSurfaceWorkPlaneCmd                          点とサーフェスから作業平面を作成
+
+PartPointWorkPointCmd                                 頂点、点、または中点から作業点を作成
+
+PartPopSketchTasksCmd                                 
+PartPreciseCommitCtxCmd                               
+PartPressPullCmd                                      プレスおよびプル。
+
+PartPromoteAddEditCtxCmd                              
+PartPromoteCmd                                        オブジェクトをコピー
+
+PartPushFaceClassicCmd                                面を移動
+
+PartPushFaceCmd                                       選択した面に一連の移動を適用
+
+PartPushFaceEditCtxCmd                                
+PartPushSketchTasksCmd                                
+PartRebuildAllCmd                                     アクティブ パーツに含まれるすべてのフィーチャを再構築
+
+PartRectangularPatternCmd                             フィーチャの矩形状パターンを作成
+
+PartRectangularPatternEditCtxCmd                      
+PartRedefineCmd                                       フィーチャを再定義
+
+PartReferenceSketchCtxCmd                             リンクを解除
+
+PartRepairCtxCmd                                      
+PartReplaceFaceCmd                                    既存の面を新しい面に置換
+
+PartReplaceFaceEditCtxCmd                             
+PartReverseBodyCmd                                    法線を反転
+
+PartRevolveCmd                                        軸を中心にプロファイルを回転
+
+PartRibCmd                                            リブ フィーチャを作成
+
+PartRibEditCtxCmd                                     
+PartRuledSurfaceCmd                                   ルールド サーフェス
+
+PartSelectAnnotationPriorityCmd                       操作する注記を選択
+
+PartSelectBodiesPriorityCmd                           操作するボディを選択
+
+PartSelectBodyTasksNoRestartCmd                       
+PartSelectFacesAndEdgePriorityCmd                     操作する面とエッジを選択
+
+PartSelectFacesTasksNoRestartCmd                      
+PartSelectFeaturesPriorityCmd                         操作するフィーチャを選択
+
+PartSelectFeatureTasksNoRestartCmd                    
+PartSelectGroupsPriorityCmd                           操作するグループを選択
+
+PartSelectionMode                                     ツイークするパーツを選択
+
+PartSelectSketchElementsPriorityCmd                   操作するスケッチ フィーチャを選択
+
+PartSelectSketchTasksNoRestartCmd                     
+PartSelectWiresPriorityCmd                            操作するワイヤを選択
+
+PartShareSketchCtxCmd                                 選択したスケッチの使用を複数のフィーチャで許可
+
+PartShareSketchCtxWrapperCmd                          スケッチを共有
+
+PartSheetMetalFeaturesCmd                             [シート メタル]タブの表示または非表示
+
+PartShellClassicCmd                                   薄肉パーツを作成
+
+PartShellCmd                                          薄肉パーツを作成
+
+PartShellEditCtxCmd                                   
+PartShowAllOccurrenceSurfaceFeaturesCtxCmd            
+PartShowAllOccurrenceWorkFeaturesCtxCmd               
+PartShowDimensionsCtxCmd                              フィーチャ寸法とスケッチ寸法を表示
+
+PartSketchDrivenPatternCmd                            フィーチャのスケッチ駆動パターンを作成
+
+PartSketchPatternEditCtxCmd                           
+PartSolidEditOffsetCmd                                オフセット
+
+PartSphereCmd                                         球を回転します。
+
+PartSphereWorkPointCmd                                球から作業点を作成
+
+PartSplitCmd                                          パーツまたは面を分割
+
+PartSplitEditCtxCmd                                   
+PartSRExtendFacesCmd                                  面を延長
+
+PartStandardFeaturesCmd                               [標準モデル]タブの表示または非表示
+
+PartStitchSurfaceCmd                                  サーフェス ステッチ
+
+PartStitchSurfaceEditCtxCmd                           
+PartSuppressCtxCmd                                    
+PartSuppressLinkAliasFileCtxCmd                       
+PartSuppressLinkDerivedComponentCtxCmd                
+PartSuppressPatternOccurrenceCtxCmd                   
+PartSweepCmd                                          パスに沿ってプロファイルをスイープ
+
+PartSweepEditCtxCmd                                   
+PartSwitchRepresentationCmd                           フラット パターンに移動
+
+PartThickenOffsetCmd                                  厚みまたはオフセット ボディを作成
+
+PartThickenOffsetEditCtxCmd                           
+PartThreadCmd                                         ねじフィーチャを作成
+
+PartThreadEditCtxCmd                                  
+PartThreePlaneWorkPointCmd                            3 平面から作業点を作成
+
+PartThreePointWorkPlaneCmd                            3 点から作業平面を作成
+
+PartTogglePreciseUICmd                                座標入力ツールバーを切り替え
+
+PartToolsMacrosCmd                                    
+PartTorusCmd                                          トーラスを回転
+
+PartTorusWorkPlaneCmd                                 トーラス中点平面から作業平面を作成
+
+PartTorusWorkPointCmd                                 トーラスから作業点を作成
+
+PartTransformCmd                                      ボディを位置付け
+
+PartTransformEditCtxCmd                               
+PartTransparentAllOccurrenceSurfaceFeaturesCtxCmd     
+PartTriadApplyCmd                                     コマンドを実行してリスタート
+
+PartTriadCancelCmd                                    コマンドをキャンセル
+
+PartTriadOKCmd                                        コマンドを実行
+
+PartTrimCmd                                           サーフェス トリム
+
+PartTrimEditCtxCmd                                    
+PartTwoLineWorkPlaneCmd                               2 線分から作業平面を作成
+
+PartTwoLineWorkPointCmd                               2 線分から作業点を作成
+
+PartTwoPlaneWorkAxisCmd                               2 平面から作業軸を作成
+
+PartTwoPointWorkAxisCmd                               2 点から作業軸を作成
+
+PartUCSCmd                                            ユーザ座標系を作成
+
+PartUnstitchCmd                                       ステッチ解除
+
+PartUnsuppressCtxCmd                                  
+PartUnsuppressLinkAliasFileCtxCmd                     
+PartUnsuppressLinkDerivedComponentCtxCmd              
+PartUnwrapCmd                                         アンラップ面
+
+PartUnwrapEditCtxCmd                                  
+PartViewCatalogCmd                                    iFeature のカタログを表示
+
+PartVisibilityCtxCmd                                  表示切り替え
+
+PartWorkAxisCmd                                       作業軸を作成
+
+PartWorkPlaneCmd                                      作業平面を作成
+
+PartWorkPointCmd                                      作業点を作成
+
+PfRestEditCtxCmd                                      
+Place at all matching iMates                          
+Place using accepted iMates and continue              
+Place using default iMates and continue               
+PlaneSelect                                           注記を記入する面を選択
+
+PlasticFeaturesBossCmd                                ボス フィーチャを作成
+
+PlasticFeaturesGrillCmd                               グリル フィーチャを作成
+
+PlasticFeaturesLipCmd                                 リップ フィーチャを作成
+
+PlasticFeaturesRestCmd                                レスト作成フィーチャを作成
+
+PlasticFeaturesRuleFilletCmd                          ルールド フィレット フィーチャを作成
+
+PlasticFeaturesSnapFitCmd                             スナップ フィット フィーチャを作成
+
+PMLockDesignViewCmd                                   デザイン ビュー リプレゼンテーションをロック/ロック解除
+
+PMxConsumeInputsCmd                                   
+PolygonVisibilityCtxCmd                               
+PolygonVisibilityCtxCmd3D                             
+PreciseFlipAxisCmd                                    
+PresentationAddComponentTrailCtxCmd                   コンポーネントに基準線を追加
+
+PresentationBackTheLastTweakCmd                       ツイークに戻る
+
+PresentationCurrentTweakPathVisibilityCtxCmd          
+PresentationDeleteAllTweaksCtxCmd                     すべてのツイークを削除
+
+PresentationDeleteCurrentTweakCtxCmd                  現在のツイークを削除
+
+PresentationDeleteGroupTweaksCtxCmd                   グループ内のツイークを削除
+
+PresentationDeleteLastTweakCtxCmd                     最後のツイークを削除
+
+PresentationEditTaskCmd                               タスクを編集
+
+PresentationEditTweakCmd                              
+PresentationEditTweakNGxCmd                           単一のツイークを編集
+
+PresentationFullTrailVisibilityCtxCmd                 
+PresentationGroupSequenceCmd                          
+PresentationGroupTweakPathVisibilityCtxCmd            
+PresentationiPropertiesCmd                            プレゼンテーション設定を編集
+
+PresentationNewTaskCmd                                
+PresentationNodeVisibilityCmd                         表示切り替え
+
+PresentationRestoreCameraCtxCmd                       プレゼンテーション ビュー カメラを復元
+
+PresentationSaveCameraCtxCmd                          プレゼンテーション ビュー カメラを保存
+
+PresentationSelectComponentPriorityCmd                コンポーネント優先
+
+PresentationSelectLeafPartPriorityCmd                 リーフ パーツ優先
+
+PresentationShowHideTrailsCtxCmd                      アクティブなビューのすべての基準線の表示設定を切り替え
+
+PresentationTrailVisibilityCtxCmd                     
+PresentationTweakVisibilityCtxCmd                     
+PresentationUngroupSequenceCmd                        
+PresentationUpdateAllCtxCmd                           すべて更新
+
+PresentationViewAsAssemblyCmd                         
+Preview location on next instance                     
+Preview location on previous instance                 
+Preview next location                                 
+Preview next orientation                              
+Preview previous location                             
+Preview previous orientation                          
+PurgeStylesCmd                                        アクティブなドキュメントから未使用のスタイルを消去します。
+
+qtrSection                                            
+Radial                                                
+RBxZoomSelCmd                                         グラフの選択図形をズーム
+
+Reapply2dSketchFormatCtxCmd                           モデル スケッチのジオメトリ プロパティを再適用
+
+RecoveredDwgUnderlayIncludeCtxCmd                     
+RecoveredDwgUnderlayVisibilityCtxCmd                  
+RecoveredSketchVisibilityCtxCmd                       
+RedefineFeatureWrapperCmd                             フィーチャを再定義
+
+RedefineSketchCtxCmd                                  選択されたスケッチを新しい面または作業平面に再アタッチ
+
+RefreshRevision                                       現行リビジョンの最新バージョンを取得
+RefreshRevisionTop                                    選択したファイルが古い場合に、更新されたファイルを取得します。
+RemoveCmd                                             
+RemovePVOverrideCtxCmd                                
+RemoveSickReferencesCmd                               
+RepresentationsCmd                                    
+Restart iMate selection                               
+ReturnToFeatureCmd                                    フィーチャに戻る
+
+RuleFilletEditCtxCmd                                  
+S3BreakLinkCmd                                        3D スケッチ参照ジオメトリを標準ジオメトリに変換
+
+S3GetPointContinue                                    曲線を作成
+
+S3GetPointDone                                        現在のコマンドを完了
+
+S3GetPointRestart                                     現在のコマンドを再実行
+
+S3xEditHandleCmd                                      
+S3xHelixEditCtxCmd                                    らせん曲線を編集
+
+S3xImportPointsCmd                                    Excel ファイルからスケッチ点をインポート
+
+S3xMovePoint3dCmd                                     3D 移動/回転
+
+SaveStylesCmd                                         アクティブなドキュメントのスタイルでスタイル ライブラリを更新します。
+
+SCxEditGeometryTextCmd                                
+SCxEditSketchRigidSetInstCmd                          インプレイス ブロックを編集
+
+ScxEditTextCmd                                        文字を編集
+
+ScxEditTextWrapperCmd                                 文字を編集
+
+SCxHideAllDOFCmd                                      すべての自由度を非表示 
+
+SCxImportPointsCmd                                    Excel ファイルからスケッチ点をインポート
+
+SCxShowAllDOFCmd                                      すべての自由度を表示 
+
+SCxShowHideDOFCmd                                     
+SCxSketchBlockPropertiesEditCmd                       ブロックのプロパティ
+
+SCxSketchRigidSetCreateDefCmd                         
+sectionDone                                           
+sectionPlane1                                         
+sectionPlane2                                         
+sectionScrollStepSize                                 
+SelectAsEdgesCtxCmd                                   
+Separator                                             
+Seperator                                             
+SharedViewsInternalUseOnly                            SharedViewsInternalUseOnly
+SheetMetalBendCmd                                     シート メタル パーツに曲げを追加
+
+SheetMetalBendEditCtxCmd                              
+SheetMetalBendOrderCmd                                曲げの順序を指定
+
+SheetMetalBendOrderDirectedReorder                    
+SheetMetalBendOrderDoneCmd                            
+SheetMetalBendOrderRemoveAllOverrides                 
+SheetMetalBendOrderSequentialReorder                  
+SheetMetalBendOrderUseiPartDefault                    
+SheetMetalChangeToBendCtxCmd                          
+SheetMetalChangeToCornerCtxCmd                        
+SheetMetalCloseFlatPatternWindowCtxCmd                
+SheetMetalCombineEditCtxCmd                           
+SheetMetalContextMenuRefoldCmd                        展開フィーチャのブラウザ選択から再折り曲げフィーチャを作成
+
+SheetMetalContourRollCmd                              コンター ロール フィーチャを作成
+
+SheetMetalContourRollEditCtxCmd                       
+SheetMetalCornerChamferCmd                            シート メタル コーナーを面取り
+
+SheetMetalCornerChamferEditCtxCmd                     
+SheetMetalCornerEditCtxCmd                            
+SheetMetalCornerRoundCmd                              シート メタル コーナー R
+
+SheetMetalCornerRoundEditCtxCmd                       
+SheetMetalCornerSeamCmd                               シート メタル パーツにコーナーの継ぎ目を追加
+
+SheetMetalCosmeticCenterlineCmd                       コスメティック中心線を作成
+
+SheetMetalCountFlangeCmd                              シート メタル パーツにコンター フランジを追加
+
+SheetMetalCountFlangeEditCtxCmd                       
+SheetMetalCreateASideCmd                              シートメタルの A 側面を定義します。
+
+SheetMetalCutCmd                                      シート メタル パーツから形状をカット
+
+SheetMetalCutEditCtxCmd                               
+SheetMetalDeferFlatPatternUpdateCtxCmd                
+SheetMetalEditFlatCtxCmd                              
+SheetMetalExtentsCtxCmd                               
+SheetMetalFaceCmd                                     プロファイルより、ソリッド面フィーチャを作成
+
+SheetMetalFaceEditCtxCmd                              
+SheetMetalFlangeBendEditCtxCmd                        
+SheetMetalFlangeBendResetCtxCmd                       
+SheetMetalFlangeCmd                                   シート メタル パーツにフランジを追加
+
+SheetMetalFlangeCornerEditCtxCmd                      
+SheetMetalFlangeCornerResetCtxCmd                     
+SheetMetalFlangeEditCtxCmd                            
+SheetMetalFlatPatternCmd                              シート メタル パーツの展開
+
+SheetMetalFlatPatternSaveAs                           
+SheetMetalFoldCmd                                     シート メタル パーツに折り曲げを追加
+
+SheetMetalFoldEditCtxCmd                              
+SheetMetalHemCmd                                      シート メタル パーツにヘムを追加
+
+SheetMetalHemEditCmd                                  
+SheetMetalLoftedFlangeCmd                             ロフト フランジ フィーチャを作成
+
+SheetMetalLoftedFlangeEditCtxCmd                      
+SheetMetalMBxCosmeticCenterlineEditCtxCmd             
+SheetMetalOpenFlatPatternWindowCtxCmd                 
+SheetMetalPromoteCopiedSketchCmd                      展開フィーチャまたは再折り曲げフィーチャによってコピーされたスケッチを上の階層に移動してリンクを解除する
+
+SheetMetalPunchToolCmd                                シート メタルのパンチツールを追加
+
+SheetMetalPunchToolEditCtxCmd                         
+SheetMetalRefoldCmd                                   再折り曲げフィーチャを作成
+
+SheetMetalRefoldEditCtxCmd                            
+SheetMetalRipCmd                                      裂け目フィーチャを作成
+
+SheetMetalRipEditCtxCmd                               
+SheetMetalSetBodyRuleStyleCtxCmd                      ボディ シート メタル規則を設定
+
+SheetMetalShowAsideCtxCmd                             
+SheetMetalShowFlatPatternWindowCtxCmd                 
+SheetMetalStylesCmd                                   シート メタルの既定の更新
+
+SheetMetalSyncUnfoldRuleCtxCmd                        シート メタル展開ルールを同期
+
+SheetMetalTransposeBreakLinkCtxCmd                    
+SheetMetalTransposeSketchCtxCmd                       
+SheetMetalUnBendEditCtxCmd                            
+SheetMetalUnfoldCmd                                   展開フィーチャを作成
+
+ShowAllBodiesCtxCmd                                   
+ShowAllPointCloudsCtxCmd                              
+ShowSharedViewsPanelInternalName                      共有
+ビュー
+ShowSketchInputsCtxCmd                                
+Sketch3DAlignPreciseAxisCtxCmd                        
+Sketch3DAlignPreciseCtxCmd                            
+Sketch3DAlignPreciseOriginCtxCmd                      
+Sketch3DArcBy3PointsCmd                               3 点指示により 3D 円弧作成
+
+Sketch3DArcByCenterCmd                                中心、始点、および終点を指定して 3D 円弧を作成
+
+Sketch3DBendCmd                                       2 線分のコーナーまたは交差に曲げを作成
+
+Sketch3DCoincidentCmd                                 点または曲線を一致させる
+
+Sketch3DColinearCmd                                   同一直線上拘束
+
+Sketch3DConstructionToggleCmd                         構築線、円弧、スプラインは、スケッチ プロファイルに組み込まれません
+
+Sketch3DCPSplineCmd                                   制御点を使用してスプラインを作成
+
+Sketch3DCurvatureCmd                                  曲線拘束を作成
+
+Sketch3dDeleteCoincidentConstraintCtxCmd              
+Sketch3DDeleteConstraintsCtxCmd                       
+Sketch3DDimensionToggleCmd                            標準と被駆動寸法を切り替え
+
+Sketch3DEditIntersectionCurveCtxCmd                   交差曲線を編集
+
+Sketch3DEditProjectCurveCtxCmd                        曲線のサーフェスへの投影を編集
+
+Sketch3DEditSilhouetteCurveCtxCmd                     
+Sketch3DEditSketchCtxCmd                              3D スケッチを編集
+
+Sketch3DEqualCmd                                      同一拘束
+
+Sketch3DEquationCurveCmd                              計算式から曲線を作成 
+
+Sketch3DExtendCmd                                     曲線を延長
+
+Sketch3DFlipPreciseCtxCmd                             
+Sketch3DGeneralDimensionCmd                           寸法拘束を適用
+
+Sketch3DGroundCmd                                     拘束を固定
+
+Sketch3DHelixCmd                                      らせん曲線を作成
+
+Sketch3DHideAllConstraintsCtxCmd                      すべての拘束を非表示
+
+Sketch3DHideConstraintBox                             
+Sketch3DHoleCenterCmd                                 スケッチ点は自動的にパーツおよびアセンブリの中心点の穴フィーチャの中心点として認識されます。
+
+Sketch3DHoleCenterPointCmd                            スケッチ点または中心点を作成
+
+Sketch3DIncludeCmd                                    選択した 3D スケッチをジオメトリに取り込む
+
+Sketch3DInferConstraintsCtxCmd                        [拘束を推定配置]を切り替え
+
+Sketch3DIntersectionCmd                               3D 交差曲線を作成
+
+Sketch3DLineCmd                                       終点で接続された一連の線分を作成
+
+Sketch3dMirrorCmd                                     平面に沿ってジオメトリをミラー
+
+Sketch3DMoveCmd                                       3D 移動
+
+Sketch3DOrthoModeCtxCmd                               直交モードを切り替え
+
+Sketch3DParallelCmd                                   平行拘束
+
+Sketch3DParallelOriginXCmd                            X 平行拘束
+
+Sketch3DParallelOriginXYCmd                           XY 平行拘束
+
+Sketch3DParallelOriginXZCmd                           XZ 平行拘束
+
+Sketch3DParallelOriginYCmd                            Y 平行拘束
+
+Sketch3DParallelOriginYZCmd                           YZ 平行拘束
+
+Sketch3DParallelOriginZCmd                            Z 平行拘束
+
+Sketch3DPerpendicularCmd                              直交拘束
+
+Sketch3DProjectCmd                                    曲線またはエッジをサーフェスに投影
+
+Sketch3DShowAllConstraintsCtxCmd                      すべての拘束を表示
+
+Sketch3DShowConstraintsCmd                            スケッチ内のジオメトリの拘束を表示
+
+Sketch3DShowPreciseInputBarCmd                        
+Sketch3DSilhouetteCmd                                 サーフェスにシルエット曲線を作成
+
+Sketch3DSnapIntersectCtxCmd                           交点をスナップ
+
+Sketch3DSplineCmd                                     スプラインを作成
+
+Sketch3DSplitCmd                                      曲線分割
+
+Sketch3DSurfaceSplineCmd                              面上に曲線を作成します
+
+Sketch3DTangentCmd                                    正接拘束を作成
+
+Sketch3DToggleHUDCmd                                  ダイナミック寸法
+
+Sketch3DToggleSnapCmd                                 オブジェクトをスナップ
+
+Sketch3DTrimCmd                                       ジオメトリをトリム
+
+Sketch3Spline3dTensionCtxCmd                          スプラインのテンション
+
+SketchAddPointWrapperCmd                              スケッチ点または中心点を作成
+
+SketchAutoDimensionCmd                                スケッチ ジオメトリの自動寸法記入
+
+SketchCenterlineCmd                                   線分を中心線に変換
+
+SketchCenterPointArcCmd                               中心点と 2 つの端点で円弧を作成
+
+SketchCenterPointArcSlotCmd                           中心点円弧でスロットを作成
+
+SketchCenterPointCircleCmd                            中心点と半径上の点により円を作成
+
+SketchCenterPointSlotCmd                              中心点でスロットを作成
+
+SketchCentertoCenterSlotCmd                           中心合わせでスロットを作成
+
+SketchChamferCmd                                      2 線分のコーナーまたは交差に面取りを作成
+
+SketchCircularPatternCmd                              円形状パターンを作成
+
+SketchCircularPatternDeleteCtxCmd                     パターンを削除
+
+SketchCircularPatternEditCtxCmd                       
+SketchCircularPatternSuppressCmd                      
+SketchCircularPatternUnsuppressCtxCmd                 
+SketchCloseLoopCtxCmd                                 
+SketchCloseSpline3dCtxCmd                             スプラインを閉じる
+
+SketchCloseSplineCtxCmd                               スプラインを閉じる
+
+SketchCoincidentConstraintCmd                         点または曲線を一致させる
+
+SketchCoincidentWrapperCmd                            点または曲線を一致させる
+
+SketchColinearConstraintCmd                           線分を同一直線上にする
+
+SketchColinearWrapperCmd                              線分を同一直線上にする
+
+SketchConcentricConstraintCmd                         曲線の中心を同じにする
+
+SketchConnectionPtCmd                                 スケッチ点は、スケッチ記号、表題欄、図面枠をスナップする接続ハンドルとして使用できます
+
+SketchConstraintInferScopeCmd                         拘束の推定配置範囲
+
+SketchConstraintSettingsCmd                           拘束オプション
+
+SketchConstructionCmd                                 構築線、円弧、スプラインは、スケッチ プロファイルに組み込まれません
+
+SketchConstructionWrapperCmd                          構築線、円弧、スプラインは、スケッチ プロファイルに組み込まれません
+
+SketchConvertNurb3dToSplineCtxCmd                     スプラインに変換
+
+SketchConvertNurbToSplineCtxCmd                       スプラインに変換
+
+SketchConvertOffsetToSplineCtxCmd                     スプラインに変換
+
+SketchCopyCmd                                         選択した要素をコピー
+
+SketchCPSplineCmd                                     制御点を使用してスプラインを作成
+
+SketchCPSplineWrapperCmd                              制御点を使用してスプラインを作成
+
+SketchCreateGeometryTextCmd                           ジオメトリ - 位置合わせした文字を作成
+
+SketchCreateTextCmd                                   文字を作成
+
+SketchCurvatureConstraintCmd                          2 つの曲線をスムーズにする
+
+SketchCurvatureWrapperCmd                             2 つの曲線をスムーズにする
+
+SketchDeleteCoincidentConstraintCtxCmd                
+SketchDeleteConstraintsCtxCmd                         
+SketchDimensionToggleCmd                              標準と被駆動寸法切り替え
+
+SketchDimensionToggleWrapperCmd                       標準と被駆動寸法を切り換え
+
+SketchDoctorCtxCmd                                    アクティブなスケッチの問題を修復
+
+SketchEditBlockCtxCmd                                 ブロックを選択表示して編集
+
+SketchEditBlockWrapperCmd                             
+SketchEditContinueMenu                                
+SketchEditCoordinateSystemCmd                         このスケッチの座標系を編集
+
+SketchEditCoordinateSystemCtxCmd                      
+SketchEditDoneMenu                                    
+SketchEditImageCmd                                    イメージ プロパティの編集
+
+SketchEditSelectAllMenu                               
+SketchEditSketchCtxCmd                                編集するスケッチを開く
+
+SketchEditSplineEditCmd                               
+SketchEllipseCmd                                      楕円を作成
+
+SketchEqualConstraintCmd                              半径または線分の長さを同じ値にする
+
+SketchExtendCmd                                       曲線を延長
+
+SketchExtendWrapperCmd                                ジオメトリを延長
+
+SketchFilletCmd                                       2 線分のコーナーまたは交差にフィレットを作成
+
+SketchFixConstraintCmd                                曲線または点をスケッチ座標系に対して固定する
+
+SketchFixWrapperCmd                                   曲線または点をスケッチ座標系に対して固定する
+
+SketchFlatBowTieCtxCmd                                
+SketchGeneralDimensionCmd                             一般寸法
+
+SketchHideAllConstraintsCtxCmd                        
+SketchHideAllConstraintsWrapperCmd                    すべての拘束を非表示
+
+SketchHoleCenterCmd                                   スケッチ点は自動的にパーツおよびアセンブリの中心点の穴フィーチャの中心点として認識されます。
+
+SketchHoleCenterPointCmd                              スケッチ点または中心点を作成
+
+SketchHoleCenterWrapperCmd                            スケッチ点は自動的にパーツおよびアセンブリの中心点の穴フィーチャの中心点として認識されます。
+
+SketchHorizontalConstraintCmd                         線分または点を水平にする
+
+SketchImportPointsWrapperCmd                          Excel ファイルからスケッチ点をインポート
+
+SketchInsertAutoCADFileCmd                            このスケッチに AutoCAD のファイルを挿入
+
+SketchInsertImageCmd                                  ファイルからイメージを挿入
+
+SketchInsertionPtCmd                                  スケッチ点は、スケッチ記号と表題欄の挿入ハンドルとして使用できます
+
+SketchLineCmd                                         線分セグメントと接線円弧を作成
+
+SketchLineColorProperty                               
+SketchLineTypeProperty                                
+SketchLineWeightProperty                              
+SketchLineWrapperCmd                                  線分セグメントと接線円弧を作成
+
+SketchMirrorCmd                                       線分に沿ってジオメトリをミラー処理
+
+SketchMoveCmd                                         選択した要素を移動
+
+SketchOffsetCmd                                       既存曲線から曲線オフセットを作成
+
+SketchOnFaceCmd                                       面上拘束
+
+SketchOnlyCmd                                         スケッチのみのジオメトリはスケッチ編集中のみ表示されます
+
+SketchOverallLengthSlotCmd                            全体の長さで穴を作成
+
+SketchParallelConstraintCmd                           線分を平行にする
+
+SketchParallelWrapperCmd                              線分を平行にする
+
+SketchPatternEditCtxWrapperCmd                        パターンを編集
+
+SketchPatternSuppressCtxWrapperCmd                    要素を省略
+
+SketchPerpendicularConstraintCmd                      2 線分を直交にする
+
+SketchPerpendicularWrapperCmd                         2 線分を直交にする
+
+SketchPolygonCmd                                      ポリゴンを作成
+
+SketchProjectCutEdgesCmd                              スケッチ平面で切断されたパーツ エッジをスケッチ平面に投影
+
+SketchProjectDwgGeomCmd                               スケッチ平面上に DWG ジオメトリを投影
+
+SketchProjectFlatPatternCmd                           フラット パターン面ジオメトリをスケッチ平面に投影
+
+SketchProjectGeometryCmd                              曲線をスケッチ平面上に投影
+
+SketchProjectTo3dSketchCmd                            
+SketchRectangularPatternCmd                           矩形状パターンを作成
+
+SketchRectangularPatternEditCtxCmd                    
+SketchRelaxModeCtxCmd                                 
+SketchRigidSetAddGeomToInstDefCmd                     スケッチ オブジェクト(ジオメトリまたはブロック)をブロック定義に追加
+
+SketchRigidSetInstExplodeCmd                          ブロックを分解
+
+SketchRigidSetInstFlexibleCmd                         フレキシブルに切り替え
+
+SketchRigidSetPlaceInstanceCmd                        アクティブなスケッチにブロックを配置
+
+SketchRotateCmd                                       選択した要素を回転
+
+SketchScaleCmd                                        選択した要素を尺度変更
+
+SketchShowAllConstraintsCmd                           スケッチ内のジオメトリの拘束を表示
+
+SketchShowAllConstraintsWrapperCmd                    すべての拘束を表示
+
+SketchShowAllGeometricConstraintsCmd                  
+SketchShowConstraintsWrapperCmd                       スケッチ内のジオメトリの拘束を表示
+
+SketchSliceGraphicsCmd                                グラフィックスをスケッチ平面で切断
+
+SketchSnapToGridCtxCmd                                
+SketchSpline3DFitMethodAutoCADCtxCmd                  AutoCAD のフィット法を使用
+
+SketchSpline3DFitMethodSmoothCtxCmd                   向心フィット法を使用
+
+SketchSpline3DFitMethodsPopUpCmd                      
+SketchSpline3DFitMethodSweetCtxCmd                    最小エネルギーによるフィット法を使用
+
+SketchSpline3DHandleBowTieCtxCmd                      正接ハンドルの表示
+
+SketchSpline3dInsertKnotCtxCmd                        頂点を挿入
+
+SketchSpline3dInsertPointCtxCmd                       点を挿入
+
+SketchSpline3dInsertPointSurfSplineCtxCmd             
+SketchSplineCmd                                       指定した点を通るスプラインを作成
+
+SketchSplineCurvatureBowTieCtxCmd                     曲率バー
+
+SketchSplineFitMethodAutoCADCtxCmd                    AutoCAD のフィット法を使用
+
+SketchSplineFitMethodSmoothCtxCmd                     向心フィット法を使用
+
+SketchSplineFitMethodsPopUpCmd                        
+SketchSplineFitMethodSweetCtxCmd                      最小エネルギーによるフィット法を使用
+
+SketchSplineHandleBowTieCtxCmd                        ハンドル バー
+
+SketchSplineInsertKnotCtxCmd                          頂点を挿入
+
+SketchSplineInsertPointCtxCmd                         点を挿入
+
+SketchSplineResetAllHandlesCtxCmd                     すべてのハンドルをリセット 
+
+SketchSplineResetHandleCtxCmd                         ハンドルをリセット
+
+SketchSplineTensionCtxCmd                             スプラインのテンション
+
+SketchSplineWrapperCmd                                指定した点を通るスプラインを作成
+
+SketchSplitCmd                                        
+SketchSplitSpline3dCtxCmd                             スプラインを分割
+
+SketchSplitWrapperCmd                                 曲線分割
+
+SketchStretchCmd                                      選択した要素をストレッチ
+
+SketchSymmetricConstraintCmd                          ジオメトリを対称にする
+
+SketchTangentArcCmd                                   端点で曲線に接する円弧を作成
+
+SketchTangentCircleCmd                                3 線分に接する円を作成
+
+SketchTangentConstraintCmd                            2 曲線を接線にする
+
+SketchTangentWrapperCmd                               2 曲線を接線にする
+
+SketchTextAddDelBoxGeomCmd                            
+SketchTextConvertCtxCmd                               
+SketchTextRotate90ClockwiseCtxCmd                     
+SketchTextRotate90CounterClockwiseCtxCmd              
+SketchThreePointArcCmd                                2 つの端点と円弧上の点により円弧を作成
+
+SketchThreePointArcSlotCmd                            3 点円弧でスロットを作成
+
+SketchThreePointCenRectangleCmd                       長方形上の中心点と 2 点で長方形を作成
+
+SketchThreePointRectangleCmd                          3 点により長方形を作成
+
+SketchTrimCmd                                         ジオメトリをトリム
+
+SketchTrimWrapperCmd                                  ジオメトリをトリム
+
+SketchTwoPointCenRectangleCmd                         中心点と 1 つの対角点で長方形を作成
+
+SketchTwoPointRectangleCmd                            対角点により長方形を作成
+
+SketchUnfixCmd                                        
+SketchUpdateImageCtxCmd                               更新
+
+SketchVerticalConstraintCmd                           線分または点を垂直にする
+
+SnapFitEditCtxCmd                                     
+SomeAnalysis                                          
+Spline3EditCmd                                        
+SRExAddSurfaceCmd                                     サーフェス追加
+
+StatusCmdIntName                                      サーバ情報および接続ステータスを表示します。
+ThreadNote                                            
+threeQtrSection                                       
+Toggle iMate Usage                                    
+TorusProfileCmd                                       
+TrailPriorityWrapperCmd                               基準線を選択
+
+TSplineAddMiniDistanceCmd                             距離を追加
+
+TSplineAlignFormCmd                                   フォームを位置合わせ
+
+TSplineBridgeCmd                                      ブリッジを作成
+
+TSplineClearSymmetryCmd                               対称をクリア
+
+TSplineConvertToTSplineCmd                            フリーフォームに変換
+
+TSplineCreaseCmd                                      エッジの折り目を作成
+
+TSplineCreateBoxCmd                                   フリーフォーム ボックスを作成
+
+TSplineCreateCylinderCmd                              フリーフォーム円柱を作成
+
+TSplineCreateFaceCmd                                  フリーフォーム面を作成
+
+TSplineCreatePlaneCmd                                 フリーフォーム平面を作成
+
+TSplineCreateQuadballCmd                              フリーフォーム クワッド ボールを作成
+
+TSplineCreateSphereCmd                                フリーフォーム球を作成
+
+TSplineCreateTorusCmd                                 フリーフォーム トーラスを作成
+
+TSplineDebugOptionsCmd                                
+TSplineDeleteCmd                                      削除
+
+TSplineEditFormCmd                                    移動、尺度、および回転の編集を行って、面、エッジ、および頂点を操作
+
+TSplineEditMatchCmd                                   再定義
+
+TSplineExtrudeMenuCmd                                 
+TSplineFlattenCmd                                     平坦化
+
+TSplineInsertEdgeCmd                                  エッジを挿入
+
+TSplineInsertPointCmd                                 点を挿入
+
+TSplineMakeUniformCmd                                 均一化
+
+TSplineMatchCmd                                       一致
+
+TSplineMergeEdgesCmd                                  エッジを結合
+
+TSplineMirrorInternalCmd                              対称
+
+TSplineNGxEditMatchCmd                                再定義
+
+TSplineReflectMirrorCmd                               ミラー
+
+TSplineRematchAllCmd                                  すべて再一致
+
+TSplineRematchCmd                                     再一致
+
+TSplineSelectLoopCmd                                  ループを選択
+
+TSplineSelectLoopMenuCmd                              
+TSplineSelectThroughCmd                               通して選択
+
+TSplineSubdivideCmd                                   1 つまたは複数のフリーフォーム面を分割
+
+TSplineThickenCmd                                     厚み
+
+TSplineToggleRenderModeCmd                            スムーズに切り替え
+
+TSplineToggleSmoothMenuCmd                            
+TSplineToggleTranslucentCmd                           半透明を切り替え
+
+TSplineUncreaseCmd                                    エッジの折り目を解除
+
+TSplineUnweldEdgesCmd                                 エッジを連結解除
+
+TSplineWeldCmd                                        頂点を連結
+
+TT0:AnnotationSelectionPriority                       注記選択の優先
+TT0:ArcSuiteDrawingFindBtn                            ArcSuiteチェックボタンです
+TT0:ArcSuiteReplacedCheckButton                       ArcSuite属性調査
+TT0:BodySelectionPriority                             ボディ選択の優先
+TT0:CommitTool:AddinInfoBtn                           コミット
+ツール
+TT0:CommitTool:ComitBtn0                              開いている図面をCommit0でステージング及び印刷
+TT0:CommitTool:ComitBtn1                              開いている図面をCommit1でステージング及び印刷
+TT0:CommitTool:ComitBtn2                              開いている図面をCommit2でステージング及び印刷
+TT0:CommitTool:ComitBtn3                              開いている図面をCommit3でステージング及び印刷
+TT0:CommitTool:ComitBtn4                              開いている図面をCommit4でステージング及び印刷
+TT0:CommitTool:ComitBtn5                              開いている図面をCommit5でステージング及び印刷
+TT0:CommitTool:ComitBtn6                              開いている図面をCommit6でステージング及び印刷
+TT0:CommitTool:ComitBtn7                              開いている図面をCommit7でステージング及び印刷
+TT0:CommitTool:ComitOptBtn                            コミット先を確認・変更します
+TT0:ComponentSelectionPriority                        コンポーネント選択の優先
+TT0:EdgeAndFaceSelectionPriority                      エッジとフェースの選択の優先
+TT0:EdgeSelectionPriority                             エッジ選択の優先
+TT0:EditIPropertyBtn                                  東陽機械の表題欄およびArcSuite自動登録に対応する、iPropertyを設定します
+TT0:FeatureSelectionPriority                          フィーチャ選択の優先
+TT0:GroupSelectionPriority                            グループ選択の優先
+TT0:PartSelectionPriority                             パーツの選択の優先
+TT0:RegistArcSuiteCadTypeBtn                          ArcSuite属性追加
+TT0:SketchSelectionPriority                           スケッチ選択の優先
+TT0:WireSelectionPriority                             ワイヤ選択の優先
+TTL1:AddinInfoBtn                                     東陽ﾂｰﾙ
+No01
+TTL1:TestBtn1                                         descriptionテストボタン01
+TTL1:TestBtn2                                         descriptionテストボタン02
+TTL1:TestBtn3                                         descriptionテストボタン03
+TTL1:TestBtn4                                         descriptionテストボタン04
+TTL2:AddinInfoBtn                                     東陽ﾂｰﾙ
+No02
+TTL2:CommitTool:ArcSuiteCheckBtn                      ArcSuiteチェックボタンです
+TTL2:DimSetToleranceButton                            寸法値に公差を追加／削除
+TTL2:DimSetToReferenceButton                          寸法値にカッコを追加／削除
+TTL2:GndAllCompoBtn                                   すべてのコンポーネントを固定
+TTL2:RefFileTreeButton                                コンポーネントツリー表示
+TTL2:TestBtn1                                         descriptionテストボタン1
+TTL2:TestBtn2                                         descriptionテストボタン2
+TTL2:TestBtn3                                         descriptionテストボタン3
+TTL2:TestBtn4                                         descriptionテストボタン4
+UcPasteAcadShowOptionsCtxCmd                          
+UcSelectTangencyCmd                                   
+UCxCreateDrawingViewCmd                               図面ビューを作成 
+
+UCxDisplayCurvatureCtxCmd                             曲率を表示
+
+UCxEditCompInterfaceCmd                               iMate を編集
+
+UCxFixedWkPtEditCmd                                   
+UCxModifyCurvatureCtxCmd                              
+UCxResolveFileCmd                                     未参照ファイルを解決
+
+UnknownAMxEditFeatureGroupCmd                         
+UnknownAMxSkipToOtherEndCmd                           
+UnknownCGFlipCommandCmd                               
+UnknownCRxTranslucencyCmd                             
+UnknownDLANGDIMOnAngleDegreesCmd                      角度
+
+UnknownDLANGDIMOnAngleFracDegreesCmd                  角度
+
+UnknownDLANGDIMOnAngleRadiansCmd                      角度(ラジアン単位)
+
+UnknownDLxActivateNewAddHoleCmd                       
+UnknownDLxAddRefComponentCmd                          
+UnknownDLxAttachViewCmd                               
+UnknownDLxCreateViewCmd                               正投影ビューまたはアイソメ ビューを作成
+
+UnknownDLxDiamOnShowCenterCmd                         
+UnknownDLxEditDefCmd                                  
+UnknownDLxGenerateTappedHoleCmd                       
+UnknownDLxHoleTableAddHoleCmd                         
+UnknownDLxHoleTableCmdOrigin                          
+UnknownDLxRadDimOnShowCenter                          中心点を表示
+
+UnknownDLxShowDimPrimCmd                              
+UnknownDLxUnsuppressViewEdgesCmdSuppressCmd           
+UnknownDLxUnsuppressViewEdgesCmdUnsuppressCmd         
+UnknownDXxNodeGroupTweakCmd                           
+UnknownDXxWebPublishCmd                               パブリッシュ
+
+UnknownFWxBrowserViewCmd                              
+UnknownFWxEnvironmentPlaceholderCmd                   入力環境
+
+UnknownFWxImportMDTPartCmd                            Mechanical Desktop からアクティブ パーツをインポート
+
+UnknownFWxMeasureCmd                                  計測
+
+UnknownFWxOrphanedCmd                                 除去されたコマンド
+
+UnknownFWxUpdatePlaceholderCmd                        更新
+
+UnknownFWxWindowArrangeIconsCmd                       アイコンをウィンドウの下部に整列
+
+UnknownNBxOleVerbFirstCmd                             
+UnknownPMxMeshEdgeDisplayCmd                          
+UnknownPMxTranslucencyCmd                             
+UnknownPMxViewPropertiesCmd                           ビュー プロパティを編集
+
+UnknownSCxiMageLinkCmd                                リンク
+
+UnknownSCxRedefineSketchFragmentCmd                   
+UnknownSCxSegmentCurveCmd                             曲線をセグメント化
+
+UnknownUCxDeleteParamCmd                              
+UnknownUCxDeleteParamFolderCmd                        
+UnknownUCxEditMultiValueCmd                           
+UnknownUCxEditStartCellCmd                            
+UnknownUCxFinishActiveCommand                         
+UnknownUCxLocalizeParamCmd                            
+UnknownUCxMakeMultiValueCmd                           
+UnshareCmd                                            共有解除
+
+UnwrapSaveAs                                          
+UpdateCopiedModeliPropertiesCmd                       選択した iProperty をソース モデルから図面に更新
+
+UpdateStylesCmd                                       スタイル ライブラリと同期するよう、アクティブなドキュメント内のスタイルを更新します。
+
+VaultAddFiles                                         Vault にファイルを追加
+VaultAddProject                                       指定したプロジェクトの場所にあるすべてのファイルをサーバに送信します。
+VaultBrowserInfo                                      ブラウザ情報を XML 形式で表示
+VaultChangeCategory                                   選択したファイルのカテゴリを変更
+VaultChangeCategoryTop                                ファイル カテゴリを変更します。
+VaultChangeState                                      選択したファイルのライフサイクル状態を変更
+VaultChangeStateTop                                   ファイルのライフサイクル ステータスをライフサイクルの中で有効な別のステータスに変更します。
+VaultCheckin                                          ファイルをチェックインするコマンド
+VaultCheckinTop                                       Vault にファイルをチェックインして戻すか、または新規ファイルをチェックインします。
+VaultCheckout                                         ファイルをチェックアウトするコマンド
+VaultCheckoutOlder                                    選択したファイルを最新バージョンにチェック アウトします
+VaultCheckoutTop                                      Vault に保存されたファイルをチェックアウトできます。
+VaultDataCard                                         データ カード
+VaultDataCardTop                                      データ カードの表示のオン/オフを切り替えます。
+VaultDataMapping                                      レポートを生成し、その結果を現在のモデルにマッピングします。
+VaultFindDuplicates                                   幾何学的に重複するファイルを検索します。
+VaultFindinBrowser                                    ブラウザ内を検索するコマンド
+VaultFindinWindow                                     ウィンドウ内を検索するコマンド
+VaultGetCheckout                                      ファイルを取得/ファイルをチェックアウト
+VaultGetCheckoutTop                                   ファイルの特定のリビジョンを Vault から取得します。
+VaultGetLatest                                        選択したファイルが古い場合に、更新されたファイルを取得します。
+VaultGetLatestVersion                                 Vault から最新のファイルを取得。
+VaultGoToVaultFolder                                  Vault フォルダへ移動
+VaultGotoWorkspace                                    現在の作業ファイルを含む作業スペースを参照。
+VaultHelp                                             Vault ヘルプ ファイルを表示します。
+VaultInsertIFeature                                   Vault の iFeature を参照して、作業平面またはパーツの平面に iFeature を配置します。
+VaultLaunchVaultExplorer                              スタンドアロン クライアント アプリケーションを起動します。
+VaultLogin                                            Vault データベースにログイン
+VaultLogout                                           Vault からログアウト
+VaultManageOwnership                                  ファイルの所有権を取得/発行
+VaultManageOwnershipTop                               ファイルの所有権を取得/発行
+VaultMapFolders                                       Autodesk Inventor ファイルが保管されている Vault 内の場所を指定します。
+VaultOpenDesignDocFromVault                           Vault から置換
+VaultOpenFromVault                                    Vault に保存されているファイルを開きます。
+VaultOpenFromVault_AppMenu                            Vault に保存されているファイルを開きます。
+VaultOption                                           カスタマイズ用のオプション設定を管理します。
+VaultPlaceFromVault                                   Vault に保存されているファイルを現在のファイルに配置します。
+VaultPlaceFromVault_NonVaultRibbonTab                 Vault に保存されているファイルを現在のファイルに配置します。
+VaultPropertyWriteBack                                Vault 内のマッピングされたプロパティの値で、現在開いているファイルのプロパティを更新します。
+VaultRefresh                                          ビューを更新。
+VaultReplaceAllFromVault                              Vault からすべてを置換
+VaultReplaceFromVault                                 関連付けられているデザイン ドキュメントを開く
+VaultRevise                                           選択したファイルの履歴を増分
+VaultReviseTop                                        ファイルのリビジョンをリビジョン スキーマに従って次の適切な番号に変更します。
+VaultRevisionBlock                                    Vault に配置されたデータを図面の履歴テーブルに作成します。
+VaultRevisionBlockTableNode                           マップされた Vault プロパティを履歴テーブルに設定
+VaultSearch                                           検索ウィンドウを表示
+VaultServer                                           Vault サーバ
+VaultShowDetails                                      ファイル バージョンの詳細を表示
+VaultShowDetailsTop                                   ファイルの詳細とプロパティをライフサイクル全体を通じて表示します。
+VaultTutorial                                         Vault ヘルプを参照
+VaultUndoCheckout                                     ファイル チェックアウトを取り消すコマンド
+VaultUndoCheckoutTop                                  現在のファイルのすべての変更を取り消し、ファイルをチェックアウトした状態をキャンセルします。
+VerifyConfigurationCtxCmd                             
+WeldmentCosmeticWeldCmd                               ビード線フィーチャを作成
+
+WeldmentFilletWeldCmd                                 すみ肉溶接フィーチャを作成
+
+WeldmentGlobalVisibilityCmd                           
+WeldmentGrooveWeldCmd                                 開先溶接フィーチャの作成
+
+WeldmentMaterialsCmd                                  
+WeldmentSymbolsCmd                                    
+WeldmentWeldingSymbolCmd                              溶接記号を作成
+
+WorkFeatureAutoResizeCtxCmd                           自動サイズ変更を切り替え
+
+WorkFeatureVisibilityWrapperCmd                       作業フィーチャの表示設定を切り替え
+
+{3421AEB5-C0AD-4db6-B517-F0D352D1FC58}                Help for the 3Dconnexion Add-In for Inventor
+{7FA4BFDB-BAAD-443c-BE9A-FC23AE522044}                Use the Button Mapping Editor panel to customize the assignment of Inventor commands to buttons on a 3Dconnexion device
+{A986AE02-F9BD-49bd-BF56-2755C497A0B0}                Show or hide the 3D Mouse Popup Menu

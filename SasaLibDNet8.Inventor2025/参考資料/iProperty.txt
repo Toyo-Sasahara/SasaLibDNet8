@@ -1,0 +1,27 @@
+Summary Information
+	タイトル		Title
+	表題		Subject
+	作成者		Author
+	キーワード		Keywords
+	コメント		Comments
+	最終保存者	Last Saved By
+	履歴番号		Revison Number
+	サムネイル		Thumbnail
+	
+Document Summary Information
+	カテゴリ		Category
+	マネージャ		Manager
+	会社		Company
+	
+Design Tracking Properties
+	作成日				Creation Time
+	部品番号				Part Number
+	プロジェクト			Project
+	確認者				Checked By
+	確認日				Date Checked
+	エンジニアリング承認者	Engr Approved By
+	エンジニアリング承認日	Engr Date Approved
+	材料				Material
+	説明				Description
+	製造承認者			Mfg Approved by
+	製造承認日			Mfg Date Approved

@@ -1,0 +1,156 @@
+﻿---------------------------------------------------------------------------------------------------------
+2022-08-19 時点
+[assembly: AssemblyTitle("SasaLib.Inventor")]
+[assembly: AssemblyInformationalVersion("SasaLib.Inventor 1.22.08.xx [.NET Framework 4.8]")]
+[assembly: AssemblyVersion("1.22.08.19")]
+[assembly: AssemblyFileVersion("1.22.08.19")]
+
+---------------------------------------------------------------------------------------------------------
+2022-06-15 時点
+[assembly: AssemblyTitle("SasaLib.Inventor")]
+[assembly: AssemblyInformationalVersion("SasaLib.Inventor 1.22.08.xx [.NET Framework 4.8]")]
+[assembly: AssemblyVersion("1.22.05.19")]
+[assembly: AssemblyFileVersion("1.22.05.19")]
+
+参照情報
+名前:Autodesk.Connectivity.Explorer.Extensibility
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.Connectivity.Explorer.Extensibility.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.Connectivity.Explorer.ExtensibilityTools
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.Connectivity.Extensibility.Framework
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.Connectivity.Extensibility.Framework.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.Connectivity.JobProcessor.Extensibility
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.Connectivity.JobProcessor.Extensibility.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.Connectivity.LicenseWrapper
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.Connectivity.LicenseWrapper.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+
+参照情報
+名前:Autodesk.Connectivity.WebServices
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.Connectivity.WebServices.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.Connectivity.WebServices.WCF
+バージョン:25.1.55.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.Connectivity.WebServices.WCF.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.DataManagement.Client.Framework
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.DataManagement.Client.Framework.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.DataManagement.Client.Framework.Forms
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.DataManagement.Client.Framework.Forms.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.DataManagement.Client.Framework.Vault
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.DataManagement.Client.Framework.Vault.Forms
+バージョン:25.0.0.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.DataManagement.Server.Extensibility
+バージョン:25.1.55.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Vault2020SDKcopy\Autodesk.DataManagement.Server.Extensibility.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Autodesk.Inventor.Interop
+バージョン:24.2.0.0
+パス:C:\Program Files\Autodesk\Inventor 2020\Bin\Public Assemblies\Autodesk.Inventor.Interop.dll
+ローカルにコピー:false
+相互運用型の埋め込み:false
+特定バージョン:false
+
+参照情報
+名前:Connectivity.InventorAddin.EdmAddin
+バージョン:25.3.22.0
+パス:C:\Users\sasahara\Source\Repos\SasaLibTestFrame\SasaLib.AutodeskVault\Inventor2020VaultAddinDLLcopy\Connectivity.InventorAddin.EdmAddin.dll
+ローカルにコピー:True
+相互運用型の埋め込み:false
+特定バージョン:false
+---------------------------------------------------------------------------------------------------------
+
+2021-08-12
+[assembly: AssemblyVersion("1.21.08.10")]
+[assembly: AssemblyFileVersion("1.21.08.10")]
+--------------------------------------------------------------------------------------------------------
+
+2021-07-20
+[assembly: AssemblyVersion("1.21.07.20")]
+[assembly: AssemblyFileVersion("1.21.07.20")]
+---------------------------------------------------------------------------------------------------------
+
+2021-07-15
+[assembly: AssemblyVersion("1.20.12.31")]
+[assembly: AssemblyFileVersion("1.21.07.15")]
+---------------------------------------------------------------------------------------------------------
+
+[assembly: AssemblyVersion("1.20.12.31")]
+[assembly: AssemblyFileVersion("1.21.2.9")]
+---------------------------------------------------------------------------------------------------------
+
+[assembly: AssemblyVersion("1.20.12.31")]
+[assembly: AssemblyFileVersion("1.21.01.15")]
+---------------------------------------------------------------------------------------------------------
+
+[assembly: AssemblyVersion("1.20.12.31")]
+[assembly: AssemblyFileVersion("1.21.01.10")]
+---------------------------------------------------------------------------------------------------------
+
+.NET Framework 4.6.1

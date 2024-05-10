@@ -1,0 +1,74 @@
+﻿■■■Autodesk.DataManagement.Client.Framework.PathConverter クラス
+
+■■コントストラクタ
+public PathConverter( 
+   VaultFolderPathAbsolute vroot,
+   FolderPathAbsolute lroot
+)
+■パラメータ
+vroot 
+lroot 
+
+■■フィールド
+LocalRoot  
+VaultRoot 
+
+■■メソッド
+public FilePathAbsolute ToLocalFile( 
+   VaultFilePathAbsolute vaultFile
+)
+
+public FolderPathAbsolute ToLocalFolder( 
+   VaultFolderPathAbsolute vaultFolder
+)
+ 
+public VaultFilePathAbsolute ToVaultFile( 
+   FilePathAbsolute localFile
+)
+
+public VaultFolderPathAbsolute ToVaultFolder( 
+   FolderPathAbsolute localFolder
+)
+
+ 
+
+■■■Autodesk.DataManagement.Client.Framework.FilePathAbsolute クラス
+ファイルのローカルパスを表すクラス。
+
+■■コンストラクタ
+public FilePathAbsolute( 
+   System.string filePath
+)
+パラメータ
+filePath 
+ファイル名を含む、ファイルへの完全な絶対パス。
+
+public FilePathAbsolute( 
+   System.IO.FileInfo fileInfo
+)
+パラメータ
+fileInfo 
+ディスク上のファイルに対する.NETユーティリティ・オブジェクト
+
+■■ プロパティ
+FileExtension ファイルの拡張子です。  
+FileName  拡張子付きのファイル名です。
+FolderPath フォルダーのパス。 
+FullPath ファイル名を含む完全な絶対パス。 
+
+
+■■■Autodesk.DataManagement.Client.Framework.FolderPathAbsolute クラス
+フォルダのローカルパスを表すクラス。
+
+■■コンストラクタ
+public FolderPathAbsolute( 
+   System.string folderPath
+)
+パラメータ
+folderPath
+フォルダーへの完全な絶対パス。
+
+■■ プロパティ
+FullPath
+フォルダーへの完全な絶対パス。
+

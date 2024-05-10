@@ -1,0 +1,43 @@
+﻿名前空間：Autodesk.DataManagement.Client.Framework.Vault.Forms.Settings
+クラス： SelectEntitySettings Autodesk.DataManagement.Client.Framework.Vault.Forms.Library.SelectEntity ワークフローの動作を設定するためのオプションです。
+プロパティ：
+
+List<string> ActionableEntityClassIds アクションを実行するエンティティを表すエンティティ・クラスIDを取得または追加します。空の場合は、すべてのタイプのエンティティがアクション可能です。 
+
+ActionButtonEnablementRule アクション ボタンが有効になるタイミングを決定する SelectEntitySettings.ActionButtonEnablementRules から選択されたルールを取得または設定します。 
+
+bool ActionButtonNavigatesContainers アクションボタンがコンテナを開くのではなく、コンテナの中に移動するかどうかを取得または設定します。 
+
+Enum SelectEntitySettings.ActionButtonEnablementRules  ClearTextBoxOnNonActionableEntity アクション不可能なエンティティが選択されたときにテキストボックスの内容をクリアするかどうかを取得または設定します。 
+ActionButtonEnablementRules.MustExist このルールは、テキスト ボックスで指定された各エンティティが、現在の閲覧フォルダに実際に存在するかどうかをチェックします。
+ActionButtonEnablementRules.MustHaveValue このルールは、テキスト ボックスに値があるかどうかをチェックします。
+ActionButtonEnablementRules.None このルールはアクションボタンを常にアクティブにします。
+
+
+string DialogCaption Select Entityダイアログボックスに表示するキャプションを取得または設定します。 
+
+IEnumerable<IEntity> EntitiesToHide Select Entityダイアログに表示しないエンティティのリストを取得または設定する。 
+
+HelpContext ヘルプボタンがクリックされたときに、Autodesk.DataManagement.Client.Framework.Forms.Interfaces.ICustomHelpProviderに送信されるコンテキスト指定のデータを取得または設定します。
+
+InitialBrowseLocation Select Entity ダイアログの起動時に表示される初期エンティティを取得または設定します。指定しない場合は、Vault Root ($) が表示されます。 
+
+InitialSelectionText テキストボックスの最初の内容を取得または設定します。 
+
+MultipleSelect 選択するエンティティのリストを表示するグリッドが、単一選択または複数選択をサポートしているかどうかを取得または設定します。 
+
+NavigationPathSettings ナビゲーションパスのコンボボックスの設定に使用される設定を取得または設定します。nullの場合、デフォルトの設定が使用されます。   
+
+OptionsExtensibility ダイアログの拡張性オプションを取得または設定します。 
+
+OptionsWindow ダイアログの親と場所を設定するためのオプションを取得します。 
+
+PersistenceKey Autodesk.DataManagement.Client.Framework.Vault.Forms.Library.SelectEntity ワークフローのインスタンスを一意に定義するキーを取得または設定します。このキーは、GUI 設定の永続化に使用されます。
+
+RestrictNavigation　ナビゲーションをInitialBrowseLocationに制限するかどうかを取得または設定します。
+
+SelectionTextLabel 選択したエンティティのリストを表示するテキストボックスのラベルを取得または設定する。
+
+ShowFolderView フォルダツリービューを表示するかどうかを取得または設定します。 
+
+ShowHiddenChildren グリッドに非表示のエンティティを表示するかどうかを取得または設定する。 
