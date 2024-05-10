@@ -41,9 +41,13 @@
   <ItemGroup>
     <Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
       <HintPath>Vault2025SDKcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
       <HintPath>Vault2025SDKcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Autodesk.Connectivity.Extensibility.Framework">
       <HintPath>Vault2025SDKcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
@@ -71,6 +75,8 @@
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
       <HintPath>Vault2025SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
       <HintPath>Vault2025SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
@@ -80,6 +86,8 @@
     </Reference>
     <Reference Include="Connectivity.InventorAddin.EdmAddin">
       <HintPath>Inventor2025VaultAddinDLLcopy\Connectivity.InventorAddin.EdmAddin.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Extensions.ObjectPool">
       <HintPath>Vault2025SDKcopy\core\Microsoft.Extensions.ObjectPool.dll</HintPath>
@@ -98,6 +106,6 @@
     </Reference>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(ProjectDir)\Vault2025SDKcopy\AdskLicensingSDK_*.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;xcopy &quot;$(ProjectDir)\Vault2025SDKcopy\AdSSOServices.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;xcopy &quot;$(ProjectDir)\Vault2025SDKcopy\SSOClient.config&quot; &quot;$(TargetDir)&quot; /y" />
+    <Exec Command="xcopy &quot;$(ProjectDir)\Vault2025SDKcopy\AdskLicensingSDK_*.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;" />
   </Target>
 </Project>

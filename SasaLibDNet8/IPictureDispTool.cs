@@ -1,4 +1,5 @@
-﻿using System;
+﻿using stdole;
+using System;
 using System.IO;
 using System.Runtime.Versioning;
 using SIP = System.IO.Path;
@@ -19,7 +20,7 @@ namespace SasaLib
         /// <param name="height"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static System.Drawing.Image OriginalImage(stdole.IPictureDisp Thumbnail, int width, int height, bool debug = true)
+        public static System.Drawing.Image OriginalImage(IPictureDisp Thumbnail, int width, int height, bool debug = true)
         {
             //System.Drawing.Image image = IPictuireUtil.GetPictureFromIPicture(Thumbnail);
             System.Drawing.Image image = OleCreateConverter.PictureDispToImage(Thumbnail);

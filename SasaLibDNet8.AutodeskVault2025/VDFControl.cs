@@ -355,12 +355,13 @@ namespace SasaLib.AutodeskVault
                 #endregion
             } // EdmSecurity.IsSignedIn() がfalseの場合、アカウント情報を使用してﾛｸﾞｲﾝを試みる
 
-            
+            VDF.Vault.Currency.Connections.Connection connection;
 
-            if (edmSecurity.VaultConnection != null)
-            {
-                EdmSecurityVaultConnection = edmSecurity.VaultConnection;
-            } // VaultAddinﾀﾞｲｱﾛｸﾞでのﾛｸﾞｲﾝが完了済みならそちらを優先
+            // TODO; 参照失敗
+            //if (edmSecurity.VaultConnection != null)
+            //{
+            //    EdmSecurityVaultConnection = edmSecurity.VaultConnection;
+            //} // VaultAddinﾀﾞｲｱﾛｸﾞでのﾛｸﾞｲﾝが完了済みならそちらを優先
 
             if (EdmSecurityVaultConnection != null)
             {

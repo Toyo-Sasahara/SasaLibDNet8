@@ -57,8 +57,8 @@ namespace SasaLib.InventorAPI
 
             try
             {
-                SasaLib.FileFolder.RemoveFile(System.IO.Path.ChangeExtension(path, "bak"));
-                SasaLib.FileFolder.MoveFile(path, System.IO.Path.ChangeExtension(path, "bak"));
+                FileFolder.RemoveFile(System.IO.Path.ChangeExtension(path, "bak"));
+                FileFolder.MoveFile(path, System.IO.Path.ChangeExtension(path, "bak"));
                 if (System.IO.File.Exists(path) == false)
                     LogWrite($"コンテンツセンタローカルデータベース {path} 削除しました");
 
@@ -154,7 +154,7 @@ namespace SasaLib.InventorAPI
             }
             catch (Exception ex)
             {
-                SasaLib.Eventlog.Log.WriteEntry("SasaLib.Inventor", EventLogEntryType.Error, 0, $"※ContentCenterLocalDatabaseCreate.CreateStart(..)で例外{ex.Message}");
+                Eventlog.Log.WriteEntry("SasaLib.Inventor", EventLogEntryType.Error, 0, $"※ContentCenterLocalDatabaseCreate.CreateStart(..)で例外{ex.Message}");
 
                 return false;
             }
@@ -241,7 +241,7 @@ namespace SasaLib.InventorAPI
             }
             catch (Exception ex)
             {
-                SasaLib.Eventlog.Log.WriteEntry("SasaLib.Inventor", EventLogEntryType.Error, 0, $"※ContentCenterLocalDatabaseCreate.CreateStart(..)で例外{ex.Message}");
+                Eventlog.Log.WriteEntry("SasaLib.Inventor", EventLogEntryType.Error, 0, $"※ContentCenterLocalDatabaseCreate.CreateStart(..)で例外{ex.Message}");
 
                 return false;
             }

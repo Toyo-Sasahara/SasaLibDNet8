@@ -220,7 +220,7 @@ namespace SasaLib.InventorAPI
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
             try
             {
-                Property iPropertyAnser = SasaLib.InventorAPI.InventorControl.GetiPropertyValue(document, "Summary Information", iPropertyName, WriteLine);
+                Property iPropertyAnser = InventorAPI.InventorControl.GetiPropertyValue(document, "Summary Information", iPropertyName, WriteLine);
                 if (iPropertyAnser != null)
                     return iPropertyAnser.Value;
                 else
@@ -300,7 +300,7 @@ namespace SasaLib.InventorAPI
 
             try
             {
-                Property iPropertyAnser = SasaLib.InventorAPI.InventorControl.GetiPropertyValue(document, "User Defined Properties", iPropertyName, WriteLine);
+                Property iPropertyAnser = InventorAPI.InventorControl.GetiPropertyValue(document, "User Defined Properties", iPropertyName, WriteLine);
                 if (iPropertyAnser != null)
                     return iPropertyAnser.Value;
                 else
@@ -374,7 +374,7 @@ namespace SasaLib.InventorAPI
 
             try
             {
-                Property iPropertyAnser = SasaLib.InventorAPI.InventorControl.GetiPropertyValue(document, "Design Tracking Properties", iPropertyName, WriteLine);
+                Property iPropertyAnser = InventorAPI.InventorControl.GetiPropertyValue(document, "Design Tracking Properties", iPropertyName, WriteLine);
                 if (iPropertyAnser != null)
                     return iPropertyAnser.Value;
                 else
@@ -460,7 +460,7 @@ namespace SasaLib.InventorAPI
             foreach (ComponentOccurrence oCocc in oCoccs)
             {
 
-                Property iPropertyAnser = SasaLib.InventorAPI.InventorControl.GetiPropertyValue((Inventor.Document)oCocc.Definition.Document, propertySetName, iPropertyName, DebugConsole.WriteLine);
+                Property iPropertyAnser = InventorAPI.InventorControl.GetiPropertyValue((Inventor.Document)oCocc.Definition.Document, propertySetName, iPropertyName, DebugConsole.WriteLine);
                 if (iPropertyAnser == null)
                     continue;
                 if (iPropertyAnser.Type == ObjectTypeEnum.kPropertyObject)
