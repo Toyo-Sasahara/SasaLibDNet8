@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
@@ -14,8 +13,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.NumberingSupport", "SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj", "{BE182471-DD6A-4663-B824-0EB89458D7AA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.MySQLConnect", "SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj", "{E0EC73E9-8B60-4026-8557-A84C8B8285A2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.PictureBoxControlLibrary", "SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj", "{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.MSIDLL", "SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj", "{A3D24F97-0015-435C-B935-8DDB953040EE}"
 EndProject
@@ -52,6 +49,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.AutodeskVault2025", "SasaLibDNet8.AutodeskVault2025\SasaLibDNet8.AutodeskVault2025.csproj", "{C215C9A9-889F-4815-B52A-8032A0D42DBC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autodesk", "Autodesk", "{8509F56B-9224-46D5-8276-11F51349F8D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.PageControl", "SasaLibDNet8.PageControl\SasaLibDNet8.PageControl.csproj", "{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.PictureBoxControlLibrary", "SasaLibDNet8.PictureBoxControlLibrary\SasaLibDNet8.PictureBoxControlLibrary.csproj", "{7CBBE3AC-F516-4CB8-A21E-037073A7118B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,14 +102,6 @@ Global
 		{E0EC73E9-8B60-4026-8557-A84C8B8285A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0EC73E9-8B60-4026-8557-A84C8B8285A2}.Release|x64.ActiveCfg = Release|x64
 		{E0EC73E9-8B60-4026-8557-A84C8B8285A2}.Release|x64.Build.0 = Release|x64
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Debug|x64.ActiveCfg = Debug|x64
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Debug|x64.Build.0 = Debug|x64
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Release|x64.ActiveCfg = Release|x64
-		{8984F0FE-4534-4EC8-A86F-7E7CADB2D8B4}.Release|x64.Build.0 = Release|x64
 		{A3D24F97-0015-435C-B935-8DDB953040EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A3D24F97-0015-435C-B935-8DDB953040EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3D24F97-0015-435C-B935-8DDB953040EE}.Debug|x64.ActiveCfg = Debug|x64
@@ -221,6 +214,22 @@ Global
 		{C215C9A9-889F-4815-B52A-8032A0D42DBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C215C9A9-889F-4815-B52A-8032A0D42DBC}.Release|x64.ActiveCfg = Release|Any CPU
 		{C215C9A9-889F-4815-B52A-8032A0D42DBC}.Release|x64.Build.0 = Release|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Debug|x64.Build.0 = Debug|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Release|x64.ActiveCfg = Release|Any CPU
+		{A99E40D3-2BFD-4E95-9EBC-279F5AECAF30}.Release|x64.Build.0 = Release|Any CPU
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Debug|x64.ActiveCfg = Debug|x64
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Debug|x64.Build.0 = Debug|x64
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Release|x64.ActiveCfg = Release|x64
+		{7CBBE3AC-F516-4CB8-A21E-037073A7118B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -248,9 +257,9 @@ Global
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{66d95a78-c6c8-415b-a1fc-17dc7928c891}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{78e811fd-ff1c-49f8-9c22-ecf66a924ce8}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{7a2fcf51-7330-439d-a3e9-301891fcd311}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{7cbbe3ac-f516-4cb8-a21e-037073a7118b}*SharedItemsImports = 5
 		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{82509ed3-0161-4659-bc62-d050719cb9a7}*SharedItemsImports = 5
 		..\AutocadTOYOaddinCommitDNet8\AssemblyInfo\AssemblyInfo.projitems*{835c2668-0779-4ce7-9b3f-7832e063a144}*SharedItemsImports = 5
-		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{8984f0fe-4534-4ec8-a86f-7e7cadb2d8b4}*SharedItemsImports = 5
 		..\AutocadTOYOaddinCommitDNet8\AssemblyInfo\AssemblyInfo.projitems*{a29f537c-7fda-4451-aa08-999fd5491dc9}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{a3d24f97-0015-435c-b935-8ddb953040ee}*SharedItemsImports = 5
 		..\TOYOSTAGINGSYSTEM.DNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{b5a4886c-896c-4ce4-b8cd-2a612db95794}*SharedItemsImports = 5

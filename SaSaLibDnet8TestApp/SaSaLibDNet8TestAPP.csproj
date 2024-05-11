@@ -19,13 +19,16 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.AutodeskVault2025\SasaLibDNet8.AutodeskVault2025.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.Inventor2025\SasaLibDNet8.Inventor2025.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.PageControl\SasaLibDNet8.PageControl.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.PictureBoxControlLibrary\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.SysConfigurator\SasaLibDNet8.SysConfigurator.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.VariableControlPipeServer\SasaLibDNet8.VariableControlPipeServer.csproj" />
-		<ProjectReference Include="..\SasaLibDNet8PagePictureControlInfo\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
 	</ItemGroup>
 
