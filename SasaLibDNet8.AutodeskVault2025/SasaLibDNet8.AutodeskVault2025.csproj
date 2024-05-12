@@ -41,13 +41,9 @@
   <ItemGroup>
     <Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
       <HintPath>Vault2025SDKcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
       <HintPath>Vault2025SDKcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Autodesk.Connectivity.Extensibility.Framework">
       <HintPath>Vault2025SDKcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
@@ -75,8 +71,6 @@
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
       <HintPath>Vault2025SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
       <HintPath>Vault2025SDKcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
