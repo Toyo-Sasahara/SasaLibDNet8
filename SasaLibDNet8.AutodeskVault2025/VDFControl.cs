@@ -92,6 +92,7 @@ namespace SasaLib.AutodeskVault
             get
             {
                 edmSecurity = Connectivity.InventorAddin.EdmAddin.EdmSecurity.Instance;
+
                 if (edmSecurity == null)
                     return false;
                 _IsEdmConnected = edmSecurity.IsSignedIn();
