@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
@@ -47,12 +48,6 @@
 		<Reference Include="Interop.IWshRuntimeLibrary">
 			<HintPath>..\..\SasaLibTestFrame\SasaLib\obj\Debug\Interop.IWshRuntimeLibrary.dll</HintPath>
 		</Reference>
-		<Reference Include="PresentationCore">
-			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationCore.dll</HintPath>
-		</Reference>
-		<Reference Include="PresentationFramework">
-			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationFramework.dll</HintPath>
-		</Reference>
 		<Reference Include="System.Drawing">
 			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.dll</HintPath>
 		</Reference>
@@ -62,33 +57,6 @@
 		<Reference Include="System.Drawing.Design">
 			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Drawing.Design.dll</HintPath>
 		</Reference>
-		<Reference Include="System.Printing">
-			<HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\System.Printing.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Resources.Extensions">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Resources.Extensions.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Security.Cryptography.Pkcs">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.Pkcs.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Security.Cryptography.ProtectedData">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.ProtectedData.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Security.Cryptography.Xml">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Cryptography.Xml.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Security.Permissions">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Security.Permissions.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Threading.AccessControl">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Threading.AccessControl.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Windows.Controls.Ribbon">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Controls.Ribbon.dll</HintPath>
-		</Reference>
-		<Reference Include="System.Windows.Extensions">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Extensions.dll</HintPath>
-		</Reference>
 		<Reference Include="System.Windows.Forms">
 			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.dll</HintPath>
 		</Reference>
@@ -97,11 +65,6 @@
 		</Reference>
 		<Reference Include="System.Windows.Forms.Primitives">
 			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\System.Windows.Forms.Primitives.dll</HintPath>
-		</Reference>
-	</ItemGroup>
-	<ItemGroup>
-		<Reference Include="WindowsBase">
-			<HintPath>..\..\..\..\..\..\Program Files (x86)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\8.0.4\ref\net8.0\WindowsBase.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
