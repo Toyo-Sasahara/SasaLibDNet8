@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SasaLib.InventorAPI
 {
+    [SupportedOSPlatform("windows")]
+
     public static class SasaLibInventorInfo
     {
 

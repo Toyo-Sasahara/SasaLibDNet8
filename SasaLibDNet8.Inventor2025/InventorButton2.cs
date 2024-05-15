@@ -1,11 +1,13 @@
 ﻿using Inventor;
 using System;
 using System.Drawing;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SasaLib.InventorAPI
 {
+    [SupportedOSPlatform("windows")]
     public static class InventorButton2
     {
 

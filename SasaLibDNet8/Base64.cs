@@ -3,11 +3,11 @@ using System.Text;
 
 namespace SasaLib
 {
+    [SupportedOSPlatform("windows")]
 
     /// <summary>
     /// BASE64に関するConvertクラスのラッパー
     /// </summary>
-    [SupportedOSPlatform("windows")]
     public class Base64
     {
         private Encoding enc;

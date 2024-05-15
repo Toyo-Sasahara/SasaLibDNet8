@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
-
+using System.Runtime.Versioning;
+[SupportedOSPlatform("windows")]
 public static class SasaLibPageControlInfo
 {
     public static string GetAssemblyFileName()

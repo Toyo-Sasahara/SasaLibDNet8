@@ -40,6 +40,7 @@ using VDFVCE = Autodesk.DataManagement.Client.Framework.Vault.Currency.Entities;
 using VDFVFS = Autodesk.DataManagement.Client.Framework.Vault.Forms.Settings;
 using Autodesk.DataManagement.Client.Framework.Vault.Services.Connection;
 using System.Windows;
+using System.Runtime.Versioning;
 //using Connectivity.InventorAddin.EdmAddin;
 
 //using DEXX = DevExpress.XtraTreeList;
@@ -54,6 +55,7 @@ using System.Windows;
 
 namespace SasaLib.AutodeskVault
 {
+    [SupportedOSPlatform("windows")]
     /// <summary>
     /// ■Autodesk Vaultシステム クライアント側制御メインクラス Vault Development Framework (VDF)
     /// Autodesk.DataManagement.DLL で構成される。  VDF は一般的なVault アルゴリズムのための再利用可能なビジネス ロジックと、

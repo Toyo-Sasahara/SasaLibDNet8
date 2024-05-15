@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace SasaLib.InventorAPI
 {
+    [SupportedOSPlatform("windows")]
     /// <summary>
     /// テストクラス・（サーフェス）
     /// </summary>

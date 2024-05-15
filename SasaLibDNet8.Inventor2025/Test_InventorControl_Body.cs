@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace SasaLib.InventorAPI
 {
+    [SupportedOSPlatform("windows")]
     public static class Test_InventorControl_Body
     {
         /// <summary>

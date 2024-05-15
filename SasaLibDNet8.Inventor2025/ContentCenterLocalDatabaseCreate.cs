@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Xml.Linq;
+using System.Runtime.Versioning;
 
 namespace SasaLib.InventorAPI
 {
+    [SupportedOSPlatform("windows")]
+
     /// <summary>
     /// ローカルデータベースを生成
     /// </summary>

@@ -1,15 +1,18 @@
 using Inventor;
 using System;
 using System.Drawing;
+using System.Runtime.Versioning;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace SasaLib.InventorAPI
 {
-	/// <summary>
-	///コマンドボタンの基本クラス
-	/// </summary>
-	public abstract class InventorButton
+    [SupportedOSPlatform("windows")]
+
+    /// <summary>
+    ///コマンドボタンの基本クラス
+    /// </summary>
+    public abstract class InventorButton
 	{
 		#region データメンバー
 

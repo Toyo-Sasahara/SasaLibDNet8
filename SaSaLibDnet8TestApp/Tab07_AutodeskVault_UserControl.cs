@@ -14,6 +14,7 @@ using Autodesk.Connectivity.WebServicesTools;
 using VDF = Autodesk.DataManagement.Client.Framework;
 using ACW = Autodesk.Connectivity.WebServices;
 using System.Runtime.Versioning;
+using SasaLib.AutodeskVault;
 
 namespace SaSaLibDNet8TestAPP
 {
@@ -125,15 +126,13 @@ namespace SaSaLibDNet8TestAPP
         /// </summary>
         public void ListAllFiles()
         {
-            // For demonstration purposes, the information is hard-coded.
-            VDF.Vault.Results.LogInResult results = VDF.Vault.Library.ConnectionManager.LogIn(
-                "localhost", "Vault", "Administrator", "", VDF.Vault.Currency.Connections.AuthenticationFlags.Standard, null
-                );
+            VDFControl vDFControl = new VDFControl("MPB01", "Vault", "Administrator", "");
 
-            if (!results.Success)
+
+            if (!vDFControl.IsConnected)
                 return;
 
-            VDF.Vault.Currency.Connections.Connection connection = results.Connection;
+            VDF.Vault.Currency.Connections.Connection connection = vDFControl.VaultConnection;
 
             try
             {

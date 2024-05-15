@@ -1,6 +1,8 @@
 ﻿using SasaLib;
 using System;
 using System.Reflection;
+using System.Runtime.Versioning;
+[SupportedOSPlatform("windows")]
 
 public static class SasaLibNumberingSupportInfo
 {

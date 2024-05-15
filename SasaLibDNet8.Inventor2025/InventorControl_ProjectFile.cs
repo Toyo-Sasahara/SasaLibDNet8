@@ -8,6 +8,8 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+
 //using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,7 @@ using System.Windows.Forms;
 /// </summary>
 namespace SasaLib.InventorAPI
 {
+    [SupportedOSPlatform("windows")]
 
     public static partial class InventorControl
     {
