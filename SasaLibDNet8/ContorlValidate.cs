@@ -19,7 +19,7 @@ namespace SasaLib
                 e.Handled = false;
                 return;
             }
-
+            
             // 数字(0-9)は入力可
             if (char.IsDigit(e.KeyChar))
             {

@@ -111,7 +111,7 @@ namespace SasaLib
             public int bottom;
         }
 
-        public Point TestGetWiindowRect(IntPtr handle)
+        public System.Windows.Point TestGetWiindowRect(IntPtr handle)
         {
 
             RECT rect;
@@ -122,7 +122,7 @@ namespace SasaLib
 
             Console.WriteLine("height:{0} width:{1}", height, width);
 
-            return new Point(width, height);
+            return new System.Windows.Point(width, height);
         }
 
         [SupportedOSPlatform("windows")]

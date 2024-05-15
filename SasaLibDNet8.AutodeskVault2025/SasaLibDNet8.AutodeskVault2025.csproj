@@ -86,9 +86,6 @@
     <Reference Include="Microsoft.Extensions.ObjectPool">
       <HintPath>Vault2025SDKcopy\core\Microsoft.Extensions.ObjectPool.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationFramework">
-      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\dotnet\net8.0\runtime\shared\Microsoft.WindowsDesktop.App\8.0.4\PresentationFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System.Reflection.MetadataLoadContext">
       <HintPath>Vault2025SDKcopy\core\System.Reflection.MetadataLoadContext.dll</HintPath>
     </Reference>

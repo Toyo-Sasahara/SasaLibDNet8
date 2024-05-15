@@ -58,7 +58,7 @@ namespace SasaLib
         /// <param name="image"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static stdole.IPictureDisp ImageToPictureDisp(Image image)
+        public static Inventor.IPictureDisp ImageToPictureDisp(Image image)
         {
             if (image == null || !(image is Bitmap))
 
@@ -73,11 +73,11 @@ namespace SasaLib
 
             object ppVoid = null;
 
-            Guid iPictureDispGuid = typeof(stdole.IPictureDisp).GUID;
+            Guid iPictureDispGuid = typeof(Inventor.IPictureDisp).GUID;
 
             OleCreatePictureIndirect(pictDescBitmap, ref iPictureDispGuid, true, out ppVoid);
 
-            stdole.IPictureDisp picture = (stdole.IPictureDisp)ppVoid;
+            Inventor.IPictureDisp picture = (Inventor.IPictureDisp)ppVoid;
 
             return picture;
 

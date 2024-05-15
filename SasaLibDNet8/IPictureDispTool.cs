@@ -1,5 +1,4 @@
-﻿using stdole;
-using System;
+﻿using System;
 using System.IO;
 using System.Runtime.Versioning;
 using SIP = System.IO.Path;
@@ -20,7 +19,7 @@ namespace SasaLib
         /// <param name="height"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static System.Drawing.Image OriginalImage(IPictureDisp Thumbnail, int width, int height, bool debug = true)
+        public static System.Drawing.Image OriginalImage(stdole.IPictureDisp Thumbnail, int width, int height, bool debug = true)
         {
             //System.Drawing.Image image = IPictuireUtil.GetPictureFromIPicture(Thumbnail);
             System.Drawing.Image image = OleCreateConverter.PictureDispToImage(Thumbnail);
@@ -53,7 +52,7 @@ namespace SasaLib
         [SupportedOSPlatform("windows")]
         public static System.Drawing.Image PartsListImageConvert(stdole.IPictureDisp Thumbnail, int width, int height, string fname = null, bool debug = true)
         {
-            string folder = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
 
             //System.Drawing.Image image = IPictuireUtil.GetPictureFromIPicture(Thumbnail);
             System.Drawing.Image image = OleCreateConverter.PictureDispToImage(Thumbnail);
@@ -110,7 +109,7 @@ namespace SasaLib
         [SupportedOSPlatform("windows")]
         public static System.Drawing.Image PartsListImageConvert(System.Drawing.Image Image, int width, int height, string fname)
         {
-            string folder = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
 
             string tiffname = FileFolder.ChangeExtension(fname, "TIF");
 
@@ -159,7 +158,7 @@ namespace SasaLib
         /// <returns></returns>
         public static System.Drawing.Image PartsListImageConvert(System.Drawing.Image bitmap1, int width, int height)
         {
-            string folder = System.Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
 
             System.Drawing.Image retBmp = PartsListImageConvert(bitmap1, width, height);
 
@@ -167,4 +166,5 @@ namespace SasaLib
         }
 
     }
+
 }

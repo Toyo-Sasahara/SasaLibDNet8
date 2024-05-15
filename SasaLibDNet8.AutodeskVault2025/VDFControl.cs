@@ -1020,7 +1020,7 @@ namespace SasaLib.AutodeskVault
             }
             else
             {
-                MessageBox.Show("vaultConnection.WebServiceManager が nullです", "エラー");
+                System.Windows.Forms.MessageBox.Show("vaultConnection.WebServiceManager が nullです", "エラー");
                 Eventlog.Log.WriteEntry("SasaLib.AutodeskVault", System.Diagnostics.EventLogEntryType.Error, 0, $"※エラー。vaultConnection.WebServiceManagerがnullです");
                 return null;
             }
