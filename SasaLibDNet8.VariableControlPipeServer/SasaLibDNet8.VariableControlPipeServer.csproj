@@ -1,15 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net8.0-windows</TargetFramework>
 		<OutputType>Library</OutputType>
-		<RootNamespace>SasaLib.VariableControlPipeServer</RootNamespace>
-		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<Deterministic>false</Deterministic>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>disable</Nullable>
+		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<RootNamespace>SasaLib.VariableControlPipeServer</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
 		<Platforms>AnyCPU;x64</Platforms>
-		<Nullable>disable</Nullable>
 		<PlatformTarget>x64</PlatformTarget>
 	</PropertyGroup>
 	<ItemGroup>
