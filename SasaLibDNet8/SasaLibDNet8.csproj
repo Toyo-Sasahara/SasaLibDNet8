@@ -11,6 +11,7 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<Deterministic>false</Deterministic>
 		<PlatformTarget>x64</PlatformTarget>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -55,5 +56,9 @@
 	</ItemGroup>
 
 	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="echo &quot;MSBuildProjectName= $(MSBuildProjectName)&#xD;&#xA;echo &quot;AssemblyName= $(AssemblyName)&quot;&#xD;&#xA;echo &quot;MSBuildProjectDirectory= $(MSBuildProjectDirectory)&quot;&#xD;&#xA;echo &quot;MSBuildStartupDirectory= $(MSBuildStartupDirectory)&quot;&#xD;&#xA;&#xD;&#xA;echo &quot;FrameworkSDKRoot = $(FrameworkSDKRoot)&quot;&#xD;&#xA;echo &quot;BaseIntermediateOutputPath= $(BaseIntermediateOutputPath)&quot;&#xD;&#xA;echo &quot;OutDir = $(OutDir)&quot;&#xD;&#xA;echo &quot;Configuration= $(Configuration)&quot;&#xD;&#xA;" />
+	</Target>
 
 </Project>
