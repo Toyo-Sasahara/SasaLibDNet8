@@ -3,11 +3,18 @@ using System.Text;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class CharacterCode
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static Encoding GetActiveCodePage()
         {
-            return Console.OutputEncoding;
+            return Encoding.Default;
         }
     }
 }

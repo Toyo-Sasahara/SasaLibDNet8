@@ -41,6 +41,7 @@ using VDFVFS = Autodesk.DataManagement.Client.Framework.Vault.Forms.Settings;
 using Autodesk.DataManagement.Client.Framework.Vault.Services.Connection;
 using System.Windows;
 using System.Runtime.Versioning;
+using Connectivity.InventorAddin.EdmAddin;
 //using Connectivity.InventorAddin.EdmAddin;
 
 //using DEXX = DevExpress.XtraTreeList;
@@ -93,11 +94,11 @@ namespace SasaLib.AutodeskVault
         {
             get
             {
-                edmSecurity = Connectivity.InventorAddin.EdmAddin.EdmSecurity.Instance;
+                EdmSecurity edmSecurityInstance = EdmAddin.GetInventorEdmAddinEdmSecurityInstance() as EdmSecurity;
 
-                if (edmSecurity == null)
+                if (edmSecurityInstance == null)
                     return false;
-                _IsEdmConnected = edmSecurity.IsSignedIn();
+                _IsEdmConnected = edmSecurityInstance.IsSignedIn();
                 return _IsEdmConnected;
             }
         }
@@ -138,7 +139,7 @@ namespace SasaLib.AutodeskVault
         /// <summary>
         /// ■ｱﾄﾞｲﾝでログインするために必要
         /// </summary>
-        private Connectivity.InventorAddin.EdmAddin.EdmSecurity edmSecurity;
+        //private Connectivity.InventorAddin.EdmAddin.EdmSecurity edmSecurity;
 
         /// <summary>
         /// ■コンストラクタ
@@ -191,8 +192,8 @@ namespace SasaLib.AutodeskVault
         {
             if (WriteLine == null) this.WriteLine = DebugConsole.WriteLine;
 
-            edmSecurity = Connectivity.InventorAddin.EdmAddin.EdmSecurity.Instance;
-            if (edmSecurity.IsSignedIn())
+            EdmSecurity edmSecurityInstance = Connectivity.InventorAddin.EdmAddin.EdmSecurity.Instance;
+            if (edmSecurityInstance.IsSignedIn())
             {
                 this.WriteLine("■VDFControl(..) すでに EdmSecurity.IsSignedIn でした。");
             }
@@ -202,7 +203,7 @@ namespace SasaLib.AutodeskVault
                 {
                     this.WriteLine("■VDFControl(..) VaultAddinﾛｸﾞｲﾝ ｳｨﾄﾞｳ 表示");
                     //this.o_InventorApp.CommandManager.ControlDefinitions["LoginCmdIntName"].Execute();
-                    edmSecurity.OnLoginButtonExecute(true);
+                    edmSecurityInstance.OnLoginButtonExecute(true);
                 }
             }
         }
@@ -309,11 +310,11 @@ namespace SasaLib.AutodeskVault
         /// <returns></returns>
         public bool EdmLogIn(string serverName = null, string vaultName = null, string userName = null, string planePassword = null)
         {
-            edmSecurity = Connectivity.InventorAddin.EdmAddin.EdmSecurity.Instance;
+            EdmSecurity edmSecurityInstance = Connectivity.InventorAddin.EdmAddin.EdmSecurity.Instance;
 
             VDFV.Currency.Connections.Connection EdmSecurityVaultConnection = null;
 
-            if (edmSecurity.IsSignedIn())
+            if (edmSecurityInstance.IsSignedIn())
             {
                 this.WriteLine("■VDFControl.EdmLogIn() すでに EdmSecurity.IsSignedIn 済みです。");
             }
@@ -340,7 +341,7 @@ namespace SasaLib.AutodeskVault
                         this.WriteLine($"※VDFControl.EdmLogIn() Autodesk.DataManagement.Client.Framework.Vault.Library.ConnectionManager.LogIn() 失敗しました");
 
                         //o_InventorApp.CommandManager.ControlDefinitions["LoginCmdIntName"].Execute();
-                        edmSecurity.OnLoginButtonExecute(true);
+                        edmSecurityInstance.OnLoginButtonExecute(true);
                     }
                     else
                     {
@@ -353,7 +354,7 @@ namespace SasaLib.AutodeskVault
                 else
                 {
                     //o_InventorApp.CommandManager.ControlDefinitions["LoginCmdIntName"].Execute();
-                    edmSecurity.OnLoginButtonExecute(true);
+                    edmSecurityInstance.OnLoginButtonExecute(true);
                 }
                 #endregion
             } // EdmSecurity.IsSignedIn() がfalseの場合、アカウント情報を使用してﾛｸﾞｲﾝを試みる

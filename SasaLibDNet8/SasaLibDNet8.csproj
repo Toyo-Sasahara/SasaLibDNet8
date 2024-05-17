@@ -12,6 +12,9 @@
 		<Deterministic>false</Deterministic>
 		<PlatformTarget>x64</PlatformTarget>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<PackAsTool>False</PackAsTool>
 	</PropertyGroup>
 
 	<ItemGroup>
