@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Collections;
 using ACW = Autodesk.Connectivity.WebServices;
-//using CIE = Connectivity.InventorAddin.EdmAddin;
 using ACWTools = Autodesk.Connectivity.WebServicesTools;
 
 using VDF = Autodesk.DataManagement.Client.Framework;
@@ -18,14 +17,14 @@ using VDFVCP = Autodesk.DataManagement.Client.Framework.Vault.Currency.Propertie
 using VDFVCE = Autodesk.DataManagement.Client.Framework.Vault.Currency.Entities;
 using VDFVFS = Autodesk.DataManagement.Client.Framework.Vault.Forms.Settings;
 
-//using DEXX = DevExpress.XtraTreeList;
-//using DEXUE = DevExpress.Utils.Extensions;
-//using DEXXN = DevExpress.XtraPrinting.Native;
-//using DEXU = DevExpress.Utils;
-//using DEXXM = DevExpress.XtraRichEdit.Model;
-//using DEXSI = DevExpress.Services.Internal;
-//using DEXXR = DevExpress.XtraEditors.Repository;
-//using DEXIWWUN = DevExpress.Internal.WinApi.Windows.UI.Notifications;
+using DEXX = DevExpress.XtraTreeList;
+using DEXUE = DevExpress.Utils.Extensions;
+using DEXXN = DevExpress.XtraPrinting.Native;
+using DEXU = DevExpress.Utils;
+using DEXXM = DevExpress.XtraRichEdit.Model;
+using DEXSI = DevExpress.Services.Internal;
+using DEXXR = DevExpress.XtraEditors.Repository;
+using DEXIWWUN = DevExpress.Internal.WinApi.Windows.UI.Notifications;
 
 namespace SasaLib.AutodeskVault
 {
