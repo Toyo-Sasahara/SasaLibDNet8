@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class ControlExtensions
     {
@@ -26,10 +29,13 @@ namespace SasaLib
             return index;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         static List<Control> s_controlList = new List<Control>();
 
         /// <summary>
-        /// コンテナ内のすべてのコントロールをList<Control>で返す。再帰検索する
+        /// コンテナ内のすべてのコントロールをList&lt;Control&gt;で返す。再帰検索する
         /// </summary>
         /// <param name="container"></param>
         /// <returns></returns>
@@ -45,6 +51,11 @@ namespace SasaLib
             return s_controlList;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PanelControls"></param>
+        /// <param name="eventHandler"></param>
         public static void SetSameEventToContainer(List<Control> PanelControls, EventHandler eventHandler)
         {
 

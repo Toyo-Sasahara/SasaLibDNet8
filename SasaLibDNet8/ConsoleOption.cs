@@ -4,8 +4,14 @@ using System.Runtime.InteropServices;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class ConsoleOption
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static void UnsetEayEditMode()
         {
             // 簡易編集モードフラグをリセット

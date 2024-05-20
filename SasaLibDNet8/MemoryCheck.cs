@@ -2,17 +2,26 @@
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MemCheck
     {
         long beforeSize;
         long afterSize;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public MemCheck()
         {
             beforeSize = GC.GetTotalMemory(false);
             Console.WriteLine("現在のメモリ使用量 {0} Byte", beforeSize.ToString("N0"));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void GetAfterMem()
         {
             afterSize = GC.GetTotalMemory(false);

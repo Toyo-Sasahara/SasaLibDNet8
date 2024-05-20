@@ -39,6 +39,9 @@ namespace SasaLib
             this.msgID = msgID;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void clear()
         {
             msgID = 0;
@@ -109,6 +112,7 @@ namespace SasaLib
         /// <summary>
         /// まとめてイベントログへ送る.EventLogEntryType, ヘッダーとフッターのみ指定
         /// </summary>
+        /// <param name="eventType"></param>
         /// <param name="header"></param>
         /// <param name="footer"></param>
         public void SendEntry(EventLogEntryType eventType, string header = null, string footer = null)
@@ -120,7 +124,9 @@ namespace SasaLib
             sb1.Clear();
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             sb1.Clear();

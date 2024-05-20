@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class ContorlValidate
     {
         /// <summary>

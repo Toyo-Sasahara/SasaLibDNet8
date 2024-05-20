@@ -10,6 +10,9 @@ namespace SasaLib
     /// </summary>
     public partial class MainWindow : System.Windows.Window
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static void DoEvents()
         {
             DispatcherFrame frame = new DispatcherFrame();
@@ -29,7 +32,9 @@ namespace SasaLib
     [System.Diagnostics.DebuggerStepThrough]
     public static class DoEvents
     {
-        //
+        /// <summary>
+        /// 
+        /// </summary>
         public static void Run()
         {
             DispatcherFrame frame = new DispatcherFrame();

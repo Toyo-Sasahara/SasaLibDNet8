@@ -5,16 +5,44 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [SupportedOSPlatform("windows")]
     public class PrinterSimple
     {
         /// <summary>
-         /// 印刷時の印刷領域
-         /// </summary>
-        public enum BeforeExtractType { 原寸, 原寸オフセット, マージン範囲, ページサイズ範囲, Custom = 99 }
+        /// 印刷時の印刷領域
+        /// </summary>
+        public enum BeforeExtractType { 
+            /// <summary>
+            /// 
+            /// </summary>
+            原寸,
+            /// <summary>
+            /// 
+            /// </summary>
+            原寸オフセット,
+            /// <summary>
+            /// 
+            /// </summary>
+            マージン範囲,
+            /// <summary>
+            /// 
+            /// </summary>
+            ページサイズ範囲,
+            /// <summary>
+            /// 
+            /// </summary>
+            Custom = 99
+        }
         /// <summary>
         /// 印刷直前レンダリングでのオフセット値を保持
         /// </summary>
         public float PXmm { get { return _pxmm; } }
+        /// <summary>
+        /// 
+        /// </summary>
         public float PYmm { get { return _pymm; } }
         float _pxmm = 0;
         float _pymm = 0;
@@ -55,13 +83,12 @@ namespace SasaLib
         /// </summary>
         public string TestModeBeforePrintingImageSaveFilepath { get; set; } = null;
 
-
         /// <summary>
         /// ★コンストラクタ。①TIFFファイル名と、出力先プリンタの設定ファイルを受け取る
-        /// 
         /// </summary>
         /// <param name="printerImage"></param>
-        [SupportedOSPlatform("windows")]
+        /// <param name="WindowsPrinterName"></param>
+        /// <param name="paperSizeAndSources"></param>
         public PrinterSimple(System.Drawing.Image printerImage, string WindowsPrinterName, List<PaperSizeAndSource> paperSizeAndSources)
         {
             this.printerConfigData = new PrinterSimpleConfigData(WindowsPrinterName, paperSizeAndSources);
@@ -78,7 +105,7 @@ namespace SasaLib
 
             // 解像度をもとに用紙サイズ(mm)を取得
             PM size = ImageUtil.GetPaperSizeMillimeter(currentImage,400);
-            /// イメージから用紙サイズと向きを推察
+            // イメージから用紙サイズと向きを推察
             currentPaperSize = PrintConfig.PaperCheck.GetJISpaperSize(size.Width, size.Height, 10);
 
 
@@ -90,9 +117,9 @@ namespace SasaLib
         /// <summary>
         /// 印刷実行
         /// </summary>
+        /// <param name="DocumentName"></param>
         /// <param name="PrinterOutputFileNameFullPath"></param>
-        /// <param name="BeforePrintImageFullPath"></param>
-        [SupportedOSPlatform("windows")]
+        /// <returns></returns>
         public bool PrintExecute(string DocumentName, string PrinterOutputFileNameFullPath = "")
         {
             if (this.Ready == false)
@@ -172,7 +199,6 @@ namespace SasaLib
         /// <param name="RenderinType">1=,2=,3=ChangePixelFormat()を使用</param>
         /// <param name="dXmm">印刷時のオフセット位置 X</param>
         /// <param name="dYmm">印刷時のオフセット位置 Y</param>
-        [SupportedOSPlatform("windows")]
         void CreatePrintingBitmap(System.Drawing.Image image,
             System.Drawing.Imaging.PixelFormat _printDrawingPixelFormat = System.Drawing.Imaging.PixelFormat.Format24bppRgb,
             int RenderinType = 3,
@@ -191,9 +217,9 @@ namespace SasaLib
                 {
                     case 1:
                         Console.WriteLine("PrintBmpの分割作成が選択されています");
-                        ///
+                        //
                         PrintBmp = new System.Drawing.Bitmap(image.Width, image.Height, _printDrawingPixelFormat);
-                        ///
+                        //
                         ImageUtil.ConvertImagePixelFormat(image, PrintBmp, _printDrawingPixelFormat, dXmm, dYmm);
                         break;
 
@@ -226,17 +252,8 @@ namespace SasaLib
         /// <summary>
         /// 印刷を実行するように指令
         /// </summary>
-        /// <param name="printername">string</param>
-        /// <param name="PaperSize">System.Drawing.Printing.PaperSize</param>
-        /// <param name="Landscape">bool</param>
-        /// <param name="PaperSource">System.Drawing.Printing.PaperSource</param>
-        /// <param name="outFilePath">string</param>
-        /// <summary>
-        /// イベントハンドラ・現在選択されているプリンタへimgを出力
-        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        [SupportedOSPlatform("windows")]
         private void Pd_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Console.WriteLine("◆プリンタイベントハンドラ Pd_PrintPage() 開始");
@@ -251,12 +268,13 @@ namespace SasaLib
             Console.WriteLine("◆PrintBmp.PixelFormat{0}", PrintBmp.PixelFormat.ToString());
             Console.WriteLine("◆PrintBmp.HorizontalResolution=" + PrintBmp.HorizontalResolution + ", PrintBmp.VerticalResolution=" + PrintBmp.VerticalResolution);
 
-            /// 印刷直前イメージデータをファイル化
+            // 印刷直前イメージデータをファイル化
             if (TestModeBeforePrintingImageSaveFilepath != null && TestModeBeforePrintingImageSaveFilepath != "") { PrintBmp.Save(TestModeBeforePrintingImageSaveFilepath); }
 
             //印刷直前イメージデータを描画
             switch (BeforePrintExtractMode)
             {
+                
                 case BeforeExtractType.原寸:
                     Console.WriteLine("◆◆スケールモード 何もしない");
                     e.Graphics.DrawImage(PrintBmp, new System.Drawing.Point(0, 0));

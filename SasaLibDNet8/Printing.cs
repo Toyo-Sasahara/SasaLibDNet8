@@ -7,12 +7,11 @@ using static System.Drawing.Printing.PrinterSettings;
 
 namespace SasaLib
 {
-    [SupportedOSPlatform("windows")]
 
     /// <summary>
     /// プリンタコンフィギュレーション準備
-    /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class XMLconfigPrinterPreparation : XmlSettingFile
     {
         /// <summary>
@@ -23,38 +22,105 @@ namespace SasaLib
 
         //以下のメンバーはXMLに保存される
 
-        //印刷に使用するプリンタ名(Windowsコントロールパネルでの名前)
+        /// <summary>
+        /// 印刷に使用するプリンタ名(Windowsコントロールパネルでの名前)
+        /// </summary>
         public string OutputPrinter { get; set; } = "Brother MFC-J6770CDW Printer";
+        /// <summary>
+        /// 
+        /// </summary>
         public int OutputPrinter_A4_Tray { get; set; } = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public int OutputPrinter_A3_Tray { get; set; } = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public int OutputPrinter_A2_Tray { get; set; } = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public int OutputPrinter_A1_Tray { get; set; } = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public int OutputPrinter_A0_Tray { get; set; } = 2;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA4portrait_Landscape { get; set; } = false;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA3portrait_Landscape { get; set; } = true;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA2portrait_Landscape { get; set; } = true;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA1portrait_Landscape { get; set; } = true;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA0portrait_Landscape { get; set; } = true;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA4landscape_Landscape { get; set; } = true;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA3landscape_Landscape { get; set; } = false;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA2landscape_Landscape { get; set; } = false;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA1landscape_Landscape { get; set; } = false;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool OutputPrinter_imgA0landscape_Landscape { get; set; } = false;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public System.Drawing.Point BARCODEprintPosition { get; set; } = new System.Drawing.Point(100, 8);
+        /// <summary>
+        /// 
+        /// </summary>
         public System.Drawing.Point GUIDprintPosition { get; set; } = new System.Drawing.Point(135, 8);
+        /// <summary>
+        /// 
+        /// </summary>
         public int GUIDfontsize { get; set; } = 8;
+        /// <summary>
+        /// 
+        /// </summary>
         public int BarcodeFontsize { get; set; } = 15;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int FeatureOption { get; set; } = 0;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool DebugOption { get; set; } = false;
         //
         // 以下はこれから有効にする設定
         //public PType Printertype { get; set; } = new PType("D1234");
 
-        //保存したくないメンバーは以下のように宣言
+        /// <summary>
+        /// 保存したくないメンバーは以下のように宣言
+        /// </summary>
         [XmlIgnore]
         public string NotSaved;
     }
@@ -65,6 +131,9 @@ namespace SasaLib
     [SupportedOSPlatform("windows")]
     public class Printing
     {
+        /// <summary>
+        /// 
+        /// </summary>
         static public XMLconfigPrinterPreparation confSet = new XMLconfigPrinterPreparation();
 
         /// <summary>
@@ -81,6 +150,9 @@ namespace SasaLib
         /// 印刷直前レンダリングのピクセルサイズを保持
         /// </summary>
         public float Width { get { return _width; } }
+        /// <summary>
+        /// 
+        /// </summary>
         public float Height { get { return _height; } }
         float _width;
         float _height;
@@ -89,6 +161,9 @@ namespace SasaLib
         /// 印刷直前レンダリングでの解像度を保持
         /// </summary>
         public float DPIH { get { return _dpih; } }
+        /// <summary>
+        /// 
+        /// </summary>
         public float DPIV { get { return _dpiv; } }
         float _dpih;
         float _dpiv;
@@ -97,6 +172,9 @@ namespace SasaLib
         /// 印刷直前レンダリングでのオフセット値を保持
         /// </summary>
         public float PXmm { get { return _pxmm; } }
+        /// <summary>
+        /// 
+        /// </summary>
         public float PYmm { get { return _pymm; } }
         float _pxmm = 0;
         float _pymm = 0;
@@ -144,9 +222,9 @@ namespace SasaLib
                 {
                     case 1:
                         Console.WriteLine("PrintBmpの分割作成が選択されています");
-                        ///
+                        //
                         PrintBmp = new System.Drawing.Bitmap(image.Width, image.Height, _printDrawingPixelFormat);
-                        ///
+                        //
                         ImageUtil.ConvertImagePixelFormat(image, PrintBmp, _printDrawingPixelFormat, dXmm, dYmm);
 
                         break;
@@ -404,7 +482,7 @@ namespace SasaLib
         /// <summary>
         /// 指定したプリンタで選択できる用紙サイズ情報をすべて取得する
         /// </summary>
-        /// <param name="printerName">プリンタ名(Windowsコントロールパネルでの名前)</param>
+        /// <param name="printer">プリンタ名(Windowsコントロールパネルでの名前)</param>
         /// <returns>用紙状況</returns>
         public static List<PaperSize> GetPaperSizeObjects(string printer)
         {
@@ -429,7 +507,7 @@ namespace SasaLib
         /// <summary>
         /// 指定したプリンタで選択できるトレイ情報を取得する
         /// </summary>
-        /// <param name="printerName">プリンタ名(Windowsコントロールパネルでの名前)</param>
+        /// <param name="printer">プリンタ名(Windowsコントロールパネルでの名前)</param>
         /// <returns>トレイ情報</returns>
         public static List<PaperSource> GetPapserSouceObjects(string printer)
         {
@@ -615,7 +693,7 @@ namespace SasaLib
             Console.WriteLine("◆PrintBmp.PixelFormat{0}", PrintBmp.PixelFormat.ToString());
             Console.WriteLine("◆PrintBmp.HorizontalResolution=" + PrintBmp.HorizontalResolution + ", PrintBmp.VerticalResolution=" + PrintBmp.VerticalResolution);
 
-            /// 印刷直前イメージデータをファイル化
+            // 印刷直前イメージデータをファイル化
             if (BeforePrintingImageSaveFilepath != null && BeforePrintingImageSaveFilepath != "") { PrintBmp.Save(BeforePrintingImageSaveFilepath); }
 
             //印刷直前イメージデータを描画

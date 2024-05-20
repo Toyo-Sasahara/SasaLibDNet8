@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class ProcessControl
     {
         /// <summary>

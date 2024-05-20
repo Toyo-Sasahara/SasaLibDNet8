@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public class Csv
     {
@@ -21,7 +24,9 @@ namespace SasaLib
         ///     "B,2,3" + "\x0a" +
         ///     "C,4,5" + "\x0a" +
         ///     "D,6,7" + "\x0a"; </param>
+        /// <param name="Qswitch"></param>
         /// <returns>変換結果のArrayList</returns>
+        /// <exception cref="ApplicationException"></exception>
         public static System.Collections.ArrayList CsvStringToArrayList(string csvText, bool Qswitch = true)
         {
             //前後の改行を削除しておく
@@ -159,12 +164,10 @@ namespace SasaLib
             }
         }
 
-
         /// <summary>
         /// ■ストリームからCSVをArryListに保存
         /// </summary>
         /// <param name="sr"></param>
-        /// <param name="Datas"></param>
         /// <returns></returns>
         public static System.Collections.ArrayList Read(StreamReader sr)
         {
@@ -192,6 +195,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="csvdata"></param>
         /// <param name="key"></param>
+        /// <param name="ignoreCase"></param>
         /// <returns></returns>
         public static int GetFromCsvArrayList(ArrayList csvdata, string key, bool ignoreCase = false)
         {
@@ -227,7 +231,9 @@ namespace SasaLib
         /// <param name="csvdata">CSVデータ</param>
         /// <param name="key">検索キー</param>
         /// <param name="line">検索結果</param>
+        /// <param name="ignoreCase"></param>
         /// <returns></returns>
+        /// <exception cref="FormatException"></exception>
         public static string GetFromCsvArrayList(ArrayList csvdata, string key, int line, bool ignoreCase = false)
         {
             var headder = (ArrayList)csvdata[0];
@@ -273,6 +279,7 @@ namespace SasaLib
         /// <param name="key">キー名を指定</param>
         /// <param name="value">値</param>
         /// <param name="line">値を格納するデータ列 ０から始まる行番号</param>
+        /// <param name="ignoreCase">大文字小文字を無視</param>
         public static void SetToCsvArrayList(ref ArrayList csvdata, string key, string value, int line, bool ignoreCase = false)
         {
             var headder = (ArrayList)csvdata[0];
@@ -313,7 +320,7 @@ namespace SasaLib
         ///     "A,1,2" + "\x0a" +
         ///     "B,2,3" + "\x0a" +
         ///     "C,4,5" + "\x0a" +
-        ///     "D,6,7" + "\x0a"; </param>
+        ///     "D,6,7" + "\x0a";
         /// </param>
         /// <param name="filePath"></param>
         /// <param name="Encordstring"></param>
@@ -346,6 +353,11 @@ namespace SasaLib
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="CsvStringToArrayList"></param>
+        /// <returns></returns>
         public static string CsvArrayListToString(System.Collections.ArrayList CsvStringToArrayList)
         {
             string headder = "";

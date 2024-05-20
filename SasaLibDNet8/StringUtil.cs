@@ -7,9 +7,7 @@ using System.Runtime.Versioning;
 using System.Text;
 using System.Text.RegularExpressions;
 
-/// <summary>
-/// Copylight ささはそふとうぇあ C#標準ツールクラス
-/// </summary>
+// Copylight ささはそふとうぇあ C#標準ツールクラス
 namespace SasaLib
 {
     /// <summary>
@@ -301,7 +299,11 @@ namespace SasaLib
             */
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
         public static string Zen2HanANK_ZenSpace2HanSpace(this string source)
         {
             string replaced = new String(
@@ -380,7 +382,7 @@ namespace SasaLib
         }
 
         /// <summary>
-        /// 文字列の数字部分をゼロ補完 する静的メソッド  (文字列,桁数)<
+        /// 文字列の数字部分をゼロ補完 する静的メソッド  (文字列,桁数)
         /// </summary>
         /// <param name="str">文字列</param>
         /// <param name="digit">桁数</param>
@@ -758,12 +760,12 @@ namespace SasaLib
         /// "あいう\rABC\rDEF" ->  "あいう\\ABC\\DEF"
         /// "あいう\rうえお\rabc" =>  "あいううえお\\abc"
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="inputStr"></param>
         /// <returns></returns>
-        public static string SplitJpnAndEng(string s)
+        public static string SplitJpnAndEng(string inputStr)
         {
             // ここで前後の余分なコード文字を削除
-            string str = s.TrimSymbolTopAndEnd();
+            string str = inputStr.TrimSymbolTopAndEnd();
 
             System.Console.WriteLine("Original str: '{0}'", str);
 
@@ -873,7 +875,10 @@ namespace SasaLib
             return sb.ToString().Replace("\r", "");
         }
 
-        // 配列中の文字列を「'」で囲み、先頭に番号を付けて表示する
+        /// <summary>
+        /// 配列中の文字列を「'」で囲み、先頭に番号を付けて表示する
+        /// </summary>
+        /// <param name="words"></param>
         public static void DisplayAll(this System.Collections.Generic.IEnumerable<string> words)
         {
             int count = 0;
@@ -918,6 +923,11 @@ namespace SasaLib
             return text;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static byte[] StringToSystemByteArraySJIS(string input)
         {
             Encoding sjisEnc = Encoding.GetEncoding("Shift_JIS");
@@ -958,7 +968,7 @@ namespace SasaLib
             return (StringUtil.SaSaLCMapString(str, NativeMethods.DwMap.LCMAP_HALFWIDTH | NativeMethods.DwMap.LCMAP_UPPERCASE));
         }
 
-        /// StringUtil Class end.
+        // StringUtil Class end.
     }
 
 

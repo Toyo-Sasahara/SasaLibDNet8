@@ -46,7 +46,7 @@ namespace SasaLib.PIPE
         /// ストリーム作成 本命 　 Administrator権限で動作させること　WindowsService で LocalSystemアカウント にて起動可能
         /// 但し同時起動はうまくいかない2018/11/20
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="pipeName"></param>
         /// <param name="maxInstances"></param>
         /// <returns></returns>
         public static NamedPipeServerStream Create2(string pipeName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
@@ -67,7 +67,15 @@ namespace SasaLib.PIPE
 
         }
         #region testcode
-        //test2
+        
+        // test2
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pipeName"></param>
+        /// <param name="maxInstances"></param>
+        /// <returns></returns>
         public static NamedPipeServerStream Create3(string pipeName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
         {
             PipeSecurity ps = new PipeSecurity();
@@ -89,6 +97,12 @@ namespace SasaLib.PIPE
         }
 
         //test3
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pineName"></param>
+        /// <param name="maxInstances"></param>
+        /// <returns></returns>
         public static NamedPipeServerStream Create4(string pineName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
         {
             PipeSecurity ps = new PipeSecurity();
@@ -105,6 +119,13 @@ namespace SasaLib.PIPE
         }
 
         //test4
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pipeName"></param>
+        /// <param name="maxInstances"></param>
+        /// <returns></returns>
         public static NamedPipeServerStream Create5(string pipeName, int maxInstances = NamedPipeServerStream.MaxAllowedServerInstances)
         {
             return new NamedPipeServerStream(pipeName, PipeDirection.InOut, maxInstances, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 1024, 1024);
@@ -112,8 +133,10 @@ namespace SasaLib.PIPE
         #endregion
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
-
     public static class NamedPipeClientInfo
     {
         /// <summary>

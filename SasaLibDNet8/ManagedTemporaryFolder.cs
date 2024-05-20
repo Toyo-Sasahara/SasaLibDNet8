@@ -16,6 +16,7 @@ namespace SasaLib
         /// 使用後に消える一時フォルダを使用するためのコンテキストを提供します。
         /// </summary>
         /// <param name="f"></param>
+        /// <param name="identifier"></param>
         public static void FolderContext(Action<string> f,string identifier = "")
         {
             string path = string.Empty;
@@ -44,6 +45,8 @@ namespace SasaLib
         /// 再帰を使わない例
         /// </summary>
         /// <param name="root"></param>
+        /// <param name="debug"></param>
+        /// <param name="WriteLine"></param>
         /// <exception cref="ArgumentException"></exception>
         private static void WriteModeSetRecursive(string root, bool debug = false ,SasaLibDelegateWriteLine WriteLine = null)
         {

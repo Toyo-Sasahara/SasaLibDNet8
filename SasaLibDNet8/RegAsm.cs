@@ -4,11 +4,16 @@ using System.Text.RegularExpressions;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
-
     public static class RegAsm
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static string FindRegAsmX64v4Path()
         {
 
@@ -32,6 +37,10 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static string FindRegAsmX64v2Path()
         {
 

@@ -38,6 +38,7 @@ namespace SasaLib
         /// コンストラクタ
         /// </summary>
         /// <param name="folder">テンポラリファイルを作成するフォルダ</param>
+        /// <param name="identifier"></param>
         public ManagedTemporaryFile(string folder, string identifier = "")
         {
             fullfileName = Path.Combine(folder, identifier + Path.GetRandomFileName());
@@ -83,6 +84,9 @@ namespace SasaLib
             disposedValue = true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         ~ManagedTemporaryFile()
         {
             //GC時に実行されるデストラクタでは非管理リソースの削除のみ

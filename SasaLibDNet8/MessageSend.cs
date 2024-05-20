@@ -2,8 +2,17 @@
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class MessageSend
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="account"></param>
+        /// <param name="computer"></param>
+        /// <param name="message"></param>
         public static void MsgExe(string account, string computer, string message)
         {
             var startInfo = new ProcessStartInfo
@@ -25,6 +34,11 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="computer"></param>
+        /// <param name="message"></param>
         public static void MsgExe(string computer, string message)
         {
             var startInfo = new ProcessStartInfo

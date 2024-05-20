@@ -6,6 +6,9 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class OleCreateConverter
     {
         [DllImport("oleaut32.dll", EntryPoint = "OleCreatePictureIndirect",
@@ -19,14 +22,34 @@ namespace SasaLib
 
 
         //Picture Types
+        /// <summary>
+        /// 
+        /// </summary>
         public const short PICTYPE_UNINITIALIZED = -1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const short PICTYPE_NONE = 0;
+        /// <summary>
+        /// 
+        /// </summary>
         public const short PICTYPE_BITMAP = 1;
+        /// <summary>
+        /// 
+        /// </summary>
         public const short PICTYPE_METAFILE = 2;
+        /// <summary>
+        /// 
+        /// </summary>
         public const short PICTYPE_ICON = 3;
+        /// <summary>
+        /// 
+        /// </summary>
         public const short PICTYPE_ENHMETAFILE = 4;
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         [StructLayout(LayoutKind.Sequential)]
         [SupportedOSPlatform("windows")]
         internal class PictDescBitmap

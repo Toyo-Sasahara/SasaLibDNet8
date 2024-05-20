@@ -12,17 +12,18 @@ namespace SasaLib
     /// <summary>
     /// PMﾌｧｲﾙからTIFF作成
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class CreateTIFF
     {
-
         /// <summary>
         /// メモリストリームにあるPJLからTIFFイメージを抜き出してファイル化.
-        /// ファイル名にはPJLデータ中のジョブ名を一部使用 テスト用コードに格下げ 2021-10-19
-        /// </summary>
+        /// ファイル名にはPJLデータ中のジョブ名を一部使用 テスト用コードに格下げ 2021-10-19</summary>
         /// <param name="msPJLrawdata">PJLデータのストリーム</param>
-        /// <param name="saveFile">保存先パスファイル名</param>
+        /// <param name="Path">保存先パス</param>
+        /// <param name="saveFile">ファイル名</param>
         /// <param name="rotateFlipType">回転</param>
-        [SupportedOSPlatform("windows")]
+        /// <param name="debug"></param>
+        /// <returns></returns>
         static bool ExtractTiffFile(MemoryStream msPJLrawdata, string Path, string saveFile, RotateFlipType rotateFlipType = RotateFlipType.RotateNoneFlipNone, int debug = 1)
         {
             // PJLdecodeオブジェクトを生成

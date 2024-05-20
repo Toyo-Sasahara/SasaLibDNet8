@@ -13,6 +13,10 @@ using System.Threading.Tasks;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [SupportedOSPlatform("windows")]
     public class Logging
     {
         AsyncLock _asyncLock = new AsyncLock();
@@ -21,12 +25,18 @@ namespace SasaLib
         //private static string pathfile;
 
         private System.IO.StreamWriter _sw = null;
+        /// <summary>
+        /// 
+        /// </summary>
         public string CurrentLogFullFileName { get; private set; }
 
         private DateTime currentDate;
 
         IPHostEntry hostInfo = Dns.GetHostEntry(Dns.GetHostName());
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string CurrentMethod
         {
             get
@@ -78,6 +88,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="folder">ログを書き出すフォルダ名</param>
         /// <param name="suffixLogfilename">ログファイル名の後半部と拡張子 例： sasahara.log （左記の先頭にメソッド内にて$"{hostInfo.HostName}-"が追加されます）</param>
+        /// <param name="append"></param>
         public Logging(string folder, string suffixLogfilename, bool append = true)
         {
             CurrentLogFullFileName = System.IO.Path.Combine(folder, hostInfo.HostName + "-" + suffixLogfilename);
@@ -109,6 +120,9 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         ~Logging()
         {
             Close();
@@ -140,6 +154,7 @@ namespace SasaLib
         /// <param name="value">書き込む値</param>
         /// <param name="DebugWriteLineSwitch">出力を Debug.WriteLine(..) によっても実行する</param>
         /// <param name="ConsoleWriteLineSwitch">出力を Console.WriteLine(..) によっても実行する</param>
+        /// <param name="FlashSync"></param>
         public async void WriteLine(object value, bool DebugWriteLineSwitch = false, bool ConsoleWriteLineSwitch = false, bool FlashSync = false)
         {
             using (await _asyncLock.LockAsync())
@@ -178,6 +193,14 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="DebugWriteLineSwitch"></param>
+        /// <param name="ConsoleWriteLineSwitch"></param>
+        /// <param name="FlashSync"></param>
+        /// <returns></returns>
         public async Task<string> ResultWriteLine(object value, bool DebugWriteLineSwitch = false, bool ConsoleWriteLineSwitch = false, bool FlashSync = false)
         {
             using (await _asyncLock.LockAsync())
@@ -229,7 +252,7 @@ namespace SasaLib
         /// <param name="switchTime"></param>
         /// <param name="DebugWriteLineSwitch"></param>
         /// <param name="ConsoleWriteLineSwitch"></param>
-        [SupportedOSPlatform("windows")]
+        /// <param name="FlashSync"></param>
         public async void LogRotateWriteLine(object value, string switchTime = "Day", bool DebugWriteLineSwitch = false, bool ConsoleWriteLineSwitch = false, bool FlashSync = false)
         {
             using (await _asyncLock.LockAsync())
@@ -333,7 +356,15 @@ namespace SasaLib
             }
         }
 
-        [SupportedOSPlatform("windows")]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="switchTime"></param>
+        /// <param name="DebugWriteLineSwitch"></param>
+        /// <param name="ConsoleWriteLineSwitch"></param>
+        /// <param name="FlashSync"></param>
+        /// <returns></returns>
         public async Task<string> ResultLogRotateWriteLine(object value, string switchTime = "Day", bool DebugWriteLineSwitch = false, bool ConsoleWriteLineSwitch = false, bool FlashSync = false)
         {
             using (await _asyncLock.LockAsync())
@@ -446,6 +477,9 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public async void Flash()
         {
             using (await _asyncLock.LockAsync())
@@ -462,6 +496,10 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public string GetLogFilePath()
         {
             if (CurrentLogFullFileName != null)

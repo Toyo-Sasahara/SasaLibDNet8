@@ -5,6 +5,10 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [SupportedOSPlatform("windows")]
     internal class PrinterSimpleConfigData
     {
         /// <summary>
@@ -41,15 +45,15 @@ namespace SasaLib
         /// 
         /// </summary>
         /// <param name="PrinterName"></param>
-        [SupportedOSPlatform("windows")]
+        /// <param name="paperSizeAndSources"></param>
         internal PrinterSimpleConfigData(string PrinterName, List<PaperSizeAndSource> paperSizeAndSources)
         {
             this.printerSimpleConfig.PaperSizeAndSources = paperSizeAndSources;
 
-            /// プリンタ名を プロパティへ
+            // プリンタ名を プロパティへ
             this.PrinterName = PrinterName;
 
-            /// 指定したプリンタで選択できる用紙サイズ情報をすべて取得する
+            // 指定したプリンタで選択できる用紙サイズ情報をすべて取得する
             var paperSizeObjects = Printing.GetPaperSizeObjects(PrinterName);
             if (paperSizeObjects == null)
             {
@@ -61,7 +65,7 @@ namespace SasaLib
                 systemDrawingPrintingPaperSizeList = paperSizeObjects;
             }
 
-            /// 指定したプリンタで選択できる出力先情報をすべて取得する
+            // 指定したプリンタで選択できる出力先情報をすべて取得する
             List<PaperSource> oPapserSouce = Printing.GetPapserSouceObjects(PrinterName);
             systemDrawingPrintingPaperSourceList = oPapserSouce;
 
@@ -90,8 +94,9 @@ namespace SasaLib
                     }
                 }
             }
-            /// プリンタドライバに用紙が無い場合の処理
-            /// 
+            
+            // プリンタドライバに用紙が無い場合の処理
+            // 
             PaperSize paperSize = systemDrawingPrintingPaperSizeList.Find(c => c.PaperName == "A2");
             if (paperSize != null)
                 return paperSize;

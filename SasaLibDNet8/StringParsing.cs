@@ -3,13 +3,17 @@ using System.Text.RegularExpressions;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class StringParsing
     {
         /// <summary>
-        ///  [keyword]:"2022/08/17 17:57:45" を含む文字列の中から、引用符に囲まれた文字列を抽出する。引用符の中に引用符があるものは非対応。同じキー
+        /// [keyword]:"2022/08/17 17:57:45" を含む文字列の中から、引用符に囲まれた文字列を抽出する。引用符の中に引用符があるものは非対応。同じキー
         /// </summary>
         /// <param name="source"></param>
-        /// <param name="key"></param>
+        /// <param name="keyword"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
         public static string SpecifiedStringExtraction(string source, string keyword, SasaLibDelegateWriteLine WriteLine = null)
         {
@@ -61,6 +65,9 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static void SpecifiedStringExtraction_Test()
         {
             string input = @"[#5.OK SourceFile]:""C:\ProgramData\TOYOCOMMON\Inventor\ContentCenter24.DAT"" [CTime]:""2022/08/20 11:25:04"" [MTime]:""2022/08/19 10:25:04"" [ABCD]:""2022/08/19 ""XXX"" [A123]:""2022/08/19 \\""XXX\\"" 10:25:04"" Next Send Target Data Size.";

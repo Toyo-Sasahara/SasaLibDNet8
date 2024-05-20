@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class UACutils
     {
         [DllImport("user32.dll")]
@@ -89,6 +92,15 @@ namespace SasaLib
 
         //using System.Runtime.InteropServices;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="TokenHandle"></param>
+        /// <param name="TokenInformationClass"></param>
+        /// <param name="TokenInformation"></param>
+        /// <param name="TokenInformationLength"></param>
+        /// <param name="ReturnLength"></param>
+        /// <returns></returns>
         [DllImport("advapi32.dll", SetLastError = true)]
         public static extern bool GetTokenInformation(IntPtr TokenHandle,
             TOKEN_INFORMATION_CLASS TokenInformationClass,
@@ -96,43 +108,145 @@ namespace SasaLib
             uint TokenInformationLength,
             out uint ReturnLength);
 
+        /// <summary>
+        /// 
+        /// </summary>
         public enum TOKEN_INFORMATION_CLASS
         {
+            /// <summary>
+            /// 
+            /// </summary>
             TokenUser = 1,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenGroups,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenPrivileges,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenOwner,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenPrimaryGroup,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenDefaultDacl,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenSource,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenType,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenImpersonationLevel,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenStatistics,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenRestrictedSids,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenSessionId,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenGroupsAndPrivileges,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenSessionReference,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenSandBoxInert,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenAuditPolicy,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenOrigin,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenElevationType,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenLinkedToken,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenElevation,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenHasRestrictions,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenAccessInformation,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenVirtualizationAllowed,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenVirtualizationEnabled,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenIntegrityLevel,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenUIAccess,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenMandatoryPolicy,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenLogonSid,
+            /// <summary>
+            /// 
+            /// </summary>
             MaxTokenInfoClass
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public enum TOKEN_ELEVATION_TYPE
         {
+            /// <summary>
+            /// 
+            /// </summary>
             TokenElevationTypeDefault = 1,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenElevationTypeFull,
+            /// <summary>
+            /// 
+            /// </summary>
             TokenElevationTypeLimited
         }
 
@@ -181,6 +295,9 @@ namespace SasaLib
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static  class AppAuthority
     {

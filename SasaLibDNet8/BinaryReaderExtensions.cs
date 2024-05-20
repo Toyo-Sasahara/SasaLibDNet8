@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace SasaLib.PIPE
 {
-    // BinaryReaderの拡張メソッドを定義
-    // https://gist.github.com/ichiroku11/80faa8675c5354245001759733df1348
+    /// <summary>
+    /// BinaryReaderの拡張メソッドを定義
+    /// https://gist.github.com/ichiroku11/80faa8675c5354245001759733df1348
+    /// </summary>
     public static class BinaryReaderExtensions
     {
         /// <summary>
@@ -16,6 +18,8 @@ namespace SasaLib.PIPE
         /// <typeparam name="TObject"></typeparam>
         /// <param name="reader"></param>
         /// <param name="readbufsize"></param>
+        /// <param name="WriteLine"></param>
+        /// <param name="Verbose"></param>
         /// <returns></returns>
         public static TObject ReadObject<TObject>(this BinaryReader reader, int readbufsize = 1024 * 20, SasaLibDelegateWriteLine WriteLine = null , bool Verbose = false)
         {

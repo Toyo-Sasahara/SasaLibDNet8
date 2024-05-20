@@ -15,14 +15,20 @@ using System.Windows.Media.Imaging;
 
 namespace SasaLib
 {
-    [SupportedOSPlatform("windows")]
 
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public struct PM
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int Width;
+        /// <summary>
+        /// 
+        /// </summary>
         public int Height;
     }
 
@@ -110,6 +116,12 @@ namespace SasaLib
             image.Save(msTiff2bpp, ici, ep);
             msTiff2bpp.Position = 0;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="msTiff24Lbpp"></param>
         public static void ImageToTIFF24LbppStream(System.Drawing.Image image, MemoryStream msTiff24Lbpp)
         {
             // ImageCodecInfoを取得する
@@ -131,6 +143,8 @@ namespace SasaLib
         /// </summary>
         /// <param name="image"></param>
         /// <param name="pf"></param>
+        /// <param name="dHmm"></param>
+        /// <param name="dVmm"></param>
         /// <returns></returns>
         public static System.Drawing.Image ChangePixcelFormat_Deprecated(System.Drawing.Image image, System.Drawing.Imaging.PixelFormat pf, float dHmm = 0, float dVmm = 0)
         {
@@ -167,7 +181,7 @@ namespace SasaLib
         /// Bitmapイメージのピクセル深度を変更して返す。
         /// 分割しないのでメモリ不足注意_Deprecated=推奨されない
         /// </summary>
-        /// <param name="bitmap">元のBitmap</param>
+        /// <param name="bitmpaSource">元のBitmap</param>
         /// <param name="pxf">ピクセルフォーマット</param>
         /// <returns></returns>
         public static System.Drawing.Bitmap ConvertImagePixelFormat_Deprecated(System.Drawing.Bitmap bitmpaSource,
@@ -239,6 +253,12 @@ namespace SasaLib
             srcImg.Dispose();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bmp"></param>
+        /// <param name="pxf"></param>
+        /// <returns></returns>
         public static Bitmap ConvertPixelFormat(Bitmap bmp, System.Drawing.Imaging.PixelFormat pxf)
         {
 
@@ -378,6 +398,7 @@ namespace SasaLib
         /// フォントをイメージオブジェクトに上書きする
         /// </summary>
         /// <param name="newImage"></param>
+        /// <param name="str"></param>
         /// <param name="posx"></param>
         /// <param name="posy"></param>
         /// <param name="fontName">フォントネーム</param>
@@ -406,6 +427,7 @@ namespace SasaLib
         /// <param name="fontsize"></param>
         /// <param name="centering"></param>
         /// <param name="posEndx"></param>
+        /// <param name="debugmode"></param>
         public static void DrawFontToImage(System.Drawing.Image newImage, string text, long posx, long posy, string fontName, int fontsize, bool centering = false, long posEndx = 0,bool debugmode = false)
         {
             // ImageオブジェクトからGraphicsオブジェクトを生成
@@ -498,7 +520,6 @@ namespace SasaLib
         /// </summary>
         /// <param name="srcImage">追加する元のベースイメージ.このメソッドの呼び出し後変更されます</param>
         /// <param name="stampImg">追加するイメージ</param>
-        /// <param name="pf">新しいピクセルフォーマット</param>
         /// <param name="dXmm">右下を原点とした場合の横方向移動量</param>
         /// <param name="dYmm">右下を原点とした場合の上下方向移動量</param>
         private static void OverwritingImage_Old(System.Drawing.Image srcImage, System.Drawing.Image stampImg, float dXmm, float dYmm)
@@ -590,6 +611,8 @@ namespace SasaLib
         /// </summary>
         /// <param name="image"></param>
         /// <param name="brush">色：exp Brushes.White</param>
+        /// <param name="offsetX"></param>
+        /// <param name="offsetY"></param>
         public static void DrawFillImage(System.Drawing.Image image, System.Drawing.Brush brush, int offsetX = 0, int offsetY = 0)
         {
             // ImageオブジェクトからGraphicsオブジェクトを生成
@@ -662,7 +685,9 @@ namespace SasaLib
         /// Imageオブジェクトから用紙サイズを以上の基準で判定する
         /// A0(841×1189mm) A1(594×841mm) A2(420×594mm) A3(297×420mm) A4(210×297mm)
         /// </summary>
-        /// <param name="image">Imageオブジェクト</param>
+        /// <param name="image"></param>
+        /// <param name="gosa"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
         public static PaperSizeCabinet GetPaparSize(System.Drawing.Image image, double gosa = 2.5d, SasaLibDelegateWriteLine WriteLine = null)
         {
@@ -682,7 +707,7 @@ namespace SasaLib
                 new PaperSizeCabinet("A4横", 297, 210, CommonPaperSize.A4L)
             };
 
-            /// 内部メソッド (比較)
+            // 内部メソッド (比較)
             bool Nealist(double var, double _gosa, double target)
             {
                 if (Math.Abs(var - target) <= _gosa)
@@ -708,11 +733,7 @@ namespace SasaLib
         }
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="image"></param>
-        /// <returns></returns>
+
         //public static string OLDGetPaparSize(System.Drawing.Image image)
         //{
 
@@ -766,6 +787,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="image"></param>
         /// <param name="Dpi"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
         public static PM GetPaperSizeMillimeter(System.Drawing.Image image, float Dpi, SasaLibDelegateWriteLine WriteLine = null)
         {
@@ -779,8 +801,12 @@ namespace SasaLib
             return pm;
         }
 
-        // サイズ向き変換関連
-
+        /// <summary>
+        /// サイズ向き変換関連
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="scale"></param>
+        /// <returns></returns>
         public static System.Drawing.Bitmap Myresize(System.Drawing.Image image, float scale)
         {
             int newW = Convert.ToInt32(image.Width * scale);
@@ -856,6 +882,14 @@ namespace SasaLib
             return (Bitmap)image;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="orgImg"></param>
+        /// <param name="newWidth"></param>
+        /// <param name="newHeight"></param>
+        /// <param name="interpolationMode"></param>
+        /// <returns></returns>
         public static System.Drawing.Bitmap ChangeSize(System.Drawing.Image orgImg, int newWidth, int newHeight, System.Drawing.Drawing2D.InterpolationMode interpolationMode)
         {
             //補間方法を指定して画像を縮小して描画する
@@ -876,7 +910,15 @@ namespace SasaLib
             return canvas;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="orgbmg"></param>
+        /// <param name="NewDPIH"></param>
+        /// <param name="NewDPIV"></param>
+        /// <param name="InterpolationMode"></param>
+        /// <param name="WriteLine"></param>
+        /// <returns></returns>
         public static System.Drawing.Bitmap ChangeResolution(System.Drawing.Bitmap orgbmg, float NewDPIH, float NewDPIV, System.Drawing.Drawing2D.InterpolationMode InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Default, SasaLibDelegateWriteLine WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
@@ -1093,7 +1135,7 @@ namespace SasaLib
         /// Bitmapの一部を切り出したBitmapオブジェクトを返す
         /// 使用方法は var bmpRoi = ImageRoi(bmpSrc, new Rectangle(150, 80, 100, 100));
         /// </summary>
-        /// <param name="srcRect">元のBitmapクラスオブジェクト</param>
+        /// <param name="src">元のBitmapクラスオブジェクト</param>
         /// <param name="roi">切り出す領域</param>
         /// <returns>切り出したBitmapオブジェクト</returns>
         public static System.Drawing.Bitmap ImageRoi(Bitmap src, Rectangle roi)
@@ -1637,12 +1679,11 @@ namespace SasaLib
         /// <summary>
         /// 画像ファイルをよみ System.Drawing.Imageクラスのオブジェクトを生成（バイト配列を返す）
         /// </summary>
-        /// <param name="folder"></param>
         /// <param name="fileFullPath"></param>
         /// <returns>byte配列のImageオブジェクト、fileなし＝null</returns>
         public static byte[] GetTImageFileToByteArray(string fileFullPath)
         {
-            /// Tifffile --> |Image.FromFile()| --> Image --> |ImageToByteArry()|  --> 
+            // Tifffile --> |Image.FromFile()| --> Image --> |ImageToByteArry()|  --> 
 
             System.Drawing.Image img;
 
@@ -1723,6 +1764,7 @@ namespace SasaLib
         /// 
         /// </summary>
         /// <param name="fullPath"></param>
+        /// <param name="GCExecute"></param>
         /// <returns></returns>
         public static System.Drawing.Image GetCCITT4ImageFromFile(string fullPath, bool GCExecute = false)
         {
@@ -1732,17 +1774,17 @@ namespace SasaLib
             {
                 System.Drawing.Image CurrentImage;
 
-                /// ①ImageオブジェクトorgをTIFFファイルから作成
+                // ①ImageオブジェクトorgをTIFFファイルから作成
                 System.Drawing.Image org = System.Drawing.Image.FromFile(fullPath);
-                /// ②メモリストリームmsを作成
+                // ②メモリストリームmsを作成
                 MemoryStream ms = new MemoryStream();
-                /// ③メモリストリームmsにImageオブジェクトobjをCCITT4圧縮し作成
+                // ③メモリストリームmsにImageオブジェクトobjをCCITT4圧縮し作成
                 ImageUtil.ImageToTIFF1bppCCITT4Stream(org, ms);
-                /// ④不要になったImageオブジェクトobjを強制解放
+                // ④不要になったImageオブジェクトobjを強制解放
                 org.Dispose();
-                /// ⑤ メモリストリームmsをImageオブジェクトに戻し currentImageに作成
+                // ⑤ メモリストリームmsをImageオブジェクトに戻し currentImageに作成
                 CurrentImage = ImageUtil.TiffStreamToImage(ms);
-                /// ⑥不要になったメモリストリームmsを強制解放
+                // ⑥不要になったメモリストリームmsを強制解放
                 ms.Dispose();
 
                 return CurrentImage;
@@ -1769,7 +1811,7 @@ namespace SasaLib
             /// <param name="name">識別名</param>
             /// <param name="width">用紙の縦幅 (mm)</param>
             /// <param name="height">用紙の縦幅 (mm)</param>
-            /// <param name="commonPaperSize">CommonPaperSize (各種アプリで使う標準用紙サイズと向き)</commonPaperSize>
+            /// <param name="commonPaperSize">CommonPaperSize (各種アプリで使う標準用紙サイズと向き)</param>
             public PaperSizeCabinet(string name, int width, int height, CommonPaperSize commonPaperSize)
             {
                 PaperName = name;
@@ -1778,10 +1820,22 @@ namespace SasaLib
                 CommonPaperSize = commonPaperSize;
             }
 
+            /// <summary>
+            /// 
+            /// </summary>
             public string PaperName { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
             public int Width { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
             public int Height { get; set; }
 
+            /// <summary>
+            /// 
+            /// </summary>
             public CommonPaperSize CommonPaperSize { get; set; }
         }
 

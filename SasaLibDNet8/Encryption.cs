@@ -6,6 +6,9 @@ using System.Text;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public class Encryption
     {
@@ -17,11 +20,20 @@ namespace SasaLib
 
         internal string EncryptionType { get; private set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="EncryptionType"></param>
         public Encryption(string EncryptionType)
         {
             this.EncryptionType = EncryptionType;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PlaneText"></param>
+        /// <returns></returns>
         public string Encoding(string PlaneText)
         {
             if (PlaneText == null)
@@ -58,6 +70,11 @@ namespace SasaLib
             return ans;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="EncodedText"></param>
+        /// <returns></returns>
         public string Decoding(string EncodedText)
         {
             string ans = null;

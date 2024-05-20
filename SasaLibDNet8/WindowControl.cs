@@ -15,28 +15,77 @@ namespace SasaLib
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class WindowControl
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public const int WM_LBUTTONDOWN = 0x201;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int WM_LBUTTONUP = 0x202;
+        /// <summary>
+        /// 
+        /// </summary>
         public const int MK_LBUTTON = 0x0001;
+        /// <summary>
+        /// 
+        /// </summary>
         public static int GWL_STYLE = -16;
 
+        /// <summary>
+        /// 
+        /// </summary>
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, uint Msg, uint wParam, uint lParam);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="hwndChildAfter"></param>
+        /// <param name="lpszClass"></param>
+        /// <param name="lpszWindow"></param>
+        /// <returns></returns>
         [DllImport("user32.dll")]
         public static extern IntPtr FindWindowEx(IntPtr hWnd, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="nIndex"></param>
+        /// <returns></returns>
         [DllImport("user32")]
         public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="lpClassName"></param>
+        /// <param name="nMaxCount"></param>
+        /// <returns></returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <returns></returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern int GetWindowTextLength(IntPtr hWnd);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="lpString"></param>
+        /// <param name="nMaxCount"></param>
+        /// <returns></returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
 
@@ -54,7 +103,11 @@ namespace SasaLib
             SendMessage(hWnd, WM_LBUTTONUP, 0x00000000, 0x000A000A);
         }
 
-        // 全てのボタンを列挙し、その10番目のボタンのウィンドウハンドルを返す
+        /// <summary>
+        /// 全てのボタンを列挙し、その10番目のボタンのウィンドウハンドルを返す
+        /// </summary>
+        /// <param name="top"></param>
+        /// <returns></returns>
         public static IntPtr FindTargetButton(WindowParams top)
         {
             var all = GetAllChildWindows(top, new List<WindowParams>());
@@ -62,7 +115,12 @@ namespace SasaLib
         }
 
 
-        // 指定したウィンドウの全ての子孫ウィンドウを取得し、リストに追加する
+        /// <summary>
+        /// 指定したウィンドウの全ての子孫ウィンドウを取得し、リストに追加する
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="dest"></param>
+        /// <returns></returns>
         public static List<WindowParams> GetAllChildWindows(WindowParams parent, List<WindowParams> dest)
         {
             dest.Add(parent);
@@ -70,14 +128,22 @@ namespace SasaLib
             return dest;
         }
 
-        // 与えた親ウィンドウの直下にある子ウィンドウを列挙する（孫ウィンドウは見つけてくれない）
+        /// <summary>
+        /// 与えた親ウィンドウの直下にある子ウィンドウを列挙する（孫ウィンドウは見つけてくれない）
+        /// </summary>
+        /// <param name="hParentWindow"></param>
+        /// <returns></returns>
         public static IEnumerable<WindowParams> EnumChildWindows(IntPtr hParentWindow)
         {
             IntPtr hWnd = IntPtr.Zero;
             while ((hWnd = FindWindowEx(hParentWindow, hWnd, null, null)) != IntPtr.Zero) { yield return GetWindow(hWnd); }
         }
 
-        // ウィンドウハンドルを渡すと、ウィンドウテキスト（ラベルなど）、クラス、スタイルを取得してWindowsクラスに格納して返す
+        /// <summary>
+        /// ウィンドウハンドルを渡すと、ウィンドウテキスト（ラベルなど）、クラス、スタイルを取得してWindowsクラスに格納して返す
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <returns></returns>
         public static WindowParams GetWindow(IntPtr hWnd)
         {
             int textLen = GetWindowTextLength(hWnd);
@@ -111,6 +177,11 @@ namespace SasaLib
             public int bottom;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="handle"></param>
+        /// <returns></returns>
         public System.Windows.Point TestGetWiindowRect(IntPtr handle)
         {
 
@@ -125,8 +196,12 @@ namespace SasaLib
             return new System.Windows.Point(width, height);
         }
 
-        [SupportedOSPlatform("windows")]
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hwnd"></param>
+        /// <returns></returns>
         public IWin32Window GetWindowFromHost(int hwnd)
         {
             IWin32Window window = null;
@@ -148,11 +223,26 @@ namespace SasaLib
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class WindowParams
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string ClassName;
+        /// <summary>
+        /// 
+        /// </summary>
         public string Title;
+        /// <summary>
+        /// 
+        /// </summary>
         public IntPtr hWnd;
+        /// <summary>
+        /// 
+        /// </summary>
         public int Style;
     }
 

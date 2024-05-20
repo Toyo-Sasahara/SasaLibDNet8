@@ -11,21 +11,125 @@ namespace SasaLib.PrintConfig
     /// 標準用紙
     /// </summary>
     [Serializable]
-    public enum CommonPaperSize { A0L, A0P, A1L, A1P, A2L, A2P, A3L, A3P, A4L, A4P, A0Lx2, A1Lx2, Custom = 99, Unknown = 9999 }
+    public enum CommonPaperSize {
+        /// <summary>
+        /// 
+        /// </summary>
+        A0L,
+        /// <summary>
+        /// 
+        /// </summary>
+        A0P,
+        /// <summary>
+        /// 
+        /// </summary>
+        A1L,
+        /// <summary>
+        /// 
+        /// </summary>
+        A1P,
+        /// <summary>
+        /// 
+        /// </summary>
+        A2L,
+        /// <summary>
+        /// 
+        /// </summary>
+        A2P,
+        /// <summary>
+        /// 
+        /// </summary>
+        A3L,
+        /// <summary>
+        /// 
+        /// </summary>
+        A3P,
+        /// <summary>
+        /// 
+        /// </summary>
+        A4L,
+        /// <summary>
+        /// 
+        /// </summary>
+        A4P,
+        /// <summary>
+        /// 
+        /// </summary>
+        A0Lx2,
+        /// <summary>
+        /// 
+        /// </summary>
+        A1Lx2,
+        /// <summary>
+        /// 
+        /// </summary>
+        Custom = 99,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unknown = 9999 
+    }
 
     /// <summary>
     /// 出力方法の選択（プリンタに依存させない）
     /// </summary>
-    public enum CommonOutputTyep { 自動, A1自動縮小, A2自動縮小, A3自動縮小, A4自動縮小, Custom = 99 }
+    public enum CommonOutputTyep {
+        /// <summary>
+        /// 
+        /// </summary>
+        自動,
+        /// <summary>
+        /// 
+        /// </summary>
+        A1自動縮小,
+        /// <summary>
+        /// 
+        /// </summary>
+        A2自動縮小,
+        /// <summary>
+        /// 
+        /// </summary>
+        A3自動縮小,
+        /// <summary>
+        /// 
+        /// </summary>
+        A4自動縮小,
+        /// <summary>
+        /// 
+        /// </summary>
+        Custom = 99
+    }
 
     /// <summary>
     /// 印刷時の印刷領域
     /// </summary>
-    public enum BeforeExtractType { 原寸, 原寸オフセット, マージン範囲, ページサイズ範囲, Custom = 99 }
+    public enum BeforeExtractType {
+        /// <summary>
+        /// 
+        /// </summary>
+        原寸,
+        /// <summary>
+        /// 
+        /// </summary>
+        原寸オフセット,
+        /// <summary>
+        /// 
+        /// </summary>
+        マージン範囲,
+        /// <summary>
+        /// 
+        /// </summary>
+        ページサイズ範囲,
+        /// <summary>
+        /// 
+        /// </summary>
+        Custom = 99
+    }
 
     /// <summary>
     /// 用紙サイズを縦・横の長さから選択
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class PaperCheck
     {
         /// <summary>
@@ -37,9 +141,6 @@ namespace SasaLib.PrintConfig
             public int Height { get; set; }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         //static Dictionary<JisPaper, CommonPaperSize> SizeDictionary = new Dictionary<JisPaper, CommonPaperSize>()
         //{
         //    { new JisPaper{Width= 841,Height=1189 },CommonPaperSize.A0P},
@@ -54,9 +155,6 @@ namespace SasaLib.PrintConfig
         //    { new JisPaper{Width= 297,Height= 210 },CommonPaperSize.A4L}
         //};
 
-        /// <summary>
-        /// 
-        /// </summary>
         //public static Dictionary<CommonPaperSize, JisPaper> PaperSize2 = new Dictionary<CommonPaperSize, JisPaper>()
         //{
         //    {CommonPaperSize.A0P, new JisPaper{Width= 841,Height=1189 }},
@@ -116,6 +214,12 @@ namespace SasaLib.PrintConfig
             return "定型外";       
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cp"></param>
+        /// <param name="isNormalDirection"></param>
+        /// <returns></returns>
         public static System.Drawing.Size GetCommonPaperSize(CommonPaperSize cp, bool isNormalDirection = true)
         {
             JISPaper a = JISpaperSize.Find(x => x.Name == cp);
@@ -180,9 +284,21 @@ namespace SasaLib.PrintConfig
     [SupportedOSPlatform("windows")]
     public class RootConfigClass
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string Tittle;
+        /// <summary>
+        /// 
+        /// </summary>
         public string Comment;
+        /// <summary>
+        /// 
+        /// </summary>
         public string Version;
+        /// <summary>
+        /// 
+        /// </summary>
         public Dictionary<string, PrinterClass> Printer = new Dictionary<string, PrinterClass>();
     }
 
@@ -192,8 +308,17 @@ namespace SasaLib.PrintConfig
     [SupportedOSPlatform("windows")]
     public class PrinterClass
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string PrinterName;
+        /// <summary>
+        /// 
+        /// </summary>
         public int IDnumber;
+        /// <summary>
+        /// 
+        /// </summary>
         public Dictionary<CommonPaperSize, PaperClass> Paper = new Dictionary<CommonPaperSize, PaperClass>();
     }
 
@@ -203,10 +328,25 @@ namespace SasaLib.PrintConfig
     [SupportedOSPlatform("windows")]
     public class PaperClass
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public CommonPaperSize CommonPaperSize;
+        /// <summary>
+        /// 
+        /// </summary>
         public string CommonPaperName;
+        /// <summary>
+        /// 
+        /// </summary>
         public long Width;
+        /// <summary>
+        /// 
+        /// </summary>
         public long Height;
+        /// <summary>
+        /// 
+        /// </summary>
         public ConfigClass Settings = new ConfigClass();
     }
 
@@ -216,22 +356,65 @@ namespace SasaLib.PrintConfig
     [SupportedOSPlatform("windows")]
     public class ConfigClass
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string プリンタ名 { get; }
+        /// <summary>
+        /// 
+        /// </summary>
         public CommonPaperSize 用紙サイズ { get; }
+        /// <summary>
+        /// 
+        /// </summary>
         public CommonOutputTyep 出力方法 = CommonOutputTyep.自動;
+        /// <summary>
+        /// 
+        /// </summary>
         public bool ランドスケープ = true;
+        /// <summary>
+        /// 
+        /// </summary>
         public BeforeExtractType 印刷前展開 = BeforeExtractType.原寸オフセット;
+        /// <summary>
+        /// 
+        /// </summary>
         public float Xオフセット値mm = 0;
+        /// <summary>
+        /// 
+        /// </summary>
         public float Yオフセット値mm = 0;
-        //
+        /// <summary>
+        /// 
+        /// </summary>
         public int PaperSizeHeight;
+        /// <summary>
+        /// 
+        /// </summary>
         public int PaperSizeWidth;
+        /// <summary>
+        /// 
+        /// </summary>
         public System.Drawing.Printing.PaperKind PaperSizeKind = PaperKind.A4;
+        /// <summary>
+        /// 
+        /// </summary>
         public int PaperSizeRawKind;
+        /// <summary>
+        /// 
+        /// </summary>
         public string PaperSizePaperName;
-        //
+        /// <summary>
+        /// 
+        /// </summary>
         public System.Drawing.Printing.PaperSourceKind PaperSourceKind = PaperSourceKind.AutomaticFeed;
+        /// <summary>
+        /// 
+        /// </summary>
         public int PaperSourceRawKind;
+        /// <summary>
+        /// 
+        /// </summary>
         public string PaperSourceSourceName;
     }
 
@@ -239,6 +422,7 @@ namespace SasaLib.PrintConfig
     /// <summary>
     /// 設定管理クラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class ConfigInit
     {
         /// <summary>
@@ -251,7 +435,6 @@ namespace SasaLib.PrintConfig
         /// <summary>
         /// 設定管理クラスのコンストラクタ
         /// </summary>
-        [SupportedOSPlatform("windows")]
         public ConfigInit()
         {
             Root = new RootConfigClass();
@@ -272,6 +455,9 @@ namespace SasaLib.PrintConfig
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void ClassTest()
         {
         }
@@ -281,14 +467,13 @@ namespace SasaLib.PrintConfig
         /// </summary>
         /// <param name="PrinterName"></param>
         /// <param name="ID"></param>
-        [SupportedOSPlatform("windows")]
         public bool AddPrinterConfig(string PrinterName, int ID)
         {
             if (Root.Printer.ContainsKey(PrinterName) == false)
             {
                 PrinterClass PrinterObj = new PrinterClass
                 {
-                    /// 新しくプリンタobjを確保
+                    // 新しくプリンタobjを確保
                     PrinterName = PrinterName,
                     IDnumber = ID
                 }; Root.Printer.Add(PrinterName, PrinterObj); // 設定値objのドライバリストに新しく追加
@@ -312,7 +497,6 @@ namespace SasaLib.PrintConfig
         /// 標準用紙をリストで取得
         /// </summary>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static List<PaperClass> GetCommonPaperSize()
         {
             List<PaperClass> obj = new List<PaperClass>()
@@ -335,14 +519,8 @@ namespace SasaLib.PrintConfig
         /// <summary>
         /// プリンタ設定を変更
         /// </summary>
-        /// <param name="PrinterName">プリンタ名</param>
-        /// <param name="CommonPaperSize">用紙サイズ種類</param>
-        /// <param name="paperSize">プリンタに設定するPaperSizeオブジェクト</param>
-        /// <param name="paperSource">プリンタに設定するPaperSourceオブジェクト</param>
-        /// <param name="Margin">印刷マージン設定の選択</param>
-        /// <param name="Xoffset">印刷時オフセット横方向</param>
-        /// <param name="Yoffset">印刷時オフセット縦方向</param>
-        [SupportedOSPlatform("windows")]
+        /// <param name="a1"></param>
+        /// <param name="aa"></param>
         public void ModifySetting(string a1, CommonPaperSize aa)
         {
             if (Root.Printer[a1].Paper.ContainsKey(aa))
@@ -351,6 +529,11 @@ namespace SasaLib.PrintConfig
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
         public bool Save(string filepath)
         {
             //DataContractSerializerオブジェクトを作成
@@ -373,6 +556,11 @@ namespace SasaLib.PrintConfig
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
         public bool Load(string filepath)
         {
             //DataContractSerializerオブジェクトを作成

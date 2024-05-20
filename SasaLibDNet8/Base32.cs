@@ -30,6 +30,9 @@ namespace SasaLib
     using System.Text;
     using System.Text.RegularExpressions;
 
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class Base32
     {
@@ -61,6 +64,12 @@ namespace SasaLib
             return n - (int)((uint)(i << 1) >> 31);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="encoded"></param>
+        /// <returns></returns>
+        /// <exception cref="DecodingException"></exception>
         public static byte[] Decode(string encoded)
         {
             // Remove whitespace and separators
@@ -106,7 +115,13 @@ namespace SasaLib
             return result;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="padOutput"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static string Encode(byte[] data, bool padOutput = false)
         {
             if (data.Length == 0)

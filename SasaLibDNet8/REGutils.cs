@@ -3,6 +3,9 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class REGutils
     {
@@ -17,6 +20,13 @@ namespace SasaLib
             Microsoft.Win32.Registry.SetValue(Key, ValueName, Value);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Key"></param>
+        /// <param name="ValueName"></param>
+        /// <param name="Value"></param>
+        /// <returns></returns>
         public static string GetValue(string Key, string ValueName, object Value)
         {
             string stringValue = (string)Microsoft.Win32.Registry.GetValue(Key, ValueName, Value);
@@ -46,7 +56,7 @@ namespace SasaLib
             }
             else
             {
-                /// 既存の値の後ろに指定した文字列を追加して更新
+                // 既存の値の後ろに指定した文字列を追加して更新
                 Microsoft.Win32.Registry.SetValue(KeyName, ValueName, stringValue + Value);
             }
         }

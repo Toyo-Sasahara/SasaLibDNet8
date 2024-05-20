@@ -6,9 +6,14 @@ using System.Runtime.Versioning;
 
 namespace Samps
 {
-
+    /// <summary>
+    /// 
+    /// </summary>
     public class CPaperSelectionStandard : XmlSettingFile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public CPaperSelectionStandard() { }
 
         /// <summary>
@@ -45,9 +50,15 @@ namespace Samps
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     [System.Xml.Serialization.XmlRoot("PrinterConfig")]
     public class CPrinterConfig : XmlSettingFile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public CPrinterConfig() { }
 
         /// <summary>
@@ -65,8 +76,14 @@ namespace Samps
 
 namespace Samps
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Test2
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static void start()
         {
             //シリアライズする為のprinterConfigインスタンスを生成
@@ -78,9 +95,14 @@ namespace Samps
 }
 namespace Samps
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class TestProg
     {
-        //シリアライズのテスト
+        /// <summary>
+        /// シリアライズのテスト
+        /// </summary>
         [SupportedOSPlatform("windows")]
         public static void SerializeTest()
         {
@@ -204,7 +226,9 @@ namespace Samps
             writer.Close();
         }
 
-        //デシリアライズのテスト
+        /// <summary>
+        /// デシリアライズのテスト
+        /// </summary>
         public static void DeSerializeTest()
         {
             System.IO.FileStream fs = new System.IO.FileStream(@"D:\EXPORT.XML", System.IO.FileMode.Open);

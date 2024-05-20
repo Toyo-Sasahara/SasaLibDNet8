@@ -47,6 +47,7 @@ using DEXSI = DevExpress.Services.Internal;
 using DEXXR = DevExpress.XtraEditors.Repository;
 using DEXIWWUN = DevExpress.Internal.WinApi.Windows.UI.Notifications;
 using DevExpress.XtraRichEdit.Model;
+using System.Runtime.Versioning;
 
 namespace SasaLib.AutodeskVault
 {
@@ -55,6 +56,7 @@ namespace SasaLib.AutodeskVault
     /// Autodesk.DataManagement.DLL で構成される。  VDF は一般的なVault アルゴリズムのための再利用可能なビジネス ロジックと、
     /// 一般的なワークフローのための再利用可能な GUI コントロールを提供する高レベルのフレームワークであり、アドインやクライアントの開発を簡素化します
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public partial class VDFControl
     {
         private SasaLibDelegateWriteLine WriteLine = DebugConsole.WriteLine;

@@ -332,7 +332,7 @@ namespace SasaLib
         /// <returns></returns>
         public static string CovertFromByteArrayToBase64String(byte[] bytes)
         {
-            ///Bas64にして返す
+            //Bas64にして返す
             string str = Convert.ToBase64String(bytes);
             return str;
         }

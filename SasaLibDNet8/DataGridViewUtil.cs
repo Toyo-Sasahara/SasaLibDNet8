@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class DataGridViewUtil
     {

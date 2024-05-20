@@ -8,6 +8,11 @@ namespace SasaLib
     /// </summary>
     public static class DotNetFrameworkAppContextSetSwitch
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isEnabled"></param>
+        /// <returns></returns>
         public static bool SwitchSystemRuntimeSerializationUseNewMaxArraySize(bool isEnabled)
         {
             const string switchName = "Switch.System.Runtime.Serialization.UseNewMaxArraySize";
@@ -61,6 +66,11 @@ namespace SasaLib
                 return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="switchName"></param>
+        /// <returns></returns>
         public static bool GetCurrentStatus(string switchName = "Switch.System.Runtime.Serialization.UseNewMaxArraySize")
         {
             // 取得を試みたスイッチの現在の状態

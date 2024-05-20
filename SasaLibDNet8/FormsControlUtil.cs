@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class FormsControlUtil
     {
@@ -49,6 +52,13 @@ namespace SasaLib
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cl"></param>
+        /// <param name="defaultcolor"></param>
+        /// <param name="count"></param>
+        /// <param name="delay"></param>
         public static async void Blink2(object cl, Color defaultcolor,  int count = 3, int delay = 200)
         {
 

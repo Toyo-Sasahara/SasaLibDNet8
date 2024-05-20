@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.Versioning;
 
 namespace SasaLib
 {
@@ -48,6 +49,7 @@ namespace SasaLib
     /// <summary>
     /// プリンタに固有な設定を保持するオブジェクトを生成するクラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     internal class PrinterSimpleConfig
     {
         /// <summary>

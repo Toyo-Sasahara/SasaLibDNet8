@@ -16,12 +16,17 @@ namespace SasaLib
     /// <summary>
     /// ストリームを使って文字列をread/writeするクラス
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class StreamString
     {
         private Stream ioStream;
         private UnicodeEncoding streamEncoding;
 
         AsyncLock _asyncLockReadString = new AsyncLock();
+
+        /// <summary>
+        /// 
+        /// </summary>
         public bool LockAsyncMode = true;
 
         /// <summary>
@@ -33,17 +38,6 @@ namespace SasaLib
             this.ioStream = ioStream;
             streamEncoding = new UnicodeEncoding();
         }
-
-        /// <summary>
-        /// 文字列をストリームから読みだす。
-        /// </summary>
-        /// <returns></returns>
-        //public string ReadString()
-        //{
-        //    var taskresult = _readString();
-
-        //    return taskresult.Result;
-        //}
 
         /// <summary>
         /// ﾃｽﾄ
@@ -77,6 +71,7 @@ namespace SasaLib
         /// 文字列をストリームから読みだす。タイムアウト機能付き
         /// </summary>
         /// <param name="timeoutmsec">-1 の時、永久に待つみたい</param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
         public string ReadString(int timeoutmsec = 10000, SasaLibDelegateWriteLine WriteLine = null)
         {
@@ -196,8 +191,9 @@ namespace SasaLib
         /// 文字列をストリームに書き込む（タイムアウト機能付き）
         /// </summary>
         /// <param name="outString"></param>
+        /// <param name="timeoutmsec"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public int WriteString(string outString, int timeoutmsec = 10000, SasaLibDelegateWriteLine WriteLine = null)
         {
             bool OperationCanceledException;
@@ -205,8 +201,16 @@ namespace SasaLib
             return WriteString(outString, timeoutmsec, out OperationCanceledException, out AggregateException, WriteLine);
         }
 
-        [SupportedOSPlatform("windows")]
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="outString"></param>
+        /// <param name="timeoutmsec"></param>
+        /// <param name="OperationCanceledException"></param>
+        /// <param name="AggregateException"></param>
+        /// <param name="WriteLine"></param>
+        /// <returns></returns>
         public int WriteString(string outString, int timeoutmsec, out bool OperationCanceledException, out bool AggregateException, SasaLibDelegateWriteLine WriteLine = null)
         {
             OperationCanceledException = false;
@@ -289,6 +293,10 @@ namespace SasaLib
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool IoStreamFlush()
         {
             try

@@ -5,9 +5,17 @@ using System.Text;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class PrinterStatus
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PrinterName"></param>
+        /// <returns></returns>
         public static int GetNumberofPrintQues(string PrinterName)
         {
 
@@ -28,6 +36,7 @@ namespace SasaLib
         /// 指定したプリンタドライバのキュー情報を得る
         /// </summary>
         /// <param name="printerName"></param>
+        /// <param name="evt"></param>
         /// <param name="isDebug"></param>
         /// <returns></returns>
         public static System.Printing.PrintQueue GetPrintQueue(string printerName, EventsSummary evt = null, bool isDebug = false)

@@ -6,13 +6,12 @@ using System.Runtime.Versioning;
 // イメージから線画を描画
 namespace SasaLib
 {
-    [SupportedOSPlatform("windows")]
 
     /// <summary>
     /// 画像の輪郭抽出
     /// Copyright https://algorithm.joho.info/
-    /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static partial class ImageUtil
     {
         /// <summary>
@@ -57,7 +56,7 @@ namespace SasaLib
                 string tempbmpfile2 = System.IO.Path.Combine(folder, tiffname);
                 //
                 System.Drawing.Image outImage = ImageUtil.FromFile(OrginalImageFile);
-                ///
+                //
                 outImage = CreateOutline_extractionTiffCCITT4Image(outImage, width, height);
 
                 MemoryStream tiffStream = new MemoryStream();
@@ -781,6 +780,7 @@ namespace SasaLib
         /// 使用している技術 LockBits Marshal.Copy UnlockBits for ループ ネスト
         /// </summary>
         /// <param name="src">変換対象のカラー画像。</param>
+        /// <param name="threshold"></param>
         /// <returns>変換結果の二値画像</returns>
         public static System.Drawing.Bitmap HispeedImageBinarizer(System.Drawing.Bitmap src, float threshold = 254)
         {

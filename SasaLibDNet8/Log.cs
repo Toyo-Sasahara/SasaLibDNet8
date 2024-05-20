@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 
 namespace SasaLib.Eventlog
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [SupportedOSPlatform("windows")]
     static public class Log
     {
         /// <summary>
@@ -27,6 +32,7 @@ namespace SasaLib.Eventlog
         /// <param name="eventID">イベントID</param>
         /// <param name="format">メッセージフォーマット</param>
         /// <param name="CallerMemmberName">true:呼び出し先表示, false:表示しない</param>
+        /// <param name="OutConsole"></param>
         /// <param name="memberName">指定しないこと</param>
         /// <param name="sourceFilePath">指定しないこと</param>
         /// <param name="sourceLineNumber">指定しないこと</param>

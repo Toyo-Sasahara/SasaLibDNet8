@@ -11,6 +11,11 @@ namespace SasaLib.SQL
     /// </summary>
     public class Sql
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <returns></returns>
         public static SqlConnection Connect(string connectionString)
         {
             //var connectionString = Sql.GetConnectionString2
@@ -72,9 +77,18 @@ namespace SasaLib.SQL
     /// </summary>
     public class SQLSV
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public SqlConnection connection;
 
-        // SQLサーバーへのコネクションを確立
+        /// <summary>
+        /// SQLサーバーへのコネクションを確立
+        /// </summary>
+        /// <param name="Host"></param>
+        /// <param name="Catalog"></param>
+        /// <param name="UID"></param>
+        /// <param name="PASS"></param>
         public SQLSV(string Host, string Catalog, string UID, string PASS)
         {
             try
@@ -253,7 +267,7 @@ namespace SasaLib.SQL
     /// using Extensions;
     /// 省略
     /// SQLパラメータ設定
-    /// List<SqlParameter> sqlParameters = new List<SqlParameter>();
+    /// List&lt;SqlParameter&gt; sqlParameters = new List&lt;SqlParameter&gt;();
     /// sqlParameters.AddSqlParameter(new SqlParameter("@type1", SqlDbType.VarChar)).Value = "S";
     /// sqlParameters.AddSqlParameter(new SqlParameter("@type2", SqlDbType.VarChar)).Value = "U";
     /// sqlParameters.AddSqlParameter(new SqlParameter("@type3", SqlDbType.VarChar)).Value = "PK";
@@ -264,7 +278,7 @@ namespace SasaLib.SQL
         /// <summary>
         /// ListにSqlParameterを追加し、追加したSqlParameterを返す
         /// 使用例
-        /// List<SqlParameter> sqlParameters  = new List<SqlParameter>();
+        /// List&lt;SqlParameter&gt; sqlParameters  = new List&lt;SqlParameter&gt;();
         /// sqlParameters.AddSqlParameter(new SqlParameter("@type1", SqlDbType.VarChar)).Value = "S";
         /// </summary>
         public static SqlParameter AddSqlParameter(this List<SqlParameter> list, SqlParameter parameter)
@@ -274,7 +288,7 @@ namespace SasaLib.SQL
         }
 
         /// <summary>
-        /// SqlParameterCollectionにList<SqlParameter>を追加
+        /// SqlParameterCollectionにList&lt;SqlParameter&gt;を追加
         /// </summary>
         public static void AddParams(this SqlParameterCollection collection, List<SqlParameter> list)
         {

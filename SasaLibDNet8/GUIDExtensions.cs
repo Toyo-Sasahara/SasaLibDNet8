@@ -41,17 +41,23 @@ namespace SasaLib
         /// コンストラクタ
         /// </summary>
         /// <param name="sw">true:GUIDを生成,falseGUIDを生成しない</param>
-        [SupportedOSPlatform("windows")]
         public GUIDExtensions(bool sw)
         {
             if (sw) SetNewGUID();
         }
-        [SupportedOSPlatform("windows")]
+
+        /// <summary>
+        /// 
+        /// </summary>
         public GUIDExtensions()
         {
             // なにもしない
         }
-        [SupportedOSPlatform("windows")]
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
         public GUIDExtensions(string s)
         {
             _guidobj = new Guid(s);

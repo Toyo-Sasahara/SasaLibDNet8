@@ -4,8 +4,10 @@ using System.Runtime.Versioning;
 
 namespace SasaLib.PIPE
 {
-    // BinaryWriterの拡張メソッドを定義
-    // https://gist.github.com/ichiroku11/80faa8675c5354245001759733df1348
+
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class BinaryWriterExtensions
     {
@@ -20,9 +22,8 @@ namespace SasaLib.PIPE
         //    WriteObject(writer, obj, 1024 * 20);
         //}
 
-
         /// <summary>
-        // オブジェクトの書き込み
+        /// オブジェクトの書き込み
         /// </summary>
         /// <typeparam name="TObject"></typeparam>
         /// <param name="writer">BinaryWriter</param>
@@ -31,7 +32,6 @@ namespace SasaLib.PIPE
         /// <param name="Verbose">コンソールにデバッグ情報表示</param>
         /// <param name="debugMsg">例外発生時にイベントビューアに記録する追加メッセージ・ﾃﾞﾊﾞｯｸﾞ目的</param>
         /// <returns>送信したバイト数</returns>
-        //public static void WriteObject<TObject>(this BinaryWriter writer, TObject obj, int writebufsize = 1024 * 20, bool Verbose = false, string debugMsg = null)
         public static int WriteObject<TObject>(this BinaryWriter writer, TObject obj,int writebufsize = 1024*20,bool Verbose = false, string debugMsg = null)
         {
             int length=0;
@@ -67,7 +67,7 @@ namespace SasaLib.PIPE
                         {
                             writebufsize = v;
                         }
-                        ///Console.WriteLine($"writer.Write({i},{writebufsize})");
+                        //Console.WriteLine($"writer.Write({i},{writebufsize})");
                         writer.Write(bytes, i, writebufsize);
                     }
                 }
@@ -86,7 +86,14 @@ namespace SasaLib.PIPE
             return length;
         }
 
-        //分割せずに送出する。OSによって送られるデータの最大値がちがうっぽい？
+        /// <summary>
+        /// 分割せずに送出する。OSによって送られるデータの最大値がちがうっぽい？
+        /// </summary>
+        /// <typeparam name="TObject"></typeparam>
+        /// <param name="writer"></param>
+        /// <param name="obj"></param>
+        /// <param name="writebufsize"></param>
+        /// <param name="Verbose"></param>
         [SupportedOSPlatform("windows")]
         public static void WriteObjectNotSplit<TObject>(this BinaryWriter writer, TObject obj, int writebufsize = 2048, bool Verbose = false)
         {

@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static  class TEST_RefRectionTool
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static string GetMethodName()
         {
             // StackTraceを取得

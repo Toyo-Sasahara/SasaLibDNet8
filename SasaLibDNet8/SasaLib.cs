@@ -50,6 +50,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="batchfilepath"></param>
         /// <param name="param"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
         public static int ExcuteBatchCMD2(string batchfilepath, string param = "", SasaLibDelegateWriteLine WriteLine = null)
         {
@@ -166,6 +167,13 @@ namespace SasaLib
             return rt;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="exeFilePath"></param>
+        /// <param name="stdoutput"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
         public static bool ExecuiteCMD(string exeFilePath, out string stdoutput, string param = "")
         {
             stdoutput = "";

@@ -6,6 +6,9 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class StreamExtensions
     {
         /// <summary>
@@ -62,6 +65,7 @@ namespace SasaLib
         /// ストリームの指定ポジションからからデータを読み込み、バイト配列に格納
         /// </summary>
         /// <param name="st"></param>
+        /// <param name="start"></param>
         /// <returns></returns>
         public static byte[] StreamToBytes(Stream st, long start)
         {

@@ -248,14 +248,36 @@ namespace SasaLib
     //    }
     //}
 
+    
     [SupportedOSPlatform("windows")]
     public class WithFakeAccount : IDisposable
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lpszUsername"></param>
+        /// <param name="lpszDomain"></param>
+        /// <param name="lpszPassword"></param>
+        /// <param name="dwLogonType"></param>
+        /// <param name="dwLogonProvider"></param>
+        /// <param name="phToken"></param>
+        /// <returns></returns>
         [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern bool LogonUser(String lpszUsername, String lpszDomain, String lpszPassword,
         int dwLogonType, int dwLogonProvider, out SafeAccessTokenHandle phToken);
 
-        [SupportedOSPlatform("windows")]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="domainName"></param>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <param name="UsingClsLogon"></param>
+        /// <param name="acton"></param>
+        /// <param name="debugConsoleMsg"></param>
+        /// <param name="memberName"></param>
+        /// <param name="sourceFilePath"></param>
+        /// <param name="sourceLineNumber"></param>
         public WithFakeAccount(string domainName, string userName, string password, bool UsingClsLogon ,Action acton, bool debugConsoleMsg = false, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
         {
             if (UsingClsLogon == false)
@@ -285,8 +307,9 @@ namespace SasaLib
         {
         }
 
-        [SupportedOSPlatform("windows")]
-
+        /// <summary>
+        /// 
+        /// </summary>
         public static void test()
         {
             new WithFakeAccount("AD", "Sekkei-User", "sk", true, () =>

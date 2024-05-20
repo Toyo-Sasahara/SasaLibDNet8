@@ -6,6 +6,9 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class XmlModify
     {
@@ -15,7 +18,9 @@ namespace SasaLib
         /// <param name="XmlFile">書き換えるXMLファイルのフルパス</param>
         /// <param name="CurrentElement"></param>
         /// <param name="NewElement"></param>
-        /// <returns>true:正常終了</returns>
+        /// <param name="Value"></param>
+        /// <param name="WriteLine"></param>
+        /// <returns>>true:正常終了</returns>
         public static bool XmlTagUpdate(string XmlFile, string CurrentElement, string NewElement, string Value, SasaLibDelegateWriteLine WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
@@ -67,6 +72,7 @@ namespace SasaLib
         /// <param name="CurrentElement"></param>
         /// <param name="NewElement"></param>
         /// <param name="Value"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
         public static bool XmlTagUpdate(string sourceFile, string distFile, string CurrentElement, string NewElement, string Value, SasaLibDelegateWriteLine WriteLine = null)
         {

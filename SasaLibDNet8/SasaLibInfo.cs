@@ -10,30 +10,51 @@ namespace SasaLib
     /// </summary>
     public static class SasaLibInfo
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static System.Diagnostics.FileVersionInfo GetAssemblyInfo()
         {
             System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
             return ver;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static string GetAssemblyFileName()
         {
             System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
             return ver.FileName;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static string GetAssemblyProductVersion()
         {
             System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
             return ver.ProductVersion;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static DateTime GetAssemblyLastWriteTime()
         {
             System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
             DateTime dt = System.IO.File.GetLastWriteTime(ver.FileName);
             return dt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static DateTime GetAssemblyCreationTime()
         {
             System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -41,7 +62,10 @@ namespace SasaLib
             return dt;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static string GetAssemblyFileVersion()
         {
             System.Diagnostics.FileVersionInfo ver = System.Diagnostics.FileVersionInfo.GetVersionInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);

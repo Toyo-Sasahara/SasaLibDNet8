@@ -3,6 +3,9 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public class StopWatch
     {
@@ -20,6 +23,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="IDname"></param>
         /// <param name="consoleShow"></param>
+        /// <param name="eventLogOut"></param>
         public StopWatch(string IDname="", bool consoleShow = false, bool eventLogOut = false)
         {
             ID = IDname;
@@ -36,6 +40,11 @@ namespace SasaLib
             sw.Start();
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Comment"></param>
+        /// <param name="consoleShow"></param>
         public void LapTime(string Comment="", bool consoleShow = false)
         {
             if (consoleShow)
@@ -47,12 +56,21 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public TimeSpan GetLapTime()
         {
             return sw.Elapsed;
         }
 
-        [SupportedOSPlatform("windows")]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Comment"></param>
+        /// <param name="consoleShow"></param>
+        /// <returns></returns>
         public TimeSpan Stop(string Comment = "", bool consoleShow = false)
         {
             if (consoleShow)

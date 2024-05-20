@@ -13,6 +13,10 @@ using System.Windows.Documents;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [SupportedOSPlatform("windows")]
     public class Net
     {
         /// <summary>
@@ -37,6 +41,7 @@ namespace SasaLib
         /// 
         /// </summary>
         /// <param name="address"></param>
+        /// <param name="Count"></param>
         /// <returns></returns>
         public static async Task<bool> CheckPingAsync(string address, int Count = 3)
         {
@@ -91,6 +96,7 @@ namespace SasaLib
         /// 
         /// </summary>
         /// <param name="address"></param>
+        /// <param name="Count"></param>
         /// <returns></returns>
         public static bool CheckPing(string address, int Count = 2)
         {
@@ -150,6 +156,11 @@ namespace SasaLib
             return iphe.HostName;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ipAdd"></param>
+        /// <returns></returns>
         public static string DnsGetHostNameOrIP(string ipAdd)
         {
             try
@@ -165,7 +176,11 @@ namespace SasaLib
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="host"></param>
+        /// <returns></returns>
         public static string DnsGetIpAddressOLD(string host)
         {
             try
@@ -188,6 +203,11 @@ namespace SasaLib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newDnsServers"></param>
+        /// <returns></returns>
         [SupportedOSPlatform("windows")]
         public static string[] DnsSetServer(string[] newDnsServers)
         {
@@ -248,24 +268,52 @@ namespace SasaLib
     /// <summary>
     /// 
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class Mail
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public System.Net.Mail.SmtpClient SmtpCllient { get; private set; }
         private System.Net.Mail.MailMessage msg;
         private DateTime dt;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public struct MsgSended
         {
+            /// <summary>
+            /// 
+            /// </summary>
             public string FromAddress;
+            /// <summary>
+            /// 
+            /// </summary>
             public string ToAddress;
+            /// <summary>
+            /// 
+            /// </summary>
             public string subject;
+            /// <summary>
+            /// 
+            /// </summary>
             public string Message;
+            /// <summary>
+            /// 
+            /// </summary>
             public DateTime SendedDateTime;
+            /// <summary>
+            /// 
+            /// </summary>
             public string ErrMsg;
         }
 
         private static List<MsgSended> _MsgSendedLog= new List<MsgSended>();
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static List<MsgSended> MsgSendedLog
         {
             get
@@ -332,10 +380,8 @@ namespace SasaLib
         /// <param name="ToAddress">送信先アドレス</param>
         /// <param name="subject">タイトル</param>
         /// <param name="Message">メッセージ本文</param>
-        /// <param name="WaitTime"></param>
         /// <param name="eventViewVerbose">イベントビューアに詳細な送信情報を送る場合true</param>
         /// <param name="sendInterLockTimeSec">指定秒数以内に 送信元 ,送信先 ,件名,送信内容が同じものを送ろうとした場合に無視しイベントビューアに記録する</param>
-        [SupportedOSPlatform("windows")]
         public bool MsgSend(string FromAddress, string ToAddress, string subject, string Message, bool eventViewVerbose = false, int sendInterLockTimeSec = 120)
         {          
 
@@ -484,7 +530,9 @@ namespace SasaLib
             return true;
         }
 
-        [SupportedOSPlatform("windows")]
+        /// <summary>
+        /// 
+        /// </summary>
         public void Close()
         {
             try

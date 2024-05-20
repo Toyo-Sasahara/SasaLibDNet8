@@ -1,5 +1,8 @@
 ﻿namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class Enviroment
     {
         //public static string GetEnv(string a)

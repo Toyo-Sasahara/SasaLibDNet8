@@ -253,6 +253,11 @@ namespace SasaLib
     /// </summary>
     public static class WindowsHandle_Win32
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="titile"></param>
+        /// <returns></returns>
         public static IntPtr FindWindow(string titile = "無題 - メモ帳")
         {
             //タイトルが"無題 - メモ帳"のウィンドウを探す

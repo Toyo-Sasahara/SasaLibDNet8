@@ -60,6 +60,11 @@ namespace SasaLib.PJL
         {
             Init(ms);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fpath"></param>
         public PJLdecode(string fpath)
         {
             MemoryStream ms = StreamExtensions.StreamFromFile(fpath);
@@ -290,7 +295,7 @@ namespace SasaLib.PJL
         /// ファイル名にはPJLデータ中のジョブ名を一部使用
         /// </summary>
         /// <param name="msPJLrawdata">PJLデータのストリーム</param>
-        /// <param name="savePathFile">保存先フォルダ</param>
+        /// <param name="savePath">保存先フォルダ</param>
         /// <param name="rotateFlipType">回転</param>
         [SupportedOSPlatform("windows")]
         public static void WriteTiffFiles(MemoryStream msPJLrawdata, string savePath,
@@ -315,11 +320,11 @@ namespace SasaLib.PJL
                 {
                     num++;
 
-                    ///①新しくGUIDをセット
+                    //①新しくGUIDをセット
                     gUIDExtensions.SetNewGUID();
                     Console.WriteLine("TIFFデータ処理を開始 {0} 回目 GUID Code={1}", num, gUIDExtensions.B64String);
 
-                    ///②tiffストリームから System.Drawing.Image を生成
+                    //②tiffストリームから System.Drawing.Image を生成
                     System.Drawing.Image newImage = ImageUtil.TiffStreamToImage(tiffStream);
                     Console.WriteLine("Pixcel Format =|0|", newImage.PixelFormat.ToString());
 
@@ -342,6 +347,7 @@ namespace SasaLib.PJL
         /// MemoryStreamの PJLデータからTIFFデータをStreamにて取得
         /// </summary>
         /// <param name="msPJLrawdata"></param>
+        /// <param name="tiffStream1st"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
         public static bool ExtractTIFFstream(MemoryStream msPJLrawdata, out Stream tiffStream1st)

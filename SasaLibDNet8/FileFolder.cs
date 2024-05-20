@@ -10,18 +10,26 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SasaLib
 {
+
     /// <summary>
-    /// メソッドの返り値をパックして返す
+    /// 
     /// </summary>
     public struct ResultAndMsg
     {
-        // 返り値　true, false
+        /// <summary>
+        /// 返り値　true, false
+        /// </summary>
         public bool result;
-        // メッセージ
+
+        /// <summary>
+        /// メッセージ
+        /// </summary>
         public string msg;
     }
+
 
     /// <summary>
     /// 
@@ -29,6 +37,12 @@ namespace SasaLib
     [SupportedOSPlatform("windows")]
     public static class FileFolder
     {
+
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="path"></param>
+       /// <returns></returns>
         public static bool IsDirectory(string path)
         {
             var fileInfo = new FileInfo(path);
@@ -49,7 +63,6 @@ namespace SasaLib
         /// <returns>
         ///     検索パターンに一致したすべてのファイルパス。</returns>
         /// ---------------------------------------------------------------------------------------
-        [SupportedOSPlatform("windows")]
         public static string[] GetFilesMostDeep(string stRootPath, string stPattern)
         {
             System.Collections.Specialized.StringCollection hStringCollection = (
@@ -343,7 +356,6 @@ namespace SasaLib
         /// </summary>
         /// <param name="path">作成するディレクトリパス</param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static bool MakeDirectory(string path)
         {
             // 文字列の最後はディレクトリせぱーれたでない場合は追加
@@ -373,7 +385,6 @@ namespace SasaLib
         /// </summary>
         /// <param name="filepath"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static bool RemoveFile(string filepath)
         {
             try
@@ -392,8 +403,8 @@ namespace SasaLib
         /// フォルダの削除
         /// </summary>
         /// <param name="filepath"></param>
+        /// <param name="recursive"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static bool RemoveFolder(string filepath, bool recursive = false)
         {
             try
@@ -415,7 +426,6 @@ namespace SasaLib
         /// <param name="sourceFileName"></param>
         /// <param name="destFileName"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static bool MoveFile(string sourceFileName, string destFileName)
         {
             try
@@ -438,7 +448,6 @@ namespace SasaLib
         /// <param name="sourceFilePath">ソースファイル・フルパス</param>
         /// <param name="dist">保存先フォルダ.末尾に\はなし</param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static bool CopyWithRotatedBackup(string sourceFilePath, string dist)
         {
             try
@@ -479,7 +488,6 @@ namespace SasaLib
         /// <param name="distFilePath"></param>
         /// <param name="overwrite"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static bool CopyFile(string sourceFilePath, string distFilePath, bool overwrite = true)
         {
             try
@@ -670,6 +678,11 @@ namespace SasaLib
             return dtUpdate.ToString();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
         public static DateTime FileUpdateTime(string filepath)
         {
             // 更新日時を取得する
@@ -758,9 +771,9 @@ namespace SasaLib
 
         /// <summary>
         /// Path.ChangeExtensionのラッパー
-        /// パス文字列のみを変えるので実際に変更されない
-        /// </summary>
+        /// パス文字列のみを変えるので実際に変更されない</summary>
         /// <param name="fullpath"></param>
+        /// <param name="ext"></param>
         /// <returns></returns>
         public static string ChangeExtension(string fullpath, string ext)
         {
@@ -965,14 +978,13 @@ namespace SasaLib
 
         /// <summary>
         /// CSVファイルをあらかじめ確保したLISTへよみこみ
-        /// List<List<string>> LoadFileData = new List<List<string>>();」 オブジェクトに読み込む
+        /// List&lt;List&lt;string&gt;&gt; LoadFileData = new List&lt;List&lt;string&gt;&gt;();」 オブジェクトに読み込む
         /// データーベースファイルはそのままリストに入れます
         /// Shift_JISです
         /// </summary>
         /// <param name="filename"></param>
         /// <param name="LoadFileData"></param>
         /// <returns>ResultAndMsg</returns>
-        [SupportedOSPlatform("windows")]
         public static ResultAndMsg ReadCSVtoList(string filename, List<List<string>> LoadFileData)
         {
             Logging log = new Logging(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), @"SasaLib.log");
@@ -1272,7 +1284,12 @@ namespace SasaLib
 
         }
 
-        // ファイル名のサフィックスに時刻を追加
+        /// <summary>
+        /// ファイル名のサフィックスに時刻を追加
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         [SupportedOSPlatform("windows")]
         public static string AppendTimeStampToFilename(string source, DateTime dt)
         {
@@ -1310,6 +1327,12 @@ namespace SasaLib
             return false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fullfilename"></param>
+        /// <param name="IsReadOnly"></param>
+        /// <returns></returns>
         public static bool CheckReadOnly(string fullfilename, out bool IsReadOnly)
         {
             FileInfo fi = new FileInfo(fullfilename);
@@ -1400,7 +1423,11 @@ namespace SasaLib
             return true;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="uncPath"></param>
+        /// <returns></returns>
         public static string UNCtoLocalPath(string uncPath = @"\\fs1.ad.local\C$\ThingsToDo.txt")
         {
             // ローカルコンピュータで利用可能なドライブを取得し、一文字の式に変換します。

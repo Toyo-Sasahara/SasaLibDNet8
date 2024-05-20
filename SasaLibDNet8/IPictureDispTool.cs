@@ -8,6 +8,7 @@ namespace SasaLib
     /// <summary>
     /// アセンブリ stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a を使用している
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class IPictureDispTool
     {
         /// <summary>
@@ -17,8 +18,8 @@ namespace SasaLib
         /// <param name="Thumbnail"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
+        /// <param name="debug"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static System.Drawing.Image OriginalImage(stdole.IPictureDisp Thumbnail, int width, int height, bool debug = true)
         {
             //System.Drawing.Image image = IPictuireUtil.GetPictureFromIPicture(Thumbnail);
@@ -48,8 +49,8 @@ namespace SasaLib
         /// <param name="width"></param>
         /// <param name="height"></param>
         /// <param name="fname"></param>
+        /// <param name="debug"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static System.Drawing.Image PartsListImageConvert(stdole.IPictureDisp Thumbnail, int width, int height, string fname = null, bool debug = true)
         {
             string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
@@ -106,7 +107,6 @@ namespace SasaLib
         /// <param name="height"></param>
         /// <param name="fname"></param>
         /// <returns></returns>
-        [SupportedOSPlatform("windows")]
         public static System.Drawing.Image PartsListImageConvert(System.Drawing.Image Image, int width, int height, string fname)
         {
             string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);

@@ -67,7 +67,9 @@ namespace SasaLib.PIPE
 
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void TestSendMessage()
         {
             //サーバにクライアントが接続されていることを確認します.

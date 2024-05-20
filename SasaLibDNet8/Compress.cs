@@ -5,6 +5,9 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public static class Compress
     {
@@ -13,7 +16,7 @@ namespace SasaLib
         /// </summary>
         /// <param name="sourceFileFolder"></param>
         /// <param name="distZipFileFullPath"></param>
-        /// <param name="BufferSize"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
         public static bool CreateZipArchiveFile(string sourceFileFolder, string distZipFileFullPath, SasaLibDelegateWriteLine WriteLine)
         {
@@ -95,13 +98,14 @@ namespace SasaLib
         }
 
         /// <summary>
-        /// ZIPアーカイブ内のすべてのファイルを特定のフォルダに解凍する。
+        /// ZIPアーカイブ内のすべてのファイルを特定のフォルダに解凍する
         /// https://notshown.hatenablog.jp/entry/2017/02/15/090908
-        /// 
         /// </summary>
         /// <param name="source">ZIPアーカイブ</param>
         /// <param name="destinationDirectoryName">解凍先ディレクトリ。</param>
         /// <param name="overwrite">上書きフラグ。ファイルの上書きを行う場合はtrue。</param>
+        /// <param name="WriteLine"></param>
+        /// <returns></returns>
         public static bool ExtractToDirectory(this ZipArchive source, string destinationDirectoryName, bool overwrite, SasaLibDelegateWriteLine WriteLine = null)
         {
             if (WriteLine == null) WriteLine = Console.WriteLine;
@@ -162,7 +166,7 @@ namespace SasaLib
                                     WriteLine($"※SasaLib.MyZipFileExtensions.ExtractToDirectory(..) overwriteﾓｰﾄﾞです。 {fullPath} を書き込み可能への設定変更に失敗 {ex.Message}");
                                 }
                             }
-                            ///
+                            //
                             try
                             {
                                 entry.ExtractToFile(fullPath, true);

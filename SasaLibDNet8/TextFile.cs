@@ -89,9 +89,14 @@ namespace SasaLib
     /// </summary>
     public class ConfigFile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string FilePath;
 
-        // ファイルの内容を格納する文字列配列
+        /// <summary>
+        ///  ファイルの内容を格納する文字列配列
+        /// </summary>
         public string[] lines;
         Encoding enc;
 

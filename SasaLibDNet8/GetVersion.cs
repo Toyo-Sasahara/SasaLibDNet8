@@ -9,6 +9,9 @@ using System.Xml;
 
 namespace SasaLib
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public class Asm
     {
@@ -34,6 +37,11 @@ namespace SasaLib
             return versionInfo.FileVersion;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="AsmFilePath"></param>
+        /// <returns></returns>
         public static string GetFileVersion(string AsmFilePath)
         {
             System.Diagnostics.FileVersionInfo vi = System.Diagnostics.FileVersionInfo.GetVersionInfo(AsmFilePath);
@@ -113,6 +121,11 @@ namespace SasaLib
             return name.Version.ToString();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="AsmFilePath"></param>
+        /// <returns></returns>
         public static string GetAsmVersion(string AsmFilePath)
         {
             System.Diagnostics.FileVersionInfo vi = System.Diagnostics.FileVersionInfo.GetVersionInfo(AsmFilePath);
@@ -174,6 +187,9 @@ namespace SasaLib
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public class ClickOnce
     {
@@ -221,9 +237,9 @@ namespace SasaLib
             return GetPublishedVersion(exemanifest);
         }
 
-        /// <summary>
-        /// ClickOne
-        /// </summary>アプリの時の起動URL
+        // <summary>
+        // ClickOne
+        // </summary>アプリの時の起動URL
         //public static void GetUrlParameters()
         //{
         //    // ClickOnceアプリの場合のときのみ以下のコードを実行

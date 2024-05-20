@@ -4,7 +4,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SasaLib.PIPE
 {
-    // オブジェクトとバイト配列の変換
+    /// <summary>
+    /// オブジェクトとバイト配列の変換
+    /// </summary>
+    /// <typeparam name="TObject"></typeparam>
     public class ObjectConverter<TObject>
     {
 #pragma warning disable SYSLIB0011 // 型またはメンバーが旧型式です
@@ -12,6 +15,10 @@ namespace SasaLib.PIPE
 #pragma warning restore SYSLIB0011 // 型またはメンバーが旧型式です
 
 #pragma warning disable SYSLIB0011 // 型またはメンバーが旧型式です
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="formatter"></param>
         public ObjectConverter(IFormatter formatter = null)
 #pragma warning restore SYSLIB0011 // 型またはメンバーが旧型式です
         {
@@ -20,7 +27,11 @@ namespace SasaLib.PIPE
 #pragma warning restore SYSLIB0011 // 型またはメンバーが旧型式です
         }
 
-        // オブジェクト=>バイト配列
+        /// <summary>
+        /// オブジェクト=>バイト配列
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public byte[] ToByteArray(TObject obj)
         {
             using (var stream = new MemoryStream())
@@ -30,7 +41,11 @@ namespace SasaLib.PIPE
             }
         }
 
-        // バイト配列=>オブジェクト
+        /// <summary>
+        /// バイト配列=>オブジェクト
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         public TObject FromByteArray(byte[] bytes)
         {
             using (var stream = new MemoryStream(bytes))
