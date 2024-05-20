@@ -160,6 +160,17 @@
       <HintPath>Vault2025SDKcopy\core\System.ServiceModel.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Inventor2025VaultAddinDLLcopy\Connectivity.InventorAddin.EdmAddin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Inventor2025VaultAddinDLLcopy\Connectivity.InventorAddin.EdmAddin.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Vault2025SDKcopy\AdskLicensingSDK_8.dll">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy &quot;$(ProjectDir)\Vault2025SDKcopy\AdskLicensingSDK_*.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;" />
   </Target>
