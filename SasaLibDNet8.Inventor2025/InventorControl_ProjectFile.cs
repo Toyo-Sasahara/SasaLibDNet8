@@ -8,9 +8,6 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
-
-//using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,8 +17,9 @@ using System.Windows.Forms;
 /// </summary>
 namespace SasaLib.InventorAPI
 {
-    [SupportedOSPlatform("windows")]
-
+    /// <summary>
+    /// 
+    /// </summary>
     public static partial class InventorControl
     {
         /// <summary>
@@ -276,6 +274,7 @@ namespace SasaLib.InventorAPI
             WorkspacePath = oProject.WorkspacePath;
             return WorkspacePath;
         }
+
         /// <summary>
         /// ■アクティブプロジェクトの業スペースへのフルパスを取得する。
         /// </summary>
@@ -375,7 +374,6 @@ namespace SasaLib.InventorAPI
             return LibraryNames.ToArray();
         }
 
-
         /// <summary>
         /// ■ライブラリ名の実際のパスを返す
         /// </summary>
@@ -429,6 +427,12 @@ namespace SasaLib.InventorAPI
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oApp"></param>
+        /// <param name="LibrayName"></param>
+        /// <returns></returns>
         public static string GetActiveProjectLibraryPath(Inventor.Application oApp, string LibrayName)
         {
             Inventor.DesignProjectManager oProjectMgr;
