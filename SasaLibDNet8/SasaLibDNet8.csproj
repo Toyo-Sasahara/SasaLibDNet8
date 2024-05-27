@@ -54,7 +54,7 @@
 		  <HintPath>..\SasaLibDNet8.Inventor2025\SDK\Autodesk.Inventor.Interop.dll</HintPath>
 		</Reference>
 		<Reference Include="Interop.IWshRuntimeLibrary">
-			<HintPath>..\..\SasaLibTestFrame\SasaLib\obj\Debug\Interop.IWshRuntimeLibrary.dll</HintPath>
+		  <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Inventor 2022\Bin\interop.iwshruntimelibrary.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

@@ -42,5 +42,4 @@
       <HintPath>SDK\Autodesk.Inventor.Interop.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <Import Project="..\..\SasaLibeShare\SasaLibInventorShare\SasaLibInventorShare.projitems" Label="Shared" />
 </Project>

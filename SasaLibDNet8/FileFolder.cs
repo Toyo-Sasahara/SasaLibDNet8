@@ -1,9 +1,12 @@
-﻿using IWshRuntimeLibrary;
+﻿//using IWshRuntimeLibrary;
+using IWshRuntimeLibrary;
+using Microsoft.VisualStudio.OLE.Interop;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -38,11 +41,11 @@ namespace SasaLib
     public static class FileFolder
     {
 
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <param name="path"></param>
-       /// <returns></returns>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static bool IsDirectory(string path)
         {
             var fileInfo = new FileInfo(path);
@@ -435,7 +438,7 @@ namespace SasaLib
             }
             catch (IOException e1)
             {
-                    Eventlog.Log.WriteEntry("SasaLib FileFolder Class", EventLogEntryType.Error, 0, $"▲MoveFile({sourceFileName}, {destFileName}),失敗,IOException={e1.Message}");
+                Eventlog.Log.WriteEntry("SasaLib FileFolder Class", EventLogEntryType.Error, 0, $"▲MoveFile({sourceFileName}, {destFileName}),失敗,IOException={e1.Message}");
                 return false;
             }
 
@@ -1206,33 +1209,80 @@ namespace SasaLib
         /// <param name="description"></param>
         /// <param name="iconLocation"></param>
         /// <returns></returns>
-        public static string ReadShortcutFile(string fullPath, ref string targetPath, ref string workingfolder, ref string description, ref string iconLocation)
+        //public static string ReadShortcutFile(string fullPath, ref string targetPath, ref string workingfolder, ref string description, ref string iconLocation)
+        //{
+        //    // TODO: .Net Core では別の方法を検討が必要
+        //    IWshShell_Class wsc = new IWshShell_Class();
+        //    WshShortcut ws;
+        //    ws = (WshShortcut)wsc.CreateShortcut(fullPath);
+
+        //    if (string.IsNullOrEmpty(ws.TargetPath))
+        //        return null;
+
+        //    var result = new
+        //    {
+        //        ws.FullName,
+        //        ws.TargetPath,
+        //        ws.WorkingDirectory,
+        //        ws.Description,
+        //        ws.IconLocation,
+        //        ws.Arguments,
+        //        ws.Hotkey,
+        //        ws.WindowStyle,
+        //    };
+
+        //    targetPath = ws.TargetPath;
+        //    workingfolder = ws.WorkingDirectory;
+        //    description = ws.Description;
+        //    iconLocation = ws.IconLocation;
+
+        //    return result.ToString();
+
+        //}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fullPath"></param>
+        /// <param name="targetPath"></param>
+        /// <param name="workingfolder"></param>
+        /// <param name="description"></param>
+        /// <param name="iconLocationFile"></param>
+        /// <returns></returns>
+        public static string ReadShortcutFile(string fullPath, ref string targetPath, ref string workingfolder, ref string description, ref string iconLocationFile, ref int iconLocationNum)
         {
-            IWshShell_Class wsc = new IWshShell_Class();
-            WshShortcut ws;
-            ws = (WshShortcut)wsc.CreateShortcut(fullPath);
-
-            if (string.IsNullOrEmpty(ws.TargetPath))
-                return null;
-
-            var result = new
+            try
             {
-                ws.FullName,
-                ws.TargetPath,
-                ws.WorkingDirectory,
-                ws.Description,
-                ws.IconLocation,
-                ws.Arguments,
-                ws.Hotkey,
-                ws.WindowStyle,
-            };
+                IShellLink link = (IShellLink)new ShellLink();
 
-            targetPath = ws.TargetPath;
-            workingfolder = ws.WorkingDirectory;
-            description = ws.Description;
-            iconLocation = ws.IconLocation;
+                StringBuilder sb = new StringBuilder();
+                nint pfd;
+                int fFlags= 0;
+                link.GetPath(sb, 2048, out pfd, fFlags);
+                targetPath = sb.ToString();
 
-            return result.ToString();
+
+                StringBuilder sb2 = new StringBuilder();
+                link.GetWorkingDirectory(sb2, 2048);
+                workingfolder = sb2.ToString();
+
+                StringBuilder sb3 = new StringBuilder();
+                link.GetDescription(sb3, 2048);
+                description = sb3.ToString();
+
+                StringBuilder sb4 = new StringBuilder();
+                int iconNum;
+                link.GetIconLocation(sb4, 2048, out iconNum);
+                iconLocationFile = sb4.ToString();
+                iconLocationNum = iconNum;
+
+
+                return targetPath;
+            }
+            catch
+            {
+                return null;
+            }
 
         }
 
@@ -1244,25 +1294,58 @@ namespace SasaLib
         /// <param name="workingFolder"></param>
         /// <param name="description"></param>
         /// <param name="iconLocation"></param>
-        public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocation = "notepad.exe, 0")
+        //public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocation = "notepad.exe, 0")
+        //{
+        //    try
+        //    {
+        //        // TODO: .Net Core では別の方法を検討が必要
+        //        IWshShell_Class wsc = new IWshShell_Class();
+        //        WshShortcut ws;
+
+        //        ws = (WshShortcut)wsc.CreateShortcut(fullPath);
+        //        ws.TargetPath = targetPath;
+        //        ws.IconLocation = iconLocation;
+        //        ws.Description = description;
+
+        //        if (workingFolder != null)
+        //            ws.WorkingDirectory = workingFolder;
+        //        else
+        //            ws.WorkingDirectory = System.IO.Path.GetDirectoryName(targetPath);
+
+        //        ws.Save();
+
+        //        return true;
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fullPath"></param>
+        /// <param name="targetPath"></param>
+        /// <param name="workingFolder"></param>
+        /// <param name="description"></param>
+        /// <param name="iconLocation"></param>
+        /// <returns></returns>
+        public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0)
         {
             try
             {
+                IShellLink link = (IShellLink)new ShellLink();
 
-                IWshShell_Class wsc = new IWshShell_Class();
-                WshShortcut ws;
+                // setup shortcut information
+                link.SetDescription(description);
+                link.SetWorkingDirectory(workingFolder);
+                link.SetIconLocation(iconLocationFile, iconLocationNum);
+                link.SetPath(targetPath);
 
-                ws = (WshShortcut)wsc.CreateShortcut(fullPath);
-                ws.TargetPath = targetPath;
-                ws.IconLocation = iconLocation;
-                ws.Description = description;
-
-                if (workingFolder != null)
-                    ws.WorkingDirectory = workingFolder;
-                else
-                    ws.WorkingDirectory = System.IO.Path.GetDirectoryName(targetPath);
-
-                ws.Save();
+                // save it
+                IPersistFile file = (IPersistFile)link;
+                file.Save(fullPath, 0);
 
                 return true;
             }
@@ -1526,5 +1609,39 @@ namespace SasaLib
             }
         }
 
+        // ---------------------------------------------------------------------------------------------------------------------------------
+        //This could always be better adjusted to take more input instead of just being set.
+        //Then outside of your class but in your namespace
+        [ComImport]
+        [Guid("00021401-0000-0000-C000-000000000046")]
+        internal class ShellLink
+        {
+        }
+
+        [ComImport]
+        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        [Guid("000214F9-0000-0000-C000-000000000046")]
+        internal interface IShellLink
+        {
+            void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cchMaxPath, out IntPtr pfd, int fFlags);
+            void GetIDList(out IntPtr ppidl);
+            void SetIDList(IntPtr pidl);
+            void GetDescription([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszName, int cchMaxName);
+            void SetDescription([MarshalAs(UnmanagedType.LPWStr)] string pszName);
+            void GetWorkingDirectory([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszDir, int cchMaxPath);
+            void SetWorkingDirectory([MarshalAs(UnmanagedType.LPWStr)] string pszDir);
+            void GetArguments([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszArgs, int cchMaxPath);
+            void SetArguments([MarshalAs(UnmanagedType.LPWStr)] string pszArgs);
+            void GetHotkey(out short pwHotkey);
+            void SetHotkey(short wHotkey);
+            void GetShowCmd(out int piShowCmd);
+            void SetShowCmd(int iShowCmd);
+            void GetIconLocation([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszIconPath, int cchIconPath, out int piIcon);
+            void SetIconLocation([MarshalAs(UnmanagedType.LPWStr)] string pszIconPath, int iIcon);
+            void SetRelativePath([MarshalAs(UnmanagedType.LPWStr)] string pszPathRel, int dwReserved);
+            void Resolve(IntPtr hwnd, int fFlags);
+            void SetPath([MarshalAs(UnmanagedType.LPWStr)] string pszFile);
+
+        }
     }
 }
