@@ -1242,7 +1242,7 @@ namespace SasaLib
                 StringBuilder sb = new StringBuilder();
                 nint pfd;
                 
-                int fFlags = 0x0002;
+                int fFlags = 0x0004;
                 link.GetPath(sb, 4096, out pfd, fFlags);
                 targetPath = sb.ToString();
 
