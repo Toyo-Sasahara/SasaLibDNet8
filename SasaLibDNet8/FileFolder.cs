@@ -1242,8 +1242,10 @@ namespace SasaLib
                 StringBuilder sb = new StringBuilder();
                 nint pfd;
                 
-                int fFlags = 0x0004;
-                link.GetPath(sb, 4096, out pfd, fFlags);
+                int fFlags = 0;
+                WIN32_FIND_DATAW wIN32_FIND_DATAW = new WIN32_FIND_DATAW();
+
+                link.GetPath(sb, 4096, out wIN32_FIND_DATAW, fFlags);
                 targetPath = sb.ToString();
 
 
@@ -1580,6 +1582,70 @@ namespace SasaLib
         }
 
         // ---------------------------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public struct FILETIME
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public UInt32 dwLowDateTime;
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public UInt32 dwHighDateTime;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public unsafe struct WIN32_FIND_DATAW
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public UInt32 dwFileAttributes;
+            /// <summary>
+            /// 
+            /// </summary>
+            public FILETIME ftCreationTime;
+            /// <summary>
+            /// 
+            /// </summary>
+            public FILETIME ftLastAccessTime;
+            /// <summary>
+            /// 
+            /// </summary>
+            public FILETIME ftLastWriteTime;
+            /// <summary>
+            /// 
+            /// </summary>
+            public UInt32 nFileSizeHigh;
+            /// <summary>
+            /// 
+            /// </summary>
+            public UInt32 nFileSizeLow;
+            /// <summary>
+            /// 
+            /// </summary>
+            public UInt32 dwReserved0;
+            /// <summary>
+            /// 
+            /// </summary>
+            public UInt32 dwReserved1;
+            /// <summary>
+            /// 
+            /// </summary>
+            public fixed Char cFileName[256];
+            /// <summary>
+            /// 
+            /// </summary>
+            public fixed Char cAlternateFileName[14];
+        }
+
         //This could always be better adjusted to take more input instead of just being set.
         //Then outside of your class but in your namespace
         [ComImport]
@@ -1588,12 +1654,13 @@ namespace SasaLib
         {
         }
 
+        
         [ComImport]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
         [Guid("000214F9-0000-0000-C000-000000000046")]
         internal interface IShellLink
         {
-            void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cchMaxPath, out IntPtr pfd, int fFlags);
+            void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cchMaxPath, out WIN32_FIND_DATAW pfd, int fFlags);
             void GetIDList(out IntPtr ppidl);
             void SetIDList(IntPtr pidl);
             void GetDescription([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszName, int cchMaxName);
