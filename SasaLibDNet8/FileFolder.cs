@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Versioning;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -1207,134 +1208,101 @@ namespace SasaLib
         /// <param name="targetPath"></param>
         /// <param name="workingfolder"></param>
         /// <param name="description"></param>
-        /// <param name="iconLocation"></param>
-        /// <returns></returns>
-        //public static string ReadShortcutFile(string fullPath, ref string targetPath, ref string workingfolder, ref string description, ref string iconLocation)
-        //{
-        //    // TODO: .Net Core では別の方法を検討が必要
-        //    IWshShell_Class wsc = new IWshShell_Class();
-        //    WshShortcut ws;
-        //    ws = (WshShortcut)wsc.CreateShortcut(fullPath);
-
-        //    if (string.IsNullOrEmpty(ws.TargetPath))
-        //        return null;
-
-        //    var result = new
-        //    {
-        //        ws.FullName,
-        //        ws.TargetPath,
-        //        ws.WorkingDirectory,
-        //        ws.Description,
-        //        ws.IconLocation,
-        //        ws.Arguments,
-        //        ws.Hotkey,
-        //        ws.WindowStyle,
-        //    };
-
-        //    targetPath = ws.TargetPath;
-        //    workingfolder = ws.WorkingDirectory;
-        //    description = ws.Description;
-        //    iconLocation = ws.IconLocation;
-
-        //    return result.ToString();
-
-        //}
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="fullPath"></param>
-        /// <param name="targetPath"></param>
-        /// <param name="workingfolder"></param>
-        /// <param name="description"></param>
         /// <param name="iconLocationFile"></param>
+        /// <param name="iconLocationNum"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static string ReadShortcutFile(string fullPath, ref string targetPath, ref string workingfolder, ref string description, ref string iconLocationFile, ref int iconLocationNum)
+        public static string ReadShortcutFile(string fullPath, out string targetPath, out string workingfolder, out string description, out string iconLocationFile, out int iconLocationNum, SasaLibDelegateWriteLine WriteLine = null)
         {
+            targetPath = null;
+            workingfolder = null;
+            description = null; iconLocationFile = null;
+            iconLocationNum = 0;
+
+            if (WriteLine == null) WriteLine = Console.WriteLine;
+
             try
             {
+                if (System.IO.File.Exists(fullPath) == false)
+                    throw new Exception($"指定したパス; \"{fullPath}\" が存在しないかアクセス不能");
+
+            }
+            catch (Exception ex)
+            {
+                WriteLine(ex.Message);
+                return null;
+            }
+
+
+            try
+            {
+
                 IShellLink link = (IShellLink)new ShellLink();
 
                 StringBuilder sb = new StringBuilder();
                 nint pfd;
-                int fFlags= 0;
-                link.GetPath(sb, 2048, out pfd, fFlags);
+                
+                int fFlags = 0x0002;
+                link.GetPath(sb, 4096, out pfd, fFlags);
                 targetPath = sb.ToString();
 
 
                 StringBuilder sb2 = new StringBuilder();
-                link.GetWorkingDirectory(sb2, 2048);
+                link.GetWorkingDirectory(sb2, 4096);
                 workingfolder = sb2.ToString();
 
                 StringBuilder sb3 = new StringBuilder();
-                link.GetDescription(sb3, 2048);
+                link.GetDescription(sb3, 4096);
                 description = sb3.ToString();
 
                 StringBuilder sb4 = new StringBuilder();
                 int iconNum;
-                link.GetIconLocation(sb4, 2048, out iconNum);
+                link.GetIconLocation(sb4, 4096, out iconNum);
                 iconLocationFile = sb4.ToString();
                 iconLocationNum = iconNum;
 
-
                 return targetPath;
             }
-            catch
+            catch(Exception ex)
             {
                 return null;
             }
 
         }
 
-        /// <summary>
-        /// ショートカットを作成
-        /// </summary>
-        /// <param name="fullPath"></param>
-        /// <param name="targetPath"></param>
-        /// <param name="workingFolder"></param>
-        /// <param name="description"></param>
-        /// <param name="iconLocation"></param>
-        //public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocation = "notepad.exe, 0")
-        //{
-        //    try
-        //    {
-        //        // TODO: .Net Core では別の方法を検討が必要
-        //        IWshShell_Class wsc = new IWshShell_Class();
-        //        WshShortcut ws;
 
-        //        ws = (WshShortcut)wsc.CreateShortcut(fullPath);
-        //        ws.TargetPath = targetPath;
-        //        ws.IconLocation = iconLocation;
-        //        ws.Description = description;
-
-        //        if (workingFolder != null)
-        //            ws.WorkingDirectory = workingFolder;
-        //        else
-        //            ws.WorkingDirectory = System.IO.Path.GetDirectoryName(targetPath);
-
-        //        ws.Save();
-
-        //        return true;
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //}
 
         /// <summary>
-        /// 
+        /// ショートカット作成
         /// </summary>
-        /// <param name="fullPath"></param>
-        /// <param name="targetPath"></param>
-        /// <param name="workingFolder"></param>
-        /// <param name="description"></param>
-        /// <param name="iconLocation"></param>
-        /// <returns></returns>
-        public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0)
+        /// <param name="fullPath">作成するショートカットのフルパス</param>
+        /// <param name="targetPath">参照先ファイル。存在しない場合失敗する</param>
+        /// <param name="workingFolder">作業フォルダを指定</param>
+        /// <param name="description">説明を追加</param>
+        /// <param name="iconLocationFile">アイコンを含むファイル・ファイルパスを指定</param>
+        /// <param name="iconLocationNum">アイコンリソースのリソース番号</param>
+        /// <param name="WriteLine">実行ログ出力用デリゲート。nullの場合は Console.WriteLine にて出力</param>
+        /// <returns>成功：true, 失敗 false</returns>
+        public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0, SasaLibDelegateWriteLine WriteLine = null)
         {
+            if (WriteLine == null) WriteLine = Console.WriteLine;
+
+
             try
             {
+                if (System.IO.File.Exists(targetPath) == false)
+                    throw new Exception($"ターゲットパス; \"{targetPath}\" が存在しないかアクセス不能");
+
+            }
+            catch (Exception ex)
+            {
+                WriteLine(ex.Message);
+                return false;
+            }
+
+            try
+            {
+
                 IShellLink link = (IShellLink)new ShellLink();
 
                 // setup shortcut information
@@ -1345,12 +1313,14 @@ namespace SasaLib
 
                 // save it
                 IPersistFile file = (IPersistFile)link;
+                System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(fullPath));
                 file.Save(fullPath, 0);
-
+                WriteLine($"SasaLib.FileFolder.CreateShortCut(..) ショートカットファイル \"{fullPath}\" を作成または更新しました");
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
+                WriteLine($"SasaLib.FileFolder.CreateShortCut(..) ショートカットファイル \"{fullPath}\"（ターゲット:\"{targetPath}\"） の作成に失敗しました");
                 return false;
             }
         }
