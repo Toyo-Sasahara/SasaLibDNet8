@@ -25,7 +25,9 @@ namespace SasaLibDNet8
             this.persist = this.shell as IPersistFile;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual void Dispose()
         {
             // TODO: アンマネージド リソース (アンマネージド オブジェクト) を解放し、ファイナライザーをオーバーライドします
@@ -44,7 +46,17 @@ namespace SasaLibDNet8
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="linkFilePath"></param>
+        /// <param name="targetPath"></param>
+        /// <param name="workingfolder"></param>
+        /// <param name="description"></param>
+        /// <param name="iconLocationFile"></param>
+        /// <param name="iconLocationNum"></param>
+        /// <param name="WriteLine"></param>
+        /// <returns></returns>
         public string ReadShortcutFile(string linkFilePath, out string targetPath, out string workingfolder, out string description, out string iconLocationFile, out int iconLocationNum, SasaLibDelegateWriteLine WriteLine = null)
         {
             iconLocationNum = -1;
