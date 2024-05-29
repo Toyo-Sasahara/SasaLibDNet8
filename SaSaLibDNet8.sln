@@ -58,7 +58,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vault2025InventorEdmAddin",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SasaLibMain", "0.SasaLibMain", "{EA6DD4DF-293C-40CB-BA09-4B2E76CFD676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8TestProg", "SasaLibDNet8TestProg\SasaLibDNet8TestProg.csproj", "{22B62724-483C-443C-A468-3900B7E6621F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8TestProg", "SasaLibDNet8TestProg\SasaLibDNet8TestProg.csproj", "{22B62724-483C-443C-A468-3900B7E6621F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,7 @@
 ﻿//using IWshRuntimeLibrary;
 using IWshRuntimeLibrary;
 using Microsoft.VisualStudio.OLE.Interop;
+using SasaLibDNet8;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,6 +14,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static SasaLib.FileFolder;
 
 
 namespace SasaLib
@@ -1202,7 +1204,7 @@ namespace SasaLib
         }
 
         /// <summary>
-        /// 
+        /// ショートカット解析
         /// </summary>
         /// <param name="fullPath"></param>
         /// <param name="targetPath"></param>
@@ -1212,66 +1214,21 @@ namespace SasaLib
         /// <param name="iconLocationNum"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static string ReadShortcutFile(string fullPath, out string targetPath, out string workingfolder, out string description, out string iconLocationFile, out int iconLocationNum, SasaLibDelegateWriteLine WriteLine = null)
+        public static string ReadShortcutFile(string fullPath, ref string targetPath, ref string workingfolder, ref string description, ref string iconLocation)
         {
-            targetPath = null;
-            workingfolder = null;
-            description = null; iconLocationFile = null;
-            iconLocationNum = 0;
-
-            if (WriteLine == null) WriteLine = Console.WriteLine;
-
             try
             {
-                if (System.IO.File.Exists(fullPath) == false)
-                    throw new Exception($"指定したパス; \"{fullPath}\" が存在しないかアクセス不能");
-
+                string iconLocationFile = null;
+                int iconLocationNum = -1;
+                iconLocation = iconLocationFile + "." + iconLocationNum;
+                ShelLinkComObject shelLinkComObject = new ShelLinkComObject();
+                return shelLinkComObject.ReadShortcutFile(fullPath, out targetPath, out workingfolder, out description, out iconLocationFile, out iconLocationNum);
             }
             catch (Exception ex)
             {
-                WriteLine(ex.Message);
                 return null;
             }
-
-
-            try
-            {
-
-                IShellLink link = (IShellLink)new ShellLink();
-
-                StringBuilder sb = new StringBuilder();
-                nint pfd;
-                
-                int fFlags = 0;
-                WIN32_FIND_DATAW wIN32_FIND_DATAW = new WIN32_FIND_DATAW();
-
-                link.GetPath(sb, 4096, out wIN32_FIND_DATAW, fFlags);
-                targetPath = sb.ToString();
-
-
-                StringBuilder sb2 = new StringBuilder();
-                link.GetWorkingDirectory(sb2, 4096);
-                workingfolder = sb2.ToString();
-
-                StringBuilder sb3 = new StringBuilder();
-                link.GetDescription(sb3, 4096);
-                description = sb3.ToString();
-
-                StringBuilder sb4 = new StringBuilder();
-                int iconNum;
-                link.GetIconLocation(sb4, 4096, out iconNum);
-                iconLocationFile = sb4.ToString();
-                iconLocationNum = iconNum;
-
-                return targetPath;
-            }
-            catch(Exception ex)
-            {
-                return null;
-            }
-
         }
-
 
 
         /// <summary>
@@ -1285,44 +1242,24 @@ namespace SasaLib
         /// <param name="iconLocationNum">アイコンリソースのリソース番号</param>
         /// <param name="WriteLine">実行ログ出力用デリゲート。nullの場合は Console.WriteLine にて出力</param>
         /// <returns>成功：true, 失敗 false</returns>
-        public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocation = "notepad.exe, 0")
         {
-            if (WriteLine == null) WriteLine = Console.WriteLine;
-
-
             try
             {
-                if (System.IO.File.Exists(targetPath) == false)
-                    throw new Exception($"ターゲットパス; \"{targetPath}\" が存在しないかアクセス不能");
+                // カンマで文字列を分割する
+                string[] parts = iconLocation.Split(',');
 
+                // ファイル名を取得
+                string iconLocationFile = parts[0].Trim();
+
+                // 数値を取得（文字列から整数に変換）
+                int iconLocationNum = int.Parse(parts[1]);
+
+                ShelLinkComObject shelLinkComObject = new ShelLinkComObject();
+                return shelLinkComObject.CreateShortcutFile(fullPath, targetPath, workingFolder, description, iconLocationFile, iconLocationNum);
             }
             catch (Exception ex)
             {
-                WriteLine(ex.Message);
-                return false;
-            }
-
-            try
-            {
-
-                IShellLink link = (IShellLink)new ShellLink();
-
-                // setup shortcut information
-                link.SetDescription(description);
-                link.SetWorkingDirectory(workingFolder);
-                link.SetIconLocation(iconLocationFile, iconLocationNum);
-                link.SetPath(targetPath);
-
-                // save it
-                IPersistFile file = (IPersistFile)link;
-                System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(fullPath));
-                file.Save(fullPath, 0);
-                WriteLine($"SasaLib.FileFolder.CreateShortCut(..) ショートカットファイル \"{fullPath}\" を作成または更新しました");
-                return true;
-            }
-            catch(Exception ex)
-            {
-                WriteLine($"SasaLib.FileFolder.CreateShortCut(..) ショートカットファイル \"{fullPath}\"（ターゲット:\"{targetPath}\"） の作成に失敗しました");
                 return false;
             }
         }
@@ -1581,104 +1518,175 @@ namespace SasaLib
             }
         }
 
-        // ---------------------------------------------------------------------------------------------------------------------------------
+        //// ---------------------------------------------------------------------------------------------------------------------------------
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public struct FILETIME
-        {
-            /// <summary>
-            /// 
-            /// </summary>
-            public UInt32 dwLowDateTime;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public struct FILETIME
+        //{
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public UInt32 dwLowDateTime;
 
-            /// <summary>
-            /// 
-            /// </summary>
-            public UInt32 dwHighDateTime;
-        }
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public UInt32 dwHighDateTime;
+        //}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public unsafe struct WIN32_FIND_DATAW
-        {
-            /// <summary>
-            /// 
-            /// </summary>
-            public UInt32 dwFileAttributes;
-            /// <summary>
-            /// 
-            /// </summary>
-            public FILETIME ftCreationTime;
-            /// <summary>
-            /// 
-            /// </summary>
-            public FILETIME ftLastAccessTime;
-            /// <summary>
-            /// 
-            /// </summary>
-            public FILETIME ftLastWriteTime;
-            /// <summary>
-            /// 
-            /// </summary>
-            public UInt32 nFileSizeHigh;
-            /// <summary>
-            /// 
-            /// </summary>
-            public UInt32 nFileSizeLow;
-            /// <summary>
-            /// 
-            /// </summary>
-            public UInt32 dwReserved0;
-            /// <summary>
-            /// 
-            /// </summary>
-            public UInt32 dwReserved1;
-            /// <summary>
-            /// 
-            /// </summary>
-            public fixed Char cFileName[256];
-            /// <summary>
-            /// 
-            /// </summary>
-            public fixed Char cAlternateFileName[14];
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public unsafe struct WIN32_FIND_DATAW
+        //{
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public UInt32 dwFileAttributes;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public FILETIME ftCreationTime;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public FILETIME ftLastAccessTime;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public FILETIME ftLastWriteTime;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public UInt32 nFileSizeHigh;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public UInt32 nFileSizeLow;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public UInt32 dwReserved0;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public UInt32 dwReserved1;
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public fixed Char cFileName[256];
+        //    /// <summary>
+        //    /// 
+        //    /// </summary>
+        //    public fixed Char cAlternateFileName[14];
+        //}
 
-        //This could always be better adjusted to take more input instead of just being set.
-        //Then outside of your class but in your namespace
-        [ComImport]
-        [Guid("00021401-0000-0000-C000-000000000046")]
-        internal class ShellLink
-        {
-        }
+        ///// <summary>取得するパス情報のタイプを指定するフラグを表します。</summary>
+        //[CLSCompliant(false), Flags]
+        //internal enum SLGP_FLAGS : uint
+        //{
+        //    SHORTPATH = 1,
+        //    UNCPRIORITY = 2,
+        //    RAWPATH = 4,
+        //}
 
-        
-        [ComImport]
-        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        [Guid("000214F9-0000-0000-C000-000000000046")]
-        internal interface IShellLink
-        {
-            void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cchMaxPath, out WIN32_FIND_DATAW pfd, int fFlags);
-            void GetIDList(out IntPtr ppidl);
-            void SetIDList(IntPtr pidl);
-            void GetDescription([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszName, int cchMaxName);
-            void SetDescription([MarshalAs(UnmanagedType.LPWStr)] string pszName);
-            void GetWorkingDirectory([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszDir, int cchMaxPath);
-            void SetWorkingDirectory([MarshalAs(UnmanagedType.LPWStr)] string pszDir);
-            void GetArguments([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszArgs, int cchMaxPath);
-            void SetArguments([MarshalAs(UnmanagedType.LPWStr)] string pszArgs);
-            void GetHotkey(out short pwHotkey);
-            void SetHotkey(short wHotkey);
-            void GetShowCmd(out int piShowCmd);
-            void SetShowCmd(int iShowCmd);
-            void GetIconLocation([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszIconPath, int cchIconPath, out int piIcon);
-            void SetIconLocation([MarshalAs(UnmanagedType.LPWStr)] string pszIconPath, int iIcon);
-            void SetRelativePath([MarshalAs(UnmanagedType.LPWStr)] string pszPathRel, int dwReserved);
-            void Resolve(IntPtr hwnd, int fFlags);
-            void SetPath([MarshalAs(UnmanagedType.LPWStr)] string pszFile);
+        ////This could always be better adjusted to take more input instead of just being set.
+        ////Then outside of your class but in your namespace
+        //[ComImport]
+        //[Guid("00021401-0000-0000-C000-000000000046")]
+        //internal class ShellLink
+        //{
+        //}
 
-        }
+
+        //[ComImport]
+        //[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+        //[Guid("000214F9-0000-0000-C000-000000000046")]
+        //internal interface IShellLinkW
+        //{
+        //    internal const int MAX_PATH = 260;
+
+        //    /// <summary>
+        //    /// シェルリンクオブジェクトのパスとファイル名を取得します。
+        //    /// </summary>
+        //    /// <param name="pszFile"></param>
+        //    /// <param name="cch"></param>
+        //    /// <param name="pfd"></param>
+        //    /// <param name="fFlags"></param>
+        //    //HRESULT GetPath([out, size_is(cch)] LPWSTR pszFile, [in] int cch, [in, out, ptr] WIN32_FIND_DATAW *pfd, [in] DWORD fFlags);
+        //    void GetPath([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile, int cch, ref WIN32_FIND_DATAW pfd, SLGP_FLAGS fFlags);
+
+        //    /// <summary>
+        //    /// シェルリンクのリストを取得します。
+        //    /// </summary>
+        //    /// <param name="ppidl"></param>
+        //    //HRESULT GetIDList([out] LPITEMIDLIST * ppidl);
+        //    void GetIDList(out IntPtr ppidl);
+
+        //    /// <summary>
+        //    /// シェルリンクのリストを設定します。
+        //    /// </summary>
+        //    /// <param name="pidl"></param>
+        //    //HRESULT SetIDList([in] LPCITEMIDLIST pidl);
+        //    void SetIDList(IntPtr pidl);
+
+        //    /// <summary>
+        //    /// シェルリンクの説明文字列を取得します。
+        //    /// </summary>
+        //    /// <param name="pszName"></param>
+        //    /// <param name="cchMaxName"></param>
+        //    //HRESULT GetDescription([out, size_is(cch)] LPWSTR pszName, int cch);
+        //    void GetDescription([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszName, int cchMaxName);
+
+        //    void SetDescription([MarshalAs(UnmanagedType.LPWStr)] string pszName);
+
+        //    void GetWorkingDirectory([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszDir, int cchMaxPath);
+
+        //    void SetWorkingDirectory([MarshalAs(UnmanagedType.LPWStr)] string pszDir);
+
+        //    void GetArguments([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszArgs, int cchMaxPath);
+
+        //    void SetArguments([MarshalAs(UnmanagedType.LPWStr)] string pszArgs);
+
+        //    void GetHotkey(out short pwHotkey);
+
+        //    void SetHotkey(short wHotkey);
+
+        //    void GetShowCmd(out int piShowCmd);
+
+        //    void SetShowCmd(int iShowCmd);
+
+        //    void GetIconLocation([Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszIconPath, int cchIconPath, out int piIcon);
+
+        //    void SetIconLocation([MarshalAs(UnmanagedType.LPWStr)] string pszIconPath, int iIcon);
+
+        //    void SetRelativePath([MarshalAs(UnmanagedType.LPWStr)] string pszPathRel, int dwReserved);
+
+        //    /// <summary>
+        //    /// シェルリンクオブジェクトを検索してシェルリンクを解決します。
+        //    /// </summary>
+        //    /// <param name="hwnd"></param>
+        //    /// <param name="fFlags"></param>
+        //    void Resolve(IntPtr hwnd, int fFlags);
+
+        //    /// <summary>
+        //    /// シェルリンクパスとファイル名を設定します。
+        //    /// </summary>
+        //    /// <param name="pszFile"></param>
+        //    void SetPath([MarshalAs(UnmanagedType.LPWStr)] string pszFile);
+
+        //}
+
+        //[ComImport]
+        //[Guid("00021401-0000-0000-C000-000000000046")]
+        //internal class CShellLink { }
+
+        ///// <summary>IShellLinkWの実装クラスを表します。</summary>
+        //[CLSCompliant(false), ComImport, ClassInterface(ClassInterfaceType.None), Guid("00021401-0000-0000-C000-000000000046")]
+        //internal class ShellLinkObject
+        //{
+        //}
     }
 }
