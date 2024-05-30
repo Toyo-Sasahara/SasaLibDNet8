@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using SasaLib;
 
-namespace SasaLibDNet8
+namespace SasaLib
 {
     /// <summary>
     /// 

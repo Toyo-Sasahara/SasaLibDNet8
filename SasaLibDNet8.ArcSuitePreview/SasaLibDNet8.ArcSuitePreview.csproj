@@ -10,6 +10,7 @@
 	  <UseWindowsForms>True</UseWindowsForms>
 	  <Platforms>AnyCPU;x64</Platforms>
 	  <PlatformTarget>x64</PlatformTarget>
+	  <RootNamespace>SasaLib.ArcSuitePreview</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

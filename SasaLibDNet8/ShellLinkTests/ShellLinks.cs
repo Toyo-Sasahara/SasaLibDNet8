@@ -3,7 +3,7 @@ using System.Runtime.InteropServices.ComTypes;
 using static SasaLib.FileFolder;
 using FILETIME = System.Runtime.InteropServices.ComTypes.FILETIME;
 
-namespace SasaLibDNet8.ShellLinkTests;
+namespace SasaLib.ShellLinkTests;
 
 
 // !!!!!!! 注意 !!!!!!! コメントはGoogle翻訳等の結果を管理人が意訳した内容なので

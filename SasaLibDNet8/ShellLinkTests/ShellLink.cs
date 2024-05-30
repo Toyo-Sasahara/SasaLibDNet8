@@ -1,9 +1,9 @@
-﻿using SasaLibDNet8.ShellLinkTests;
+﻿using SasaLib.ShellLinkTests;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
-namespace SasaLibDNet8.ShellLinkTests;
+namespace SasaLib.ShellLinkTests;
 
 /// <summary>WindowsのShellLinkを表します。</summary>
 public class ShellLink : IDisposable

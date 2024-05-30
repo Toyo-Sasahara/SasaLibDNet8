@@ -16,6 +16,7 @@
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<PackAsTool>False</PackAsTool>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>SasaLib</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

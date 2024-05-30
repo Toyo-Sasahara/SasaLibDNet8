@@ -1,7 +1,6 @@
 ﻿//using IWshRuntimeLibrary;
 using IWshRuntimeLibrary;
 using Microsoft.VisualStudio.OLE.Interop;
-using SasaLibDNet8;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

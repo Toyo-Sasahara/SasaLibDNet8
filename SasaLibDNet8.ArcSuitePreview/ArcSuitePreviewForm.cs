@@ -400,8 +400,7 @@ namespace SasaLib.ArcSuitePreview
 
             ArcSuitePreviewPictureBox.Controls.Add(ArcsuitePreviewForm_Msg_label);
             ArcSuitePreviewPictureBox.Controls.Add(ArcSuite_Status_label);
-
-            //TODO: 恐らく WindowsFormsリソース関連でエラーとなる
+           
             VaultCheckInPngSuffix_textBox.Text = Properties.Resources.ArcSuiteImageSuffix;
 
             // マウスホイールイベント関連

@@ -2,7 +2,7 @@
 using System.Text;
 
 [assembly: CLSCompliant(false)]
-namespace SasaLibDNet8.ShellLinkTests;
+namespace SasaLib.ShellLinkTests;
 
 /// <summary>
 /// シェルリンクのプロパティにアクセスするためのすべてのメソッドと、ショートカットファイルを読み取るためのヘルパーメソッドを提供します。
