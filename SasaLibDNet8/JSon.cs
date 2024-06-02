@@ -84,6 +84,7 @@ namespace SasaLib
 
     class Person
     {
+        // get; set; でないと Json化できなかった・・・
         public string FullName { get; set; }
         public int Age { get; set; }
         public string FavoriteThings { get; set; }
@@ -92,6 +93,7 @@ namespace SasaLib
 
     class WeatherForecast
     {
+        // get; set; でないと Json化できなかった・・・
         public DateTimeOffset Date { get; set; }
         public int TemperatureCelsius { get; set; }
         public string? Summary { get; set; }
