@@ -15,7 +15,7 @@ namespace SasaLib
         /// <summary>
         /// 
         /// </summary>
-        public void test()
+        public void test1()
         {
             // オプション設定
             var options = new JsonSerializerOptions
@@ -50,13 +50,51 @@ namespace SasaLib
             Console.WriteLine($"{person2?.FullName} {person2?.Age} {person2?.FavoriteThings}");
 
         }
+
+        public void test2()
+        {
+            // オプション設定
+            var options = new JsonSerializerOptions
+            {
+                // 日本語を変換するためのエンコード設定
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+
+                // プロパティ名をキャメルケースに変換
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+
+                // プロパティ名をスネークケースに変換（自作ポリシーの適用）
+                //PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
+
+                // インデントを付ける
+                WriteIndented = true
+            };
+
+            var weatherForecast = new WeatherForecast
+            {
+                Date = DateTime.Parse("2019-08-01"),
+                TemperatureCelsius = 25,
+                Summary = "Hot"
+            };
+
+            string jsonString = JsonSerializer.Serialize(weatherForecast, options);
+
+            Console.WriteLine(jsonString);
+        }
     }
 
     class Person
     {
-        internal string FullName;
-        internal int Age;
-        internal string FavoriteThings;
-        internal string Memo;
+        public string FullName { get; set; }
+        public int Age { get; set; }
+        public string FavoriteThings { get; set; }
+        public string Memo { get; set; }
     }
+
+    class WeatherForecast
+    {
+        public DateTimeOffset Date { get; set; }
+        public int TemperatureCelsius { get; set; }
+        public string? Summary { get; set; }
+    }
+
 }
