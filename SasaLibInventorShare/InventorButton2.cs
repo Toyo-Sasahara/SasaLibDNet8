@@ -7,7 +7,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SasaLib.InventorAPI
 {
-    [SupportedOSPlatform("windows")]
     public static class InventorButton2
     {
 

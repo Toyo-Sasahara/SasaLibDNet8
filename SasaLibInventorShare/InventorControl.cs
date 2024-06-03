@@ -18,7 +18,7 @@ using System.Windows.Forms;
 /// </summary>
 namespace SasaLib.InventorAPI
 {
-    [SupportedOSPlatform("windows")]
+    //[SupportedOSPlatform("windows")]
 
     public static partial class InventorControl
     {

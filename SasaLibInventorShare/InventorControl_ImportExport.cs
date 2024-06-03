@@ -22,7 +22,6 @@ using System.Windows.Forms;
 /// </summary>
 namespace SasaLib.InventorAPI
 {
-    [SupportedOSPlatform("windows")]
 
     public static partial class InventorControl
     {

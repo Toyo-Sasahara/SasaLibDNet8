@@ -13,7 +13,6 @@ using System.Runtime.Versioning;
 
 namespace SasaLib.InventorAPI
 {
-    [SupportedOSPlatform("windows")]
 
     /// <summary>
     /// ローカルデータベースを生成

@@ -7,7 +7,6 @@ using System.Windows.Forms;
 
 namespace SasaLib.InventorAPI
 {
-    [SupportedOSPlatform("windows")]
 
     /// <summary>
     ///コマンドボタンの基本クラス
