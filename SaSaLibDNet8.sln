@@ -62,7 +62,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8TestProg", "Sas
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestApp", "TestApp", "{84C0D6D9-675A-4A00-BF9D-4543674A6388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSonTest", "JSonTest\JSonTest.csproj", "{7679F88B-0331-4EDA-ADB9-2D2C2475589A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSonTest", "JSonTest\JSonTest.csproj", "{7679F88B-0331-4EDA-ADB9-2D2C2475589A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SasaLibInventorShare", "SasaLibInventorShare\SasaLibInventorShare.shproj", "{4D333D99-18F5-4F47-B75F-702C7DCB41F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -283,6 +285,7 @@ Global
 		{22B62724-483C-443C-A468-3900B7E6621F} = {84C0D6D9-675A-4A00-BF9D-4543674A6388}
 		{84C0D6D9-675A-4A00-BF9D-4543674A6388} = {EA6DD4DF-293C-40CB-BA09-4B2E76CFD676}
 		{7679F88B-0331-4EDA-ADB9-2D2C2475589A} = {84C0D6D9-675A-4A00-BF9D-4543674A6388}
+		{4D333D99-18F5-4F47-B75F-702C7DCB41F0} = {8509F56B-9224-46D5-8276-11F51349F8D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B06B73B-759E-49CE-8B26-84A8711C77A1}
@@ -290,12 +293,14 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{1e993d9f-f7bd-440a-9d26-9e2c517f4c8e}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{2cea5067-2cb0-4197-940a-3ff57cc55849}*SharedItemsImports = 13
+		SasaLibInventorShare\SasaLibInventorShare.projitems*{4d333d99-18f5-4f47-b75f-702c7dcb41f0}*SharedItemsImports = 13
 		..\TOYOStagingSystemDNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{4da97e1f-37ce-4b65-acc9-db76ab5fc865}*SharedItemsImports = 5
 		..\AutocadTOYOaddinCommitDNet8\AssemblyInfo\AssemblyInfo.projitems*{59ef4668-15ab-4aa7-9909-e2f4d5203ddb}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{66d95a78-c6c8-415b-a1fc-17dc7928c891}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{78e811fd-ff1c-49f8-9c22-ecf66a924ce8}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{7a2fcf51-7330-439d-a3e9-301891fcd311}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{7cbbe3ac-f516-4cb8-a21e-037073a7118b}*SharedItemsImports = 5
+		SasaLibInventorShare\SasaLibInventorShare.projitems*{808c4975-9f2b-42c4-bf14-fdb27782eb26}*SharedItemsImports = 5
 		..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\STAGINGSYSTEM_Share.AssemblyInfo\STAGINGSYSTEM_Share.AssemblyInfo\STAGINGSYSTEM_Share.AssemblyInfo.projitems*{814a3054-642f-44bf-a88c-86f268bc7fae}*SharedItemsImports = 5
 		..\TOYOStagingSystemDNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{841adeea-53a7-4a69-8f08-65e7829dfe4f}*SharedItemsImports = 5
 		..\TOYOStagingSystemDNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{863bbe4c-67fd-4391-ae80-4bc94ed9ed97}*SharedItemsImports = 5
