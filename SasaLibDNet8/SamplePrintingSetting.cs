@@ -20,13 +20,13 @@ namespace Samps
         /// 印刷イメージの 用紙サイズと方向のプロパティ（本ライブラリで共通）
         /// </summary>
         [System.Xml.Serialization.XmlAttribute("SourcePaperIdent")]
-        public string SourcePaperIdent { get; set; }
+        public string? SourcePaperIdent { get; set; }
 
         /// <summary>
         /// PageSetting.PaperSize.PaperName プロパティに設定する値(用紙の種類（サイズ）)
         /// </summary>
         [System.Xml.Serialization.XmlElement("PaperSizePaperName")]
-        public string PaperSizePaperName { get; set; }
+        public string? PaperSizePaperName { get; set; }
 
         /// <summary>
         /// PageSetting.PaperSize.RawKindプロパティに設定する値
@@ -38,7 +38,7 @@ namespace Samps
         /// PageSetting.PaperSource.SourceName プロパティに設定する値 (プリンタトレイ名)
         /// </summary>
         [System.Xml.Serialization.XmlElement("PaperSourceSourceName")]
-        public string PaperSourceSourceName { get; set; }
+        public string? PaperSourceSourceName { get; set; }
 
         /// <summary>
         /// PageSetting.Landscape プロパティに設定する値 true=ページを横向きで印刷
@@ -65,12 +65,12 @@ namespace Samps
         /// PrinterSettings.PrinterNameプロパティに設定する値
         /// </summary>
         [System.Xml.Serialization.XmlElement("PrinterSettingsPrinterName")]
-        public string PrinterSettingsPrinterName { get; set; }
+        public string? PrinterSettingsPrinterName { get; set; }
         /// <summary>
         /// プリンタ固有の用紙選択基準の設定値
         /// </summary>
         [System.Xml.Serialization.XmlElement("PaperSelectionStandard")]
-        public List<CPaperSelectionStandard> PaperSelectionStandard { get; set; }
+        public List<CPaperSelectionStandard>? PaperSelectionStandard { get; set; }
     }
 }
 

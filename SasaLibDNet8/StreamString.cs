@@ -73,7 +73,7 @@ namespace SasaLib
         /// <param name="timeoutmsec">-1 の時、永久に待つみたい</param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public string ReadString(int timeoutmsec = 10000, SasaLibDelegateWriteLine WriteLine = null)
+        public string ReadString(int timeoutmsec = 10000, SasaLibDelegateWriteLine? WriteLine = null)
         {
             bool OperationCanceledException;
             bool AggregateException;
@@ -89,7 +89,7 @@ namespace SasaLib
         /// <param name="AggregateException"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public string ReadString(int timeoutmsec, out bool OperationCanceledException, out bool AggregateException, SasaLibDelegateWriteLine WriteLine = null)
+        public string ReadString(int timeoutmsec, out bool OperationCanceledException, out bool AggregateException, SasaLibDelegateWriteLine? WriteLine = null)
         {
             OperationCanceledException = false;
             AggregateException = false;
@@ -194,7 +194,7 @@ namespace SasaLib
         /// <param name="timeoutmsec"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public int WriteString(string outString, int timeoutmsec = 10000, SasaLibDelegateWriteLine WriteLine = null)
+        public int WriteString(string outString, int timeoutmsec = 10000, SasaLibDelegateWriteLine? WriteLine = null)
         {
             bool OperationCanceledException;
             bool AggregateException;
@@ -211,7 +211,7 @@ namespace SasaLib
         /// <param name="AggregateException"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public int WriteString(string outString, int timeoutmsec, out bool OperationCanceledException, out bool AggregateException, SasaLibDelegateWriteLine WriteLine = null)
+        public int WriteString(string outString, int timeoutmsec, out bool OperationCanceledException, out bool AggregateException, SasaLibDelegateWriteLine? WriteLine = null)
         {
             OperationCanceledException = false;
             AggregateException = false;

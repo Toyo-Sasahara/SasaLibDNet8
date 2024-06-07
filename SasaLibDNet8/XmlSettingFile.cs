@@ -28,7 +28,7 @@ namespace SasaLib
         ///     省略時はクラス名を採用する</param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static XmlSettingFile Load(Environment.SpecialFolder folderId, XmlSettingFile initial, string filename = null)
+        public static XmlSettingFile Load(Environment.SpecialFolder folderId, XmlSettingFile initial, string? filename = null)
         {
             //ファイル名を生成
             string pathname = CreatePathname(folderId, initial, filename);
@@ -109,7 +109,7 @@ namespace SasaLib
         static private string CreatePathname(
             Environment.SpecialFolder folderId,
             XmlSettingFile initial,
-            string filename)
+            string? filename)
         {
             //ファイル名が指定されていないならクラス名
             if (filename == null)

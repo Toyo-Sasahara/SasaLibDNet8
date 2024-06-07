@@ -51,6 +51,9 @@ namespace SasaLib
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void test2()
         {
             // オプション設定

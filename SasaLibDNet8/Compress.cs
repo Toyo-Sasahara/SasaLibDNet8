@@ -106,7 +106,7 @@ namespace SasaLib
         /// <param name="overwrite">上書きフラグ。ファイルの上書きを行う場合はtrue。</param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static bool ExtractToDirectory(this ZipArchive source, string destinationDirectoryName, bool overwrite, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool ExtractToDirectory(this ZipArchive source, string destinationDirectoryName, bool overwrite, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = Console.WriteLine;
 

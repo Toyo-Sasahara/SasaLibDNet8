@@ -239,9 +239,9 @@ namespace SasaLib
         }
 
         List<int> _listNetUseOkErrNo = new List<int>();
-        private String _strPathDShare = null;
-        private String _strDriveName = null;
-        private String _strDomainName = null;
+        private String? _strPathDShare = null;
+        private String? _strDriveName = null;
+        private String? _strDomainName = null;
         private String _strUserName = "";
         private String _strPassword = "";
         private Boolean _blnIsLogonAlwaysOk = false;

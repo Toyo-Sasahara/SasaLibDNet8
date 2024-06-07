@@ -57,7 +57,7 @@ namespace SasaLib
         /// <param name="iconLocationNum"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public string ReadShortcutFile(string linkFilePath, out string targetPath, out string workingfolder, out string description, out string iconLocationFile, out int iconLocationNum, SasaLibDelegateWriteLine WriteLine = null)
+        public string ReadShortcutFile(string linkFilePath, out string targetPath, out string workingfolder, out string description, out string iconLocationFile, out int iconLocationNum, SasaLibDelegateWriteLine? WriteLine = null)
         {
             iconLocationNum = -1;
 
@@ -112,6 +112,7 @@ namespace SasaLib
             }
             catch (Exception ex)
             {
+                DebugConsole.WriteLine($"FileFolder.ReadShortcutFile(..)例外 {ex.Message} {ex.InnerException}");
                 targetPath = null;
                 workingfolder = null;
                 description = null; iconLocationFile = null;
@@ -122,7 +123,18 @@ namespace SasaLib
 
         }
 
-        public  bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0, SasaLibDelegateWriteLine WriteLine = null)
+        /// <summary>
+        /// ショートカット作成
+        /// </summary>
+        /// <param name="fullPath"></param>
+        /// <param name="targetPath"></param>
+        /// <param name="workingFolder"></param>
+        /// <param name="description"></param>
+        /// <param name="iconLocationFile"></param>
+        /// <param name="iconLocationNum"></param>
+        /// <param name="WriteLine"></param>
+        /// <returns></returns>
+        public  bool CreateShortcutFile(string fullPath, string targetPath, string? workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = Console.WriteLine;
 
@@ -159,7 +171,8 @@ namespace SasaLib
             }
             catch (Exception ex)
             {
-                WriteLine($"SasaLib.FileFolder.CreateShortCut(..) ショートカットファイル \"{fullPath}\"（ターゲット:\"{targetPath}\"） の作成に失敗しました");
+                DebugConsole.WriteLine($"FileFolder.CreateShortCut(..)例外 ショートカットファイル \"{fullPath}\"（ターゲット:\"{targetPath}\"） の作成に失敗しました {ex.Message} {ex.InnerException}");
+
                 return false;
             }
         }

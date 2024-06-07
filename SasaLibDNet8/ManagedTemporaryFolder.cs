@@ -48,7 +48,7 @@ namespace SasaLib
         /// <param name="debug"></param>
         /// <param name="WriteLine"></param>
         /// <exception cref="ArgumentException"></exception>
-        private static void WriteModeSetRecursive(string root, bool debug = false ,SasaLibDelegateWriteLine WriteLine = null)
+        private static void WriteModeSetRecursive(string root, bool debug = false ,SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 

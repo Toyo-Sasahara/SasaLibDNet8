@@ -51,7 +51,7 @@ namespace SasaLib
         /// <param name="fname"></param>
         /// <param name="debug"></param>
         /// <returns></returns>
-        public static System.Drawing.Image PartsListImageConvert(stdole.IPictureDisp Thumbnail, int width, int height, string fname = null, bool debug = true)
+        public static System.Drawing.Image PartsListImageConvert(stdole.IPictureDisp Thumbnail, int width, int height, string? fname = null, bool debug = true)
         {
             string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyPictures);
 

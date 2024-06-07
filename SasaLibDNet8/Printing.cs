@@ -629,7 +629,7 @@ namespace SasaLib
             System.Drawing.Printing.PaperSize PaperSize, // プリンタドライバ固有の用紙情報
             bool Landscape,// イメージの向き。横向きならTrue
             System.Drawing.Printing.PaperSource PaperSource, // プリンタドライバ固有のトレイ情報          
-            string outFilePath = null) //プリントデータをファイルに保存
+            string? outFilePath = null) //プリントデータをファイルに保存
         {
 
             PrintDocument printDoc = new PrintDocument();

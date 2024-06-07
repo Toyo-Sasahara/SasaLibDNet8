@@ -1209,9 +1209,7 @@ namespace SasaLib
         /// <param name="targetPath"></param>
         /// <param name="workingfolder"></param>
         /// <param name="description"></param>
-        /// <param name="iconLocationFile"></param>
-        /// <param name="iconLocationNum"></param>
-        /// <param name="WriteLine"></param>
+        /// <param name="iconLocation"></param>
         /// <returns></returns>
         public static string ReadShortcutFile(string fullPath, ref string targetPath, ref string workingfolder, ref string description, ref string iconLocation)
         {
@@ -1225,6 +1223,7 @@ namespace SasaLib
             }
             catch (Exception ex)
             {
+                DebugConsole.WriteLine($"FileFolder.ReadShortcutFile(..)例外 {ex.Message} {ex.InnerException}");
                 return null;
             }
         }
@@ -1237,11 +1236,9 @@ namespace SasaLib
         /// <param name="targetPath">参照先ファイル。存在しない場合失敗する</param>
         /// <param name="workingFolder">作業フォルダを指定</param>
         /// <param name="description">説明を追加</param>
-        /// <param name="iconLocationFile">アイコンを含むファイル・ファイルパスを指定</param>
-        /// <param name="iconLocationNum">アイコンリソースのリソース番号</param>
-        /// <param name="WriteLine">実行ログ出力用デリゲート。nullの場合は Console.WriteLine にて出力</param>
+        /// <param name="iconLocation">アイコンを含むファイル・ファイルパスを指定 カンマで アイコン番号を指定</param>
         /// <returns>成功：true, 失敗 false</returns>
-        public static bool CreateShortcutFile(string fullPath, string targetPath, string workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocation = "notepad.exe, 0")
+        public static bool CreateShortcutFile(string fullPath, string targetPath, string? workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocation = "notepad.exe, 0")
         {
             try
             {
@@ -1259,6 +1256,8 @@ namespace SasaLib
             }
             catch (Exception ex)
             {
+                DebugConsole.WriteLine($"FileFolder.CreateShortcutFile(..)例外 {ex.Message} {ex.InnerException}");
+
                 return false;
             }
         }

@@ -17,7 +17,7 @@ namespace SasaLib
         /// <summary>
         /// 
         /// </summary>
-        static string path;
+        static string? path;
 
         /// <summary>
         /// 

@@ -19,7 +19,7 @@ namespace SasaLib.PIPE
         /// 
         /// </summary>
         /// <param name="formatter"></param>
-        public ObjectConverter(IFormatter formatter = null)
+        public ObjectConverter(IFormatter? formatter = null)
 #pragma warning restore SYSLIB0011 // 型またはメンバーが旧型式です
         {
 #pragma warning disable SYSLIB0011 // 型またはメンバーが旧型式です

@@ -52,7 +52,7 @@ namespace SasaLib
         /// <param name="param"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static int ExcuteBatchCMD2(string batchfilepath, string param = "", SasaLibDelegateWriteLine WriteLine = null)
+        public static int ExcuteBatchCMD2(string batchfilepath, string param = "", SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine != null)
             {
@@ -86,7 +86,7 @@ namespace SasaLib
         /// <param name="WriteLine"></param>
         /// <returns></returns>
         [SupportedOSPlatform("windows")]
-        public static int ExcuteBatchCMD2B(string batchfilepath, string param, out string stdoutStr, out string stdErrStr, SasaLibDelegateWriteLine WriteLine = null)
+        public static int ExcuteBatchCMD2B(string batchfilepath, string param, out string stdoutStr, out string stdErrStr, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine != null)
             {
@@ -143,7 +143,7 @@ namespace SasaLib
         /// <param name="param"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static int ExcuteBatchCMD3(string batchfilepath, out string st, string param = "", SasaLibDelegateWriteLine WriteLine = null)
+        public static int ExcuteBatchCMD3(string batchfilepath, out string st, string param = "", SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine != null)
             {

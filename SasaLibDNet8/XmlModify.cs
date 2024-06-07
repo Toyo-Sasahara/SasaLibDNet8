@@ -21,7 +21,7 @@ namespace SasaLib
         /// <param name="Value"></param>
         /// <param name="WriteLine"></param>
         /// <returns>>true:正常終了</returns>
-        public static bool XmlTagUpdate(string XmlFile, string CurrentElement, string NewElement, string Value, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool XmlTagUpdate(string XmlFile, string CurrentElement, string NewElement, string Value, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -74,7 +74,7 @@ namespace SasaLib
         /// <param name="Value"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static bool XmlTagUpdate(string sourceFile, string distFile, string CurrentElement, string NewElement, string Value, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool XmlTagUpdate(string sourceFile, string distFile, string CurrentElement, string NewElement, string Value, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 

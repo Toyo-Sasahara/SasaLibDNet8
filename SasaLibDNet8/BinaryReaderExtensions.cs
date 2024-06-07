@@ -21,7 +21,7 @@ namespace SasaLib.PIPE
         /// <param name="WriteLine"></param>
         /// <param name="Verbose"></param>
         /// <returns></returns>
-        public static TObject ReadObject<TObject>(this BinaryReader reader, int readbufsize = 1024 * 20, SasaLibDelegateWriteLine WriteLine = null , bool Verbose = false)
+        public static TObject ReadObject<TObject>(this BinaryReader reader, int readbufsize = 1024 * 20, SasaLibDelegateWriteLine? WriteLine = null , bool Verbose = false)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -122,7 +122,7 @@ namespace SasaLib.PIPE
         /// <param name="timeoutmsec"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static TObject ReadObject<TObject>(this BinaryReader reader, int timeoutmsec, int readbufsize = 1024 * 20, SasaLibDelegateWriteLine WriteLine = null, bool Verbose = false)
+        public static TObject ReadObject<TObject>(this BinaryReader reader, int timeoutmsec, int readbufsize = 1024 * 20, SasaLibDelegateWriteLine? WriteLine = null, bool Verbose = false)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 

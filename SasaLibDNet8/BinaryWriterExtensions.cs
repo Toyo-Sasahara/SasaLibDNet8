@@ -32,7 +32,7 @@ namespace SasaLib.PIPE
         /// <param name="Verbose">コンソールにデバッグ情報表示</param>
         /// <param name="debugMsg">例外発生時にイベントビューアに記録する追加メッセージ・ﾃﾞﾊﾞｯｸﾞ目的</param>
         /// <returns>送信したバイト数</returns>
-        public static int WriteObject<TObject>(this BinaryWriter writer, TObject obj,int writebufsize = 1024*20,bool Verbose = false, string debugMsg = null)
+        public static int WriteObject<TObject>(this BinaryWriter writer, TObject obj,int writebufsize = 1024*20,bool Verbose = false, string? debugMsg = null)
         {
             int length=0;
 

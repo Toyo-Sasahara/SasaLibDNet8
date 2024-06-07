@@ -15,7 +15,7 @@ namespace SasaLib
         /// <param name="keyword"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static string SpecifiedStringExtraction(string source, string keyword, SasaLibDelegateWriteLine WriteLine = null)
+        public static string SpecifiedStringExtraction(string source, string keyword, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = Console.WriteLine;
 

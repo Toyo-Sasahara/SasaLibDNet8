@@ -689,7 +689,7 @@ namespace SasaLib
         /// <param name="gosa"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static PaperSizeCabinet GetPaparSize(System.Drawing.Image image, double gosa = 2.5d, SasaLibDelegateWriteLine WriteLine = null)
+        public static PaperSizeCabinet GetPaparSize(System.Drawing.Image image, double gosa = 2.5d, SasaLibDelegateWriteLine? WriteLine = null)
         {
             PM imagePaperSize = GetPaperSizeMillimeter(image);
 
@@ -789,7 +789,7 @@ namespace SasaLib
         /// <param name="Dpi"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static PM GetPaperSizeMillimeter(System.Drawing.Image image, float Dpi, SasaLibDelegateWriteLine WriteLine = null)
+        public static PM GetPaperSizeMillimeter(System.Drawing.Image image, float Dpi, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine != null)
                 WriteLine("Imageオブジェクト から 実際のサイズをmmで計算します・・・");
@@ -919,7 +919,7 @@ namespace SasaLib
         /// <param name="InterpolationMode"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static System.Drawing.Bitmap ChangeResolution(System.Drawing.Bitmap orgbmg, float NewDPIH, float NewDPIV, System.Drawing.Drawing2D.InterpolationMode InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Default, SasaLibDelegateWriteLine WriteLine = null)
+        public static System.Drawing.Bitmap ChangeResolution(System.Drawing.Bitmap orgbmg, float NewDPIH, float NewDPIV, System.Drawing.Drawing2D.InterpolationMode InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Default, SasaLibDelegateWriteLine? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
             var pformat = orgbmg.PixelFormat;

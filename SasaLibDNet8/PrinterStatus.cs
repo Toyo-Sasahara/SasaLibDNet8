@@ -39,7 +39,7 @@ namespace SasaLib
         /// <param name="evt"></param>
         /// <param name="isDebug"></param>
         /// <returns></returns>
-        public static System.Printing.PrintQueue GetPrintQueue(string printerName, EventsSummary evt = null, bool isDebug = false)
+        public static System.Printing.PrintQueue GetPrintQueue(string printerName, EventsSummary? evt = null, bool isDebug = false)
 
         {
             System.Printing.LocalPrintServer server = new System.Printing.LocalPrintServer();

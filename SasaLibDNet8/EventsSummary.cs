@@ -100,7 +100,7 @@ namespace SasaLib
         /// <param name="eventID"></param>
         /// <param name="header"></param>
         /// <param name="footer"></param>
-        public void SendEntry(string source, EventLogEntryType eventType, int eventID, string header = null, string footer = null)
+        public void SendEntry(string source, EventLogEntryType eventType, int eventID, string? header = null, string? footer = null)
         {
             if (header==null)
                 Eventlog.Log.WriteEntry(source, eventType, eventID, sb1.ToString() , true , false);
@@ -115,7 +115,7 @@ namespace SasaLib
         /// <param name="eventType"></param>
         /// <param name="header"></param>
         /// <param name="footer"></param>
-        public void SendEntry(EventLogEntryType eventType, string header = null, string footer = null)
+        public void SendEntry(EventLogEntryType eventType, string? header = null, string? footer = null)
         {
             if (header == null)
                 Eventlog.Log.WriteEntry(source, eventType, eventID, sb1.ToString(), true, false);
