@@ -2105,7 +2105,7 @@ Ribbon: Assembly
                 Control: ローカル更新, AppLocalUpdateCmd, Visible: True
                 Control: グローバル更新, AppGlobalUpdateWrapperCmd, Visible: True
             Control: 選択, ID_QAT_Assembly_Select, Visible: True
-                Control: コンポーネント優先を選択, AppComponentPriorityWrapperCmd, Visible: True
+                Control: ｺﾝﾎﾟｰﾈﾝﾄ優先を選択, AppComponentPriorityWrapperCmd, Visible: True
                 Control: パーツ優先を選択, AppLeafPriorityWrapperCmd, Visible: True
                 Control: ボディ優先を選択, AppBodyPriorityWrapperCmd, Visible: True
                 Control: フィーチャ優先を選択, AppFeaturePriorityWrapperCmd, Visible: True
@@ -4492,7 +4492,7 @@ Ribbon: Presentation
                 Control: 親に戻る, AppReturnParentCmd, Visible: True
                 Control: トップに戻る, AppReturnTopCmd, Visible: True
             Control: 選択, ID_QAT_Presentation_Select, Visible: True
-                Control: コンポーネント優先を選択, AppComponentPriorityWrapperCmd, Visible: True
+                Control: ｺﾝﾎﾟｰﾈﾝﾄ優先を選択, AppComponentPriorityWrapperCmd, Visible: True
                 Control: パーツ優先を選択, AppLeafPriorityWrapperCmd, Visible: True
             Control: 外観をリファイン, AppRefineAppearanceCmd, Visible: True
             Control: 外観のオーバーライド, AppRenderStyleComboCmd, Visible: True

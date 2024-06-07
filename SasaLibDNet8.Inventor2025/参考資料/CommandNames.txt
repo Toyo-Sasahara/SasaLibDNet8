@@ -2677,7 +2677,7 @@ PresentationRestoreCameraCtxCmd                       プレゼンテーション ビュー 
 
 PresentationSaveCameraCtxCmd                          プレゼンテーション ビュー カメラを保存
 
-PresentationSelectComponentPriorityCmd                コンポーネント優先
+PresentationSelectComponentPriorityCmd                ｺﾝﾎﾟｰﾈﾝﾄ優先
 
 PresentationSelectLeafPartPriorityCmd                 リーフ パーツ優先
 
