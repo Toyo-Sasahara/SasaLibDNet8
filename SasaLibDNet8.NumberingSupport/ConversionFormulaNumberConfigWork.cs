@@ -38,9 +38,12 @@ namespace SasaLib.NumberingSupport
                     XmlSerializer serializer = new XmlSerializer(typeof(ConversionFormulaNumberConfig));
                     sr = new System.IO.StreamReader(SuffixZeroPadVariantNumberTypeConfigFullPath, new System.Text.UTF8Encoding(false));
                     ConversionFormulaNumberConfig.Config = (ConversionFormulaNumberConfig)serializer.Deserialize(sr);
+
+                    LogWrite($"■ﾌｧｲﾙ {SuffixZeroPadVariantNumberTypeConfigFullPath} のデシアライズに成功しました");
+
                     sr.Close();
 
-                    SaveConfig(SuffixZeroPadVariantNumberTypeConfigFullPath);
+                    //SaveConfig(SuffixZeroPadVariantNumberTypeConfigFullPath);
                 }
                 else
                 {
