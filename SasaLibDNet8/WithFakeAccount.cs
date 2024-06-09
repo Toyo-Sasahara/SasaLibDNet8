@@ -11,8 +11,14 @@ using System.Runtime.Versioning;
 
 namespace SasaLib
 {
+    // TODO: ClsLogonDummy を 書き換えた
+    //new WithFakeAccount(DomainName, UserName, UserPassword, ClsLogon, () =>
+    //{
+    //});
 
-
+    /// <summary>
+    /// 偽装ﾛｸﾞｵﾝを実現
+    /// </summary>
     [SupportedOSPlatform("windows")]
     public class WithFakeAccount : IDisposable
     {

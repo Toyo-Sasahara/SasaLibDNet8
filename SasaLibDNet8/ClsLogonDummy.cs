@@ -37,4 +37,9 @@ namespace SasaLibDummy
         }
     }
 
+    // TODO: ClsLogonDummy を 書き換えた
+    //new WithFakeAccount(DomainName, UserName, UserPassword, ClsLogon, () =>
+    //{
+    //});
+
 }
