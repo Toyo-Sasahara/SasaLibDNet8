@@ -132,7 +132,7 @@ namespace SasaLib.SysConfigurator
 
             bool result = false;
 
-            var dummy = new WithFakeAccount(DomainName, UserName, UserPassword, true, () =>
+            var dummy = new WithFakeAccount(DomainName, UserName, UserPassword, ClsLogon, () =>
             {
                 WriteLine($"■現在のロギング先 {CurrnetLogFolder} です。");
                 Uri u = new Uri(newLoggingFolder);
