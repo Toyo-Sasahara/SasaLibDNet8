@@ -310,7 +310,7 @@ namespace SasaLib
         /// <summary>
         /// 
         /// </summary>
-        public static void test()
+        public static void WithFakeAccounttest()
         {
             new WithFakeAccount("AD", "Sekkei-User", "sk", true, () =>
             {

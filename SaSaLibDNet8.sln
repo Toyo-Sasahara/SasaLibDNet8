@@ -66,6 +66,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSonTest", "JSonTest\JSonTe
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SasaLibInventorShare", "SasaLibInventorShare\SasaLibInventorShare.shproj", "{4D333D99-18F5-4F47-B75F-702C7DCB41F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithFakeAccountTest", "WithFakeAccountTest\WithFakeAccountTest.csproj", "{BE8F68CC-097E-43C4-8403-E62F91E585DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -266,6 +268,14 @@ Global
 		{7679F88B-0331-4EDA-ADB9-2D2C2475589A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7679F88B-0331-4EDA-ADB9-2D2C2475589A}.Release|x64.ActiveCfg = Release|Any CPU
 		{7679F88B-0331-4EDA-ADB9-2D2C2475589A}.Release|x64.Build.0 = Release|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Debug|x64.Build.0 = Debug|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Release|x64.ActiveCfg = Release|Any CPU
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -286,11 +296,13 @@ Global
 		{84C0D6D9-675A-4A00-BF9D-4543674A6388} = {EA6DD4DF-293C-40CB-BA09-4B2E76CFD676}
 		{7679F88B-0331-4EDA-ADB9-2D2C2475589A} = {84C0D6D9-675A-4A00-BF9D-4543674A6388}
 		{4D333D99-18F5-4F47-B75F-702C7DCB41F0} = {8509F56B-9224-46D5-8276-11F51349F8D0}
+		{BE8F68CC-097E-43C4-8403-E62F91E585DA} = {84C0D6D9-675A-4A00-BF9D-4543674A6388}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B06B73B-759E-49CE-8B26-84A8711C77A1}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\SasaLibTestFrame\SasaLib.AssemblyVersion\SasaLib.AssemblyVersion.projitems*{15e1860d-7f25-4592-ba35-dc2ed26fa221}*SharedItemsImports = 4
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{1e993d9f-f7bd-440a-9d26-9e2c517f4c8e}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{2cea5067-2cb0-4197-940a-3ff57cc55849}*SharedItemsImports = 13
 		SasaLibInventorShare\SasaLibInventorShare.projitems*{4d333d99-18f5-4f47-b75f-702c7dcb41f0}*SharedItemsImports = 13
