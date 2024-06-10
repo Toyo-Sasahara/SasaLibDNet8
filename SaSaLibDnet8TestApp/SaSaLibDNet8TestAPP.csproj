@@ -181,9 +181,6 @@
 		<Reference Include="DevExpress.XtraWizard.v22.2">
 		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\Vault2025SDKcopy\DevExpress.XtraWizard.v22.2.dll</HintPath>
 		</Reference>
-		<Reference Include="SasaLib.ImageMagic">
-			<HintPath>..\..\SasaLibTestFrame\SasaLib.ImageMagic\bin\Debug\SasaLib.ImageMagic.dll</HintPath>
-		</Reference>
 		<Reference Include="SasaLib.SolidWorks">
 			<HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\bin\Debug\SasaLib.SolidWorks.dll</HintPath>
 		</Reference>
