@@ -66,7 +66,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSonTest", "JSonTest\JSonTe
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SasaLibInventorShare", "SasaLibInventorShare\SasaLibInventorShare.shproj", "{4D333D99-18F5-4F47-B75F-702C7DCB41F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithFakeAccountTest", "WithFakeAccountTest\WithFakeAccountTest.csproj", "{BE8F68CC-097E-43C4-8403-E62F91E585DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithFakeAccountTest", "WithFakeAccountTest\WithFakeAccountTest.csproj", "{BE8F68CC-097E-43C4-8403-E62F91E585DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.ImageMagic", "SasaLibDNet8.ImageMagic\SasaLibDNet8.ImageMagic.csproj", "{97DEC9B3-3F92-4B05-93B1-6098C7084F97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -276,6 +278,14 @@ Global
 		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Release|x64.ActiveCfg = Release|Any CPU
 		{BE8F68CC-097E-43C4-8403-E62F91E585DA}.Release|x64.Build.0 = Release|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Debug|x64.Build.0 = Debug|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Release|x64.ActiveCfg = Release|Any CPU
+		{97DEC9B3-3F92-4B05-93B1-6098C7084F97}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

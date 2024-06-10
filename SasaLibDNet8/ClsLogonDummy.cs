@@ -12,8 +12,6 @@ namespace SasaLibDummy
     /// </summary>
     public class ClsLogonDummy : IDisposable
     {
-        // TODO: ClsLogonDummy を 書き換える必要
-
         /// <summary>
         /// 
         /// </summary>
@@ -36,10 +34,5 @@ namespace SasaLibDummy
         {
         }
     }
-
-    // TODO: ClsLogonDummy を 書き換えた
-    //new WithFakeAccount(DomainName, UserName, UserPassword, ClsLogon, () =>
-    //{
-    //});
 
 }

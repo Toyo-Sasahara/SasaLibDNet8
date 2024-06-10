@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ImageMagic</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <AssemblyTitle>SasaLib.ImageMagic</AssemblyTitle>
+    <Product>ImageMagic</Product>
+    <Copyright>Copyright ©  2020</Copyright>
+    <InformationalVersion>SasaLib.ImageMagic 1.22.08.xx [.NET Framework 4.8]</InformationalVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
+    <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LocalVersion.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.9.1" />
+    <PackageReference Include="Magick.NET.Core" Version="13.9.1" />
+    <PackageReference Include="Magick.NET.SystemDrawing" Version="7.2.6" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+</Project>

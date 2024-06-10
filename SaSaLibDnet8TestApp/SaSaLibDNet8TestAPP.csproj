@@ -24,6 +24,7 @@
 		<ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.AutodeskVault2025\SasaLibDNet8.AutodeskVault2025.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.ImageMagic\SasaLibDNet8.ImageMagic.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.Inventor2025\SasaLibDNet8.Inventor2025.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
