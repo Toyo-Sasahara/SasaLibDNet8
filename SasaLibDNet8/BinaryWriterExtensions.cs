@@ -1,6 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.Versioning;
+using System.Security.Cryptography;
 
 namespace SasaLib.PIPE
 {
@@ -23,7 +26,7 @@ namespace SasaLib.PIPE
         //}
 
         /// <summary>
-        /// オブジェクトの書き込み
+        /// バイナリオブジェクトの書き込み
         /// </summary>
         /// <typeparam name="TObject"></typeparam>
         /// <param name="writer">BinaryWriter</param>
@@ -32,18 +35,48 @@ namespace SasaLib.PIPE
         /// <param name="Verbose">コンソールにデバッグ情報表示</param>
         /// <param name="debugMsg">例外発生時にイベントビューアに記録する追加メッセージ・ﾃﾞﾊﾞｯｸﾞ目的</param>
         /// <returns>送信したバイト数</returns>
-        public static int WriteObject<TObject>(this BinaryWriter writer, TObject obj,int writebufsize = 1024*20,bool Verbose = false, string? debugMsg = null)
+        public static int WriteObject<TObject>(this BinaryWriter writer, TObject obj, int writebufsize = 1024 * 20, bool Verbose = false, string? debugMsg = null, DATATYPE datatype = DATATYPE.IFormatter)
         {
-            int length=0;
+            int length = 0;
 
+            byte[] bytes = null;
             try
             {
+                // オブジェクトをバイト配列に変換
                 var converter = new ObjectConverter<TObject>();
-                var bytes = converter.ToByteArray(obj);
-#if DEBUG
+
+                switch (datatype)
+                {
+                    case DATATYPE.IFormatter:
+                        bytes = converter.ToByteArray(obj);
+                        break;
+
+                    case DATATYPE.JSON:
+                        long sz;
+                        Exception ex;
+
+                        bytes = converter.ToByteArrayViaJSON(obj, out sz, out ex);
+                        break;
+
+                    case DATATYPE.JSON2:
+                        Exception ex2;
+
+                        bytes = converter.ToByteArrayViaJSON2(obj, out ex2);
+                        break;
+
+                    case DATATYPE.Bitmap:
+
+                        bytes = converter.ToByteArrayFromBitmap((Bitmap)(object)obj, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        break;
+
+                    case DATATYPE.Direct:
+                        bytes = converter.ObjectToByteArrayViaDirect(obj, out sz, out ex);
+                        break;
+                }
+
+
                 if (Verbose)
                     Trace.Write($"WriteObject()送信開始   送信サイズ = {bytes.Length}");
-#endif
 
                 //全体の長さを書き込む
                 length = bytes.Length;
@@ -94,7 +127,6 @@ namespace SasaLib.PIPE
         /// <param name="obj"></param>
         /// <param name="writebufsize"></param>
         /// <param name="Verbose"></param>
-        [SupportedOSPlatform("windows")]
         public static void WriteObjectNotSplit<TObject>(this BinaryWriter writer, TObject obj, int writebufsize = 2048, bool Verbose = false)
         {
             int length = 0;
@@ -120,5 +152,33 @@ namespace SasaLib.PIPE
                 Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Error, 0, $"▲WriteObject(...),失敗,Exception={ioe.Message} 長さ={length}");
             }
         }
+    }
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum DATATYPE
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        Direct,
+        /// <summary>
+        /// 
+        /// </summary>
+        IFormatter,
+        /// <summary>
+        /// 
+        /// </summary>
+        JSON,
+        /// <summary>
+        /// 
+        /// </summary>
+        JSON2,
+        /// <summary>
+        /// 
+        /// </summary>
+        Bitmap,
     }
 }

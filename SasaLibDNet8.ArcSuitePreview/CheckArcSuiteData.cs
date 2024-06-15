@@ -465,7 +465,7 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="FullFileName"></param>
         /// <param name="delegateWriteLine"></param>
         /// <returns></returns>
-        public static bool GetArcSuiteContent(RemoteClientDRAWREGIST remoteClientDR, string target_ServiceID_CabinetID, string ZUBAN, string extension, string PreviewImageCacheFolder, out string FullFileName, CancellationToken ct, DelegateWriteLine delegateWriteLine = null)
+        public static bool GetArcSuiteContent(RemoteClientDRAWREGIST remoteClientDR, string target_ServiceID_CabinetID, string ZUBAN, string extension, string PreviewImageCacheFolder, out string FullFileName, CancellationToken ct, SasaLibDelegateWriteLine delegateWriteLine = null)
         {
             if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
 

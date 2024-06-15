@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,7 +15,7 @@ namespace SasaLib.PIPE
     public static class BinaryReaderExtensions
     {
         /// <summary>
-        /// 分割して読み込む
+        /// バイナリファイル読込（分割して読み込む）
         /// </summary>
         /// <typeparam name="TObject"></typeparam>
         /// <param name="reader"></param>
@@ -21,99 +23,128 @@ namespace SasaLib.PIPE
         /// <param name="WriteLine"></param>
         /// <param name="Verbose"></param>
         /// <returns></returns>
-        public static TObject ReadObject<TObject>(this BinaryReader reader, int readbufsize = 1024 * 20, SasaLibDelegateWriteLine? WriteLine = null , bool Verbose = false)
+        public static TObject ReadObject<TObject>(this BinaryReader reader, int readbufsize = 1024 * 20, SasaLibDelegateWriteLine? WriteLine = null, bool Verbose = false, string? debugMsg = null, DATATYPE datatype = DATATYPE.IFormatter)
         {
-            if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
-
-            // 長さを読み込んでから、バイト配列を読み込む
-            var length = 0;
             try
             {
-                length = reader.ReadInt32();
 
+                if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
+
+                // 長さを読み込んでから、バイト配列を読み込む
+                var length = 0;
+                try
+                {
+                    length = reader.ReadInt32();
+
+                    if (Verbose)
+                        WriteLine($"BinaryReaderExtensions.ReadObject(..) 受信開始   受信サイズ length ={length}");
+
+                    // もし読み込んだサイズlengthがreadbufsizeより小さければ、内部バッファはlengthとする
+                    if (length < readbufsize)
+                    {
+                        readbufsize = length;
+
+                        if (Verbose)
+                            WriteLine($"BinaryReaderExtensions.ReadObject(..) length:{length} < readbufsize:{readbufsize}. バッファサイズ設定={readbufsize}");
+                    }
+                    else
+                    {
+
+                        if (Verbose)
+                            WriteLine($"BinaryReaderExtensions.ReadObject(..) length:{length} >= readbufsize:{readbufsize}. バッファサイズ設定={readbufsize}");
+                    }
+
+                }
+                catch (IOException ioe)
+                {
+                    WriteLine($"▲BinaryReaderExtensions.ReadObject(..) 失敗. Message : \"{ioe.Message}\" StackTrace : \"{ioe.StackTrace}\"");
+                    return default(TObject);
+                }
+                catch (Exception ex)
+                {
+                    WriteLine($"▲BinaryReaderExtensions.ReadObject(..) 失敗. Message : \"{ex.Message}\" StackTrace : \"{ex.StackTrace}\"");
+                    return default(TObject);
+                }
+
+                // 最終受信配列を確保
+                byte[] bytesall = new byte[length];
+
+                int readedByte = 0;
+                int tempPercent = 0;
+                for (int i = 0; i < length; i = i + readbufsize)
+                {
+                    int v = length - i;
+                    if (v < readbufsize)
+                    {
+                        readbufsize = v;
+                    }
+                    var bytes = reader.ReadBytes(readbufsize);
+                    bytes.CopyTo(bytesall, readedByte);
+                    readedByte = readedByte + bytes.Length;
+
+                    #region 受信割合表示
+                    if (Verbose)
+                    {
+                        int percent = (int)((double)readedByte / (double)length * 100.0);
+                        if (percent != tempPercent)
+                        {
+                            WriteLine($"BinaryReaderExtensions.ReadObject(..) 読込中 {percent} %");
+                        }
+                        tempPercent = percent;
+                    }
+                    #endregion
+                }
                 if (Verbose)
-                    WriteLine($"ReadObject()受信開始   受信サイズ ={length}・・");
+                    WriteLine($"BinaryReaderExtensions.ReadObject(..)  受信完了 受信サイズ bytesall.length={bytesall.Length}");
 
-                // もし読み込んだサイズlengthがreadbufsizeより小さければ、内部バッファはlengthとする
-                if (length < readbufsize)
+                var converter = new PIPE.ObjectConverter<TObject>();
+                Exception exFromByteArray = null;
+                TObject result = default;
+                switch (datatype)
                 {
-                    readbufsize = length;
+                    case DATATYPE.IFormatter:
 
-                    if (Verbose)
-                        WriteLine($"バッファサイズ設定={readbufsize}・・");
-                }
-                else
-                {
+                        result = converter.FromByteArray(bytesall.ToArray(), out exFromByteArray);
 
-                    if (Verbose)
-                        WriteLine($"バッファサイズ設定={readbufsize}・・");
+                        break;
+
+                    case DATATYPE.JSON:
+                        throw new Exception($"{datatype} は未対応");
+                        break;
+
+                    case DATATYPE.JSON2:
+                        result = converter.FromByteArrayViaJSON2(bytesall.ToArray(), out exFromByteArray);
+
+                        break;
+
+                    case DATATYPE.Bitmap:
+
+                        result = (TObject)(object)converter.FromByteArrayToBitmap(bytesall.ToArray(), out exFromByteArray);
+                        break;
+
+                    case DATATYPE.Direct:
+                        throw new Exception($"{datatype} は未対応");
+                        break;
                 }
+
+                if (exFromByteArray != null)
+                    WriteLine($"BinaryReaderExtensions.ReadObject(..) FroByteArray(..) 例外発生 {exFromByteArray.Message}");
+
+                return result;
 
             }
             catch (IOException ioe)
             {
-                WriteLine($"▲BinaryReaderExtensions.ReadObject(..) 失敗. Message : \"{ioe.Message}\" StackTrace : \"{ioe.StackTrace}\"");
-                //var dummy1 = new ObjectConverter<TObject>();
-                //byte[] ret1 = new byte[0];
-                ////var ret = dummy1.FromByteArray(ret1.ToArray()); エラーになる
+                Trace.WriteLine($"void ReadObject<TObject>(...)にて例外 {ioe.Message}");
+                Eventlog.Log.WriteEntry("SasaLib", EventLogEntryType.Error, 0, $"▲ReadObject(...),失敗,Exception={ioe.Message} debugMsg=\"{debugMsg}\"");
 
-                //var ret = (object)ret1.ToArray();
-                //return (TObject)ret;
-                return default(TObject);
+                return default;
             }
-            catch (Exception ex)
-            {
-                WriteLine($"▲BinaryReaderExtensions.ReadObject(..) 失敗. Message : \"{ex.Message}\" StackTrace : \"{ex.StackTrace}\"");
-                //var dummy1 = new ObjectConverter<TObject>();
-                //byte[] ret1 = new byte[0];
-                ////var ret = dummy1.FromByteArray(ret1.ToArray()); エラーになる
-
-                //var ret = (object)ret1.ToArray();
-                //return (TObject)ret;
-                return default(TObject);
-            }
-
-            // 最終受信配列を確保
-            byte[] bytesall = new byte[length];
-
-            int readedByte = 0;
-            int tempPercent = 0;
-            for (int i = 0; i < length; i = i + readbufsize)
-            {
-                int v = length - i;
-                if (v < readbufsize)
-                {
-                    readbufsize = v;
-                }
-                var bytes = reader.ReadBytes(readbufsize);
-                bytes.CopyTo(bytesall, readedByte);
-                readedByte = readedByte + bytes.Length;
-
-                #region 受信割合表示
-                if (Verbose)
-                {
-                    int percent = (int)((double)readedByte / (double)length * 100.0);
-                    if (percent != tempPercent)
-                    {
-                        WriteLine($"{percent}%");
-                    }
-                    tempPercent = percent;
-                }
-                #endregion
-            }
-            if (Verbose)
-                WriteLine($"ReadObject(..) 受信完了 受信サイズ bytesall.length={bytesall.Length}");
-
-            var converter = new PIPE.ObjectConverter<TObject>();
-
-            TObject result = converter.FromByteArray(bytesall.ToArray());
-
-            return result;
         }
 
 
         /// <summary>
-        /// 分割して読み込む.タイムアウト付き
+        /// 【非推奨】分割して読み込む.タイムアウト付き
         /// </summary>
         /// <typeparam name="TObject"></typeparam>
         /// <param name="reader"></param>
@@ -212,7 +243,9 @@ namespace SasaLib.PIPE
 
                 var converter = new PIPE.ObjectConverter<TObject>();
 
-                TObject result = converter.FromByteArray(bytesall.ToArray());
+                Exception exFromByteArray;
+
+                TObject result = converter.FromByteArray(bytesall.ToArray(), out exFromByteArray);
 
                 return result;
 
@@ -239,7 +272,7 @@ namespace SasaLib.PIPE
         }
 
         /// <summary>
-        ///  分割せずに読み込む。65535でエラー
+        ///  【非推奨】分割せずに読み込む。65535でエラー
         /// </summary>
         /// <typeparam name="TObject"></typeparam>
         /// <param name="reader"></param>
@@ -251,7 +284,8 @@ namespace SasaLib.PIPE
             var bytes = reader.ReadBytes(length);
 
             var converter = new ObjectConverter<TObject>();
-            return converter.FromByteArray(bytes);
+            Exception exFromByteArray;
+            return converter.FromByteArray(bytes, out exFromByteArray);
         }
     }
 }

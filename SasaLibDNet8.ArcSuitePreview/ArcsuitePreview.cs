@@ -7,7 +7,7 @@ using static StageServerRemote.RemoteClientCADtype;
 /// </summary>
 namespace SasaLib.ArcSuitePreview
 {
-    public delegate void DelegateWriteLine(string msg);
+    //public delegate void DelegateWriteLine(string msg);
     /// <summary>
     /// 
     /// </summary>
