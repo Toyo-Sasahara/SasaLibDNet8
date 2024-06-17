@@ -27,6 +27,8 @@ namespace SasaLib.InventorAPI
 
         static bool loopGo = true;
 
+        public List<string> FullTreeViewPath { get; set; }
+
         public List<string> ExcludeFullTreeViewPath { get; set; }
 
         public List<string> ExcludeStandardOrganization { get; set; }
@@ -124,7 +126,6 @@ namespace SasaLib.InventorAPI
                 srw.WriteLine($"# データ行自体はカンマではなく半角の￥で区切る");
                 srw.WriteLine($"# 先頭3行より下の文頭#記号はコメント");
 
-                var cc = ChildNodeList.Count;
 
                 foreach (ContentTreeViewNode oNode in ChildNodeList)
                 {
@@ -145,7 +146,7 @@ namespace SasaLib.InventorAPI
                     }
                     //this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
-                    ContentCenterLocalDBGetChild(oNode, 0);
+                    bool result = ContentCenterLocalDBGetChild(oNode, 0);
 
                     // https://adndevblog.typepad.com/manufacturing/2015/12/manipulate-family-table-of-content-center.html
                 }
@@ -259,15 +260,16 @@ namespace SasaLib.InventorAPI
         {
             string currentNode = oNode.FullTreeViewPath;
 
-            if  (ExcludeFullTreeViewPath != null)
+            if (ExcludeFullTreeViewPath != null)
             {
-                if (ExcludeFullTreeViewPath.Contains(currentNode))
-                {
-                    LogWrite($"■■処理中のノード【{currentNode}】 には 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが含まれます , スキップします");
-                    srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
-                    return true;
-                }
+                //if (ExcludeFullTreeViewPath.Contains(currentNode))
+                //{
+                //    LogWrite($"■■処理中のノード【{currentNode}】 には 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが含まれます , スキップします");
+                //    srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
+                //    return true;
+                //}
             }
+
 
             foreach (ContentTreeViewNode oSubNode in oNode.ChildNodes)
             {
@@ -417,7 +419,7 @@ namespace SasaLib.InventorAPI
         /// <param name="oFamily"></param>
         /// <param name="oContentTreeViewNode"></param>
         /// <returns></returns>
-        bool ContentCenterLocalDBGetItem(ContentFamily oFamily)
+        private bool ContentCenterLocalDBGetItem(ContentFamily oFamily)
         {
 
             /// Design Tracking Properties = {32853F0F-3444-11D1-9E93-0060B03C1CA6} , 5 = Part Number
@@ -475,7 +477,7 @@ namespace SasaLib.InventorAPI
         /// <param name="strPropSetIDQuery"></param>
         /// <param name="strPropIDQuery"></param>
         /// <returns></returns>
-        int GetColumn(ContentFamily oFamily, string strPropSetIDQuery, string strPropIDQuery)
+        private int GetColumn(ContentFamily oFamily, string strPropSetIDQuery, string strPropIDQuery)
         {
             int index = 1;
 
