@@ -350,7 +350,7 @@ namespace SasaLib.NumberingSupport
 
             //var ans = remoteClientDC.GetTextFileFromPIPE(SouceFile, DistnationFile, WriteLine);
             string resultMsg;
-            var ans = remoteClientDC.FileRecv(SouceFile, DistnationFile, out resultMsg, DebugConsole.WriteLine);
+            var ans = remoteClientDC.FileRecv(SouceFile, DistnationFile, out resultMsg, WriteLine:DebugConsole.WriteLine);
 
             if (ans)
             {

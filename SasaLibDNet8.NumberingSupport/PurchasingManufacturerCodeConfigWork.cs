@@ -131,11 +131,11 @@ namespace SasaLib.NumberingSupport
         ///  正規表現にて検索。最初にヒットした答えを返す。みつからない場合null
         /// </summary>
         /// <param name="NAME"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static string GetMakerCode(string NAME, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static string GetMakerCode(string NAME, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             NAME = StringUtil.Zen2Han(NAME);
 
@@ -147,7 +147,7 @@ namespace SasaLib.NumberingSupport
                 bool result = Regex.IsMatch(NAME, pattern, RegexOptions.IgnoreCase);
                 if (result == true)
                 {
-                    delegateWriteLine($"購入品会社名 {NAME} がパターンに合致.{PurchasingManufacturer.Pattern} -> {PurchasingManufacturer.NAME} , {PurchasingManufacturer.CODE}");
+                    WriteLine($"購入品会社名 {NAME} がパターンに合致.{PurchasingManufacturer.Pattern} -> {PurchasingManufacturer.NAME} , {PurchasingManufacturer.CODE}");
                     CODE = PurchasingManufacturer.CODE;
                     break;
                 }

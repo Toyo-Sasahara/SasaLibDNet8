@@ -34,15 +34,15 @@ namespace SasaLib.ArcSuitePreview
         /// </summary>
         /// <param name="SANITIZEDPARTNUMBER"></param>
         /// <param name="ct"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public ArcSuitePreview.ArcsuitePreview QueryStart(string SANITIZEDPARTNUMBER, CancellationToken ct, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public ArcSuitePreview.ArcsuitePreview QueryStart(string SANITIZEDPARTNUMBER, CancellationToken ct, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             // Stopwatchクラス生成・計測開始
             var sw = new System.Diagnostics.Stopwatch(); sw.Start();
-            delegateWriteLine($"■CheckArcSuiteData.QueryStart(..)開始。 ArcSuiteへ {SANITIZEDPARTNUMBER}を問い合わせ <<処理(A) 時間記録スタート>>");
+            WriteLine($"■CheckArcSuiteData.QueryStart(..)開始。 ArcSuiteへ {SANITIZEDPARTNUMBER}を問い合わせ <<処理(A) 時間記録スタート>>");
 
             /// アークスイート検索をかけるパーツナンバーのリスト
             List<string> CheckPARTNUMBERlist = new List<string>();
@@ -60,30 +60,30 @@ namespace SasaLib.ArcSuitePreview
             ArcSuitePreview.ArcsuitePreview stArcSuitePreview = new ArcSuitePreview.ArcsuitePreview();
             try
             {
-                delegateWriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(..) にて図面の検索を開始します...");
+                WriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(..) にて図面の検索を開始します...");
 
-                attributeArrayResults = remoteClientDR.GetArcSuiteAttribute3("3e6f0b6f002b", CheckPARTNUMBERlist, arcSuiteGetAttrValue, ct, Console.WriteLine).Result;
+                attributeArrayResults = remoteClientDR.GetArcSuiteAttribute3("3e6f0b6f002b", CheckPARTNUMBERlist, arcSuiteGetAttrValue, ct, WriteLine: Console.WriteLine).Result;
 
                 if (ct.IsCancellationRequested == false)
                 {
                     if (attributeArrayResults != null)
                     {
-                        delegateWriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(..) 検索完了 返り値 attributeArrayResults.Count ={attributeArrayResults.Count}");
+                        WriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(..) 検索完了 返り値 attributeArrayResults.Count ={attributeArrayResults.Count}");
 
                         if (attributeArrayResults.Count == 1)
                         {
-                            delegateWriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(\"3e6f0b6f002b\",..) 返り値 attributeArrayResults.Count ={attributeArrayResults.Count} ZUMENキャビネットに見つからないため PURCHASED_ITEM_SPEC キャビネットに対して再検索を行います");
+                            WriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(\"3e6f0b6f002b\",..) 返り値 attributeArrayResults.Count ={attributeArrayResults.Count} ZUMENキャビネットに見つからないため PURCHASED_ITEM_SPEC キャビネットに対して再検索を行います");
 
-                            attributeArrayResults = remoteClientDR.GetArcSuiteAttribute3("PURCHASED_ITEM_SPEC", CheckPARTNUMBERlist, arcSuiteGetAttrValue, ct, Console.WriteLine).Result;
+                            attributeArrayResults = remoteClientDR.GetArcSuiteAttribute3("PURCHASED_ITEM_SPEC", CheckPARTNUMBERlist, arcSuiteGetAttrValue, ct, WriteLine:Console.WriteLine).Result;
 
-                            delegateWriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(\"PURCHASED_ITEM_SPEC\",..) 返り値 attributeArrayResults.Count ={attributeArrayResults.Count} ");
+                            WriteLine($"■CheckArcSuiteData.QueryStart(..) ArrayList RemoteClientDRAWREGIST.GetArcSuiteAttribute3(\"PURCHASED_ITEM_SPEC\",..) 返り値 attributeArrayResults.Count ={attributeArrayResults.Count} ");
                         }
 
                         /// CSVファイルを解析（検索結果は１件の場合のみ有効）
-                        stArcSuitePreview = analyzeResultCSV(attributeArrayResults, delegateWriteLine);
+                        stArcSuitePreview = analyzeResultCSV(attributeArrayResults, WriteLine);
 
                         sw.Stop(); TimeSpan ts = sw.Elapsed; // 計測終了
-                        delegateWriteLine($"■CheckArcSuiteData.QueryStart(..)終了 stArcSuitePreview.Normality = {stArcSuitePreview.Normality} <<処理(A)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
+                        WriteLine($"■CheckArcSuiteData.QueryStart(..)終了 stArcSuitePreview.Normality = {stArcSuitePreview.Normality} <<処理(A)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
 
                         return stArcSuitePreview;
                     } // GetArcSuiteAttribute3 stArcSuitePreview nul以外
@@ -94,21 +94,21 @@ namespace SasaLib.ArcSuitePreview
                         stArcSuitePreview.Normality = false;
 
                         sw.Stop(); TimeSpan ts = sw.Elapsed; // 計測終了
-                        delegateWriteLine($"※CheckArcSuiteData.QueryStart(..)終了 エラー：GetArcSuiteAttribute3A stArcSuitePreview がnullでした。stArcSuitePreview.Normality = {stArcSuitePreview.Normality} <<処理(A)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>");
+                        WriteLine($"※CheckArcSuiteData.QueryStart(..)終了 エラー：GetArcSuiteAttribute3A stArcSuitePreview がnullでした。stArcSuitePreview.Normality = {stArcSuitePreview.Normality} <<処理(A)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>");
 
                         return stArcSuitePreview;
                     } // GetArcSuiteAttribute3 stArcSuitePreview が null
                 }
                 else
                 {
-                    delegateWriteLine($"●CheckArcSuiteData.QueryStart(..) キャンセル実行●");
+                    WriteLine($"●CheckArcSuiteData.QueryStart(..) キャンセル実行●");
                     ArcsuitePreview notresult = new ArcSuitePreview.ArcsuitePreview();
                     return notresult;
                 }
             }
             catch (Exception ex)
             {
-                delegateWriteLine($"※CheckArcSuiteData.QueryStart(..)終了 例外検知 {ex.Message}");
+                WriteLine($"※CheckArcSuiteData.QueryStart(..)終了 例外検知 {ex.Message}");
                 return stArcSuitePreview;
             }
         }
@@ -118,11 +118,11 @@ namespace SasaLib.ArcSuitePreview
         /// </summary>
         /// <param name="listZUBAN"></param>
         /// <param name="ct"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public List<ArcSuitePreview.ArcsuitePreview> QueryStart(List<string> listZUBAN, CancellationToken ct, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public List<ArcSuitePreview.ArcsuitePreview> QueryStart(List<string> listZUBAN, CancellationToken ct, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             // Stopwatchクラス生成・計測開始
             var sw = new System.Diagnostics.Stopwatch(); sw.Start();
@@ -141,9 +141,9 @@ namespace SasaLib.ArcSuitePreview
                 {
                     var listZUBANstr = string.Join(", ", listZUBAN.Select(item => $"\"{item}\""));
 
-                    delegateWriteLine($"■CheckArcSuiteData.QueryStart(..)：ArcSuiteへ問い合わせを開始します {listZUBAN.Count} 件 【{listZUBANstr}】");
+                    WriteLine($"■CheckArcSuiteData.QueryStart(..)：ArcSuiteへ問い合わせを開始します {listZUBAN.Count} 件 【{listZUBANstr}】");
 
-                    resultsCsvs = remoteClientDR.GetArcSuiteAttribute3("3e6f0b6f002b", listZUBAN, arcSuiteGetAttrValue, ct, delegateWriteLine).Result;
+                    resultsCsvs = remoteClientDR.GetArcSuiteAttribute3("3e6f0b6f002b", listZUBAN, arcSuiteGetAttrValue, ct, WriteLine:WriteLine).Result;
 
                     if (ct.IsCancellationRequested == false)
                     {
@@ -151,7 +151,7 @@ namespace SasaLib.ArcSuitePreview
                         {
 
                             /// CSVファイルを解析
-                            stArcSuitePreviews = analyzeResultsCSV(resultsCsvs, delegateWriteLine);
+                            stArcSuitePreviews = analyzeResultsCSV(resultsCsvs, WriteLine);
 
                             string  anserZUbansStr = "----";
                             try
@@ -161,33 +161,33 @@ namespace SasaLib.ArcSuitePreview
                             catch { }                          
 
                             sw.Stop(); TimeSpan ts = sw.Elapsed; // 計測終了
-                            delegateWriteLine($"■CheckArcSuiteData.QueryStart(..)：完了・返り値 resultsCsv.Count = {resultsCsvs.Count - 1} 件, {anserZUbansStr} <<経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
+                            WriteLine($"■CheckArcSuiteData.QueryStart(..)：完了・返り値 resultsCsv.Count = {resultsCsvs.Count - 1} 件, {anserZUbansStr} <<経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
 
                             return stArcSuitePreviews;
                         } //
                         else
                         {
                             sw.Stop(); TimeSpan ts = sw.Elapsed; // 計測終了
-                            delegateWriteLine($"※CheckArcSuiteData.QueryStart(..)：エラー：nullでした。<<経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>");
+                            WriteLine($"※CheckArcSuiteData.QueryStart(..)：エラー：nullでした。<<経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>");
 
                             return null;
                         } // 
                     }
                     else
                     {
-                        delegateWriteLine($"■CheckArcSuiteData.QueryStart(..)：キャンセル実行");
+                        WriteLine($"■CheckArcSuiteData.QueryStart(..)：キャンセル実行");
                         return null;
                     }
                 }
                 else
                 {
-                    delegateWriteLine($"■CheckArcSuiteData.QueryStart(..)：検索対象が指定されていません ...");
+                    WriteLine($"■CheckArcSuiteData.QueryStart(..)：検索対象が指定されていません ...");
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                delegateWriteLine($"※CheckArcSuiteData.QueryStart(..)：CheckArcSuiteData.QueryStart(..)終了 例外検知 {ex.Message}");
+                WriteLine($"※CheckArcSuiteData.QueryStart(..)：CheckArcSuiteData.QueryStart(..)終了 例外検知 {ex.Message}");
                 return null;
             }
         }
@@ -196,11 +196,11 @@ namespace SasaLib.ArcSuitePreview
         /// ArcSuite属性検索結果のCSVファイルを解析 。回答結果が１件以下
         /// </summary>
         /// <param name="CsvData"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private ArcSuitePreview.ArcsuitePreview analyzeResultCSV(ArrayList CsvData, SasaLibDelegateWriteLine delegateWriteLine = null)
+        private ArcSuitePreview.ArcsuitePreview analyzeResultCSV(ArrayList CsvData, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             ArcSuitePreview.ArcsuitePreview stArcSuitePreview = new ArcSuitePreview.ArcsuitePreview();
 
@@ -208,21 +208,21 @@ namespace SasaLib.ArcSuitePreview
             {
                 stArcSuitePreview.Normality = false;
                 stArcSuitePreview.Found = false;
-                delegateWriteLine($"※CheckArcSuiteData.analyzeResultCSV(..)終了 エラー：CsvData.Countの値が{CsvData.Count}");
+                WriteLine($"※CheckArcSuiteData.analyzeResultCSV(..)終了 エラー：CsvData.Countの値が{CsvData.Count}");
                 return stArcSuitePreview;
             }
             else if (CsvData.Count == 1)
             {
                 stArcSuitePreview.Normality = true;
                 stArcSuitePreview.Found = false;
-                delegateWriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)終了 検索内容にヒットしませんでした");
+                WriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)終了 検索内容にヒットしませんでした");
                 return stArcSuitePreview;
             }
             else if (CsvData.Count > 2)
             {
                 stArcSuitePreview.Normality = false;
                 stArcSuitePreview.Found = false;
-                delegateWriteLine($"※CheckArcSuiteData.analyzeResultCSV(..)終了 エラー：CsvData.Countの値が{CsvData.Count}");
+                WriteLine($"※CheckArcSuiteData.analyzeResultCSV(..)終了 エラー：CsvData.Countの値が{CsvData.Count}");
                 return stArcSuitePreview;
             }
 
@@ -231,12 +231,12 @@ namespace SasaLib.ArcSuitePreview
                 string headder = Csv.CsvArrayListToString((ArrayList)CsvData[0]);
                 string data = Csv.CsvArrayListToString((ArrayList)CsvData[1]);
 
-                delegateWriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)   ﾍｯﾀﾞ部 CsvData[0] = {headder}");
-                delegateWriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)   ﾃﾞｰﾀ部 CsvData[1] = {data}");
+                WriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)   ﾍｯﾀﾞ部 CsvData[0] = {headder}");
+                WriteLine($"■CheckArcSuiteData.analyzeResultCSV(..)   ﾃﾞｰﾀ部 CsvData[1] = {data}");
             }
             catch (Exception ex)
             {
-                delegateWriteLine(ex.ToString());
+                WriteLine(ex.ToString());
             }
 
             bool isSucess;
@@ -257,9 +257,9 @@ namespace SasaLib.ArcSuitePreview
         /// 検索結果が 0 の場合 List<SasaLib.ArcSuitePreview.ArcsuitePreview>を返す（.Count() == 0）
         /// 検索失敗の場合 null を返す
         /// </returns>
-        private List<ArcSuitePreview.ArcsuitePreview> analyzeResultsCSV(ArrayList CsvData, SasaLibDelegateWriteLine delegateWriteLine = null)
+        private List<ArcSuitePreview.ArcsuitePreview> analyzeResultsCSV(ArrayList CsvData, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             List<ArcSuitePreview.ArcsuitePreview> arcsuitePreviews = new List<ArcsuitePreview>();
 
@@ -291,9 +291,9 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="CsvData"></param>
         /// <param name="ii"></param>
         /// <returns></returns>
-        private ArcsuitePreview ArcSuitePreviewDataCreate(ArrayList CsvData, int ii, out bool sucess, SasaLibDelegateWriteLine delegateWriteLine = null)
+        private ArcsuitePreview ArcSuitePreviewDataCreate(ArrayList CsvData, int ii, out bool sucess, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             try
             {
@@ -370,7 +370,7 @@ namespace SasaLib.ArcSuitePreview
             }
             catch (Exception ex)
             {
-                delegateWriteLine($"");
+                WriteLine($"");
                 sucess = false;
                 return new ArcSuitePreview.ArcsuitePreview();
             }
@@ -400,38 +400,38 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="remoteClientDR"></param>
         /// <param name="ZUBAN"></param>
         /// <param name="FullFileName">ランダムに決定されたファイル名を返す</param>
-        public static bool GetArcSuiteImagePipe(RemoteClientDRAWREGIST remoteClientDR, string ZUBAN, out string FullFileName, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static bool GetArcSuiteImagePipe(RemoteClientDRAWREGIST remoteClientDR, string ZUBAN, out string FullFileName, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             // Stopwatchクラス生成・計測開始
             var sw = new System.Diagnostics.Stopwatch(); sw.Start();
-            delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) スタート <<処理(B) 時間記録スタート>>");
+            WriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) スタート <<処理(B) 時間記録スタート>>");
 
             try
             {
                 // ランダムフォルダ名を生成
                 string PreviewImageFolder = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "InventorTOYOaddin", System.IO.Path.GetRandomFileName());
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) プレビューイメージ一時保存ﾌｫﾙﾀﾞが決定されました {PreviewImageFolder} ");
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) プレビューイメージ一時保存ﾌｫﾙﾀﾞが決定されました {PreviewImageFolder} ");
 
 
                 System.IO.Directory.CreateDirectory(PreviewImageFolder);
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 一時保存ﾌｫﾙﾀﾞ {PreviewImageFolder} を作成しました");
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 一時保存ﾌｫﾙﾀﾞ {PreviewImageFolder} を作成しました");
 
                 System.Drawing.Image img = remoteClientDR.GetArcSuiteLatestDrawing(ZUBAN);
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) System.Drawing.iamge remoteClientDR.GetArcSuiteLatestDrawing(..) を実行しました.結果:img = {img}");
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) System.Drawing.iamge remoteClientDR.GetArcSuiteLatestDrawing(..) を実行しました.結果:img = {img}");
                 if (img != null)
                 {
                     FullFileName = System.IO.Path.Combine(PreviewImageFolder, System.IO.Path.ChangeExtension(ZUBAN, "tif"));
-                    delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) イメージのファイル名を組立ました :{FullFileName}");
+                    WriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) イメージのファイル名を組立ました :{FullFileName}");
 
                     bool result = FileFolder.RemoveFile(FullFileName);
-                    delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 念のためﾞ {FullFileName} を削除しました 結果:{result}");
+                    WriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 念のためﾞ {FullFileName} を削除しました 結果:{result}");
 
                     img.Save(FullFileName);
 
                     sw.Stop(); TimeSpan ts = sw.Elapsed; // 計測終了
-                    delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 終了。  {FullFileName}として {ZUBAN} を保存しました  <<処理(B)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
+                    WriteLine($"■CheckArcSuiteData.GetArcSuiteImagePipe(..) 終了。  {FullFileName}として {ZUBAN} を保存しました  <<処理(B)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
 
                     return true;
                 }
@@ -440,7 +440,7 @@ namespace SasaLib.ArcSuitePreview
                     FullFileName = null;
 
                     sw.Stop(); TimeSpan ts = sw.Elapsed;　// 計測終了
-                    delegateWriteLine($"※CheckArcSuiteData.GetArcSuiteImagePipe(..)終了 remoteClientDR.GetArcSuiteLatestDrawing(..) の結果がnullでした 図面ﾀﾞｳﾝﾛｰﾄﾞ失敗 {ZUBAN}　<<処理(B)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
+                    WriteLine($"※CheckArcSuiteData.GetArcSuiteImagePipe(..)終了 remoteClientDR.GetArcSuiteLatestDrawing(..) の結果がnullでした 図面ﾀﾞｳﾝﾛｰﾄﾞ失敗 {ZUBAN}　<<処理(B)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
 
                     return false;
                 }
@@ -450,7 +450,7 @@ namespace SasaLib.ArcSuitePreview
             {
                 FullFileName = null;
                 sw.Stop(); TimeSpan ts = sw.Elapsed;　// 計測終了
-                delegateWriteLine($"※CheckArcSuiteData.GetArcSuiteImagePipe(..)終了 例外発生 {ex.Message} <<処理(B)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
+                WriteLine($"※CheckArcSuiteData.GetArcSuiteImagePipe(..)終了 例外発生 {ex.Message} <<処理(B)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
                 return false;
             }
 
@@ -463,46 +463,46 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="ZUBAN"></param>
         /// <param name="PreviewImageCacheFolder"></param>
         /// <param name="FullFileName"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static bool GetArcSuiteContent(RemoteClientDRAWREGIST remoteClientDR, string target_ServiceID_CabinetID, string ZUBAN, string extension, string PreviewImageCacheFolder, out string FullFileName, CancellationToken ct, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static bool GetArcSuiteContent(RemoteClientDRAWREGIST remoteClientDR, string target_ServiceID_CabinetID, string ZUBAN, string extension, string PreviewImageCacheFolder, out string FullFileName, CancellationToken ct, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             if (target_ServiceID_CabinetID == null) target_ServiceID_CabinetID = "ass1,3e6f0b6f002b";
 
             // Stopwatchクラス生成・計測開始
             var sw = new System.Diagnostics.Stopwatch(); sw.Start();
-            delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) スタート <<処理(C) 時間記録スタート>>");
+            WriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) スタート <<処理(C) 時間記録スタート>>");
 
             try
             {
                 System.IO.Directory.CreateDirectory(PreviewImageCacheFolder);
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 一時保存先フォルダは {PreviewImageCacheFolder} を作成しました");
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 一時保存先フォルダは {PreviewImageCacheFolder} を作成しました");
 
                 FullFileName = System.IO.Path.Combine(PreviewImageCacheFolder, System.IO.Path.ChangeExtension(ZUBAN, extension));
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 保存ファイルﾊﾟｽは {FullFileName} を強制します");
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 保存ファイルﾊﾟｽは {FullFileName} を強制します");
 
                 bool removeOk = FileFolder.RemoveFile(FullFileName);
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 念のため{FullFileName} を削除します。削除結果は{removeOk}でした");
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) 念のため{FullFileName} を削除します。削除結果は{removeOk}でした");
 
                 string ResultMsg;
 
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) remoteClientDR.GetArcSuiteLatestDrawingFile(..) を開始します。");
-                bool result = remoteClientDR.GetArcSuiteLatestDrawingFile(target_ServiceID_CabinetID: target_ServiceID_CabinetID, ZUBAN, FullFileName, out ResultMsg, Console.WriteLine);
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) remoteClientDR.GetArcSuiteLatestDrawingFile(..) を開始します。");
+                bool result = remoteClientDR.GetArcSuiteLatestDrawingFile(target_ServiceID_CabinetID: target_ServiceID_CabinetID, ZUBAN, FullFileName, out ResultMsg, WriteLine: Console.WriteLine);
 
                 sw.Stop(); TimeSpan ts = sw.Elapsed; // 計測終了
-                delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) remoteClientDR.GetArcSuiteLatestDrawingFile(..) から取得が完了しました {ResultMsg} <<処理(C)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
+                WriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) remoteClientDR.GetArcSuiteLatestDrawingFile(..) から取得が完了しました {ResultMsg} <<処理(C)経過時間:{ts.Minutes}分 {ts.Seconds}秒 , ({sw.ElapsedMilliseconds}msec)>>");
 
                 if (result == true)
                 {
-                    delegateWriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) ArcSuiteから図面ﾀﾞｳﾝﾛｰﾄﾞ成功 {ZUBAN} {FullFileName} ");
+                    WriteLine($"■CheckArcSuiteData.GetArcSuiteContent(..) ArcSuiteから図面ﾀﾞｳﾝﾛｰﾄﾞ成功 {ZUBAN} {FullFileName} ");
                     return true;
                 }
                 else
                 {
                     FullFileName = null;
-                    delegateWriteLine($"※CheckArcSuiteData.GetArcSuiteContent(..) ArcSuite既に登録ずみの図面ﾀﾞｳﾝﾛｰﾄﾞ失敗 {ZUBAN} ");
+                    WriteLine($"※CheckArcSuiteData.GetArcSuiteContent(..) ArcSuite既に登録ずみの図面ﾀﾞｳﾝﾛｰﾄﾞ失敗 {ZUBAN} ");
                     Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※CheckArcSuiteData.GetArcSuiteContent(..) ArcSuite既に登録ずみの図面ﾀﾞｳﾝﾛｰﾄﾞ失敗 {ZUBAN} ");
                     return false;
                 }
@@ -510,7 +510,7 @@ namespace SasaLib.ArcSuitePreview
             }
             catch (Exception ex)
             {
-                delegateWriteLine($"※CheckArcSuiteData.GetArcSuiteContent({ZUBAN}, out string TemporalyFullFileName)で例外発生 {ex.Message}");
+                WriteLine($"※CheckArcSuiteData.GetArcSuiteContent({ZUBAN}, out string TemporalyFullFileName)で例外発生 {ex.Message}");
                 Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※CheckArcSuiteData.GetArcSuiteContent({ZUBAN}, out string TemporalyFullFileName)で例外発生 {ex.Message}");
                 FullFileName = null;
                 return false;

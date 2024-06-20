@@ -220,11 +220,11 @@ namespace SasaLib.NumberingSupport
         /// AMATERIALNAMEから材質コードを調査。MaterialCodeConfig.Config.MaterialCodeDatas から 正規表現にて検索。最初にヒットした答えを返す。みつからない場合null
         /// </summary>
         /// <param name="MATERIALNAME"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static string GetMaterialCode(string MATERIALNAME, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static string GetMaterialCode(string MATERIALNAME, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             List<MaterialCodeData> matchMaterialCodeDatas = new List<MaterialCodeData>();
 
@@ -239,7 +239,7 @@ namespace SasaLib.NumberingSupport
                 bool result = Regex.IsMatch(MATERIALNAME, pattern, RegexOptions.IgnoreCase);
                 if (result == true)
                 {
-                    delegateWriteLine($"材料名{MATERIALNAME}がパターンに合致.{MaterialCodeData.Pattern} -> {MaterialCodeData.MATERIAL} , {MaterialCodeData.MATERIALCODE}");
+                    WriteLine($"材料名{MATERIALNAME}がパターンに合致.{MaterialCodeData.Pattern} -> {MaterialCodeData.MATERIAL} , {MaterialCodeData.MATERIALCODE}");
 
                     matchMaterialCodeDatas.Add(MaterialCodeData);
 
@@ -255,7 +255,7 @@ namespace SasaLib.NumberingSupport
             {
                 var recoveryTarget = string.Join(" , ", matchMaterialCodeDatas.ConvertAll(item => item.Pattern).ToList());
 
-                delegateWriteLine($"材料名{MATERIALNAME}は複数のパターンにマッチしています。データファイルの修正が必要です。修正対象{recoveryTarget}");
+                WriteLine($"材料名{MATERIALNAME}は複数のパターンにマッチしています。データファイルの修正が必要です。修正対象{recoveryTarget}");
 
                 return null;
             }

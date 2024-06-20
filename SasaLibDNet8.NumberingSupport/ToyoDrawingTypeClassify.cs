@@ -16,17 +16,17 @@ namespace SasaLib.NumberingSupport
         /// <param name="PARTNUMBER"></param>
         /// <param name="drawingType"></param>
         /// <param name="TypeName"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static bool CheckNumber_Obsoluete(string PARTNUMBER, out NumberTypeConfig.DrawingType drawingType, out string TypeName, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static bool CheckNumber_Obsoluete(string PARTNUMBER, out NumberTypeConfig.DrawingType drawingType, out string TypeName, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             bool isVariant = true;
             string suffixMIN = null;
             string suffixMAX = null;
             PARTNUMBER = StringUtil.Zen2HanANK_ZenSpace2HanSpace(PARTNUMBER).Trim().Trim('\t', '"', '\\').ToUpper();
-            bool result = CheckNumber(PARTNUMBER, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName, delegateWriteLine);
+            bool result = CheckNumber(PARTNUMBER, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName, WriteLine);
 
             return result;
         }
@@ -193,9 +193,9 @@ namespace SasaLib.NumberingSupport
         /// <param name="PARTNUMBER"></param>
         /// <param name="sanitizedPartnumber">変換結果。テーブルにヒットしない場合はそのまま返る</param>
         /// <returns></returns>
-        internal static bool ArcSuiteSpecealConversionFormulaNumber(string PARTNUMBER, out string sanitizedPartnumber, SasaLibDelegateWriteLine delegateWriteLine = null)
+        internal static bool ArcSuiteSpecealConversionFormulaNumber(string PARTNUMBER, out string sanitizedPartnumber, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             sanitizedPartnumber = PARTNUMBER;
 
@@ -205,7 +205,7 @@ namespace SasaLib.NumberingSupport
 
                 if (ConversionFormulaNumberConfig.Config.ConversionFormulas == null)
                 {
-                    delegateWriteLine($"※ConversionFormulaNumberConfig.Config.ConversionFormulas がnullです");
+                    WriteLine($"※ConversionFormulaNumberConfig.Config.ConversionFormulas がnullです");
                     return false;
                 }
 
@@ -217,7 +217,7 @@ namespace SasaLib.NumberingSupport
                     if (replacementedPARTNUMBER != PARTNUMBER)
                     {
                         sanitizedPartnumber = replacementedPARTNUMBER;
-                        delegateWriteLine($"■ConversionFormulaNumberConfig.Config.ConversionFormulas にヒットしました  Pattern\"{Pattern}\" PARTNUMBER \"{PARTNUMBER}\" -> \"{replacementedPARTNUMBER}\"");
+                        WriteLine($"■ConversionFormulaNumberConfig.Config.ConversionFormulas にヒットしました  Pattern\"{Pattern}\" PARTNUMBER \"{PARTNUMBER}\" -> \"{replacementedPARTNUMBER}\"");
                         return true;
                     }
                 }
@@ -233,15 +233,15 @@ namespace SasaLib.NumberingSupport
         /// パーツ番号を NumberTypeConfig.XML使い 【組立図面番号】ならtrueを返す
         /// </summary>
         /// <param name="input"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private static bool isASSYCheckFrom_NumberTypeConfigXML(string input, SasaLibDelegateWriteLine delegateWriteLine = null, bool verbose = true)
+        private static bool isASSYCheckFrom_NumberTypeConfigXML(string input, SasaLibDelegateWriteLine WriteLine = null, bool verbose = true)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             if (NumberTypeConfig.Config.RegexPatern_TOYO_ASSY_Drawing == null)
             {
-                delegateWriteLine($"※NumberTypeConfig.Config.RegexPatern_TOYO_ASSY_Drawing がnullです");
+                WriteLine($"※NumberTypeConfig.Config.RegexPatern_TOYO_ASSY_Drawing がnullです");
                 return false;
             }
 
@@ -250,13 +250,13 @@ namespace SasaLib.NumberingSupport
                 bool result = Regex.IsMatch(input, pattern, RegexOptions.IgnoreCase);
                 if (result == true)
                 {
-                    if (verbose)  delegateWriteLine($"\t【{input}】は【組立図面番号】 である。　　正規表現【{pattern}】の結果より判定");
+                    if (verbose)  WriteLine($"\t【{input}】は【組立図面番号】 である。　　正規表現【{pattern}】の結果より判定");
 
                     return true;
                 }
                 else
                 {
-                    if (verbose) delegateWriteLine($"\t【{input}】は【組立図面番号】 ではない。　　正規表現【{pattern}】の結果より判定");                  
+                    if (verbose) WriteLine($"\t【{input}】は【組立図面番号】 ではない。　　正規表現【{pattern}】の結果より判定");                  
                 }
             }
             return false;
@@ -266,15 +266,15 @@ namespace SasaLib.NumberingSupport
         ///  【部品図面番号】ならtrueを返す
         /// </summary>
         /// <param name="input"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private static bool isPARTCheckFrom_NumberTypeConfigXML(string input, SasaLibDelegateWriteLine delegateWriteLine = null, bool verbose = true)
+        private static bool isPARTCheckFrom_NumberTypeConfigXML(string input, SasaLibDelegateWriteLine WriteLine = null, bool verbose = true)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             if (NumberTypeConfig.Config.RegexPatern_TOYO_PART_Drawing == null)
             {
-                delegateWriteLine($"※NumberTypeConfig.Config.RegexPatern_TOYO_PART_Drawing がnullです");
+                WriteLine($"※NumberTypeConfig.Config.RegexPatern_TOYO_PART_Drawing がnullです");
                 return false;
             }
 
@@ -285,13 +285,13 @@ namespace SasaLib.NumberingSupport
                 bool result = Regex.IsMatch(input, pattern, RegexOptions.IgnoreCase);
                 if (result == true)
                 {
-                    if (verbose)  delegateWriteLine($"\t【{input}】は【部品面番号】 である。　正規表現【{pattern}】の結果より判定");
+                    if (verbose)  WriteLine($"\t【{input}】は【部品面番号】 である。　正規表現【{pattern}】の結果より判定");
                     
                     return true;
                 }
                 else
                 {
-                    if (verbose) delegateWriteLine($"\t【{input}】は【部品面番号】 ではない。　正規表現【{pattern}】の結果より判定");
+                    if (verbose) WriteLine($"\t【{input}】は【部品面番号】 ではない。　正規表現【{pattern}】の結果より判定");
                 }
             }
             return false;
@@ -301,33 +301,33 @@ namespace SasaLib.NumberingSupport
         /// 表図面かを調査
         /// </summary>
         /// <param name="input"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private static bool isVariantCheckFrom_NumberTypeConfigXML(string input, out string suffixMIN, out string suffixMAX, SasaLibDelegateWriteLine delegateWriteLine = null, bool verbose = true)
+        private static bool isVariantCheckFrom_NumberTypeConfigXML(string input, out string suffixMIN, out string suffixMAX, SasaLibDelegateWriteLine WriteLine = null, bool verbose = true)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
             suffixMIN = null;
             suffixMAX = null;
 
             if (NumberTypeConfig.Config.RegexPatern_TOYO_Variant_Suffix == null)
             {
-                delegateWriteLine($"※NumberTypeConfig.Config.RegexPatern_TOYO_Variant_Suffix がnullです");
+                WriteLine($"※NumberTypeConfig.Config.RegexPatern_TOYO_Variant_Suffix がnullです");
                 return false;
             }
 
 
             foreach (var pattern in NumberTypeConfig.Config.RegexPatern_TOYO_Variant_Suffix)
             {
-                bool result = AnalyzeVariantSuffixNumber(input, pattern, out suffixMIN, out suffixMAX, delegateWriteLine);
+                bool result = AnalyzeVariantSuffixNumber(input, pattern, out suffixMIN, out suffixMAX, WriteLine);
                 if (result == true)
                 {
-                    if (verbose) delegateWriteLine($"\t【{input}】は【表形式図面】 である。　サフィックスの値 MIN:{suffixMIN} MAX:{suffixMAX}　正規表現【{pattern}】の結果より判定");
+                    if (verbose) WriteLine($"\t【{input}】は【表形式図面】 である。　サフィックスの値 MIN:{suffixMIN} MAX:{suffixMAX}　正規表現【{pattern}】の結果より判定");
 
                     return true;
                 }
                 else
                 {
-                    if (verbose) delegateWriteLine($"\t【{input}】は【表形式図面 】ではない。正規表現【{pattern}】の結果より判定");
+                    if (verbose) WriteLine($"\t【{input}】は【表形式図面 】ではない。正規表現【{pattern}】の結果より判定");
                 }
             }
             return false;

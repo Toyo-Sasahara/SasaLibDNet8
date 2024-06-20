@@ -21,14 +21,14 @@ namespace SasaLib.NumberingSupport
         /// ■ConversionFormulaNumberConfig.XMLの記述に従い 部品番号を変更する
         /// </summary>
         /// <param name="inputNUMBER"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static string GetArcSuiteSpecealCovertedPARTNUMBER(string inputNUMBER, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static string GetArcSuiteSpecealCovertedPARTNUMBER(string inputNUMBER, SasaLibDelegateWriteLine WriteLine = null)
         {
             string ConvertedNumber;
             NumberTypeConfig.DrawingType drawingType;
             string TypeName;
-            string result = GetArcSuiteSpecealCovertedPARTNUMBER(inputNUMBER, out ConvertedNumber, out drawingType, out TypeName, delegateWriteLine);
+            string result = GetArcSuiteSpecealCovertedPARTNUMBER(inputNUMBER, out ConvertedNumber, out drawingType, out TypeName, WriteLine);
             return result;
         }
 
@@ -39,33 +39,33 @@ namespace SasaLib.NumberingSupport
         /// <param name="ConvertedNumber"></param>
         /// <param name="drawingType"></param>
         /// <param name="TypeName"></param>
-        /// <param name="delegateWriteLine"></param>
+        /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static string GetArcSuiteSpecealCovertedPARTNUMBER(string inputNUMBER, out string ConvertedNumber, out NumberTypeConfig.DrawingType drawingType, out string TypeName, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static string GetArcSuiteSpecealCovertedPARTNUMBER(string inputNUMBER, out string ConvertedNumber, out NumberTypeConfig.DrawingType drawingType, out string TypeName, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             ConvertedNumber = inputNUMBER;
             string sanitizeNumber = null;
 
-            bool ConvertedFormulaNumber = ToyoDrawingTypeClassify.ArcSuiteSpecealConversionFormulaNumber(inputNUMBER, out ConvertedNumber,delegateWriteLine);
+            bool ConvertedFormulaNumber = ToyoDrawingTypeClassify.ArcSuiteSpecealConversionFormulaNumber(inputNUMBER, out ConvertedNumber,WriteLine);
             if (ConvertedFormulaNumber)
             {
-                delegateWriteLine($"■{inputNUMBER}をArcSuiteSpecealConversionFormulaNumber(..)を使い変換 →  sanitizeNumber={ConvertedNumber}になりました。");
+                WriteLine($"■{inputNUMBER}をArcSuiteSpecealConversionFormulaNumber(..)を使い変換 →  sanitizeNumber={ConvertedNumber}になりました。");
                 sanitizeNumber = ConvertedNumber;
 
             }
             else
             {
-                delegateWriteLine($"■{inputNUMBER}をArcSuiteSpecealConversionFormulaNumber(..)を使い変換 → テーブルにヒットしません。  sanitizeNumber={inputNUMBER}になります。");
+                WriteLine($"■{inputNUMBER}をArcSuiteSpecealConversionFormulaNumber(..)を使い変換 → テーブルにヒットしません。  sanitizeNumber={inputNUMBER}になります。");
                 sanitizeNumber = inputNUMBER;
             }
 
             bool isVariant = true;
             string suffixMIN = null;
             string suffixMAX = null;
-            var numberIsToyo = ToyoDrawingTypeClassify.CheckNumber(inputNUMBER, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName, delegateWriteLine);
-            delegateWriteLine($"■入力値inputNUMBERは inputNUMBER={inputNUMBER} drawingType={drawingType} TypeName={TypeName}と判定しました");
+            var numberIsToyo = ToyoDrawingTypeClassify.CheckNumber(inputNUMBER, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName, WriteLine);
+            WriteLine($"■入力値inputNUMBERは inputNUMBER={inputNUMBER} drawingType={drawingType} TypeName={TypeName}と判定しました");
 
             
             if (numberIsToyo)
@@ -91,12 +91,12 @@ namespace SasaLib.NumberingSupport
                         sanitizeNumber = inputNUMBER;
                         break;
                 }
-                delegateWriteLine($"■入力値[{inputNUMBER}]は東陽図面形式・種類 [{drawingType}]と判断しています");
+                WriteLine($"■入力値[{inputNUMBER}]は東陽図面形式・種類 [{drawingType}]と判断しています");
             }
             else
             {
                 sanitizeNumber = inputNUMBER;
-                delegateWriteLine($"※入力値[{inputNUMBER}は非東陽形式と判断");
+                WriteLine($"※入力値[{inputNUMBER}は非東陽形式と判断");
             }
             return sanitizeNumber;
         }
@@ -125,12 +125,12 @@ namespace SasaLib.NumberingSupport
         /// </summary>
         /// <param name="PARTNUMBER">入力文字列</param>
         /// <returns>変換結果を返還後文字列で返す.変換失敗した場合は入力値をそのまま返す</returns>
-        public static string ConvertSanitaizedPartnumber(string PARTNUMBER, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static string ConvertSanitaizedPartnumber(string PARTNUMBER, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             string snitaizedPartNumber;
-            bool ans = ConvertSanitaizedPartnumber(PARTNUMBER, out snitaizedPartNumber, delegateWriteLine);
+            bool ans = ConvertSanitaizedPartnumber(PARTNUMBER, out snitaizedPartNumber, WriteLine);
 
             if (ans)
                 return snitaizedPartNumber;
@@ -144,12 +144,12 @@ namespace SasaLib.NumberingSupport
         /// <param name="PARTNUMBER">元の図面番号文字列。</param>
         /// <param name="ans">変更された文字列　Inventor拡張子がある場合のみ拡張子を削除される</param>
         /// <returns>変更された場合true</returns>
-        public static bool ConvertSanitaizedPartnumber(string PARTNUMBER, out string outPartNumber, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static bool ConvertSanitaizedPartnumber(string PARTNUMBER, out string outPartNumber, SasaLibDelegateWriteLine WriteLine = null)
         {
-            delegateWriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 実行");
+            WriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 実行");
 
 
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             outPartNumber = PARTNUMBER;
 
@@ -163,7 +163,7 @@ namespace SasaLib.NumberingSupport
             string result0 = System.Text.RegularExpressions.Regex.Replace(PARTNUMBER, "(.IPT$|.IAM$|.IDW$|.DWG$|.DXF$)", "", options);
             if (PARTNUMBER != result0)
             {
-                delegateWriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{PARTNUMBER} -> {result0}");
+                WriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{PARTNUMBER} -> {result0}");
 
                 outPartNumber = result0;
                 result = true;
@@ -171,11 +171,11 @@ namespace SasaLib.NumberingSupport
 
 
             // ArcSuiteの検索用ゼロ補完番号を生成
-            string result1 = ArcSuiteSupport.SanitaizingSimplificationStringForToyoDRAWINGNumber(result0, delegateWriteLine);
+            string result1 = ArcSuiteSupport.SanitaizingSimplificationStringForToyoDRAWINGNumber(result0, WriteLine);
             if (result1 != result0)
             {
                 outPartNumber = result1;
-                delegateWriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{result0} -> {outPartNumber}");
+                WriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{result0} -> {outPartNumber}");
                 result = true;
             }
             else
@@ -191,7 +191,7 @@ namespace SasaLib.NumberingSupport
             if (result0 != result2)
             {
                 outPartNumber = result2;
-                delegateWriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{result0} -> {outPartNumber}");
+                WriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{result0} -> {outPartNumber}");
                 result = true;
             }
             else
@@ -202,14 +202,14 @@ namespace SasaLib.NumberingSupport
             string result3 = System.Text.RegularExpressions.Regex.Replace(result2, @"_\d$", "", options);
             if (result2 != result3)
             {
-                delegateWriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{result2} -> {outPartNumber}");
+                WriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) 置換しました{result2} -> {outPartNumber}");
                 outPartNumber = result3;
                 result = true;
             }
             else
             {
                 outPartNumber = result2;
-                delegateWriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) {result2} -> {outPartNumber}");
+                WriteLine($"■ArcSuiteSupport.ConvertSanitaizedPartnumber(...) {result2} -> {outPartNumber}");
             }
 
             return result;
@@ -222,23 +222,23 @@ namespace SasaLib.NumberingSupport
         /// </summary>
         /// <param name="inputPARTNUMBER"></param>
         /// <returns></returns>
-        public static string ConvertToyoPARTNUMBERtoToyoPARTNUMBERcomponentName(string inputPARTNUMBER, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static string ConvertToyoPARTNUMBERtoToyoPARTNUMBERcomponentName(string inputPARTNUMBER, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             NumberTypeConfig.DrawingType drawingType;
             bool isVariant = true;
             string suffixMIN = null;
             string suffixMAX = null;
             string TypeName;
-            if (ToyoDrawingTypeClassify.CheckNumber(inputPARTNUMBER, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName, delegateWriteLine))
+            if (ToyoDrawingTypeClassify.CheckNumber(inputPARTNUMBER, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName, WriteLine))
             {
-                delegateWriteLine($"■ArcSuiteSupport.ConvertToyoPARTNUMBERtoToyoPARTNUMBERcomponentName(...) 図面番号 {inputPARTNUMBER} は 東陽図面形式で {drawingType} と判断されました");
+                WriteLine($"■ArcSuiteSupport.ConvertToyoPARTNUMBERtoToyoPARTNUMBERcomponentName(...) 図面番号 {inputPARTNUMBER} は 東陽図面形式で {drawingType} と判断されました");
 
 
                 string zeroPaddingedPARTNUMBER;
-                bool result = ZeroPaddingPartNumber(inputPARTNUMBER, out zeroPaddingedPARTNUMBER, delegateWriteLine);
-                if (result) delegateWriteLine($"■ArcSuiteSupport.ConvertToyoPARTNUMBERtoToyoPARTNUMBERcomponentName(...) 変換されました {inputPARTNUMBER} -> {zeroPaddingedPARTNUMBER}"); else delegateWriteLine($"変換されなかった {inputPARTNUMBER} -> {zeroPaddingedPARTNUMBER}");
+                bool result = ZeroPaddingPartNumber(inputPARTNUMBER, out zeroPaddingedPARTNUMBER, WriteLine);
+                if (result) WriteLine($"■ArcSuiteSupport.ConvertToyoPARTNUMBERtoToyoPARTNUMBERcomponentName(...) 変換されました {inputPARTNUMBER} -> {zeroPaddingedPARTNUMBER}"); else WriteLine($"変換されなかった {inputPARTNUMBER} -> {zeroPaddingedPARTNUMBER}");
 
                 // M-10201-001RL -> M-10201-001RL-R
                 string ToyoPARTNUMBERcomponetName = System.Text.RegularExpressions.Regex.Replace(zeroPaddingedPARTNUMBER, "(RL$)", "RL-R", RegexOptions.IgnoreCase);
@@ -254,9 +254,9 @@ namespace SasaLib.NumberingSupport
         /// </summary>
         /// <param name="orgValue"></param>
         /// <returns></returns>
-        public static string SanitaizingSimplificationStringForToyoDRAWINGNumber(string orgValue, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static string SanitaizingSimplificationStringForToyoDRAWINGNumber(string orgValue, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             orgValue = orgValue.ToUpper();
 
@@ -267,14 +267,14 @@ namespace SasaLib.NumberingSupport
             string TypeName;
             if (ToyoDrawingTypeClassify.CheckNumber(orgValue, out drawingType, ref isVariant, ref suffixMIN, ref suffixMAX, out TypeName))
             {
-                delegateWriteLine($"■ArcSuiteSupport.SanitaizingSimplificationStringForToyoDRAWINGNumber(...)図面番号【{orgValue}】は 東陽図面【{drawingType}】 と判断されました");
+                WriteLine($"■ArcSuiteSupport.SanitaizingSimplificationStringForToyoDRAWINGNumber(...)図面番号【{orgValue}】は 東陽図面【{drawingType}】 と判断されました");
 
                 // 文字列中の半角スペース、全角スペースを削除、全角文字を半角に変更
                 orgValue.Replace(" ", "").Replace("　", "").Zen2HanANK_ZenSpace2HanSpace();
 
                 string sanitaizedValue;
-                bool result = ZeroPaddingPartNumber(orgValue, out sanitaizedValue, delegateWriteLine:null);
-                if (result) delegateWriteLine($"■ArcSuiteSupport.SanitaizingSimplificationStringForToyoDRAWINGNumber(...)変換されました {orgValue} -> {sanitaizedValue}"); else delegateWriteLine($"変換されなかった {orgValue} -> {sanitaizedValue}");
+                bool result = ZeroPaddingPartNumber(orgValue, out sanitaizedValue, WriteLine:null);
+                if (result) WriteLine($"■ArcSuiteSupport.SanitaizingSimplificationStringForToyoDRAWINGNumber(...)変換されました {orgValue} -> {sanitaizedValue}"); else WriteLine($"変換されなかった {orgValue} -> {sanitaizedValue}");
 
                 return sanitaizedValue;
             }
@@ -290,9 +290,9 @@ namespace SasaLib.NumberingSupport
         /// <param name="inputString">@"^[A-Z][A-Z0-9]*-\d{5,6}-\d{1,3}[A-Z]?[A-Z]?$" "^[A-Z][A-Z0-9]*-\d{5,6}$" これらに該当する文字列のこと </param>
         /// <param name="zeroPaddingToyoPARTNUMBER">ゼロ補完後の文字列</param>
         /// <returns>ゼロ補完されたらtrue</returns>
-        public static bool ZeroPaddingPartNumber(string inputString, out string zeroPaddingToyoPARTNUMBER, SasaLibDelegateWriteLine delegateWriteLine = null)
+        public static bool ZeroPaddingPartNumber(string inputString, out string zeroPaddingToyoPARTNUMBER, SasaLibDelegateWriteLine WriteLine = null)
         {
-            if (delegateWriteLine == null) delegateWriteLine = Console.WriteLine;
+            if (WriteLine == null) WriteLine = Console.WriteLine;
 
             // 文字列を'-'で分解
             string[] splitWord = inputString.Split('-');
@@ -306,7 +306,7 @@ namespace SasaLib.NumberingSupport
                 case 2:
                     // M-10201,M-123446,
                     // M-11123456R 等、ハイフン一つで構成されている文字列の処理
-                    delegateWriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)配列要素2コ={inputString}");
+                    WriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)配列要素2コ={inputString}");
                     if (splitWord[1] == "")
                     {
                         zeroPaddingToyoPARTNUMBER = String.Join("-", splitWord);
@@ -324,7 +324,7 @@ namespace SasaLib.NumberingSupport
                     // M-10201RL    ->  M-10201-000RL
                     else if (Regex.IsMatch(inputString, @"[Rr][Ll]$"))
                     {
-                        delegateWriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)1つめのハイフンの次のトークンの最後がRLかrlかRlかrLです={inputString}");
+                        WriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)1つめのハイフンの次のトークンの最後がRLかrlかRlかrLです={inputString}");
                         zeroPaddingToyoPARTNUMBER = Regex.Replace(inputString, @"[Rr][Ll]$", "-000RL");
                         return true;
                     }
@@ -332,7 +332,7 @@ namespace SasaLib.NumberingSupport
                     // M-10201R M-10201-000R
                     else if (Regex.IsMatch(inputString, @"[Rr]$"))
                     {
-                        delegateWriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)1つめのハイフンの次のトークンの最後がRかrです={inputString}");
+                        WriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)1つめのハイフンの次のトークンの最後がRかrです={inputString}");
                         zeroPaddingToyoPARTNUMBER = Regex.Replace(inputString, @"[Rr]$", "-000R");
                         return true;
                     }
@@ -340,14 +340,14 @@ namespace SasaLib.NumberingSupport
                     // M-10201L M-10201-000L
                     else if (Regex.IsMatch(inputString, @"[Ll]$"))
                     {
-                        delegateWriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)1つめのハイフンの次のトークンの最後がLかlです={inputString}");
+                        WriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)1つめのハイフンの次のトークンの最後がLかlです={inputString}");
                         zeroPaddingToyoPARTNUMBER = Regex.Replace(inputString, @"[Ll]$", "-000L");
                         return true;
                     }
                     // 該当なしの場合、分割した文字列を再結合
                     else
                     {
-                        delegateWriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)該当なし。そのまま再結合します={inputString}");
+                        WriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber(string)該当なし。そのまま再結合します={inputString}");
                         zeroPaddingToyoPARTNUMBER = String.Join("-", splitWord);
                         return true;
                     }
@@ -361,11 +361,11 @@ namespace SasaLib.NumberingSupport
                     // M-10201-1    ->  M-10201-001
                     // M-10201-3R    ->  M-10201-003RL
                     // M-10201-3RL-R    ->  M-10201-003RL-R
-                    delegateWriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber({inputString})配列要素３こと４こ{inputString}");
+                    WriteLine($"■ArcSuiteSupport.ZeroPaddingPartNumber({inputString})配列要素３こと４こ{inputString}");
 
                     if (Regex.IsMatch(splitWord[2], @"^\d{1,2}(L|R|RL)?$"))
                     {
-                        delegateWriteLine($"3か４に分割された 2番目のデータで数字部が1～2桁R,L,RLの記号があるか、ない場合【{splitWord[2]}】");
+                        WriteLine($"3か４に分割された 2番目のデータで数字部が1～2桁R,L,RLの記号があるか、ない場合【{splitWord[2]}】");
 
                         splitWord[2] = StringUtil.GetStringZeroPadding(splitWord[2], 3);
                         zeroPaddingToyoPARTNUMBER = String.Join("-", splitWord);
