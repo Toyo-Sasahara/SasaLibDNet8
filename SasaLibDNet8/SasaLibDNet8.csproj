@@ -20,9 +20,16 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Base32.cs" Link="Base32.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Base64.cs" Link="Base64.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\BinaryConvertTYPE.cs" Link="BinaryConvertTYPE.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\BinaryReaderExtensions.cs" Link="BinaryReaderExtensions.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\BinaryWriterExtensions.cs" Link="BinaryWriterExtensions.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\CallIntervalMonitor.cs" Link="CallIntervalMonitor.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\CharacterCode.cs" Link="CharacterCode.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsNetUse.cs" Link="ClsNetUse.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsWinError.cs" Link="ClsWinError.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Compress.cs" Link="Compress.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectConverter.cs" Link="ObjectConverter.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\OScommand.cs" Link="OScommand.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrintConfig.cs" Link="PrintConfig.cs" />
