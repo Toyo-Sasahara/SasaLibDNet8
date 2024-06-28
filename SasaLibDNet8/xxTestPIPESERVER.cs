@@ -1,94 +1,94 @@
-﻿using System;
-using System.IO.Pipes;
-using System.Text;
+﻿//using System;
+//using System.IO.Pipes;
+//using System.Text;
 
-namespace SasaLib.PIPE
-{
-    /// <summary>
-    /// </summary>
-    public class PiepServer
-    {
-        //名前付きパイプのサーバです
-        NamedPipeServerStream server;
-
-
-        /// <summary>
-        /// Default Constructor.
-        /// </summary>
-        public PiepServer()
-        {
-            //サーバを初期化します.
-            //パイプの名前, パイプの方向, 
-            //データの種類, パイプ共有の最大数, (非)同期接続.
-            server = new NamedPipeServerStream("testpipe", PipeDirection.InOut,1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
-
-            try
-            {
-                //非同期で接続待機します.
-                //コールバックを設定します.
-                server.BeginWaitForConnection(ConnectCallback, null);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-        }
-
-        /// <summary>
-        /// BeginWaitForConnectionを実行する際に指定するコールバックです.
-        /// クライアントが接続された際に呼び出されます.
-        /// </summary>
-        /// <param name="result"></param>
-        public void ConnectCallback(IAsyncResult result)
-        {
-            //出力して通知する.
-            Console.WriteLine("Client Connect.");
-
-            //1回のBeginWaitForConnectionとセットにして、1回実行される必要があります.
-            server.EndWaitForConnection(result);
-
-            //End…を実行しない場合に接続は完了しません.
-            //"IsConnected = false"であることが確認できます.
-        }
-
-        /// <summary>
-        /// BeginWriteを実行する際に指定するコールバックです.
-        /// 非同期送信操作が完了した際に呼び出されます.
-        /// </summary>
-        /// <param name="result"></param>
-        public void WriteCallback(IAsyncResult result)
-        {
-            //1回のBeginWriteとセットにして、1回実行される必要があります.
-            server.EndWrite(result);
-            //出力して通知します.
-            Console.WriteLine("Send.");
-        }
+//namespace SasaLib.PIPE
+//{
+//    /// <summary>
+//    /// </summary>
+//    public class PiepServer
+//    {
+//        //名前付きパイプのサーバです
+//        NamedPipeServerStream server;
 
 
+//        /// <summary>
+//        /// Default Constructor.
+//        /// </summary>
+//        public PiepServer()
+//        {
+//            //サーバを初期化します.
+//            //パイプの名前, パイプの方向, 
+//            //データの種類, パイプ共有の最大数, (非)同期接続.
+//            server = new NamedPipeServerStream("testpipe", PipeDirection.InOut,1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
+
+//            try
+//            {
+//                //非同期で接続待機します.
+//                //コールバックを設定します.
+//                server.BeginWaitForConnection(ConnectCallback, null);
+//            }
+//            catch (Exception e)
+//            {
+//                Console.WriteLine(e.ToString());
+//            }
+//        }
+
+//        /// <summary>
+//        /// BeginWaitForConnectionを実行する際に指定するコールバックです.
+//        /// クライアントが接続された際に呼び出されます.
+//        /// </summary>
+//        /// <param name="result"></param>
+//        public void ConnectCallback(IAsyncResult result)
+//        {
+//            //出力して通知する.
+//            Console.WriteLine("Client Connect.");
+
+//            //1回のBeginWaitForConnectionとセットにして、1回実行される必要があります.
+//            server.EndWaitForConnection(result);
+
+//            //End…を実行しない場合に接続は完了しません.
+//            //"IsConnected = false"であることが確認できます.
+//        }
+
+//        /// <summary>
+//        /// BeginWriteを実行する際に指定するコールバックです.
+//        /// 非同期送信操作が完了した際に呼び出されます.
+//        /// </summary>
+//        /// <param name="result"></param>
+//        public void WriteCallback(IAsyncResult result)
+//        {
+//            //1回のBeginWriteとセットにして、1回実行される必要があります.
+//            server.EndWrite(result);
+//            //出力して通知します.
+//            Console.WriteLine("Send.");
+//        }
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public void TestSendMessage()
-        {
-            //サーバにクライアントが接続されていることを確認します.
-            if (server.IsConnected)
-            {
-                //送信するメッセージを作ります.
-                byte[] message = Encoding.Unicode.GetBytes("Hello client.");
-                //非同期でメッセージを送信します.
-                //コールバックを設定します.
-                server.BeginWrite(message, 0, message.Length, WriteCallback, null);
+
+
+//        /// <summary>
+//        /// 
+//        /// </summary>
+//        public void TestSendMessage()
+//        {
+//            //サーバにクライアントが接続されていることを確認します.
+//            if (server.IsConnected)
+//            {
+//                //送信するメッセージを作ります.
+//                byte[] message = Encoding.Unicode.GetBytes("Hello client.");
+//                //非同期でメッセージを送信します.
+//                //コールバックを設定します.
+//                server.BeginWrite(message, 0, message.Length, WriteCallback, null);
 
 
 
                 
-            }
-        }
+//            }
+//        }
 
-    }
-}
+//    }
+//}
 
 /*
  非同期名前付きパイプの基礎 / サーバーSide

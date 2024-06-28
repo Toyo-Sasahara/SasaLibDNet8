@@ -24,6 +24,37 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\BinaryReaderExtensions.cs" Link="BinaryReaderExtensions.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\BinaryWriterExtensions.cs" Link="BinaryWriterExtensions.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectConverter.cs" Link="ObjectConverter.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\OScommand.cs" Link="OScommand.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrintConfig.cs" Link="PrintConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrinterSimple.cs" Link="PrinterSimple.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrinterSimpleConfig.cs" Link="PrinterSimpleConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrinterSimpleConfigData.cs" Link="PrinterSimpleConfigData.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrinterStatus.cs" Link="PrinterStatus.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Printing.cs" Link="Printing.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ProcessControl.cs" Link="ProcessControl.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RegAsm.cs" Link="RegAsm.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\REGutils.cs" Link="REGutils.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SamplePrintingSetting.cs" Link="SamplePrintingSetting.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaLibDoEvent.cs" Link="SasaLibDoEvent.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaLibInfo.cs" Link="SasaLibInfo.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaPJL.cs" Link="SasaPJL.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Sound.cs" Link="Sound.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SQL.cs" Link="SQL.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StreamExtensions.cs" Link="StreamExtensions.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StreamString.cs" Link="StreamString.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StringParsing.cs" Link="StringParsing.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StringUtil.cs" Link="StringUtil.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TestPIPECLIENT.cs" Link="TestPIPECLIENT.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TestPIPESERVER.cs" Link="TestPIPESERVER.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TEST_RefRectionTool.cs" Link="TEST_RefRectionTool.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TextFile.cs" Link="TextFile.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TimeLib.cs" Link="TimeLib.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\UACUtils.cs" Link="UACUtils.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowControl.cs" Link="WindowControl.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowProcess.cs" Link="WindowProcess.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowsExplorer.cs" Link="WindowsExplorer.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlModify.cs" Link="XmlModify.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlSettingFile.cs" Link="XmlSettingFile.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
