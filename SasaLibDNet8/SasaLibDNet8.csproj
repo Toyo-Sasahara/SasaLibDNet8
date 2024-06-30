@@ -20,6 +20,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\AsyncLock.cs" Link="AsyncLock.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Base32.cs" Link="Base32.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Base64.cs" Link="Base64.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\BinaryConvertTYPE.cs" Link="BinaryConvertTYPE.cs" />
@@ -30,8 +31,40 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsNetUse.cs" Link="ClsNetUse.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsWinError.cs" Link="ClsWinError.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Compress.cs" Link="Compress.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ConsoleOption.cs" Link="ConsoleOption.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ContorlValidate.cs" Link="ContorlValidate.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ControlExtensions.cs" Link="ControlExtensions.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\CreateTIFF.cs" Link="CreateTIFF.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Csv.cs" Link="Csv.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\CycleMeasurementMemory.cs" Link="CycleMeasurementMemory.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DataGridViewUtil.cs" Link="DataGridViewUtil.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DebugSupport.cs" Link="DebugSupport.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DetectEncodingFromBOM.cs" Link="DetectEncodingFromBOM.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DotNetFrameworkAppContextSetSwitch.cs" Link="DotNetFrameworkAppContextSetSwitch.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Encryption.cs" Link="Encryption.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\EncryptionAES.cs" Link="EncryptionAES.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Enviroment.cs" Link="Enviroment.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\EventsSummary.cs" Link="EventsSummary.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ExclusiveControl.cs" Link="ExclusiveControl.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\FileFolder.cs" Link="FileFolder.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\FormsControlUtil.cs" Link="FormsControlUtil.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\GetVersion.cs" Link="GetVersion.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\GUIDExtensions.cs" Link="GUIDExtensions.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ImageUtil.cs" Link="ImageUtil.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ImageUtil1.cs" Link="ImageUtil1.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\IPictureDispTool.cs" Link="IPictureDispTool.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Log.cs" Link="Log.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ManagedTemporaryFile.cs" Link="ManagedTemporaryFile.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ManagedTemporaryFolder.cs" Link="ManagedTemporaryFolder.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Math.cs" Link="Math.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\MemoryCheck.cs" Link="MemoryCheck.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Message.cs" Link="Message.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\MessageSend.cs" Link="MessageSend.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Network.cs" Link="Network.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectConverter.cs" Link="ObjectConverter.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectWithTypeJsonConverter.cs" Link="ObjectWithTypeJsonConverter.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\OScommand.cs" Link="OScommand.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PipeLib.cs" Link="PipeLib.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrintConfig.cs" Link="PrintConfig.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrinterSimple.cs" Link="PrinterSimple.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrinterSimpleConfig.cs" Link="PrinterSimpleConfig.cs" />
@@ -44,6 +77,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SamplePrintingSetting.cs" Link="SamplePrintingSetting.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaLibDoEvent.cs" Link="SasaLibDoEvent.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaLibInfo.cs" Link="SasaLibInfo.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaLibLogging.cs" Link="SasaLibLogging.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaPJL.cs" Link="SasaPJL.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Sound.cs" Link="Sound.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SQL.cs" Link="SQL.cs" />
