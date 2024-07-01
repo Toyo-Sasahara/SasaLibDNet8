@@ -14,6 +14,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.MSIDLL\MSIDLL_Utility.cs" Link="MSIDLL_Utility.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.MSIDLL\MSIDLL_Wrapper.cs" Link="MSIDLL_Wrapper.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<COMReference Include="WindowsInstaller">
 			<VersionMinor>0</VersionMinor>
 			<VersionMajor>1</VersionMajor>

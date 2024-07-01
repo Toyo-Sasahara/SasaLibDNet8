@@ -300,7 +300,7 @@ namespace SasaLib.VariableControlPipeClient
                             return null;
 
                         object startDateTImeObj;
-                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, WriteLine).Result;
+                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, WriteLine:WriteLine).Result;
 
                         string resultStr = null;
                         if (result_UserDomainFullName != null && startDateTImeObj != null)
@@ -372,7 +372,7 @@ namespace SasaLib.VariableControlPipeClient
 
                     object resutlValue;
 
-                    resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, CommitConfigValue, setmode, WriteLine).Result;
+                    resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, CommitConfigValue, setmode, WriteLine: WriteLine).Result;
 
                     if (resutlValue != null)
                     {

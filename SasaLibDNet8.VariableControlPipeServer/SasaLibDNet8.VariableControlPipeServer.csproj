@@ -14,6 +14,17 @@
 		<PlatformTarget>x64</PlatformTarget>
 	</PropertyGroup>
 	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\CMDNAME.cs" Link="CMDNAME.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_FileControl.cs" Link="ExecuteCommands\Execute_FileControl.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_MessageBox.cs" Link="ExecuteCommands\Execute_MessageBox.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_MsiTool.cs" Link="ExecuteCommands\Execute_MsiTool.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_ValueControl.cs" Link="ExecuteCommands\Execute_ValueControl.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\ExtensionMethod.cs" Link="クライアント\ExtensionMethod.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\VariableControlPipeClient.cs" Link="クライアント\VariableControlPipeClient.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\CommandAnalyze.cs" Link="サーバー\CommandAnalyze.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\VariableControlPipeServer.cs" Link="サーバー\VariableControlPipeServer.cs" />
+	</ItemGroup>
+	<ItemGroup>
 		<Compile Update="Properties\Resources.Designer.cs">
 			<DesignTime>True</DesignTime>
 			<AutoGen>True</AutoGen>

@@ -13,6 +13,27 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\ArcSuiteSupport.cs" Link="ArcSuiteSupport.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\ConversionFormulaNumberConfig.cs" Link="ConversionFormulaNumberConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\ConversionFormulaNumberConfigWork.cs" Link="ConversionFormulaNumberConfigWork.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\MaterialCodeCheck.cs" Link="MaterialCodeCheck.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\MaterialCodeConfig.cs" Link="MaterialCodeConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\MaterialCodeConfigWork.cs" Link="MaterialCodeConfigWork.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberingSupport.cs" Link="NumberingSupport.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberingSuppportConfigs.cs" Link="NumberingSuppportConfigs.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberTypeConfig.cs" Link="NumberTypeConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberTypeConfigWork.cs" Link="NumberTypeConfigWork.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\PhrasesToBeAwareConfig.cs" Link="PhrasesToBeAwareConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\PhrasesToBeAwareConfigWork.cs" Link="PhrasesToBeAwareConfigWork.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\PurchasingManufacturerCodeConfig.cs" Link="PurchasingManufacturerCodeConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\PurchasingManufacturerCodeConfigWork.cs" Link="PurchasingManufacturerCodeConfigWork.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\SasaLibNumberingSupportInfo.cs" Link="SasaLibNumberingSupportInfo.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\StageServerDatabaseConfig.cs" Link="StageServerDatabaseConfig.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\StageServerDatabaseConfigWork.cs" Link="StageServerDatabaseConfigWork.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\ToyoDrawingTypeClassify.cs" Link="ToyoDrawingTypeClassify.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
 		<ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
 		<ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />

@@ -12,6 +12,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.MySQLConnect\Program.cs" Link="Program.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.MySQLConnect\SasaLibMySqlConnect.cs" Link="SasaLibMySqlConnect.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.MySQLConnect\SasaLibMySqlConnectInfo.cs" Link="SasaLibMySqlConnectInfo.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
 	</ItemGroup>
