@@ -83,6 +83,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SQL.cs" Link="SQL.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StreamExtensions.cs" Link="StreamExtensions.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StreamString.cs" Link="StreamString.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StringBuffer.cs" Link="StringBuffer.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StringParsing.cs" Link="StringParsing.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\StringUtil.cs" Link="StringUtil.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TestPIPECLIENT.cs" Link="TestPIPECLIENT.cs" />
@@ -94,6 +95,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowControl.cs" Link="WindowControl.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowProcess.cs" Link="WindowProcess.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowsExplorer.cs" Link="WindowsExplorer.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WithFakeAccount.cs" Link="WithFakeAccount.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlModify.cs" Link="XmlModify.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlSettingFile.cs" Link="XmlSettingFile.cs" />
 	</ItemGroup>

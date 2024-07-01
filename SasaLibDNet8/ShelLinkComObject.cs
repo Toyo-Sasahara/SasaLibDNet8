@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using SasaLib;
+#if NETCOREAPP
+using System.Runtime.Versioning;
+#endif
 
 namespace SasaLib
 {
     /// <summary>
     /// 
     /// </summary>
+#if NETCOREAPP
+    [SupportedOSPlatform("windows")]
+#endif
     public class ShelLinkComObject : IDisposable
     {
         private readonly IShellLinkW? shell;

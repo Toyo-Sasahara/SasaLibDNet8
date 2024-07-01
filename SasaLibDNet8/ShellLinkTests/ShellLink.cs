@@ -2,10 +2,16 @@
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+#if NETCOREAPP
+using System.Runtime.Versioning;
+#endif
 
 namespace SasaLib.ShellLinkTests;
 
 /// <summary>WindowsのShellLinkを表します。</summary>
+#if NETCOREAPP
+[SupportedOSPlatform("windows")]
+#endif
 public class ShellLink : IDisposable
 {
     private readonly IShellLinkW? shell;
