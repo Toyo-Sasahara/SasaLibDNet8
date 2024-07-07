@@ -19,6 +19,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MethodInvoker = System.Windows.Forms.MethodInvoker;
 
 namespace SasaLib.VariableControlPipeClient
 {
@@ -119,7 +120,7 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="msg"></param>
         private void ClientLogWrite(string msg)
         {
-            System.Windows.Forms.MethodInvoker method = () =>
+            MethodInvoker method = () =>
             {                        /// UIを操作する処理
                 try
                 {
@@ -147,7 +148,7 @@ namespace SasaLib.VariableControlPipeClient
             {
                 await Task.Run(() =>
                 {
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         //コントロールに対する処理
                         WriteLine($"Inventor利用状況ﾁｪｯｸ開始・・");
@@ -182,7 +183,7 @@ namespace SasaLib.VariableControlPipeClient
             {
                 await Task.Run(() =>
                 {
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         // コントロールに対する処理
                         WriteLine($"AutoCad利用状況ﾁｪｯｸ開始・・");
@@ -217,7 +218,7 @@ namespace SasaLib.VariableControlPipeClient
             {
                 await Task.Run(() =>
                 {
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         WriteLine($"Solidworks利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
@@ -252,7 +253,7 @@ namespace SasaLib.VariableControlPipeClient
             {
                 await Task.Run(() =>
                 {
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         //コントロールに対する処理
                         WriteLine($"ﾁｪｯｸ開始・・");
@@ -292,7 +293,7 @@ namespace SasaLib.VariableControlPipeClient
                     hostname = hosts[i];
                     var output = await Task.Run(() =>
                     {
-                        DoEvents.Run();
+                        SasaLib.DoEvents.Run();
                         VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
                         string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName).Result;
 
@@ -300,7 +301,7 @@ namespace SasaLib.VariableControlPipeClient
                             return null;
 
                         object startDateTImeObj;
-                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, WriteLine:WriteLine).Result;
+                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, WriteLine: WriteLine).Result;
 
                         string resultStr = null;
                         if (result_UserDomainFullName != null && startDateTImeObj != null)
@@ -363,7 +364,7 @@ namespace SasaLib.VariableControlPipeClient
 
                 var output = await Task.Run(() =>
                 {
-                    DoEvents.Run();
+                    SasaLib.DoEvents.Run();
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
                     string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName).Result;
 
@@ -389,7 +390,7 @@ namespace SasaLib.VariableControlPipeClient
 
                 if (output != null)
                 {
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         // コントロールに対する処理
                         checkBoxListboxSource.Items[(int)checkedNumber] = $"〇{hostname}:{output}";
@@ -398,7 +399,7 @@ namespace SasaLib.VariableControlPipeClient
                 }
                 else
                 {
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         // コントロールに対する処理
                         checkBoxListboxSource.Items[(int)checkedNumber] = $"×{hostname}";
@@ -748,7 +749,7 @@ namespace SasaLib.VariableControlPipeClient
                 if (output != null)
                 {
                     //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         checkedListBox.SetItemChecked(i, true);
                         checkedListBox.Items[i] = $"〇{hostname}:{output}";
@@ -759,7 +760,7 @@ namespace SasaLib.VariableControlPipeClient
                 {
                     //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} みつかりません ");
 
-                    System.Windows.Forms.MethodInvoker method = () =>
+                    MethodInvoker method = () =>
                     {
                         checkedListBox.SetItemChecked(i, false);
                         checkedListBox.Items[i] = $"×{hostname}";
@@ -885,14 +886,14 @@ namespace SasaLib.VariableControlPipeClient
 
         }
 
-        private void Task_XmlFileTagUpdate(string hostname, string PIPENAME, string XmlFileFullPath, string CurrentElement, string NewEllement, string SetVaule)
+        private void Task_XmlFileTagUpdate(string hostname, string PIPENAME, string XmlFileFullPath, string CurrentElement, string NewEllement, string SetVaule, bool objectConvNew = false)
         {
             WriteLine($"オーダー先 \\\\{hostname}\\PIPE\\{PIPENAME} {XmlFileFullPath} {CurrentElement} {NewEllement} {SetVaule}");
             VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
             var result1 = remote.Command_ConnnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine);
 
 
-            bool _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream)
+            bool _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream, bool objectConvNew2 = false)
             {
                 WriteLine("XmlFileTagUpdate(..) スタート");
 
@@ -925,7 +926,11 @@ namespace SasaLib.VariableControlPipeClient
                 object receveObj;
                 using (BinaryReader reader = new BinaryReader(pipeCltStream, Encoding.UTF8, true))
                 {
-                    receveObj = reader.ReadObject<Object>();
+                    if (objectConvNew)
+                        receveObj = reader.ReadObject<Object>(binaryConvertType: BinaryConvertTYPE.JsonSerializer);
+                    else
+                        receveObj = reader.ReadObject<Object>();
+
                 }
                 WriteLine($"ReadObject = {receveObj}");
 
