@@ -86,6 +86,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ObjectCovNew_checkBox = new System.Windows.Forms.CheckBox();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -117,8 +118,9 @@
             // 
             // panel8
             // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.Controls.Add(this.ObjectCovNew_checkBox);
             this.panel8.Controls.Add(this.panel12);
             this.panel8.Controls.Add(this.value_button);
             this.panel8.Controls.Add(this.ValueSetGet_panel);
@@ -170,7 +172,7 @@
             // 
             // GetInstalledSoftware_button
             // 
-            this.GetInstalledSoftware_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.GetInstalledSoftware_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GetInstalledSoftware_button.Location = new System.Drawing.Point(764, 2);
             this.GetInstalledSoftware_button.Name = "GetInstalledSoftware_button";
@@ -193,7 +195,7 @@
             // 
             // ValueSetGet_panel
             // 
-            this.ValueSetGet_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ValueSetGet_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ValueSetGet_panel.Controls.Add(this.panel2);
             this.ValueSetGet_panel.Controls.Add(this.panel3);
@@ -205,7 +207,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label4);
@@ -296,7 +298,7 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.SetMode_checkBox);
@@ -329,7 +331,7 @@
             // 
             // CommitConfigValue_comboBox
             // 
-            this.CommitConfigValue_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CommitConfigValue_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommitConfigValue_comboBox.FormattingEnabled = true;
             this.CommitConfigValue_comboBox.Items.AddRange(new object[] {
@@ -355,7 +357,7 @@
             // 
             // CommitConfigParameterName_comboBox
             // 
-            this.CommitConfigParameterName_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CommitConfigParameterName_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommitConfigParameterName_comboBox.FormattingEnabled = true;
             this.CommitConfigParameterName_comboBox.Items.AddRange(new object[] {
@@ -421,7 +423,7 @@
             // 
             // CheckFileHash_target_fullfilename_textBox
             // 
-            this.CheckFileHash_target_fullfilename_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.CheckFileHash_target_fullfilename_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CheckFileHash_target_fullfilename_textBox.Location = new System.Drawing.Point(3, 6);
             this.CheckFileHash_target_fullfilename_textBox.Name = "CheckFileHash_target_fullfilename_textBox";
@@ -431,7 +433,7 @@
             // 
             // FileHash_button
             // 
-            this.FileHash_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.FileHash_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FileHash_button.Location = new System.Drawing.Point(204, 2);
             this.FileHash_button.Name = "FileHash_button";
@@ -479,7 +481,7 @@
             // 
             // STAGINGSYSTEM_SHARE_Version_button
             // 
-            this.STAGINGSYSTEM_SHARE_Version_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.STAGINGSYSTEM_SHARE_Version_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.STAGINGSYSTEM_SHARE_Version_button.Location = new System.Drawing.Point(6, 2);
             this.STAGINGSYSTEM_SHARE_Version_button.Name = "STAGINGSYSTEM_SHARE_Version_button";
@@ -491,7 +493,7 @@
             // 
             // STAGINGSYSTEM_SHARE_Hash_button
             // 
-            this.STAGINGSYSTEM_SHARE_Hash_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.STAGINGSYSTEM_SHARE_Hash_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.STAGINGSYSTEM_SHARE_Hash_button.Location = new System.Drawing.Point(169, 2);
             this.STAGINGSYSTEM_SHARE_Hash_button.Name = "STAGINGSYSTEM_SHARE_Hash_button";
@@ -512,7 +514,7 @@
             // 
             // SasaLib_Version_button
             // 
-            this.SasaLib_Version_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SasaLib_Version_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SasaLib_Version_button.Location = new System.Drawing.Point(6, 2);
             this.SasaLib_Version_button.Name = "SasaLib_Version_button";
@@ -524,7 +526,7 @@
             // 
             // SasaLib_Hash_button
             // 
-            this.SasaLib_Hash_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SasaLib_Hash_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SasaLib_Hash_button.Location = new System.Drawing.Point(112, 2);
             this.SasaLib_Hash_button.Name = "SasaLib_Hash_button";
@@ -545,7 +547,7 @@
             // 
             // CAD_Addin_Version_button
             // 
-            this.CAD_Addin_Version_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CAD_Addin_Version_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.CAD_Addin_Version_button.Location = new System.Drawing.Point(3, 2);
             this.CAD_Addin_Version_button.Name = "CAD_Addin_Version_button";
@@ -557,7 +559,7 @@
             // 
             // CAD_Addin_Hash_Button
             // 
-            this.CAD_Addin_Hash_Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CAD_Addin_Hash_Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CAD_Addin_Hash_Button.Location = new System.Drawing.Point(114, 2);
             this.CAD_Addin_Hash_Button.Name = "CAD_Addin_Hash_Button";
@@ -569,8 +571,8 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -757,7 +759,7 @@
             this.LogTextBox.Multiline = true;
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.LogTextBox.Size = new System.Drawing.Size(1462, 870);
+            this.LogTextBox.Size = new System.Drawing.Size(1461, 873);
             this.LogTextBox.TabIndex = 35;
             // 
             // tabControl1
@@ -789,10 +791,20 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1468, 876);
+            this.tabPage2.Size = new System.Drawing.Size(1467, 879);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ログ出力";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ObjectCovNew_checkBox
+            // 
+            this.ObjectCovNew_checkBox.AutoSize = true;
+            this.ObjectCovNew_checkBox.Location = new System.Drawing.Point(12, 151);
+            this.ObjectCovNew_checkBox.Name = "ObjectCovNew_checkBox";
+            this.ObjectCovNew_checkBox.Size = new System.Drawing.Size(105, 16);
+            this.ObjectCovNew_checkBox.TabIndex = 47;
+            this.ObjectCovNew_checkBox.Text = "ObjectConvNew";
+            this.ObjectCovNew_checkBox.UseVisualStyleBackColor = true;
             // 
             // CadUsedList_Control
             // 
@@ -891,5 +903,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox ObjectCovNew_checkBox;
     }
 }

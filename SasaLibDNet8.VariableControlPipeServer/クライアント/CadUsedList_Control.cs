@@ -2,28 +2,23 @@
 using SasaLib.VariableControlPipeServer;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
 using System.IO;
 using System.IO.Pipes;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
-using System.Runtime.Versioning;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+#if NETCOREAPP
+using SasaLib.VariableControlPipeServer;
 using MethodInvoker = System.Windows.Forms.MethodInvoker;
+using System.Runtime.Versioning;
+#endif
 
 namespace SasaLib.VariableControlPipeClient
 {
+#if NETCOREAPP
     [SupportedOSPlatform("windows")]
+#endif
     public partial class CadUsedList_Control : UserControl
     {
         public SasaLibDelegateWriteLine WriteLine;
@@ -86,6 +81,12 @@ namespace SasaLib.VariableControlPipeClient
         public CadUsedList_Control()
         {
             InitializeComponent();
+
+#if NETCOREAPP
+            this.DoubleBuffered = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+#endif
+
             ValueSetGet_panel.Visible = VariableControlPipeServer.Properties.Settings.Default.ShowSetGetValuePanel;
         }
 
@@ -153,7 +154,7 @@ namespace SasaLib.VariableControlPipeClient
                         //コントロールに対する処理
                         WriteLine($"Inventor利用状況ﾁｪｯｸ開始・・");
                         Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME);
+                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"Inventor利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -178,7 +179,6 @@ namespace SasaLib.VariableControlPipeClient
         private async void AutoCad_hostCheck_button_Click(object sender, EventArgs e)
         {
             AutocadLoopcheckMode = false;
-
             do
             {
                 await Task.Run(() =>
@@ -188,7 +188,7 @@ namespace SasaLib.VariableControlPipeClient
                         // コントロールに対する処理
                         WriteLine($"AutoCad利用状況ﾁｪｯｸ開始・・");
                         Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(AutoCad_Host_CheckedListBox, AutoCadPIPENAME);
+                        var result = CheckArrivedHostCheckBoxesAsync(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"AutoCad利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -223,7 +223,7 @@ namespace SasaLib.VariableControlPipeClient
                         WriteLine($"Solidworks利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
                         Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME);
+                        var result = CheckArrivedHostCheckBoxesAsync(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"Solidworks利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -248,6 +248,7 @@ namespace SasaLib.VariableControlPipeClient
         private async void Inventor_CommitConfigConfig_button_Click(object sender, EventArgs e)
         {
             InventorLoopcheckMode = false;
+            bool objectConvNew = true;
 
             do
             {
@@ -260,7 +261,7 @@ namespace SasaLib.VariableControlPipeClient
 
                         Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
 
-                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME);
+                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
 
                         WriteLine($"ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
@@ -283,7 +284,7 @@ namespace SasaLib.VariableControlPipeClient
         /// </summary>
         /// <param name="checkBoxListboxSource"></param>
         /// <param name="PIPENAME"></param>
-        private async Task CheckArrivedHostCheckBoxesAsync(CheckedListBox checkBoxListboxSource, string PIPENAME)
+        private async Task CheckArrivedHostCheckBoxesAsync(CheckedListBox checkBoxListboxSource, string PIPENAME, bool objectConvNew = false)
         {
             string hostname;
             for (int i = 0; i < hosts.Count; i++)
@@ -300,10 +301,12 @@ namespace SasaLib.VariableControlPipeClient
                         if (result_UserDomainFullName == null)
                             return null;
 
-                        object startDateTImeObj;
-                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, WriteLine: WriteLine).Result;
+
+                        var startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
 
                         string resultStr = null;
+
+
                         if (result_UserDomainFullName != null && startDateTImeObj != null)
                         {
                             resultStr = $"{result_UserDomainFullName} | 開始:{(DateTime)startDateTImeObj}";
@@ -313,6 +316,7 @@ namespace SasaLib.VariableControlPipeClient
                             resultStr = $"{result_UserDomainFullName} | 開始時刻不明";
 
                         }
+
                         return resultStr;
 
                     });
@@ -886,11 +890,21 @@ namespace SasaLib.VariableControlPipeClient
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostname"></param>
+        /// <param name="PIPENAME"></param>
+        /// <param name="XmlFileFullPath"></param>
+        /// <param name="CurrentElement"></param>
+        /// <param name="NewEllement"></param>
+        /// <param name="SetVaule"></param>
+        /// <param name="objectConvNew"></param>
         private void Task_XmlFileTagUpdate(string hostname, string PIPENAME, string XmlFileFullPath, string CurrentElement, string NewEllement, string SetVaule, bool objectConvNew = false)
         {
             WriteLine($"オーダー先 \\\\{hostname}\\PIPE\\{PIPENAME} {XmlFileFullPath} {CurrentElement} {NewEllement} {SetVaule}");
             VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-            var result1 = remote.Command_ConnnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine);
+            var result1 = remote.Command_ConnnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
 
 
             bool _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream, bool objectConvNew2 = false)
