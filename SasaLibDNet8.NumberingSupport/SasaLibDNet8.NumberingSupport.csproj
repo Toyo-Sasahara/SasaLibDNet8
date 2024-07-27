@@ -31,6 +31,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\StageServerDatabaseConfig.cs" Link="StageServerDatabaseConfig.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\StageServerDatabaseConfigWork.cs" Link="StageServerDatabaseConfigWork.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\ToyoDrawingTypeClassify.cs" Link="ToyoDrawingTypeClassify.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\VariantDrawingNumberSupport.cs" Link="VariantDrawingNumberSupport.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
