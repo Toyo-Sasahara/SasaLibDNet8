@@ -455,12 +455,37 @@ namespace SasaLib.InventorAPI
         /// <param name="activeAsmDoc"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static ComponentOccurrence FindFirstiPropertyOccrence(Inventor.ComponentOccurrences oCoccs, string iPropertyName, string propertySetName = "User Defined Properties")
+        public static ComponentOccurrence FindFirstiPropertyOccrence(Inventor.ComponentOccurrences oCoccs, string iPropertyName, string propertySetName = "User Defined Properties", SasaLibDelegateWriteLine WriteLine = null)
         {
+            if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
+
+            int i = 0;
+            int total = oCoccs.Count;
             foreach (ComponentOccurrence oCocc in oCoccs)
             {
+                i++;
+                WriteLine($"FindFirstiPropertyOccrence(..) 検索中 [{i}/{total}] ComponentOccurrences.Name =  \"{oCocc.Name}\"");
 
-                Property iPropertyAnser = InventorAPI.InventorControl.GetiPropertyValue((Inventor.Document)oCocc.Definition.Document, propertySetName, iPropertyName, DebugConsole.WriteLine);
+                try
+                {
+                    if (oCocc.Definition == null)
+                        continue; //Definition がnullの時スキップ
+
+                }
+                catch
+                {
+                    continue; //Definition を取得失敗したときスキップ
+                }
+
+                Property iPropertyAnser = null;
+                try
+                {
+                     iPropertyAnser = InventorAPI.InventorControl.GetiPropertyValue((Inventor.Document)oCocc.Definition.Document, propertySetName, iPropertyName, DebugConsole.WriteLine);
+                }
+                catch (Exception ex)
+                {
+                    DebugConsole.WriteLine($"{ex.Message}");
+                }
                 if (iPropertyAnser == null)
                     continue;
                 if (iPropertyAnser.Type == ObjectTypeEnum.kPropertyObject)
