@@ -1,4 +1,5 @@
-﻿using SasaLib;
+﻿using Inventor;
+using SasaLib;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -37,6 +38,34 @@ namespace SasaLib.InventorAPI
             try
             {
                 Inventor.CommandControls fileControls = oApp.UserInterfaceManager.FileBrowserControls;
+                fileControls.AddButton(buttonDefinition, UseLargeIcon, ShowText, TargetControlInternalName, InsertBeforeTargetControl);
+            }
+            catch (Exception ex)
+            {
+                DebugConsole.WriteLine($"CreateToyoCOMMANDatFileMenu()で例外\n{ex.Message}");
+            }
+
+        }
+
+        /// <summary>
+        /// ■ファイルメニューにコマンドを追加
+        /// </summary>
+        /// <param name="oApp"></param>
+        /// <param name="InternalName">ButtonDefinition を得るための内部名</param>
+        /// <param name="UseLargeIcon"></param>
+        /// <param name="ShowText"></param>
+        /// <param name="TargetControlInternalName">新しいコントロールを隣に配置する既存のコントロールの内部名を指定</param>
+        /// <param name="InsertBeforeTargetControl">この内部名を持つターゲットの前に挿入する</param>
+        public static void AddNewFileMenu(Inventor.Application oApp, string InternalName, bool UseLargeIcon = false, bool ShowText = true, string TargetControlInternalName = "", bool InsertBeforeTargetControl = false)
+        {
+            //// File Controls (Application Menu)に ボタンを追加
+            try
+            {
+                Inventor.CommandControls fileControls = oApp.UserInterfaceManager.FileBrowserControls;
+
+                //create button definition
+                ButtonDefinition buttonDefinition = oApp.CommandManager.ControlDefinitions[InternalName] as ButtonDefinition;
+
                 fileControls.AddButton(buttonDefinition, UseLargeIcon, ShowText, TargetControlInternalName, InsertBeforeTargetControl);
             }
             catch (Exception ex)
