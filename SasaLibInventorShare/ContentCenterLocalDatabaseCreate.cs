@@ -306,7 +306,8 @@ namespace SasaLib.InventorAPI
                 {
                     if (this.ExcludeStandardOrganization.Contains(StandardOrganization))
                     {
-                        LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
+                        if (IsDebugWrite)
+                            LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
                         srw.WriteLine($"# ファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リストに合致。スキップします");
                         continue;
                     }
@@ -316,7 +317,8 @@ namespace SasaLib.InventorAPI
                 {
                     if (this.ExcludeStandard.Contains(Standard))
                     {
-                        LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
+                        if (IsDebugWrite)
+                            LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
                         srw.WriteLine($"# ファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リストに合致。スキップします");
                         continue;
                     }
