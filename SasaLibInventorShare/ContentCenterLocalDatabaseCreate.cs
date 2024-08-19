@@ -20,6 +20,7 @@ namespace SasaLib.InventorAPI
     public class ContentCenterLocalDatabaseCreate
     {
         SasaLibDelegateWriteLine LogWrite;
+        public bool IsDebugWrite { get; set; }
         public FileStream fs;
         StreamWriter srw;
         ContentCenter oContentCenter;
@@ -50,10 +51,11 @@ namespace SasaLib.InventorAPI
         /// </summary>
         /// <param name="oContentCente"></param>
         /// <param name="path"></param>
-        public ContentCenterLocalDatabaseCreate(ContentCenter oContentCente, string path, SasaLibDelegateWriteLine LogWrite = null)
+        public ContentCenterLocalDatabaseCreate(ContentCenter oContentCente, string path, SasaLibDelegateWriteLine LogWrite = null, bool isDebugWrite = false)
         {
             if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
             this.LogWrite = LogWrite;
+            this.IsDebugWrite = isDebugWrite;
 
             sInventorApp = (Inventor.Application)oContentCente.Application;
 
@@ -74,6 +76,7 @@ namespace SasaLib.InventorAPI
                 LogWrite($"コンテンツセンタローカルデータベース作成エラー {ex.Message}");
                 return;
             }
+            IsDebugWrite = isDebugWrite;
         }
 
 
@@ -146,7 +149,7 @@ namespace SasaLib.InventorAPI
                     }
                     //this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
-                    bool result = ContentCenterLocalDBGetChild(oNode, 0);
+                    bool result = ContentCenterLocalDBGetChild_Recursive(oNode, 0);
 
                     // https://adndevblog.typepad.com/manufacturing/2015/12/manipulate-family-table-of-content-center.html
                 }
@@ -233,7 +236,7 @@ namespace SasaLib.InventorAPI
                     }
                     //this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
-                    ContentCenterLocalDBGetChild(oNode, 0);
+                    ContentCenterLocalDBGetChild_Recursive(oNode, 0);
 
                     // https://adndevblog.typepad.com/manufacturing/2015/12/manipulate-family-table-of-content-center.html
                 }
@@ -256,18 +259,18 @@ namespace SasaLib.InventorAPI
         /// <param name="oNode"></param>
         /// <param name="LVL"></param>
         /// <returns></returns>
-        private bool ContentCenterLocalDBGetChild(ContentTreeViewNode oNode, int LVL)
+        private bool ContentCenterLocalDBGetChild_Recursive(ContentTreeViewNode oNode, int LVL)
         {
             string currentNode = oNode.FullTreeViewPath;
 
             if (ExcludeFullTreeViewPath != null)
             {
-                //if (ExcludeFullTreeViewPath.Contains(currentNode))
-                //{
-                //    LogWrite($"■■処理中のノード【{currentNode}】 には 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが含まれます , スキップします");
-                //    srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
-                //    return true;
-                //}
+                if (ExcludeFullTreeViewPath.Contains(currentNode))
+                {
+                    LogWrite($"■■処理中のノード【{currentNode}】 には 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが含まれます , スキップします");
+                    srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
+                    return true;
+                }
             }
 
 
@@ -285,7 +288,9 @@ namespace SasaLib.InventorAPI
 
                 sInventorApp.UserInterfaceManager.DoEvents();
 
-                ContentCenterLocalDBGetChild(oSubNode, LVL + 1);
+                LogWrite($"■■処理中のノード ContentTreeViewNode.DisplayName: \"{oSubNode.DisplayName}\" , ContentTreeViewNode.InternalName: \"{oSubNode.InternalName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
+
+                ContentCenterLocalDBGetChild_Recursive(oSubNode, LVL + 1);
             }
 
             foreach (ContentFamily oFamily in oNode.Families)
@@ -399,8 +404,8 @@ namespace SasaLib.InventorAPI
                     //sw.WriteLine($"#ContentFamily_TemplateFileName = {ContentFamily_TemplateFileName}");
                     bool ans = ContentCenterLocalDBGetItem(oFamily);
 
-
-                    this.LogWrite($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime}より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
+                    if (IsDebugWrite)
+                        this.LogWrite($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
 
                     if (ans)
                     {
@@ -466,7 +471,7 @@ namespace SasaLib.InventorAPI
                     Console.WriteLine(ex.Message);
                 }
             }
-            srw.Flush();
+            //srw.Flush();
             return result;
         }
 
