@@ -88,10 +88,32 @@ namespace SasaLib.InventorAPI
         {
             List<ContentTreeViewNode> nodeList = new List<ContentTreeViewNode>();
 
-            foreach (string nodeName in FullTreeViewPaths)
+            //foreach (string nodeName in FullTreeViewPaths)
+            //{
+
+            //    nodeList.Add(oContentCenter.TreeViewTopNode.ChildNodes[nodeName]);
+            //}
+
+            foreach (string line in FullTreeViewPaths)
             {
-                nodeList.Add(oContentCenter.TreeViewTopNode.ChildNodes[nodeName]);
+                // コロンで区切られた部分を取得
+                string[] parts = line.Split(':');
+
+                // 最初の部分でChildNodesを呼び出し
+                dynamic currentNode = oContentCenter.TreeViewTopNode.ChildNodes[parts[0]];
+
+                // 残りの部分について順にChildNodesを呼び出し
+                for (int i = 1; i < parts.Length; i++)
+                {
+                    currentNode = currentNode.ChildNodes[parts[i]];
+                }
+
+                nodeList.Add(currentNode);
+
+                // 最後に必要な処理があればここで行う
+                // 例: currentNodeを使って何か処理する
             }
+
             var nodeNameList = string.Join(",", FullTreeViewPaths);
             LogWrite($"■検索するルートノード{nodeNameList}");
 
@@ -161,7 +183,7 @@ namespace SasaLib.InventorAPI
                     }
 
                     if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                        this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
+                        LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
                     bool result = ContentCenterLocalDBGetChild_Recursive(oNode, 0);
 
@@ -281,8 +303,8 @@ namespace SasaLib.InventorAPI
             {
                 if (ExcludeFullTreeViewPath.Contains(currentNode))
                 {
-                    LogWrite($"■■処理中のノード【{currentNode}】 には 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが該当します , スキップします");
-                    srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
+                    LogWrite($"□□処理中のノード【{currentNode}】 は 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが該当します , スキップします");
+                    srw.WriteLine($"# □ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
                     return true;
                 }
             }
@@ -314,6 +336,8 @@ namespace SasaLib.InventorAPI
 
             foreach (ContentTreeViewNode oSubNode in oNode.ChildNodes)
             {
+                var categoryName = oSubNode.FullTreeViewPath;
+
                 if (AbortLoopFlag)
                 {
                     LogWrite($"BreakeLoopFlag = {AbortLoopFlag} のため  foreach (ContentTreeViewNode oSubNode in oNode.ChildNodes) を抜けます");
@@ -325,19 +349,20 @@ namespace SasaLib.InventorAPI
                     return false;
 
                 sInventorApp.UserInterfaceManager.DoEvents();
+                if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
+                    LogWrite($"■■処理中のカテゴリ\"{categoryName}\" (サブノード ContentTreeViewNode.DisplayName: \"{oSubNode.DisplayName}\") , ContentTreeViewNode.InternalName: \"{oSubNode.InternalName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
+                else
+                    LogWrite($"■■処理中のカテゴリ\"{categoryName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
 
-                LogWrite($"■■処理中のノード ContentTreeViewNode.DisplayName: \"{oSubNode.DisplayName}\" , ContentTreeViewNode.InternalName: \"{oSubNode.InternalName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
+
 
                 ContentCenterLocalDBGetChild_Recursive(oSubNode, LVL + 1);
             }
 
             srw.WriteLine($"# ノード名【{oNode.FullTreeViewPath}】");
 
-            
-
             foreach (ContentFamily oFamily in oNode.Families)
             {
-                //this.LogWrite($"処理中 ContentFamily_DisplayName = {oFamily.DisplayName}");
 
                 var FamilyDispayName = oFamily.DisplayName;
                 var StandardOrganization = oFamily.StandardOrganization;
@@ -349,8 +374,8 @@ namespace SasaLib.InventorAPI
                     if (this.ExcludeStandardOrganization.Contains(StandardOrganization))
                     {
                         if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                            LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
-                        srw.WriteLine($"# ファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リストに合致。スキップします");
+                            LogWrite($"□□処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
+                        srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リストに合致。スキップします");
                         continue;
                     }
                 }
@@ -360,8 +385,8 @@ namespace SasaLib.InventorAPI
                     if (this.ExcludeStandard.Contains(Standard))
                     {
                         if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                            LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
-                        srw.WriteLine($"# ファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リストに合致。スキップします");
+                            LogWrite($"□□処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
+                        srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リストに合致。スキップします");
                         continue;
                     }
                 }
@@ -394,6 +419,8 @@ namespace SasaLib.InventorAPI
 
 
                 sInventorApp.UserInterfaceManager.DoEvents();
+
+
                 if (oFamily != null)
                 {
 
@@ -443,13 +470,14 @@ namespace SasaLib.InventorAPI
 
                     //StandardAddInServer.sLogWindowForm.WriteLine($"#{oNode.FullTreeViewPath}");
                     //sw.WriteLine($"#ContentTreeViewNode_DisplayName = {ContentTreeViewNode_DisplayName}");
-                    srw.WriteLine($"#ContentFamily_DisplayName = {ContentFamily_DisplayName}");
+                    LogWrite($"\tファミリ: \"{FamilyDispayName}\" を取得中 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
+                    srw.WriteLine($"#ContentFamily_DisplayName = \"{ContentFamily_DisplayName}\" ファミリー【{FamilyDispayName}】 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
                     //sw.WriteLine($"#ContentFamily_Description = {ContentFamily_Description}");
                     //sw.WriteLine($"#ContentFamily_TemplateFileName = {ContentFamily_TemplateFileName}");
-                    bool ans = ContentCenterLocalDBGetItem(oFamily);
+                    bool ans = ContentCenterLocalDB_GetFamilyTable(oFamily);
 
                     if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                        this.LogWrite($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
+                        LogWrite($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
 
                     if (ans)
                     {
@@ -463,12 +491,12 @@ namespace SasaLib.InventorAPI
         }
 
         /// <summary>
-        /// 
+        /// ファミリテーブルの行を取得・処理
         /// </summary>
         /// <param name="oFamily"></param>
         /// <param name="oContentTreeViewNode"></param>
         /// <returns></returns>
-        private bool ContentCenterLocalDBGetItem(ContentFamily oFamily)
+        private bool ContentCenterLocalDB_GetFamilyTable(ContentFamily oFamily)
         {
 
             /// Design Tracking Properties = {32853F0F-3444-11D1-9E93-0060B03C1CA6} , 5 = Part Number
