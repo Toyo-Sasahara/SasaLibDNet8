@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Xml.Linq;
 using System.Runtime.Versioning;
+using System.Management.Instrumentation;
 
 namespace SasaLib.InventorAPI
 {
@@ -20,15 +21,15 @@ namespace SasaLib.InventorAPI
     public class ContentCenterLocalDatabaseCreate
     {
         SasaLibDelegateWriteLine LogWrite;
-        public bool IsDebugWrite { get; set; }
+        public bool IsConentCenterLocalDatabaseLoad_DebugWriteMode { get; set; }
         public FileStream fs;
-        StreamWriter srw;
+        public StreamWriter srw;
         ContentCenter oContentCenter;
         Inventor.Application sInventorApp;
 
         static bool loopGo = true;
 
-        public List<string> FullTreeViewPath { get; set; }
+        public List<string> FullTreeViewPaths { get; set; }
 
         public List<string> ExcludeFullTreeViewPath { get; set; }
 
@@ -55,7 +56,7 @@ namespace SasaLib.InventorAPI
         {
             if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
             this.LogWrite = LogWrite;
-            this.IsDebugWrite = isDebugWrite;
+            this.IsConentCenterLocalDatabaseLoad_DebugWriteMode = isDebugWrite;
 
             sInventorApp = (Inventor.Application)oContentCente.Application;
 
@@ -76,16 +77,25 @@ namespace SasaLib.InventorAPI
                 LogWrite($"コンテンツセンタローカルデータベース作成エラー {ex.Message}");
                 return;
             }
-            IsDebugWrite = isDebugWrite;
+            IsConentCenterLocalDatabaseLoad_DebugWriteMode = isDebugWrite;
         }
 
 
         /// <summary>
         /// コンテンツセンター・ﾛｰｶﾙﾃﾞｰﾀﾍﾞｰｽﾌｧｲﾙの作成
         /// </summary>
-        /// <param name="ChildNodeList">List<ContentTreeViewNode>型</param>
-        public bool CreateStart(List<ContentTreeViewNode> ChildNodeList)
+        public bool CreateStart()
         {
+            List<ContentTreeViewNode> nodeList = new List<ContentTreeViewNode>();
+
+            foreach (string nodeName in FullTreeViewPaths)
+            {
+                nodeList.Add(oContentCenter.TreeViewTopNode.ChildNodes[nodeName]);
+            }
+            var nodeNameList = string.Join(",", FullTreeViewPaths);
+            LogWrite($"■検索するルートノード{nodeNameList}");
+
+
             AbortLoopFlag = false;
 
             CreatStartDatetime = DateTime.Now;
@@ -103,6 +113,8 @@ namespace SasaLib.InventorAPI
                 {
                     LibraryManager oContentCenterLibraryManager = oContentCenter.LibraryManager;
                     string serverLibrariesXML = oContentCenterLibraryManager.GetServerLibraries();
+
+
                     LogWrite($"■コンテンツセンタローカルデータベース作成開始 GetServerLibraries() = {serverLibrariesXML}");
 
                     XElement xmlTree = XElement.Parse(serverLibrariesXML);
@@ -121,7 +133,8 @@ namespace SasaLib.InventorAPI
                 srw.WriteLine($"# コンテンツセンター ローカルデータベースファイル 作成ホスト:{System.Environment.MachineName} User:{System.Environment.UserName} Domain:{System.Environment.UserDomainName} : InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}");
                 srw.WriteLine($"# 調査したデータベース:{AttacheNamesString}");
 
-                LogWrite($"■コンテンツセンタローカルデータベース作成開始。 作成元InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}, 調査したデータベース:{AttacheNamesString}");
+
+                srw.WriteLine($"# 作成するルートノード{nodeNameList}");
 
                 srw.WriteLine($"# 1行目はこのデータファイルの作成タイムスタンプ");
                 srw.WriteLine($"# 2行目は文頭文末の引用符を除去した文字列DataTableオブジェクトの名前");
@@ -129,8 +142,7 @@ namespace SasaLib.InventorAPI
                 srw.WriteLine($"# データ行自体はカンマではなく半角の￥で区切る");
                 srw.WriteLine($"# 先頭3行より下の文頭#記号はコメント");
 
-
-                foreach (ContentTreeViewNode oNode in ChildNodeList)
+                foreach (ContentTreeViewNode oNode in nodeList)
                 {
                     if (AbortLoopFlag)
                     {
@@ -147,7 +159,9 @@ namespace SasaLib.InventorAPI
                         srw.Close();
                         return false;
                     }
-                    //this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
+
+                    if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
+                        this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
                     bool result = ContentCenterLocalDBGetChild_Recursive(oNode, 0);
 
@@ -267,11 +281,35 @@ namespace SasaLib.InventorAPI
             {
                 if (ExcludeFullTreeViewPath.Contains(currentNode))
                 {
-                    LogWrite($"■■処理中のノード【{currentNode}】 には 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが含まれます , スキップします");
+                    LogWrite($"■■処理中のノード【{currentNode}】 には 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが該当します , スキップします");
                     srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
                     return true;
                 }
             }
+
+            //if (FullTreeViewPath != null && (string.IsNullOrWhiteSpace(currentNode) == false))
+            //{
+            //    foreach (var path in FullTreeViewPath)
+            //    {
+            //        if (currentNode.Contains(path) == false)
+            //        {
+            //            LogWrite($"■■■■処理中のノード【{currentNode}】 は  {path} が含まれない 『{string.Join(" , ", FullTreeViewPath)}』に含まれないため スキップします");
+            //            srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は リストに含まれないため スキップします");
+            //            return true;
+            //        }
+            //        else
+            //        {
+            //            LogWrite($"■■■■処理中のノード【{currentNode}】 は {path} が含まれます   （『{string.Join(" , ", FullTreeViewPath)}』）");
+
+            //        }
+            //    }
+            //    //if (FullTreeViewPath.Contains(currentNode) == false)
+            //    //{
+            //    //    LogWrite($"■■処理中のノード【{currentNode}】 は  『{string.Join(" , ", FullTreeViewPath)}』に含まれないため スキップします");
+            //    //    srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は リストに含まれないため スキップします");
+            //    //    return true;
+            //    //}
+            //}
 
 
             foreach (ContentTreeViewNode oSubNode in oNode.ChildNodes)
@@ -293,6 +331,10 @@ namespace SasaLib.InventorAPI
                 ContentCenterLocalDBGetChild_Recursive(oSubNode, LVL + 1);
             }
 
+            srw.WriteLine($"# ノード名【{oNode.FullTreeViewPath}】");
+
+            
+
             foreach (ContentFamily oFamily in oNode.Families)
             {
                 //this.LogWrite($"処理中 ContentFamily_DisplayName = {oFamily.DisplayName}");
@@ -306,7 +348,7 @@ namespace SasaLib.InventorAPI
                 {
                     if (this.ExcludeStandardOrganization.Contains(StandardOrganization))
                     {
-                        if (IsDebugWrite)
+                        if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
                             LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
                         srw.WriteLine($"# ファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リストに合致。スキップします");
                         continue;
@@ -317,7 +359,7 @@ namespace SasaLib.InventorAPI
                 {
                     if (this.ExcludeStandard.Contains(Standard))
                     {
-                        if (IsDebugWrite)
+                        if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
                             LogWrite($"■■処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
                         srw.WriteLine($"# ファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リストに合致。スキップします");
                         continue;
@@ -406,7 +448,7 @@ namespace SasaLib.InventorAPI
                     //sw.WriteLine($"#ContentFamily_TemplateFileName = {ContentFamily_TemplateFileName}");
                     bool ans = ContentCenterLocalDBGetItem(oFamily);
 
-                    if (IsDebugWrite)
+                    if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
                         this.LogWrite($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
 
                     if (ans)
