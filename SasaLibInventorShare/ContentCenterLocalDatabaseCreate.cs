@@ -20,13 +20,13 @@ namespace SasaLib.InventorAPI
     /// </summary>
     public class ContentCenterLocalDatabaseCreate
     {
-        SasaLibDelegateWriteLine LogWrite;
+        SasaLibDelegateWriteLine WriteLine;
         public bool IsConentCenterLocalDatabaseLoad_DebugWriteMode { get; set; }
         public FileStream fs;
         public StreamWriter srw;
         ContentCenter oContentCenter;
         Inventor.Application sInventorApp;
-
+        string categoryName = null;
         static bool loopGo = true;
 
         public List<string> FullTreeViewPaths { get; set; }
@@ -55,7 +55,7 @@ namespace SasaLib.InventorAPI
         public ContentCenterLocalDatabaseCreate(ContentCenter oContentCente, string path, SasaLibDelegateWriteLine LogWrite = null, bool isDebugWrite = false)
         {
             if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
-            this.LogWrite = LogWrite;
+            this.WriteLine = LogWrite;
             this.IsConentCenterLocalDatabaseLoad_DebugWriteMode = isDebugWrite;
 
             sInventorApp = (Inventor.Application)oContentCente.Application;
@@ -88,11 +88,6 @@ namespace SasaLib.InventorAPI
         {
             List<ContentTreeViewNode> nodeList = new List<ContentTreeViewNode>();
 
-            //foreach (string nodeName in FullTreeViewPaths)
-            //{
-
-            //    nodeList.Add(oContentCenter.TreeViewTopNode.ChildNodes[nodeName]);
-            //}
 
             foreach (string line in FullTreeViewPaths)
             {
@@ -115,7 +110,7 @@ namespace SasaLib.InventorAPI
             }
 
             var nodeNameList = string.Join(",", FullTreeViewPaths);
-            LogWrite($"■検索するルートノード{nodeNameList}");
+            WriteLine($"■検索するルートノード{nodeNameList}");
 
 
             AbortLoopFlag = false;
@@ -137,7 +132,7 @@ namespace SasaLib.InventorAPI
                     string serverLibrariesXML = oContentCenterLibraryManager.GetServerLibraries();
 
 
-                    LogWrite($"■コンテンツセンタローカルデータベース作成開始 GetServerLibraries() = {serverLibrariesXML}");
+                    WriteLine($"■コンテンツセンタローカルデータベース作成開始 GetServerLibraries() = {serverLibrariesXML}");
 
                     XElement xmlTree = XElement.Parse(serverLibrariesXML);
 
@@ -168,7 +163,7 @@ namespace SasaLib.InventorAPI
                 {
                     if (AbortLoopFlag)
                     {
-                        LogWrite($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn falseで抜けます。");
+                        WriteLine($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn falseで抜けます。");
                         srw.WriteLine($"#Abort {DateTime.Now}\r\n");
                         srw.Close();
                         return false;
@@ -176,16 +171,16 @@ namespace SasaLib.InventorAPI
 
                     if (loopGo == false)
                     {
-                        LogWrite($"loopGo = {loopGo} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn false抜けます。");
+                        WriteLine($"loopGo = {loopGo} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn false抜けます。");
                         srw.WriteLine($"#Abort {DateTime.Now}\r\n");
                         srw.Close();
                         return false;
                     }
 
                     if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                        LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
+                        WriteLine($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
-                    bool result = ContentCenterLocalDBGetChild_Recursive(oNode, 0);
+                    bool result = ContentCenterLocalDBGetChild_Recursive(oNode, 0).Result;
 
                     // https://adndevblog.typepad.com/manufacturing/2015/12/manipulate-family-table-of-content-center.html
                 }
@@ -207,7 +202,7 @@ namespace SasaLib.InventorAPI
         /// </summary>
         /// <param name="ChildNode">ContentTreeViewNodesEnumerator型</param>
         /// <returns></returns>
-        public bool CreateStart(ContentTreeViewNodesEnumerator ChildNode)
+        public async Task<bool> CreateStart(ContentTreeViewNodesEnumerator ChildNode)
         {
             AbortLoopFlag = false;
 
@@ -224,7 +219,7 @@ namespace SasaLib.InventorAPI
                 {
                     LibraryManager oContentCenterLibraryManager = oContentCenter.LibraryManager;
                     string serverLibrariesXML = oContentCenterLibraryManager.GetServerLibraries();
-                    LogWrite($"■コンテンツセンタローカルデータベース作成開始 GetServerLibraries() = {serverLibrariesXML}");
+                    WriteLine($"■コンテンツセンタローカルデータベース作成開始 GetServerLibraries() = {serverLibrariesXML}");
 
                     XElement xmlTree = XElement.Parse(serverLibrariesXML);
 
@@ -242,7 +237,7 @@ namespace SasaLib.InventorAPI
                 srw.WriteLine($"# コンテンツセンター ローカルデータベースファイル 作成元InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}");
                 srw.WriteLine($"# 調査したデータベース:{AttacheNamesString}");
 
-                LogWrite($"■コンテンツセンタローカルデータベース作成開始。 作成元InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}, 調査したデータベース:{AttacheNamesString}");
+                WriteLine($"■コンテンツセンタローカルデータベース作成開始。 作成元InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}, 調査したデータベース:{AttacheNamesString}");
 
                 srw.WriteLine($"# 1行目はこのデータファイルの作成タイムスタンプ");
                 srw.WriteLine($"# 2行目は文頭文末の引用符を除去した文字列DataTableオブジェクトの名前");
@@ -251,13 +246,13 @@ namespace SasaLib.InventorAPI
                 srw.WriteLine($"# 先頭3行より下の文頭#記号はコメント");
 
                 var childNodeCount = ChildNode.Count;
-                LogWrite($"子ノードの個数:{childNodeCount}");
+                WriteLine($"子ノードの個数:{childNodeCount}");
 
                 foreach (ContentTreeViewNode oNode in ChildNode)
                 {
                     if (AbortLoopFlag)
                     {
-                        LogWrite($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn falseで抜けます。");
+                        WriteLine($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn falseで抜けます。");
                         srw.WriteLine($"#Abort {DateTime.Now}\r\n");
                         srw.Close();
                         return false;
@@ -265,14 +260,14 @@ namespace SasaLib.InventorAPI
 
                     if (loopGo == false)
                     {
-                        LogWrite($"loopGo = {loopGo} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn false抜けます。");
+                        WriteLine($"loopGo = {loopGo} のため foreach (ContentTreeViewNode oNode in ChildNode) の途中からストリームをクローズしreturn false抜けます。");
                         srw.WriteLine($"#Abort {DateTime.Now}\r\n");
                         srw.Close();
                         return false;
                     }
                     //this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
-                    ContentCenterLocalDBGetChild_Recursive(oNode, 0);
+                    await ContentCenterLocalDBGetChild_Recursive(oNode, 0);
 
                     // https://adndevblog.typepad.com/manufacturing/2015/12/manipulate-family-table-of-content-center.html
                 }
@@ -295,7 +290,7 @@ namespace SasaLib.InventorAPI
         /// <param name="oNode"></param>
         /// <param name="LVL"></param>
         /// <returns></returns>
-        private bool ContentCenterLocalDBGetChild_Recursive(ContentTreeViewNode oNode, int LVL)
+        private async Task<bool> ContentCenterLocalDBGetChild_Recursive(ContentTreeViewNode oNode, int LVL)
         {
             string currentNode = oNode.FullTreeViewPath;
 
@@ -303,44 +298,21 @@ namespace SasaLib.InventorAPI
             {
                 if (ExcludeFullTreeViewPath.Contains(currentNode))
                 {
-                    LogWrite($"□□処理中のノード【{currentNode}】 は 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが該当します , スキップします");
+                    WriteLine($"□□処理中のノード【{currentNode}】 は 除外リスト 『{string.Join(" , ", ExcludeFullTreeViewPath)}』のいずれかが該当します , スキップします");
                     srw.WriteLine($"# □ノード（カテゴリー）【{currentNode}】は 除外リストに合致。スキップします");
                     return true;
                 }
             }
 
-            //if (FullTreeViewPath != null && (string.IsNullOrWhiteSpace(currentNode) == false))
-            //{
-            //    foreach (var path in FullTreeViewPath)
-            //    {
-            //        if (currentNode.Contains(path) == false)
-            //        {
-            //            LogWrite($"■■■■処理中のノード【{currentNode}】 は  {path} が含まれない 『{string.Join(" , ", FullTreeViewPath)}』に含まれないため スキップします");
-            //            srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は リストに含まれないため スキップします");
-            //            return true;
-            //        }
-            //        else
-            //        {
-            //            LogWrite($"■■■■処理中のノード【{currentNode}】 は {path} が含まれます   （『{string.Join(" , ", FullTreeViewPath)}』）");
-
-            //        }
-            //    }
-            //    //if (FullTreeViewPath.Contains(currentNode) == false)
-            //    //{
-            //    //    LogWrite($"■■処理中のノード【{currentNode}】 は  『{string.Join(" , ", FullTreeViewPath)}』に含まれないため スキップします");
-            //    //    srw.WriteLine($"# ノード（カテゴリー）【{currentNode}】は リストに含まれないため スキップします");
-            //    //    return true;
-            //    //}
-            //}
-
+            
 
             foreach (ContentTreeViewNode oSubNode in oNode.ChildNodes)
             {
-                var categoryName = oSubNode.FullTreeViewPath;
+                categoryName = oSubNode.FullTreeViewPath;
 
                 if (AbortLoopFlag)
                 {
-                    LogWrite($"BreakeLoopFlag = {AbortLoopFlag} のため  foreach (ContentTreeViewNode oSubNode in oNode.ChildNodes) を抜けます");
+                    WriteLine($"BreakeLoopFlag = {AbortLoopFlag} のため  foreach (ContentTreeViewNode oSubNode in oNode.ChildNodes) を抜けます");
 
                     break;
                 }
@@ -350,16 +322,15 @@ namespace SasaLib.InventorAPI
 
                 sInventorApp.UserInterfaceManager.DoEvents();
                 if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                    LogWrite($"■■処理中のカテゴリ\"{categoryName}\" (サブノード ContentTreeViewNode.DisplayName: \"{oSubNode.DisplayName}\") , ContentTreeViewNode.InternalName: \"{oSubNode.InternalName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
+                    WriteLine($"■■処理中のカテゴリ\"{categoryName}\" (サブノード ContentTreeViewNode.DisplayName: \"{oSubNode.DisplayName}\") , ContentTreeViewNode.InternalName: \"{oSubNode.InternalName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
                 else
-                    LogWrite($"■■処理中のカテゴリ\"{categoryName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
+                    WriteLine($"■■処理中のカテゴリ\"{categoryName}\" 経過時間 {(DateTime.Now - CreatStartDatetime).Minutes} 分経過");
 
 
 
-                ContentCenterLocalDBGetChild_Recursive(oSubNode, LVL + 1);
+                await ContentCenterLocalDBGetChild_Recursive(oSubNode, LVL + 1);
             }
 
-            srw.WriteLine($"# ノード名【{oNode.FullTreeViewPath}】");
 
             foreach (ContentFamily oFamily in oNode.Families)
             {
@@ -374,7 +345,7 @@ namespace SasaLib.InventorAPI
                     if (this.ExcludeStandardOrganization.Contains(StandardOrganization))
                     {
                         if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                            LogWrite($"□□処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
+                            WriteLine($"□□処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
                         srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リストに合致。スキップします");
                         continue;
                     }
@@ -385,7 +356,7 @@ namespace SasaLib.InventorAPI
                     if (this.ExcludeStandard.Contains(Standard))
                     {
                         if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                            LogWrite($"□□処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
+                            WriteLine($"□□処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
                         srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リストに合致。スキップします");
                         continue;
                     }
@@ -393,7 +364,7 @@ namespace SasaLib.InventorAPI
 
                 if (AbortLoopFlag)
                 {
-                    LogWrite($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentFamily oFamily in oNode.Families) を抜けます");
+                    WriteLine($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentFamily oFamily in oNode.Families) を抜けます");
 
                     break;
                 }
@@ -402,24 +373,32 @@ namespace SasaLib.InventorAPI
                 {
                     if (AcceptedStopFlag == false)
                     {
-                        LogWrite("★★CreatePauseFlag = true 一時停止します"); // CreatePauseFlag = true の場合処理を個々で一時停止する
+                        WriteLine("★★CreatePauseFlag = true 一時停止します"); // CreatePauseFlag = true の場合処理を個々で一時停止する
                         AcceptedStopFlag = true;
                     }
 
                     // 1 分待機
                     int delaytime = 1 * 60 * 1000;
-                    Task.Delay(delaytime);
+                    await Task.Delay(delaytime);
                 }
 
                 if (AcceptedStopFlag == true)
                 {
-                    LogWrite("★★CreatePauseFlag = false になりました。再開します"); // CreatePauseFlag = true の場合処理を個々で一時停止する
+                    WriteLine("★★CreatePauseFlag = false になりました。再開します"); // CreatePauseFlag = true の場合処理を個々で一時停止する
                     AcceptedStopFlag = false;
                 }
 
 
                 sInventorApp.UserInterfaceManager.DoEvents();
 
+                do
+                {
+                    var waiteMsec = 10;
+                    await Task.Delay(waiteMsec);
+                    if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
+                        WriteLine($"□□ オープン中のファイル有り {sInventorApp.Documents.Count}。{waiteMsec} msec 待機中");
+                }
+                while (sInventorApp.Documents.Count > 0);
 
                 if (oFamily != null)
                 {
@@ -465,19 +444,19 @@ namespace SasaLib.InventorAPI
                     }
                     catch (Exception ex)
                     {
-                        LogWrite($"例外検知　{ex.Message}");
+                        WriteLine($"例外検知　{ex.Message}");
                     }
 
                     //StandardAddInServer.sLogWindowForm.WriteLine($"#{oNode.FullTreeViewPath}");
                     //sw.WriteLine($"#ContentTreeViewNode_DisplayName = {ContentTreeViewNode_DisplayName}");
-                    LogWrite($"\tファミリ: \"{FamilyDispayName}\" を取得中 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
-                    srw.WriteLine($"#ContentFamily_DisplayName = \"{ContentFamily_DisplayName}\" ファミリー【{FamilyDispayName}】 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
+                    WriteLine($"\tファミリ: \"{FamilyDispayName}\" を取得中 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
+                    srw.WriteLine($"#カテゴリ\"{categoryName}\" ContentFamily_DisplayName = \"{ContentFamily_DisplayName}\" ファミリー【{FamilyDispayName}】 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
                     //sw.WriteLine($"#ContentFamily_Description = {ContentFamily_Description}");
                     //sw.WriteLine($"#ContentFamily_TemplateFileName = {ContentFamily_TemplateFileName}");
                     bool ans = ContentCenterLocalDB_GetFamilyTable(oFamily);
 
                     if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                        LogWrite($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
+                        WriteLine($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
 
                     if (ans)
                     {
