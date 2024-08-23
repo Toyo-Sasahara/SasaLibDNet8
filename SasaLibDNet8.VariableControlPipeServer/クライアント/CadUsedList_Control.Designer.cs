@@ -30,6 +30,7 @@
         {
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.ObjectCovNew_checkBox = new System.Windows.Forms.CheckBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.SoftwareComponentName_comboBox = new System.Windows.Forms.ComboBox();
@@ -86,7 +87,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ObjectCovNew_checkBox = new System.Windows.Forms.CheckBox();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -135,6 +135,18 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1451, 233);
             this.panel8.TabIndex = 37;
+            // 
+            // ObjectCovNew_checkBox
+            // 
+            this.ObjectCovNew_checkBox.AutoSize = true;
+            this.ObjectCovNew_checkBox.Checked = true;
+            this.ObjectCovNew_checkBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ObjectCovNew_checkBox.Location = new System.Drawing.Point(12, 151);
+            this.ObjectCovNew_checkBox.Name = "ObjectCovNew_checkBox";
+            this.ObjectCovNew_checkBox.Size = new System.Drawing.Size(105, 16);
+            this.ObjectCovNew_checkBox.TabIndex = 47;
+            this.ObjectCovNew_checkBox.Text = "ObjectConvNew";
+            this.ObjectCovNew_checkBox.UseVisualStyleBackColor = true;
             // 
             // panel12
             // 
@@ -343,6 +355,7 @@
             this.CommitConfigValue_comboBox.Name = "CommitConfigValue_comboBox";
             this.CommitConfigValue_comboBox.Size = new System.Drawing.Size(135, 20);
             this.CommitConfigValue_comboBox.TabIndex = 6;
+            this.CommitConfigValue_comboBox.TextUpdate += new System.EventHandler(this.CommitConfigValue_comboBox_TextUpdate);
             // 
             // CommitConfig_GetSet_button
             // 
@@ -369,7 +382,7 @@
             "LogWindowShowAtStartup",
             "LogWindowWrilteLineStopMode",
             "",
-            "NETWORKLOGFOLDER",
+            "",
             "",
             "UpdateLocalContentCenterDatabaseTimeSpan",
             "",
@@ -380,6 +393,7 @@
             "CheckCommitRecepitonStateFalseCount",
             "CommitRecepitonStateConnectTimeOut",
             "CommitQueueThreshold",
+            "NETWORKLOGFOLDER",
             "",
             "ArcSuiteUserName",
             "ArcSuiteCryptUserPass",
@@ -796,20 +810,10 @@
             this.tabPage2.Text = "ログ出力";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ObjectCovNew_checkBox
-            // 
-            this.ObjectCovNew_checkBox.AutoSize = true;
-            this.ObjectCovNew_checkBox.Location = new System.Drawing.Point(12, 151);
-            this.ObjectCovNew_checkBox.Name = "ObjectCovNew_checkBox";
-            this.ObjectCovNew_checkBox.Size = new System.Drawing.Size(105, 16);
-            this.ObjectCovNew_checkBox.TabIndex = 47;
-            this.ObjectCovNew_checkBox.Text = "ObjectConvNew";
-            this.ObjectCovNew_checkBox.UseVisualStyleBackColor = true;
-            // 
             // CadUsedList_Control
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.Controls.Add(this.tabControl1);
             this.Name = "CadUsedList_Control";

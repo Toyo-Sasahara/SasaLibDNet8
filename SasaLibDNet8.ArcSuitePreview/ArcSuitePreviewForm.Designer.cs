@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.SplitContainer splitContainer1;
-            this.PreviewPanel = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.Debug_panel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.QualityMode_comboBox = new System.Windows.Forms.ComboBox();
@@ -43,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AplicationOpenFile_button = new System.Windows.Forms.Button();
-            this.sasaLibBasicPageControl = new SasaLibBasicPageControl();
+            this.sasaLibBasicPageControl = new SasaLib.SasaLibBasicPageControl();
             this.ArcsuitePreviewForm_Msg_label = new System.Windows.Forms.Label();
             this.ArcSuite_Status_label = new System.Windows.Forms.Label();
             this.ArcSuitePreviewPictureBox = new System.Windows.Forms.PictureBox();
@@ -97,11 +96,7 @@
             this.SaveCurrent_button = new System.Windows.Forms.Button();
             this.ImageReLoad_button = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            splitContainer1 = new System.Windows.Forms.SplitContainer();
-            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
+            this.PreviewPanel = new System.Windows.Forms.Panel();
             this.PreviewPanel.SuspendLayout();
             this.Debug_panel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -121,31 +116,11 @@
             this.Close_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.OP_CAD_MeasureTool_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            splitContainer1.Location = new System.Drawing.Point(0, 0);
-            splitContainer1.Margin = new System.Windows.Forms.Padding(0);
-            splitContainer1.Name = "splitContainer1";
-            splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            splitContainer1.Panel1.Controls.Add(this.PreviewPanel);
-            splitContainer1.Panel1MinSize = 370;
-            // 
-            // splitContainer1.Panel2
-            // 
-            splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            splitContainer1.Panel2MinSize = 125;
-            splitContainer1.Size = new System.Drawing.Size(448, 816);
-            splitContainer1.SplitterDistance = 397;
-            splitContainer1.SplitterWidth = 8;
-            splitContainer1.TabIndex = 35;
-            splitContainer1.TabStop = false;
-            splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
             // PreviewPanel
             // 
@@ -159,7 +134,7 @@
             this.PreviewPanel.Location = new System.Drawing.Point(0, 0);
             this.PreviewPanel.Margin = new System.Windows.Forms.Padding(1);
             this.PreviewPanel.Name = "PreviewPanel";
-            this.PreviewPanel.Size = new System.Drawing.Size(448, 397);
+            this.PreviewPanel.Size = new System.Drawing.Size(451, 400);
             this.PreviewPanel.TabIndex = 11;
             // 
             // Debug_panel
@@ -171,7 +146,7 @@
             this.Debug_panel.Controls.Add(this.label5);
             this.Debug_panel.Controls.Add(this.label2);
             this.Debug_panel.Controls.Add(this.label1);
-            this.Debug_panel.Location = new System.Drawing.Point(140, 15);
+            this.Debug_panel.Location = new System.Drawing.Point(143, 15);
             this.Debug_panel.Name = "Debug_panel";
             this.Debug_panel.Size = new System.Drawing.Size(295, 143);
             this.Debug_panel.TabIndex = 7;
@@ -295,7 +270,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
@@ -334,7 +309,7 @@
             // 
             this.AplicationOpenFile_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AplicationOpenFile_button.Enabled = false;
-            this.AplicationOpenFile_button.Location = new System.Drawing.Point(7, 369);
+            this.AplicationOpenFile_button.Location = new System.Drawing.Point(7, 400);
             this.AplicationOpenFile_button.Name = "AplicationOpenFile_button";
             this.AplicationOpenFile_button.Size = new System.Drawing.Size(131, 23);
             this.AplicationOpenFile_button.TabIndex = 23;
@@ -347,7 +322,7 @@
             // 
             this.sasaLibBasicPageControl.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.sasaLibBasicPageControl.CurrentPage = 0;
-            this.sasaLibBasicPageControl.Location = new System.Drawing.Point(169, 370);
+            this.sasaLibBasicPageControl.Location = new System.Drawing.Point(170, 401);
             this.sasaLibBasicPageControl.MaxPage = 0;
             this.sasaLibBasicPageControl.Name = "sasaLibBasicPageControl";
             this.sasaLibBasicPageControl.Size = new System.Drawing.Size(130, 22);
@@ -356,21 +331,21 @@
             // 
             // ArcsuitePreviewForm_Msg_label
             // 
-            this.ArcsuitePreviewForm_Msg_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ArcsuitePreviewForm_Msg_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ArcsuitePreviewForm_Msg_label.BackColor = System.Drawing.Color.Transparent;
             this.ArcsuitePreviewForm_Msg_label.Enabled = false;
             this.ArcsuitePreviewForm_Msg_label.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ArcsuitePreviewForm_Msg_label.Location = new System.Drawing.Point(12, 15);
             this.ArcsuitePreviewForm_Msg_label.Name = "ArcsuitePreviewForm_Msg_label";
-            this.ArcsuitePreviewForm_Msg_label.Size = new System.Drawing.Size(423, 156);
+            this.ArcsuitePreviewForm_Msg_label.Size = new System.Drawing.Size(426, 156);
             this.ArcsuitePreviewForm_Msg_label.TabIndex = 1;
-            this.ArcsuitePreviewForm_Msg_label.Text = "しばらくお待ちください";
+            this.ArcsuitePreviewForm_Msg_label.Text = "検索指示待ち";
             this.ArcsuitePreviewForm_Msg_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ArcSuite_Status_label
             // 
-            this.ArcSuite_Status_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ArcSuite_Status_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ArcSuite_Status_label.BackColor = System.Drawing.Color.Transparent;
             this.ArcSuite_Status_label.Enabled = false;
@@ -378,7 +353,7 @@
             this.ArcSuite_Status_label.ForeColor = System.Drawing.Color.Red;
             this.ArcSuite_Status_label.Location = new System.Drawing.Point(50, 194);
             this.ArcSuite_Status_label.Name = "ArcSuite_Status_label";
-            this.ArcSuite_Status_label.Size = new System.Drawing.Size(345, 64);
+            this.ArcSuite_Status_label.Size = new System.Drawing.Size(348, 64);
             this.ArcSuite_Status_label.TabIndex = 2;
             this.ArcSuite_Status_label.Text = "...";
             this.ArcSuite_Status_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,7 +364,7 @@
             this.ArcSuitePreviewPictureBox.Location = new System.Drawing.Point(0, 0);
             this.ArcSuitePreviewPictureBox.Margin = new System.Windows.Forms.Padding(1);
             this.ArcSuitePreviewPictureBox.Name = "ArcSuitePreviewPictureBox";
-            this.ArcSuitePreviewPictureBox.Size = new System.Drawing.Size(448, 397);
+            this.ArcSuitePreviewPictureBox.Size = new System.Drawing.Size(451, 400);
             this.ArcSuitePreviewPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ArcSuitePreviewPictureBox.TabIndex = 0;
             this.ArcSuitePreviewPictureBox.TabStop = false;
@@ -405,8 +380,9 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(448, 411);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(451, 408);
             this.flowLayoutPanel1.TabIndex = 35;
+            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
             // 
             // AttrPanel
             // 
@@ -437,7 +413,7 @@
             // 
             // ArcSuiteAttr_groupBox
             // 
-            this.ArcSuiteAttr_groupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ArcSuiteAttr_groupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ArcSuiteAttr_groupBox.Controls.Add(this.DrawingInfoLabel4);
             this.ArcSuiteAttr_groupBox.Controls.Add(this.OnOrderClear_button);
@@ -456,7 +432,7 @@
             // 
             // DrawingInfoLabel4
             // 
-            this.DrawingInfoLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.DrawingInfoLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DrawingInfoLabel4.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.DrawingInfoLabel4.Location = new System.Drawing.Point(12, 130);
@@ -496,7 +472,7 @@
             // 
             // DrawingInfoLabel3
             // 
-            this.DrawingInfoLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.DrawingInfoLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DrawingInfoLabel3.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.DrawingInfoLabel3.Location = new System.Drawing.Point(12, 60);
@@ -529,7 +505,7 @@
             // 
             // DrawingInfoLabel2
             // 
-            this.DrawingInfoLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.DrawingInfoLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DrawingInfoLabel2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.DrawingInfoLabel2.Location = new System.Drawing.Point(12, 37);
@@ -540,7 +516,7 @@
             // 
             // modelcreationonorder_label
             // 
-            this.modelcreationonorder_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.modelcreationonorder_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modelcreationonorder_label.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.modelcreationonorder_label.Location = new System.Drawing.Point(12, 16);
@@ -551,7 +527,7 @@
             // 
             // ArcSuiteCreatedOn_label
             // 
-            this.ArcSuiteCreatedOn_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.ArcSuiteCreatedOn_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ArcSuiteCreatedOn_label.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ArcSuiteCreatedOn_label.ForeColor = System.Drawing.Color.Crimson;
@@ -673,7 +649,7 @@
             // 
             // ManualSearch_textBox
             // 
-            this.ManualSearch_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ManualSearch_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ManualSearch_textBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ManualSearch_textBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
@@ -997,11 +973,35 @@
             this.ImageReLoad_button.UseVisualStyleBackColor = true;
             this.ImageReLoad_button.Click += new System.EventHandler(this.Load_button_Click);
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            splitContainer1.Location = new System.Drawing.Point(0, 0);
+            splitContainer1.Margin = new System.Windows.Forms.Padding(0);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(this.PreviewPanel);
+            splitContainer1.Panel1MinSize = 370;
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
+            splitContainer1.Panel2MinSize = 50;
+            splitContainer1.Size = new System.Drawing.Size(451, 816);
+            splitContainer1.SplitterDistance = 400;
+            splitContainer1.SplitterWidth = 8;
+            splitContainer1.TabIndex = 35;
+            splitContainer1.TabStop = false;
+            splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            // 
             // ArcSuitePreviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 816);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(451, 816);
             this.ControlBox = false;
             this.Controls.Add(splitContainer1);
             this.MinimizeBox = false;
@@ -1013,10 +1013,6 @@
             this.Shown += new System.EventHandler(this.ArcSuitePreviewForm_Shown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ArcSuitePreviewForm_KeyUp);
             this.Resize += new System.EventHandler(this.ArcSuitePreviewForm_Resize);
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).EndInit();
-            splitContainer1.ResumeLayout(false);
             this.PreviewPanel.ResumeLayout(false);
             this.Debug_panel.ResumeLayout(false);
             this.Debug_panel.PerformLayout();
@@ -1040,6 +1036,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.OP_CAD_MeasureTool_Panel.ResumeLayout(false);
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).EndInit();
+            splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1059,6 +1059,7 @@
         private System.Windows.Forms.Label ArcSuiteCreatedOn_label;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.Button UserCadType_AddRemove_button;
+        public System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label MidLabel1_label;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel Debug_panel;
@@ -1107,10 +1108,10 @@
         private System.Windows.Forms.Button Vault_AutoCAD_DWGSearch_button;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button DrawText_button;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button Redraw_button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Vault_DrawingSearch_button;
+        internal System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

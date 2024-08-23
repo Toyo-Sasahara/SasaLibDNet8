@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Xml.Linq;
 using System.Runtime.Versioning;
-using System.Management.Instrumentation;
 
 namespace SasaLib.InventorAPI
 {

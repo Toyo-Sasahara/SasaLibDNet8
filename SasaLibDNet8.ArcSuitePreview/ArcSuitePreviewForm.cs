@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -67,7 +66,6 @@ namespace SasaLib.ArcSuitePreview
     /// <summary>
     /// ArcSuite Previewフォームクラス
     /// </summary>
-    [SupportedOSPlatform("windows")]
     public partial class ArcSuitePreviewForm : Form
     {
         /// <summary>
@@ -107,7 +105,7 @@ namespace SasaLib.ArcSuitePreview
         /// <summary>
         ///  ArcsuitePreview 構造体を定義
         /// </summary>
-        internal static ArcSuitePreview.ArcsuitePreview stArcSuitePreview = new ArcSuitePreview.ArcsuitePreview();
+        internal static SasaLib.ArcSuitePreview.ArcsuitePreview stArcSuitePreview = new SasaLib.ArcSuitePreview.ArcsuitePreview();
 
         /// <summary>
         /// フォームが表示されているかを保持
@@ -191,7 +189,7 @@ namespace SasaLib.ArcSuitePreview
         /// デリゲートメソッド Vaultから Drawing ファイルを開くボタンをクリックしたときに実行させるメソッド
         /// </summary>
         private Delegate_FindDrawingfromVaultMethod Delegate_FindDrawingfromVaultButtonClickMethod;
-        
+
         /// <summary>
         /// デリゲートメソッド Vaultから DWG ファイルを開くボタンをクリックしたときに実行させるメソッド
         /// </summary>
@@ -387,20 +385,20 @@ namespace SasaLib.ArcSuitePreview
         /// ■コンストラクタ
         /// </summary>
         /// <param name="parentNativeWindow"></param>
-        /// <param name="CallDestination"></param>
-        public ArcSuitePreviewForm(System.Windows.Forms.NativeWindow parentNativeWindow, SasaLibDelegateWriteLine CallDestination = null)
+        /// <param name="WriteLine"></param>
+        public ArcSuitePreviewForm(System.Windows.Forms.NativeWindow parentNativeWindow, SasaLibDelegateWriteLine WriteLine = null)
         {
             this.parentNativeWindow = parentNativeWindow;
 
             // デバッグメッセージデリゲート先選択
-            if (CallDestination == null) this.WriteLine = DebugConsole.Write; else this.WriteLine = CallDestination;
+            if (WriteLine == null) this.WriteLine = DebugConsole.Write; else this.WriteLine = WriteLine;
 
             //
             InitializeComponent();
 
             ArcSuitePreviewPictureBox.Controls.Add(ArcsuitePreviewForm_Msg_label);
             ArcSuitePreviewPictureBox.Controls.Add(ArcSuite_Status_label);
-           
+
             VaultCheckInPngSuffix_textBox.Text = Properties.Resources.ArcSuiteImageSuffix;
 
             // マウスホイールイベント関連
@@ -474,6 +472,23 @@ namespace SasaLib.ArcSuitePreview
 
             // フォームロード時のアクティブコントロールを設定
             this.ActiveControl = this.ManualSearch_textBox;
+        }
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            WindowFit();
+        }
+
+        private void WindowFit()
+        {
+            if (splitContainer1.Size.Width > 1300
+                )
+            {
+                splitContainer1.SplitterDistance = splitContainer1.Size.Height - 230;
+
+            }
+            else
+                splitContainer1.SplitterDistance = splitContainer1.Size.Height - 420;
         }
 
         /// <summary>
@@ -697,11 +712,11 @@ namespace SasaLib.ArcSuitePreview
                 oldSoureBitmapMouseLeftButtonClickPoint = GetOrginalImagePoint(e.X, e.Y, _sourceMatAffine);
 
                 // 文字列描画モードがtrueの時はｸﾘｯｸした場所に描画
-                if (textDrawForm !=null && WriteTextMode == true)
+                if (textDrawForm != null && WriteTextMode == true)
                 {
                     string text = textDrawForm.drawString_textBox.Text;
                     float emsize = (float)textDrawForm.FontSize_numericUpDown.Value;
-                    DrawText(text, oldSoureBitmapMouseLeftButtonClickPoint.X, oldSoureBitmapMouseLeftButtonClickPoint.Y, Brushes.Red, "MS UI Gothic",emsize);
+                    DrawText(text, oldSoureBitmapMouseLeftButtonClickPoint.X, oldSoureBitmapMouseLeftButtonClickPoint.Y, Brushes.Red, "MS UI Gothic", emsize);
                 }
             }
 
@@ -1110,7 +1125,7 @@ namespace SasaLib.ArcSuitePreview
             }
             catch (Exception ex)
             {
-                Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuitePreviewForm.DrawImage(..) graphics.InterpolationMode = interpolationMode; にて例外 {ex.Message}");
+                SasaLib.Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuitePreviewForm.DrawImage(..) graphics.InterpolationMode = interpolationMode; にて例外 {ex.Message}");
             }
 
             // 描画
@@ -1219,6 +1234,10 @@ namespace SasaLib.ArcSuitePreview
             DrawImage();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
         public void SetArcSuiteDrawinFindURL(string url)
         {
             this.ArcSuiteDrawinFindURL = url;
@@ -1239,7 +1258,7 @@ namespace SasaLib.ArcSuitePreview
                 }
                 catch (Exception ex)
                 {
-                    Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuiteSearchAndVew_button_Click(..)  にて例外 {ex.Message}");
+                    SasaLib.Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuiteSearchAndVew_button_Click(..)  にて例外 {ex.Message}");
                 }
             }
             else if (string.IsNullOrWhiteSpace(ArcSuiteDrawinFind_Template_URL) != true)
@@ -1252,7 +1271,7 @@ namespace SasaLib.ArcSuitePreview
                 }
                 catch (Exception ex)
                 {
-                    Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuiteSearchAndVew_button_Click(..)  にて例外 {ex.Message}");
+                    SasaLib.Eventlog.Log.WriteEntry("SasaLibArcSuitePreview", EventLogEntryType.Error, 0, $"※ArcSuiteSearchAndVew_button_Click(..)  にて例外 {ex.Message}");
                 }
 
             }
@@ -1392,10 +1411,10 @@ namespace SasaLib.ArcSuitePreview
             {
 
                 MethodInvoker method = () =>
-            {
-                // コントロールに対する処理
-                graphics.Transform = matrix;
-            };
+                {
+                    // コントロールに対する処理
+                    graphics.Transform = matrix;
+                };
                 if (InvokeRequired) { Invoke(method); } else { method(); }
 
             }
@@ -1466,7 +1485,7 @@ namespace SasaLib.ArcSuitePreview
 
             InvokeRequired_Control_Text(SavedMsg_label, "");
 
-            DoEvents.Run();
+            SasaLib.DoEvents.Run();
         }
 
         /// <summary>
@@ -1486,7 +1505,7 @@ namespace SasaLib.ArcSuitePreview
             if (string.IsNullOrWhiteSpace(this.recent_temporalyDrawingImageFullFileName) == false)
             {
                 string removeFolder = System.IO.Path.GetDirectoryName(this.recent_temporalyDrawingImageFullFileName);
-                var result = FileFolder.RemoveFolder(removeFolder, true);
+                var result = SasaLib.FileFolder.RemoveFolder(removeFolder, true);
                 if (result == true)
                     DebugConsole.WriteLine($"■ArcSuiteイメージﾌﾟﾚﾋﾞｭｰﾌｧｲﾙ {this.recent_temporalyDrawingImageFullFileName}をフォルダごと削除しました");
                 else
@@ -1692,9 +1711,9 @@ namespace SasaLib.ArcSuitePreview
                 if (System.IO.File.Exists(saveFullFileName))
                 {
                     //　強制的に書き込み可能へ
-                    FileFolder.SetReadOnly(saveFullFileName, false);
+                    SasaLib.FileFolder.SetReadOnly(saveFullFileName, false);
 
-                    FileFolder.RemoveFile(saveFullFileName);
+                    SasaLib.FileFolder.RemoveFile(saveFullFileName);
                 }
 
                 sourceBitmap.Save(saveFullFileName, ImageFormat.Png);
@@ -1727,7 +1746,7 @@ namespace SasaLib.ArcSuitePreview
             if (System.IO.File.Exists(saveFullFileName))
             {
                 // イメージファイルの読み込みとセット
-                sourceBitmap = (Bitmap)ImageUtil.FromFile(saveFullFileName);
+                sourceBitmap = (Bitmap)SasaLib.ImageUtil.FromFile(saveFullFileName);
                 //orignalResolution = System.Math.Max(sourceBitmap.HorizontalResolution, sourceBitmap.VerticalResolution);
 
                 // 初期化の為リサイズイベントを強制的に実行
@@ -1776,10 +1795,10 @@ namespace SasaLib.ArcSuitePreview
                 if (System.IO.File.Exists(saveFullFileName))
                 {
                     //　強制的に書き込み可能へ
-                    FileFolder.SetReadOnly(saveFullFileName, false);
+                    SasaLib.FileFolder.SetReadOnly(saveFullFileName, false);
 
                     // 既存図削除
-                    FileFolder.RemoveFile(saveFullFileName);
+                    SasaLib.FileFolder.RemoveFile(saveFullFileName);
                 }
 
                 // チェックインするためのファイルを生成
@@ -1831,7 +1850,7 @@ namespace SasaLib.ArcSuitePreview
                 if (System.IO.File.Exists(savefullFileName))
                 {
                     // イメージファイルの読み込みとセット
-                    sourceBitmap = (Bitmap)ImageUtil.FromFile(savefullFileName);
+                    sourceBitmap = (Bitmap)SasaLib.ImageUtil.FromFile(savefullFileName);
 
                     // 初期化の為リサイズイベントを強制的に実行
                     //ArcSuitePreviewForm_Resize(null, null);
@@ -2220,6 +2239,8 @@ namespace SasaLib.ArcSuitePreview
 
             if (Delegate_GetPartListIllust == null) return;
 
+            Delegate_ActiveDocmentSearchMethod();
+
             if (string.IsNullOrWhiteSpace(stArcSuitePreview.user_zuban) == true) return;
 
             PartListIllust_pictureBox.Image = Delegate_GetPartListIllust(stArcSuitePreview.user_zuban);
@@ -2463,7 +2484,7 @@ namespace SasaLib.ArcSuitePreview
                         DateTime dateTime_system_createdOn = ArcSuiteSupport.GetSyssmteCreatedOnTime(st_arcSuitePreview.system_createdon);
 
                         if (st_arcSuitePreview.sysmte_status != "system:editable")
-                            AcsSuiteStatusLabelMessageSet($"状態:{SystemStatusDisplayName}",System.Drawing.Color.Red);
+                            AcsSuiteStatusLabelMessageSet($"状態:{SystemStatusDisplayName}", System.Drawing.Color.Red);
                         else
                             AcsSuiteStatusLabelMessageSet($"");
 
@@ -2637,5 +2658,6 @@ namespace SasaLib.ArcSuitePreview
         {
             pictureBoxRedraw();
         }
+
     }
 }

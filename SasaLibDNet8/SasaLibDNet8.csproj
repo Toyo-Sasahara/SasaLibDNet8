@@ -39,6 +39,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\CycleMeasurementMemory.cs" Link="CycleMeasurementMemory.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DataGridViewUtil.cs" Link="DataGridViewUtil.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DebugSupport.cs" Link="DebugSupport.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DelayHandler.cs" Link="DelayHandler.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DetectEncodingFromBOM.cs" Link="DetectEncodingFromBOM.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DotNetFrameworkAppContextSetSwitch.cs" Link="DotNetFrameworkAppContextSetSwitch.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Encryption.cs" Link="Encryption.cs" />

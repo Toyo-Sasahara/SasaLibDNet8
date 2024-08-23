@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\ArcsuitePreview.cs" Link="ArcsuitePreview.cs" />
+    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\ArcSuitePreviewFormSearch.cs" Link="ArcSuitePreviewFormSearch.cs" />
     <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\CadTypeArcSuiteControl.cs" Link="CadTypeArcSuiteControl.cs" />
     <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\CheckArcSuiteData.cs" Link="CheckArcSuiteData.cs" />
     <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\MultiImageTiff.cs" Link="MultiImageTiff.cs" />

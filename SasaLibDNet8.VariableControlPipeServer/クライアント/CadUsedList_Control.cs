@@ -78,8 +78,11 @@ namespace SasaLib.VariableControlPipeClient
         /// <summary>
         /// デザイナーでは、引数無しのコンストラクターが必要
         /// </summary>
-        public CadUsedList_Control()
+        public CadUsedList_Control(SasaLibDelegateWriteLine WriteLine = null)
         {
+            if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
+            this.WriteLine = WriteLine;
+
             InitializeComponent();
 
 #if NETCOREAPP
@@ -248,7 +251,6 @@ namespace SasaLib.VariableControlPipeClient
         private async void Inventor_CommitConfigConfig_button_Click(object sender, EventArgs e)
         {
             InventorLoopcheckMode = false;
-            bool objectConvNew = true;
 
             do
             {
@@ -296,7 +298,7 @@ namespace SasaLib.VariableControlPipeClient
                     {
                         SasaLib.DoEvents.Run();
                         VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-                        string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName).Result;
+                        string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
 
                         if (result_UserDomainFullName == null)
                             return null;
@@ -370,14 +372,14 @@ namespace SasaLib.VariableControlPipeClient
                 {
                     SasaLib.DoEvents.Run();
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName).Result;
+                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
 
                     if (result_UserDomainFullName == null)
                         return null;
 
                     object resutlValue;
 
-                    resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, CommitConfigValue, setmode, WriteLine: WriteLine).Result;
+                    resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, setmode, CommitConfigValue, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine: WriteLine).Result;
 
                     if (resutlValue != null)
                     {
@@ -419,13 +421,13 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="fullFileName"></param>
         /// <param name="fileVersionType"></param>
         /// <param name="outputGetVersionInfo"></param>
-        private void ShowFileVerson(string fullFileName, string hostname, string PipeName, string CurrentUserDomainUserFUllName, string fileVersionType, string outputGetVersionInfo)
-        {
-            WriteLine("");
-            WriteLine($"\tﾎｽﾄ名:{hostname} ﾕｰｻﾞｰ名:{CurrentUserDomainUserFUllName} 接続先ﾊﾟｲﾌﾟ名:{PipeName}");
-            WriteLine($"\t調査対象 : \"{fullFileName}\"");
-            WriteLine($"\tGetVersionInfo({fileVersionType}) : \"{outputGetVersionInfo}\"");
-        }
+        //private void ShowFileVerson(string fullFileName, string hostname, string PipeName, string CurrentUserDomainUserFUllName, string fileVersionType, string outputGetVersionInfo)
+        //{
+        //    WriteLine("");
+        //    WriteLine($"\tﾎｽﾄ名:{hostname} ﾕｰｻﾞｰ名:{CurrentUserDomainUserFUllName} 接続先ﾊﾟｲﾌﾟ名:{PipeName}");
+        //    WriteLine($"\t調査対象 : \"{fullFileName}\"");
+        //    WriteLine($"\tGetVersionInfo({fileVersionType}) : \"{outputGetVersionInfo}\"");
+        //}
 
         /// <summary>
         /// 
@@ -433,13 +435,13 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="fullFileName"></param>
         /// <param name="fileHashType"></param>
         /// <param name="fileHash"></param>
-        private void ShowFileHash(string fullFileName, string hostname, string PipeName, string CurrentUserDomainUserFUllName, string fileHashType, string fileHash)
-        {
-            WriteLine("");
-            WriteLine($"\tﾎｽﾄ名:{hostname} ﾕｰｻﾞｰ名:{CurrentUserDomainUserFUllName} 接続先ﾊﾟｲﾌﾟ名:{PipeName}");
-            WriteLine($"\t調査対象 : \"{fullFileName}\"");
-            WriteLine($"\tCheckFileHash({fileHashType}) : \"{fileHash}\"");
-        }
+        //private void ShowFileHash(string fullFileName, string hostname, string PipeName, string CurrentUserDomainUserFUllName, string fileHashType, string fileHash)
+        //{
+        //    WriteLine("");
+        //    WriteLine($"\tﾎｽﾄ名:{hostname} ﾕｰｻﾞｰ名:{CurrentUserDomainUserFUllName} 接続先ﾊﾟｲﾌﾟ名:{PipeName}");
+        //    WriteLine($"\t調査対象 : \"{fullFileName}\"");
+        //    WriteLine($"\tCheckFileHash({fileHashType}) : \"{fileHash}\"");
+        //}
 
         /// <summary>
         /// 
@@ -449,13 +451,13 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="CurrentUserDomainUserFUllName"></param>
         /// <param name="fileTimeStampType"></param>
         /// <param name="fileTimeStamp"></param>
-        private void ShowFileTimeStamp(string fullFileName, string hostname, string PipeName, string CurrentUserDomainUserFUllName, string fileTimeStampType, string fileTimeStamp)
-        {
-            WriteLine("");
-            WriteLine($"\tﾎｽﾄ名:{hostname} ﾕｰｻﾞｰ名:{CurrentUserDomainUserFUllName} 接続先ﾊﾟｲﾌﾟ名:{PipeName}");
-            WriteLine($"\t調査対象 : \"{fullFileName}\"");
-            WriteLine($"\tGetFileTimeStamp({fileTimeStampType}) : \"{fileTimeStamp}\"");
-        }
+        //private void ShowFileTimeStamp(string fullFileName, string hostname, string PipeName, string CurrentUserDomainUserFUllName, string fileTimeStampType, string fileTimeStamp)
+        //{
+        //    WriteLine("");
+        //    WriteLine($"\tﾎｽﾄ名:{hostname} ﾕｰｻﾞｰ名:{CurrentUserDomainUserFUllName} 接続先ﾊﾟｲﾌﾟ名:{PipeName}");
+        //    WriteLine($"\t調査対象 : \"{fullFileName}\"");
+        //    WriteLine($"\tGetFileTimeStamp({fileTimeStampType}) : \"{fileTimeStamp}\"");
+        //}
 
         // ----------------------------------------------------------------------------------- //
 
@@ -740,7 +742,7 @@ namespace SasaLib.VariableControlPipeClient
                 var output = await Task.Run(() =>
                 {
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName).Result;
+                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
                     string result = oVCPipeClient.GetTwoValue_DataCommandAsync(Command, FullFileName, mode).Result;
                     string resultStr = null;
                     if (result_UserDomainFullName != null)
@@ -826,12 +828,12 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="hosts"></param>
         /// <param name="itemStr"></param>
         /// <returns></returns>
-        string getHostNameIndexOf(ListBox sourceListBox, List<string> hosts, string itemStr)
-        {
-            var index = sourceListBox.Items.IndexOf(itemStr);
-            var hostname = hosts[index];
-            return hostname;
-        }
+        //string getHostNameIndexOf(ListBox sourceListBox, List<string> hosts, string itemStr)
+        //{
+        //    var index = sourceListBox.Items.IndexOf(itemStr);
+        //    var hostname = hosts[index];
+        //    return hostname;
+        //}
 
 
         private void Inventor_host_CheckClear_button_Click(object sender, EventArgs e)
@@ -989,5 +991,10 @@ namespace SasaLib.VariableControlPipeClient
 
         }
 
+        private void CommitConfigValue_comboBox_TextUpdate(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(CommitConfigValue_comboBox.Text) == false)
+                SetMode_checkBox.Checked = true;
+        }
     }
 }
