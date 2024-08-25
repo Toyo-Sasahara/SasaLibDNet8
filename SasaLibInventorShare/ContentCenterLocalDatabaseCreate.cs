@@ -93,13 +93,30 @@ namespace SasaLib.InventorAPI
                 // コロンで区切られた部分を取得
                 string[] parts = line.Split(':');
 
-                // 最初の部分でChildNodesを呼び出し
-                dynamic currentNode = oContentCenter.TreeViewTopNode.ChildNodes[parts[0]];
+                dynamic currentNode = null;
+
+                try
+                {
+                    // 最初の部分でChildNodesを呼び出し
+                    currentNode = oContentCenter.TreeViewTopNode.ChildNodes[parts[0]];
+                }
+                catch (Exception ex)
+                {
+                    WriteLine($"□ContentCenterLocalDatabaseCreate.CreateStart() \"{parts[0]}\" は見つかりません。{ex.Message}");
+                }
 
                 // 残りの部分について順にChildNodesを呼び出し
                 for (int i = 1; i < parts.Length; i++)
                 {
-                    currentNode = currentNode.ChildNodes[parts[i]];
+                    if (currentNode != null)
+                    {
+                        currentNode = currentNode.ChildNodes[parts[i]];
+                    }
+                    else
+                    {
+                        WriteLine($"{parts[i]} は見つかりません。");
+                        WriteLine($"□ContentCenterLocalDatabaseCreate.CreateStart() \"{parts[i]}\" は見つかりません。");
+                    }
                 }
 
                 nodeList.Add(currentNode);
