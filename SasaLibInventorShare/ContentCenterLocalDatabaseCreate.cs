@@ -23,6 +23,8 @@ namespace SasaLib.InventorAPI
         public bool IsConentCenterLocalDatabaseLoad_DebugWriteMode { get; set; }
         public FileStream fs;
         public StreamWriter srw;
+        string tempFullPath;
+
         ContentCenter oContentCenter;
         Inventor.Application sInventorApp;
         string categoryName = null;
@@ -50,8 +52,8 @@ namespace SasaLib.InventorAPI
         /// コンストラクタ
         /// </summary>
         /// <param name="oContentCente"></param>
-        /// <param name="path"></param>
-        public ContentCenterLocalDatabaseCreate(ContentCenter oContentCente, string path, SasaLibDelegateWriteLine LogWrite = null, bool isDebugWrite = false)
+        /// <param name="tempFullPath"></param>
+        public ContentCenterLocalDatabaseCreate(ContentCenter oContentCente, string tempFullPath, SasaLibDelegateWriteLine LogWrite = null, bool isDebugWrite = false)
         {
             if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
             this.WriteLine = LogWrite;
@@ -59,16 +61,18 @@ namespace SasaLib.InventorAPI
 
             sInventorApp = (Inventor.Application)oContentCente.Application;
 
+            this.tempFullPath = tempFullPath;
+
             this.oContentCenter = oContentCente;
 
             try
             {
-                FileFolder.RemoveFile(System.IO.Path.ChangeExtension(path, "bak"));
-                FileFolder.MoveFile(path, System.IO.Path.ChangeExtension(path, "bak"));
-                if (System.IO.File.Exists(path) == false)
-                    LogWrite($"コンテンツセンタローカルデータベース {path} 削除しました");
+                FileFolder.RemoveFile(System.IO.Path.ChangeExtension(tempFullPath, "bak"));
+                FileFolder.MoveFile(tempFullPath, System.IO.Path.ChangeExtension(tempFullPath, "bak"));
+                if (System.IO.File.Exists(tempFullPath) == false)
+                    LogWrite($"コンテンツセンタローカルデータベース {tempFullPath} 削除しました");
 
-                fs = new FileStream(path, FileMode.Create, FileAccess.ReadWrite);
+                fs = new FileStream(tempFullPath, FileMode.Create, FileAccess.ReadWrite);
 
             }
             catch (Exception ex)
@@ -79,6 +83,21 @@ namespace SasaLib.InventorAPI
             IsConentCenterLocalDatabaseLoad_DebugWriteMode = isDebugWrite;
         }
 
+        public bool CreatedFileRemove()
+        {
+            
+            fs.Close();
+            bool result = SasaLib.FileFolder.RemoveFile(tempFullPath);
+
+            if (result)
+            {
+                WriteLine($"■ｺﾝﾃﾝﾄｾﾝﾀﾛｰｶﾙﾃﾞｰﾀﾍﾞｰｽ作成処理中ﾌｧｲﾙ {tempFullPath} を削除しました");
+            }
+            else
+                WriteLine($"※ｺﾝﾃﾝﾄｾﾝﾀﾛｰｶﾙﾃﾞｰﾀﾍﾞｰｽ作成処理中ﾌｧｲﾙ {tempFullPath} を削除に失敗しました");
+
+            return result;
+        }
 
         /// <summary>
         /// コンテンツセンター・ﾛｰｶﾙﾃﾞｰﾀﾍﾞｰｽﾌｧｲﾙの作成
