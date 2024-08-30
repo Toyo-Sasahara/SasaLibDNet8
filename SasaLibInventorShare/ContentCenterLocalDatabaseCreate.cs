@@ -38,10 +38,6 @@ namespace SasaLib.InventorAPI
 
         public List<string> ExcludeStandard { get; set; }
 
-        // 一時停止用フラグ
-        //public static bool CreatePauseFlag { get; set; } = false;
-
-        //bool AcceptedStopFlag { get; set; } = false;
 
         // アボート用フラグ true なら ループを抜けさせる
         public static bool AbortLoopFlag { get; set; } = false;
@@ -403,25 +399,6 @@ namespace SasaLib.InventorAPI
 
                     break;
                 }
-
-                //while (CreatePauseFlag)
-                //{
-                //    if (AcceptedStopFlag == false)
-                //    {
-                //        WriteLine("★★CreatePauseFlag = true 一時停止します"); // CreatePauseFlag = true の場合処理を個々で一時停止する
-                //        AcceptedStopFlag = true;
-                //    }
-
-                //    // 1 分待機
-                //    int delaytime = 1 * 60 * 1000;
-                //    await Task.Delay(delaytime);
-                //}
-
-                //if (AcceptedStopFlag == true)
-                //{
-                //    WriteLine("★★CreatePauseFlag = false になりました。再開します"); // CreatePauseFlag = true の場合処理を個々で一時停止する
-                //    AcceptedStopFlag = false;
-                //}
 
 
                 sInventorApp.UserInterfaceManager.DoEvents();
