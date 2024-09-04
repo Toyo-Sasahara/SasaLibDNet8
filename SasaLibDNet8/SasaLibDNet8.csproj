@@ -20,6 +20,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\AssemblyDynamicLoad.cs" Link="AssemblyDynamicLoad.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\AsyncLock.cs" Link="AsyncLock.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Base32.cs" Link="Base32.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Base64.cs" Link="Base64.cs" />
