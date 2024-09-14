@@ -57,5 +57,6 @@
     <Content Include="EdmAddinDLLs\Autodesk.DataManagement.Client.Framework.Vault.dll" />
     <Content Include="EdmAddinDLLs\Connectivity.InventorAddin.EdmAddin.dll" />
   </ItemGroup>
+  <Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
