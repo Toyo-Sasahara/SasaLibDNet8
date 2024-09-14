@@ -51,7 +51,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\CommonTicketClassLibrary\CommonTicketClassLibraryDNet8.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
@@ -60,7 +59,6 @@
     <ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
   </ItemGroup>
-
 
   <Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 

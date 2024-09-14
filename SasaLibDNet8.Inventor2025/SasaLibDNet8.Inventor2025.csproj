@@ -24,7 +24,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -60,4 +59,6 @@
   </ItemGroup>
 	
   <Import Project="..\SasaLibInventorShare\SasaLibInventorShare.projitems" Label="Shared" />
+	
+  <Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 </Project>

@@ -37,7 +37,6 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
     <ProjectReference Include="..\Vault2025InventorEdmAddin\Vault2025InventorEdmAddin.csproj" />
   </ItemGroup>
@@ -174,4 +173,5 @@
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy &quot;$(ProjectDir)\Vault2025SDKcopy\AdskLicensingSDK_*.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;" />
   </Target>
+  <Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 </Project>
