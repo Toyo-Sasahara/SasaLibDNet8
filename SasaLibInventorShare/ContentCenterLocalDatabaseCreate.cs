@@ -146,6 +146,8 @@ namespace SasaLib.InventorAPI
 
             AbortLoopFlag = false;
 
+            var dateTimeNowStr = CreatStartDatetime.ToString("yyyy/MM/dd HH:mm:ss");
+            
             try
             {
                 srw = new StreamWriter(fs);
