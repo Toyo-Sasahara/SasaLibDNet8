@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Xml.Linq;
 using System.Runtime.Versioning;
+using System.Runtime.Serialization;
 
 namespace SasaLib.InventorAPI
 {
@@ -44,6 +45,7 @@ namespace SasaLib.InventorAPI
 
         public DateTime CreatStartDatetime { get; private set; }
 
+        
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -98,8 +100,9 @@ namespace SasaLib.InventorAPI
         /// <summary>
         /// コンテンツセンター・ﾛｰｶﾙﾃﾞｰﾀﾍﾞｰｽﾌｧｲﾙの作成
         /// </summary>
-        public bool CreateStart()
+        public bool CreateStart(string dateTimeFormat)
         {
+
             List<ContentTreeViewNode> nodeList = new List<ContentTreeViewNode>();
 
 
@@ -147,7 +150,7 @@ namespace SasaLib.InventorAPI
             AbortLoopFlag = false;
 
             CreatStartDatetime = DateTime.Now;
-            var dateTimeNowStr = CreatStartDatetime.ToString("yyyy/MM/dd HH:mm:ss");
+            var dateTimeNowStr = CreatStartDatetime.ToString(dateTimeFormat);
             
             try
             {
