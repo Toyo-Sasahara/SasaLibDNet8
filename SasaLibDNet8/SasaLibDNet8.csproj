@@ -48,6 +48,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\EventsSummary.cs" Link="EventsSummary.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ExclusiveControl.cs" Link="ExclusiveControl.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\FileFolder.cs" Link="FileFolder.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\FileManager.cs" Link="FileManager.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\FindMissingAssemblyAndLoad.cs" Link="FindMissingAssemblyAndLoad.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\FormsControlUtil.cs" Link="FormsControlUtil.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\GetVersion.cs" Link="GetVersion.cs" />
