@@ -146,13 +146,14 @@ namespace SasaLib.InventorAPI
 
             AbortLoopFlag = false;
 
+            CreatStartDatetime = DateTime.Now;
             var dateTimeNowStr = CreatStartDatetime.ToString("yyyy/MM/dd HH:mm:ss");
             
             try
             {
                 srw = new StreamWriter(fs);
 
-                srw.WriteLine($"{CreatStartDatetime.ToString("yyyy/MM/dd HH:mm:ss")}");    // 1行目
+                srw.WriteLine($"{dateTimeNowStr}");    // 1行目
 
                 srw.WriteLine($"\"ContentTableDatabase\"");  // 2行目
 
