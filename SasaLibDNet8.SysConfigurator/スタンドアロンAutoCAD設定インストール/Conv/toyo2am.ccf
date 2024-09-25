@@ -1,0 +1,42 @@
+;
+; This is just a sample CCF file.
+; SAMPLE.DWG is just an empty file with the standard AutoCAD Mechanical
+; layer configuration and should be in the same directory as this file.
+;  - see the documentation
+
+[General]
+
+Verbose=0
+RetainBackup=0
+WblockSave=0
+Layer0Convert=2
+
+[Entity]
+
+*:SLDCENTER*:*:* => AM_7:ByLayer:ByLayer:ByLayer
+
+
+0:Continuous:*:* => AM_0:ByLayer:ByLayer:ByLayer
+0:TM_HIDS:*:* => AM_3:ByLayer:ByLayer:ByLayer
+0:HIDDEN:*:* => AM_3:ByLayer:ByLayer:ByLayer
+0:HIDDENX2:*:* => AM_3:ByLayer:ByLayer:ByLayer
+0:TM_CENS:*:* => AM_7:ByLayer:ByLayer:ByLayer
+0:CENTER:*:* => AM_7:ByLayer:ByLayer:ByLayer
+0:TM_PHAS:*:* => AM_11:ByLayer:ByLayer:ByLayer
+
+
+0_DIMS:*:*:* => AM_5:ByLayer:ByLayer:ByLayer
+
+0_BODY:Continuous:*:* => AM_0:ByLayer:ByLayer:ByLayer
+0_BODY:TM_HIDS:*:* => AM_3:ByLayer:ByLayer:ByLayer
+0_BODY:HIDDEN:*:* => AM_3:ByLayer:ByLayer:ByLayer
+0_BODY:TM_CENS:*:* => AM_7:ByLayer:ByLayer:ByLayer
+0_BODY:CENTER:*:* => AM_7:ByLayer:ByLayer:ByLayer
+0_BODY:CENTERX2:*:* => AM_7:ByLayer:ByLayer:ByLayer
+0_BODY:TM_PHAS:*:* => AM_11:ByLayer:ByLayer:ByLayer
+
+0_CENS:Continuous:*:* => AM_0:ByLayer:ByLayer:ByLayer
+0_CENS:TM_HIDS:*:* => AM_3:ByLayer:ByLayer:ByLayer
+0_CENS:TM_CENS:*:* => AM_7:ByLayer:ByLayer:ByLayer
+0_CENS:TM_PHAS:*:* => AM_11:ByLayer:ByLayer:ByLayer
+

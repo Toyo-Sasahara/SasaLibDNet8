@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SasaLibDNet8.SysConfigurator": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\sasahara\\source\\repos\\SasaLibDNet8\\SasaLibDNet8.SysConfigurator\\スタンドアロンAutoCAD設定インストール\\AM2025テンプレート・図枠・表題欄など取得.Conf\" \"C:\\Users\\sasahara\\source\\repos\\SasaLibDNet8\\SasaLibDNet8.SysConfigurator\\スタンドアロンAutoCAD設定インストール\""
+    }
+  }
+}

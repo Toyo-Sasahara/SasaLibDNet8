@@ -616,7 +616,7 @@ namespace SasaLib.SysConfigurator
 
                 if (resultRemoteLode)
                 {
-                    WriteLine($"■ｻｰﾊﾞｰｻｲﾄﾞ:{ServerSideFullFileName}\n -> テンポラリ:{LoadTempFile.FullTempFileName} 取得成功");
+                    WriteLine($"■ｻｰﾊﾞｰｻｲﾄﾞ:{ServerSideFullFileName}\n -> テンポラリファイル:{LoadTempFile.FullTempFileName}として取得成功");
 
                     /// 既存のﾛｰｶﾙﾌｧｲﾙの属性を保持する変数（デフォルトでテンポラリ作成されたファイルの方の属性を保持する）
                     FileAttributes LocalSideFullFileNameFileAttr = System.IO.File.GetAttributes(LoadTempFile.FullTempFileName);
@@ -685,7 +685,7 @@ namespace SasaLib.SysConfigurator
 
                         if (ans)
                         {
-                            WriteLine($"■テンポラリ:{LoadTempFile} -> ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 移動成功");
+                            WriteLine($"■テンポラリ:{LoadTempFile.FullTempFileName} -> ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 移動成功");
 
                             try
                             {
@@ -738,7 +738,7 @@ namespace SasaLib.SysConfigurator
                         }
                         else
                         {
-                            WriteLine($"※テンポラリ:{LoadTempFile} -> ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 移動失敗。ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName}が既に存在しています(2)。処理を続けられません continueします");
+                            WriteLine($"※テンポラリ:{LoadTempFile.FullTempFileName} -> ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 移動失敗。ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName}が既に存在しています(2)。処理を続けられません continueします");
                             return false;
                         }
                     }
@@ -1354,7 +1354,14 @@ namespace SasaLib.SysConfigurator
             if (newsource == null)
                 return false;
 
-            bool result = FileFolder.CopyFileWithIncrementedFileName(newsource, Dist);
+            // bool result = FileFolder.CopyFileWithIncrementedFileName(newsource, Dist);
+            Console.WriteLine($"{newsource} を {Dist} へ複製を試みます");
+            //bool result = FileFolder.CopyWithFileRotation(newsource, Dist);            bool result = FileFolder.CopyWithFileRotation(newsource, Dist);
+            bool result = SasaLib.FileFolder.CopyFile(newsource, Dist, true);
+            if (result)
+                Console.WriteLine($"{newsource} を {Dist} へ複製 成功");
+            else
+                Console.WriteLine($"{newsource} を {Dist} へ複製 失敗");
             return result;
         }
 
