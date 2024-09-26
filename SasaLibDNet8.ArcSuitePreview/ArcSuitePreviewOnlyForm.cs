@@ -695,7 +695,17 @@ namespace SasaLib.ArcSuitePreview
             {
                 try
                 {
-                    Process.Start(ArcSuiteDrawinFindURL);
+
+#if NETCOREAPP
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = ArcSuiteDrawinFindURL,
+                        UseShellExecute = true // システムのデフォルトアプリケーションを使用
+                    });
+#else
+                            System.Diagnostics.Process.Start(ArcSuiteDrawinFindURL);
+#endif
+
                 }
                 catch (Exception ex)
                 {

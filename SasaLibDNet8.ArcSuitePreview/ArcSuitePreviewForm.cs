@@ -1254,7 +1254,17 @@ namespace SasaLib.ArcSuitePreview
             {
                 try
                 {
-                    Process.Start(ArcSuiteDrawinFindURL);
+
+#if NETCOREAPP
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = ArcSuiteDrawinFindURL,
+                        UseShellExecute = true // システムのデフォルトアプリケーションを使用
+                    });
+#else
+                            System.Diagnostics.Process.Start(ArcSuiteDrawinFindURL);
+#endif
+
                 }
                 catch (Exception ex)
                 {
@@ -1267,7 +1277,17 @@ namespace SasaLib.ArcSuitePreview
 
                 try
                 {
-                    Process.Start(ArcSuiteDrawinFindURL);
+
+#if NETCOREAPP
+                    System.Diagnostics.Process.Start(new ProcessStartInfo
+                    {
+                        FileName = ArcSuiteDrawinFindURL,
+                        UseShellExecute = true // システムのデフォルトアプリケーションを使用
+                    });
+#else
+                            System.Diagnostics.Process.Start(ArcSuiteDrawinFindURL);
+#endif
+
                 }
                 catch (Exception ex)
                 {
@@ -2643,7 +2663,18 @@ namespace SasaLib.ArcSuitePreview
 
             if (System.IO.File.Exists(recent_temporalyDrawingImageFullFileName))
             {
-                System.Diagnostics.Process.Start(recent_temporalyDrawingImageFullFileName);
+
+
+#if NETCOREAPP
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = recent_temporalyDrawingImageFullFileName,
+                    UseShellExecute = true // システムのデフォルトアプリケーションを使用
+                });
+#else
+                            System.Diagnostics.Process.Start(recent_temporalyDrawingImageFullFileName);
+#endif
+
             }
 
         }
