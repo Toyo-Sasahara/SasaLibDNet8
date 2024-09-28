@@ -16,7 +16,7 @@ namespace SasaLib.SysConfigurator
     public delegate void LogMsgDelegate(string logtext);
 
     [SupportedOSPlatform("windows")]
-    public class Log
+    public class SysConfiguratorLog
     {
         /// <summary>
         /// デリゲート
@@ -80,7 +80,7 @@ namespace SasaLib.SysConfigurator
         /// </summary>
         /// <param name="LogFileFolder">ログ作成フォルダ</param>
         /// <param name="identifier">識別用文字列</param>
-        public Log(string LogFileFolder, string identifier)
+        public SysConfiguratorLog(string LogFileFolder, string identifier)
         {
             this.identifier = identifier;
             this.CurrnetLogFolder = LogFileFolder;
@@ -88,7 +88,7 @@ namespace SasaLib.SysConfigurator
 
         }
 
-        ~Log()
+        ~SysConfiguratorLog()
         {
 
         }

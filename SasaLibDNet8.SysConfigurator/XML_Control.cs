@@ -101,7 +101,7 @@ namespace SasaLib.SysConfigurator
 
         SysConfiguration configClass = new SysConfiguration();
 
-        Log SysConfigLogSystem;
+        SysConfiguratorLog SysConfigLogSystem;
 
         /// <summary>
         /// 最初のログファイル名を保持する変数（）
@@ -129,7 +129,7 @@ namespace SasaLib.SysConfigurator
             }
 
             FileFolder.MakeDirectory(this.LogBaseFolder);
-            SysConfigLogSystem = new Log(this.LogBaseFolder, DateTime.Now.ToString("HHmmss"));
+            SysConfigLogSystem = new SysConfiguratorLog(this.LogBaseFolder, DateTime.Now.ToString("HHmmss"));
 
             if (string.IsNullOrWhiteSpace(LogFileName) == false)
             {
@@ -151,7 +151,7 @@ namespace SasaLib.SysConfigurator
                 this.LogBaseFolder = LogBaseFolder;
             } // LogBaseFolderに指定があった場合。
             FileFolder.MakeDirectory(this.LogBaseFolder);
-            SysConfigLogSystem = new Log(this.LogBaseFolder, DateTime.Now.ToString("HHmmss"));
+            SysConfigLogSystem = new SysConfiguratorLog(this.LogBaseFolder, DateTime.Now.ToString("HHmmss"));
 
             if (string.IsNullOrWhiteSpace(LogFileName) == false)
             {
