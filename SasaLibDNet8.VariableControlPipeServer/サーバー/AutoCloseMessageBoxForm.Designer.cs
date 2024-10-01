@@ -70,8 +70,8 @@ namespace SasaLib.VariableControlPipeServer
             // 
             // MessageTest_label
             // 
-            this.MessageTest_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.MessageTest_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageTest_label.Location = new System.Drawing.Point(12, 9);
             this.MessageTest_label.Name = "MessageTest_label";
@@ -105,8 +105,8 @@ namespace SasaLib.VariableControlPipeServer
             // 
             // MessageText_label
             // 
-            this.MessageText_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.MessageText_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MessageText_label.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MessageText_label.ForeColor = System.Drawing.Color.Red;
@@ -166,7 +166,8 @@ namespace SasaLib.VariableControlPipeServer
             // 
             // AutoCloseMessageBoxForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(534, 232);

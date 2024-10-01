@@ -2,6 +2,7 @@
 using SasaLib.VariableControlPipeServer;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.IO.Pipes;
 using System.Text;
@@ -29,11 +30,39 @@ namespace SasaLib.VariableControlPipeClient
 
         public bool InventorLoopcheckMode;
         public bool AutocadLoopcheckMode;
+        public bool AutodeskVaultLoopcheckMode;
         public bool SoliworksLoopcheckMode;
+        public bool RegistClientLoopcheckMode;
 
-        const string InventorPIPENAME = "InventorTOYOaddin";
-        const string AutoCadPIPENAME = "AutoCadTOYOaddin";
-        const string SolidWorksPIPENAME = "SolidworksTOYOaddin";
+        //string InventorPIPENAME = "InventorTOYOaddin";
+        //string AutoCadPIPENAME = "AutoCadTOYOaddin";
+        //string SolidWorksPIPENAME = "SolidworksTOYOaddin";
+
+        string InventorPIPENAME
+        {
+            get { return Inventor_Server_PIPENAME_comboBox.Text; }
+        }
+
+        string AutoCadPIPENAME
+        {
+            get { return Autocad_Server_PIPENAME_comboBox.Text; }
+        }
+
+        string SolidWorksPIPENAME
+        {
+            get { return SolidWorks_Server_PIPENAME_comboBox.Text; }
+
+        }
+
+        string AutodeskVaultPIPENAME
+        {
+            get { return AutodeskVault_Server_PIPENAME_comboBox.Text; }
+        }
+
+        string RegistClientPIPENAME
+        {
+            get { return RegistClient_PIPENAME_comboBox.Text; }
+        }
 
         /// <summary>
         /// 
@@ -104,7 +133,9 @@ namespace SasaLib.VariableControlPipeClient
 
             Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
             Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
+            Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
             Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
+            Host_CheckedListBox_Clear(RegistClient_checkfile_textBox);
         }
 
         private void Host_CheckedListBox_Clear(CheckedListBox checkedListBox)
@@ -213,6 +244,39 @@ namespace SasaLib.VariableControlPipeClient
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        private async void AutodeskVault_hostCheck_button_Click(object sender, EventArgs e)
+        {
+            AutodeskVaultLoopcheckMode = false;
+            do
+            {
+                await Task.Run(() =>
+                {
+                    MethodInvoker method = () =>
+                    {
+                        // コントロールに対する処理
+                        WriteLine($"AutodeskVault利用状況ﾁｪｯｸ開始・・");
+                        Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
+                        var result = CheckArrivedHostCheckBoxesAsync(AutodeskVault_Host_CheckedListBox, AutodeskVaultPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        WriteLine($"AutodeskVault利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
+                    };
+                    if (InvokeRequired) { Invoke(method); } else { method(); }
+                });
+
+                if (AutodeskVaultLoopcheckMode)
+                {
+                    await Task.Delay(SleepSec * 1000);
+                    WriteLine($"{SleepSec} * 1000 sec経過しました。実行開始");
+                }
+            }
+            while (AutodeskVaultLoopcheckMode);
+        }
+
+        // ----------------------------------------------------------------------------------- //
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void SolidWorks_hostCheck_button_Click(object sender, EventArgs e)
         {
             SoliworksLoopcheckMode = false;
@@ -239,6 +303,36 @@ namespace SasaLib.VariableControlPipeClient
                 }
             }
             while (SoliworksLoopcheckMode);
+        }
+
+        // ----------------------------------------------------------------------------------- //
+
+        private async void RegistClient_hostCheck_button_Click(object sender, EventArgs e)
+        {
+            RegistClientLoopcheckMode = false;
+
+            do
+            {
+                await Task.Run(() =>
+                {
+                    MethodInvoker method = () =>
+                    {
+                        WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ開始・・");
+                        // コントロールに対する処理
+                        Host_CheckedListBox_Clear(RegistClient_checkfile_textBox);
+                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_checkfile_textBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{RegistClientLoopcheckMode}");
+                    };
+                    if (InvokeRequired) { Invoke(method); } else { method(); }
+                });
+
+                if (RegistClientLoopcheckMode)
+                {
+                    await Task.Delay(SleepSec * 1000);
+                    WriteLine($"{SleepSec} * 1000 sec経過しました。実行開始");
+                }
+            }
+            while (RegistClientLoopcheckMode);
         }
 
         // ----------------------------------------------------------------------------------- //
@@ -472,7 +566,9 @@ namespace SasaLib.VariableControlPipeClient
 
             Inventor_hostCheck_button_Click(sender, e);
             AutoCad_hostCheck_button_Click(sender, e);
+            AutodeskVault_hostCheck_button_Click(sender, e);
             SolidWorks_hostCheck_button_Click(sender, e);
+            RegistClient_hostCheck_button_Click(sender, e);
         }
 
 
@@ -492,23 +588,52 @@ namespace SasaLib.VariableControlPipeClient
         {
             WriteLine("CAD_Addin_Version_button_Click　調査開始");
 
+            string FullFileName = null;
+
+            // 
             InventorLoopcheckMode = false;
-            var FullFileName = @"C:\ProgramData\Autodesk\Inventor addins\TOYOM\InventorTOYOaddinCommit\InventorTOYOaddinCommit.dll";
+
+            if (InventorPIPENAME == "InventorTOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Inventor addins\TOYOM\InventorTOYOaddinCommit\InventorTOYOaddinCommit.dll";
+            else if (InventorPIPENAME == "Inventor2025TOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Inventor 2025\Addins\TOYOM\InventorTOYOaddinCommit.dll";
+
             Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
             VersionOrHash_Check(Inventor_Host_CheckedListBox, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
             Inventor_checkfile_textBox.Text = FullFileName;
 
+            //
             AutocadLoopcheckMode = false;
-            var FullFileName2 = @"C:\ProgramData\TOYOACADCONNECTOR\TOYOACAD2015COMMITTOOL.dll";
-            Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
-            VersionOrHash_Check(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, FullFileName2, CMDNAME.GetVersionInfo, "FileVersion");
-            Autocad_checkfile_textBox.Text = FullFileName2;
 
+            if (AutoCadPIPENAME == "AutoCadTOYOaddin")
+                FullFileName = @"C:\ProgramData\TOYOACADCONNECTOR\TOYOACAD2015COMMITTOOL.dll";
+            else if (AutoCadPIPENAME == "AutoCad2025TOYOaddin")
+                FullFileName = @"C:\ProgramData\AutocadTOYOaddin.DNet8\AutocadTOYOaddin.DNet8.dll";
+
+            Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
+            VersionOrHash_Check(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
+            Autocad_checkfile_textBox.Text = FullFileName;
+
+            //
+            AutodeskVaultLoopcheckMode = false;
+
+            if (AutoCadPIPENAME == "VaultVaultTOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Vault 2022\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
+            else if (AutoCadPIPENAME == "Vault2025TOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Vault 2025\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
+
+            Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
+            VersionOrHash_Check(AutodeskVault_Host_CheckedListBox, AutodeskVaultPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
+            Autocad_checkfile_textBox.Text = FullFileName;
+
+            //
             SoliworksLoopcheckMode = false;
-            var FullFileName3 = @"C:\ProgramData\TOYOSOLIDWORKSADDIN\SolidworksTOYOaddinCommit.dll";
+
+            FullFileName = @"C:\ProgramData\TOYOSOLIDWORKSADDIN\SolidworksTOYOaddinCommit.dll";
+
             Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
-            VersionOrHash_Check(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, FullFileName3, CMDNAME.GetVersionInfo, "FileVersion");
-            Solidworks_checkfile_textBox.Text = FullFileName3;
+            VersionOrHash_Check(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
+            Solidworks_checkfile_textBox.Text = FullFileName;
         }
 
         /// <summary>
@@ -537,6 +662,7 @@ namespace SasaLib.VariableControlPipeClient
             Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
             VersionOrHash_Check(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, FullFileName3, CMDNAME.GetVersionInfo, "FileVersion");
             Solidworks_checkfile_textBox.Text = FullFileName3;
+
         }
 
         /// <summary>
@@ -846,9 +972,19 @@ namespace SasaLib.VariableControlPipeClient
             AutoCad_Host_CheckedListBox.CheckAllCheckBoxes(false);
         }
 
+        private void AutodeskVault_host_CheckClear_button_Click(object sender, EventArgs e)
+        {
+            AutodeskVault_Host_CheckedListBox.CheckAllCheckBoxes(false);
+        }
+
         private void Solidworks_host_CheckClear_button_Click(object sender, EventArgs e)
         {
             SolidWorks_Host_CheckedListBox.CheckAllCheckBoxes(false);
+        }
+
+        private void RegistClient_Host_CheckClear_button_Click(object sender, EventArgs e)
+        {
+            RegistClient_checkfile_textBox.CheckAllCheckBoxes(false);
         }
 
         private void value_button_Click(object sender, EventArgs e)

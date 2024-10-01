@@ -11,20 +11,16 @@ using System.Threading;
 using System.Security.Permissions;
 using SasaLib;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Runtime.Versioning;
 
 namespace SasaLib.VariableControlPipeServer
 {
-    [SupportedOSPlatform("windows")]
     public partial class AutoCloseMessageBoxForm : Form
     {
         static bool NotActivate { set; get; }
 
         MessageBoxButtons Buttons { get; set; }
 
-#pragma warning disable SYSLIB0003 // 型またはメンバーが旧型式です
         [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
-#pragma warning restore SYSLIB0003 // 型またはメンバーが旧型式です
         protected override void WndProc(ref Message m)
         {
             const int WM_NCLBUTTONDBLCLK = 0xA3;
@@ -73,7 +69,7 @@ namespace SasaLib.VariableControlPipeServer
                     button1.Visible = false;
                     button1.Text = "";
                     button2.Visible = true;
-                    button2.Text= "OK";
+                    button2.Text = "OK";
                     button3.Visible = true;
                     button3.Text = "キャンセル";
                     break;
@@ -115,8 +111,7 @@ namespace SasaLib.VariableControlPipeServer
                     break;
             }
 
-            switch (icon)　            //TODO: 恐らく WindowsFormsリソース関連でエラーとなる
-
+            switch (icon)
             {
                 case MessageBoxIcon.None:
                     Icon_picturebox.Image = Properties.Resources.Asterisk;
@@ -265,7 +260,7 @@ namespace SasaLib.VariableControlPipeServer
             switch (Buttons)
             {
                 case MessageBoxButtons.OK:
-                    DialogResult= DialogResult.OK;
+                    DialogResult = DialogResult.OK;
                     this.Close();
                     break;
                 case MessageBoxButtons.OKCancel:
