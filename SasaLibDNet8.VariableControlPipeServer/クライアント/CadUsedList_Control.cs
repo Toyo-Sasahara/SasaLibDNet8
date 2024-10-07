@@ -135,7 +135,7 @@ namespace SasaLib.VariableControlPipeClient
             Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
             Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
             Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
-            Host_CheckedListBox_Clear(RegistClient_checkfile_textBox);
+            Host_CheckedListBox_Clear(RegistClient_Host2_CheckedListBox);
         }
 
         private void Host_CheckedListBox_Clear(CheckedListBox checkedListBox)
@@ -319,8 +319,8 @@ namespace SasaLib.VariableControlPipeClient
                     {
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
-                        Host_CheckedListBox_Clear(RegistClient_checkfile_textBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_checkfile_textBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        Host_CheckedListBox_Clear(RegistClient_Host2_CheckedListBox);
+                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_Host2_CheckedListBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{RegistClientLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -594,9 +594,9 @@ namespace SasaLib.VariableControlPipeClient
             InventorLoopcheckMode = false;
 
             if (InventorPIPENAME == "InventorTOYOaddin")
-                FullFileName = @"C:\ProgramData\Autodesk\Inventor addins\TOYOM\InventorTOYOaddinCommit\InventorTOYOaddinCommit.dll";
+                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
             else if (InventorPIPENAME == "Inventor2025TOYOaddin")
-                FullFileName = @"C:\ProgramData\Autodesk\Inventor 2025\Addins\TOYOM\InventorTOYOaddinCommit.dll";
+                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
 
             Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
             VersionOrHash_Check(Inventor_Host_CheckedListBox, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
@@ -617,7 +617,7 @@ namespace SasaLib.VariableControlPipeClient
             //
             AutodeskVaultLoopcheckMode = false;
 
-            if (AutoCadPIPENAME == "VaultVaultTOYOaddin")
+            if (AutodeskVaultPIPENAME == "VaultVaultTOYOaddin")
                 FullFileName = @"C:\ProgramData\Autodesk\Vault 2022\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
             else if (AutoCadPIPENAME == "Vault2025TOYOaddin")
                 FullFileName = @"C:\ProgramData\Autodesk\Vault 2025\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
@@ -634,6 +634,36 @@ namespace SasaLib.VariableControlPipeClient
             Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
             VersionOrHash_Check(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
             Solidworks_checkfile_textBox.Text = FullFileName;
+
+            Host_CheckedListBox_Clear(RegistClient_Host2_CheckedListBox);
+        }
+
+        private string GetAddinDllFileFullPath(string pipeName)
+        {
+            string FullFileName = null;
+
+            if (pipeName == "InventorTOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Inventor addins\TOYOM\InventorTOYOaddinCommit\InventorTOYOaddinCommit.dll";
+
+            else if (pipeName == "Inventor2025TOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Inventor 2025\Addins\TOYOM\InventorTOYOaddinCommit.dll";
+
+            else if (pipeName == "AutoCadTOYOaddin")
+                FullFileName = @"C:\ProgramData\TOYOACADCONNECTOR\TOYOACAD2015COMMITTOOL.dll";
+
+            else if (pipeName == "AutoCad2025TOYOaddin")
+                FullFileName = @"C:\ProgramData\AutocadTOYOaddin.DNet8\AutocadTOYOaddin.DNet8.dll";
+
+            else if (pipeName == "VaultVaultTOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Vault 2022\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
+
+            else if (pipeName == "Vault2025TOYOaddin")
+                FullFileName = @"C:\ProgramData\Autodesk\Vault 2025\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
+
+            else if (pipeName == "SolidworksTOYOaddin")
+                FullFileName = @"C:\ProgramData\TOYOSOLIDWORKSADDIN\SolidworksTOYOaddinCommit.dll";
+
+            return FullFileName;
         }
 
         /// <summary>
@@ -645,17 +675,33 @@ namespace SasaLib.VariableControlPipeClient
         {
             WriteLine("SasaLib_Version_button_Click　調査開始");
 
+            string FullFileName = null;
+
             InventorLoopcheckMode = false;
-            var FullFileName = @"C:\ProgramData\Autodesk\Inventor addins\TOYOM\InventorTOYOaddinCommit\SasaLib.dll";
+
+            if (InventorPIPENAME == "InventorTOYOaddin")
+                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
+            else if (InventorPIPENAME == "Inventor2025TOYOaddin")
+                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
+
             Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
             VersionOrHash_Check(Inventor_Host_CheckedListBox, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
             Inventor_checkfile_textBox.Text = FullFileName;
 
+            string FullFileName2 = null;
+
             AutocadLoopcheckMode = false;
-            var FullFileName2 = @"C:\ProgramData\TOYOACADCONNECTOR\SasaLib.dll";
+
+            if (AutoCadPIPENAME == "AutoCadTOYOaddin")
+                FullFileName2 = @"C:\ProgramData\TOYOACADCONNECTOR\TOYOACAD2015COMMITTOOL.dll";
+            else if (AutoCadPIPENAME == "AutoCad2025TOYOaddin")
+                FullFileName2 = @"C:\ProgramData\AutocadTOYOaddin.DNet8\AutocadTOYOaddin.DNet8.dll";
+
             Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
             VersionOrHash_Check(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, FullFileName2, CMDNAME.GetVersionInfo, "FileVersion");
             Autocad_checkfile_textBox.Text = FullFileName2;
+
+
 
             SoliworksLoopcheckMode = false;
             var FullFileName3 = @"C:\ProgramData\TOYOSOLIDWORKSADDIN\SasaLib.dll";
@@ -984,7 +1030,7 @@ namespace SasaLib.VariableControlPipeClient
 
         private void RegistClient_Host_CheckClear_button_Click(object sender, EventArgs e)
         {
-            RegistClient_checkfile_textBox.CheckAllCheckBoxes(false);
+            RegistClient_Host2_CheckedListBox.CheckAllCheckBoxes(false);
         }
 
         private void value_button_Click(object sender, EventArgs e)

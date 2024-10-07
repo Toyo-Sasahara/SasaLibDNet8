@@ -67,12 +67,12 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.CAD_Addin_Version_button = new System.Windows.Forms.Button();
             this.CAD_Addin_Hash_Button = new System.Windows.Forms.Button();
-            this.ToyoRegistClient_Host_CheckedListBox = new System.Windows.Forms.TableLayoutPanel();
+            this.RegistClient_Host_CheckedListBox = new System.Windows.Forms.TableLayoutPanel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.RegistClient_PIPENAME_comboBox = new System.Windows.Forms.ComboBox();
             this.RegistClient_host_CheckClear_button = new System.Windows.Forms.Button();
             this.RegistClient_hostCheck_button = new System.Windows.Forms.Button();
-            this.RegistClient_checkfile_textBox = new System.Windows.Forms.CheckedListBox();
+            this.RegistClient_Host2_CheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.AutodeskVault_Server_PIPENAME_comboBox = new System.Windows.Forms.ComboBox();
@@ -102,6 +102,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.AutodeskVault_checkfile_textBox = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -112,7 +113,7 @@
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.ToyoRegistClient_Host_CheckedListBox.SuspendLayout();
+            this.RegistClient_Host_CheckedListBox.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -126,17 +127,18 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.panel8);
-            this.panel5.Controls.Add(this.ToyoRegistClient_Host_CheckedListBox);
+            this.panel5.Controls.Add(this.RegistClient_Host_CheckedListBox);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1461, 873);
+            this.panel5.Size = new System.Drawing.Size(1525, 873);
             this.panel5.TabIndex = 19;
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.Controls.Add(this.AutodeskVault_checkfile_textBox);
             this.panel8.Controls.Add(this.ObjectCovNew_checkBox);
             this.panel8.Controls.Add(this.panel12);
             this.panel8.Controls.Add(this.value_button);
@@ -150,15 +152,16 @@
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Location = new System.Drawing.Point(3, 634);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1451, 233);
+            this.panel8.Size = new System.Drawing.Size(1515, 233);
             this.panel8.TabIndex = 37;
             // 
             // ObjectCovNew_checkBox
             // 
+            this.ObjectCovNew_checkBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ObjectCovNew_checkBox.AutoSize = true;
             this.ObjectCovNew_checkBox.Checked = true;
             this.ObjectCovNew_checkBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ObjectCovNew_checkBox.Location = new System.Drawing.Point(12, 151);
+            this.ObjectCovNew_checkBox.Location = new System.Drawing.Point(5, 214);
             this.ObjectCovNew_checkBox.Name = "ObjectCovNew_checkBox";
             this.ObjectCovNew_checkBox.Size = new System.Drawing.Size(105, 16);
             this.ObjectCovNew_checkBox.TabIndex = 47;
@@ -170,7 +173,7 @@
             this.panel12.Controls.Add(this.label5);
             this.panel12.Controls.Add(this.SoftwareComponentName_comboBox);
             this.panel12.Controls.Add(this.GetInstalledSoftware_button);
-            this.panel12.Location = new System.Drawing.Point(4, 115);
+            this.panel12.Location = new System.Drawing.Point(4, 130);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(909, 30);
             this.panel12.TabIndex = 46;
@@ -214,7 +217,7 @@
             // value_button
             // 
             this.value_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.value_button.Location = new System.Drawing.Point(1416, 3);
+            this.value_button.Location = new System.Drawing.Point(1480, 3);
             this.value_button.Name = "value_button";
             this.value_button.Size = new System.Drawing.Size(29, 19);
             this.value_button.TabIndex = 45;
@@ -231,7 +234,7 @@
             this.ValueSetGet_panel.Controls.Add(this.CommitConfigParameterName_comboBox);
             this.ValueSetGet_panel.Location = new System.Drawing.Point(919, 6);
             this.ValueSetGet_panel.Name = "ValueSetGet_panel";
-            this.ValueSetGet_panel.Size = new System.Drawing.Size(494, 139);
+            this.ValueSetGet_panel.Size = new System.Drawing.Size(558, 154);
             this.ValueSetGet_panel.TabIndex = 44;
             // 
             // panel2
@@ -249,7 +252,7 @@
             this.panel2.Controls.Add(this.SetVaule_textbox);
             this.panel2.Location = new System.Drawing.Point(3, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(488, 81);
+            this.panel2.Size = new System.Drawing.Size(552, 95);
             this.panel2.TabIndex = 46;
             // 
             // label4
@@ -285,7 +288,7 @@
             // XMLFILEUPDATE_button
             // 
             this.XMLFILEUPDATE_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.XMLFILEUPDATE_button.Location = new System.Drawing.Point(414, 51);
+            this.XMLFILEUPDATE_button.Location = new System.Drawing.Point(478, 51);
             this.XMLFILEUPDATE_button.Name = "XMLFILEUPDATE_button";
             this.XMLFILEUPDATE_button.Size = new System.Drawing.Size(69, 19);
             this.XMLFILEUPDATE_button.TabIndex = 28;
@@ -336,14 +339,14 @@
             this.panel3.Controls.Add(this.CommitConfig_GetSet_button);
             this.panel3.Location = new System.Drawing.Point(3, 26);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(488, 28);
+            this.panel3.Size = new System.Drawing.Size(552, 28);
             this.panel3.TabIndex = 8;
             // 
             // SetMode_checkBox
             // 
             this.SetMode_checkBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SetMode_checkBox.AutoSize = true;
-            this.SetMode_checkBox.Location = new System.Drawing.Point(348, 4);
+            this.SetMode_checkBox.Location = new System.Drawing.Point(412, 4);
             this.SetMode_checkBox.Name = "SetMode_checkBox";
             this.SetMode_checkBox.Size = new System.Drawing.Size(72, 16);
             this.SetMode_checkBox.TabIndex = 7;
@@ -370,14 +373,14 @@
             "文字列"});
             this.CommitConfigValue_comboBox.Location = new System.Drawing.Point(194, 3);
             this.CommitConfigValue_comboBox.Name = "CommitConfigValue_comboBox";
-            this.CommitConfigValue_comboBox.Size = new System.Drawing.Size(135, 20);
+            this.CommitConfigValue_comboBox.Size = new System.Drawing.Size(199, 20);
             this.CommitConfigValue_comboBox.TabIndex = 6;
             this.CommitConfigValue_comboBox.TextUpdate += new System.EventHandler(this.CommitConfigValue_comboBox_TextUpdate);
             // 
             // CommitConfig_GetSet_button
             // 
             this.CommitConfig_GetSet_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CommitConfig_GetSet_button.Location = new System.Drawing.Point(426, 3);
+            this.CommitConfig_GetSet_button.Location = new System.Drawing.Point(490, 3);
             this.CommitConfig_GetSet_button.Name = "CommitConfig_GetSet_button";
             this.CommitConfig_GetSet_button.Size = new System.Drawing.Size(54, 20);
             this.CommitConfig_GetSet_button.TabIndex = 1;
@@ -439,7 +442,7 @@
             "CheckedAndAlertDefaultVault"});
             this.CommitConfigParameterName_comboBox.Location = new System.Drawing.Point(3, 5);
             this.CommitConfigParameterName_comboBox.Name = "CommitConfigParameterName_comboBox";
-            this.CommitConfigParameterName_comboBox.Size = new System.Drawing.Size(488, 20);
+            this.CommitConfigParameterName_comboBox.Size = new System.Drawing.Size(552, 20);
             this.CommitConfigParameterName_comboBox.TabIndex = 3;
             this.CommitConfigParameterName_comboBox.Text = "InventorSoftwareDisplayName";
             // 
@@ -447,7 +450,7 @@
             // 
             this.panel1.Controls.Add(this.CheckFileHash_target_fullfilename_textBox);
             this.panel1.Controls.Add(this.FileHash_button);
-            this.panel1.Location = new System.Drawing.Point(633, 79);
+            this.panel1.Location = new System.Drawing.Point(633, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(278, 30);
             this.panel1.TabIndex = 43;
@@ -476,7 +479,7 @@
             // 
             // Solidworks_checkfile_textBox
             // 
-            this.Solidworks_checkfile_textBox.Location = new System.Drawing.Point(6, 53);
+            this.Solidworks_checkfile_textBox.Location = new System.Drawing.Point(6, 73);
             this.Solidworks_checkfile_textBox.Name = "Solidworks_checkfile_textBox";
             this.Solidworks_checkfile_textBox.ReadOnly = true;
             this.Solidworks_checkfile_textBox.Size = new System.Drawing.Size(905, 19);
@@ -485,7 +488,7 @@
             // 
             // Autocad_checkfile_textBox
             // 
-            this.Autocad_checkfile_textBox.Location = new System.Drawing.Point(6, 30);
+            this.Autocad_checkfile_textBox.Location = new System.Drawing.Point(6, 29);
             this.Autocad_checkfile_textBox.Name = "Autocad_checkfile_textBox";
             this.Autocad_checkfile_textBox.ReadOnly = true;
             this.Autocad_checkfile_textBox.Size = new System.Drawing.Size(905, 19);
@@ -505,7 +508,7 @@
             // 
             this.panel11.Controls.Add(this.STAGINGSYSTEM_SHARE_Version_button);
             this.panel11.Controls.Add(this.STAGINGSYSTEM_SHARE_Hash_button);
-            this.panel11.Location = new System.Drawing.Point(384, 79);
+            this.panel11.Location = new System.Drawing.Point(384, 95);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(243, 30);
             this.panel11.TabIndex = 39;
@@ -538,7 +541,7 @@
             // 
             this.panel10.Controls.Add(this.SasaLib_Version_button);
             this.panel10.Controls.Add(this.SasaLib_Hash_button);
-            this.panel10.Location = new System.Drawing.Point(194, 79);
+            this.panel10.Location = new System.Drawing.Point(194, 95);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(184, 30);
             this.panel10.TabIndex = 38;
@@ -571,7 +574,7 @@
             // 
             this.panel9.Controls.Add(this.CAD_Addin_Version_button);
             this.panel9.Controls.Add(this.CAD_Addin_Hash_Button);
-            this.panel9.Location = new System.Drawing.Point(4, 79);
+            this.panel9.Location = new System.Drawing.Point(4, 95);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(184, 30);
             this.panel9.TabIndex = 37;
@@ -600,40 +603,40 @@
             this.CAD_Addin_Hash_Button.UseVisualStyleBackColor = true;
             this.CAD_Addin_Hash_Button.Click += new System.EventHandler(this.CAD_Addin_Hash_Button_Click);
             // 
-            // ToyoRegistClient_Host_CheckedListBox
+            // RegistClient_Host_CheckedListBox
             // 
-            this.ToyoRegistClient_Host_CheckedListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.RegistClient_Host_CheckedListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ToyoRegistClient_Host_CheckedListBox.ColumnCount = 5;
-            this.ToyoRegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
-            this.ToyoRegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
-            this.ToyoRegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985F));
-            this.ToyoRegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
-            this.ToyoRegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.panel14, 4, 2);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.RegistClient_checkfile_textBox, 4, 1);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.label7, 4, 0);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.panel13, 2, 2);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.AutodeskVault_Host_CheckedListBox, 2, 1);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.Inventor_Host_CheckedListBox, 0, 1);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.AutoCad_Host_CheckedListBox, 1, 1);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.SolidWorks_Host_CheckedListBox, 3, 1);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.label138, 3, 0);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.label2, 1, 0);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.label6, 2, 0);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.label123, 0, 0);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.panel6, 1, 2);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.panel7, 3, 2);
-            this.ToyoRegistClient_Host_CheckedListBox.Controls.Add(this.panel4, 0, 2);
-            this.ToyoRegistClient_Host_CheckedListBox.Location = new System.Drawing.Point(3, 3);
-            this.ToyoRegistClient_Host_CheckedListBox.Name = "ToyoRegistClient_Host_CheckedListBox";
-            this.ToyoRegistClient_Host_CheckedListBox.RowCount = 3;
-            this.ToyoRegistClient_Host_CheckedListBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.ToyoRegistClient_Host_CheckedListBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.63351F));
-            this.ToyoRegistClient_Host_CheckedListBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.366485F));
-            this.ToyoRegistClient_Host_CheckedListBox.Size = new System.Drawing.Size(1454, 631);
-            this.ToyoRegistClient_Host_CheckedListBox.TabIndex = 39;
+            this.RegistClient_Host_CheckedListBox.ColumnCount = 5;
+            this.RegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.RegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.RegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.9985F));
+            this.RegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
+            this.RegistClient_Host_CheckedListBox.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.panel14, 4, 2);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.RegistClient_Host2_CheckedListBox, 4, 1);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.label7, 4, 0);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.panel13, 2, 2);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.AutodeskVault_Host_CheckedListBox, 2, 1);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.Inventor_Host_CheckedListBox, 0, 1);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.AutoCad_Host_CheckedListBox, 1, 1);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.SolidWorks_Host_CheckedListBox, 3, 1);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.label138, 3, 0);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.label2, 1, 0);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.label6, 2, 0);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.label123, 0, 0);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.panel6, 1, 2);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.panel7, 3, 2);
+            this.RegistClient_Host_CheckedListBox.Controls.Add(this.panel4, 0, 2);
+            this.RegistClient_Host_CheckedListBox.Location = new System.Drawing.Point(3, 3);
+            this.RegistClient_Host_CheckedListBox.Name = "RegistClient_Host_CheckedListBox";
+            this.RegistClient_Host_CheckedListBox.RowCount = 3;
+            this.RegistClient_Host_CheckedListBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.RegistClient_Host_CheckedListBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.63351F));
+            this.RegistClient_Host_CheckedListBox.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.366485F));
+            this.RegistClient_Host_CheckedListBox.Size = new System.Drawing.Size(1518, 631);
+            this.RegistClient_Host_CheckedListBox.TabIndex = 39;
             // 
             // panel14
             // 
@@ -641,9 +644,9 @@
             this.panel14.Controls.Add(this.RegistClient_host_CheckClear_button);
             this.panel14.Controls.Add(this.RegistClient_hostCheck_button);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(1163, 589);
+            this.panel14.Location = new System.Drawing.Point(1215, 589);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(288, 39);
+            this.panel14.Size = new System.Drawing.Size(300, 39);
             this.panel14.TabIndex = 28;
             // 
             // RegistClient_PIPENAME_comboBox
@@ -660,7 +663,7 @@
             // RegistClient_host_CheckClear_button
             // 
             this.RegistClient_host_CheckClear_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RegistClient_host_CheckClear_button.Location = new System.Drawing.Point(229, 3);
+            this.RegistClient_host_CheckClear_button.Location = new System.Drawing.Point(241, 3);
             this.RegistClient_host_CheckClear_button.Name = "RegistClient_host_CheckClear_button";
             this.RegistClient_host_CheckClear_button.Size = new System.Drawing.Size(56, 27);
             this.RegistClient_host_CheckClear_button.TabIndex = 24;
@@ -678,23 +681,23 @@
             this.RegistClient_hostCheck_button.UseVisualStyleBackColor = true;
             this.RegistClient_hostCheck_button.Click += new System.EventHandler(this.RegistClient_hostCheck_button_Click);
             // 
-            // RegistClient_checkfile_textBox
+            // RegistClient_Host2_CheckedListBox
             // 
-            this.RegistClient_checkfile_textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegistClient_checkfile_textBox.FormattingEnabled = true;
-            this.RegistClient_checkfile_textBox.HorizontalScrollbar = true;
-            this.RegistClient_checkfile_textBox.Location = new System.Drawing.Point(1163, 25);
-            this.RegistClient_checkfile_textBox.Name = "RegistClient_checkfile_textBox";
-            this.RegistClient_checkfile_textBox.Size = new System.Drawing.Size(288, 558);
-            this.RegistClient_checkfile_textBox.TabIndex = 27;
+            this.RegistClient_Host2_CheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RegistClient_Host2_CheckedListBox.FormattingEnabled = true;
+            this.RegistClient_Host2_CheckedListBox.HorizontalScrollbar = true;
+            this.RegistClient_Host2_CheckedListBox.Location = new System.Drawing.Point(1215, 25);
+            this.RegistClient_Host2_CheckedListBox.Name = "RegistClient_Host2_CheckedListBox";
+            this.RegistClient_Host2_CheckedListBox.Size = new System.Drawing.Size(300, 558);
+            this.RegistClient_Host2_CheckedListBox.TabIndex = 27;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(1163, 0);
+            this.label7.Location = new System.Drawing.Point(1215, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(288, 22);
+            this.label7.Size = new System.Drawing.Size(300, 22);
             this.label7.TabIndex = 26;
             this.label7.Text = "図面承認・登録ツール";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -705,9 +708,9 @@
             this.panel13.Controls.Add(this.AutodeskVault_host_CheckClear_button);
             this.panel13.Controls.Add(this.AutodeskVault_hostCheck_button);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(583, 589);
+            this.panel13.Location = new System.Drawing.Point(609, 589);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(284, 39);
+            this.panel13.Size = new System.Drawing.Size(297, 39);
             this.panel13.TabIndex = 25;
             // 
             // AutodeskVault_Server_PIPENAME_comboBox
@@ -725,7 +728,7 @@
             // AutodeskVault_host_CheckClear_button
             // 
             this.AutodeskVault_host_CheckClear_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AutodeskVault_host_CheckClear_button.Location = new System.Drawing.Point(227, 3);
+            this.AutodeskVault_host_CheckClear_button.Location = new System.Drawing.Point(240, 3);
             this.AutodeskVault_host_CheckClear_button.Name = "AutodeskVault_host_CheckClear_button";
             this.AutodeskVault_host_CheckClear_button.Size = new System.Drawing.Size(54, 27);
             this.AutodeskVault_host_CheckClear_button.TabIndex = 24;
@@ -748,9 +751,9 @@
             this.AutodeskVault_Host_CheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AutodeskVault_Host_CheckedListBox.FormattingEnabled = true;
             this.AutodeskVault_Host_CheckedListBox.HorizontalScrollbar = true;
-            this.AutodeskVault_Host_CheckedListBox.Location = new System.Drawing.Point(583, 25);
+            this.AutodeskVault_Host_CheckedListBox.Location = new System.Drawing.Point(609, 25);
             this.AutodeskVault_Host_CheckedListBox.Name = "AutodeskVault_Host_CheckedListBox";
-            this.AutodeskVault_Host_CheckedListBox.Size = new System.Drawing.Size(284, 558);
+            this.AutodeskVault_Host_CheckedListBox.Size = new System.Drawing.Size(297, 558);
             this.AutodeskVault_Host_CheckedListBox.TabIndex = 24;
             // 
             // Inventor_Host_CheckedListBox
@@ -760,7 +763,7 @@
             this.Inventor_Host_CheckedListBox.HorizontalScrollbar = true;
             this.Inventor_Host_CheckedListBox.Location = new System.Drawing.Point(3, 25);
             this.Inventor_Host_CheckedListBox.Name = "Inventor_Host_CheckedListBox";
-            this.Inventor_Host_CheckedListBox.Size = new System.Drawing.Size(284, 558);
+            this.Inventor_Host_CheckedListBox.Size = new System.Drawing.Size(297, 558);
             this.Inventor_Host_CheckedListBox.TabIndex = 19;
             // 
             // AutoCad_Host_CheckedListBox
@@ -768,9 +771,9 @@
             this.AutoCad_Host_CheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AutoCad_Host_CheckedListBox.FormattingEnabled = true;
             this.AutoCad_Host_CheckedListBox.HorizontalScrollbar = true;
-            this.AutoCad_Host_CheckedListBox.Location = new System.Drawing.Point(293, 25);
+            this.AutoCad_Host_CheckedListBox.Location = new System.Drawing.Point(306, 25);
             this.AutoCad_Host_CheckedListBox.Name = "AutoCad_Host_CheckedListBox";
-            this.AutoCad_Host_CheckedListBox.Size = new System.Drawing.Size(284, 558);
+            this.AutoCad_Host_CheckedListBox.Size = new System.Drawing.Size(297, 558);
             this.AutoCad_Host_CheckedListBox.TabIndex = 19;
             // 
             // SolidWorks_Host_CheckedListBox
@@ -778,18 +781,18 @@
             this.SolidWorks_Host_CheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SolidWorks_Host_CheckedListBox.FormattingEnabled = true;
             this.SolidWorks_Host_CheckedListBox.HorizontalScrollbar = true;
-            this.SolidWorks_Host_CheckedListBox.Location = new System.Drawing.Point(873, 25);
+            this.SolidWorks_Host_CheckedListBox.Location = new System.Drawing.Point(912, 25);
             this.SolidWorks_Host_CheckedListBox.Name = "SolidWorks_Host_CheckedListBox";
-            this.SolidWorks_Host_CheckedListBox.Size = new System.Drawing.Size(284, 558);
+            this.SolidWorks_Host_CheckedListBox.Size = new System.Drawing.Size(297, 558);
             this.SolidWorks_Host_CheckedListBox.TabIndex = 19;
             // 
             // label138
             // 
             this.label138.AutoSize = true;
             this.label138.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label138.Location = new System.Drawing.Point(873, 0);
+            this.label138.Location = new System.Drawing.Point(912, 0);
             this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(284, 22);
+            this.label138.Size = new System.Drawing.Size(297, 22);
             this.label138.TabIndex = 20;
             this.label138.Text = "Solidowrks";
             this.label138.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -798,9 +801,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(293, 0);
+            this.label2.Location = new System.Drawing.Point(306, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(284, 22);
+            this.label2.Size = new System.Drawing.Size(297, 22);
             this.label2.TabIndex = 20;
             this.label2.Text = "AutoCAD";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -809,9 +812,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(583, 0);
+            this.label6.Location = new System.Drawing.Point(609, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(284, 22);
+            this.label6.Size = new System.Drawing.Size(297, 22);
             this.label6.TabIndex = 23;
             this.label6.Text = "AutodeskVault";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -822,7 +825,7 @@
             this.label123.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label123.Location = new System.Drawing.Point(3, 0);
             this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(284, 22);
+            this.label123.Size = new System.Drawing.Size(297, 22);
             this.label123.TabIndex = 20;
             this.label123.Text = "Inventor";
             this.label123.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -833,9 +836,9 @@
             this.panel6.Controls.Add(this.Autocad_host_CheckClear_button);
             this.panel6.Controls.Add(this.AutoCad_hostCheck_button);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(293, 589);
+            this.panel6.Location = new System.Drawing.Point(306, 589);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(284, 39);
+            this.panel6.Size = new System.Drawing.Size(297, 39);
             this.panel6.TabIndex = 21;
             // 
             // Autocad_Server_PIPENAME_comboBox
@@ -853,7 +856,7 @@
             // Autocad_host_CheckClear_button
             // 
             this.Autocad_host_CheckClear_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Autocad_host_CheckClear_button.Location = new System.Drawing.Point(228, 3);
+            this.Autocad_host_CheckClear_button.Location = new System.Drawing.Point(241, 3);
             this.Autocad_host_CheckClear_button.Name = "Autocad_host_CheckClear_button";
             this.Autocad_host_CheckClear_button.Size = new System.Drawing.Size(53, 27);
             this.Autocad_host_CheckClear_button.TabIndex = 23;
@@ -877,9 +880,9 @@
             this.panel7.Controls.Add(this.Solidworks_host_CheckClear_button);
             this.panel7.Controls.Add(this.SolidWorks_hostCheck_button);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(873, 589);
+            this.panel7.Location = new System.Drawing.Point(912, 589);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(284, 39);
+            this.panel7.Size = new System.Drawing.Size(297, 39);
             this.panel7.TabIndex = 22;
             // 
             // SolidWorks_Server_PIPENAME_comboBox
@@ -896,7 +899,7 @@
             // Solidworks_host_CheckClear_button
             // 
             this.Solidworks_host_CheckClear_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Solidworks_host_CheckClear_button.Location = new System.Drawing.Point(229, 3);
+            this.Solidworks_host_CheckClear_button.Location = new System.Drawing.Point(242, 3);
             this.Solidworks_host_CheckClear_button.Name = "Solidworks_host_CheckClear_button";
             this.Solidworks_host_CheckClear_button.Size = new System.Drawing.Size(52, 27);
             this.Solidworks_host_CheckClear_button.TabIndex = 24;
@@ -922,7 +925,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 589);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(284, 39);
+            this.panel4.Size = new System.Drawing.Size(297, 39);
             this.panel4.TabIndex = 20;
             // 
             // Inventor_Server_PIPENAME_comboBox
@@ -940,7 +943,7 @@
             // Inventor_host_CheckClear_button
             // 
             this.Inventor_host_CheckClear_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Inventor_host_CheckClear_button.Location = new System.Drawing.Point(228, 3);
+            this.Inventor_host_CheckClear_button.Location = new System.Drawing.Point(241, 3);
             this.Inventor_host_CheckClear_button.Name = "Inventor_host_CheckClear_button";
             this.Inventor_host_CheckClear_button.Size = new System.Drawing.Size(53, 27);
             this.Inventor_host_CheckClear_button.TabIndex = 22;
@@ -977,7 +980,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1475, 905);
+            this.tabControl1.Size = new System.Drawing.Size(1539, 905);
             this.tabControl1.TabIndex = 40;
             // 
             // tabPage1
@@ -986,7 +989,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1467, 879);
+            this.tabPage1.Size = new System.Drawing.Size(1531, 879);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "メイン";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1002,6 +1005,15 @@
             this.tabPage2.Text = "ログ出力";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // AutodeskVault_checkfile_textBox
+            // 
+            this.AutodeskVault_checkfile_textBox.Location = new System.Drawing.Point(6, 51);
+            this.AutodeskVault_checkfile_textBox.Name = "AutodeskVault_checkfile_textBox";
+            this.AutodeskVault_checkfile_textBox.ReadOnly = true;
+            this.AutodeskVault_checkfile_textBox.Size = new System.Drawing.Size(905, 19);
+            this.AutodeskVault_checkfile_textBox.TabIndex = 48;
+            this.AutodeskVault_checkfile_textBox.Text = "AutodeskVaultTOYOaddin でインストールされたファイル";
+            // 
             // CadUsedList_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1009,7 +1021,7 @@
             this.AutoSize = true;
             this.Controls.Add(this.tabControl1);
             this.Name = "CadUsedList_Control";
-            this.Size = new System.Drawing.Size(1475, 905);
+            this.Size = new System.Drawing.Size(1539, 905);
             this.Load += new System.EventHandler(this.CadUsedList_Control_Load);
             this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -1026,8 +1038,8 @@
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.ToyoRegistClient_Host_CheckedListBox.ResumeLayout(false);
-            this.ToyoRegistClient_Host_CheckedListBox.PerformLayout();
+            this.RegistClient_Host_CheckedListBox.ResumeLayout(false);
+            this.RegistClient_Host_CheckedListBox.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -1054,7 +1066,7 @@
         private System.Windows.Forms.CheckedListBox AutoCad_Host_CheckedListBox;
         private System.Windows.Forms.CheckedListBox Inventor_Host_CheckedListBox;
         private System.Windows.Forms.TextBox LogTextBox;
-        private System.Windows.Forms.TableLayoutPanel ToyoRegistClient_Host_CheckedListBox;
+        private System.Windows.Forms.TableLayoutPanel RegistClient_Host_CheckedListBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
@@ -1112,10 +1124,11 @@
         private System.Windows.Forms.ComboBox SolidWorks_Server_PIPENAME_comboBox;
         private System.Windows.Forms.ComboBox Inventor_Server_PIPENAME_comboBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckedListBox RegistClient_checkfile_textBox;
+        private System.Windows.Forms.CheckedListBox RegistClient_Host2_CheckedListBox;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.ComboBox RegistClient_PIPENAME_comboBox;
         private System.Windows.Forms.Button RegistClient_host_CheckClear_button;
         private System.Windows.Forms.Button RegistClient_hostCheck_button;
+        private System.Windows.Forms.TextBox AutodeskVault_checkfile_textBox;
     }
 }
