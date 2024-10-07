@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 #if NETCOREAPP
-using SasaLib.VariableControlPipeServer;
 using MethodInvoker = System.Windows.Forms.MethodInvoker;
 using System.Runtime.Versioning;
 #endif
