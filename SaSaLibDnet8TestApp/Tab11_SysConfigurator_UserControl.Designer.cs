@@ -29,55 +29,95 @@ namespace SaSaLibDNet8TestAPP
         /// </summary>
         private void InitializeComponent()
         {
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.LogWindow_textBox = new System.Windows.Forms.TextBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            openFileDialog1 = new OpenFileDialog();
+            LogWindow_textBox = new TextBox();
+            button22 = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            checkBox1 = new CheckBox();
+            SuspendLayout();
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // LogWindow_textBox
             // 
-            this.LogWindow_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogWindow_textBox.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.LogWindow_textBox.Location = new System.Drawing.Point(585, 3);
-            this.LogWindow_textBox.Multiline = true;
-            this.LogWindow_textBox.Name = "LogWindow_textBox";
-            this.LogWindow_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.LogWindow_textBox.Size = new System.Drawing.Size(448, 536);
-            this.LogWindow_textBox.TabIndex = 102;
+            LogWindow_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            LogWindow_textBox.Font = new Font("MS UI Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            LogWindow_textBox.Location = new Point(682, 4);
+            LogWindow_textBox.Margin = new Padding(4);
+            LogWindow_textBox.Multiline = true;
+            LogWindow_textBox.Name = "LogWindow_textBox";
+            LogWindow_textBox.ScrollBars = ScrollBars.Both;
+            LogWindow_textBox.Size = new Size(522, 669);
+            LogWindow_textBox.TabIndex = 102;
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(3, 3);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(164, 61);
-            this.button22.TabIndex = 103;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            button22.Location = new Point(4, 4);
+            button22.Margin = new Padding(4);
+            button22.Name = "button22";
+            button22.Size = new Size(191, 76);
+            button22.TabIndex = 103;
+            button22.Text = "button22";
+            button22.UseVisualStyleBackColor = true;
+            button22.Click += button22_Click;
             // 
-            // TabControl11
+            // button1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button22);
-            this.Controls.Add(this.LogWindow_textBox);
-            this.Name = "TabControl11";
-            this.Size = new System.Drawing.Size(1046, 549);
-            this.Load += new System.EventHandler(this.TabControl1_Load);
-            this.VisibleChanged += new System.EventHandler(this.TabControl1_VisibleChanged);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            button1.Location = new Point(53, 227);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 104;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(134, 227);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 105;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(134, 256);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(83, 19);
+            checkBox1.TabIndex = 106;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // Tab11_SysConfigurator_UserControl
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(checkBox1);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(button22);
+            Controls.Add(LogWindow_textBox);
+            Margin = new Padding(4);
+            Name = "Tab11_SysConfigurator_UserControl";
+            Size = new Size(1220, 686);
+            Load += TabControl1_Load;
+            VisibleChanged += TabControl1_VisibleChanged;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox LogWindow_textBox;
         private System.Windows.Forms.Button button22;
+        private Button button1;
+        private Button button2;
+        private CheckBox checkBox1;
     }
 }

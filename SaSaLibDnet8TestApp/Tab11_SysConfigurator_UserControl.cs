@@ -1,16 +1,21 @@
 ﻿using SasaLib;
+using SasaLib.PIPE;
 using SasaLib.SysConfigurator;
+using SasaLib.VariableControlPipeClient;
+using SasaLib.VariableControlPipeServer;
 using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Windows.Networking;
 
 namespace SaSaLibDNet8TestAPP
 {
@@ -97,5 +102,82 @@ namespace SaSaLibDNet8TestAPP
             TestRun.Execute(@"D:\TESTDATA.CONF");
 
         }
+
+        private DialogResult PipeServerUserMsgBoxShow(string Message, string Title, MessageBoxButtons messageBoxButtons, MessageBoxIcon messageBoxIcon)
+        {
+            var result = MessageBox.Show(this, Message, Title, messageBoxButtons, messageBoxIcon);
+            return result;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogWindowWriteLine("パイプサーバースタート");
+
+            ConfigTest.Config = new ConfigTest();
+
+            VariableControlPipeServer oPipeServe = new VariableControlPipeServer("ABCDE", "Accept Ver 1.22.08", ConfigTest.Config, DebugConsole.WriteLine, 0, PipeServerUserMsgBoxShow);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, "localhost", "ABCDE");
+            //remote.pileCltStremConnectTimeOut = 20000;
+
+            object startDateTImeObj;
+
+
+            //コントロールに対する処理
+            //WriteLine($"Inventor 利用状況ﾁｪｯｸ開始・・");
+            startDateTImeObj = remote.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: checkBox1.Checked, WriteLine: DebugConsole.WriteLine);
+            //WriteLine($"Inventor 利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{LoopcheckMode}");
+
+
+        }
+
+        int logNumber = 0;
+        int LimitNumberLines = 10;
+
+        private void _WriteLine(string value)
+        {
+
+            if (logNumber > LimitNumberLines)
+            {
+                try
+                {
+                    MethodInvoker method = () =>
+                    {
+                        LogWindow_textBox.Lines = LogWindow_textBox.Lines.Skip(LogWindow_textBox.Lines.Length - LimitNumberLines).ToArray();
+                    };
+                    if (InvokeRequired) { Invoke(method); } else { method(); }
+
+                }
+                catch (Exception ex)
+                {
+                    SasaLib.Eventlog.Log.WriteEntry("InventorTOYOaddin", EventLogEntryType.Error, 0, $"※LogWindowForm.WriteLine(...),  LogTextBox.Lines 失敗,Exception={ex.Message} value = {value}");
+                }
+
+                logNumber = 0;
+            } // LimitNumberLinesより行数が増えたときの処理
+
+            logNumber++;
+
+            try
+            {
+                MethodInvoker method = () =>
+                {                        /// UIを操作する処理
+                    LogWindow_textBox.AppendText($"{logNumber}:" + value + "\r\n");
+
+                };
+                if (InvokeRequired) { Invoke(method); } else { method(); }
+
+            }
+            catch (Exception ex)
+            {
+                SasaLib.Eventlog.Log.WriteEntry("InventorTOYOaddin", EventLogEntryType.Error, 0, $"※LogWindowForm.WriteLine(...), LogTextBox.AppendText失敗,Exception={ex.Message} value = {value}");
+            }
+
+        }
+
     }
 }
