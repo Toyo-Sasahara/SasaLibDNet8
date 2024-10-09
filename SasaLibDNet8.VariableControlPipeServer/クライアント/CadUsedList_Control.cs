@@ -37,30 +37,35 @@ namespace SasaLib.VariableControlPipeClient
         //string AutoCadPIPENAME = "AutoCadTOYOaddin";
         //string SolidWorksPIPENAME = "SolidworksTOYOaddin";
 
-        string InventorPIPENAME
+        public string InventorPIPENAME
         {
             get { return Inventor_Server_PIPENAME_comboBox.Text; }
+            set { Inventor_Server_PIPENAME_comboBox.Text = value; }
         }
 
-        string AutoCadPIPENAME
+        public string AutoCadPIPENAME
         {
             get { return Autocad_Server_PIPENAME_comboBox.Text; }
+            set { Autocad_Server_PIPENAME_comboBox.Text = value; }
         }
 
-        string SolidWorksPIPENAME
+        public string SolidWorksPIPENAME
         {
             get { return SolidWorks_Server_PIPENAME_comboBox.Text; }
+            set { SolidWorks_Server_PIPENAME_comboBox.Text = value; }
 
         }
 
-        string AutodeskVaultPIPENAME
+        public string AutodeskVaultPIPENAME
         {
             get { return AutodeskVault_Server_PIPENAME_comboBox.Text; }
+            set { AutodeskVault_Server_PIPENAME_comboBox.Text = value; }
         }
 
-        string RegistClientPIPENAME
+        public string RegistClientPIPENAME
         {
             get { return RegistClient_PIPENAME_comboBox.Text; }
+            set { RegistClient_PIPENAME_comboBox.Text = value; }
         }
 
         /// <summary>
