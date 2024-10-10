@@ -37,29 +37,50 @@ namespace SasaLib.VariableControlPipeClient
         //string AutoCadPIPENAME = "AutoCadTOYOaddin";
         //string SolidWorksPIPENAME = "SolidworksTOYOaddin";
 
+        string _InventorPIPENAME;
         public string InventorPIPENAME
         {
-            get { return Inventor_Server_PIPENAME_comboBox.Text; }
-            set { Inventor_Server_PIPENAME_comboBox.Text = value; }
+            get
+            {
+                Inventor_Server_PIPENAME_comboBox.Text = _InventorPIPENAME;
+
+                return _InventorPIPENAME; 
+            }
+            set
+            {
+                _InventorPIPENAME = value;
+                Inventor_Server_PIPENAME_comboBox.Text = _InventorPIPENAME;
+            }
         }
 
+        string _AutoCadPIPENAME;
         public string AutoCadPIPENAME
         {
-            get { return Autocad_Server_PIPENAME_comboBox.Text; }
-            set { Autocad_Server_PIPENAME_comboBox.Text = value; }
-        }
+            get
+            {
+                Autocad_Server_PIPENAME_comboBox.Text = _AutoCadPIPENAME;
 
-        public string SolidWorksPIPENAME
-        {
-            get { return SolidWorks_Server_PIPENAME_comboBox.Text; }
-            set { SolidWorks_Server_PIPENAME_comboBox.Text = value; }
-
+                return _AutoCadPIPENAME; 
+            }
+            set 
+            {
+                _AutoCadPIPENAME = value;
+                Autocad_Server_PIPENAME_comboBox.Text = _AutoCadPIPENAME;
+            }
         }
 
         public string AutodeskVaultPIPENAME
         {
             get { return AutodeskVault_Server_PIPENAME_comboBox.Text; }
             set { AutodeskVault_Server_PIPENAME_comboBox.Text = value; }
+        }
+
+
+        public string SolidWorksPIPENAME
+        {
+            get { return SolidWorks_Server_PIPENAME_comboBox.Text; }
+            set { SolidWorks_Server_PIPENAME_comboBox.Text = value; }
+
         }
 
         public string RegistClientPIPENAME
