@@ -330,6 +330,9 @@ namespace SasaLib.InventorAPI
         {
             string currentNode = null;
 
+            if (oNode == null)
+                return false;
+
             try
             {
                 currentNode = oNode.FullTreeViewPath;
