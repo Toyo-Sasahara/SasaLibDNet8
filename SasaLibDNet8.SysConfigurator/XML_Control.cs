@@ -577,7 +577,7 @@ namespace SasaLib.SysConfigurator
             }
             else
             {
-                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞの作成ﾌｧｲﾙﾌﾙﾊﾟｽの指示がありません");
+                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ側のﾌｧｲﾙﾌﾙﾊﾟｽの指示がありません");
                 return false;
             }
 
@@ -664,14 +664,14 @@ namespace SasaLib.SysConfigurator
                             }
                             catch (System.Exception ex)
                             {
-                                WriteLine($"■ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} を  上書きするモードです.書き込み可能への設定変更に失敗しました {ex.Message}");
+                                WriteLine($"■ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を  上書きするモードです.書き込み可能への設定変更に失敗しました {ex.Message}");
                             }
 
                             if (FileFolder.RemoveFile(LocalSideFullFileName) == true)
-                                WriteLine($"■ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} を 上書きするモードです.既存ﾌｧｲﾙを削除しました");
+                                WriteLine($"■ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を 上書きするモードです.既存ﾌｧｲﾙを削除しました");
                             else
                             {
-                                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} を 上書きするモードです.既存ﾌｧｲﾙを削除に失敗しました。このファイルはスキップします");
+                                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を 上書きするモードです.既存ﾌｧｲﾙを削除に失敗しました。このファイルはスキップします");
                                 return false;
                             }
                         }
@@ -685,7 +685,7 @@ namespace SasaLib.SysConfigurator
 
                         if (ans)
                         {
-                            WriteLine($"■テンポラリ:{LoadTempFile.FullTempFileName} -> ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 移動成功");
+                            WriteLine($"■テンポラリ:\"{LoadTempFile.FullTempFileName}\" -> ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 移動成功");
 
                             try
                             {
@@ -694,7 +694,7 @@ namespace SasaLib.SysConfigurator
                             }
                             catch (System.Exception ex)
                             {
-                                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 属性値書き戻しに失敗しました {ex.Message}");
+                                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 属性値書き戻しに失敗しました {ex.Message}");
                             }
 
                             if (unzip)
@@ -703,14 +703,14 @@ namespace SasaLib.SysConfigurator
 
                                 if (unzipans)
                                 {
-                                    WriteLine($"■unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 解凍先:{UnzipExtractFolder} 解凍成功");
+                                    WriteLine($"■unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 解凍先:\"{UnzipExtractFolder}\" 解凍成功");
 
                                     if (DeleteZipFileAfterUnzipped == true)
                                     {
                                         try
                                         {
                                             System.IO.File.Delete(LocalSideFullFileName);
-                                            WriteLine($"■圧縮ﾌｧｲﾙ展開後削除指示 があります:{LocalSideFullFileName} の削除に成功しました");
+                                            WriteLine($"■圧縮ﾌｧｲﾙ展開後削除指示 があります:\"{LocalSideFullFileName}\" の削除に成功しました");
                                         }
                                         catch (IOException e1)
                                         {
@@ -721,7 +721,7 @@ namespace SasaLib.SysConfigurator
                                 }
                                 else
                                 {
-                                    WriteLine($"※unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 解凍先:{UnzipExtractFolder} 解凍失敗。{LocalSideFullFileName}の削除を試みます");
+                                    WriteLine($"※unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 解凍先:\"{UnzipExtractFolder}\" 解凍失敗。\"{LocalSideFullFileName}\"の削除を試みます");
 
                                     try
                                     {
@@ -738,7 +738,7 @@ namespace SasaLib.SysConfigurator
                         }
                         else
                         {
-                            WriteLine($"※テンポラリ:{LoadTempFile.FullTempFileName} -> ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName} 移動失敗。ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName}が既に存在しています(2)。処理を続けられません continueします");
+                            WriteLine($"※テンポラリ:\"{LoadTempFile.FullTempFileName}\" -> ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 移動失敗。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" が既に存在しています(2)。処理を続けられません continueします");
                             return false;
                         }
                     }
@@ -794,11 +794,11 @@ namespace SasaLib.SysConfigurator
                         try
                         {
                             // ファイルやディレクトリの属性（群）を取得
-                            FileAttributes fas = System.IO.File.GetAttributes(LocalSideFullFileName);
+                            FileAttributes attributes = System.IO.File.GetAttributes(LocalSideFullFileName);
 
                             // ファイル属性に読み取り専用をセット
-                            fas = fas & FileAttributes.ReadOnly;
-                            System.IO.File.SetAttributes(LocalSideFullFileName, fas);
+                            attributes = attributes | FileAttributes.ReadOnly;
+                            System.IO.File.SetAttributes(LocalSideFullFileName, attributes);
 
                             setAttributeResult = true;
 
@@ -814,11 +814,19 @@ namespace SasaLib.SysConfigurator
                         try
                         {
                             // ファイルやディレクトリの属性（群）を取得
-                            FileAttributes fas = System.IO.File.GetAttributes(LocalSideFullFileName);
+                            FileAttributes attributes = System.IO.File.GetAttributes(LocalSideFullFileName);
 
-                            // ファイル属性に読み取り専用を解除
-                            fas = fas & ~FileAttributes.ReadOnly;
-                            System.IO.File.SetAttributes(LocalSideFullFileName, fas);
+                            // 読み取り専用属性を解除
+                            if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                            {
+                                attributes = attributes & ~FileAttributes.ReadOnly;  // NOT演算子を使って読み取り専用属性を除去
+                                System.IO.File.SetAttributes(LocalSideFullFileName, attributes);
+                                //Console.WriteLine("ファイルから読み取り専用属性を解除しました。");
+                            }
+                            else
+                            {
+                               WriteLine($"■{LocalSideFullFileName}には読み取り専用属性が設定されていません。");
+                            }
 
                             setAttributeResult = true;
                         }
@@ -834,9 +842,9 @@ namespace SasaLib.SysConfigurator
                 }
 
                 if (setAttributeResult)
-                    WriteLine($"■ファイルアトリビュート変更対象:{LocalSideFullFileName} に {file.Attribute} をセットに成功しました");
+                    WriteLine($"■ファイルアトリビュート変更対象:\"{LocalSideFullFileName}\" に {file.Attribute} をセットに成功しました");
                 else
-                    WriteLine($"※ファイルアトリビュート変更対象:{LocalSideFullFileName}  に {file.Attribute} をセットを失敗しました");
+                    WriteLine($"※ファイルアトリビュート変更対象:\"{LocalSideFullFileName}\"  に {file.Attribute} をセットを失敗しました");
 
                 return setAttributeResult;
             }
@@ -880,7 +888,7 @@ namespace SasaLib.SysConfigurator
                 }
                 catch (System.Exception ex)
                 {
-                    WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:{orderPath} 属性変更（書き込み可）失敗しました {ex.Message}");
+                    WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:\"{orderPath}\" 属性変更（書き込み可）失敗しました {ex.Message}");
                     return false;
                 }
 
@@ -890,12 +898,12 @@ namespace SasaLib.SysConfigurator
                     try
                     {
                         System.IO.Directory.Delete(orderPath, true);
-                        WriteLine($"■削除対象 フォルダとサブフォルダ及びファイル :{orderPath} 成功しました");
+                        WriteLine($"■削除対象 :\"{orderPath}\" フォルダとサブフォルダ及びファイルの削除に成功しました");
                         return true;
                     }
                     catch (IOException e1)
                     {
-                        WriteLine($"※削除対象 フォルダとサブフォルダ及びファイル :{orderPath} 失敗しました {e1.Message}");
+                        WriteLine($"※削除対象 :\"{orderPath}\" フォルダとサブフォルダ及びファイルの削除に失敗しました {e1.Message}");
                         return false;
                     }
 
@@ -906,13 +914,13 @@ namespace SasaLib.SysConfigurator
                     try
                     {
                         System.IO.File.Delete(orderPath);
-                        WriteLine($"■削除対象 ファイル :{orderPath} 成功しました");
+                        WriteLine($"■削除対象:\"{orderPath}\" ファイルの削除に成功しました");
                         return true;
 
                     }
                     catch (IOException e1)
                     {
-                        WriteLine($"※削除対象 ファイル :{orderPath} 失敗しました {e1.Message}");
+                        WriteLine($"※削除対象:\"{orderPath}\" ファイルの削除に失敗しました {e1.Message}");
                         return false;
                     }
 

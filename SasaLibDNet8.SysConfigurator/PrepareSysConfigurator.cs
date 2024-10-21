@@ -95,8 +95,11 @@ namespace SasaLib.SysConfigurator
         /// <param name="ts"></param>
         /// <param name="forceExecute"></param>
         /// <returns></returns>
-        public bool Execute(out TimeSpan ts, bool forceExecute = false)
+        public bool Execute(out TimeSpan ts, bool forceExecute = false, SasaLibDelegateWriteLine WriteLine = null)
         {
+            if (WriteLine != null)
+                this.delegate_WriteLine = WriteLine;
+
             // 作業ベースフォルダ,ログ出力先ﾍﾞｰｽﾌｫﾙﾀﾞ
             var BaseDir = System.IO.Path.Combine(configWorkFolder, "[" + CadVersonString + "]");
             FileFolder.MakeDirectory(BaseDir.TrimEnd('\\'));
