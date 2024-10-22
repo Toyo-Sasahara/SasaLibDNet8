@@ -31,7 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="stdole" Version="17.11.40262" />
+    <PackageReference Include="Microsoft.VisualStudio.Interop" Version="17.11.40262" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +40,9 @@
     </Reference>
     <Reference Include="Autodesk.Inventor.Interop">
       <HintPath>SDK\Autodesk.Inventor.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Inventor 2025\Bin\stdole.dll</HintPath>
     </Reference>
   </ItemGroup>
 	

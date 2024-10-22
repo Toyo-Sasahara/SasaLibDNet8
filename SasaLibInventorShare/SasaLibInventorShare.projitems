@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ApplicationOptions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ButtonPanelTabToRibbon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InventorExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ContentCenterLocalDatabase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ContentCenterLocalDatabaseCreate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DrawingBorder.cs" />
