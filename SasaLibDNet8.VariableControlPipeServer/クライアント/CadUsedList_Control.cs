@@ -95,9 +95,6 @@ namespace SasaLib.VariableControlPipeClient
         public List<string> hosts { get; set; } = new List<string>
         {
             "192.168.7.10",
-            "MPA01",
-            "MPB01",
-            "MPB02",
             "MPB03",
             "MPC01",
             "MPC02",
