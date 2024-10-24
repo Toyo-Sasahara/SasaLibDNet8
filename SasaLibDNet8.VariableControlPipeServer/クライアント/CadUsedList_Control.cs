@@ -941,7 +941,8 @@ namespace SasaLib.VariableControlPipeClient
                     string resultStr = null;
                     if (result_UserDomainFullName != null)
                     {
-                        resultStr = $"{result_UserDomainFullName} |{filename} {result}";
+                        //resultStr = $"{result_UserDomainFullName} |{filename} {result}";
+                        resultStr = $"{filename} {result}";
                     }
                     return resultStr;
                 });
@@ -1176,7 +1177,11 @@ namespace SasaLib.VariableControlPipeClient
 
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void CommitConfig_GetSet_button_Click(object sender, EventArgs e)
         {
             bool setmode = SetMode_checkBox.Checked;
