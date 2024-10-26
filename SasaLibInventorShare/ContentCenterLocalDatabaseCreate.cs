@@ -1,16 +1,11 @@
-﻿using SasaLib;
-using Inventor;
+﻿using Inventor;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Diagnostics;
 using System.Xml.Linq;
-using System.Runtime.Versioning;
-using System.Runtime.Serialization;
 
 namespace SasaLib.InventorAPI
 {
@@ -45,7 +40,7 @@ namespace SasaLib.InventorAPI
 
         public DateTime CreatStartDatetime { get; private set; }
 
-        
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -81,6 +76,10 @@ namespace SasaLib.InventorAPI
             IsConentCenterLocalDatabaseLoad_DebugWriteMode = isDebugWrite;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool CreatedFileRemove()
         {
 
@@ -151,7 +150,7 @@ namespace SasaLib.InventorAPI
 
             CreatStartDatetime = DateTime.Now;
             var dateTimeNowStr = CreatStartDatetime.ToString(dateTimeFormat);
-            
+
             try
             {
                 srw = new StreamWriter(fs);
@@ -183,12 +182,9 @@ namespace SasaLib.InventorAPI
                 }
 
                 var AttacheNamesString = sb.ToString();
-                srw.WriteLine($"# コンテンツセンター ローカルデータベースファイル 作成ホスト:{System.Environment.MachineName} User:{System.Environment.UserName} Domain:{System.Environment.UserDomainName} : InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}");
-                srw.WriteLine($"# 調査したデータベース:{AttacheNamesString}");
-
-
-                srw.WriteLine($"# 作成するルートノード{nodeNameList}");
-
+                srw.WriteLine($"# コンテンツセンター ローカルデータベースファイル 作成ホスト:{System.Environment.MachineName}, User:{System.Environment.UserName} Domain:{System.Environment.UserDomainName} : InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}");
+                srw.WriteLine($"# 調査したデータベース: \"{AttacheNamesString}\"");
+                srw.WriteLine($"# 作成するルートノード: \"{nodeNameList}\"");
                 srw.WriteLine($"# 1行目はこのデータファイルの作成タイムスタンプ");
                 srw.WriteLine($"# 2行目は文頭文末の引用符を除去した文字列DataTableオブジェクトの名前");
                 srw.WriteLine($"# 3行目はデータ行の構造定義。半角カンマで区切り、文頭文末の引用符を除去した文字列を DataColumn名とする。");
@@ -271,7 +267,7 @@ namespace SasaLib.InventorAPI
 
                 var AttacheNamesString = sb.ToString();
                 srw.WriteLine($"# コンテンツセンター ローカルデータベースファイル 作成元InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}");
-                srw.WriteLine($"# 調査したデータベース:{AttacheNamesString}");
+                srw.WriteLine($"# 調査したデータベース: {AttacheNamesString}");
 
                 WriteLine($"■コンテンツセンタローカルデータベース作成開始。 作成元InventorのDisplayVersion:{sInventorApp.SoftwareVersion.DisplayVersion}, 調査したデータベース:{AttacheNamesString}");
 
@@ -383,74 +379,86 @@ namespace SasaLib.InventorAPI
 
                 foreach (ContentFamily oFamily in oNode.Families)
                 {
-
-                    var FamilyDispayName = oFamily.DisplayName;
-                    var StandardOrganization = oFamily.StandardOrganization;
-                    var Standard = oFamily.Standard;
-
-
-                    if (ExcludeStandardOrganization != null)
-                    {
-                        if (this.ExcludeStandardOrganization.Contains(StandardOrganization))
-                        {
-                            if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                                WriteLine($"□□処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
-                            srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リストに合致。スキップします");
-                            continue;
-                        }
-                    }
-
-                    if (ExcludeStandard != null)
-                    {
-                        if (this.ExcludeStandard.Contains(Standard))
-                        {
-                            if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                                WriteLine($"□□処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
-                            srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リストに合致。スキップします");
-                            continue;
-                        }
-                    }
-
-                    if (AbortLoopFlag)
-                    {
-                        WriteLine($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentFamily oFamily in oNode.Families) を抜けます");
-
-                        break;
-                    }
-
-
-                    sInventorApp.UserInterfaceManager.DoEvents();
-
-                    do
-                    {
-                        var waiteMsec = 10;
-                        await Task.Delay(waiteMsec);
-                        if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                            WriteLine($"□□ オープン中のファイル有り {sInventorApp.Documents.Count}。{waiteMsec} msec 待機中");
-                    }
-                    while (sInventorApp.Documents.Count > 0);
-
                     if (oFamily != null)
                     {
+                        //string ContentFamily_ContentIdentifier = default;
+                        //string ContentFamily_Description = default;
+                        //string ContentFamily_DisplayName = default;
+                        //string ContentFamily_InternalName = default;
+                        //string ContentFamily_LibraryInternalName = default;
+                        //string ContentFamily_LibraryName = default;
+                        //string ContentFamily_Manufacturer = default;
+                        //string ContentFamily_MemberDirectory = default;
+                        //string ContentFamily_RevisionId = default;
+                        //string ContentFamily_Standard = default;
+                        //string ContentFamily_StandardOrganization = default;
+                        //string ContentFamily_StandardRevision = default;
+                        //string ContentFamily_TemplateFileName = default;
+
+                        var FamilyDispayName = oFamily.DisplayName;
+                        var StandardOrganization = oFamily.StandardOrganization;
+                        var Standard = oFamily.Standard;
+
+                        var ContentFamily_ContentIdentifier = oFamily.ContentIdentifier;
+                        var ContentFamily_Description = oFamily.Description;
+                        var ContentFamily_InternalName = oFamily.InternalName;
+                        var ContentFamily_LibraryInternalName = oFamily.LibraryInternalName;
+                        var ContentFamily_LibraryName = oFamily.LibraryName;
+                        var ContentFamily_Manufacturer = oFamily.Manufacturer;
+                        var ContentFamily_MemberDirectory = oFamily.MemberDirectory;
+                        var ContentFamily_RevisionId = oFamily.RevisionId;
+                        var ContentFamily_Standard = oFamily.Standard;
+                        var ContentFamily_StandardOrganization = oFamily.StandardOrganization;
+                        var ContentFamily_StandardRevision = oFamily.StandardRevision;
+                        var ContentFamily_TemplateFileName = oFamily.TemplateFileName;
+
+                        if (ExcludeStandardOrganization != null)
+                        {
+                            if (this.ExcludeStandardOrganization.Contains(StandardOrganization))
+                            {
+                                if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
+                                    WriteLine($"□□処理中のファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandardOrganization)}』のいずれかに合致します , スキップします");
+                                srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の標準化機関【{StandardOrganization}】 は 除外リストに合致。スキップします");
+                                continue;
+                            }
+                        }
+
+                        if (ExcludeStandard != null)
+                        {
+                            if (this.ExcludeStandard.Contains(Standard))
+                            {
+                                if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
+                                    WriteLine($"□□処理中のファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リスト 『{string.Join(" , ", this.ExcludeStandard)}』のいずれかに合致します , スキップします");
+                                srw.WriteLine($"# □ファミリー【{FamilyDispayName}】の規格【{Standard}】 は 除外リストに合致。スキップします");
+                                continue;
+                            }
+                        }
+
+                        if (AbortLoopFlag)
+                        {
+                            WriteLine($"BreakeLoopFlag = {AbortLoopFlag} のため foreach (ContentFamily oFamily in oNode.Families) を抜けます");
+
+                            break;
+                        }
+
+
+                        sInventorApp.UserInterfaceManager.DoEvents();
+
+                        do
+                        {
+                            var waiteMsec = 10;
+                            await Task.Delay(waiteMsec);
+                            if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
+                                WriteLine($"□□ オープン中のファイル有り {sInventorApp.Documents.Count}。{waiteMsec} msec 待機中");
+                        }
+                        while (sInventorApp.Documents.Count > 0);
+
 
                         ContentTreeViewNode treeViewNode = oNode;
                         string ContentTreeViewNode_FullTreeViewPath = default;
                         string ContentTreeViewNode_DisplayName = default;
                         string ContentTreeViewNode_InternalName = default;
 
-                        string ContentFamily_ContentIdentifier = default;
-                        string ContentFamily_Description = default;
-                        string ContentFamily_DisplayName = default;
-                        string ContentFamily_InternalName = default;
-                        string ContentFamily_LibraryInternalName = default;
-                        string ContentFamily_LibraryName = default;
-                        string ContentFamily_Manufacturer = default;
-                        string ContentFamily_MemberDirectory = default;
-                        string ContentFamily_RevisionId = default;
-                        string ContentFamily_Standard = default;
-                        string ContentFamily_StandardOrganization = default;
-                        string ContentFamily_StandardRevision = default;
-                        string ContentFamily_TemplateFileName = default;
 
                         try
                         {
@@ -458,19 +466,6 @@ namespace SasaLib.InventorAPI
                             ContentTreeViewNode_DisplayName = treeViewNode.DisplayName;
                             ContentTreeViewNode_InternalName = treeViewNode.InternalName;
 
-                            ContentFamily_ContentIdentifier = oFamily.ContentIdentifier;
-                            ContentFamily_Description = oFamily.Description;
-                            ContentFamily_DisplayName = oFamily.DisplayName;
-                            ContentFamily_InternalName = oFamily.InternalName;
-                            ContentFamily_LibraryInternalName = oFamily.LibraryInternalName;
-                            ContentFamily_LibraryName = oFamily.LibraryName;
-                            ContentFamily_Manufacturer = oFamily.Manufacturer;
-                            ContentFamily_MemberDirectory = oFamily.MemberDirectory;
-                            ContentFamily_RevisionId = oFamily.RevisionId;
-                            ContentFamily_Standard = oFamily.Standard;
-                            ContentFamily_StandardOrganization = oFamily.StandardOrganization;
-                            ContentFamily_StandardRevision = oFamily.StandardRevision;
-                            ContentFamily_TemplateFileName = oFamily.TemplateFileName;
                         }
                         catch (Exception ex)
                         {
@@ -479,15 +474,17 @@ namespace SasaLib.InventorAPI
 
                         //StandardAddInServer.sLogWindowForm.WriteLine($"#{oNode.FullTreeViewPath}");
                         //sw.WriteLine($"#ContentTreeViewNode_DisplayName = {ContentTreeViewNode_DisplayName}");
-                        WriteLine($"\tファミリ: \"{FamilyDispayName}\" を取得中 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
-                        srw.WriteLine($"#カテゴリ\"{categoryName}\" ContentFamily_DisplayName = \"{ContentFamily_DisplayName}\" ファミリー【{FamilyDispayName}】 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
+                        WriteLine($"\tファミリ: \"{FamilyDispayName}\" ,  Family.ContentIdentifier = \"{ContentFamily_ContentIdentifier}\" ,  を取得中 (標準化機関: \"{StandardOrganization}\" 規格: \"{Standard}\")");
+                        srw.WriteLine($"# ContentTreeViewNode.FullTreeViewPath = \"{categoryName}\" , ContentFamily.ContentIdentifie = \"{ContentFamily_ContentIdentifier}\"");
+                        srw.WriteLine($"# ContentFamily.LibraryName = \"{ContentFamily_LibraryName}\" , ContentFamily.DisplayName = \"{FamilyDispayName}\" , (標準化機関: \"{StandardOrganization}\" , 規格: \"{Standard}\")");
+                        srw.WriteLine($"# ContentFamily.TemplateFileName = \"{ContentFamily_TemplateFileName}\"");
                         //sw.WriteLine($"#ContentFamily_Description = {ContentFamily_Description}");
                         //sw.WriteLine($"#ContentFamily_TemplateFileName = {ContentFamily_TemplateFileName}");
                         bool ans = ContentCenterLocalDB_GetFamilyTable(oFamily);
 
-                        if (IsConentCenterLocalDatabaseLoad_DebugWriteMode)
-                            WriteLine($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily_DisplayName = {ContentFamily_DisplayName}");
-
+                        if (IsConentCenterLocalDatabaseLoad_DebugWriteMode) { 
+                            WriteLine($"ｺﾝﾃﾝﾂｾﾝﾀｰLocalDB {CreatStartDatetime} より作成中. {(DateTime.Now - CreatStartDatetime).Minutes} 分経過 , FullTreeViewPath = {treeViewNode.FullTreeViewPath} , ContentFamily.DisplayName = {FamilyDispayName}");
+                        }
                         if (ans)
                         {
                             return true;
