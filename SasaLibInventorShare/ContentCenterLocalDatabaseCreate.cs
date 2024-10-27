@@ -213,6 +213,7 @@ namespace SasaLib.InventorAPI
                         WriteLine($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
                     bool result = ContentCenterLocalDBGetChild_Recursive(oNode, 0).Result;
+                   
 
                     // https://adndevblog.typepad.com/manufacturing/2015/12/manipulate-family-table-of-content-center.html
                 }
@@ -234,7 +235,7 @@ namespace SasaLib.InventorAPI
         /// </summary>
         /// <param name="ChildNode">ContentTreeViewNodesEnumerator型</param>
         /// <returns></returns>
-        public async Task<bool> CreateStart(ContentTreeViewNodesEnumerator ChildNode)
+        public bool CreateStart(ContentTreeViewNodesEnumerator ChildNode)
         {
             AbortLoopFlag = false;
 
@@ -299,7 +300,7 @@ namespace SasaLib.InventorAPI
                     }
                     //this.LogWrite($"処理中 oNode.DisplayName = {oNode.DisplayName}");
 
-                    await ContentCenterLocalDBGetChild_Recursive(oNode, 0);
+                    bool result = ContentCenterLocalDBGetChild_Recursive(oNode, 0).Result;
 
                     // https://adndevblog.typepad.com/manufacturing/2015/12/manipulate-family-table-of-content-center.html
                 }
