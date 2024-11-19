@@ -108,7 +108,7 @@
 		<PackageReference Include="stdole" Version="17.12.40391" />
 		<PackageReference Include="System.Buffers" Version="4.6.0" />
 		<PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
 		<PackageReference Include="System.Diagnostics.EventLog" Version="8.0.1" />
 		<PackageReference Include="System.Drawing.Common" Version="8.0.10" />
 		<PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
