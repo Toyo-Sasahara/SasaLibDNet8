@@ -35,6 +35,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="System.Buffers" Version="4.6.0" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
 		<ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
 		<ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
