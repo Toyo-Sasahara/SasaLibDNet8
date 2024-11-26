@@ -44,7 +44,7 @@ namespace SaSaLibDNet8TestAPP
 
             SasaLib.Mail mail = new SasaLib.Mail(serverAddr, port, UserName, Password);
 
-            bool result = mail.MsgSend(FromAddress:FromAddr, ToAddress:SendToAddr, 
+            bool result = mail.MsgSend(FromAddress: FromAddr, ToAddress: SendToAddr,
                 subject: subject,
                 Message: Message
                         );
@@ -57,7 +57,7 @@ namespace SaSaLibDNet8TestAPP
         private void GetLog_textbox_Click(object sender, EventArgs e)
         {
             List<MsgSended> mailSendedLog = Mail.MsgSendedLog;
-            if (mailSendedLog.Count>0)
+            if (mailSendedLog.Count > 0)
             {
                 MsgSended lastsend = mailSendedLog.Last();
 
@@ -70,6 +70,11 @@ namespace SaSaLibDNet8TestAPP
 
             }
 
+        }
+
+        private void DhcpClientTest_button_Click(object sender, EventArgs e)
+        {
+            SasaLib.Dhcp.DhcpClientTest();
         }
     }
 }

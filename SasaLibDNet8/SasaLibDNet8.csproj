@@ -16,6 +16,7 @@
 		<PackAsTool>False</PackAsTool>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<RootNamespace>SasaLib</RootNamespace>
+		<NuGetAudit>False</NuGetAudit>
 	</PropertyGroup>
 
 	<ItemGroup>
