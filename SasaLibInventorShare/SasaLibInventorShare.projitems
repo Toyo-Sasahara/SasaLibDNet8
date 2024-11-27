@@ -29,6 +29,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)InventorControl_Menu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)InventorControl_ProjectFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)InventorControl_System.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPictureDispTool.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NameValueMapExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OleCreateConverter.cs" />
   </ItemGroup>
 </Project>

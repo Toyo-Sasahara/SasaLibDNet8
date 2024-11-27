@@ -55,7 +55,6 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\GUIDExtensions.cs" Link="GUIDExtensions.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ImageUtil.cs" Link="ImageUtil.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ImageUtil1.cs" Link="ImageUtil1.cs" />
-	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\IPictureDispTool.cs" Link="IPictureDispTool.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Log.cs" Link="Log.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ManagedTemporaryFile.cs" Link="ManagedTemporaryFile.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ManagedTemporaryFolder.cs" Link="ManagedTemporaryFolder.cs" />
@@ -139,9 +138,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="Autodesk.Inventor.Interop">
-		  <HintPath>..\SasaLibDNet8.Inventor2025\SDK\Autodesk.Inventor.Interop.dll</HintPath>
-		</Reference>
 		<Reference Include="Interop.IWshRuntimeLibrary">
 		  <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Inventor 2022\Bin\interop.iwshruntimelibrary.dll</HintPath>
 		</Reference>
