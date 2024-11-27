@@ -5,6 +5,7 @@ using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using CommandLine;
 
 namespace SasaLib.SysConfigurator
 {
@@ -13,6 +14,23 @@ namespace SasaLib.SysConfigurator
     {
         public static void Main(string[] args)
         {
+            // パーサーで引数を解析
+            Parser.Default.ParseArguments<Options>(args)
+                .WithParsed(options =>
+                {
+                    // 引数が正しく解析された場合の処理
+                    Console.WriteLine($"Hello, {options.Name}!");
+                    if (options.Age.HasValue)
+                    {
+                        Console.WriteLine($"You are {options.Age} years old.");
+                    }
+                })
+                .WithNotParsed(errors =>
+                {
+                    // 引数解析に失敗した場合の処理
+                    Console.WriteLine("Failed to parse arguments.");
+                });
+
             if (args.Length < 2)
             {
                 Console.WriteLine("実行ファイル コンフィギュファイル ベースディレクトリ");
@@ -22,8 +40,18 @@ namespace SasaLib.SysConfigurator
                 Console.WriteLine($"args[0] (コンフィギュファイル)= {args[0]}");
                 Console.WriteLine($"args[1] （ベースディレクトリ）= {args[1]}");
 
-                TestRun.Execute(args[0] , args[1]);
+                TestRun.Execute(args[0], args[1]);
             }
         }
+    }
+
+    // 引数をマッピングするクラス
+    public class Options
+    {
+        [Option('c', "ConfigFilePath", Required = true, HelpText = "コンフィグファイルを指定.")]
+        public string Name { get; set; }
+
+        [Option('b', "BaseFolder", Required = false, HelpText = "Your age.")]
+        public int? Age { get; set; }
     }
 }
