@@ -44,14 +44,4 @@ namespace SasaLib.SysConfigurator
             }
         }
     }
-
-    // 引数をマッピングするクラス
-    public class Options
-    {
-        [Option('c', "ConfigFilePath", Required = true, HelpText = "コンフィグファイルを指定.")]
-        public string Name { get; set; }
-
-        [Option('b', "BaseFolder", Required = false, HelpText = "Your age.")]
-        public int? Age { get; set; }
-    }
 }
