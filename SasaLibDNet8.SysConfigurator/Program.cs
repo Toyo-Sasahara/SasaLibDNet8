@@ -15,21 +15,19 @@ namespace SasaLib.SysConfigurator
         public static void Main(string[] args)
         {
             // パーサーで引数を解析
-            Parser.Default.ParseArguments<Options>(args)
-                .WithParsed(options =>
-                {
-                    // 引数が正しく解析された場合の処理
-                    Console.WriteLine($"Hello, {options.Name}!");
-                    if (options.Age.HasValue)
-                    {
-                        Console.WriteLine($"You are {options.Age} years old.");
-                    }
-                })
-                .WithNotParsed(errors =>
-                {
-                    // 引数解析に失敗した場合の処理
-                    Console.WriteLine("Failed to parse arguments.");
-                });
+            //Parser.Default.ParseArguments<Options>(args).WithParsed(options =>
+            //    {
+            //        // 引数が正しく解析された場合の処理
+            //        Console.WriteLine($"Hello, {options.Name}!");
+            //        if (options.Age.HasValue)
+            //        {
+            //            Console.WriteLine($"You are {options.Age} years old.");
+            //        }
+            //    }).WithNotParsed(errors =>
+            //    {
+            //        // 引数解析に失敗した場合の処理
+            //        Console.WriteLine("Failed to parse arguments.");
+            //    });
 
             if (args.Length < 2)
             {
