@@ -22,10 +22,9 @@ namespace SasaLib.SysConfigurator
                 c.HelpWriter = Console.Error;
             });
 
-            var parseResult = parser.ParseArguments<Options>(args);
 
             // コマンドライン引数を解析
-            parser.ParseArguments<Options>(args)
+            var parseResult = parser.ParseArguments<Options>(args)
                 .WithParsed<Options>(opts => RunOptions(opts)) // 成功時
                 .WithNotParsed(errs => HandleParseError(errs));
         }
