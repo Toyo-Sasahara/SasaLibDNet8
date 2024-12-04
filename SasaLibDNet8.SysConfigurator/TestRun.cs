@@ -22,7 +22,7 @@ namespace SasaLib.SysConfigurator
 
 
             string executedDirectory = System.AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\');
-            DebugConsole.WriteLine($"実行中ﾌｫﾙﾀﾞ {executedDirectory}");
+            Console.WriteLine($"実行中ﾌｫﾙﾀﾞ {executedDirectory}");
             DebugConsole.WriteLine($"コントロールファイル {ControlFile}");
 
             DebugConsole.WriteLine($"ログファイルは {System.IO.Path.GetDirectoryName(ControlFile)}");

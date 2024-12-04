@@ -12,33 +12,49 @@ namespace SasaLib.SysConfigurator
     [SupportedOSPlatform("windows")]
     public static class Program
     {
+        public static bool VerboseMode { get; set; }
+
         public static void Main(string[] args)
         {
-            // パーサーで引数を解析
-            //Parser.Default.ParseArguments<Options>(args).WithParsed(options =>
-            //    {
-            //        // 引数が正しく解析された場合の処理
-            //        Console.WriteLine($"Hello, {options.Name}!");
-            //        if (options.Age.HasValue)
-            //        {
-            //            Console.WriteLine($"You are {options.Age} years old.");
-            //        }
-            //    }).WithNotParsed(errors =>
-            //    {
-            //        // 引数解析に失敗した場合の処理
-            //        Console.WriteLine("Failed to parse arguments.");
-            //    });
-
-            if (args.Length < 2)
+            Parser parser = new Parser(c =>
             {
-                Console.WriteLine("実行ファイル コンフィギュファイル ベースディレクトリ");
-            }
+                c.CaseSensitive = false;             // 小文字対象
+                c.HelpWriter = Console.Error;
+            });
+
+            var parseResult = parser.ParseArguments<Options>(args);
+
+            // コマンドライン引数を解析
+            parser.ParseArguments<Options>(args)
+                .WithParsed<Options>(opts => RunOptions(opts)) // 成功時
+                .WithNotParsed(errs => HandleParseError(errs));
+        }
+
+        private static void RunOptions(Options opts)
+        {
+
+
+            Console.WriteLine($"必須オプションを確認。スクリプトを実行します。");
+
+            Console.WriteLine($"--control-file = \"{opts.ControlFullFileName}\"");
+            Console.WriteLine($"--base-folder = \"{opts.RootFolder}\"");
+
+            if (opts.Verbose)
+                VerboseMode = true;
             else
-            {
-                Console.WriteLine($"args[0] (コンフィギュファイル)= {args[0]}");
-                Console.WriteLine($"args[1] （ベースディレクトリ）= {args[1]}");
+                VerboseMode = false;
 
-                TestRun.Execute(args[0], args[1]);
+            TestRun.Execute(opts.ControlFullFileName, opts.RootFolder);
+
+
+        }
+
+        private static void HandleParseError(IEnumerable<Error> errs)
+        {
+            Console.WriteLine("Error parsing command-line arguments:");
+            foreach (var err in errs)
+            {
+                Console.WriteLine(err.ToString());
             }
         }
     }
