@@ -21,7 +21,9 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_ValueControl.cs" Link="ExecuteCommands\Execute_ValueControl.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\ExtensionMethod.cs" Link="クライアント\ExtensionMethod.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\VariableControlPipeClient.cs" Link="クライアント\VariableControlPipeClient.cs" />
-	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\CommandAnalyze.cs" Link="サーバー\CommandAnalyze.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\CommandAnalyze.cs" Link="サーバー\CommandAnalyze.cs">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Compile>
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\VariableControlPipeServer.cs" Link="サーバー\VariableControlPipeServer.cs" />
 	</ItemGroup>
 	<ItemGroup>
