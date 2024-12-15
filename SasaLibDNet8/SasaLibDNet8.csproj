@@ -32,6 +32,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsNetUse.cs" Link="ClsNetUse.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsWinError.cs" Link="ClsWinError.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Compress.cs" Link="Compress.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ConfigLoader.cs" Link="ConfigLoader.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ConsoleOption.cs" Link="ConsoleOption.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ContorlValidate.cs" Link="ContorlValidate.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ControlExtensions.cs" Link="ControlExtensions.cs" />
