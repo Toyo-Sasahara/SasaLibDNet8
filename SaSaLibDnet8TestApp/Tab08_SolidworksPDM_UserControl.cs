@@ -1,6 +1,6 @@
 ﻿using EPDM.Interop.epdm;
 using SasaLib;
-using SasaLib.SolidWorks;
+//using SasaLib.SolidWorks;
 using StageServerRemote;
 using System;
 using System.Collections.Generic;
@@ -91,14 +91,15 @@ namespace SaSaLibDNet8TestAPP
 
         private void PDMSEARCH_button_Click(object sender, EventArgs e)
         {
-            SwPDM swPDM = new SwPDM();
-            List<string> results = new List<string>();
-            var ans = swPDM.FindFullFilename(ref results, SEARCH_Text_textBox.Text);
+            MessageBox.Show("未定義");
+            //SwPDM swPDM = new SwPDM();
+            //List<string> results = new List<string>();
+            //var ans = swPDM.FindFullFilename(ref results, SEARCH_Text_textBox.Text);
 
-            foreach (var aa in results)
-            {
-                LogWindowWriteLine(aa);
-            }
+            //foreach (var aa in results)
+            //{
+            //    LogWindowWriteLine(aa);
+            //}
         }
     }
 

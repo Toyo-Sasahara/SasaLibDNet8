@@ -72,6 +72,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.ImageMagic", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sasa_DHCP_Client_Test_Tool", "Sasa_DHCP_Client_Test_Tool\Sasa_DHCP_Client_Test_Tool.csproj", "{DDFC830C-4F23-486E-8A86-FF946D5000BC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SasaLib.NET4", "SasaLib.NET4", "{02B5F1C4-8797-4497-89B1-6DC272FC36F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

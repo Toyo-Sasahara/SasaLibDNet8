@@ -181,8 +181,17 @@
 		<Reference Include="DevExpress.XtraWizard.v22.2">
 		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\Vault2025SDKcopy\DevExpress.XtraWizard.v22.2.dll</HintPath>
 		</Reference>
-		<Reference Include="SasaLib.SolidWorks">
-			<HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\bin\Debug\SasaLib.SolidWorks.dll</HintPath>
+		<Reference Include="EPDM.Interop.epdm">
+		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\SolidworksSDK\SolidWorks2018 EPDM\EPDM.Interop.epdm.dll</HintPath>
+		</Reference>
+		<Reference Include="EPDM.Interop.EPDMResultCode">
+		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\SolidworksSDK\SolidWorks2018 EPDM\EPDM.Interop.EPDMResultCode.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime">
+		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll</HintPath>
+		</Reference>
+		<Reference Include="PDMWorks.Interop.pdmworks">
+		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\SolidworksSDK\api\redist\PDMWorks.Interop.pdmworks.dll</HintPath>
 		</Reference>
 		<Reference Include="System.Web.Services">
 		  <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.Services.dll</HintPath>

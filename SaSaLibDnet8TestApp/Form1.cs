@@ -1,7 +1,7 @@
 ﻿// EPDM.Interop.epdm.dll
 using SasaLib;
 using SasaLib.PrintConfig;
-using SasaLib.SolidWorks;
+//using SasaLib.SolidWorks;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
