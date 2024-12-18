@@ -30,12 +30,28 @@
         {
             this.panel5 = new Panel();
             this.panel8 = new Panel();
+            this.panel15 = new Panel();
+            this.Inventor_checkfile_textBox = new TextBox();
             this.AutodeskVault_checkfile_textBox = new TextBox();
-            this.ObjectCovNew_checkBox = new CheckBox();
+            this.panel9 = new Panel();
+            this.CAD_Addin_Version_button = new Button();
+            this.CAD_Addin_Hash_Button = new Button();
+            this.panel10 = new Panel();
+            this.SasaLib_Version_button = new Button();
+            this.SasaLib_Hash_button = new Button();
             this.panel12 = new Panel();
             this.label5 = new Label();
             this.SoftwareComponentName_comboBox = new ComboBox();
             this.GetInstalledSoftware_button = new Button();
+            this.panel11 = new Panel();
+            this.STAGINGSYSTEM_SHARE_Version_button = new Button();
+            this.STAGINGSYSTEM_SHARE_Hash_button = new Button();
+            this.Autocad_checkfile_textBox = new TextBox();
+            this.Solidworks_checkfile_textBox = new TextBox();
+            this.panel1 = new Panel();
+            this.CheckFileHash_target_fullfilename_textBox = new TextBox();
+            this.FileHash_button = new Button();
+            this.ObjectCovNew_checkBox = new CheckBox();
             this.value_button = new Button();
             this.ValueSetGet_panel = new Panel();
             this.panel2 = new Panel();
@@ -53,21 +69,6 @@
             this.CommitConfigValue_comboBox = new ComboBox();
             this.CommitConfig_GetSet_button = new Button();
             this.CommitConfigParameterName_comboBox = new ComboBox();
-            this.panel1 = new Panel();
-            this.CheckFileHash_target_fullfilename_textBox = new TextBox();
-            this.FileHash_button = new Button();
-            this.Solidworks_checkfile_textBox = new TextBox();
-            this.Autocad_checkfile_textBox = new TextBox();
-            this.Inventor_checkfile_textBox = new TextBox();
-            this.panel11 = new Panel();
-            this.STAGINGSYSTEM_SHARE_Version_button = new Button();
-            this.STAGINGSYSTEM_SHARE_Hash_button = new Button();
-            this.panel10 = new Panel();
-            this.SasaLib_Version_button = new Button();
-            this.SasaLib_Hash_button = new Button();
-            this.panel9 = new Panel();
-            this.CAD_Addin_Version_button = new Button();
-            this.CAD_Addin_Hash_Button = new Button();
             this.RegistClient_Host_CheckedListBox = new TableLayoutPanel();
             this.panel14 = new Panel();
             this.RegistClient_PIPENAME_comboBox = new ComboBox();
@@ -103,17 +104,17 @@
             this.tabControl1 = new TabControl();
             this.tabPage1 = new TabPage();
             this.tabPage2 = new TabPage();
-            this.panel15 = new Panel();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.ValueSetGet_panel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.RegistClient_Host_CheckedListBox.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -123,7 +124,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel15.SuspendLayout();
             SuspendLayout();
             // 
             // panel5
@@ -133,7 +133,7 @@
             this.panel5.Dock = DockStyle.Fill;
             this.panel5.Location = new Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new Size(1567, 812);
+            this.panel5.Size = new Size(1886, 846);
             this.panel5.TabIndex = 19;
             // 
             // panel8
@@ -143,10 +143,35 @@
             this.panel8.Controls.Add(this.ObjectCovNew_checkBox);
             this.panel8.Controls.Add(this.value_button);
             this.panel8.Controls.Add(this.ValueSetGet_panel);
-            this.panel8.Location = new Point(3, 613);
+            this.panel8.Location = new Point(3, 647);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new Size(1557, 196);
+            this.panel8.Size = new Size(1876, 196);
             this.panel8.TabIndex = 37;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.Inventor_checkfile_textBox);
+            this.panel15.Controls.Add(this.AutodeskVault_checkfile_textBox);
+            this.panel15.Controls.Add(this.panel9);
+            this.panel15.Controls.Add(this.panel10);
+            this.panel15.Controls.Add(this.panel12);
+            this.panel15.Controls.Add(this.panel11);
+            this.panel15.Controls.Add(this.Autocad_checkfile_textBox);
+            this.panel15.Controls.Add(this.Solidworks_checkfile_textBox);
+            this.panel15.Controls.Add(this.panel1);
+            this.panel15.Location = new Point(3, 4);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new Size(917, 165);
+            this.panel15.TabIndex = 49;
+            // 
+            // Inventor_checkfile_textBox
+            // 
+            this.Inventor_checkfile_textBox.Location = new Point(3, 3);
+            this.Inventor_checkfile_textBox.Name = "Inventor_checkfile_textBox";
+            this.Inventor_checkfile_textBox.ReadOnly = true;
+            this.Inventor_checkfile_textBox.Size = new Size(905, 23);
+            this.Inventor_checkfile_textBox.TabIndex = 40;
+            this.Inventor_checkfile_textBox.Text = "InventorTOYOaddin でインストールされたファイル";
             // 
             // AutodeskVault_checkfile_textBox
             // 
@@ -157,18 +182,67 @@
             this.AutodeskVault_checkfile_textBox.TabIndex = 48;
             this.AutodeskVault_checkfile_textBox.Text = "AutodeskVaultTOYOaddin でインストールされたファイル";
             // 
-            // ObjectCovNew_checkBox
+            // panel9
             // 
-            this.ObjectCovNew_checkBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            this.ObjectCovNew_checkBox.AutoSize = true;
-            this.ObjectCovNew_checkBox.Checked = true;
-            this.ObjectCovNew_checkBox.CheckState = CheckState.Checked;
-            this.ObjectCovNew_checkBox.Location = new Point(6, 174);
-            this.ObjectCovNew_checkBox.Name = "ObjectCovNew_checkBox";
-            this.ObjectCovNew_checkBox.Size = new Size(112, 19);
-            this.ObjectCovNew_checkBox.TabIndex = 47;
-            this.ObjectCovNew_checkBox.Text = "ObjectConvNew";
-            this.ObjectCovNew_checkBox.UseVisualStyleBackColor = true;
+            this.panel9.Controls.Add(this.CAD_Addin_Version_button);
+            this.panel9.Controls.Add(this.CAD_Addin_Hash_Button);
+            this.panel9.Location = new Point(6, 94);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new Size(184, 30);
+            this.panel9.TabIndex = 37;
+            // 
+            // CAD_Addin_Version_button
+            // 
+            this.CAD_Addin_Version_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            this.CAD_Addin_Version_button.Location = new Point(3, 2);
+            this.CAD_Addin_Version_button.Name = "CAD_Addin_Version_button";
+            this.CAD_Addin_Version_button.Size = new Size(104, 27);
+            this.CAD_Addin_Version_button.TabIndex = 31;
+            this.CAD_Addin_Version_button.Text = "ｱﾄﾞｲﾝ Version";
+            this.CAD_Addin_Version_button.UseVisualStyleBackColor = true;
+            this.CAD_Addin_Version_button.Click += CAD_Addin_Version_button_Click;
+            // 
+            // CAD_Addin_Hash_Button
+            // 
+            this.CAD_Addin_Hash_Button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            this.CAD_Addin_Hash_Button.Location = new Point(114, 2);
+            this.CAD_Addin_Hash_Button.Name = "CAD_Addin_Hash_Button";
+            this.CAD_Addin_Hash_Button.Size = new Size(67, 27);
+            this.CAD_Addin_Hash_Button.TabIndex = 30;
+            this.CAD_Addin_Hash_Button.Text = "MD5確認";
+            this.CAD_Addin_Hash_Button.UseVisualStyleBackColor = true;
+            this.CAD_Addin_Hash_Button.Click += CAD_Addin_Hash_Button_Click;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.SasaLib_Version_button);
+            this.panel10.Controls.Add(this.SasaLib_Hash_button);
+            this.panel10.Location = new Point(196, 94);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new Size(184, 30);
+            this.panel10.TabIndex = 38;
+            // 
+            // SasaLib_Version_button
+            // 
+            this.SasaLib_Version_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            this.SasaLib_Version_button.Location = new Point(6, 2);
+            this.SasaLib_Version_button.Name = "SasaLib_Version_button";
+            this.SasaLib_Version_button.Size = new Size(104, 27);
+            this.SasaLib_Version_button.TabIndex = 33;
+            this.SasaLib_Version_button.Text = "SasaLib Version";
+            this.SasaLib_Version_button.UseVisualStyleBackColor = true;
+            this.SasaLib_Version_button.Click += SasaLib_Version_button_Click;
+            // 
+            // SasaLib_Hash_button
+            // 
+            this.SasaLib_Hash_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            this.SasaLib_Hash_button.Location = new Point(112, 2);
+            this.SasaLib_Hash_button.Name = "SasaLib_Hash_button";
+            this.SasaLib_Hash_button.Size = new Size(67, 27);
+            this.SasaLib_Hash_button.TabIndex = 32;
+            this.SasaLib_Hash_button.Text = "MD5確認";
+            this.SasaLib_Hash_button.UseVisualStyleBackColor = true;
+            this.SasaLib_Hash_button.Click += SasaLib_Hash_button_Click;
             // 
             // panel12
             // 
@@ -210,10 +284,101 @@
             this.GetInstalledSoftware_button.UseVisualStyleBackColor = true;
             this.GetInstalledSoftware_button.Click += GetInstalledSoftware_button_Click;
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.STAGINGSYSTEM_SHARE_Version_button);
+            this.panel11.Controls.Add(this.STAGINGSYSTEM_SHARE_Hash_button);
+            this.panel11.Location = new Point(386, 94);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new Size(243, 30);
+            this.panel11.TabIndex = 39;
+            // 
+            // STAGINGSYSTEM_SHARE_Version_button
+            // 
+            this.STAGINGSYSTEM_SHARE_Version_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            this.STAGINGSYSTEM_SHARE_Version_button.Location = new Point(6, 2);
+            this.STAGINGSYSTEM_SHARE_Version_button.Name = "STAGINGSYSTEM_SHARE_Version_button";
+            this.STAGINGSYSTEM_SHARE_Version_button.Size = new Size(158, 27);
+            this.STAGINGSYSTEM_SHARE_Version_button.TabIndex = 33;
+            this.STAGINGSYSTEM_SHARE_Version_button.Text = "STAGINGSYSTEM Version";
+            this.STAGINGSYSTEM_SHARE_Version_button.UseVisualStyleBackColor = true;
+            this.STAGINGSYSTEM_SHARE_Version_button.Click += STAGINGSYSTEM_SHARE_Version_button_Click;
+            // 
+            // STAGINGSYSTEM_SHARE_Hash_button
+            // 
+            this.STAGINGSYSTEM_SHARE_Hash_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            this.STAGINGSYSTEM_SHARE_Hash_button.Location = new Point(169, 2);
+            this.STAGINGSYSTEM_SHARE_Hash_button.Name = "STAGINGSYSTEM_SHARE_Hash_button";
+            this.STAGINGSYSTEM_SHARE_Hash_button.Size = new Size(67, 27);
+            this.STAGINGSYSTEM_SHARE_Hash_button.TabIndex = 32;
+            this.STAGINGSYSTEM_SHARE_Hash_button.Text = "MD5確認";
+            this.STAGINGSYSTEM_SHARE_Hash_button.UseVisualStyleBackColor = true;
+            this.STAGINGSYSTEM_SHARE_Hash_button.Click += STAGINGSYSTEM_SHARE_Hash_button_Click;
+            // 
+            // Autocad_checkfile_textBox
+            // 
+            this.Autocad_checkfile_textBox.Location = new Point(3, 26);
+            this.Autocad_checkfile_textBox.Name = "Autocad_checkfile_textBox";
+            this.Autocad_checkfile_textBox.ReadOnly = true;
+            this.Autocad_checkfile_textBox.Size = new Size(905, 23);
+            this.Autocad_checkfile_textBox.TabIndex = 41;
+            this.Autocad_checkfile_textBox.Text = "AutocadTOYOaddin でインストールされたファイル";
+            // 
+            // Solidworks_checkfile_textBox
+            // 
+            this.Solidworks_checkfile_textBox.Location = new Point(3, 72);
+            this.Solidworks_checkfile_textBox.Name = "Solidworks_checkfile_textBox";
+            this.Solidworks_checkfile_textBox.ReadOnly = true;
+            this.Solidworks_checkfile_textBox.Size = new Size(905, 23);
+            this.Solidworks_checkfile_textBox.TabIndex = 42;
+            this.Solidworks_checkfile_textBox.Text = "SolidworksTOYOaddin でインストールされたファイル";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.CheckFileHash_target_fullfilename_textBox);
+            this.panel1.Controls.Add(this.FileHash_button);
+            this.panel1.Location = new Point(635, 94);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new Size(278, 30);
+            this.panel1.TabIndex = 43;
+            // 
+            // CheckFileHash_target_fullfilename_textBox
+            // 
+            this.CheckFileHash_target_fullfilename_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            this.CheckFileHash_target_fullfilename_textBox.Location = new Point(3, 6);
+            this.CheckFileHash_target_fullfilename_textBox.Name = "CheckFileHash_target_fullfilename_textBox";
+            this.CheckFileHash_target_fullfilename_textBox.Size = new Size(195, 23);
+            this.CheckFileHash_target_fullfilename_textBox.TabIndex = 33;
+            this.CheckFileHash_target_fullfilename_textBox.Text = "D:\\MainVault\\MainVault.ipj";
+            // 
+            // FileHash_button
+            // 
+            this.FileHash_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            this.FileHash_button.Location = new Point(204, 2);
+            this.FileHash_button.Name = "FileHash_button";
+            this.FileHash_button.Size = new Size(67, 27);
+            this.FileHash_button.TabIndex = 32;
+            this.FileHash_button.Text = "MD5確認";
+            this.FileHash_button.UseVisualStyleBackColor = true;
+            this.FileHash_button.Click += FileHash_button_Click;
+            // 
+            // ObjectCovNew_checkBox
+            // 
+            this.ObjectCovNew_checkBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            this.ObjectCovNew_checkBox.AutoSize = true;
+            this.ObjectCovNew_checkBox.Checked = true;
+            this.ObjectCovNew_checkBox.CheckState = CheckState.Checked;
+            this.ObjectCovNew_checkBox.Location = new Point(6, 174);
+            this.ObjectCovNew_checkBox.Name = "ObjectCovNew_checkBox";
+            this.ObjectCovNew_checkBox.Size = new Size(112, 19);
+            this.ObjectCovNew_checkBox.TabIndex = 47;
+            this.ObjectCovNew_checkBox.Text = "ObjectConvNew";
+            this.ObjectCovNew_checkBox.UseVisualStyleBackColor = true;
+            // 
             // value_button
             // 
             this.value_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.value_button.Location = new Point(1522, 3);
+            this.value_button.Location = new Point(1841, 3);
             this.value_button.Name = "value_button";
             this.value_button.Size = new Size(29, 19);
             this.value_button.TabIndex = 45;
@@ -229,7 +394,7 @@
             this.ValueSetGet_panel.Controls.Add(this.CommitConfigParameterName_comboBox);
             this.ValueSetGet_panel.Location = new Point(926, 4);
             this.ValueSetGet_panel.Name = "ValueSetGet_panel";
-            this.ValueSetGet_panel.Size = new Size(590, 165);
+            this.ValueSetGet_panel.Size = new Size(909, 165);
             this.ValueSetGet_panel.TabIndex = 44;
             // 
             // panel2
@@ -246,7 +411,7 @@
             this.panel2.Controls.Add(this.SetVaule_textbox);
             this.panel2.Location = new Point(3, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new Size(584, 103);
+            this.panel2.Size = new Size(903, 103);
             this.panel2.TabIndex = 46;
             // 
             // label4
@@ -282,7 +447,7 @@
             // XMLFILEUPDATE_button
             // 
             this.XMLFILEUPDATE_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.XMLFILEUPDATE_button.Location = new Point(510, 51);
+            this.XMLFILEUPDATE_button.Location = new Point(829, 51);
             this.XMLFILEUPDATE_button.Name = "XMLFILEUPDATE_button";
             this.XMLFILEUPDATE_button.Size = new Size(69, 19);
             this.XMLFILEUPDATE_button.TabIndex = 28;
@@ -332,14 +497,14 @@
             this.panel3.Controls.Add(this.CommitConfig_GetSet_button);
             this.panel3.Location = new Point(3, 26);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new Size(584, 28);
+            this.panel3.Size = new Size(903, 28);
             this.panel3.TabIndex = 8;
             // 
             // SetMode_checkBox
             // 
             this.SetMode_checkBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             this.SetMode_checkBox.AutoSize = true;
-            this.SetMode_checkBox.Location = new Point(442, 4);
+            this.SetMode_checkBox.Location = new Point(761, 4);
             this.SetMode_checkBox.Name = "SetMode_checkBox";
             this.SetMode_checkBox.Size = new Size(74, 19);
             this.SetMode_checkBox.TabIndex = 7;
@@ -361,14 +526,14 @@
             this.CommitConfigValue_comboBox.Items.AddRange(new object[] { "", "True", "False", "文字列" });
             this.CommitConfigValue_comboBox.Location = new Point(194, 3);
             this.CommitConfigValue_comboBox.Name = "CommitConfigValue_comboBox";
-            this.CommitConfigValue_comboBox.Size = new Size(231, 23);
+            this.CommitConfigValue_comboBox.Size = new Size(550, 23);
             this.CommitConfigValue_comboBox.TabIndex = 6;
             this.CommitConfigValue_comboBox.TextUpdate += CommitConfigValue_comboBox_TextUpdate;
             // 
             // CommitConfig_GetSet_button
             // 
             this.CommitConfig_GetSet_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.CommitConfig_GetSet_button.Location = new Point(522, 3);
+            this.CommitConfig_GetSet_button.Location = new Point(841, 3);
             this.CommitConfig_GetSet_button.Name = "CommitConfig_GetSet_button";
             this.CommitConfig_GetSet_button.Size = new Size(54, 20);
             this.CommitConfig_GetSet_button.TabIndex = 1;
@@ -383,158 +548,9 @@
             this.CommitConfigParameterName_comboBox.Items.AddRange(new object[] { "ConfigSaveFlag", "ConfigSaveDateTime", "", "InventorSoftwareDisplayName", "", "LogWindowShowAtStartup", "LogWindowWrilteLineStopMode", "", "", "", "UpdateLocalContentCenterDatabaseTimeSpan", "", "NumberingServerName", "StageServerHost", "CommitPath", "CommitCreateTiffFileTestMode", "CheckCommitRecepitonStateFalseCount", "CommitRecepitonStateConnectTimeOut", "CommitQueueThreshold", "NETWORKLOGFOLDER", "", "ArcSuiteUserName", "ArcSuiteCryptUserPass", "ArcSuiteCrypt31UserPass", "ArcSuiteDocumentSDK_DRGet_SeverHost", "BackGroundArcSuiteOldNewComparisonMode", "BackGroundArcSuiteOldNewComparisonButton_Activate", "ComparingArcSuiteSkipElapsedDay", "", "VaultAddinLoginUserName", "VaultAddinLoginCrypt31Password", "", "AutoGenerateComponentFileName_MasterSwitch", "AutoFilename_IsDefaultSwitch", "UseTOYOopenDialogMode_MasterSwitch", "AssistedChangeContetLibrary", "InvestigateVaultDuplicateFile", "", "CheckedAndAlertUseDefaultProject", "VaultDefaultProjects", "SoftwareDefaultSafeProject", "GetVaultDefaultProjects", "", "RemakeWorkSpaceAndLibraryFolder", "DefaultVaultServer", "CheckedAndAlertDefaultVault" });
             this.CommitConfigParameterName_comboBox.Location = new Point(3, 5);
             this.CommitConfigParameterName_comboBox.Name = "CommitConfigParameterName_comboBox";
-            this.CommitConfigParameterName_comboBox.Size = new Size(584, 23);
+            this.CommitConfigParameterName_comboBox.Size = new Size(903, 23);
             this.CommitConfigParameterName_comboBox.TabIndex = 3;
             this.CommitConfigParameterName_comboBox.Text = "InventorSoftwareDisplayName";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.CheckFileHash_target_fullfilename_textBox);
-            this.panel1.Controls.Add(this.FileHash_button);
-            this.panel1.Location = new Point(635, 94);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new Size(278, 30);
-            this.panel1.TabIndex = 43;
-            // 
-            // CheckFileHash_target_fullfilename_textBox
-            // 
-            this.CheckFileHash_target_fullfilename_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            this.CheckFileHash_target_fullfilename_textBox.Location = new Point(3, 6);
-            this.CheckFileHash_target_fullfilename_textBox.Name = "CheckFileHash_target_fullfilename_textBox";
-            this.CheckFileHash_target_fullfilename_textBox.Size = new Size(195, 23);
-            this.CheckFileHash_target_fullfilename_textBox.TabIndex = 33;
-            this.CheckFileHash_target_fullfilename_textBox.Text = "D:\\MainVault\\MainVault.ipj";
-            // 
-            // FileHash_button
-            // 
-            this.FileHash_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            this.FileHash_button.Location = new Point(204, 2);
-            this.FileHash_button.Name = "FileHash_button";
-            this.FileHash_button.Size = new Size(67, 27);
-            this.FileHash_button.TabIndex = 32;
-            this.FileHash_button.Text = "MD5確認";
-            this.FileHash_button.UseVisualStyleBackColor = true;
-            this.FileHash_button.Click += FileHash_button_Click;
-            // 
-            // Solidworks_checkfile_textBox
-            // 
-            this.Solidworks_checkfile_textBox.Location = new Point(3, 72);
-            this.Solidworks_checkfile_textBox.Name = "Solidworks_checkfile_textBox";
-            this.Solidworks_checkfile_textBox.ReadOnly = true;
-            this.Solidworks_checkfile_textBox.Size = new Size(905, 23);
-            this.Solidworks_checkfile_textBox.TabIndex = 42;
-            this.Solidworks_checkfile_textBox.Text = "SolidworksTOYOaddin でインストールされたファイル";
-            // 
-            // Autocad_checkfile_textBox
-            // 
-            this.Autocad_checkfile_textBox.Location = new Point(3, 26);
-            this.Autocad_checkfile_textBox.Name = "Autocad_checkfile_textBox";
-            this.Autocad_checkfile_textBox.ReadOnly = true;
-            this.Autocad_checkfile_textBox.Size = new Size(905, 23);
-            this.Autocad_checkfile_textBox.TabIndex = 41;
-            this.Autocad_checkfile_textBox.Text = "AutocadTOYOaddin でインストールされたファイル";
-            // 
-            // Inventor_checkfile_textBox
-            // 
-            this.Inventor_checkfile_textBox.Location = new Point(3, 3);
-            this.Inventor_checkfile_textBox.Name = "Inventor_checkfile_textBox";
-            this.Inventor_checkfile_textBox.ReadOnly = true;
-            this.Inventor_checkfile_textBox.Size = new Size(905, 23);
-            this.Inventor_checkfile_textBox.TabIndex = 40;
-            this.Inventor_checkfile_textBox.Text = "InventorTOYOaddin でインストールされたファイル";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.STAGINGSYSTEM_SHARE_Version_button);
-            this.panel11.Controls.Add(this.STAGINGSYSTEM_SHARE_Hash_button);
-            this.panel11.Location = new Point(386, 94);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new Size(243, 30);
-            this.panel11.TabIndex = 39;
-            // 
-            // STAGINGSYSTEM_SHARE_Version_button
-            // 
-            this.STAGINGSYSTEM_SHARE_Version_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            this.STAGINGSYSTEM_SHARE_Version_button.Location = new Point(6, 2);
-            this.STAGINGSYSTEM_SHARE_Version_button.Name = "STAGINGSYSTEM_SHARE_Version_button";
-            this.STAGINGSYSTEM_SHARE_Version_button.Size = new Size(158, 27);
-            this.STAGINGSYSTEM_SHARE_Version_button.TabIndex = 33;
-            this.STAGINGSYSTEM_SHARE_Version_button.Text = "STAGINGSYSTEM Version";
-            this.STAGINGSYSTEM_SHARE_Version_button.UseVisualStyleBackColor = true;
-            this.STAGINGSYSTEM_SHARE_Version_button.Click += STAGINGSYSTEM_SHARE_Version_button_Click;
-            // 
-            // STAGINGSYSTEM_SHARE_Hash_button
-            // 
-            this.STAGINGSYSTEM_SHARE_Hash_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            this.STAGINGSYSTEM_SHARE_Hash_button.Location = new Point(169, 2);
-            this.STAGINGSYSTEM_SHARE_Hash_button.Name = "STAGINGSYSTEM_SHARE_Hash_button";
-            this.STAGINGSYSTEM_SHARE_Hash_button.Size = new Size(67, 27);
-            this.STAGINGSYSTEM_SHARE_Hash_button.TabIndex = 32;
-            this.STAGINGSYSTEM_SHARE_Hash_button.Text = "MD5確認";
-            this.STAGINGSYSTEM_SHARE_Hash_button.UseVisualStyleBackColor = true;
-            this.STAGINGSYSTEM_SHARE_Hash_button.Click += STAGINGSYSTEM_SHARE_Hash_button_Click;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.SasaLib_Version_button);
-            this.panel10.Controls.Add(this.SasaLib_Hash_button);
-            this.panel10.Location = new Point(196, 94);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new Size(184, 30);
-            this.panel10.TabIndex = 38;
-            // 
-            // SasaLib_Version_button
-            // 
-            this.SasaLib_Version_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            this.SasaLib_Version_button.Location = new Point(6, 2);
-            this.SasaLib_Version_button.Name = "SasaLib_Version_button";
-            this.SasaLib_Version_button.Size = new Size(104, 27);
-            this.SasaLib_Version_button.TabIndex = 33;
-            this.SasaLib_Version_button.Text = "SasaLib Version";
-            this.SasaLib_Version_button.UseVisualStyleBackColor = true;
-            this.SasaLib_Version_button.Click += SasaLib_Version_button_Click;
-            // 
-            // SasaLib_Hash_button
-            // 
-            this.SasaLib_Hash_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            this.SasaLib_Hash_button.Location = new Point(112, 2);
-            this.SasaLib_Hash_button.Name = "SasaLib_Hash_button";
-            this.SasaLib_Hash_button.Size = new Size(67, 27);
-            this.SasaLib_Hash_button.TabIndex = 32;
-            this.SasaLib_Hash_button.Text = "MD5確認";
-            this.SasaLib_Hash_button.UseVisualStyleBackColor = true;
-            this.SasaLib_Hash_button.Click += SasaLib_Hash_button_Click;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.CAD_Addin_Version_button);
-            this.panel9.Controls.Add(this.CAD_Addin_Hash_Button);
-            this.panel9.Location = new Point(6, 94);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new Size(184, 30);
-            this.panel9.TabIndex = 37;
-            // 
-            // CAD_Addin_Version_button
-            // 
-            this.CAD_Addin_Version_button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            this.CAD_Addin_Version_button.Location = new Point(3, 2);
-            this.CAD_Addin_Version_button.Name = "CAD_Addin_Version_button";
-            this.CAD_Addin_Version_button.Size = new Size(104, 27);
-            this.CAD_Addin_Version_button.TabIndex = 31;
-            this.CAD_Addin_Version_button.Text = "ｱﾄﾞｲﾝ Version";
-            this.CAD_Addin_Version_button.UseVisualStyleBackColor = true;
-            this.CAD_Addin_Version_button.Click += CAD_Addin_Version_button_Click;
-            // 
-            // CAD_Addin_Hash_Button
-            // 
-            this.CAD_Addin_Hash_Button.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            this.CAD_Addin_Hash_Button.Location = new Point(114, 2);
-            this.CAD_Addin_Hash_Button.Name = "CAD_Addin_Hash_Button";
-            this.CAD_Addin_Hash_Button.Size = new Size(67, 27);
-            this.CAD_Addin_Hash_Button.TabIndex = 30;
-            this.CAD_Addin_Hash_Button.Text = "MD5確認";
-            this.CAD_Addin_Hash_Button.UseVisualStyleBackColor = true;
-            this.CAD_Addin_Hash_Button.Click += CAD_Addin_Hash_Button_Click;
             // 
             // RegistClient_Host_CheckedListBox
             // 
@@ -566,7 +582,7 @@
             this.RegistClient_Host_CheckedListBox.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             this.RegistClient_Host_CheckedListBox.RowStyles.Add(new RowStyle(SizeType.Percent, 92.63351F));
             this.RegistClient_Host_CheckedListBox.RowStyles.Add(new RowStyle(SizeType.Percent, 7.366485F));
-            this.RegistClient_Host_CheckedListBox.Size = new Size(1560, 604);
+            this.RegistClient_Host_CheckedListBox.Size = new Size(1879, 638);
             this.RegistClient_Host_CheckedListBox.TabIndex = 39;
             // 
             // panel14
@@ -575,9 +591,9 @@
             this.panel14.Controls.Add(this.RegistClient_host_CheckClear_button);
             this.panel14.Controls.Add(this.RegistClient_hostCheck_button);
             this.panel14.Dock = DockStyle.Fill;
-            this.panel14.Location = new Point(1250, 564);
+            this.panel14.Location = new Point(1503, 595);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new Size(307, 37);
+            this.panel14.Size = new Size(373, 40);
             this.panel14.TabIndex = 28;
             // 
             // RegistClient_PIPENAME_comboBox
@@ -593,7 +609,7 @@
             // RegistClient_host_CheckClear_button
             // 
             this.RegistClient_host_CheckClear_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.RegistClient_host_CheckClear_button.Location = new Point(248, 3);
+            this.RegistClient_host_CheckClear_button.Location = new Point(314, 3);
             this.RegistClient_host_CheckClear_button.Name = "RegistClient_host_CheckClear_button";
             this.RegistClient_host_CheckClear_button.Size = new Size(56, 27);
             this.RegistClient_host_CheckClear_button.TabIndex = 24;
@@ -616,18 +632,18 @@
             this.RegistClient_Host2_CheckedListBox.Dock = DockStyle.Fill;
             this.RegistClient_Host2_CheckedListBox.FormattingEnabled = true;
             this.RegistClient_Host2_CheckedListBox.HorizontalScrollbar = true;
-            this.RegistClient_Host2_CheckedListBox.Location = new Point(1250, 25);
+            this.RegistClient_Host2_CheckedListBox.Location = new Point(1503, 25);
             this.RegistClient_Host2_CheckedListBox.Name = "RegistClient_Host2_CheckedListBox";
-            this.RegistClient_Host2_CheckedListBox.Size = new Size(307, 533);
+            this.RegistClient_Host2_CheckedListBox.Size = new Size(373, 564);
             this.RegistClient_Host2_CheckedListBox.TabIndex = 27;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = DockStyle.Fill;
-            this.label7.Location = new Point(1250, 0);
+            this.label7.Location = new Point(1503, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new Size(307, 22);
+            this.label7.Size = new Size(373, 22);
             this.label7.TabIndex = 26;
             this.label7.Text = "図面承認・登録ツール";
             this.label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -638,9 +654,9 @@
             this.panel13.Controls.Add(this.AutodeskVault_host_CheckClear_button);
             this.panel13.Controls.Add(this.AutodeskVault_hostCheck_button);
             this.panel13.Dock = DockStyle.Fill;
-            this.panel13.Location = new Point(627, 564);
+            this.panel13.Location = new Point(753, 595);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new Size(305, 37);
+            this.panel13.Size = new Size(369, 40);
             this.panel13.TabIndex = 25;
             // 
             // AutodeskVault_Server_PIPENAME_comboBox
@@ -656,7 +672,7 @@
             // AutodeskVault_host_CheckClear_button
             // 
             this.AutodeskVault_host_CheckClear_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.AutodeskVault_host_CheckClear_button.Location = new Point(248, 3);
+            this.AutodeskVault_host_CheckClear_button.Location = new Point(312, 3);
             this.AutodeskVault_host_CheckClear_button.Name = "AutodeskVault_host_CheckClear_button";
             this.AutodeskVault_host_CheckClear_button.Size = new Size(54, 27);
             this.AutodeskVault_host_CheckClear_button.TabIndex = 24;
@@ -679,9 +695,9 @@
             this.AutodeskVault_Host_CheckedListBox.Dock = DockStyle.Fill;
             this.AutodeskVault_Host_CheckedListBox.FormattingEnabled = true;
             this.AutodeskVault_Host_CheckedListBox.HorizontalScrollbar = true;
-            this.AutodeskVault_Host_CheckedListBox.Location = new Point(627, 25);
+            this.AutodeskVault_Host_CheckedListBox.Location = new Point(753, 25);
             this.AutodeskVault_Host_CheckedListBox.Name = "AutodeskVault_Host_CheckedListBox";
-            this.AutodeskVault_Host_CheckedListBox.Size = new Size(305, 533);
+            this.AutodeskVault_Host_CheckedListBox.Size = new Size(369, 564);
             this.AutodeskVault_Host_CheckedListBox.TabIndex = 24;
             // 
             // Inventor_Host_CheckedListBox
@@ -691,7 +707,7 @@
             this.Inventor_Host_CheckedListBox.HorizontalScrollbar = true;
             this.Inventor_Host_CheckedListBox.Location = new Point(3, 25);
             this.Inventor_Host_CheckedListBox.Name = "Inventor_Host_CheckedListBox";
-            this.Inventor_Host_CheckedListBox.Size = new Size(306, 533);
+            this.Inventor_Host_CheckedListBox.Size = new Size(369, 564);
             this.Inventor_Host_CheckedListBox.TabIndex = 19;
             // 
             // AutoCad_Host_CheckedListBox
@@ -699,9 +715,9 @@
             this.AutoCad_Host_CheckedListBox.Dock = DockStyle.Fill;
             this.AutoCad_Host_CheckedListBox.FormattingEnabled = true;
             this.AutoCad_Host_CheckedListBox.HorizontalScrollbar = true;
-            this.AutoCad_Host_CheckedListBox.Location = new Point(315, 25);
+            this.AutoCad_Host_CheckedListBox.Location = new Point(378, 25);
             this.AutoCad_Host_CheckedListBox.Name = "AutoCad_Host_CheckedListBox";
-            this.AutoCad_Host_CheckedListBox.Size = new Size(306, 533);
+            this.AutoCad_Host_CheckedListBox.Size = new Size(369, 564);
             this.AutoCad_Host_CheckedListBox.TabIndex = 19;
             // 
             // SolidWorks_Host_CheckedListBox
@@ -709,18 +725,18 @@
             this.SolidWorks_Host_CheckedListBox.Dock = DockStyle.Fill;
             this.SolidWorks_Host_CheckedListBox.FormattingEnabled = true;
             this.SolidWorks_Host_CheckedListBox.HorizontalScrollbar = true;
-            this.SolidWorks_Host_CheckedListBox.Location = new Point(938, 25);
+            this.SolidWorks_Host_CheckedListBox.Location = new Point(1128, 25);
             this.SolidWorks_Host_CheckedListBox.Name = "SolidWorks_Host_CheckedListBox";
-            this.SolidWorks_Host_CheckedListBox.Size = new Size(306, 533);
+            this.SolidWorks_Host_CheckedListBox.Size = new Size(369, 564);
             this.SolidWorks_Host_CheckedListBox.TabIndex = 19;
             // 
             // label138
             // 
             this.label138.AutoSize = true;
             this.label138.Dock = DockStyle.Fill;
-            this.label138.Location = new Point(938, 0);
+            this.label138.Location = new Point(1128, 0);
             this.label138.Name = "label138";
-            this.label138.Size = new Size(306, 22);
+            this.label138.Size = new Size(369, 22);
             this.label138.TabIndex = 20;
             this.label138.Text = "Solidowrks";
             this.label138.TextAlign = ContentAlignment.MiddleCenter;
@@ -729,9 +745,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = DockStyle.Fill;
-            this.label2.Location = new Point(315, 0);
+            this.label2.Location = new Point(378, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new Size(306, 22);
+            this.label2.Size = new Size(369, 22);
             this.label2.TabIndex = 20;
             this.label2.Text = "AutoCAD";
             this.label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -740,9 +756,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = DockStyle.Fill;
-            this.label6.Location = new Point(627, 0);
+            this.label6.Location = new Point(753, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new Size(305, 22);
+            this.label6.Size = new Size(369, 22);
             this.label6.TabIndex = 23;
             this.label6.Text = "AutodeskVault";
             this.label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -753,7 +769,7 @@
             this.label123.Dock = DockStyle.Fill;
             this.label123.Location = new Point(3, 0);
             this.label123.Name = "label123";
-            this.label123.Size = new Size(306, 22);
+            this.label123.Size = new Size(369, 22);
             this.label123.TabIndex = 20;
             this.label123.Text = "Inventor";
             this.label123.TextAlign = ContentAlignment.MiddleCenter;
@@ -764,9 +780,9 @@
             this.panel6.Controls.Add(this.Autocad_host_CheckClear_button);
             this.panel6.Controls.Add(this.AutoCad_hostCheck_button);
             this.panel6.Dock = DockStyle.Fill;
-            this.panel6.Location = new Point(315, 564);
+            this.panel6.Location = new Point(378, 595);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new Size(306, 37);
+            this.panel6.Size = new Size(369, 40);
             this.panel6.TabIndex = 21;
             // 
             // Autocad_Server_PIPENAME_comboBox
@@ -782,7 +798,7 @@
             // Autocad_host_CheckClear_button
             // 
             this.Autocad_host_CheckClear_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.Autocad_host_CheckClear_button.Location = new Point(250, 3);
+            this.Autocad_host_CheckClear_button.Location = new Point(313, 3);
             this.Autocad_host_CheckClear_button.Name = "Autocad_host_CheckClear_button";
             this.Autocad_host_CheckClear_button.Size = new Size(53, 27);
             this.Autocad_host_CheckClear_button.TabIndex = 23;
@@ -806,9 +822,9 @@
             this.panel7.Controls.Add(this.Solidworks_host_CheckClear_button);
             this.panel7.Controls.Add(this.SolidWorks_hostCheck_button);
             this.panel7.Dock = DockStyle.Fill;
-            this.panel7.Location = new Point(938, 564);
+            this.panel7.Location = new Point(1128, 595);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new Size(306, 37);
+            this.panel7.Size = new Size(369, 40);
             this.panel7.TabIndex = 22;
             // 
             // SolidWorks_Server_PIPENAME_comboBox
@@ -824,7 +840,7 @@
             // Solidworks_host_CheckClear_button
             // 
             this.Solidworks_host_CheckClear_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.Solidworks_host_CheckClear_button.Location = new Point(251, 3);
+            this.Solidworks_host_CheckClear_button.Location = new Point(314, 3);
             this.Solidworks_host_CheckClear_button.Name = "Solidworks_host_CheckClear_button";
             this.Solidworks_host_CheckClear_button.Size = new Size(52, 27);
             this.Solidworks_host_CheckClear_button.TabIndex = 24;
@@ -848,9 +864,9 @@
             this.panel4.Controls.Add(this.Inventor_host_CheckClear_button);
             this.panel4.Controls.Add(this.Inventor_hostCheck_button);
             this.panel4.Dock = DockStyle.Fill;
-            this.panel4.Location = new Point(3, 564);
+            this.panel4.Location = new Point(3, 595);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new Size(306, 37);
+            this.panel4.Size = new Size(369, 40);
             this.panel4.TabIndex = 20;
             // 
             // Inventor_Server_PIPENAME_comboBox
@@ -866,7 +882,7 @@
             // Inventor_host_CheckClear_button
             // 
             this.Inventor_host_CheckClear_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.Inventor_host_CheckClear_button.Location = new Point(250, 3);
+            this.Inventor_host_CheckClear_button.Location = new Point(313, 3);
             this.Inventor_host_CheckClear_button.Name = "Inventor_host_CheckClear_button";
             this.Inventor_host_CheckClear_button.Size = new Size(53, 27);
             this.Inventor_host_CheckClear_button.TabIndex = 22;
@@ -891,7 +907,7 @@
             this.LogTextBox.Multiline = true;
             this.LogTextBox.Name = "LogTextBox";
             this.LogTextBox.ScrollBars = ScrollBars.Both;
-            this.LogTextBox.Size = new Size(1525, 871);
+            this.LogTextBox.Size = new Size(1766, 846);
             this.LogTextBox.TabIndex = 35;
             // 
             // tabControl1
@@ -903,7 +919,7 @@
             this.tabControl1.Location = new Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new Size(1581, 846);
+            this.tabControl1.Size = new Size(1900, 880);
             this.tabControl1.TabIndex = 40;
             // 
             // tabPage1
@@ -912,7 +928,7 @@
             this.tabPage1.Location = new Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new Padding(3);
-            this.tabPage1.Size = new Size(1573, 818);
+            this.tabPage1.Size = new Size(1892, 852);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "メイン";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -923,26 +939,10 @@
             this.tabPage2.Location = new Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new Padding(3);
-            this.tabPage2.Size = new Size(1531, 877);
+            this.tabPage2.Size = new Size(1772, 852);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ログ出力";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.Inventor_checkfile_textBox);
-            this.panel15.Controls.Add(this.AutodeskVault_checkfile_textBox);
-            this.panel15.Controls.Add(this.panel9);
-            this.panel15.Controls.Add(this.panel10);
-            this.panel15.Controls.Add(this.panel12);
-            this.panel15.Controls.Add(this.panel11);
-            this.panel15.Controls.Add(this.Autocad_checkfile_textBox);
-            this.panel15.Controls.Add(this.Solidworks_checkfile_textBox);
-            this.panel15.Controls.Add(this.panel1);
-            this.panel15.Location = new Point(3, 4);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new Size(917, 165);
-            this.panel15.TabIndex = 49;
             // 
             // CadUsedList_Control
             // 
@@ -951,23 +951,25 @@
             AutoSize = true;
             Controls.Add(this.tabControl1);
             Name = "CadUsedList_Control";
-            Size = new Size(1581, 846);
+            Size = new Size(1900, 880);
             Load += CadUsedList_Control_Load;
             this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ValueSetGet_panel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.RegistClient_Host_CheckedListBox.ResumeLayout(false);
             this.RegistClient_Host_CheckedListBox.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -979,8 +981,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
             ResumeLayout(false);
         }
 

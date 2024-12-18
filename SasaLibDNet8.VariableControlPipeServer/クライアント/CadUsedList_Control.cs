@@ -642,12 +642,12 @@ namespace SasaLib.VariableControlPipeClient
 
             if (AutodeskVaultPIPENAME == "VaultVaultTOYOaddin")
                 FullFileName = @"C:\ProgramData\Autodesk\Vault 2022\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
-            else if (AutoCadPIPENAME == "Vault2025TOYOaddin")
+            else if (AutodeskVaultPIPENAME == "Vault2025TOYOaddin") 
                 FullFileName = @"C:\ProgramData\Autodesk\Vault 2025\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
 
             Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
             VersionOrHash_Check(AutodeskVault_Host_CheckedListBox, AutodeskVaultPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
-            Autocad_checkfile_textBox.Text = FullFileName;
+            AutodeskVault_checkfile_textBox.Text = FullFileName;
 
             //
             SoliworksLoopcheckMode = false;
