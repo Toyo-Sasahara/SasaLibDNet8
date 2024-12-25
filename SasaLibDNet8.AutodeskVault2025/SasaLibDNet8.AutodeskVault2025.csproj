@@ -48,109 +48,106 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.Connectivity.Extensibility.Framework">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.Connectivity.IDServicesWrapper">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.IDServicesWrapper.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.IDServicesWrapper.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.Connectivity.JobProcessor.Extensibility">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.JobProcessor.Extensibility.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.JobProcessor.Extensibility.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.Connectivity.LicenseWrapper">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.LicenseWrapper.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.LicenseWrapper.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.Connectivity.WebServices">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.WebServices.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.WebServices.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.Connectivity.WebServices.WCF">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.Connectivity.WebServices.WCF.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.WebServices.WCF.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.DataManagement.Client.Framework.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Forms">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.DataManagement.Client.Framework.Forms.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Autodesk.DataManagement.Server.Extensibility">
-      <HintPath>Vault2025SDKcopy\core\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
-    </Reference>
-    <Reference Include="Connectivity.InventorAddin.EdmAddin">
-      <HintPath>..\Vault2025InventorEdmAddin\EdmAddinDLLs\Connectivity.InventorAddin.EdmAddin.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.Desktop.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Data.Desktop.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Data.Desktop.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Data.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Data.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Drawing.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Drawing.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Drawing.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Images.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Images.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Images.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Office.v22.2.Core">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Office.v22.2.Core.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Office.v22.2.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Pdf.v22.2.Core">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Pdf.v22.2.Core.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Pdf.v22.2.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Pdf.v22.2.Drawing">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Pdf.v22.2.Drawing.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Pdf.v22.2.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Printing.v22.2.Core">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Printing.v22.2.Core.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Printing.v22.2.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.RichEdit.v22.2.Core">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.RichEdit.v22.2.Core.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.RichEdit.v22.2.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Sparkline.v22.2.Core">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Sparkline.v22.2.Core.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Sparkline.v22.2.Core.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Utils.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.Utils.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.Utils.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraBars.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraBars.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraBars.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraEditors.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraEditors.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraGrid.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraGrid.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraGrid.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraLayout.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraLayout.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraLayout.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraNavBar.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraNavBar.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraNavBar.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraPrinting.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraPrinting.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraPrinting.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraRichEdit.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraRichEdit.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraRichEdit.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraTreeList.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraTreeList.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraTreeList.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraVerticalGrid.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraVerticalGrid.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraVerticalGrid.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraWizard.v22.2">
-      <HintPath>Vault2025SDKcopy\core\DevExpress.XtraWizard.v22.2.dll</HintPath>
+      <HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraWizard.v22.2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.ObjectPool">
       <HintPath>Vault2025SDKcopy\core\Microsoft.Extensions.ObjectPool.dll</HintPath>
@@ -177,7 +174,7 @@
     </None>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(ProjectDir)\Vault2025SDKcopy\AdskLicensingSDK_*.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;" />
+    <Exec Command="xcopy &quot;$(ProjectDir)\VaultAddinDnet8DLLcopy\AdskLicensingSDK_*.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;" />
   </Target>
   <Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 </Project>

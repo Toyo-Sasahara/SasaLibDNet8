@@ -61,6 +61,8 @@ namespace SasaLib.AutodeskVault
     {
         private SasaLibDelegateWriteLine WriteLine = DebugConsole.WriteLine;
 
+        //List<FindMissingAssemblyAndLoad> _proxloads;
+
         /// <summary>
         /// ■ﾛｸﾞｲﾝしているかを示す
         /// </summary>
@@ -149,6 +151,8 @@ namespace SasaLib.AutodeskVault
         {
             if (WriteLine == null) this.WriteLine = DebugConsole.WriteLine;
 
+            //_proxloads = _Autodesk_DataManagement_AssemblyProxyLoader();
+
             // Vaultログインウィンドウ
             VDF.Vault.Results.LogInResult results = VDF.Vault.Library.ConnectionManager.LogIn(
                 serverName, vaultName, userName, password, VDF.Vault.Currency.Connections.AuthenticationFlags.Standard, null
@@ -173,6 +177,8 @@ namespace SasaLib.AutodeskVault
         {
             if (WriteLine == null) this.WriteLine = DebugConsole.WriteLine;
 
+            //_proxloads = _Autodesk_DataManagement_AssemblyProxyLoader();
+
             LogIn(caption, parent);
 
             if (VaultConnection != null)
@@ -188,22 +194,7 @@ namespace SasaLib.AutodeskVault
         {
             if (WriteLine == null) this.WriteLine = DebugConsole.WriteLine;
 
-            //EdmSecurity edmSecurityInstance = EdmAddin.GetInventorEdmAddinEdmSecurityInstance() as EdmSecurity;
-
-            //if (edmSecurityInstance.IsSignedIn())
-            //{
-            //    this.WriteLine("■VDFControl(..) すでに EdmSecurity.IsSignedIn でした。");
-            //}
-            //else
-            //{
-            //    if (ShowEdmLoginWindow)
-            //    {
-            //        this.WriteLine("■VDFControl(..) VaultAddinﾛｸﾞｲﾝ ｳｨﾄﾞｳ 表示");
-            //        //this.o_InventorApp.CommandManager.ControlDefinitions["LoginCmdIntName"].Execute();
-            //        edmSecurityInstance.OnLoginButtonExecute(true);
-            //    }
-            //}
-            //EdmSecurity edmSecurityInstance = EdmAddin.GetInventorEdmAddinEdmSecurityInstance() as EdmSecurity;
+            //_proxloads = _Autodesk_DataManagement_AssemblyProxyLoader();
 
             if (EdmAddin.IsSignedIn())
             {
@@ -230,6 +221,13 @@ namespace SasaLib.AutodeskVault
             {
                 VDF.Vault.Library.ConnectionManager.LogOut(VaultConnection);
             }
+
+            // イベントハンドラーを切断
+            //foreach (var _proxload in _proxloads)
+            //{
+            //    _proxload.DisConnect();
+            //}
+
         }
 
         /// <summary>
@@ -2175,6 +2173,19 @@ namespace SasaLib.AutodeskVault
                 return false;
             }
         }
+
+        //private List<FindMissingAssemblyAndLoad> _Autodesk_DataManagement_AssemblyProxyLoader()
+        //{
+        //    List<FindMissingAssemblyAndLoad> result = new List<FindMissingAssemblyAndLoad>();
+
+
+        //    // アセンブリの解決に失敗した時のイベントハンドラー呼出しを定義
+        //    result.Add(new FindMissingAssemblyAndLoad(
+        //        "Autodesk.DataManagement.Client.Framework.Vault", null, DebugConsole.WriteLine
+        //    ));
+
+        //    return result;
+        //}
 
     }
 }
