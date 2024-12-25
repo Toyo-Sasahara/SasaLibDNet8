@@ -1179,7 +1179,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="PartNumber"></param>
         /// <returns>VDFVCE.FileIteration 型のデータとして返す</returns>
-        public VDFVCE.FileIteration SearchTOYOcomponentFile(string PartNumber, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration SearchForComponentFileFromVault(string PartNumber, SasaLibDelegateWriteLine methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1203,6 +1203,40 @@ namespace SasaLib.AutodeskVault
             if (oAFI == null)
             {
                 ACW.SrchCond[] _srchCond4 = MakeSrchConds("ファイル拡張子", "IPT", "部品番号", PartNumber);
+                oAFI = FindFileFirst(_srchCond4);
+            }
+
+            if (oAFI != null) // 検索ヒット
+            {
+                methodWriteLine($"●VDFControl.SearchTOYOcomponentPartNumber(..) PartNumber:\"{PartNumber}\"がみつかりました。oAFI.EntityName:\"{oAFI.EntityName}\"");
+                return oAFI;
+            }
+            else
+            {
+                methodWriteLine($"〇VDFControl.SearchTOYOcomponentPartNumber(..) PartNumber:\"{PartNumber}\"はみつかりませんでした");
+                return null;
+            }
+        }
+
+        public VDFVCE.FileIteration SearchForDrawingFileFromVault(string PartNumber, SasaLibDelegateWriteLine methodWriteLine = null)
+        {
+            if (methodWriteLine == null) methodWriteLine = this.WriteLine;
+
+            VDFVCE.FileIteration oAFI = null;
+
+            if (oAFI == null)
+            {
+                ACW.SrchCond[] _srchCond2 = MakeSrchConds("ファイル拡張子", "DWG", "部品番号", PartNumber + ".DWG");
+                oAFI = FindFileFirst(_srchCond2);
+            }
+            if (oAFI == null)
+            {
+                ACW.SrchCond[] _srchCond3 = MakeSrchConds("ファイル拡張子", "DWG", "名前", PartNumber + ".DWG");
+                oAFI = FindFileFirst(_srchCond3);
+            }
+            if (oAFI == null)
+            {
+                ACW.SrchCond[] _srchCond4 = MakeSrchConds("ファイル拡張子", "IDW", "名前", PartNumber + ".IDW");
                 oAFI = FindFileFirst(_srchCond4);
             }
 
