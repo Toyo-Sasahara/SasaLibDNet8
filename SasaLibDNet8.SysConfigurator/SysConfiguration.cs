@@ -112,7 +112,7 @@ public class SysConfiguration
         }
         catch (Exception ex)
         {
-            LogWrite($"※InstructionsToInventorToyoAddinWork.PreparationConfigData(..) 追加指令書ファイル{ConfigFullPath}の読み込みｴﾗｰ. 例外発生 {ex.Message} {ex.InnerException}");
+            LogWrite($"※SysConfiguration.PreparationConfigData(..) 追加指令書ファイル{ConfigFullPath}の読み込みｴﾗｰ. 例外発生 {ex.Message} {ex.InnerException}");
             ControlData = null;
 
             if (sr != null)

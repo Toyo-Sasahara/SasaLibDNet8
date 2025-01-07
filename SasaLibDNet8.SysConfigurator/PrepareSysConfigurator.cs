@@ -60,7 +60,7 @@ namespace SasaLib.SysConfigurator
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="ServerControlFileFolder">ローカルＰＣのコントロールファイルがあるフォルダ 例:C:\ProgramData\TOYOCOMMON\Inventor</param>
+        /// <param name="ServerControlFileFolder">ｺﾝﾄﾛｰﾙﾌｧｲﾙﾀﾞｳﾝﾛｰﾄﾞ先ｻｰﾊﾞｰ起点とする、コントロールファイルがあるフォルダ 例:C:\ProgramData\TOYOCOMMON\Inventor</param>
         /// <param name="LocalConfigWorkFolder">ローカルＰＣの 作業フォルダ 例:C:\Users\Public\Documents\TOYOCOMMON\InventorTOYOaddin</param>
         /// <param name="SysConfiguratorFilePattern">コントローファイルの検索パターン 例：ローカルＰＣの検索</param>
         /// <param name="AESkey"></param>
