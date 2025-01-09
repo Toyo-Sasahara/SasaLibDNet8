@@ -205,20 +205,22 @@ namespace SasaLib.SysConfigurator
         {
             if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
 
-            SysConfiguration baseConfig;
+            // Stopwatchクラス生成・計測開始
+            var initilaizeSw = new System.Diagnostics.Stopwatch(); initilaizeSw.Start();
 
+            LogWrite($"■XML_Control.JobLoadAndExecute(..) <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> 開始");
+            SysConfiguration baseConfig;
 
             bool loadresult = configClass.ReadloadConfigData(ConfigFullFileName, out baseConfig, LogWrite);
 
-
             if (loadresult == false)
             {
-                LogWrite($"■\"{System.IO.Path.GetFileName(ConfigFullFileName)}\" は処理対象外です。");
+                LogWrite($"■XML_Control.JobLoadAndExecute(..) <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> \"{System.IO.Path.GetFileName(ConfigFullFileName)}\" は処理対象外です。");
 
                 // 用が済んだファイルを削除
                 if (IsRemoveControlFile)
                     if (FileFolder.RemoveFile(ConfigFullFileName))
-                        LogWrite($"■\"{System.IO.Path.GetFileName(ConfigFullFileName)}\" を削除しました");
+                        LogWrite($"■XML_Control.JobLoadAndExecute(..) <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> \"{System.IO.Path.GetFileName(ConfigFullFileName)}\" を削除しました");
                 return false;
             }
 
@@ -234,11 +236,11 @@ namespace SasaLib.SysConfigurator
             if (foreceExecute)
             {
                 if (FileFolder.RemoveFile(applied_Instructions_fullfilename))
-                    LogWrite($"■AdditionalInstruction.JobExecute(..) のメソッドパラメータ foreExecuteがtrueで呼び出された為 追加設定履歴ﾌｧｲﾙ \"{applied_Instructions_fullfilename}\" を削除しました");
+                    LogWrite($"■XML_Control.JobLoadAndExecute(..) <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> メソッドパラメータ foreExecuteがtrueで呼び出された為 追加設定履歴ﾌｧｲﾙ \"{applied_Instructions_fullfilename}\" を削除しました");
             }
             else
             {
-                LogWrite($"■AdditionalInstruction.JobExecute(..) のメソッドパラメータ foreExecuteがfalseでした。 強制再実行フラグは設定されていません");
+                LogWrite($"■XML_Control.JobLoadAndExecute(..) <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> メソッドパラメータ foreExecuteがfalseでした。 強制再実行フラグは設定されていません");
 
             }
 
@@ -410,9 +412,9 @@ namespace SasaLib.SysConfigurator
                 // 用が済んだファイルを削除
                 if (IsRemoveControlFile)
                     if (FileFolder.RemoveFile(ConfigFullFileName) == false)
-                        LogWrite($"※コントロールファイル \"{System.IO.Path.GetFileName(ConfigFullFileName)}\" を削除に失敗しました");
+                        LogWrite($"※XML_Control.JobLoadAndExecute(..) <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> コントロールファイル \"{System.IO.Path.GetFileName(ConfigFullFileName)}\" を削除に失敗しました");
 
-                LogWrite($"■Addin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙ実行履歴ﾌｧｲﾙ \"{System.IO.Path.GetFileName(applied_Instructions_fullfilename)}\" は既に存在しています。追加指令をスキップします");
+                LogWrite($"■XML_Control.JobLoadAndExecute(..) <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>>  Addin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙ実行履歴ﾌｧｲﾙ \"{System.IO.Path.GetFileName(applied_Instructions_fullfilename)}\" は既に存在しています。追加指令をスキップします");
                 return true;
             }
         }
@@ -424,7 +426,7 @@ namespace SasaLib.SysConfigurator
             if (GetFileLists.Count > 0)
             {
 
-                LogWrite($"■ファイル取得指示が {GetFileLists.Count} 件あります。");
+                LogWrite($"■XML_Control.Process_GetFiles(..) ファイル取得指示が {GetFileLists.Count} 件あります。");
 
 
                 foreach (var getFileList in GetFileLists)
@@ -447,7 +449,7 @@ namespace SasaLib.SysConfigurator
             if (SetAttributeFiles.Count > 0)
             {
 
-                LogWrite($"■ファイルアトリビュート変更指示が {SetAttributeFiles.Count} 件あります。");
+                LogWrite($"■XML_Control.Process_ChangeAttribute(..) ファイルアトリビュート変更指示が {SetAttributeFiles.Count} 件あります。");
                 foreach (var SetAttributeFile in SetAttributeFiles)
                 {
                     result = ChangeAttribute(SetAttributeFile, LogWrite);
@@ -467,7 +469,7 @@ namespace SasaLib.SysConfigurator
             if (RemoveFiles.Count > 0)
             {
 
-                LogWrite($"■ファイル削除指示が {RemoveFiles.Count} 件あります。");
+                LogWrite($"■XML_Control.Process_Delete(..) ファイル削除指示が {RemoveFiles.Count} 件あります。");
                 foreach (var file in RemoveFiles)
                 {
                     result = Delete(file, LogWrite);
@@ -488,7 +490,7 @@ namespace SasaLib.SysConfigurator
             if (SetRegistries.Count > 0)
             {
 
-                LogWrite($"■レジストリ設定指示が {SetRegistries.Count} 件あります。");
+                LogWrite($"■XML_Control.Process_Delete.Process_SetRegistry(..) レジストリ設定指示が {SetRegistries.Count} 件あります。");
 
                 foreach (var setRegistry in SetRegistries)
                 {
@@ -509,7 +511,7 @@ namespace SasaLib.SysConfigurator
             if (RemoveRegistries.Count > 0)
             {
 
-                LogWrite($"■レジストリ削除指示が {RemoveRegistries.Count} 件あります。");
+                LogWrite($"■XML_Control.Process_RemoveRegistry(..) レジストリ削除指示が {RemoveRegistries.Count} 件あります。");
 
                 foreach (var removeRegistry in RemoveRegistries)
                 {
@@ -530,7 +532,7 @@ namespace SasaLib.SysConfigurator
             if (ExecuteProcesses.Count > 0)
             {
 
-                LogWrite($"■外部コマンド実行指示が {ExecuteProcesses.Count} 件あります。");
+                LogWrite($"■XML_Control.Process_ProcessExecute(..) 外部コマンド実行指示が {ExecuteProcesses.Count} 件あります。");
                 foreach (var executeProcess in ExecuteProcesses)
                 {
                     result = ProcessExecute(executeProcess, AESkey, AES_iv, LogWrite);
@@ -554,7 +556,7 @@ namespace SasaLib.SysConfigurator
         {
             bool resultRemoteLode = false;
 
-            WriteLine($"■コメント \"{file.Comment}\"");
+            WriteLine($"■XML_Control.GetFiles(..) コメント \"{file.Comment}\"");
 
             string ServerSideFullFileName = null;
             if (string.IsNullOrWhiteSpace(file.LocalSideFullFileName) == false)
@@ -563,7 +565,7 @@ namespace SasaLib.SysConfigurator
             }
             else
             {
-                WriteLine($"※ｻｰﾊﾞｰｻｲﾄﾞの読み出しﾌｧｲﾙﾌﾙﾊﾟｽの指示がありません");
+                WriteLine($"※XML_Control.GetFiles(..) ｻｰﾊﾞｰｻｲﾄﾞの読み出しﾌｧｲﾙﾌﾙﾊﾟｽの指示がありません");
                 return false;
             }
 
@@ -572,12 +574,12 @@ namespace SasaLib.SysConfigurator
             if (string.IsNullOrWhiteSpace(file.LocalSideFullFileName) == false)
             {
                 LocalSideFullFileName = System.Environment.ExpandEnvironmentVariables(file.LocalSideFullFileName);
-                WriteLine($"■ﾛｰｶﾙｻｲﾄﾞ:\"{file.LocalSideFullFileName}\"");
-                WriteLine($"■-> 環境変数展開後:\"{LocalSideFullFileName}\"");
+                WriteLine($"■XML_Control.GetFiles(..) ﾛｰｶﾙｻｲﾄﾞ:\"{file.LocalSideFullFileName}\"");
+                WriteLine($"■XML_Control.GetFiles(..) -> 環境変数展開後:\"{LocalSideFullFileName}\"");
             }
             else
             {
-                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ側のﾌｧｲﾙﾌﾙﾊﾟｽの指示がありません");
+                WriteLine($"※XML_Control.GetFiles(..) ﾛｰｶﾙｻｲﾄﾞ側のﾌｧｲﾙﾌﾙﾊﾟｽの指示がありません");
                 return false;
             }
 
@@ -592,11 +594,11 @@ namespace SasaLib.SysConfigurator
                 if (string.IsNullOrWhiteSpace(file.UnZipLocalFolder) == false)
                 {
                     UnzipExtractFolder = System.Environment.ExpandEnvironmentVariables(file.UnZipLocalFolder);
-                    WriteLine($"■UnZipﾓｰﾄﾞです。ZIP解凍先ﾛｰｶﾙﾌｫﾙﾀﾞ:{file.UnZipLocalFolder} -> 環境変数展開後{UnzipExtractFolder}");
+                    WriteLine($"■XML_Control.GetFiles(..) UnZipﾓｰﾄﾞです。ZIP解凍先ﾛｰｶﾙﾌｫﾙﾀﾞ:{file.UnZipLocalFolder} -> 環境変数展開後{UnzipExtractFolder}");
                 }
                 else
                 {
-                    WriteLine($"※UnZip==trueですがZIP解凍先ﾛｰｶﾙﾌｫﾙﾀﾞの指示がありません");
+                    WriteLine($"※XML_Control.GetFiles(..) UnZip==trueですがZIP解凍先ﾛｰｶﾙﾌｫﾙﾀﾞの指示がありません");
                     return false;
                 }
             }
@@ -616,7 +618,7 @@ namespace SasaLib.SysConfigurator
 
                 if (resultRemoteLode)
                 {
-                    WriteLine($"■ｻｰﾊﾞｰｻｲﾄﾞ:{ServerSideFullFileName}\n -> テンポラリファイル:{LoadTempFile.FullTempFileName}として取得成功");
+                    WriteLine($"■XML_Control.GetFiles(..) ｻｰﾊﾞｰｻｲﾄﾞ:{ServerSideFullFileName}\n -> テンポラリファイル:{LoadTempFile.FullTempFileName}として取得成功");
 
                     /// 既存のﾛｰｶﾙﾌｧｲﾙの属性を保持する変数（デフォルトでテンポラリ作成されたファイルの方の属性を保持する）
                     FileAttributes LocalSideFullFileNameFileAttr = System.IO.File.GetAttributes(LoadTempFile.FullTempFileName);
@@ -629,22 +631,22 @@ namespace SasaLib.SysConfigurator
                         {
 
                             if (FileFolder.MakeDirectory(System.IO.Path.GetDirectoryName(LocalSideFullFileName)))
-                                WriteLine($"■ディレクトリ \"{System.IO.Path.GetDirectoryName(LocalSideFullFileName)}\" が無いため作成しました。処理を続けます");
+                                WriteLine($"■XML_Control.GetFiles(..) ディレクトリ \"{System.IO.Path.GetDirectoryName(LocalSideFullFileName)}\" が無いため作成しました。処理を続けます");
                             else
                             {
-                                WriteLine($"※ディレクトリ \"{System.IO.Path.GetDirectoryName(LocalSideFullFileName)}\" の作成に失敗しました。スキップします");
+                                WriteLine($"※XML_Control.GetFiles(..) ディレクトリ \"{System.IO.Path.GetDirectoryName(LocalSideFullFileName)}\" の作成に失敗しました。スキップします");
                                 return false;
                             }
                         }
                         else
                         {
-                            WriteLine($"■ディレクトリ \"{System.IO.Path.GetDirectoryName(LocalSideFullFileName)}\" は既に存在しています。処理を続けます");
+                            WriteLine($"■XML_Control.GetFiles(..) ディレクトリ \"{System.IO.Path.GetDirectoryName(LocalSideFullFileName)}\" は既に存在しています。処理を続けます");
                         }
                     }
                     catch (Exception ex)
                     {
                         Eventlog.Log.WriteEntry("AutocadTOYOaddin", EventLogEntryType.Error, 0, $"※SasaLib.SysConfigurator.XML_Control.GetFiles(..)にて例外検知 {ex.Message}");
-                        WriteLine($"※SasaLib.SysConfigurator.XML_Control.GetFiles(..)にて例外検知 {ex.Message}。スキップします");
+                        WriteLine($"※XML_Control.GetFiles(..) SasaLib.SysConfigurator.XML_Control.GetFiles(..)にて例外検知 {ex.Message}。スキップします");
                     }
 
                     /// ﾛｰｶﾙﾌｧｲﾙが存在しているなら削除する
@@ -664,14 +666,14 @@ namespace SasaLib.SysConfigurator
                             }
                             catch (System.Exception ex)
                             {
-                                WriteLine($"■ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を  上書きするモードです.書き込み可能への設定変更に失敗しました {ex.Message}");
+                                WriteLine($"■XML_Control.GetFiles(..) ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を  上書きするモードです.書き込み可能への設定変更に失敗しました {ex.Message}");
                             }
 
                             if (FileFolder.RemoveFile(LocalSideFullFileName) == true)
-                                WriteLine($"■ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を 上書きするモードです.既存ﾌｧｲﾙを削除しました");
+                                WriteLine($"■XML_Control.GetFiles(..) ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を 上書きするモードです.既存ﾌｧｲﾙを削除しました");
                             else
                             {
-                                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を 上書きするモードです.既存ﾌｧｲﾙを削除に失敗しました。このファイルはスキップします");
+                                WriteLine($"※XML_Control.GetFiles(..) ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" を 上書きするモードです.既存ﾌｧｲﾙを削除に失敗しました。このファイルはスキップします");
                                 return false;
                             }
                         }
@@ -685,7 +687,7 @@ namespace SasaLib.SysConfigurator
 
                         if (ans)
                         {
-                            WriteLine($"■テンポラリ:\"{LoadTempFile.FullTempFileName}\" -> ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 移動成功");
+                            WriteLine($"■XML_Control.GetFiles(..) テンポラリ:\"{LoadTempFile.FullTempFileName}\" -> ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 移動成功");
 
                             try
                             {
@@ -694,7 +696,7 @@ namespace SasaLib.SysConfigurator
                             }
                             catch (System.Exception ex)
                             {
-                                WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 属性値書き戻しに失敗しました {ex.Message}");
+                                WriteLine($"※XML_Control.GetFiles(..) ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 属性値書き戻しに失敗しました {ex.Message}");
                             }
 
                             if (unzip)
@@ -703,34 +705,34 @@ namespace SasaLib.SysConfigurator
 
                                 if (unzipans)
                                 {
-                                    WriteLine($"■unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 解凍先:\"{UnzipExtractFolder}\" 解凍成功");
+                                    WriteLine($"■XML_Control.GetFiles(..) unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 解凍先:\"{UnzipExtractFolder}\" 解凍成功");
 
                                     if (DeleteZipFileAfterUnzipped == true)
                                     {
                                         try
                                         {
                                             System.IO.File.Delete(LocalSideFullFileName);
-                                            WriteLine($"■圧縮ﾌｧｲﾙ展開後削除指示 があります:\"{LocalSideFullFileName}\" の削除に成功しました");
+                                            WriteLine($"■XML_Control.GetFiles(..) 圧縮ﾌｧｲﾙ展開後削除指示 があります:\"{LocalSideFullFileName}\" の削除に成功しました");
                                         }
                                         catch (IOException e1)
                                         {
-                                            WriteLine($"※圧縮ﾌｧｲﾙ展開後削除指示 がありましたが、:{LocalSideFullFileName} の削除に失敗しました 。処理を続けられません continueします {e1.Message}");
+                                            WriteLine($"※XML_Control.GetFiles(..) 圧縮ﾌｧｲﾙ展開後削除指示 がありましたが、:{LocalSideFullFileName} の削除に失敗しました 。処理を続けられません continueします {e1.Message}");
                                             return false;
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    WriteLine($"※unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 解凍先:\"{UnzipExtractFolder}\" 解凍失敗。\"{LocalSideFullFileName}\"の削除を試みます");
+                                    WriteLine($"※XML_Control.GetFiles(..) unzip指示があります。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 解凍先:\"{UnzipExtractFolder}\" 解凍失敗。\"{LocalSideFullFileName}\"の削除を試みます");
 
                                     try
                                     {
                                         System.IO.File.Delete(LocalSideFullFileName);
-                                        WriteLine($"※圧縮ファイルを削除しました:{LocalSideFullFileName} の削除に成功しました");
+                                        WriteLine($"※XML_Control.GetFiles(..) 圧縮ファイルを削除しました:{LocalSideFullFileName} の削除に成功しました");
                                     }
                                     catch (IOException e1)
                                     {
-                                        WriteLine($"※圧縮ﾌｧｲﾙ {LocalSideFullFileName} の削除に失敗しました 。 {e1.Message}");
+                                        WriteLine($"※XML_Control.GetFiles(..) 圧縮ﾌｧｲﾙ {LocalSideFullFileName} の削除に失敗しました 。 {e1.Message}");
                                     }
                                     return false;
                                 }
@@ -738,20 +740,20 @@ namespace SasaLib.SysConfigurator
                         }
                         else
                         {
-                            WriteLine($"※テンポラリ:\"{LoadTempFile.FullTempFileName}\" -> ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 移動失敗。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" が既に存在しています(2)。処理を続けられません continueします");
+                            WriteLine($"※XML_Control.GetFiles(..) テンポラリ:\"{LoadTempFile.FullTempFileName}\" -> ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" 移動失敗。ﾛｰｶﾙｻｲﾄﾞ:\"{LocalSideFullFileName}\" が既に存在しています(2)。処理を続けられません continueします");
                             return false;
                         }
                     }
                     else
                     {
-                        WriteLine($"※ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName}は既に存在しています。WriteMode.ForceOverwrite が {WriteMode.ForceOverwrite} です。 スキップします");
+                        WriteLine($"※XML_Control.GetFiles(..) ﾛｰｶﾙｻｲﾄﾞ:{LocalSideFullFileName}は既に存在しています。WriteMode.ForceOverwrite が {WriteMode.ForceOverwrite} です。 スキップします");
                         return false;
                     }
 
                 }
                 else
                 {
-                    WriteLine($"※ｻｰﾊﾞｰｻｲﾄﾞ:{ServerSideFullFileName} -> テンポラリ:{LoadTempFile.FullTempFileName} 取得失敗(2)。処理を続けられませんスキップします");
+                    WriteLine($"※XML_Control.GetFiles(..) ｻｰﾊﾞｰｻｲﾄﾞ:{ServerSideFullFileName} -> テンポラリ:{LoadTempFile.FullTempFileName} 取得失敗(2)。処理を続けられませんスキップします");
                     return false;
                 }
             }

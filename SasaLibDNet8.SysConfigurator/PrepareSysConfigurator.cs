@@ -173,6 +173,10 @@ namespace SasaLib.SysConfigurator
 
         private bool RemoteServerControlFileLoad(string ServerSourceFullfilename, string InstructionsAddinLocalFileSotreFolder, string vernumber, out string InstructionsVersionToyoAddinFullFileName, SasaLibDelegateWriteLine WriteLine)
         {
+            // Stopwatchクラス生成・計測開始
+            var initilaizeSw = new System.Diagnostics.Stopwatch(); initilaizeSw.Start();
+            WriteLine($"■PrepareSysConfigurator.RemoteServerControlFileLoad(..)開始 <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> サーバーから 追加ｺﾝﾄﾛｰﾙﾌｧｲﾙ \"{ServerSourceFullfilename}\" の読出しを開始");
+
             // バージョン番号フォルダを埋め込んだ サーバー側フォルダ名
             string InstructionsVersionToyoAddinFullFileNameSeverSource = ServerSourceFullfilename;
 
@@ -182,15 +186,21 @@ namespace SasaLib.SysConfigurator
             try
             {
 
-                FileFolder.MakeDirectory(System.IO.Path.Combine(InstructionsAddinLocalFileSotreFolder, "[" + vernumber + "]"));
+                string folder = System.IO.Path.Combine(InstructionsAddinLocalFileSotreFolder, "[" + vernumber + "]");
+                var result1 = FileFolder.MakeDirectory(folder);
+                if (result1)
+                    WriteLine($"■PrepareSysConfigurator.RemoteServerControlFileLoad(..) フォルダ作成成功 \"{folder}\" <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>>");
+                else
+                    WriteLine($"※PrepareSysConfigurator.RemoteServerControlFileLoad(..) フォルダ作成失敗 \"{folder}\" <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>>");
 
                 bool getans = delegate_FileCopy(InstructionsVersionToyoAddinFullFileNameSeverSource, InstructionsVersionToyoAddinFullFileName);
+
 
                 if (getans == false)
                 {
                     WriteLine(
-                        $"※Addin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙの取得 (ｻｰﾊﾞｰ側:{InstructionsVersionToyoAddinFullFileNameSeverSource}," +
-                        $" ﾛｰｶﾙPC保存先:{InstructionsVersionToyoAddinFullFileName}) の受信に失敗しました。");
+                        $"※Addin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙの取得に失敗 <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> (ｻｰﾊﾞｰ側:{InstructionsVersionToyoAddinFullFileNameSeverSource}," +
+                        $" ﾛｰｶﾙPC保存先:{InstructionsVersionToyoAddinFullFileName})");
 
                     if (System.IO.File.Exists(InstructionsVersionToyoAddinFullFileName))
                     {
@@ -203,20 +213,20 @@ namespace SasaLib.SysConfigurator
                         }
                     }
 
-                    WriteLine($"■ｻｰﾊﾞｰからAddin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙの取得に失敗しています　\"{InstructionsVersionToyoAddinFullFileName}\"");
+                    WriteLine($"※PrepareSysConfigurator.RemoteServerControlFileLoad(..)終了 <<経過時間:{initilaizeSw.Elapsed.Hours}時間 {initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> ｻｰﾊﾞｰからAddin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙの取得に失敗しています ");
 
                     return false;
                 }
                 else
                 {
-                    WriteLine($"■ｻｰﾊﾞｰからAddin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙを　\"{InstructionsVersionToyoAddinFullFileName}\" へ取得しました");
+                    WriteLine($"■PrepareSysConfigurator.RemoteServerControlFileLoad(..)終了 <<経過時間:{initilaizeSw.Elapsed.Hours}時間 {initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>> ｻｰﾊﾞｰからAddin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙを　\"{InstructionsVersionToyoAddinFullFileName}\" へ保存完了しました");
 
                     return true;
                 }
             }
             catch (System.Exception ex)
             {
-                WriteLine($"※Addin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙ のｻｰﾊﾞｰからのロードにて例外検知 {ex.Message}");
+                WriteLine($"※PrepareSysConfigurator.RemoteServerControlFileLoad(..)終了 <<経過時間:{initilaizeSw.Elapsed.Hours}時間 {initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>>  Addin追加ｺﾝﾄﾛｰﾙﾌｧｲﾙ のｻｰﾊﾞｰからのロードにて例外検知 {ex.Message}");
                 return false;
             }
 
