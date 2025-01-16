@@ -63,7 +63,6 @@
 		<PackageReference Include="System.Buffers" Version="4.6.0" />
 		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
-		<PackageReference Include="System.DirectoryServices" Version="9.0.0" />
 		<PackageReference Include="System.IO.Packaging" Version="9.0.0" />
 		<PackageReference Include="System.Management" Version="9.0.0" />
 		<PackageReference Include="System.Memory" Version="4.6.0" />
@@ -74,6 +73,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
+		<ProjectReference Include="..\SasaLibDNet8.LDAP\SasaLibDNet8.LDAP.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />

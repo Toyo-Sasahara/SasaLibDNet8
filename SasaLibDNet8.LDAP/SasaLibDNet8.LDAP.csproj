@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+		<Platforms>AnyCPU;x64</Platforms>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>false</Deterministic>
+		<PlatformTarget>x64</PlatformTarget>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<PackAsTool>False</PackAsTool>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<RootNamespace>SasaLib</RootNamespace>
+		<NuGetAudit>False</NuGetAudit>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.LDAP\SasaLib.LDAP.cs" Link="SasaLib.LDAP.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Novell.Directory.Ldap.NETStandard" Version="3.6.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Interop.IWshRuntimeLibrary">
+		  <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Inventor 2022\Bin\interop.iwshruntimelibrary.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="&#xD;&#xA;  echo &quot;■ビルド後イベント実行&quot;&#xD;&#xA;&#xD;&#xA;  echo &quot;MSBuildProjectName= $(MSBuildProjectName)&#xD;&#xA;  echo &quot;AssemblyName= $(AssemblyName)&quot;&#xD;&#xA;  echo &quot;MSBuildProjectDirectory= $(MSBuildProjectDirectory)&quot;&#xD;&#xA;  echo &quot;MSBuildStartupDirectory= $(MSBuildStartupDirectory)&quot;&#xD;&#xA;  echo &quot;OutputPath = $(OutputPath )&quot;&#xD;&#xA;  echo &quot;FrameworkSDKRoot = $(FrameworkSDKRoot)&quot;&#xD;&#xA;  echo &quot;BaseIntermediateOutputPath= $(BaseIntermediateOutputPath)&quot;&#xD;&#xA;  echo &quot;OutDir = $(OutDir)&quot;&#xD;&#xA;  echo &quot;Configuration= $(Configuration)&quot;&#xD;&#xA;&#xD;&#xA;  echo &quot;■ビルド後イベント終了&quot;" />
+	</Target>
+
+</Project>
