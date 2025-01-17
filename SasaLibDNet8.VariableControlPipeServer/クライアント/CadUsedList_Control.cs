@@ -94,38 +94,38 @@ namespace SasaLib.VariableControlPipeClient
         /// </summary>
         public List<string> hosts { get; set; } = new List<string>
         {
+            "note-00248",
+            "192.168.7.10",
+            "MPB01",
             "MPB03",
-            //"192.168.7.10",
-            //"MPB01",
-            //"MPB03",
-            //"MPC01",
-            //"MPC02",
-            //"MPC03",
-            //"MPC04",
-            //"MPC05",
-            //"MPC06",
-            //"MPC07",
-            //"MPC08",
-            //"MPC09",
-            //"MPC10",
-            //"MPC11",
-            //"MPC12",
-            //"MPC13",
-            //"MPC14",
-            //"MPC15",
-            //"MPC16",
-            //"MPC17",
-            //"MPC18",
-            //"MPC19",
-            //"MPC20",
-            //"MPC21",
-            //"MPC22",
-            //"MPC23",
-            //"MPC24",
-            //"MPC25",
-            //"MPC26",
-            //"MPC27",
-            //"MPC28",
+            "MPC01",
+            "MPC02",
+            "MPC03",
+            "MPC04",
+            "MPC05",
+            "MPC06",
+            "MPC07",
+            "MPC08",
+            "MPC09",
+            "MPC10",
+            "MPC11",
+            "MPC12",
+            "MPC13",
+            "MPC14",
+            "MPC15",
+            "MPC16",
+            "MPC17",
+            "MPC18",
+            "MPC19",
+            "MPC20",
+            "MPC21",
+            "MPC22",
+            "MPC23",
+            "MPC24",
+            "MPC25",
+            "MPC26",
+            "MPC27",
+            "MPC28",
         };
 
         /// <summary>
@@ -421,8 +421,12 @@ namespace SasaLib.VariableControlPipeClient
                         if (result_UserDomainFullName == null)
                             return null;
 
+                        object startDateTImeObj;
 
-                        var startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
+                        if (ASYNCmode_checkBox.Checked)
+                            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
+                        else
+                            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
 
                         string resultStr = null;
 
@@ -497,7 +501,8 @@ namespace SasaLib.VariableControlPipeClient
 
                     object resutlValue;
 
-                    resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, setmode, CommitConfigValue, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine: WriteLine).Result;
+                    //resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, setmode, CommitConfigValue, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine: WriteLine).Result;
+                    resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommand(CommitConfig_ParamaterName, setmode, CommitConfigValue, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine: WriteLine);
 
                     if (resutlValue != null)
                     {
@@ -922,7 +927,7 @@ namespace SasaLib.VariableControlPipeClient
         // ----------------------------------------------------------------------------------- //
 
         /// <summary>
-        /// 
+        /// DLL,EXE ファイルのファイルバージョンを得る
         /// </summary>
         /// <param name="checkedListBox"></param>
         /// <param name="PIPENAME"></param>
@@ -938,8 +943,13 @@ namespace SasaLib.VariableControlPipeClient
                 var output = await Task.Run(() =>
                 {
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
-                    string result = oVCPipeClient.GetTwoValue_DataCommandAsync(Command, FullFileName, mode).Result;
+
+                    //string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;                  
+                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommand(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
+
+                    //string result = oVCPipeClient.GetTwoValue_DataCommandAsync(Command, FullFileName, mode).Result;
+                    string result = oVCPipeClient.GetTwoValue_DataCommand(Command, FullFileName, mode);
+
                     string resultStr = null;
                     if (result_UserDomainFullName != null)
                     {
@@ -994,7 +1004,8 @@ namespace SasaLib.VariableControlPipeClient
                 {
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
 
-                    string result = oVCPipeClient.GetOneValue_DataCommandAsync(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName).Result;
+                    //string result = oVCPipeClient.GetOneValue_DataCommandAsync(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName).Result;
+                    string result = oVCPipeClient.GetOneValue_DataCommand(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName);
                     return result;
                 });
 
@@ -1114,7 +1125,7 @@ namespace SasaLib.VariableControlPipeClient
             WriteLine($"オーダー先 \\\\{hostname}\\PIPE\\{PIPENAME} {XmlFileFullPath} {CurrentElement} {NewEllement} {SetVaule}");
             VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
             var result1 = remote.Command_ConnnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
-
+            
 
             bool _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream, bool objectConvNew2 = false)
             {
