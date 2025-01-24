@@ -65,6 +65,9 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\MessageSend.cs" Link="MessageSend.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Network.cs" Link="Network.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectConverter.cs" Link="ObjectConverter.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectWithType.cs" Link="ObjectWithType.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectWithType2.cs" Link="ObjectWithType2.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectWithType2JsonConverter.cs" Link="ObjectWithType2JsonConverter.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ObjectWithTypeJsonConverter.cs" Link="ObjectWithTypeJsonConverter.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\OScommand.cs" Link="OScommand.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PipeLib.cs" Link="PipeLib.cs" />
@@ -75,6 +78,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\PrinterStatus.cs" Link="PrinterStatus.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Printing.cs" Link="Printing.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ProcessControl.cs" Link="ProcessControl.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RefrectionWrapper.cs" Link="RefrectionWrapper.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RegAsm.cs" Link="RegAsm.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\REGutils.cs" Link="REGutils.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SamplePrintingSetting.cs" Link="SamplePrintingSetting.cs" />
@@ -95,6 +99,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TextFile.cs" Link="TextFile.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\TimeLib.cs" Link="TimeLib.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\UACUtils.cs" Link="UACUtils.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\UniversalBasicTypeJsonConverter.cs" Link="UniversalBasicTypeJsonConverter.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowControl.cs" Link="WindowControl.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowProcess.cs" Link="WindowProcess.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowsExplorer.cs" Link="WindowsExplorer.cs" />
