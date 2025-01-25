@@ -80,6 +80,9 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ProcessControl.cs" Link="ProcessControl.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RefrectionWrapper.cs" Link="RefrectionWrapper.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RegAsm.cs" Link="RegAsm.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RegexOptionsJsonConverter.cs" Link="RegexOptionsJsonConverter.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RegexReplacement.cs" Link="RegexReplacement.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\RegexReplacerFromJson.cs" Link="RegexReplacerFromJson.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\REGutils.cs" Link="REGutils.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SamplePrintingSetting.cs" Link="SamplePrintingSetting.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\SasaLibDoEvent.cs" Link="SasaLibDoEvent.cs" />
@@ -106,6 +109,12 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WithFakeAccount.cs" Link="WithFakeAccount.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlModify.cs" Link="XmlModify.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlSettingFile.cs" Link="XmlSettingFile.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="..\..\SasaLibTestFrame\SasaLib\RegexReplacerTest.json" Link="RegexReplacerTest.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
 	<ItemGroup>
