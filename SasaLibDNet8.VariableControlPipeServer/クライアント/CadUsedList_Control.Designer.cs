@@ -69,12 +69,12 @@
             CommitConfigValue_comboBox = new ComboBox();
             CommitConfig_GetSet_button = new Button();
             CommitConfigParameterName_comboBox = new ComboBox();
-            RegistClient_Host_CheckedListBox = new TableLayoutPanel();
+            CheckedListBox_TableLayoutPanel = new TableLayoutPanel();
             panel14 = new Panel();
             RegistClient_PIPENAME_comboBox = new ComboBox();
             RegistClient_host_CheckClear_button = new Button();
             RegistClient_hostCheck_button = new Button();
-            RegistClient_Host2_CheckedListBox = new CheckedListBox();
+            RegistClient_Host_CheckedListBox = new CheckedListBox();
             label7 = new Label();
             panel13 = new Panel();
             AutodeskVault_Server_PIPENAME_comboBox = new ComboBox();
@@ -116,7 +116,7 @@
             ValueSetGet_panel.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            RegistClient_Host_CheckedListBox.SuspendLayout();
+            CheckedListBox_TableLayoutPanel.SuspendLayout();
             panel14.SuspendLayout();
             panel13.SuspendLayout();
             panel6.SuspendLayout();
@@ -130,7 +130,7 @@
             // panel5
             // 
             panel5.Controls.Add(panel8);
-            panel5.Controls.Add(RegistClient_Host_CheckedListBox);
+            panel5.Controls.Add(CheckedListBox_TableLayoutPanel);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(3, 3);
             panel5.Name = "panel5";
@@ -556,36 +556,36 @@
             // 
             // RegistClient_Host_CheckedListBox
             // 
-            RegistClient_Host_CheckedListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            RegistClient_Host_CheckedListBox.ColumnCount = 5;
-            RegistClient_Host_CheckedListBox.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0005F));
-            RegistClient_Host_CheckedListBox.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0005F));
-            RegistClient_Host_CheckedListBox.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.9985F));
-            RegistClient_Host_CheckedListBox.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0005F));
-            RegistClient_Host_CheckedListBox.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            RegistClient_Host_CheckedListBox.Controls.Add(panel14, 4, 2);
-            RegistClient_Host_CheckedListBox.Controls.Add(RegistClient_Host2_CheckedListBox, 4, 1);
-            RegistClient_Host_CheckedListBox.Controls.Add(label7, 4, 0);
-            RegistClient_Host_CheckedListBox.Controls.Add(panel13, 2, 2);
-            RegistClient_Host_CheckedListBox.Controls.Add(AutodeskVault_Host_CheckedListBox, 2, 1);
-            RegistClient_Host_CheckedListBox.Controls.Add(Inventor_Host_CheckedListBox, 0, 1);
-            RegistClient_Host_CheckedListBox.Controls.Add(AutoCad_Host_CheckedListBox, 1, 1);
-            RegistClient_Host_CheckedListBox.Controls.Add(SolidWorks_Host_CheckedListBox, 3, 1);
-            RegistClient_Host_CheckedListBox.Controls.Add(label138, 3, 0);
-            RegistClient_Host_CheckedListBox.Controls.Add(label2, 1, 0);
-            RegistClient_Host_CheckedListBox.Controls.Add(label6, 2, 0);
-            RegistClient_Host_CheckedListBox.Controls.Add(label123, 0, 0);
-            RegistClient_Host_CheckedListBox.Controls.Add(panel6, 1, 2);
-            RegistClient_Host_CheckedListBox.Controls.Add(panel7, 3, 2);
-            RegistClient_Host_CheckedListBox.Controls.Add(panel4, 0, 2);
-            RegistClient_Host_CheckedListBox.Location = new Point(3, 3);
-            RegistClient_Host_CheckedListBox.Name = "RegistClient_Host_CheckedListBox";
-            RegistClient_Host_CheckedListBox.RowCount = 3;
-            RegistClient_Host_CheckedListBox.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
-            RegistClient_Host_CheckedListBox.RowStyles.Add(new RowStyle(SizeType.Percent, 92.63351F));
-            RegistClient_Host_CheckedListBox.RowStyles.Add(new RowStyle(SizeType.Percent, 7.366485F));
-            RegistClient_Host_CheckedListBox.Size = new Size(1879, 638);
-            RegistClient_Host_CheckedListBox.TabIndex = 39;
+            CheckedListBox_TableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CheckedListBox_TableLayoutPanel.ColumnCount = 5;
+            CheckedListBox_TableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0005F));
+            CheckedListBox_TableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0005F));
+            CheckedListBox_TableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.9985F));
+            CheckedListBox_TableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0005F));
+            CheckedListBox_TableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            CheckedListBox_TableLayoutPanel.Controls.Add(panel14, 4, 2);
+            CheckedListBox_TableLayoutPanel.Controls.Add(RegistClient_Host_CheckedListBox, 4, 1);
+            CheckedListBox_TableLayoutPanel.Controls.Add(label7, 4, 0);
+            CheckedListBox_TableLayoutPanel.Controls.Add(panel13, 2, 2);
+            CheckedListBox_TableLayoutPanel.Controls.Add(AutodeskVault_Host_CheckedListBox, 2, 1);
+            CheckedListBox_TableLayoutPanel.Controls.Add(Inventor_Host_CheckedListBox, 0, 1);
+            CheckedListBox_TableLayoutPanel.Controls.Add(AutoCad_Host_CheckedListBox, 1, 1);
+            CheckedListBox_TableLayoutPanel.Controls.Add(SolidWorks_Host_CheckedListBox, 3, 1);
+            CheckedListBox_TableLayoutPanel.Controls.Add(label138, 3, 0);
+            CheckedListBox_TableLayoutPanel.Controls.Add(label2, 1, 0);
+            CheckedListBox_TableLayoutPanel.Controls.Add(label6, 2, 0);
+            CheckedListBox_TableLayoutPanel.Controls.Add(label123, 0, 0);
+            CheckedListBox_TableLayoutPanel.Controls.Add(panel6, 1, 2);
+            CheckedListBox_TableLayoutPanel.Controls.Add(panel7, 3, 2);
+            CheckedListBox_TableLayoutPanel.Controls.Add(panel4, 0, 2);
+            CheckedListBox_TableLayoutPanel.Location = new Point(3, 3);
+            CheckedListBox_TableLayoutPanel.Name = "RegistClient_Host_CheckedListBox";
+            CheckedListBox_TableLayoutPanel.RowCount = 3;
+            CheckedListBox_TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
+            CheckedListBox_TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 92.63351F));
+            CheckedListBox_TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 7.366485F));
+            CheckedListBox_TableLayoutPanel.Size = new Size(1879, 638);
+            CheckedListBox_TableLayoutPanel.TabIndex = 39;
             // 
             // panel14
             // 
@@ -632,13 +632,13 @@
             // 
             // RegistClient_Host2_CheckedListBox
             // 
-            RegistClient_Host2_CheckedListBox.Dock = DockStyle.Fill;
-            RegistClient_Host2_CheckedListBox.FormattingEnabled = true;
-            RegistClient_Host2_CheckedListBox.HorizontalScrollbar = true;
-            RegistClient_Host2_CheckedListBox.Location = new Point(1503, 25);
-            RegistClient_Host2_CheckedListBox.Name = "RegistClient_Host2_CheckedListBox";
-            RegistClient_Host2_CheckedListBox.Size = new Size(373, 564);
-            RegistClient_Host2_CheckedListBox.TabIndex = 27;
+            RegistClient_Host_CheckedListBox.Dock = DockStyle.Fill;
+            RegistClient_Host_CheckedListBox.FormattingEnabled = true;
+            RegistClient_Host_CheckedListBox.HorizontalScrollbar = true;
+            RegistClient_Host_CheckedListBox.Location = new Point(1503, 25);
+            RegistClient_Host_CheckedListBox.Name = "RegistClient_Host2_CheckedListBox";
+            RegistClient_Host_CheckedListBox.Size = new Size(373, 564);
+            RegistClient_Host_CheckedListBox.TabIndex = 27;
             // 
             // label7
             // 
@@ -990,8 +990,8 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            RegistClient_Host_CheckedListBox.ResumeLayout(false);
-            RegistClient_Host_CheckedListBox.PerformLayout();
+            CheckedListBox_TableLayoutPanel.ResumeLayout(false);
+            CheckedListBox_TableLayoutPanel.PerformLayout();
             panel14.ResumeLayout(false);
             panel13.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -1017,7 +1017,7 @@
         private System.Windows.Forms.CheckedListBox AutoCad_Host_CheckedListBox;
         private System.Windows.Forms.CheckedListBox Inventor_Host_CheckedListBox;
         private System.Windows.Forms.TextBox LogTextBox;
-        private System.Windows.Forms.TableLayoutPanel RegistClient_Host_CheckedListBox;
+        private System.Windows.Forms.TableLayoutPanel CheckedListBox_TableLayoutPanel;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
@@ -1075,7 +1075,7 @@
         private System.Windows.Forms.ComboBox SolidWorks_Server_PIPENAME_comboBox;
         private System.Windows.Forms.ComboBox Inventor_Server_PIPENAME_comboBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckedListBox RegistClient_Host2_CheckedListBox;
+        private System.Windows.Forms.CheckedListBox RegistClient_Host_CheckedListBox;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.ComboBox RegistClient_PIPENAME_comboBox;
         private System.Windows.Forms.Button RegistClient_host_CheckClear_button;

@@ -159,7 +159,7 @@ namespace SasaLib.VariableControlPipeClient
             Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
             Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
             Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
-            Host_CheckedListBox_Clear(RegistClient_Host2_CheckedListBox);
+            Host_CheckedListBox_Clear(RegistClient_Host_CheckedListBox);
         }
 
         private void Host_CheckedListBox_Clear(CheckedListBox checkedListBox)
@@ -343,8 +343,8 @@ namespace SasaLib.VariableControlPipeClient
                     {
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
-                        Host_CheckedListBox_Clear(RegistClient_Host2_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_Host2_CheckedListBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        Host_CheckedListBox_Clear(RegistClient_Host_CheckedListBox);
+                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_Host_CheckedListBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{RegistClientLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -664,7 +664,7 @@ namespace SasaLib.VariableControlPipeClient
             VersionOrHash_Check(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
             Solidworks_checkfile_textBox.Text = FullFileName;
 
-            Host_CheckedListBox_Clear(RegistClient_Host2_CheckedListBox);
+            Host_CheckedListBox_Clear(RegistClient_Host_CheckedListBox);
         }
 
         private string GetAddinDllFileFullPath(string pipeName)
@@ -1066,7 +1066,7 @@ namespace SasaLib.VariableControlPipeClient
 
         private void RegistClient_Host_CheckClear_button_Click(object sender, EventArgs e)
         {
-            RegistClient_Host2_CheckedListBox.CheckAllCheckBoxes(false);
+            RegistClient_Host_CheckedListBox.CheckAllCheckBoxes(false);
         }
 
         private void value_button_Click(object sender, EventArgs e)
@@ -1204,7 +1204,11 @@ namespace SasaLib.VariableControlPipeClient
 
             await CheckCOMMITCONFIG_VAULE(setmode, AutoCad_Host_CheckedListBox, AutoCadPIPENAME, CommitConfigParameterName_comboBox.Text, CommitConfigValue_comboBox.Text);
 
+            await CheckCOMMITCONFIG_VAULE(setmode, AutodeskVault_Host_CheckedListBox, AutodeskVaultPIPENAME, CommitConfigParameterName_comboBox.Text, CommitConfigValue_comboBox.Text);
+
             await CheckCOMMITCONFIG_VAULE(setmode, SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, CommitConfigParameterName_comboBox.Text, CommitConfigValue_comboBox.Text);
+
+            await CheckCOMMITCONFIG_VAULE(setmode, RegistClient_Host_CheckedListBox, RegistClientPIPENAME, CommitConfigParameterName_comboBox.Text, CommitConfigValue_comboBox.Text);
 
 
             SetMode_checkBox.Checked = false;
