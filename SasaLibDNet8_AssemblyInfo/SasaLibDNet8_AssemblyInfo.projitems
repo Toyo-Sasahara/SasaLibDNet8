@@ -9,6 +9,6 @@
     <Import_RootNamespace>SasaLibDNet8_AssemblyInfo</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)AssembyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainAssembyInfo.cs" />
   </ItemGroup>
 </Project>
