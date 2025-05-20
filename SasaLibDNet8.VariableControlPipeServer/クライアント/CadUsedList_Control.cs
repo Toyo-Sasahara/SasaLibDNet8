@@ -44,7 +44,7 @@ namespace SasaLib.VariableControlPipeClient
             {
                 Inventor_Server_PIPENAME_comboBox.Text = _InventorPIPENAME;
 
-                return _InventorPIPENAME; 
+                return _InventorPIPENAME;
             }
             set
             {
@@ -60,9 +60,9 @@ namespace SasaLib.VariableControlPipeClient
             {
                 Autocad_Server_PIPENAME_comboBox.Text = _AutoCadPIPENAME;
 
-                return _AutoCadPIPENAME; 
+                return _AutoCadPIPENAME;
             }
-            set 
+            set
             {
                 _AutoCadPIPENAME = value;
                 Autocad_Server_PIPENAME_comboBox.Text = _AutoCadPIPENAME;
@@ -85,8 +85,8 @@ namespace SasaLib.VariableControlPipeClient
 
         public string RegistClientPIPENAME
         {
-            get { return RegistClient_PIPENAME_comboBox.Text; }
-            set { RegistClient_PIPENAME_comboBox.Text = value; }
+            get { return ALT_Regist_Host_textBox.Text; }
+            set { ALT_Regist_Host_textBox.Text = value; }
         }
 
         /// <summary>
@@ -648,7 +648,7 @@ namespace SasaLib.VariableControlPipeClient
 
             if (AutodeskVaultPIPENAME == "VaultVaultTOYOaddin")
                 FullFileName = @"C:\ProgramData\Autodesk\Vault 2022\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
-            else if (AutodeskVaultPIPENAME == "Vault2025TOYOaddin") 
+            else if (AutodeskVaultPIPENAME == "Vault2025TOYOaddin")
                 FullFileName = @"C:\ProgramData\Autodesk\Vault 2025\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
 
             Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
@@ -1125,7 +1125,7 @@ namespace SasaLib.VariableControlPipeClient
             WriteLine($"オーダー先 \\\\{hostname}\\PIPE\\{PIPENAME} {XmlFileFullPath} {CurrentElement} {NewEllement} {SetVaule}");
             VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
             var result1 = remote.Command_ConnnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
-            
+
 
             bool _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream, bool objectConvNew2 = false)
             {
@@ -1221,6 +1221,11 @@ namespace SasaLib.VariableControlPipeClient
         {
             if (string.IsNullOrWhiteSpace(CommitConfigValue_comboBox.Text) == false)
                 SetMode_checkBox.Checked = true;
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

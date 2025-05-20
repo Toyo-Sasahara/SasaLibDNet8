@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel5 = new Panel();
             panel8 = new Panel();
+            ASYNCmode_checkBox = new CheckBox();
             panel15 = new Panel();
             Inventor_checkfile_textBox = new TextBox();
             AutodeskVault_checkfile_textBox = new TextBox();
@@ -71,7 +73,7 @@
             CommitConfigParameterName_comboBox = new ComboBox();
             CheckedListBox_TableLayoutPanel = new TableLayoutPanel();
             panel14 = new Panel();
-            RegistClient_PIPENAME_comboBox = new ComboBox();
+            ALT_Regist_Host_textBox = new ComboBox();
             RegistClient_host_CheckClear_button = new Button();
             RegistClient_hostCheck_button = new Button();
             RegistClient_Host_CheckedListBox = new CheckedListBox();
@@ -104,7 +106,12 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            ASYNCmode_checkBox = new CheckBox();
+            imageList1 = new ImageList(components);
+            ALT_INV_Host_textBox = new TextBox();
+            ALT_ACM_Host_textBox = new TextBox();
+            ALT_VLT_Host_textBox = new TextBox();
+            ALT_SW_Host_textBox = new TextBox();
+            textBox5 = new TextBox();
             panel5.SuspendLayout();
             panel8.SuspendLayout();
             panel15.SuspendLayout();
@@ -129,6 +136,11 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(textBox5);
+            panel5.Controls.Add(ALT_SW_Host_textBox);
+            panel5.Controls.Add(ALT_VLT_Host_textBox);
+            panel5.Controls.Add(ALT_ACM_Host_textBox);
+            panel5.Controls.Add(ALT_INV_Host_textBox);
             panel5.Controls.Add(panel8);
             panel5.Controls.Add(CheckedListBox_TableLayoutPanel);
             panel5.Dock = DockStyle.Fill;
@@ -136,6 +148,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1886, 846);
             panel5.TabIndex = 19;
+            panel5.Paint += panel5_Paint;
             // 
             // panel8
             // 
@@ -149,6 +162,19 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(1876, 196);
             panel8.TabIndex = 37;
+            // 
+            // ASYNCmode_checkBox
+            // 
+            ASYNCmode_checkBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            ASYNCmode_checkBox.AutoSize = true;
+            ASYNCmode_checkBox.Checked = true;
+            ASYNCmode_checkBox.CheckState = CheckState.Checked;
+            ASYNCmode_checkBox.Location = new Point(124, 173);
+            ASYNCmode_checkBox.Name = "ASYNCmode_checkBox";
+            ASYNCmode_checkBox.Size = new Size(58, 19);
+            ASYNCmode_checkBox.TabIndex = 50;
+            ASYNCmode_checkBox.Text = "Async";
+            ASYNCmode_checkBox.UseVisualStyleBackColor = true;
             // 
             // panel15
             // 
@@ -554,7 +580,7 @@
             CommitConfigParameterName_comboBox.TabIndex = 3;
             CommitConfigParameterName_comboBox.Text = "InventorSoftwareDisplayName";
             // 
-            // RegistClient_Host_CheckedListBox
+            // CheckedListBox_TableLayoutPanel
             // 
             CheckedListBox_TableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             CheckedListBox_TableLayoutPanel.ColumnCount = 5;
@@ -579,34 +605,34 @@
             CheckedListBox_TableLayoutPanel.Controls.Add(panel7, 3, 2);
             CheckedListBox_TableLayoutPanel.Controls.Add(panel4, 0, 2);
             CheckedListBox_TableLayoutPanel.Location = new Point(3, 3);
-            CheckedListBox_TableLayoutPanel.Name = "RegistClient_Host_CheckedListBox";
+            CheckedListBox_TableLayoutPanel.Name = "CheckedListBox_TableLayoutPanel";
             CheckedListBox_TableLayoutPanel.RowCount = 3;
             CheckedListBox_TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             CheckedListBox_TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 92.63351F));
             CheckedListBox_TableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 7.366485F));
-            CheckedListBox_TableLayoutPanel.Size = new Size(1879, 638);
+            CheckedListBox_TableLayoutPanel.Size = new Size(1879, 613);
             CheckedListBox_TableLayoutPanel.TabIndex = 39;
             // 
             // panel14
             // 
-            panel14.Controls.Add(RegistClient_PIPENAME_comboBox);
+            panel14.Controls.Add(ALT_Regist_Host_textBox);
             panel14.Controls.Add(RegistClient_host_CheckClear_button);
             panel14.Controls.Add(RegistClient_hostCheck_button);
             panel14.Dock = DockStyle.Fill;
-            panel14.Location = new Point(1503, 595);
+            panel14.Location = new Point(1503, 572);
             panel14.Name = "panel14";
-            panel14.Size = new Size(373, 40);
+            panel14.Size = new Size(373, 38);
             panel14.TabIndex = 28;
             // 
-            // RegistClient_PIPENAME_comboBox
+            // ALT_Regist_Host_textBox
             // 
-            RegistClient_PIPENAME_comboBox.FormattingEnabled = true;
-            RegistClient_PIPENAME_comboBox.Items.AddRange(new object[] { "ToyoRegistClient" });
-            RegistClient_PIPENAME_comboBox.Location = new Point(5, 7);
-            RegistClient_PIPENAME_comboBox.Name = "RegistClient_PIPENAME_comboBox";
-            RegistClient_PIPENAME_comboBox.Size = new Size(135, 23);
-            RegistClient_PIPENAME_comboBox.TabIndex = 25;
-            RegistClient_PIPENAME_comboBox.Text = "ToyoRegistClient";
+            ALT_Regist_Host_textBox.FormattingEnabled = true;
+            ALT_Regist_Host_textBox.Items.AddRange(new object[] { "ToyoRegistClient" });
+            ALT_Regist_Host_textBox.Location = new Point(5, 7);
+            ALT_Regist_Host_textBox.Name = "ALT_Regist_Host_textBox";
+            ALT_Regist_Host_textBox.Size = new Size(135, 23);
+            ALT_Regist_Host_textBox.TabIndex = 25;
+            ALT_Regist_Host_textBox.Text = "ToyoRegistClient";
             // 
             // RegistClient_host_CheckClear_button
             // 
@@ -630,14 +656,14 @@
             RegistClient_hostCheck_button.UseVisualStyleBackColor = true;
             RegistClient_hostCheck_button.Click += RegistClient_hostCheck_button_Click;
             // 
-            // RegistClient_Host2_CheckedListBox
+            // RegistClient_Host_CheckedListBox
             // 
             RegistClient_Host_CheckedListBox.Dock = DockStyle.Fill;
             RegistClient_Host_CheckedListBox.FormattingEnabled = true;
             RegistClient_Host_CheckedListBox.HorizontalScrollbar = true;
             RegistClient_Host_CheckedListBox.Location = new Point(1503, 25);
-            RegistClient_Host_CheckedListBox.Name = "RegistClient_Host2_CheckedListBox";
-            RegistClient_Host_CheckedListBox.Size = new Size(373, 564);
+            RegistClient_Host_CheckedListBox.Name = "RegistClient_Host_CheckedListBox";
+            RegistClient_Host_CheckedListBox.Size = new Size(373, 541);
             RegistClient_Host_CheckedListBox.TabIndex = 27;
             // 
             // label7
@@ -657,9 +683,9 @@
             panel13.Controls.Add(AutodeskVault_host_CheckClear_button);
             panel13.Controls.Add(AutodeskVault_hostCheck_button);
             panel13.Dock = DockStyle.Fill;
-            panel13.Location = new Point(753, 595);
+            panel13.Location = new Point(753, 572);
             panel13.Name = "panel13";
-            panel13.Size = new Size(369, 40);
+            panel13.Size = new Size(369, 38);
             panel13.TabIndex = 25;
             // 
             // AutodeskVault_Server_PIPENAME_comboBox
@@ -701,7 +727,7 @@
             AutodeskVault_Host_CheckedListBox.HorizontalScrollbar = true;
             AutodeskVault_Host_CheckedListBox.Location = new Point(753, 25);
             AutodeskVault_Host_CheckedListBox.Name = "AutodeskVault_Host_CheckedListBox";
-            AutodeskVault_Host_CheckedListBox.Size = new Size(369, 564);
+            AutodeskVault_Host_CheckedListBox.Size = new Size(369, 541);
             AutodeskVault_Host_CheckedListBox.TabIndex = 24;
             // 
             // Inventor_Host_CheckedListBox
@@ -711,7 +737,7 @@
             Inventor_Host_CheckedListBox.HorizontalScrollbar = true;
             Inventor_Host_CheckedListBox.Location = new Point(3, 25);
             Inventor_Host_CheckedListBox.Name = "Inventor_Host_CheckedListBox";
-            Inventor_Host_CheckedListBox.Size = new Size(369, 564);
+            Inventor_Host_CheckedListBox.Size = new Size(369, 541);
             Inventor_Host_CheckedListBox.TabIndex = 19;
             // 
             // AutoCad_Host_CheckedListBox
@@ -721,7 +747,7 @@
             AutoCad_Host_CheckedListBox.HorizontalScrollbar = true;
             AutoCad_Host_CheckedListBox.Location = new Point(378, 25);
             AutoCad_Host_CheckedListBox.Name = "AutoCad_Host_CheckedListBox";
-            AutoCad_Host_CheckedListBox.Size = new Size(369, 564);
+            AutoCad_Host_CheckedListBox.Size = new Size(369, 541);
             AutoCad_Host_CheckedListBox.TabIndex = 19;
             // 
             // SolidWorks_Host_CheckedListBox
@@ -731,7 +757,7 @@
             SolidWorks_Host_CheckedListBox.HorizontalScrollbar = true;
             SolidWorks_Host_CheckedListBox.Location = new Point(1128, 25);
             SolidWorks_Host_CheckedListBox.Name = "SolidWorks_Host_CheckedListBox";
-            SolidWorks_Host_CheckedListBox.Size = new Size(369, 564);
+            SolidWorks_Host_CheckedListBox.Size = new Size(369, 541);
             SolidWorks_Host_CheckedListBox.TabIndex = 19;
             // 
             // label138
@@ -784,9 +810,9 @@
             panel6.Controls.Add(Autocad_host_CheckClear_button);
             panel6.Controls.Add(AutoCad_hostCheck_button);
             panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(378, 595);
+            panel6.Location = new Point(378, 572);
             panel6.Name = "panel6";
-            panel6.Size = new Size(369, 40);
+            panel6.Size = new Size(369, 38);
             panel6.TabIndex = 21;
             // 
             // Autocad_Server_PIPENAME_comboBox
@@ -827,9 +853,9 @@
             panel7.Controls.Add(Solidworks_host_CheckClear_button);
             panel7.Controls.Add(SolidWorks_hostCheck_button);
             panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(1128, 595);
+            panel7.Location = new Point(1128, 572);
             panel7.Name = "panel7";
-            panel7.Size = new Size(369, 40);
+            panel7.Size = new Size(369, 38);
             panel7.TabIndex = 22;
             // 
             // SolidWorks_Server_PIPENAME_comboBox
@@ -870,9 +896,9 @@
             panel4.Controls.Add(Inventor_host_CheckClear_button);
             panel4.Controls.Add(Inventor_hostCheck_button);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(3, 595);
+            panel4.Location = new Point(3, 572);
             panel4.Name = "panel4";
-            panel4.Size = new Size(369, 40);
+            panel4.Size = new Size(369, 38);
             panel4.TabIndex = 20;
             // 
             // Inventor_Server_PIPENAME_comboBox
@@ -951,18 +977,46 @@
             tabPage2.Text = "ログ出力";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ASYNCmode_checkBox
+            // imageList1
             // 
-            ASYNCmode_checkBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            ASYNCmode_checkBox.AutoSize = true;
-            ASYNCmode_checkBox.Checked = true;
-            ASYNCmode_checkBox.CheckState = CheckState.Checked;
-            ASYNCmode_checkBox.Location = new Point(124, 173);
-            ASYNCmode_checkBox.Name = "ASYNCmode_checkBox";
-            ASYNCmode_checkBox.Size = new Size(58, 19);
-            ASYNCmode_checkBox.TabIndex = 50;
-            ASYNCmode_checkBox.Text = "Async";
-            ASYNCmode_checkBox.UseVisualStyleBackColor = true;
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
+            // 
+            // ALT_INV_Host_textBox
+            // 
+            ALT_INV_Host_textBox.Location = new Point(3, 622);
+            ALT_INV_Host_textBox.Name = "ALT_INV_Host_textBox";
+            ALT_INV_Host_textBox.Size = new Size(142, 23);
+            ALT_INV_Host_textBox.TabIndex = 40;
+            // 
+            // ALT_ACM_Host_textBox
+            // 
+            ALT_ACM_Host_textBox.Location = new Point(378, 622);
+            ALT_ACM_Host_textBox.Name = "ALT_ACM_Host_textBox";
+            ALT_ACM_Host_textBox.Size = new Size(142, 23);
+            ALT_ACM_Host_textBox.TabIndex = 41;
+            // 
+            // ALT_VLT_Host_textBox
+            // 
+            ALT_VLT_Host_textBox.Location = new Point(759, 622);
+            ALT_VLT_Host_textBox.Name = "ALT_VLT_Host_textBox";
+            ALT_VLT_Host_textBox.Size = new Size(142, 23);
+            ALT_VLT_Host_textBox.TabIndex = 42;
+            // 
+            // ALT_SW_Host_textBox
+            // 
+            ALT_SW_Host_textBox.Location = new Point(1131, 622);
+            ALT_SW_Host_textBox.Name = "ALT_SW_Host_textBox";
+            ALT_SW_Host_textBox.Size = new Size(142, 23);
+            ALT_SW_Host_textBox.TabIndex = 43;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(1504, 619);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(142, 23);
+            textBox5.TabIndex = 44;
             // 
             // CadUsedList_Control
             // 
@@ -974,6 +1028,7 @@
             Size = new Size(1900, 880);
             Load += CadUsedList_Control_Load;
             panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             panel15.ResumeLayout(false);
@@ -1077,11 +1132,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckedListBox RegistClient_Host_CheckedListBox;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.ComboBox RegistClient_PIPENAME_comboBox;
+        private System.Windows.Forms.ComboBox ALT_Regist_Host_textBox;
         private System.Windows.Forms.Button RegistClient_host_CheckClear_button;
         private System.Windows.Forms.Button RegistClient_hostCheck_button;
         private System.Windows.Forms.TextBox AutodeskVault_checkfile_textBox;
         private Panel panel15;
         private CheckBox ASYNCmode_checkBox;
+        private TextBox ALT_INV_Host_textBox;
+        private ImageList imageList1;
+        private TextBox textBox5;
+        private TextBox ALT_SW_Host_textBox;
+        private TextBox ALT_VLT_Host_textBox;
+        private TextBox ALT_ACM_Host_textBox;
     }
 }
