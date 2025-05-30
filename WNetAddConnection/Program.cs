@@ -55,6 +55,8 @@ class Program
 
         do
         {
+            Console.Write($"共有フォルダのパス：{remotePath}\n");
+
             Console.Write("ユーザー名（例：DOMAIN\\user）：");
             string UserID = Console.ReadLine();
 
