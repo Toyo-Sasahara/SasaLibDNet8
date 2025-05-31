@@ -1,6 +1,4 @@
-﻿using DevExpress.Internal.WinApi.Windows.UI.Notifications;
-using DevExpress.Office.PInvoke;
-using SasaLib;
+﻿using SasaLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
