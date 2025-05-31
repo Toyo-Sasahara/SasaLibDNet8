@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors.Senders;
-using SasaLib;
+﻿using SasaLib;
 using StageServerRemote;
 using System;
 using System.Collections.Generic;

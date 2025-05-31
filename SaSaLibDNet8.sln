@@ -74,6 +74,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sasa_DHCP_Client_Test_Tool"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8.LDAP", "SasaLibDNet8.LDAP\SasaLibDNet8.LDAP.csproj", "{6215E9EC-A1BE-44F6-ADFA-00F5A0FDDD6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLibDNet8.AutodeskVault2025Test", "SasaLibDNet8.AutodeskVault2025Test\SasaLibDNet8.AutodeskVault2025Test.csproj", "{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -306,6 +308,14 @@ Global
 		{6215E9EC-A1BE-44F6-ADFA-00F5A0FDDD6A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6215E9EC-A1BE-44F6-ADFA-00F5A0FDDD6A}.Release|x64.ActiveCfg = Release|x64
 		{6215E9EC-A1BE-44F6-ADFA-00F5A0FDDD6A}.Release|x64.Build.0 = Release|x64
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Debug|x64.Build.0 = Debug|Any CPU
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Release|x64.ActiveCfg = Release|Any CPU
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -328,6 +338,7 @@ Global
 		{7679F88B-0331-4EDA-ADB9-2D2C2475589A} = {84C0D6D9-675A-4A00-BF9D-4543674A6388}
 		{4D333D99-18F5-4F47-B75F-702C7DCB41F0} = {8509F56B-9224-46D5-8276-11F51349F8D0}
 		{BE8F68CC-097E-43C4-8403-E62F91E585DA} = {84C0D6D9-675A-4A00-BF9D-4543674A6388}
+		{A54E7E0E-DE77-FEE3-6855-0D6350046EA0} = {8509F56B-9224-46D5-8276-11F51349F8D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B06B73B-759E-49CE-8B26-84A8711C77A1}
@@ -353,6 +364,7 @@ Global
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{9f4ea615-d498-4be8-995c-f079b8988f9e}*SharedItemsImports = 4
 		..\TOYOStagingSystemDNet8\STAGINGSYSTEM.AssemblyVersion\SasaLibDNet8.AssemblyVersion.projitems*{a3a56ad3-bfd6-4999-bec4-3e71ce2a3bde}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{a3d24f97-0015-435c-b935-8ddb953040ee}*SharedItemsImports = 5
+		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{a54e7e0e-de77-fee3-6855-0d6350046ea0}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{a99e40d3-2bfd-4e95-9ebc-279f5aecaf30}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{be182471-dd6a-4663-b824-0eb89458d7aa}*SharedItemsImports = 5
 		SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems*{c215c9a9-889f-4815-b52a-8032a0d42dbc}*SharedItemsImports = 5

@@ -1,0 +1,180 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<OutputType>Library</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<AssemblyTitle>SasaLibDNet8.AutodeskVault2025</AssemblyTitle>
+		<Product>SasaLibDNet8.AutodeskVault2025</Product>
+		<Copyright>Copyright ©  2024</Copyright>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<PlatformTarget>x64</PlatformTarget>
+		<RootNamespace>SasaLib.AutodeskVault</RootNamespace>
+		<NuGetAudit>False</NuGetAudit>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="ドキュメント\Autodesk.Connectivity.WebServices.Fileクラス .txt" />
+		<None Remove="ドキュメント\FileAcquisitionResultクラス.txt" />
+		<None Remove="ドキュメント\FileIteration クラス.txt" />
+		<None Remove="ドキュメント\FileRelationshipクラス.txt" />
+		<None Remove="ドキュメント\Folderクラス.txt" />
+		<None Remove="ドキュメント\PathConverter クラス.txt" />
+		<None Remove="ドキュメント\SelectEntityResults クラス.txt" />
+		<None Remove="ドキュメント\SelectEntitySettings クラス.txt" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="ドキュメント\Autodesk.Connectivity.WebServices.Fileクラス .txt" />
+		<Content Include="ドキュメント\FileAcquisitionResultクラス.txt" />
+		<Content Include="ドキュメント\FileIteration クラス.txt" />
+		<Content Include="ドキュメント\FileRelationshipクラス.txt" />
+		<Content Include="ドキュメント\Folderクラス.txt" />
+		<Content Include="ドキュメント\PathConverter クラス.txt" />
+		<Content Include="ドキュメント\SelectEntityResults クラス.txt" />
+		<Content Include="ドキュメント\SelectEntitySettings クラス.txt" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="System.Buffers" Version="4.6.0" />
+		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+		<PackageReference Include="System.IO.Packaging" Version="9.0.0" />
+		<PackageReference Include="System.Management" Version="9.0.0" />
+		<PackageReference Include="System.Memory" Version="4.6.0" />
+		<PackageReference Include="System.Net.Http" Version="4.3.4" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
+		<ProjectReference Include="..\Vault2025InventorEdmAddin\Vault2025InventorEdmAddin.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.Extensibility.Framework">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.IDServicesWrapper">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.IDServicesWrapper.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.JobProcessor.Extensibility">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.JobProcessor.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.LicenseWrapper">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.LicenseWrapper.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.WebServices">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.WebServices.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.WebServices.WCF">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.Connectivity.WebServices.WCF.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Forms">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Forms.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Server.Extensibility">
+			<HintPath>VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Data.Desktop.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Data.Desktop.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Data.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Data.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Drawing.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Drawing.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Images.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Images.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Office.v22.2.Core">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Office.v22.2.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Pdf.v22.2.Core">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Pdf.v22.2.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Pdf.v22.2.Drawing">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Pdf.v22.2.Drawing.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Printing.v22.2.Core">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Printing.v22.2.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.RichEdit.v22.2.Core">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.RichEdit.v22.2.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Sparkline.v22.2.Core">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Sparkline.v22.2.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Utils.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.Utils.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraBars.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraBars.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraEditors.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraEditors.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraGrid.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraGrid.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraLayout.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraLayout.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraNavBar.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraNavBar.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraPrinting.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraPrinting.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraRichEdit.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraRichEdit.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraTreeList.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraTreeList.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraVerticalGrid.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraVerticalGrid.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraWizard.v22.2">
+			<HintPath>VaultAddinDnet8DLLcopy\DevExpress.XtraWizard.v22.2.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.ObjectPool">
+			<HintPath>Vault2025SDKcopy\core\Microsoft.Extensions.ObjectPool.dll</HintPath>
+		</Reference>
+		<Reference Include="System.Reflection.MetadataLoadContext">
+			<HintPath>Vault2025SDKcopy\core\System.Reflection.MetadataLoadContext.dll</HintPath>
+		</Reference>
+		<Reference Include="System.ServiceModel.Http">
+			<HintPath>Vault2025SDKcopy\core\System.ServiceModel.Http.dll</HintPath>
+		</Reference>
+		<Reference Include="System.ServiceModel.Primitives">
+			<HintPath>Vault2025SDKcopy\core\System.ServiceModel.Primitives.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Inventor2025VaultAddinDLLcopy\Connectivity.InventorAddin.EdmAddin.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Inventor2025VaultAddinDLLcopy\Connectivity.InventorAddin.EdmAddin.resources.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Vault2025SDKcopy\AdskLicensingSDK_8.dll">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(ProjectDir)\VaultAddinDnet8DLLcopy\AdskLicensingSDK_*.dll&quot; &quot;$(TargetDir)&quot; /y&#xD;&#xA;" />
+	</Target>
+	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
+</Project>

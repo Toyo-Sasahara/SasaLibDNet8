@@ -1,0 +1,96 @@
+Autodesk.DataManagement.Client.Framework.Vault.Currency.Entities Namespace : Folder Class
+
+Public Constructors
+Folder Constructor Creates a Folder entity object  
+C#   
+public Folder( 
+   Connection vltConn,
+   Folder webServiceFolder
+)
+ 
+ Parameters
+vltConn 
+この Folder が属する Vault への接続。
+
+webServiceFolder 
+Web サービスから返される低レベルの Folder オブジェクト。
+
+
+Public Property
+
+Category
+このフォルダに割り当てられているカテゴリを取得します。すべての製品がカテゴリをサポートしているわけではないので、これは null になる可能性があります。 
+
+
+CreateDate
+フォルダーが作成された日時を取得します。
+
+CreateUserId
+このフォルダを作成したユーザーのIDを取得します。
+
+Public Property
+CreateUserName
+このフォルダーを作成したユーザーの名前を取得します。  
+
+Public Property
+EntityClass
+この Folder に関連するエンティティクラスを取得します。 
+
+Public Property
+EntityIterationId
+Gets the Iteration ID of this Folder. Since Folders are not iteration based, this will always have the same value as the EntityMasterId.  
+
+Public Property
+EntityMasterId
+Gets the Master Id of this Folder. Folders are not iteration based and the MasterID is always the sole unique identifier for a folder.  
+
+Public Property 
+EntityName
+Gets the descriptive name for this Folder. This is always the Folder Name without the full path.  
+
+Public Property
+FolderPath
+Gets the path of the location of this folder. If this folder is $/Folder1/Folder2, then the path would be $/Folder1 In the case where this folder is the root ($), the returned path is the empty string.  
+
+Public Property
+FullName
+Gets the full vault path for this folder (ie. "$/Folder1")  
+
+Public Property
+FullUncName
+Gets the full UNC path for this folder, or null if no UNC path exists.  
+
+Public Property
+Id
+Gets the unique identifier for this folder  
+
+Public Property
+IsCloaked 
+Gets if this folder is cloaked. A cloaked object is one that the caller does not have permissions to view. The only valid data in a cloaked folder is the EntityMasterId. All other data will be null or 0.  
+
+Public Property
+IsLibraryFolder
+Gets whether or not this folder is a library folder  
+
+Public Property
+IsVaultRoot
+Gets whether or not this folder is the vault root folder  
+
+Public Property
+LinkInfo
+Gets if this is a Link to a Folder. If the value is not null, then LinkInfo provides information about the Link to this Folder  
+
+Public Property
+Locked
+Gets whether this folder can be modified by the logged in user.  
+
+Public Property
+NumberOfChildren
+Gets the number of immediate child folders.  
+
+Public Property
+Parent Gets or sets the parent folder. It is important to note that this CAN be null. A folder always has a parent ID but the full blown object might not have been loaded.  
+
+Public Property
+ParentId Gets the Id of this folders parent. A value of -1 means that this folder has no parent  
+

@@ -1,0 +1,21 @@
+﻿名前空間：Autodesk.DataManagement.Client.Framework.Vault.Forms.Results
+クラス：SelectEntityResults
+Autodesk.DataManagement.Client.Framework.Vault.Forms.Library.SelectEntity ワークフローのオブジェクトを返します。
+
+プロパティ
+
+メンバ
+CurrentFilter ダイアログ内の表示エンティティに適用された Autodesk.DataManagement.Client.Framework.Vault.Forms.Settings.SelectEntitySettings.EntityFilter を取得します。 
+
+IsLatestIf Autodesk.DataManagement.Client.Framework.Vault.Forms.Settings.SelectEntitySettings.ShowFloatingLatestRevision が有効で、ユーザがリビジョンドロップダウンから "Latest" オプションを選択すると、これは true になります。
+
+ParentEntity SelectedEntities を含む親エンティティを取得します。
+
+ReleaseBiased レリーズバイアスボタンの状態を取得します。 
+
+SelectedButton ダイアログを受け入れるために選択されたボタンを取得します。Autodesk.DataManagement.Client.Framework.Vault.Forms.Settings.SelectEntitySettings.ActionButtonOptionsが指定されている場合、これはユーザーが選択したオプションになります。オプションが指定されていない場合、これは null になります。 
+
+SelectedEntities ダイアログで選択されているエンティティのリストを取得します。ユーザーが特定のリビジョンを選択した場合、該当するリビジョンを表す Autodesk.DataManagement.Client.Framework.Vault.Currency.Entities.IEntity がこのリストに返されます。 
+
+SelectionText 通常は選択されているエンティティ名のリストを含むエディットコントロールの内容を取得します。 
+
