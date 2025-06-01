@@ -8,6 +8,10 @@ using System.IO.Pipes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Windows.Networking;
+using Windows.UI.WebUI;
+
+
 
 #if NETCOREAPP
 using MethodInvoker = System.Windows.Forms.MethodInvoker;
@@ -211,8 +215,8 @@ namespace SasaLib.VariableControlPipeClient
                     {
                         //コントロールに対する処理
                         WriteLine($"Inventor利用状況ﾁｪｯｸ開始・・");
-                        Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                     Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
+                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, Inventor_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"Inventor利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -246,7 +250,7 @@ namespace SasaLib.VariableControlPipeClient
                         // コントロールに対する処理
                         WriteLine($"AutoCad利用状況ﾁｪｯｸ開始・・");
                         Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(AutoCad_Host_CheckedListBox, Autocad_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"AutoCad利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -280,7 +284,7 @@ namespace SasaLib.VariableControlPipeClient
                         // コントロールに対する処理
                         WriteLine($"AutodeskVault利用状況ﾁｪｯｸ開始・・");
                         Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(AutodeskVault_Host_CheckedListBox, AutodeskVaultPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(AutodeskVault_Host_CheckedListBox, AutodeskVault_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"AutodeskVault利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -314,7 +318,7 @@ namespace SasaLib.VariableControlPipeClient
                         WriteLine($"Solidworks利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
                         Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(SolidWorks_Host_CheckedListBox, SolidWorksPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(SolidWorks_Host_CheckedListBox, SolidWorks_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"Solidworks利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -344,7 +348,7 @@ namespace SasaLib.VariableControlPipeClient
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
                         Host_CheckedListBox_Clear(RegistClient_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_Host_CheckedListBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_Host_CheckedListBox, ALT_Regist_Host_textBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{RegistClientLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -401,70 +405,149 @@ namespace SasaLib.VariableControlPipeClient
         // ----------------------------------------------------------------------------------- //
 
         /// <summary>
+        /// 
         /// </summary>
         /// <param name="checkBoxListboxSource"></param>
         /// <param name="PIPENAME"></param>
         private async Task CheckArrivedHostCheckBoxesAsync(CheckedListBox checkBoxListboxSource, string PIPENAME, bool objectConvNew = false)
         {
-            string hostname;
             for (int i = 0; i < hosts.Count; i++)
             {
-                try
+                //try
+                //{
+                //    hostname = hosts[i];
+                //    var output = await Task.Run(() =>
+                //    {
+                //        SasaLib.DoEvents.Run();
+                //        VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
+                //        string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
+
+                //        if (result_UserDomainFullName == null)
+                //            return null;
+
+                //        object startDateTImeObj;
+
+                //        if (ASYNCmode_checkBox.Checked)
+                //            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
+                //        else
+                //            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
+
+                //        string resultStr = null;
+
+
+                //        if (result_UserDomainFullName != null && startDateTImeObj != null)
+                //        {
+                //            resultStr = $"{result_UserDomainFullName} | 開始:{(DateTime)startDateTImeObj}";
+                //        }
+                //        else if (result_UserDomainFullName != null && startDateTImeObj == null)
+                //        {
+                //            resultStr = $"{result_UserDomainFullName} | 開始時刻不明";
+
+                //        }
+
+                //        return resultStr;
+
+                //    });
+
+                //    if (output != null)
+                //    {
+                //        //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
+                //        checkBoxListboxSource.SetItemChecked(i, true);
+                //        checkBoxListboxSource.Items[i] = $"〇{hostname}:{output}";
+                //    }
+                //    else
+                //    {
+                //        //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} みつかりません ");
+                //        checkBoxListboxSource.SetItemChecked(i, false);
+                //        checkBoxListboxSource.Items[i] = $"×{hostname}";
+                //    }
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    WriteLine($"※CheckArrivedHostCheckBoxesAsync(..)内にて例外検知 {ex.Message}");
+
+                //}
+
+                var result  = await OneHostCheck(hosts[i], PIPENAME, objectConvNew);
+
+
+                if (result != null)
                 {
-                    hostname = hosts[i];
-                    var output = await Task.Run(() =>
-                    {
-                        SasaLib.DoEvents.Run();
-                        VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-                        string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
-
-                        if (result_UserDomainFullName == null)
-                            return null;
-
-                        object startDateTImeObj;
-
-                        if (ASYNCmode_checkBox.Checked)
-                            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
-                        else
-                            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
-
-                        string resultStr = null;
-
-
-                        if (result_UserDomainFullName != null && startDateTImeObj != null)
-                        {
-                            resultStr = $"{result_UserDomainFullName} | 開始:{(DateTime)startDateTImeObj}";
-                        }
-                        else if (result_UserDomainFullName != null && startDateTImeObj == null)
-                        {
-                            resultStr = $"{result_UserDomainFullName} | 開始時刻不明";
-
-                        }
-
-                        return resultStr;
-
-                    });
-
-                    if (output != null)
-                    {
-                        //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
-                        checkBoxListboxSource.SetItemChecked(i, true);
-                        checkBoxListboxSource.Items[i] = $"〇{hostname}:{output}";
-                    }
-                    else
-                    {
-                        //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} みつかりません ");
-                        checkBoxListboxSource.SetItemChecked(i, false);
-                        checkBoxListboxSource.Items[i] = $"×{hostname}";
-                    }
-
+                    //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
+                    checkBoxListboxSource.SetItemChecked(i, true);
+                    checkBoxListboxSource.Items[i] = $"〇{hosts[i]}:{result}";
                 }
-                catch (Exception ex)
+                else
                 {
-                    WriteLine($"※CheckArrivedHostCheckBoxesAsync(..)内にて例外検知 {ex.Message}");
-
+                    //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} みつかりません ");
+                    checkBoxListboxSource.SetItemChecked(i, false);
+                    checkBoxListboxSource.Items[i] = $"×{hosts[i]}";
                 }
             }
+        }
+
+        public async Task<string> OneHostCheck(string hostname, string PIPENAME, bool objectConvNew = true)
+        {
+            if (string.IsNullOrWhiteSpace(hostname) || string.IsNullOrWhiteSpace(PIPENAME))
+            {
+                throw new ArgumentException("ホスト名またはパイプ名が空白です。");
+            }
+
+            try
+            {
+                var output = await Task.Run(() =>
+                {
+                    SasaLib.DoEvents.Run();
+                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
+                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
+
+                    if (result_UserDomainFullName == null)
+                        return null;
+
+                    object startDateTImeObj;
+
+                    if (ASYNCmode_checkBox.Checked)
+                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
+                    else
+                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
+
+                    string resultStr = null;
+
+
+                    if (result_UserDomainFullName != null && startDateTImeObj != null)
+                    {
+                        resultStr = $"{result_UserDomainFullName} | 開始:{(DateTime)startDateTImeObj}";
+                    }
+                    else if (result_UserDomainFullName != null && startDateTImeObj == null)
+                    {
+                        resultStr = $"{result_UserDomainFullName} | 開始時刻不明";
+
+                    }
+
+                    return resultStr;
+
+                });
+
+                if (output != null)
+                {
+                    //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
+                    return $"〇{hostname}:{output}";
+                }
+                else
+                {
+                    //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} みつかりません ");
+                    return $"×{hostname}";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                WriteLine($"※CheckArrivedHostCheckBoxesAsync(..)内にて例外検知 {ex.Message}");
+
+                return null;
+            }
+
         }
 
         /// <summary>
@@ -1225,6 +1308,14 @@ namespace SasaLib.VariableControlPipeClient
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void altCheckInvButton_Click(object sender, EventArgs e)
+        {
+            var result = OneHostCheck(ALT_INV_Host_textBox.Text, Inventor_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
+            WriteLine($"Inventor利用状況ﾁｪｯｸ終了。対象ホスト{ALT_INV_Host_textBox.Text}");
+
 
         }
     }
