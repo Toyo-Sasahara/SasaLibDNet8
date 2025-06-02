@@ -36,6 +36,45 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="Autodesk.Connectivity.Explorer.Extensibility">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Explorer.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.Explorer.ExtensibilityTools">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Explorer.ExtensibilityTools.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.Extensibility.Framework">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.Extensibility.Framework.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.IDServicesWrapper">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.IDServicesWrapper.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.JobProcessor.Extensibility">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.JobProcessor.Extensibility.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.LicenseWrapper">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.LicenseWrapper.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.WebServices">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.WebServices.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.Connectivity.WebServices.WCF">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.Connectivity.WebServices.WCF.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Forms">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Forms.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Vault">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Vault.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Client.Framework.Vault.Forms">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Client.Framework.Vault.Forms.dll</HintPath>
+		</Reference>
+		<Reference Include="Autodesk.DataManagement.Server.Extensibility">
+		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
+		</Reference>
 		<Reference Include="EPDM.Interop.epdm">
 		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\SolidworksSDK\SolidWorks2018 EPDM\EPDM.Interop.epdm.dll</HintPath>
 		</Reference>
