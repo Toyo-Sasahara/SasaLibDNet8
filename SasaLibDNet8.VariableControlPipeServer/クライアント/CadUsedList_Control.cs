@@ -215,7 +215,7 @@ namespace SasaLib.VariableControlPipeClient
                     {
                         //コントロールに対する処理
                         WriteLine($"Inventor利用状況ﾁｪｯｸ開始・・");
-                     Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
+                        Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
                         var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, Inventor_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"Inventor利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
@@ -469,7 +469,7 @@ namespace SasaLib.VariableControlPipeClient
 
                 //}
 
-                var result  = await OneHostCheck(hosts[i], PIPENAME, objectConvNew);
+                var result = await OneHostCheck(hosts[i], PIPENAME, objectConvNew);
 
 
                 if (result != null)
@@ -487,6 +487,44 @@ namespace SasaLib.VariableControlPipeClient
             }
         }
 
+        private async Task CheckArrivedHostCheckBoxesAsync2(CheckedListBox checkBoxListboxSource, string PIPENAME, bool objectConvNew = false)
+        {
+
+            // 各ホストに対してタスクを作成
+            var tasks = hosts.Select(host =>
+                Task.Run(async () =>
+                {
+                    string result = await OneHostCheck(host, PIPENAME);
+                    return (host, result);
+                })
+            ).ToList();
+
+            // タスクが完了した順に処理
+            while (tasks.Count > 0)
+            {
+                // いずれか1つが完了するのを待つ
+                var finishedTask = await Task.WhenAny(tasks);
+                tasks.Remove(finishedTask);
+
+                var (host, result) = await finishedTask;
+
+                Console.WriteLine($"{host} → {result}");
+
+                //// UIスレッドでListBoxに追加
+                //if (checkBoxListboxSource.InvokeRequired)
+                //{
+                //    checkBoxListboxSource.Invoke(new Action(() =>
+                //        checkBoxListboxSource.Items.Add($"{host} → {result}")
+                //    ));
+                //}
+                //else
+                //{
+                //    checkBoxListboxSource.Items.Add($"{host} → {result}");
+                //}
+
+            }
+        }
+
         public async Task<string> OneHostCheck(string hostname, string PIPENAME, bool objectConvNew = true)
         {
             if (string.IsNullOrWhiteSpace(hostname) || string.IsNullOrWhiteSpace(PIPENAME))
@@ -499,7 +537,7 @@ namespace SasaLib.VariableControlPipeClient
                 var output = await Task.Run(() =>
                 {
                     SasaLib.DoEvents.Run();
-                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
+                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME,500,1000);
                     string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
 
                     if (result_UserDomainFullName == null)
