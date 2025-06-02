@@ -538,7 +538,13 @@ namespace SasaLib.VariableControlPipeClient
                 {
                     SasaLib.DoEvents.Run();
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME,500,1000);
-                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
+
+                    string result_UserDomainFullName;
+
+                    if (ASYNCmode_checkBox.Checked)
+                        result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
+                    else
+                        result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommand(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
 
                     if (result_UserDomainFullName == null)
                         return null;
