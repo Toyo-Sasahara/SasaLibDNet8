@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows.Networking;
 using Windows.UI.WebUI;
+using EnvDTE;
+
+using Microsoft.VisualStudio.OLE.Interop;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
+
 
 
 
@@ -41,57 +46,16 @@ namespace SasaLib.VariableControlPipeClient
         //string AutoCadPIPENAME = "AutoCadTOYOaddin";
         //string SolidWorksPIPENAME = "SolidworksTOYOaddin";
 
-        string _InventorPIPENAME;
-        public string InventorPIPENAME
-        {
-            get
-            {
-                Inventor_Server_PIPENAME_comboBox.Text = _InventorPIPENAME;
+        public string InventorPIPENAME { get; set; } = "Inventor2025TOYOaddin";
 
-                return _InventorPIPENAME;
-            }
-            set
-            {
-                _InventorPIPENAME = value;
-                Inventor_Server_PIPENAME_comboBox.Text = _InventorPIPENAME;
-            }
-        }
-
-        string _AutoCadPIPENAME;
-        public string AutoCadPIPENAME
-        {
-            get
-            {
-                Autocad_Server_PIPENAME_comboBox.Text = _AutoCadPIPENAME;
-
-                return _AutoCadPIPENAME;
-            }
-            set
-            {
-                _AutoCadPIPENAME = value;
-                Autocad_Server_PIPENAME_comboBox.Text = _AutoCadPIPENAME;
-            }
-        }
-
-        public string AutodeskVaultPIPENAME
-        {
-            get { return AutodeskVault_Server_PIPENAME_comboBox.Text; }
-            set { AutodeskVault_Server_PIPENAME_comboBox.Text = value; }
-        }
+        public string AutoCadPIPENAME { get; set; } = "AutoCad2025TOYOaddin";
 
 
-        public string SolidWorksPIPENAME
-        {
-            get { return SolidWorks_Server_PIPENAME_comboBox.Text; }
-            set { SolidWorks_Server_PIPENAME_comboBox.Text = value; }
+        public string AutodeskVaultPIPENAME { get; set; } = "Vault2025TOYOaddin";
 
-        }
+        public string SolidWorksPIPENAME { get; set; } = "SolidworksTOYOaddin";
 
-        public string RegistClientPIPENAME
-        {
-            get { return ALT_Regist_Host_textBox.Text; }
-            set { ALT_Regist_Host_textBox.Text = value; }
-        }
+        public string RegistClientPIPENAME { get; set; } = "ToyoRegistClient";
 
         /// <summary>
         /// 
@@ -199,7 +163,7 @@ namespace SasaLib.VariableControlPipeClient
         // ----------------------------------------------------------------------------------- //
 
         /// <summary>
-        /// 
+        /// サーバーホスト検索開始
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -216,7 +180,9 @@ namespace SasaLib.VariableControlPipeClient
                         //コントロールに対する処理
                         WriteLine($"Inventor利用状況ﾁｪｯｸ開始・・");
                         Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, Inventor_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
+
+                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+
                         WriteLine($"Inventor利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -250,7 +216,7 @@ namespace SasaLib.VariableControlPipeClient
                         // コントロールに対する処理
                         WriteLine($"AutoCad利用状況ﾁｪｯｸ開始・・");
                         Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(AutoCad_Host_CheckedListBox, Autocad_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"AutoCad利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -284,7 +250,7 @@ namespace SasaLib.VariableControlPipeClient
                         // コントロールに対する処理
                         WriteLine($"AutodeskVault利用状況ﾁｪｯｸ開始・・");
                         Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(AutodeskVault_Host_CheckedListBox, AutodeskVault_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(AutodeskVault_Host_CheckedListBox, AutodeskVaultPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"AutodeskVault利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -318,7 +284,7 @@ namespace SasaLib.VariableControlPipeClient
                         WriteLine($"Solidworks利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
                         Host_CheckedListBox_Clear(SolidWorks_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(SolidWorks_Host_CheckedListBox, SolidWorks_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(SolidWorks_Host_CheckedListBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"Solidworks利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -348,7 +314,7 @@ namespace SasaLib.VariableControlPipeClient
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ開始・・");
                         // コントロールに対する処理
                         Host_CheckedListBox_Clear(RegistClient_Host_CheckedListBox);
-                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_Host_CheckedListBox, ALT_Regist_Host_textBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
+                        var result = CheckArrivedHostCheckBoxesAsync(RegistClient_Host_CheckedListBox, RegistClientPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
                         WriteLine($"図面承認・登録ツール利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{RegistClientLoopcheckMode}");
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
@@ -409,67 +375,13 @@ namespace SasaLib.VariableControlPipeClient
         /// </summary>
         /// <param name="checkBoxListboxSource"></param>
         /// <param name="PIPENAME"></param>
+        /// <param name="objectConvNew"></param>
+        /// <returns></returns>
         private async Task CheckArrivedHostCheckBoxesAsync(CheckedListBox checkBoxListboxSource, string PIPENAME, bool objectConvNew = false)
         {
             for (int i = 0; i < hosts.Count; i++)
             {
-                //try
-                //{
-                //    hostname = hosts[i];
-                //    var output = await Task.Run(() =>
-                //    {
-                //        SasaLib.DoEvents.Run();
-                //        VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-                //        string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
-
-                //        if (result_UserDomainFullName == null)
-                //            return null;
-
-                //        object startDateTImeObj;
-
-                //        if (ASYNCmode_checkBox.Checked)
-                //            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
-                //        else
-                //            startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
-
-                //        string resultStr = null;
-
-
-                //        if (result_UserDomainFullName != null && startDateTImeObj != null)
-                //        {
-                //            resultStr = $"{result_UserDomainFullName} | 開始:{(DateTime)startDateTImeObj}";
-                //        }
-                //        else if (result_UserDomainFullName != null && startDateTImeObj == null)
-                //        {
-                //            resultStr = $"{result_UserDomainFullName} | 開始時刻不明";
-
-                //        }
-
-                //        return resultStr;
-
-                //    });
-
-                //    if (output != null)
-                //    {
-                //        //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
-                //        checkBoxListboxSource.SetItemChecked(i, true);
-                //        checkBoxListboxSource.Items[i] = $"〇{hostname}:{output}";
-                //    }
-                //    else
-                //    {
-                //        //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} みつかりません ");
-                //        checkBoxListboxSource.SetItemChecked(i, false);
-                //        checkBoxListboxSource.Items[i] = $"×{hostname}";
-                //    }
-
-                //}
-                //catch (Exception ex)
-                //{
-                //    WriteLine($"※CheckArrivedHostCheckBoxesAsync(..)内にて例外検知 {ex.Message}");
-
-                //}
-
-                var result = await OneHostCheck(hosts[i], PIPENAME, objectConvNew);
+                var result = await Onehost_CheckAsync(hosts[i], PIPENAME, objectConvNew, WriteLine: WriteLine);
 
 
                 if (result != null)
@@ -494,7 +406,7 @@ namespace SasaLib.VariableControlPipeClient
             var tasks = hosts.Select(host =>
                 Task.Run(async () =>
                 {
-                    string result = await OneHostCheck(host, PIPENAME);
+                    string result = await Onehost_CheckAsync(host, PIPENAME);
                     return (host, result);
                 })
             ).ToList();
@@ -525,8 +437,18 @@ namespace SasaLib.VariableControlPipeClient
             }
         }
 
-        public async Task<string> OneHostCheck(string hostname, string PIPENAME, bool objectConvNew = true)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostname"></param>
+        /// <param name="PIPENAME"></param>
+        /// <param name="objectConvNew"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public async Task<string> Onehost_CheckAsync(string hostname, string PIPENAME, bool objectConvNew = true, SasaLibDelegateWriteLine WriteLine = null)
         {
+            if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
+
             if (string.IsNullOrWhiteSpace(hostname) || string.IsNullOrWhiteSpace(PIPENAME))
             {
                 throw new ArgumentException("ホスト名またはパイプ名が空白です。");
@@ -534,30 +456,23 @@ namespace SasaLib.VariableControlPipeClient
 
             try
             {
+                string resultStr = null;
+
                 var output = await Task.Run(() =>
                 {
                     SasaLib.DoEvents.Run();
-                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME,500,1000);
+                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME, 1500, 10000);
 
                     string result_UserDomainFullName;
 
-                    if (ASYNCmode_checkBox.Checked)
-                        result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
-                    else
-                        result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommand(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
+                    result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
 
                     if (result_UserDomainFullName == null)
                         return null;
 
                     object startDateTImeObj;
 
-                    if (ASYNCmode_checkBox.Checked)
-                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
-                    else
-                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
-
-                    string resultStr = null;
-
+                    startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
 
                     if (result_UserDomainFullName != null && startDateTImeObj != null)
                     {
@@ -576,12 +491,12 @@ namespace SasaLib.VariableControlPipeClient
                 if (output != null)
                 {
                     //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
-                    return $"〇{hostname}:{output}";
+                    return resultStr;
                 }
                 else
                 {
                     //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} みつかりません ");
-                    return $"×{hostname}";
+                    return null;
                 }
 
             }
@@ -591,8 +506,8 @@ namespace SasaLib.VariableControlPipeClient
 
                 return null;
             }
-
         }
+
 
         /// <summary>
         /// CommitConfig.Config オブジェクト パラメータ・フィールド値
@@ -727,12 +642,6 @@ namespace SasaLib.VariableControlPipeClient
             RegistClient_hostCheck_button_Click(sender, e);
         }
 
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         // ----------------------------------------------------------------------------------- //
 
         /// <summary>
@@ -748,11 +657,7 @@ namespace SasaLib.VariableControlPipeClient
 
             // 
             InventorLoopcheckMode = false;
-
-            if (InventorPIPENAME == "InventorTOYOaddin")
-                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
-            else if (InventorPIPENAME == "Inventor2025TOYOaddin")
-                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
+            FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
 
             Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
             VersionOrHash_Check(Inventor_Host_CheckedListBox, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
@@ -760,11 +665,7 @@ namespace SasaLib.VariableControlPipeClient
 
             //
             AutocadLoopcheckMode = false;
-
-            if (AutoCadPIPENAME == "AutoCadTOYOaddin")
-                FullFileName = @"C:\ProgramData\TOYOACADCONNECTOR\TOYOACAD2015COMMITTOOL.dll";
-            else if (AutoCadPIPENAME == "AutoCad2025TOYOaddin")
-                FullFileName = @"C:\ProgramData\AutocadTOYOaddin.DNet8\AutocadTOYOaddin.DNet8.dll";
+            FullFileName = @"C:\ProgramData\AutocadTOYOaddin.DNet8\AutocadTOYOaddin.DNet8.dll";
 
             Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
             VersionOrHash_Check(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
@@ -772,11 +673,7 @@ namespace SasaLib.VariableControlPipeClient
 
             //
             AutodeskVaultLoopcheckMode = false;
-
-            if (AutodeskVaultPIPENAME == "VaultVaultTOYOaddin")
-                FullFileName = @"C:\ProgramData\Autodesk\Vault 2022\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
-            else if (AutodeskVaultPIPENAME == "Vault2025TOYOaddin")
-                FullFileName = @"C:\ProgramData\Autodesk\Vault 2025\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
+            FullFileName = @"C:\ProgramData\Autodesk\Vault 2025\Extensions\VaultClientTOYOaddin\VaultClientTOYOaddin.dll";
 
             Host_CheckedListBox_Clear(AutodeskVault_Host_CheckedListBox);
             VersionOrHash_Check(AutodeskVault_Host_CheckedListBox, AutodeskVaultPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
@@ -835,10 +732,8 @@ namespace SasaLib.VariableControlPipeClient
 
             InventorLoopcheckMode = false;
 
-            if (InventorPIPENAME == "InventorTOYOaddin")
-                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
-            else if (InventorPIPENAME == "Inventor2025TOYOaddin")
-                FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
+
+            FullFileName = GetAddinDllFileFullPath(InventorPIPENAME);
 
             Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
             VersionOrHash_Check(Inventor_Host_CheckedListBox, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion");
@@ -848,10 +743,7 @@ namespace SasaLib.VariableControlPipeClient
 
             AutocadLoopcheckMode = false;
 
-            if (AutoCadPIPENAME == "AutoCadTOYOaddin")
-                FullFileName2 = @"C:\ProgramData\TOYOACADCONNECTOR\TOYOACAD2015COMMITTOOL.dll";
-            else if (AutoCadPIPENAME == "AutoCad2025TOYOaddin")
-                FullFileName2 = @"C:\ProgramData\AutocadTOYOaddin.DNet8\AutocadTOYOaddin.DNet8.dll";
+            FullFileName2 = @"C:\ProgramData\AutocadTOYOaddin.DNet8\AutocadTOYOaddin.DNet8.dll";
 
             Host_CheckedListBox_Clear(AutoCad_Host_CheckedListBox);
             VersionOrHash_Check(AutoCad_Host_CheckedListBox, AutoCadPIPENAME, FullFileName2, CMDNAME.GetVersionInfo, "FileVersion");
@@ -1058,41 +950,22 @@ namespace SasaLib.VariableControlPipeClient
         /// </summary>
         /// <param name="checkedListBox"></param>
         /// <param name="PIPENAME"></param>
-        private async void VersionOrHash_Check(CheckedListBox checkedListBox, string PIPENAME, string FullFileName, string Command, string mode)
+        private async void VersionOrHash_Check(CheckedListBox checkedListBox, string PIPENAME, string fullFileName, string command, string mode)
         {
             CheckedListBox.CheckedIndexCollection CheckedIndices = checkedListBox.CheckedIndices;
 
-            string filename = System.IO.Path.GetFileName(FullFileName);
-            string hostname;
             for (int i = 0; i < hosts.Count; i++)
             {
-                hostname = hosts[i];
-                var output = await Task.Run(() =>
-                {
-                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
+                var result = await Onehost_VersionOrHash_CheckAsync(hosts[i], PIPENAME, fullFileName, command, mode);
 
-                    //string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;                  
-                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommand(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
 
-                    //string result = oVCPipeClient.GetTwoValue_DataCommandAsync(Command, FullFileName, mode).Result;
-                    string result = oVCPipeClient.GetTwoValue_DataCommand(Command, FullFileName, mode);
-
-                    string resultStr = null;
-                    if (result_UserDomainFullName != null)
-                    {
-                        //resultStr = $"{result_UserDomainFullName} |{filename} {result}";
-                        resultStr = $"{filename} {result}";
-                    }
-                    return resultStr;
-                });
-
-                if (output != null)
+                if (result != null)
                 {
                     //WriteLine($"◇[ﾊﾟｲﾌﾟｸﾗｲｱﾝﾄUI] ｺﾝﾄﾛｰﾙ名:{checkBoxListboxSource.Name} count={i} {checkBoxListboxSource.Items[i]}, {hostname}:{PIPENAME} {output} ");
                     MethodInvoker method = () =>
                     {
                         checkedListBox.SetItemChecked(i, true);
-                        checkedListBox.Items[i] = $"〇{hostname}:{output}";
+                        checkedListBox.Items[i] = $"〇{hosts[i]}:{result}";
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
                 }
@@ -1103,7 +976,7 @@ namespace SasaLib.VariableControlPipeClient
                     MethodInvoker method = () =>
                     {
                         checkedListBox.SetItemChecked(i, false);
-                        checkedListBox.Items[i] = $"×{hostname}";
+                        checkedListBox.Items[i] = $"×{hosts[i]}";
                     };
                     if (InvokeRequired) { Invoke(method); } else { method(); }
                 }
@@ -1111,6 +984,49 @@ namespace SasaLib.VariableControlPipeClient
                 //SasaLib.DoEvents.Run();
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostname"></param>
+        /// <param name="PIPENAME"></param>
+        /// <param name="fullFileName"></param>
+        /// <param name="command"></param>
+        /// <param name="mode"></param>
+        /// <param name="objectConvNew"></param>
+        /// <returns></returns>
+        public async Task<string> Onehost_VersionOrHash_CheckAsync(string hostname, string PIPENAME, string fullFileName, string command, string mode, bool objectConvNew = true)
+        {
+            string filename = System.IO.Path.GetFileName(fullFileName);
+
+            string resultStr = null;
+
+            var output = await Task.Run(() =>
+            {
+                VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
+
+                string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
+
+                string result = oVCPipeClient.GetTwoValue_DataCommandAsync(command, fullFileName, mode).Result;
+
+                if (result_UserDomainFullName != null)
+                {
+                    resultStr = $"{filename} {result}";
+                }
+                return resultStr;
+            });
+
+            if (output != null)
+            {
+                return resultStr;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
 
         /// <summary>
         /// 
@@ -1131,8 +1047,8 @@ namespace SasaLib.VariableControlPipeClient
                 {
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
 
-                    //string result = oVCPipeClient.GetOneValue_DataCommandAsync(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName).Result;
-                    string result = oVCPipeClient.GetOneValue_DataCommand(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName);
+                    //string result = oVCPipeClient.GetOneValue_DataCommand(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName);
+                    string result = oVCPipeClient.GetOneValue_DataCommandAsync(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName).Result;
                     return result;
                 });
 
@@ -1355,11 +1271,43 @@ namespace SasaLib.VariableControlPipeClient
 
         }
 
-        private void altCheckInvButton_Click(object sender, EventArgs e)
+        private async void altCheckInvButton_Click(object sender, EventArgs e)
         {
-            var result = OneHostCheck(ALT_INV_Host_textBox.Text, Inventor_Server_PIPENAME_comboBox.Text, objectConvNew: ObjectCovNew_checkBox.Checked);
-            WriteLine($"Inventor利用状況ﾁｪｯｸ終了。対象ホスト{ALT_INV_Host_textBox.Text}");
+            string result = await Onehost_CheckAsync(ALT_INV_Host_textBox.Text, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine);
+            WriteLine($"Inventor利用状況ﾁｪｯｸ終了。対象ホスト{ALT_INV_Host_textBox.Text} 【{result}】");
+        }
 
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            string FullFileName = @"C:\ProgramData\Autodesk\Inventor 2025\Addins\TOYOM\InventorTOYOaddinCommit.dll"; ;
+            var result = await Onehost_VersionOrHash_CheckAsync(ALT_INV_Host_textBox.Text, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion", objectConvNew: ObjectCovNew_checkBox.Checked);
+            WriteLine($"Inventor Toyoアドイン DLL バージョンチェック完了。対象ホスト{ALT_INV_Host_textBox.Text}【{result}】");
+
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            string FullFileName = @"C:\ProgramData\Autodesk\Inventor 2025\Addins\TOYOM\SasaLibDNet8.dll";
+            var result = await Onehost_VersionOrHash_CheckAsync(ALT_INV_Host_textBox.Text, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion", objectConvNew: ObjectCovNew_checkBox.Checked);
+            WriteLine($"Inventor Toyoアドイン DLL バージョンチェック完了。対象ホスト{ALT_INV_Host_textBox.Text}【{result}】");
+
+        }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            string FullFileName = @"C:\ProgramData\Autodesk\Inventor addins\TOYOM\InventorTOYOaddinCommit\GenerateTIFFdrawing.dll";
+            var result = await Onehost_VersionOrHash_CheckAsync(ALT_INV_Host_textBox.Text, InventorPIPENAME, FullFileName, CMDNAME.GetVersionInfo, "FileVersion", objectConvNew: ObjectCovNew_checkBox.Checked);
+            WriteLine($"Inventor Toyoアドイン DLL バージョンチェック完了。対象ホスト{ALT_INV_Host_textBox.Text}【{result}】");
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Inventor_checkfile_textBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
