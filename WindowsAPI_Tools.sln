@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNetAddConnection", "WNetAd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNetAddConnection2", "WNetAddConnection2\WNetAddConnection2.csproj", "{8D5E86BA-1BEF-41BB-923F-D38853FA21CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoamiForGUI", "WhoamiForGUI\WhoamiForGUI.csproj", "{7015F05E-A9F6-41D1-A821-7ADFF64AD6D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8D5E86BA-1BEF-41BB-923F-D38853FA21CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D5E86BA-1BEF-41BB-923F-D38853FA21CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D5E86BA-1BEF-41BB-923F-D38853FA21CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7015F05E-A9F6-41D1-A821-7ADFF64AD6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7015F05E-A9F6-41D1-A821-7ADFF64AD6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7015F05E-A9F6-41D1-A821-7ADFF64AD6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7015F05E-A9F6-41D1-A821-7ADFF64AD6D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
