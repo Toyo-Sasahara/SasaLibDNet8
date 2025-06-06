@@ -9,7 +9,7 @@ namespace WhoamiForGUI
         {
             InitializeComponent();
 
-            txtUser.Text = Environment.UserName;  // 既定値として現在ユーザー
+            txtUser.Text = $"{Environment.UserDomainName}\\{Environment.UserName}";  // 既定値として現在ユーザー
         }
 
         // ルートロード
@@ -130,41 +130,6 @@ namespace WhoamiForGUI
 
         }
 
-        //──────────────────────────────────────────────
-        // 2. 指定ユーザー→ルートグループ→下位グループを再帰展開
-        //──────────────────────────────────────────────
-        //private void BuildTreeForUser(string samOrUpn)
-        //{
-        //    using PrincipalContext ctx = CreateContextForUser(samOrUpn);
-
-        //    using UserPrincipal? user = UserPrincipal.FindByIdentity(ctx, samOrUpn);
-        //    if (user is null)
-        //        throw new ApplicationException("ユーザーが見つかりませんでした。");
-
-        //    // ■ ルート: ユーザーが直接メンバーになっているグループ
-        //    List<GroupPrincipal> roots = user.GetGroups()
-        //                                      .OfType<GroupPrincipal>()
-        //                                      .OrderBy(g => g.SamAccountName ?? g.Name)
-        //                                      .ToList();
-
-        //    Invoke(() =>
-        //    {
-        //        tvGroups.BeginUpdate();
-        //        tvGroups.Nodes.Clear();
-
-        //        var visited = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        //        foreach (GroupPrincipal gp in roots)
-        //        {
-        //            TreeNode rootNode = tvGroups.Nodes.Add(Display(gp));
-        //            ExpandDownward(gp, rootNode, visited);
-        //        }
-
-        //        tvGroups.ExpandAll();
-        //        tvGroups.EndUpdate();
-        //    });
-        //}
-
-
         /// <summary>
         /// 指定ユーザー→ルートグループ→下位グループを再帰展開
         /// </summary>
@@ -183,7 +148,7 @@ namespace WhoamiForGUI
                                  .OrderBy(g => g.SamAccountName ?? g.Name)
                                  .ToList();
 
-            Invoke(() =>
+            Invoke((Delegate)(() =>
             {
                 tvGroups.BeginUpdate();
                 tvGroups.Nodes.Clear();
@@ -192,12 +157,15 @@ namespace WhoamiForGUI
                 foreach (var gp in authGroups)
                 {
                     TreeNode root = tvGroups.Nodes.Add(Display(gp));
-                    ExpandUpward(gp, root, visited);
+                    if (ExpandUpward_radioButton.Checked)
+                        ExpandUpward(gp, root, visited);
+                    else if (ExpandDownward_radioButton.Checked)
+                        ExpandDownward(gp, root, visited);
                 }
 
                 tvGroups.ExpandAll();
                 tvGroups.EndUpdate();
-            });
+            }));
         }
 
         private static void ExpandUpward(GroupPrincipal gp, TreeNode node, HashSet<string> visited)
@@ -251,8 +219,63 @@ namespace WhoamiForGUI
         //──────────────────────────────────────────────
         // 5. 表示名ユーティリティ
         //──────────────────────────────────────────────
+        // private static string Display(GroupPrincipal gp) => gp.SamAccountName ?? gp.Name ?? gp.DistinguishedName ?? "(unknown)";
+
+
+        //private static string Display(GroupPrincipal gp)
+        //{
+        //    if (gp is null) return "(unknown)";
+
+        //    string name = gp.SamAccountName ?? gp.Name ?? gp.DistinguishedName ?? "(unknown)";
+        //    string groupType = gp.ContextType switch
+        //    {
+        //        ContextType.Machine => "[ローカル]",
+        //        ContextType.Domain => "[ドメイン]",
+        //        _ => "[不明]"
+        //    };
+
+        //    SIDのプレフィックスでさらに組み込みグループ識別可能（例: S - 1 - 5 - 32 は組み込みローカルグループ）
+        //    if (gp.Sid?.Value.StartsWith("S-1-5-32") == true)
+        //    {
+        //        groupType = "[組み込みローカル]";
+        //    }
+
+        //    return $"{groupType} {name}";
+        //}
+
+
         private static string Display(GroupPrincipal gp)
-            => gp.SamAccountName ?? gp.Name ?? gp.DistinguishedName ?? "(unknown)";
+        {
+            if (gp is null) return "(unknown)";
+
+            string name = gp.SamAccountName ?? gp.Name ?? gp.DistinguishedName ?? "(unknown)";
+            string sid = gp.Sid?.Value ?? string.Empty;
+
+            string groupType;
+
+            if (sid.StartsWith("S-1-5-32"))  // 組み込みローカルグループ
+            {
+                groupType = "[組み込みローカル]";
+            }
+            else if (sid == "S-1-5-11")      // Authenticated Users
+            {
+                groupType = "[組み込み]";
+            }
+            else if (gp.ContextType == ContextType.Machine)
+            {
+                groupType = "[ローカル]";
+            }
+            else if (gp.ContextType == ContextType.Domain)
+            {
+                groupType = "[ドメイン]";
+            }
+            else
+            {
+                groupType = "[不明]";
+            }
+
+            return $"{groupType} {name}";
+        }
 
     }
 
