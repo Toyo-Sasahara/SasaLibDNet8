@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// 【.NETCore 専用】
+
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SasaLib;
 

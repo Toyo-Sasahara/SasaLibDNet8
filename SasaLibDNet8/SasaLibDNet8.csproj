@@ -29,6 +29,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\BinaryWriterExtensions.cs" Link="BinaryWriterExtensions.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\CallIntervalMonitor.cs" Link="CallIntervalMonitor.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\CharacterCode.cs" Link="CharacterCode.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsLogonDummy.cs" Link="ClsLogonDummy.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsNetUse.cs" Link="ClsNetUse.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ClsWinError.cs" Link="ClsWinError.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Compress.cs" Link="Compress.cs" />
@@ -45,7 +46,6 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\DotNetFrameworkAppContextSetSwitch.cs" Link="DotNetFrameworkAppContextSetSwitch.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Encryption.cs" Link="Encryption.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\EncryptionAES.cs" Link="EncryptionAES.cs" />
-	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\Enviroment.cs" Link="Enviroment.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\EventsSummary.cs" Link="EventsSummary.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\ExclusiveControl.cs" Link="ExclusiveControl.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\FileFolder.cs" Link="FileFolder.cs" />

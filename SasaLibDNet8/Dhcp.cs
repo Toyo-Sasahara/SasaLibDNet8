@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq.Expressions;
+﻿// 【.NETCore 専用】
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+
 
 namespace SasaLib;
 
