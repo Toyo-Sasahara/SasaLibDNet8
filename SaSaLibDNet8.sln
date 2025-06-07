@@ -1,3 +1,4 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
@@ -20,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SasaLibDNet8.SysConfigurato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SasaLib.DelegateWriteLine", "..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj", "{15E1860D-7F25-4592-BA35-DC2ED26FA221}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "STAGINGSYSTEM_Share", "STAGINGSYSTEM_Share", "{BCCA833E-7E3F-4416-B6B7-C398D347B3F9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "外部プロジェクト STAGINGSYSTEM_Share", "外部プロジェクト STAGINGSYSTEM_Share", "{BCCA833E-7E3F-4416-B6B7-C398D347B3F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DNet4.8_Share", "DNet4.8_Share", "{3FAF6913-B69E-4E23-BBCB-07091B67F994}"
 EndProject
