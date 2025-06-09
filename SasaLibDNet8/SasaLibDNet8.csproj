@@ -107,6 +107,7 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowProcess.cs" Link="WindowProcess.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WindowsExplorer.cs" Link="WindowsExplorer.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WithFakeAccount.cs" Link="WithFakeAccount.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\WithFakeAccountAsync.cs" Link="WithFakeAccountAsync.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlModify.cs" Link="XmlModify.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib\XmlSettingFile.cs" Link="XmlSettingFile.cs" />
 	</ItemGroup>

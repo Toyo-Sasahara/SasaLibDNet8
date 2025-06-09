@@ -173,20 +173,38 @@ namespace SasaLib.VariableControlPipeClient
 
             do
             {
-                await Task.Run(() =>
-                {
-                    MethodInvoker method = () =>
-                    {
-                        //コントロールに対する処理
-                        WriteLine($"Inventor利用状況ﾁｪｯｸ開始・・");
-                        Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
+                // ダメなコード
+                // イベントハンドラー内では Task.Run を使わない。ChatGPTからの教え
+                //await Task.Run(() =>
+                //{
+                //    MethodInvoker method = () =>
+                //    {
+                //        //コントロールに対する処理
+                //        WriteLine($"Inventor利用状況ﾁｪｯｸ開始・・");
+                //        Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
 
-                        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+                //        var result = CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
 
-                        WriteLine($"Inventor利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
-                    };
-                    if (InvokeRequired) { Invoke(method); } else { method(); }
-                });
+                //        WriteLine($"Inventor利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
+                //    };
+                //    if (InvokeRequired) { Invoke(method); } else { method(); }
+                //});
+                /*
+                 *  非同期処理（async/await）との違い
+                    特徴	        Task.Run	                    async/await（非同期）
+                    対象処理	    CPUバウンド（重い計算など）	    I/Oバウンド（通信、DB、ファイルなど）
+                    処理スレッド	別スレッド（スレッドプール）	非同期で待機、スレッド使わない
+                    利点	        UIスレッドをブロックしない	    非同期的に待機・効率的
+                    スレッド使用	使う（スレッドリソースを消費）	基本的に使わない（コルーチン的）
+                 */
+
+
+                WriteLine("Inventor利用状況ﾁｪｯｸ開始・・");
+                Host_CheckedListBox_Clear(Inventor_Host_CheckedListBox);
+
+                await CheckArrivedHostCheckBoxesAsync(Inventor_Host_CheckedListBox, InventorPIPENAME, objectConvNew: ObjectCovNew_checkBox.Checked);
+
+                WriteLine($"Inventor利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{InventorLoopcheckMode}");
 
                 if (InventorLoopcheckMode)
                 {
@@ -458,50 +476,18 @@ namespace SasaLib.VariableControlPipeClient
             {
                 string resultStr = null;
 
-                //var output = await Task.Run(() =>
-                //{
-                //    SasaLib.DoEvents.Run();
-                //    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME, 1500, 10000);
-
-                //    string result_UserDomainFullName;
-
-                //    result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
-
-                //    if (result_UserDomainFullName == null)
-                //        return null;
-
-                //    object startDateTImeObj;
-
-                //    startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
-
-                //    if (result_UserDomainFullName != null && startDateTImeObj != null)
-                //    {
-                //        resultStr = $"{result_UserDomainFullName} | 開始:{(DateTime)startDateTImeObj}";
-                //    }
-                //    else if (result_UserDomainFullName != null && startDateTImeObj == null)
-                //    {
-                //        resultStr = $"{result_UserDomainFullName} | 開始時刻不明";
-
-                //    }
-
-                //    return resultStr;
-
-                //});
-
-                //SasaLib.DoEvents.Run();
-
                 VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME, 1500, 10000);
 
-                string result_UserDomainFullName;
-
-                 result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
+                // 非同期メソッドを .Result で戻り値を取り出すな .Result や .Wait() は避けてすべて await を使用
+                string result_UserDomainFullName = await oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
 
                 if (result_UserDomainFullName == null)
                     return null;
 
                 object startDateTImeObj;
 
-                startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
+                // 非同期メソッドを .Result で戻り値を取り出すな .Result や .Wait() は避けてすべて await を使用
+                startDateTImeObj = await oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
 
                 if (result_UserDomainFullName != null && startDateTImeObj != null)
                 {
@@ -1199,7 +1185,7 @@ namespace SasaLib.VariableControlPipeClient
             var result1 = remote.Command_ConnectStartAsyncNew(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
 
 
-            async Task<bool> _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream, bool objectConvNew2 = false)
+            async Task<bool> _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream)
             {
                 WriteLine("XmlFileTagUpdate(..) スタート");
 
