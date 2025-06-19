@@ -1155,7 +1155,7 @@ namespace SasaLib.VariableControlPipeClient
 
                 XmlFileFullPath_textBox.Text = XmlFileFullPath_textBox.Text.TrimStart('"').TrimEnd('"');
 
-                Task_XmlFileTagUpdate(hostname, PIPENAME, XmlFileFullPath_textBox.Text, CurrentElement_textBox.Text, NewEllement_textbox.Text, SetVaule_textbox.Text);
+                await Task_XmlFileTagUpdate(hostname, PIPENAME, XmlFileFullPath_textBox.Text, CurrentElement_textBox.Text, NewEllement_textbox.Text, SetVaule_textbox.Text);
 
                 await Task.Delay(2000);
 
@@ -1177,12 +1177,24 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="NewEllement"></param>
         /// <param name="SetVaule"></param>
         /// <param name="objectConvNew"></param>
-        private void Task_XmlFileTagUpdate(string hostname, string PIPENAME, string XmlFileFullPath, string CurrentElement, string NewEllement, string SetVaule, bool objectConvNew = false)
+        private async 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostname"></param>
+        /// <param name="PIPENAME"></param>
+        /// <param name="XmlFileFullPath"></param>
+        /// <param name="CurrentElement"></param>
+        /// <param name="NewEllement"></param>
+        /// <param name="SetVaule"></param>
+        /// <param name="objectConvNew"></param>
+        Task
+Task_XmlFileTagUpdate(string hostname, string PIPENAME, string XmlFileFullPath, string CurrentElement, string NewEllement, string SetVaule, bool objectConvNew = false)
         {
             WriteLine($"オーダー先 \\\\{hostname}\\PIPE\\{PIPENAME} {XmlFileFullPath} {CurrentElement} {NewEllement} {SetVaule}");
             VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
             //var result1 = remote.Command_ConnnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
-            var result1 = remote.Command_ConnectStartAsyncNew(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
+            var result1 = await remote.Command_ConnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
 
 
             async Task<bool> _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream)
