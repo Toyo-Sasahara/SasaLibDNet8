@@ -119,7 +119,7 @@ namespace SaSaLibDNet8TestAPP
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
             VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, "localhost", "ABCDE");
             //remote.pileCltStremConnectTimeOut = 20000;
@@ -129,7 +129,7 @@ namespace SaSaLibDNet8TestAPP
 
             //コントロールに対する処理
             //WriteLine($"Inventor 利用状況ﾁｪｯｸ開始・・");
-            startDateTImeObj = remote.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: checkBox1.Checked, WriteLine: DebugConsole.WriteLine);
+            startDateTImeObj = await remote.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: checkBox1.Checked, WriteLine: DebugConsole.WriteLine);
             //WriteLine($"Inventor 利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{LoopcheckMode}");
 
 

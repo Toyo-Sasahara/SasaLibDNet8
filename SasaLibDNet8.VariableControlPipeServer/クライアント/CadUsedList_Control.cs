@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows.Networking;
 using Windows.UI.WebUI;
+using System.Text.Json;
+
+using Microsoft.VisualStudio.Shell.Interop;
+
 
 
 
@@ -534,27 +538,21 @@ namespace SasaLib.VariableControlPipeClient
 
             try
             {
-                var output = await Task.Run(() =>
+                var output = await Task.Run(async () =>
                 {
                     SasaLib.DoEvents.Run();
-                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME,500,1000);
+                    VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME, 500, 1000);
 
                     string result_UserDomainFullName;
 
-                    if (ASYNCmode_checkBox.Checked)
-                        result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
-                    else
-                        result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommand(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
+                    result_UserDomainFullName = await oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
 
                     if (result_UserDomainFullName == null)
                         return null;
 
                     object startDateTImeObj;
 
-                    if (ASYNCmode_checkBox.Checked)
-                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine).Result;
-                    else
-                        startDateTImeObj = oVCPipeClient.GetValueAndValueType_DataCommand(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
+                    startDateTImeObj = await  oVCPipeClient.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: objectConvNew, WriteLine: WriteLine);
 
                     string resultStr = null;
 
@@ -617,7 +615,7 @@ namespace SasaLib.VariableControlPipeClient
                 i++;
                 string hostname = hosts[(int)checkedNumber];
 
-                var output = await Task.Run(() =>
+                var output = await Task.Run(async () =>
                 {
                     SasaLib.DoEvents.Run();
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
@@ -628,8 +626,7 @@ namespace SasaLib.VariableControlPipeClient
 
                     object resutlValue;
 
-                    //resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, setmode, CommitConfigValue, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine: WriteLine).Result;
-                    resutlValue = oVCPipeClient.GetSetValueAndValueType_DataCommand(CommitConfig_ParamaterName, setmode, CommitConfigValue, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine: WriteLine);
+                    resutlValue = await oVCPipeClient.GetSetValueAndValueType_DataCommandAsync(CommitConfig_ParamaterName, setmode, CommitConfigValue, objectConvNew: ObjectCovNew_checkBox.Checked, WriteLine: WriteLine);
 
                     if (resutlValue != null)
                     {
@@ -1067,15 +1064,14 @@ namespace SasaLib.VariableControlPipeClient
             for (int i = 0; i < hosts.Count; i++)
             {
                 hostname = hosts[i];
-                var output = await Task.Run(() =>
+                var output = await Task.Run(async () =>
                 {
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
 
-                    //string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;                  
-                    string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommand(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
+                    string result_UserDomainFullName = await oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine);
 
                     //string result = oVCPipeClient.GetTwoValue_DataCommandAsync(Command, FullFileName, mode).Result;
-                    string result = oVCPipeClient.GetTwoValue_DataCommand(Command, FullFileName, mode);
+                    string result = await  oVCPipeClient.GetTwoValue_DataCommandAsync(Command, FullFileName, mode);
 
                     string resultStr = null;
                     if (result_UserDomainFullName != null)
@@ -1127,12 +1123,11 @@ namespace SasaLib.VariableControlPipeClient
             for (int i = 0; i < hosts.Count; i++)
             {
                 hostname = hosts[i];
-                var output = await Task.Run(() =>
+                var output = await Task.Run(async () =>
                 {
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
 
-                    //string result = oVCPipeClient.GetOneValue_DataCommandAsync(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName).Result;
-                    string result = oVCPipeClient.GetOneValue_DataCommand(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName);
+                    string result = await oVCPipeClient.GetOneValue_DataCommandAsync(CMDNAME.GetInstalledSoftwareVersion, SoftwareComponentName);
                     return result;
                 });
 
@@ -1247,52 +1242,55 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="NewEllement"></param>
         /// <param name="SetVaule"></param>
         /// <param name="objectConvNew"></param>
-        private void Task_XmlFileTagUpdate(string hostname, string PIPENAME, string XmlFileFullPath, string CurrentElement, string NewEllement, string SetVaule, bool objectConvNew = false)
+        private async void Task_XmlFileTagUpdate(string hostname, string PIPENAME, string XmlFileFullPath, string CurrentElement, string NewEllement, string SetVaule, bool objectConvNew = false, bool debugMode = false)
         {
             WriteLine($"オーダー先 \\\\{hostname}\\PIPE\\{PIPENAME} {XmlFileFullPath} {CurrentElement} {NewEllement} {SetVaule}");
             VariableControlPipeClient remote = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
-            var result1 = remote.Command_ConnnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
+            var result1 = await remote.Command_ConnectStartAsync(CMDNAME.XmlFileTagUpdate, _Method_XmlFileTagUpdate, WriteLine: WriteLine);
 
-
-            bool _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream, bool objectConvNew2 = false)
+            async Task<bool> _Method_XmlFileTagUpdate(NamedPipeClientStream pipeCltStream)
             {
                 WriteLine("XmlFileTagUpdate(..) スタート");
 
                 StreamString stst = new StreamString(pipeCltStream);
 
-                string ServerResPon1 = stst.ReadString();
+                 string ServerResPon1 = await stst.ReadStringAsync();
 
                 WriteLine($"ServerResPon1 = {ServerResPon1}");
 
-                stst.WriteString(XmlFileFullPath); // XmlFileFullPath 送信
+                await stst.WriteStringAsync(XmlFileFullPath); // XmlFileFullPath 送信
 
-                string ServerResPon2 = stst.ReadString();
+                string ServerResPon2 = await stst.ReadStringAsync();
 
                 WriteLine($"ServerResPon2 = {ServerResPon2}");
 
-                stst.WriteString(CurrentElement); // CurrentElement 送信
+                await stst.WriteStringAsync(CurrentElement); // CurrentElement 送信
 
-                string ServerResPon3 = stst.ReadString();
+                string ServerResPon3 = await stst.ReadStringAsync();
 
                 WriteLine($"ServerResPon3 = {ServerResPon3}");
 
-                stst.WriteString(NewEllement); // NewEllement 送信
+                await stst.WriteStringAsync(NewEllement); // NewEllement 送信
 
-                string ServerResPon4 = stst.ReadString();
+                string ServerResPon4 = await stst.ReadStringAsync();
 
                 WriteLine($"ServerResPon4 = {ServerResPon4}");
 
-                stst.WriteString(SetVaule); // SetVaule 送信
+                await stst.WriteStringAsync(SetVaule); // SetVaule 送信
 
                 object receveObj;
-                using (BinaryReader reader = new BinaryReader(pipeCltStream, Encoding.UTF8, true))
-                {
-                    if (objectConvNew)
-                        receveObj = reader.ReadObject<Object>(binaryConvertType: BinaryConvertTYPE.JsonSerializer);
-                    else
-                        receveObj = reader.ReadObject<Object>();
 
+                if (objectConvNew)
+                {
+                    JsonSerializerOptions options = null;
+                    receveObj = await pipeCltStream.ReadObjectAsync<Object>(binaryConvertType: BinaryConvertTYPE.JsonSerializer, options: options, WriteLine: WriteLine, Verbose: debugMode);
                 }
+                else
+                {
+                    receveObj = await pipeCltStream.ReadObjectAsync<Object>(binaryConvertType: BinaryConvertTYPE.IFormatter,  WriteLine: WriteLine, Verbose: debugMode);
+                }
+
+
                 WriteLine($"ReadObject = {receveObj}");
 
                 if ((bool)receveObj == true)
