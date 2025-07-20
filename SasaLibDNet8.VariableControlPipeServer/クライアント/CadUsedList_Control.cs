@@ -703,6 +703,7 @@ namespace SasaLib.VariableControlPipeClient
             Solidworks_checkfile_textBox.Text = FullFileName;
 
             Host_CheckedListBox_Clear(RegistClient_Host_CheckedListBox);
+
         }
 
         private string GetAddinDllFileFullPath(string pipeName)
