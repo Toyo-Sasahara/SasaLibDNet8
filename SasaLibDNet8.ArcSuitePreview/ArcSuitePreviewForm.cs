@@ -1557,10 +1557,10 @@ namespace SasaLib.ArcSuitePreview
             InvokeRequired_Control_Enabled(UserCadType_AddRemove_button, false);
 
             CadTypeArcSuiteControl cadSetControl = new CadTypeArcSuiteControl(ClientDomainName, ClientUserName, ClientUserPassword, ClsLogon, StageServerHost, PipeNameDR, ArcSuiteUserName, ArcSuiteUserPass);
-            string msg = null;
-            Task.Run(() =>
+            Task.Run(async () =>
             {
-                cadSetControl.SetUnsetCadTypeFlag(User_zuban, ref msg, this.SetUnsetCadType, thisNativeWindow, false);
+                //cadSetControl.SetUnsetCadTypeFlag(User_zuban, ref msg, this.SetUnsetCadType, thisNativeWindow, false);
+                var result = await cadSetControl.SetUnsetCadTypeFlagAsync(User_zuban, this.SetUnsetCadType, thisNativeWindow, MsgBoxShow:false, objectConvNew:true, WriteLine:WriteLine);
 
                 InvokeRequired_Control_Text(UserCadType_AddRemove_button, recentTtile);
 
