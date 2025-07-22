@@ -20,7 +20,7 @@ namespace SasaLib.InventorAPI
         /// <param name="PropertySetName"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static Inventor.Property GetInstanceProperty(Inventor.ComponentOccurrence compOcc, string PropertySetName, string PropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static Inventor.Property GetInstanceProperty(Inventor.ComponentOccurrence compOcc, string PropertySetName, string PropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) { WriteLine = DebugConsole.WriteLine; }
 
@@ -60,7 +60,7 @@ namespace SasaLib.InventorAPI
 
         }
 
-        public static Inventor.PropertySet GetInstancePropertySet(Inventor.ComponentOccurrence compOcc, string PropertySetName, SasaLibDelegateWriteLine WriteLine = null)
+        public static Inventor.PropertySet GetInstancePropertySet(Inventor.ComponentOccurrence compOcc, string PropertySetName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) { WriteLine = DebugConsole.WriteLine; }
 
@@ -96,7 +96,7 @@ namespace SasaLib.InventorAPI
         /// <param name="PropertySetName"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private static bool _SetInstancePropertyValue(Inventor.ComponentOccurrence compOcc, string PropertySetName, string PropertyName, object Value, SasaLibDelegateWriteLine WriteLine = null)
+        private static bool _SetInstancePropertyValue(Inventor.ComponentOccurrence compOcc, string PropertySetName, string PropertyName, object Value, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -145,7 +145,7 @@ namespace SasaLib.InventorAPI
             return true;
 
         }
-        public static bool SetInstancePropertyValue(Inventor.ComponentOccurrence compOcc, string PropertySetName, string PropertyName, object Value, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetInstancePropertyValue(Inventor.ComponentOccurrence compOcc, string PropertySetName, string PropertyName, object Value, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
             try
@@ -174,7 +174,7 @@ namespace SasaLib.InventorAPI
             }
         }
 
-        private static bool UpdateCustomInstanceProperty(Inventor.ComponentOccurrence compOcc, string PropertyName, object value, SasaLibDelegateWriteLine WriteLine = null)
+        private static bool UpdateCustomInstanceProperty(Inventor.ComponentOccurrence compOcc, string PropertyName, object value, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -194,7 +194,7 @@ namespace SasaLib.InventorAPI
 
         }
 
-        public static object GetiInstancePropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string PropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetiInstancePropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string PropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -214,7 +214,7 @@ namespace SasaLib.InventorAPI
 
         }
 
-        public static Inventor.PropertySet GetiInstancePropertyUserDefinedPropertySet(Inventor.ComponentOccurrence compOcc,SasaLibDelegateWriteLine WriteLine = null)
+        public static Inventor.PropertySet GetiInstancePropertyUserDefinedPropertySet(Inventor.ComponentOccurrence compOcc,Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -236,7 +236,7 @@ namespace SasaLib.InventorAPI
 
 
 
-        public static bool SetiInstancePropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string PropertyName, object Vaule, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiInstancePropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string PropertyName, object Vaule, Action<string> WriteLine = null)
         {
             var ans = InventorControl.SetInstancePropertyValue(compOcc, "User Defined Properties", PropertyName, Vaule, WriteLine);
             return ans;

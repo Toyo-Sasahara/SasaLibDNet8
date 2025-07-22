@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SasaLib.SysConfigurator
 {
-    public delegate bool Delegate_RemoteServerGeFileList(string ServerSourceFolder, string seachPattern, out List<string> files, SasaLibDelegateWriteLine WriteLine);
+    public delegate bool Delegate_RemoteServerGeFileList(string ServerSourceFolder, string seachPattern, out List<string> files, Action<string> WriteLine);
 
     [SupportedOSPlatform("windows")]
     public class PrepareSysConfigurator
@@ -50,7 +50,7 @@ namespace SasaLib.SysConfigurator
         /// <summary>
         /// 
         /// </summary>
-        public SasaLibDelegateWriteLine delegate_WriteLine { get; private set; }
+        public Action<string> delegate_WriteLine { get; private set; }
 
         /// <summary>
         /// 
@@ -76,7 +76,7 @@ namespace SasaLib.SysConfigurator
             string VersonString,
             Delegate_RemoteServerGeFileList delegate_RemoteServerGeFileList,
             Delegate_FileCopy delegate_FieCopy,
-            SasaLibDelegateWriteLine delegate_WriteLIne
+            Action<string> delegate_WriteLIne
             )
         {
             this.ServerSideInstructionsToToyoAddinFolder = ServerControlFileFolder;
@@ -95,7 +95,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="ts"></param>
         /// <param name="forceExecute"></param>
         /// <returns></returns>
-        public bool Execute(out TimeSpan ts, bool forceExecute = false, SasaLibDelegateWriteLine WriteLine = null)
+        public bool Execute(out TimeSpan ts, bool forceExecute = false, Action<string> WriteLine = null)
         {
             if (WriteLine != null)
                 this.delegate_WriteLine = WriteLine;
@@ -171,7 +171,7 @@ namespace SasaLib.SysConfigurator
             }
         }
 
-        private bool RemoteServerControlFileLoad(string ServerSourceFullfilename, string InstructionsAddinLocalFileSotreFolder, string vernumber, out string InstructionsVersionToyoAddinFullFileName, SasaLibDelegateWriteLine WriteLine)
+        private bool RemoteServerControlFileLoad(string ServerSourceFullfilename, string InstructionsAddinLocalFileSotreFolder, string vernumber, out string InstructionsVersionToyoAddinFullFileName, Action<string> WriteLine)
         {
             // Stopwatchクラス生成・計測開始
             var initilaizeSw = new System.Diagnostics.Stopwatch(); initilaizeSw.Start();

@@ -115,7 +115,7 @@ namespace SasaLib.ArcSuitePreview
         /// <summary>
         /// ArcSuite側へ設定・取得するCadType 列挙型
         /// </summary>
-        private RemoteClientCADtype.CadType SetUnsetCadType;
+        private RemoteClientCadType.CadType SetUnsetCadType;
 
         /// <summary>
         /// 図面イメージのソースBitmapオブジェクト
@@ -190,7 +190,7 @@ namespace SasaLib.ArcSuitePreview
         /// <summary>
         /// デバッグ出力用
         /// </summary>
-        SasaLibDelegateWriteLine WriteLine;
+        Action<string> WriteLine;
 
         /// <summary>
         /// ■コンストラクタ
@@ -198,7 +198,7 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="loadmethod"></param>
         /// <param name="CallDestination"></param>
 
-        public ArcSuitePreviewOnlyForm(object loadmethod, SasaLibDelegateWriteLine CallDestination = null)
+        public ArcSuitePreviewOnlyForm(object loadmethod, Action<string> CallDestination = null)
         {
             this.loadmethod = loadmethod;
 
@@ -1077,7 +1077,7 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="ArcSuiteUserName"></param>
         /// <param name="ArcSuiteUserPass"></param>
         public void SetUnsetCadTypeFlagControlDatas(string StageServerHost, string PipeNameDR, string ClientDomainName, string ClientUserName, string ClientUserPassword, bool ClsLogon,
-            RemoteClientCADtype.CadType cadType, string ArcSuiteUserName, string ArcSuiteUserPass)
+            RemoteClientCadType.CadType cadType, string ArcSuiteUserName, string ArcSuiteUserPass)
         {
             this.StageServerHost = StageServerHost;
             this.PipeNameDR = PipeNameDR;

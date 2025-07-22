@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -66,6 +67,9 @@ namespace SasaLib.ArcSuitePreview
     /// <summary>
     /// ArcSuite Previewフォームクラス
     /// </summary>
+#if NETCOREAPP
+    [SupportedOSPlatform("windows")]
+#endif
     public partial class ArcSuitePreviewForm : Form
     {
         /// <summary>
@@ -268,7 +272,7 @@ namespace SasaLib.ArcSuitePreview
         /// <summary>
         /// ArcSuite側へ設定・取得するCadType 列挙型 それぞれのＣＡＤアドインにて設定される
         /// </summary>
-        private RemoteClientCADtype.CadType SetUnsetCadType;
+        private RemoteClientCadType.CadType SetUnsetCadType;
 
         /// <summary>
         /// 図面イメージの現在のページを保持するオブジェクト
@@ -378,7 +382,7 @@ namespace SasaLib.ArcSuitePreview
         /// <summary>
         /// デバッグ出力用
         /// </summary>
-        SasaLibDelegateWriteLine WriteLine;
+        Action<string> WriteLine;
 
 
         /// <summary>
@@ -386,7 +390,7 @@ namespace SasaLib.ArcSuitePreview
         /// </summary>
         /// <param name="parentNativeWindow"></param>
         /// <param name="WriteLine"></param>
-        public ArcSuitePreviewForm(System.Windows.Forms.NativeWindow parentNativeWindow, SasaLibDelegateWriteLine WriteLine = null)
+        public ArcSuitePreviewForm(System.Windows.Forms.NativeWindow parentNativeWindow, Action<string> WriteLine = null)
         {
             this.parentNativeWindow = parentNativeWindow;
 
@@ -1541,7 +1545,7 @@ namespace SasaLib.ArcSuitePreview
         private void UserCadType_AddRemove_button_Click(object sender, EventArgs e)
         {
             // SetUnsetCadType が NotSetの場合は この機能は使わないことにする
-            if (this.SetUnsetCadType == RemoteClientCADtype.CadType.NotSet)
+            if (this.SetUnsetCadType == RemoteClientCadType.CadType.NotSet)
             {
                 MessageBox.Show("このCADアドインでは対応していません", "■ごめんなさい");
                 return;
@@ -1579,7 +1583,7 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="ArcSuiteUserName"></param>
         /// <param name="ArcSuiteUserPass"></param>
         public void SetUnsetCadTypeFlagControlDatas(string StageServerHost, string PipeNameDR, string ClientDomainName, string ClientUserName, string ClientUserPassword, bool ClsLogon,
-            RemoteClientCADtype.CadType cadType, string ArcSuiteUserName, string ArcSuiteUserPass)
+            RemoteClientCadType.CadType cadType, string ArcSuiteUserName, string ArcSuiteUserPass)
         {
             this.StageServerHost = StageServerHost;
             this.PipeNameDR = PipeNameDR;
@@ -1615,7 +1619,7 @@ namespace SasaLib.ArcSuitePreview
 
                 WriteLine($"■ArcSuite図面属性変更開始 {arcSuiteZuban} Attr = \"{attributeName}\" Value = \"{attributeString}\"");
 
-                RemoteClientCADtype rmcCadType = new RemoteClientCADtype(
+                RemoteClientCadType rmcCadType = new RemoteClientCadType(
                     ClientDomainName,
                     ClientUserName,
                     ClientUserPassword,
@@ -2226,7 +2230,7 @@ namespace SasaLib.ArcSuitePreview
         /// </summary>
         /// <param name="PARTNUMBER"></param>
         /// <param name="WriteLineMethod"></param>
-        private void PartListIllust_Process(string PARTNUMBER, SasaLibDelegateWriteLine WriteLineMethod = null)
+        private void PartListIllust_Process(string PARTNUMBER, Action<string> WriteLineMethod = null)
         {
             try
             {

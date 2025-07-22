@@ -64,7 +64,7 @@ namespace SasaLib
         /// <param name="iconLocationNum"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public string ReadShortcutFile(string linkFilePath, out string targetPath, out string workingfolder, out string description, out string iconLocationFile, out int iconLocationNum, SasaLibDelegateWriteLine? WriteLine = null)
+        public string ReadShortcutFile(string linkFilePath, out string targetPath, out string workingfolder, out string description, out string iconLocationFile, out int iconLocationNum, Action<string>? WriteLine = null)
         {
             iconLocationNum = -1;
 
@@ -141,7 +141,7 @@ namespace SasaLib
         /// <param name="iconLocationNum"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public  bool CreateShortcutFile(string fullPath, string targetPath, string? workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0, SasaLibDelegateWriteLine? WriteLine = null)
+        public  bool CreateShortcutFile(string fullPath, string targetPath, string? workingFolder = null, string description = "新しいｼｮｰﾄｶｯﾄ", string iconLocationFile = "notepad.exe", int iconLocationNum = 0, Action<string>? WriteLine = null)
         {
             if (WriteLine == null) WriteLine = Console.WriteLine;
 

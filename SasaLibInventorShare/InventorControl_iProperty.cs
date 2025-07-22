@@ -31,7 +31,7 @@ namespace SasaLib.InventorAPI
         /// <param name="PropertySetName">プロパティセット名を指定("Summary Information" "Document Summary Information" "Design Tracking Properties" "User Defined Properties" のいずれか)</param>
         /// <param name="iPropertyName">iProperty名</param>
         /// <returns></returns>
-        public static Inventor.Property GetiPropertyValue(Inventor.Document invacDoc, string PropertySetName, string iPropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static Inventor.Property GetiPropertyValue(Inventor.Document invacDoc, string PropertySetName, string iPropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -99,7 +99,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iPropertyName">iProperty名<</param>
         /// <param name="Value">iProperty設定値</param>
         /// <returns></returns>
-        public static bool SetiPropertyValue(Inventor.Document invacDoc, string PropertySetName, string iPropertyName, object Value, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiPropertyValue(Inventor.Document invacDoc, string PropertySetName, string iPropertyName, object Value, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -150,7 +150,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iProp"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        private static bool UpdateCustomiProperty(Inventor.Document invacDoc, string iProp, object value, SasaLibDelegateWriteLine WriteLine = null)
+        private static bool UpdateCustomiProperty(Inventor.Document invacDoc, string iProp, object value, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -179,7 +179,7 @@ namespace SasaLib.InventorAPI
         /// <param name="invacDoc"></param>
         /// <param name="PropertySetName"></param>
         /// <returns></returns>
-        public static Inventor.PropertySet GetiPropertySet(Inventor.Document invacDoc, string PropertySetName, SasaLibDelegateWriteLine WriteLine = null)
+        public static Inventor.PropertySet GetiPropertySet(Inventor.Document invacDoc, string PropertySetName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -215,7 +215,7 @@ namespace SasaLib.InventorAPI
         /// <param name="document"></param>
         /// <param name="iPropertyName"></param>
         /// <returns></returns>
-        public static object GetiPropertySummaryInformationVaule(Inventor.Document document, string iPropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetiPropertySummaryInformationVaule(Inventor.Document document, string iPropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
             try
@@ -239,7 +239,7 @@ namespace SasaLib.InventorAPI
         /// <param name="compOcc"></param>
         /// <param name="iPropertyName"></param>
         /// <returns></returns>
-        public static object GetiPropertySummaryInformationVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetiPropertySummaryInformationVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -254,7 +254,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iPropertyName"></param>
         /// <param name="Vaule"></param>
         /// <returns></returns>
-        public static bool SetiPropertySummaryInformationVaule(Inventor.Document document, string iPropertyName, object Vaule, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiPropertySummaryInformationVaule(Inventor.Document document, string iPropertyName, object Vaule, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -269,7 +269,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iPropertyName"></param>
         /// <param name="Vaule"></param>
         /// <returns></returns>
-        public static bool SetiPropertySummaryInformationVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, object Vaule, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiPropertySummaryInformationVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, object Vaule, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -294,7 +294,7 @@ namespace SasaLib.InventorAPI
         /// <param name="document"></param>
         /// <param name="iPropertyName"></param>
         /// <returns></returns>
-        public static object GetiPropertyUserDefinedPropertiesVaule(Inventor.Document document, string iPropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetiPropertyUserDefinedPropertiesVaule(Inventor.Document document, string iPropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -319,7 +319,7 @@ namespace SasaLib.InventorAPI
         /// <param name="compOcc"></param>
         /// <param name="iPropertyName"></param>
         /// <returns></returns>
-        public static object GetiPropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetiPropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -334,7 +334,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iPropertyName"></param>
         /// <param name="Vaule"></param>
         /// <returns></returns>
-        public static bool SetiPropertyUserDefinedPropertiesVaule(Inventor.Document document, string iPropertyName, object Vaule, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiPropertyUserDefinedPropertiesVaule(Inventor.Document document, string iPropertyName, object Vaule, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -349,7 +349,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iPropertyName"></param>
         /// <param name="Vaule"></param>
         /// <returns></returns>
-        public static bool SetiPropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, object Vaule, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiPropertyUserDefinedPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, object Vaule, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -368,7 +368,7 @@ namespace SasaLib.InventorAPI
         /// <param name="document"></param>
         /// <param name="iPropertyName"></param>
         /// <returns></returns>
-        public static object GetiPropertyDesignTrackingPropertiesVaule(Inventor.Document document, string iPropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetiPropertyDesignTrackingPropertiesVaule(Inventor.Document document, string iPropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -393,7 +393,7 @@ namespace SasaLib.InventorAPI
         /// <param name="compOcc"></param>
         /// <param name="iPropertyName"></param>
         /// <returns></returns>
-        public static object GetiPropertyDesignTrackingPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetiPropertyDesignTrackingPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -409,7 +409,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iPropertyName"></param>
         /// <param name="Vaule"></param>
         /// <returns></returns>
-        public static bool SetiPropertyDesignTrackingPropertiesVaule(Inventor.Document document, string iPropertyName, object Vaule, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiPropertyDesignTrackingPropertiesVaule(Inventor.Document document, string iPropertyName, object Vaule, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -425,7 +425,7 @@ namespace SasaLib.InventorAPI
         /// <param name="iPropertyName"></param>
         /// <param name="Vaule"></param>
         /// <returns></returns>
-        public static bool SetiPropertyDesignTrackingPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, object Vaule, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool SetiPropertyDesignTrackingPropertiesVaule(Inventor.ComponentOccurrence compOcc, string iPropertyName, object Vaule, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -455,7 +455,7 @@ namespace SasaLib.InventorAPI
         /// <param name="activeAsmDoc"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static ComponentOccurrence FindFirstiPropertyOccrence(Inventor.ComponentOccurrences oCoccs, string iPropertyName, string propertySetName = "User Defined Properties", SasaLibDelegateWriteLine WriteLine = null)
+        public static ComponentOccurrence FindFirstiPropertyOccrence(Inventor.ComponentOccurrences oCoccs, string iPropertyName, string propertySetName = "User Defined Properties", Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -517,7 +517,7 @@ namespace SasaLib.InventorAPI
         /// <param name="FamilyId"></param>
         /// <param name="MemberId"></param>
         /// <returns></returns>
-        public static bool GetiPropertyContentLibraryComponentPropertiesVaule(Inventor.ComponentOccurrence compOcc, out string FamilyId, out string MemberId, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool GetiPropertyContentLibraryComponentPropertiesVaule(Inventor.ComponentOccurrence compOcc, out string FamilyId, out string MemberId, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 
@@ -532,7 +532,7 @@ namespace SasaLib.InventorAPI
         /// <param name="FamilyId"></param>
         /// <param name="MemberId"></param>
         /// <returns></returns>
-        public static bool GetiPropertyContentLibraryComponentPropertiesVaule(Inventor.Document oDoc, out string FamilyId, out string MemberId, SasaLibDelegateWriteLine WriteLine = null)
+        public static bool GetiPropertyContentLibraryComponentPropertiesVaule(Inventor.Document oDoc, out string FamilyId, out string MemberId, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 

@@ -80,7 +80,7 @@ public class SysConfiguration
     /// <param name="ControlData"></param>
     /// <param name="LogWrite"></param>
     /// <returns></returns>
-    public bool ReadloadConfigData(string ConfigFullPath, out SysConfiguration ControlData, SasaLibDelegateWriteLine LogWrite)
+    public bool ReadloadConfigData(string ConfigFullPath, out SysConfiguration ControlData, Action<string> LogWrite)
     {
 
         if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
@@ -122,7 +122,7 @@ public class SysConfiguration
         }
     }
 
-    public bool SaveConfig(string ConfigFullPath, SysConfiguration ControlData, SasaLibDelegateWriteLine LogWrite = null)
+    public bool SaveConfig(string ConfigFullPath, SysConfiguration ControlData, Action<string> LogWrite = null)
     {
 
         bool result = false;
@@ -144,7 +144,7 @@ public class SysConfiguration
         return result;
     }
 
-    public void CreateSmapleConfig(string ConfigFolder, SasaLibDelegateWriteLine LogWrite = null)
+    public void CreateSmapleConfig(string ConfigFolder, Action<string> LogWrite = null)
     {
 
         string sampleConfigFile = System.IO.Path.Combine(ConfigFolder, "SysConfiguration.Sample.Conf.SMP");

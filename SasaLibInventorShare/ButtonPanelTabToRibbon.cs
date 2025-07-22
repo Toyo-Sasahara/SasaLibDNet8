@@ -26,14 +26,14 @@ namespace SasaLib.InventorAPI
         /// <summary>
         /// デリゲートの定義
         /// </summary>
-        private SasaLibDelegateWriteLine LogWrite;
+        private Action<string> LogWrite;
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="Application"></param>
         /// <param name="addInCLSID"></param>
-        public ButtonPanelTabToRibbon(Inventor.Application Application, GuidAttribute addInCLSID, SasaLibDelegateWriteLine LogWrite = null)
+        public ButtonPanelTabToRibbon(Inventor.Application Application, GuidAttribute addInCLSID, Action<string> LogWrite = null)
         {
             oApp = Application;
 
@@ -201,7 +201,7 @@ namespace SasaLib.InventorAPI
         /// <param name="internalName">ﾀﾌﾞ内部名</param>
         /// <param name="ClientId"></param>
         /// <returns></returns>
-        private static Inventor.RibbonTab addNewTabtoRibbon(Inventor.Ribbon Ribbon, string DisplayName, string internalName, string ClientId, SasaLibDelegateWriteLine LogWrite = null)
+        private static Inventor.RibbonTab addNewTabtoRibbon(Inventor.Ribbon Ribbon, string DisplayName, string internalName, string ClientId, Action<string> LogWrite = null)
         {
             if (LogWrite == null)
                 LogWrite = DebugConsole.WriteLine;
@@ -245,7 +245,7 @@ namespace SasaLib.InventorAPI
         /// <param name="interanalName">ﾊﾟﾈﾙ内部名</param>
         /// <param name="ClientId"></param>
         /// <returns></returns>
-        private static Inventor.RibbonPanel addNewPaneltoTab(Inventor.RibbonTab tab, string DisplayName, string interanalName, string ClientId, SasaLibDelegateWriteLine LogWrite = null)
+        private static Inventor.RibbonPanel addNewPaneltoTab(Inventor.RibbonTab tab, string DisplayName, string interanalName, string ClientId, Action<string> LogWrite = null)
         {
             if (LogWrite == null)
                 LogWrite = DebugConsole.WriteLine;

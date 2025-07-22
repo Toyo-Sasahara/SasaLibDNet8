@@ -150,10 +150,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Reference Include="Interop.IWshRuntimeLibrary">
 		  <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Inventor 2022\Bin\interop.iwshruntimelibrary.dll</HintPath>
 		</Reference>

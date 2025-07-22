@@ -30,7 +30,7 @@ namespace SasaLib.VariableControlPipeClient
 #endif
     public partial class CadUsedList_Control : UserControl
     {
-        public SasaLibDelegateWriteLine WriteLine;
+        public Action<string> WriteLine;
 
         public int SleepSec { get; set; } = 120;
 
@@ -99,7 +99,7 @@ namespace SasaLib.VariableControlPipeClient
         /// <summary>
         /// デザイナーでは、引数無しのコンストラクターが必要
         /// </summary>
-        public CadUsedList_Control(SasaLibDelegateWriteLine WriteLine = null)
+        public CadUsedList_Control(Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
             this.WriteLine = WriteLine;
@@ -463,7 +463,7 @@ namespace SasaLib.VariableControlPipeClient
         /// <param name="objectConvNew"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
-        public async Task<string> Onehost_CheckAsync(string hostname, string PIPENAME, bool objectConvNew = true, SasaLibDelegateWriteLine WriteLine = null)
+        public async Task<string> Onehost_CheckAsync(string hostname, string PIPENAME, bool objectConvNew = true, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = DebugConsole.WriteLine;
 

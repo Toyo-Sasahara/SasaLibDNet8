@@ -64,7 +64,7 @@ namespace SasaLib.InventorAPI
         /// </summary>
         /// <param name="oInventorApp"></param>
         /// <param name="CommandName"></param>
-        public static void ExecuteInventorCommand(Inventor.Application oInventorApp, string CommandName, SasaLibDelegateWriteLine LogWrite = null)
+        public static void ExecuteInventorCommand(Inventor.Application oInventorApp, string CommandName, Action<string> LogWrite = null)
         {
             if (LogWrite != null) LogWrite($"■ｺﾏﾝﾄﾞ:{CommandName}を実行します");
             try

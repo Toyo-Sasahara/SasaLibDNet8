@@ -29,7 +29,7 @@ namespace SasaLib.InventorAPI
         /// <param name="obj"></param>
         /// <param name="Type"></param>
         /// <returns></returns>
-        public static object GetComObjectMember(object obj, string objectType, SasaLibDelegateWriteLine WriteLine = null)
+        public static object GetComObjectMember(object obj, string objectType, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = Console.WriteLine;
 
@@ -60,7 +60,7 @@ namespace SasaLib.InventorAPI
         /// <param name="obj"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        public static ObjectTypeEnum GetInventorObjectType(object obj, SasaLibDelegateWriteLine WriteLine = null)
+        public static ObjectTypeEnum GetInventorObjectType(object obj, Action<string> WriteLine = null)
         {
             if (WriteLine == null) WriteLine = Console.WriteLine;
 

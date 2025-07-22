@@ -59,7 +59,7 @@ namespace SasaLib.AutodeskVault
     [SupportedOSPlatform("windows")]
     public partial class VDFControl
     {
-        private SasaLibDelegateWriteLine WriteLine = DebugConsole.WriteLine;
+        private Action<string> WriteLine = DebugConsole.WriteLine;
 
         //List<FindMissingAssemblyAndLoad> _proxloads;
 
@@ -147,7 +147,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <param name="methodWriteLine"></param>
-        public VDFControl(string serverName, string vaultName, string userName, string password, SasaLibDelegateWriteLine WriteLine = null)
+        public VDFControl(string serverName, string vaultName, string userName, string password, Action<string> WriteLine = null)
         {
             if (WriteLine == null) this.WriteLine = DebugConsole.WriteLine;
 
@@ -173,7 +173,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="caption"></param>
         /// <param name="parent"></param>
         /// <param name="methodWriteLine"></param>
-        public VDFControl(string caption, IntPtr parent, SasaLibDelegateWriteLine WriteLine = null)
+        public VDFControl(string caption, IntPtr parent, Action<string> WriteLine = null)
         {
             if (WriteLine == null) this.WriteLine = DebugConsole.WriteLine;
 
@@ -190,7 +190,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="ShowEdmLoginWindow"></param>
         /// <param name="methodWriteLine"></param>
-        public VDFControl(bool ShowEdmLoginWindow = true, SasaLibDelegateWriteLine WriteLine = null)
+        public VDFControl(bool ShowEdmLoginWindow = true, Action<string> WriteLine = null)
         {
             if (WriteLine == null) this.WriteLine = DebugConsole.WriteLine;
 
@@ -1050,7 +1050,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="SearchValue"></param>
         /// <param name="DispName"></param>
         /// <returns></returns>
-        public VDFVCE.FileIteration FindFileFirstFromDispName(string SearchValue, string DispName = "名前", SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration FindFileFirstFromDispName(string SearchValue, string DispName = "名前", Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1177,7 +1177,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="PartNumber"></param>
         /// <returns>VDFVCE.FileIteration 型のデータとして返す</returns>
-        public VDFVCE.FileIteration SearchForComponentFileFromVault(string PartNumber, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration SearchForComponentFileFromVault(string PartNumber, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1216,7 +1216,7 @@ namespace SasaLib.AutodeskVault
             }
         }
 
-        public VDFVCE.FileIteration SearchForDrawingFileFromVault(string PartNumber, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration SearchForDrawingFileFromVault(string PartNumber, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1255,7 +1255,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="PartNumber"></param>
         /// <returns></returns>
-        public VDFVCE.FileIteration SearchTOYOdwgFile(string PartNumber, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration SearchTOYOdwgFile(string PartNumber, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1288,7 +1288,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="fileIter"></param>
         /// <returns></returns>
-        public VDFVCE.FileIteration UndoCheckoutFile(VDFVCE.FileIteration fileIter, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration UndoCheckoutFile(VDFVCE.FileIteration fileIter, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1321,7 +1321,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="fileIter"></param>
         /// <returns></returns>
-        public VDF.Vault.Results.AcquireFilesResults CheckOutFile(VDFVCE.FileIteration fileIter, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDF.Vault.Results.AcquireFilesResults CheckOutFile(VDFVCE.FileIteration fileIter, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1341,7 +1341,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="fileIter">対象ファイルを指定する</param>
         /// <param name="localPathToWriteFileTo">nullのときVaultで指定された作業フォルダにダウンロードされる</param>
         /// <returns></returns>
-        public VDF.Vault.Results.AcquireFilesResults DownlodeFile(VDFVCE.FileIteration fileIter, string localPathToWriteFileTo = null, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDF.Vault.Results.AcquireFilesResults DownlodeFile(VDFVCE.FileIteration fileIter, string localPathToWriteFileTo = null, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1373,7 +1373,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="vaultConnection"></param>
         /// <param name="file"></param>
         /// <returns></returns>
-        public VDF.Vault.Results.AcquireFilesResults DownlodeFile(ACW.File file, string ChecoutComment, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDF.Vault.Results.AcquireFilesResults DownlodeFile(ACW.File file, string ChecoutComment, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1400,7 +1400,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="localPathToWriteFileTo">ダウンロード先のパス null の場合は元の場所</param>
         /// <param name="acquisitionOption"></param>
         /// <returns></returns>
-        public VDF.Vault.Results.AcquireFilesResults DownlodFileIncludeChildren(VDFVCE.FileIteration fileIter, string localPathToWriteFileTo = null, VDFV.Settings.AcquireFilesSettings.AcquisitionOption acquisitionOption = VDF.Vault.Settings.AcquireFilesSettings.AcquisitionOption.Download, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDF.Vault.Results.AcquireFilesResults DownlodFileIncludeChildren(VDFVCE.FileIteration fileIter, string localPathToWriteFileTo = null, VDFV.Settings.AcquireFilesSettings.AcquisitionOption acquisitionOption = VDF.Vault.Settings.AcquireFilesSettings.AcquisitionOption.Download, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1457,7 +1457,7 @@ namespace SasaLib.AutodeskVault
         /// ■ダウンロード（AcquireFiles(setting) 呼び出し。参照先も含めてダウンロード） 
         /// </summary>
         /// <param name="topLevelFileIter"></param>
-        public bool DownloadAssembly(VDFVCE.FileIteration topLevelFileIter, string NewTopFolder, out VDFVR.AcquireFilesResults acquireFilesResultsOut, SasaLibDelegateWriteLine methodWriteLine = null)
+        public bool DownloadAssembly(VDFVCE.FileIteration topLevelFileIter, string NewTopFolder, out VDFVR.AcquireFilesResults acquireFilesResultsOut, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1540,7 +1540,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="fileIters"></param>
         /// <param name="localPathToWriteFileTo"></param>
         /// <returns>nullのときVaultで指定された作業フォルダにダウンロードされる</returns>
-        public VDF.Vault.Results.AcquireFilesResults DownlodFiles(ICollection<VDFVCE.FileIteration> fileIters, string localPathToWriteFileTo, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDF.Vault.Results.AcquireFilesResults DownlodFiles(ICollection<VDFVCE.FileIteration> fileIters, string localPathToWriteFileTo, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1565,7 +1565,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="result"></param>
         /// <param name="methodWriteLine"></param>
         /// <returns></returns>
-        public bool DownlodeFile(string VaultFullFileName, ref VDF.Vault.Results.AcquireFilesResults result, SasaLibDelegateWriteLine methodWriteLine = null)
+        public bool DownlodeFile(string VaultFullFileName, ref VDF.Vault.Results.AcquireFilesResults result, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1606,7 +1606,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="localPathToWriteFileTo"></param>
         /// <param name="this.WriteLine"></param>
         /// <returns></returns>
-        public VDF.Vault.Results.AcquireFilesResults DownlodeFile(string VaultFullFileName, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDF.Vault.Results.AcquireFilesResults DownlodeFile(string VaultFullFileName, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1641,7 +1641,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="vaultlocalFullpath"></param>
         /// <param name="this.WriteLine"></param>
         /// <returns></returns>
-        public bool DownloadFileFromFilename(VDFVCE.FileIteration fileIter, ref string vaultlocalFullpath, SasaLibDelegateWriteLine methodWriteLine = null)
+        public bool DownloadFileFromFilename(VDFVCE.FileIteration fileIter, ref string vaultlocalFullpath, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1686,7 +1686,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="fileIteration"></param>
         /// <param name="NewTopFolder"></param>
         /// <returns></returns>
-        private VDF.Vault.Results.FileAcquisitionResult DownloadOneFile(VDFVCE.FileIteration fileIteration, string NewTopFolder, SasaLibDelegateWriteLine methodWriteLine = null)
+        private VDF.Vault.Results.FileAcquisitionResult DownloadOneFile(VDFVCE.FileIteration fileIteration, string NewTopFolder, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1720,7 +1720,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="fileIter"></param>
         /// <param name="parentWindowHandle"></param>
-        public VDF.Vault.Results.AcquireFilesResults DownloadDialog(List<VDFVCE.FileIteration> fileIterationList, IntPtr parentWindowHandle, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDF.Vault.Results.AcquireFilesResults DownloadDialog(List<VDFVCE.FileIteration> fileIterationList, IntPtr parentWindowHandle, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1751,7 +1751,7 @@ namespace SasaLib.AutodeskVault
         /// </summary>
         /// <param name="fileIter"></param>
         /// <returns></returns>
-        public VDFVCE.FileIteration CheckInFile(VDFVCE.FileIteration fileIter, string comment = "", SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration CheckInFile(VDFVCE.FileIteration fileIter, string comment = "", Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1792,7 +1792,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="filename"></param>
         /// <param name="fileContents"></param>
         /// <returns></returns>
-        public ACW.ByteArray UploadFileResource(ACWTools.WebServiceManager svcmgr, string filename, byte[] fileContents, int MAX_FILE_TRANSFER_SIZE = 2147483647, SasaLibDelegateWriteLine methodWriteLine = null)
+        public ACW.ByteArray UploadFileResource(ACWTools.WebServiceManager svcmgr, string filename, byte[] fileContents, int MAX_FILE_TRANSFER_SIZE = 2147483647, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1850,7 +1850,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="CheckIn_fullFileName"></param>
         /// <param name="errcode"></param>
         /// <returns></returns>
-        public ACW.File AddUploadFile(string vaultFolder, string CheckIn_fullFileName, out int errcode, string versionComment = null, string vaultFileName = null, SasaLibDelegateWriteLine methodWriteLine = null)
+        public ACW.File AddUploadFile(string vaultFolder, string CheckIn_fullFileName, out int errcode, string versionComment = null, string vaultFileName = null, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1871,7 +1871,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="versionComment"></param>
         /// <param name="vaultFileName"></param>
         /// <returns></returns>
-        private ACW.File AddUploadFile(ACW.Folder oFolder, string CheckIn_fullFileName, out int errcode, string versionComment = null, string vaultFileName = null, SasaLibDelegateWriteLine methodWriteLine = null)
+        private ACW.File AddUploadFile(ACW.Folder oFolder, string CheckIn_fullFileName, out int errcode, string versionComment = null, string vaultFileName = null, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -1967,7 +1967,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="keepChekedOut"></param>
         /// <param name="vaultNewFileName"></param>
         /// <returns></returns>
-        public ACW.File CheckinUploadfile(VDFVCE.FileIteration fileIter, string CheckIn_fullFileName, out int errcode, string versionComment = null, bool keepChekedOut = false, string vaultNewFileName = null, SasaLibDelegateWriteLine methodWriteLine = null)
+        public ACW.File CheckinUploadfile(VDFVCE.FileIteration fileIter, string CheckIn_fullFileName, out int errcode, string versionComment = null, bool keepChekedOut = false, string vaultNewFileName = null, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 
@@ -2031,7 +2031,7 @@ namespace SasaLib.AutodeskVault
         /// <param name="newFileName">nullの場合は newFilePath から 拡張子含むファイル名が使用されます</param>
         /// <param name="comment">チェックイン時のコメント</param>
         /// <returns>成功した場合は入力した FileIteration を返す。失敗した場合は null</returns>
-        public VDFVCE.FileIteration RenameCheckInFile(VDFVCE.FileIteration fileIter, string newFilePath, string newFileName = null, string comment = null, SasaLibDelegateWriteLine methodWriteLine = null)
+        public VDFVCE.FileIteration RenameCheckInFile(VDFVCE.FileIteration fileIter, string newFilePath, string newFileName = null, string comment = null, Action<string> methodWriteLine = null)
         {
             if (methodWriteLine == null) methodWriteLine = this.WriteLine;
 

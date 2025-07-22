@@ -169,7 +169,7 @@ namespace SasaLib.SysConfigurator
         /// </summary>
         /// <param name="InstructionsVersionToyoAddinFullFileName"></param>
         /// <returns></returns>
-        public string Applied_GetInstructions_fullfilename(string InstructionsVersionToyoAddinFullFileName, DateTime ConfigDateTime, SasaLibDelegateWriteLine LogWrite)
+        public string Applied_GetInstructions_fullfilename(string InstructionsVersionToyoAddinFullFileName, DateTime ConfigDateTime, Action<string> LogWrite)
         {
             string applied_Instructions_fullfilename;
             string timestamp;
@@ -201,7 +201,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="LogWrite"></param>
         /// <param name="foreceExecute"></param>
         /// <returns></returns>
-        public bool JobLoadAndExecute(string ConfigFullFileName, string baseDir, SasaLibDelegateWriteLine LogWrite, bool foreceExecute = false, bool IsRemoveControlFile = false)
+        public bool JobLoadAndExecute(string ConfigFullFileName, string baseDir, Action<string> LogWrite, bool foreceExecute = false, bool IsRemoveControlFile = false)
         {
             if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
 
@@ -419,7 +419,7 @@ namespace SasaLib.SysConfigurator
             }
         }
 
-        private bool Process_GetFiles(List<GetFulFileName> GetFileLists, string baseDir, SasaLibDelegateWriteLine LogWrite)
+        private bool Process_GetFiles(List<GetFulFileName> GetFileLists, string baseDir, Action<string> LogWrite)
         {
             bool result = true;
 
@@ -442,7 +442,7 @@ namespace SasaLib.SysConfigurator
 
         }
 
-        private bool Process_ChangeAttribute(List<SetAttributeFile> SetAttributeFiles, SasaLibDelegateWriteLine LogWrite)
+        private bool Process_ChangeAttribute(List<SetAttributeFile> SetAttributeFiles, Action<string> LogWrite)
         {
             bool result = true;
 
@@ -462,7 +462,7 @@ namespace SasaLib.SysConfigurator
             return result;
         }
 
-        private bool Process_Delete(List<RemoveFile> RemoveFiles, SasaLibDelegateWriteLine LogWrite)
+        private bool Process_Delete(List<RemoveFile> RemoveFiles, Action<string> LogWrite)
         {
             bool result = true;
 
@@ -483,7 +483,7 @@ namespace SasaLib.SysConfigurator
             return result;
         }
 
-        private bool Process_SetRegistry(List<SetRegistry> SetRegistries, SasaLibDelegateWriteLine LogWrite)
+        private bool Process_SetRegistry(List<SetRegistry> SetRegistries, Action<string> LogWrite)
         {
             bool result = true;
 
@@ -504,7 +504,7 @@ namespace SasaLib.SysConfigurator
             return result;
         }
 
-        private bool Process_RemoveRegistry(List<RemoveRegistry> RemoveRegistries, SasaLibDelegateWriteLine LogWrite)
+        private bool Process_RemoveRegistry(List<RemoveRegistry> RemoveRegistries, Action<string> LogWrite)
         {
             bool result = true;
 
@@ -525,7 +525,7 @@ namespace SasaLib.SysConfigurator
             return result;
         }
 
-        private bool Process_ProcessExecute(List<ExecuteProcess> ExecuteProcesses, SasaLibDelegateWriteLine LogWrite)
+        private bool Process_ProcessExecute(List<ExecuteProcess> ExecuteProcesses, Action<string> LogWrite)
         {
             bool result = true;
 
@@ -552,7 +552,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="file"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private bool GetFiles(GetFulFileName file, string baseDirectory, SasaLibDelegateWriteLine WriteLine)
+        private bool GetFiles(GetFulFileName file, string baseDirectory, Action<string> WriteLine)
         {
             bool resultRemoteLode = false;
 
@@ -766,7 +766,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="file"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private bool ChangeAttribute(SetAttributeFile file, SasaLibDelegateWriteLine WriteLine)
+        private bool ChangeAttribute(SetAttributeFile file, Action<string> WriteLine)
         {
             string LocalSideFullFileName = null;
 
@@ -864,7 +864,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="file"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private bool Delete(RemoveFile file, SasaLibDelegateWriteLine WriteLine)
+        private bool Delete(RemoveFile file, Action<string> WriteLine)
         {
             WriteLine($"■コメント \"{file.Comment}\"");
 
@@ -941,7 +941,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="setRegistry"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private bool SetRegistry(SetRegistry setRegistry, SasaLibDelegateWriteLine WriteLine)
+        private bool SetRegistry(SetRegistry setRegistry, Action<string> WriteLine)
         {
             WriteLine($"■コメント \"{setRegistry.Comment}\"");
 
@@ -1083,7 +1083,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="reegistry"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private bool RemoveRegistry(RemoveRegistry reegistry, SasaLibDelegateWriteLine WriteLine)
+        private bool RemoveRegistry(RemoveRegistry reegistry, Action<string> WriteLine)
         {
             WriteLine($"■コメント \"{reegistry.Comment}\"");
 
@@ -1195,7 +1195,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="executeProcess"></param>
         /// <param name="WriteLine"></param>
         /// <returns></returns>
-        private bool ProcessExecute(ExecuteProcess executeProcess, byte[] AES_key, byte[] AES_iv, SasaLibDelegateWriteLine WriteLine)
+        private bool ProcessExecute(ExecuteProcess executeProcess, byte[] AES_key, byte[] AES_iv, Action<string> WriteLine)
         {
             WriteLine($"■コメント \"{executeProcess.Comment}\"");
 
