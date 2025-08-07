@@ -22,4 +22,5 @@
     <PackageReference Include="System.Memory" Version="4.6.0" />
   </ItemGroup>
 
+	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 </Project>

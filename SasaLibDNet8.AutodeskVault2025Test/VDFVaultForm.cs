@@ -31,7 +31,7 @@ namespace SasaLib.AutodeskVault
     /// <summary>
     public class VDFVaultForm
     {
-        SasaLibDelegateWriteLine WriteLine = Console.WriteLine;
+        Action<string> WriteLine = Console.WriteLine;
 
         public VDF.Vault.Currency.Connections.Connection vaultConnection { get; private set; }
 

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("AAAAA")]
-[assembly: AssemblyDescription("BBBBBB")]
+//[assembly: AssemblyTitle("AAAAA")]
+//[assembly: AssemblyDescription("BBBBBB")]
 //[assembly: AssemblyConfiguration("CCCCCCCCC")]
 //[assembly: AssemblyCompany("TOYO MACHINE MANUFACTURING")]
 //[assembly: AssemblyProduct("EEEEEE")]
