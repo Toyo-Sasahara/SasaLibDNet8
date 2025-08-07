@@ -20,7 +20,6 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\MaterialCodeCheck.cs" Link="MaterialCodeCheck.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\MaterialCodeConfig.cs" Link="MaterialCodeConfig.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\MaterialCodeConfigWork.cs" Link="MaterialCodeConfigWork.cs" />
-	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberingSuppportConfigs.cs" Link="NumberingSuppportConfigs.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberingWebHelper.cs" Link="NumberingWebHelper.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberTypeConfig.cs" Link="NumberTypeConfig.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.NumberingSupport\NumberTypeConfigWork.cs" Link="NumberTypeConfigWork.cs" />
