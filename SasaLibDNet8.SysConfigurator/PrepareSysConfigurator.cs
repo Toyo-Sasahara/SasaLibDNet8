@@ -67,7 +67,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="VersonString"></param>
         /// <param name="delegate_RemoteServerGeFileList">デリゲート先</param>
         /// <param name="delegate_FieCopy">デリゲート先</param>
-        /// <param name="delegate_WriteLIne">デリゲート先</param>
+        /// <param name="WriteLine">デリゲート先</param>
         public PrepareSysConfigurator(
             string ServerControlFileFolder,
             string LocalConfigWorkFolder,
@@ -76,7 +76,7 @@ namespace SasaLib.SysConfigurator
             string VersonString,
             Delegate_RemoteServerGeFileList delegate_RemoteServerGeFileList,
             Delegate_FileCopy delegate_FieCopy,
-            Action<string> delegate_WriteLIne
+            Action<string> WriteLine
             )
         {
             this.ServerSideInstructionsToToyoAddinFolder = ServerControlFileFolder;
@@ -86,7 +86,7 @@ namespace SasaLib.SysConfigurator
             this.CadVersonString = VersonString;
             this.delegate_RemoteServerGeFileList = delegate_RemoteServerGeFileList;
             this.delegate_FileCopy = delegate_FieCopy;
-            this.delegate_WriteLine = delegate_WriteLIne;
+            this.delegate_WriteLine = WriteLine;
         }
 
         /// <summary>
