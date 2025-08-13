@@ -193,7 +193,7 @@ namespace SasaLib.SysConfigurator
                 else
                     WriteLine($"※PrepareSysConfigurator.RemoteServerControlFileLoad(..) フォルダ作成失敗 \"{folder}\" <<経過時間:{initilaizeSw.Elapsed.Hours} 時間{initilaizeSw.Elapsed.Minutes}分 {initilaizeSw.Elapsed.Seconds}秒>>");
 
-                bool getans = delegate_FileCopy(InstructionsVersionToyoAddinFullFileNameSeverSource, InstructionsVersionToyoAddinFullFileName);
+                bool getans = delegate_FileCopy(InstructionsVersionToyoAddinFullFileNameSeverSource, InstructionsVersionToyoAddinFullFileName, WriteLine);
 
 
                 if (getans == false)

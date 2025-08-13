@@ -88,7 +88,7 @@ namespace SasaLib.SysConfigurator
         public bool StdErr;
     }
 
-    public delegate bool Delegate_FileCopy(string Source, string Dist);
+    public delegate bool Delegate_FileCopy(string Source, string Dist, Action<string> WriteLine);
 
     [SupportedOSPlatform("windows")]
     public class XML_Control
@@ -614,7 +614,7 @@ namespace SasaLib.SysConfigurator
                 if (DelegateFileCopyFunc == null)
                     resultRemoteLode = GetSourceFileToTemp(ServerSideFullFileName, baseDirectory, LoadTempFile.FullTempFileName);
                 else
-                    resultRemoteLode = DelegateFileCopyFunc(ServerSideFullFileName, LoadTempFile.FullTempFileName);
+                    resultRemoteLode = DelegateFileCopyFunc(ServerSideFullFileName, LoadTempFile.FullTempFileName, WriteLine);
 
                 if (resultRemoteLode)
                 {
