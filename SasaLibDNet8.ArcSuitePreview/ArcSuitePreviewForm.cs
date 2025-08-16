@@ -1,4 +1,5 @@
 ﻿using SasaLib.NumberingSupport;
+using SharedClassLibrary;
 using StageServerRemote;
 using System;
 using System.Diagnostics;
@@ -63,6 +64,7 @@ namespace SasaLib.ArcSuitePreview
     /// <returns></returns>
     public delegate Image Delegate_GetPartListIllust(string PARTNUMBER);
     public delegate void Delegate_PartListIllustPictureBoxClick(string CadFullFileName);
+
 
     /// <summary>
     /// ArcSuite Previewフォームクラス
@@ -232,42 +234,48 @@ namespace SasaLib.ArcSuitePreview
         /// <summary>
         /// 
         /// </summary>
-        private string StageServerHost { get; set; }
+        //private string StageServerHost { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private string PipeNameDR;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //private string PipeNameDR;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private string ClientDomainName;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //private string ClientDomainName;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private string ClientUserName;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //private string ClientUserName;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private string ClientUserPassword;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //private string ClientUserPassword;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private bool ClsLogon;
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //private bool ClsLogon;
+
+        //private bool NewStreamMode;
+
+        //private int NewStreamModeTcpPort;
 
         /// <summary>
         /// アークスイートログイン名
         /// </summary>
-        private string ArcSuiteUserName;
+        //private string ArcSuiteUserName;
 
         /// <summary>
         /// アークスイートログインパスワード（平文）
         /// </summary>
-        private string ArcSuiteUserPass;
+        //private string ArcSuiteUserPass;
+
+        public ConnectionDataSet ConnectionDataSet { get; private set; }
 
         /// <summary>
         /// ArcSuite側へ設定・取得するCadType 列挙型 それぞれのＣＡＤアドインにて設定される
@@ -390,9 +398,11 @@ namespace SasaLib.ArcSuitePreview
         /// </summary>
         /// <param name="parentNativeWindow"></param>
         /// <param name="WriteLine"></param>
-        public ArcSuitePreviewForm(System.Windows.Forms.NativeWindow parentNativeWindow, Action<string> WriteLine = null)
+        public ArcSuitePreviewForm(System.Windows.Forms.NativeWindow parentNativeWindow, ConnectionDataSet connectionDataSet, Action<string> WriteLine = null)
         {
             this.parentNativeWindow = parentNativeWindow;
+
+            ConnectionDataSet = connectionDataSet;
 
             // デバッグメッセージデリゲート先選択
             if (WriteLine == null) this.WriteLine = DebugConsole.Write; else this.WriteLine = WriteLine;
@@ -442,7 +452,7 @@ namespace SasaLib.ArcSuitePreview
 
             thisNativeWindow = new System.Windows.Forms.NativeWindow();
 
-            currentStageServer_label.Text = StageServerHost;
+            currentStageServer_label.Text = ConnectionDataSet.StageServerHost;
 
             Enable_AplicationOpenFile_button(false);
 
@@ -1556,7 +1566,7 @@ namespace SasaLib.ArcSuitePreview
 
             InvokeRequired_Control_Enabled(UserCadType_AddRemove_button, false);
 
-            CadTypeArcSuiteControl cadSetControl = new CadTypeArcSuiteControl(ClientDomainName, ClientUserName, ClientUserPassword, ClsLogon, StageServerHost, PipeNameDR, ArcSuiteUserName, ArcSuiteUserPass);
+            CadTypeArcSuiteControl cadSetControl = new CadTypeArcSuiteControl(ConnectionDataSet);
             Task.Run(async () =>
             {
                 //cadSetControl.SetUnsetCadTypeFlag(User_zuban, ref msg, this.SetUnsetCadType, thisNativeWindow, false);
@@ -1582,19 +1592,10 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="cadType"></param>
         /// <param name="ArcSuiteUserName"></param>
         /// <param name="ArcSuiteUserPass"></param>
-        public void SetUnsetCadTypeFlagControlDatas(string StageServerHost, string PipeNameDR, string ClientDomainName, string ClientUserName, string ClientUserPassword, bool ClsLogon,
-            RemoteClientCadType.CadType cadType, string ArcSuiteUserName, string ArcSuiteUserPass)
+        public void SetUnsetCadTypeFlagControlDatas(RemoteClientCadType.CadType cadType)
         {
-            this.StageServerHost = StageServerHost;
-            this.PipeNameDR = PipeNameDR;
+           
 
-            this.ClientDomainName = ClientDomainName;
-            this.ClientUserName = ClientUserName;
-            this.ClientUserPassword = ClientUserPassword;
-            this.ClsLogon = ClsLogon;
-
-            this.ArcSuiteUserName = ArcSuiteUserName;
-            this.ArcSuiteUserPass = ArcSuiteUserPass;
             this.SetUnsetCadType = cadType;
             this.UserCadType_AddRemove_button.Enabled = true;
 
@@ -1619,17 +1620,10 @@ namespace SasaLib.ArcSuitePreview
 
                 WriteLine($"■ArcSuite図面属性変更開始 {arcSuiteZuban} Attr = \"{attributeName}\" Value = \"{attributeString}\"");
 
-                RemoteClientCadType rmcCadType = new RemoteClientCadType(
-                    ClientDomainName,
-                    ClientUserName,
-                    ClientUserPassword,
-                    ClsLogon,
-                    StageServerHost,
-                    PipeNameDR
-                    );
+                RemoteClientCadType rmcCadType = new RemoteClientCadType(ConnectionDataSet);
 
                 // 処理１ 検索
-                bool result = rmcCadType.MergeArcSuiteAttribute1(arcSuiteZuban, attributeName, attributeString, ArcSuiteUserName, ArcSuiteUserPass);
+                bool result = rmcCadType.MergeArcSuiteAttribute1(arcSuiteZuban, attributeName, attributeString, ConnectionDataSet.ArcSuiteUserName, ConnectionDataSet.ArcSuiteUserPass);
 
                 if (result)
                 {
@@ -2364,7 +2358,7 @@ namespace SasaLib.ArcSuitePreview
 
         private void currentStageServer_label_Paint(object sender, PaintEventArgs e)
         {
-            currentStageServer_label.Text = StageServerHost;
+            currentStageServer_label.Text = ConnectionDataSet.StageServerHost;
         }
 
         private void sasaLibBasicPageControl_CurrentPageChanged(object sender, EventArgs e)
@@ -2443,7 +2437,7 @@ namespace SasaLib.ArcSuitePreview
 
             InvokeRequired_Control_Enabled(ArcSuiteAttr_groupBox, true);
 
-            InvokeRequired_Control_Text(currentStageServer_label, StageServerHost); // 現在のステージングサーバーホスト名をラベルにセット
+            InvokeRequired_Control_Text(currentStageServer_label, ConnectionDataSet.StageServerHost); // 現在のステージングサーバーホスト名をラベルにセット
 
             // 検索対象のCAD側ドキュメントフルファイル名を取得
             this.CadDataFullFileName = CadDataFullFileName;
