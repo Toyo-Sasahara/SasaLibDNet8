@@ -28,1019 +28,991 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Debug_panel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.QualityMode_comboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.X_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.SCALE_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Y_numericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AplicationOpenFile_button = new System.Windows.Forms.Button();
-            this.sasaLibBasicPageControl = new SasaLib.SasaLibBasicPageControl();
-            this.ArcsuitePreviewForm_Msg_label = new System.Windows.Forms.Label();
-            this.ArcSuite_Status_label = new System.Windows.Forms.Label();
-            this.ArcSuitePreviewPictureBox = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.AttrPanel = new System.Windows.Forms.Panel();
-            this.currentStageServer_label = new System.Windows.Forms.Label();
-            this.ArcSuiteAttr_groupBox = new System.Windows.Forms.GroupBox();
-            this.DrawingInfoLabel4 = new System.Windows.Forms.Label();
-            this.OnOrderClear_button = new System.Windows.Forms.Button();
-            this.UserCadType_AddRemove_button = new System.Windows.Forms.Button();
-            this.DrawingInfoLabel3 = new System.Windows.Forms.Label();
-            this.OP_PartListIllust_groupbox = new System.Windows.Forms.GroupBox();
-            this.PartListIllust_pictureBox = new System.Windows.Forms.PictureBox();
-            this.DrawingInfoLabel2 = new System.Windows.Forms.Label();
-            this.modelcreationonorder_label = new System.Windows.Forms.Label();
-            this.ArcSuiteCreatedOn_label = new System.Windows.Forms.Label();
-            this.FindTimeStamp_label = new System.Windows.Forms.Label();
-            this.VaultPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.Vault_DrawingSearch_button = new System.Windows.Forms.Button();
-            this.Vault_AutoCAD_DWGSearch_button = new System.Windows.Forms.Button();
-            this.Vault_ContentCenter_ComponentSearch_button = new System.Windows.Forms.Button();
-            this.ArcSuiteWebSearchAndView_button = new System.Windows.Forms.Button();
-            this.OP_ManualSearchPanel = new System.Windows.Forms.Panel();
-            this.ManualSearch_button = new System.Windows.Forms.Button();
-            this.ManualSearch_textBox = new System.Windows.Forms.TextBox();
-            this.ClipBoardTextSearch_button = new System.Windows.Forms.Button();
-            this.OP_ActiveDocmentSearch_Button = new System.Windows.Forms.Button();
-            this.PreviewControlPanel = new System.Windows.Forms.Panel();
-            this.Redraw_button = new System.Windows.Forms.Button();
-            this.DrawText_button = new System.Windows.Forms.Button();
-            this.Close_panel = new System.Windows.Forms.Panel();
-            this.Hide_button = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.OP_SendVault_button = new System.Windows.Forms.Button();
-            this.OP_LoadVault_button = new System.Windows.Forms.Button();
-            this.VaultCheckInPngSuffix_textBox = new System.Windows.Forms.TextBox();
-            this.ColorSet2_checkBox = new System.Windows.Forms.CheckBox();
-            this.REDO_button = new System.Windows.Forms.Button();
-            this.OP_CAD_MeasureTool_Panel = new System.Windows.Forms.Panel();
-            this.SectionViewStart_button = new System.Windows.Forms.Button();
-            this.SectionViewEnd_button = new System.Windows.Forms.Button();
-            this.MeasureTool_Button = new System.Windows.Forms.Button();
-            this.UNDO_button = new System.Windows.Forms.Button();
-            this.OP_MaximizeWindow_button = new System.Windows.Forms.Button();
-            this.MidLabel1_label = new System.Windows.Forms.Label();
-            this.SendClipBord_Button = new System.Windows.Forms.Button();
-            this.MidLabel2_label = new System.Windows.Forms.Label();
-            this.TitleBlockScale_button = new System.Windows.Forms.Button();
-            this.SavedMsg_label = new System.Windows.Forms.Label();
-            this.SaveCurrent_button = new System.Windows.Forms.Button();
-            this.ImageReLoad_button = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.PreviewPanel = new System.Windows.Forms.Panel();
-            this.PreviewPanel.SuspendLayout();
-            this.Debug_panel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.X_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SCALE_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Y_numericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArcSuitePreviewPictureBox)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.AttrPanel.SuspendLayout();
-            this.ArcSuiteAttr_groupBox.SuspendLayout();
-            this.OP_PartListIllust_groupbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PartListIllust_pictureBox)).BeginInit();
-            this.VaultPanel.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.OP_ManualSearchPanel.SuspendLayout();
-            this.PreviewControlPanel.SuspendLayout();
-            this.Close_panel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.OP_CAD_MeasureTool_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).BeginInit();
+            components = new System.ComponentModel.Container();
+            SplitContainer splitContainer1;
+            PreviewPanel = new Panel();
+            Debug_panel = new Panel();
+            panel2 = new Panel();
+            QualityMode_comboBox = new ComboBox();
+            button1 = new Button();
+            X_numericUpDown = new NumericUpDown();
+            SCALE_numericUpDown = new NumericUpDown();
+            Y_numericUpDown = new NumericUpDown();
+            label3 = new Label();
+            label5 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            AplicationOpenFile_button = new Button();
+            sasaLibBasicPageControl = new SasaLibBasicPageControl();
+            ArcsuitePreviewForm_Msg_label = new Label();
+            ArcSuite_Status_label = new Label();
+            ArcSuitePreviewPictureBox = new PictureBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            AttrPanel = new Panel();
+            currentStageServer_label = new Label();
+            ArcSuiteAttr_groupBox = new GroupBox();
+            DrawingInfoLabel4 = new Label();
+            OnOrderClear_button = new Button();
+            UserCadType_AddRemove_button = new Button();
+            DrawingInfoLabel3 = new Label();
+            OP_PartListIllust_groupbox = new GroupBox();
+            PartListIllust_pictureBox = new PictureBox();
+            DrawingInfoLabel2 = new Label();
+            modelcreationonorder_label = new Label();
+            ArcSuiteCreatedOn_label = new Label();
+            FindTimeStamp_label = new Label();
+            VaultPanel = new Panel();
+            panel3 = new Panel();
+            Vault_DrawingSearch_button = new Button();
+            Vault_AutoCAD_DWGSearch_button = new Button();
+            Vault_ContentCenter_ComponentSearch_button = new Button();
+            ArcSuiteWebSearchAndView_button = new Button();
+            OP_ManualSearchPanel = new Panel();
+            ManualSearch_button = new Button();
+            ManualSearch_textBox = new TextBox();
+            ClipBoardTextSearch_button = new Button();
+            OP_ActiveDocmentSearch_Button = new Button();
+            PreviewControlPanel = new Panel();
+            Redraw_button = new Button();
+            DrawText_button = new Button();
+            Close_panel = new Panel();
+            Hide_button = new Button();
+            panel1 = new Panel();
+            OP_SendVault_button = new Button();
+            OP_LoadVault_button = new Button();
+            VaultCheckInPngSuffix_textBox = new TextBox();
+            ColorSet2_checkBox = new CheckBox();
+            REDO_button = new Button();
+            OP_CAD_MeasureTool_Panel = new Panel();
+            SectionViewStart_button = new Button();
+            SectionViewEnd_button = new Button();
+            MeasureTool_Button = new Button();
+            UNDO_button = new Button();
+            OP_MaximizeWindow_button = new Button();
+            MidLabel1_label = new Label();
+            SendClipBord_Button = new Button();
+            MidLabel2_label = new Label();
+            TitleBlockScale_button = new Button();
+            SavedMsg_label = new Label();
+            SaveCurrent_button = new Button();
+            ImageReLoad_button = new Button();
+            toolTip1 = new ToolTip(components);
+            label4 = new Label();
+            splitContainer1 = new SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // PreviewPanel
-            // 
-            this.PreviewPanel.Controls.Add(this.Debug_panel);
-            this.PreviewPanel.Controls.Add(this.AplicationOpenFile_button);
-            this.PreviewPanel.Controls.Add(this.sasaLibBasicPageControl);
-            this.PreviewPanel.Controls.Add(this.ArcsuitePreviewForm_Msg_label);
-            this.PreviewPanel.Controls.Add(this.ArcSuite_Status_label);
-            this.PreviewPanel.Controls.Add(this.ArcSuitePreviewPictureBox);
-            this.PreviewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PreviewPanel.Location = new System.Drawing.Point(0, 0);
-            this.PreviewPanel.Margin = new System.Windows.Forms.Padding(1);
-            this.PreviewPanel.Name = "PreviewPanel";
-            this.PreviewPanel.Size = new System.Drawing.Size(451, 400);
-            this.PreviewPanel.TabIndex = 11;
-            // 
-            // Debug_panel
-            // 
-            this.Debug_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Debug_panel.BackColor = System.Drawing.Color.Transparent;
-            this.Debug_panel.Controls.Add(this.panel2);
-            this.Debug_panel.Controls.Add(this.label3);
-            this.Debug_panel.Controls.Add(this.label5);
-            this.Debug_panel.Controls.Add(this.label2);
-            this.Debug_panel.Controls.Add(this.label1);
-            this.Debug_panel.Location = new System.Drawing.Point(143, 15);
-            this.Debug_panel.Name = "Debug_panel";
-            this.Debug_panel.Size = new System.Drawing.Size(295, 143);
-            this.Debug_panel.TabIndex = 7;
-            this.Debug_panel.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.QualityMode_comboBox);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.X_numericUpDown);
-            this.panel2.Controls.Add(this.SCALE_numericUpDown);
-            this.panel2.Controls.Add(this.Y_numericUpDown);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 54);
-            this.panel2.TabIndex = 32;
-            // 
-            // QualityMode_comboBox
-            // 
-            this.QualityMode_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.QualityMode_comboBox.FormattingEnabled = true;
-            this.QualityMode_comboBox.Location = new System.Drawing.Point(6, 26);
-            this.QualityMode_comboBox.Name = "QualityMode_comboBox";
-            this.QualityMode_comboBox.Size = new System.Drawing.Size(159, 20);
-            this.QualityMode_comboBox.TabIndex = 29;
-            this.QualityMode_comboBox.TabStop = false;
-            this.QualityMode_comboBox.SelectedIndexChanged += new System.EventHandler(this.QualityMode_comboBox_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(167, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 18);
-            this.button1.TabIndex = 6;
-            this.button1.TabStop = false;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // X_numericUpDown
-            // 
-            this.X_numericUpDown.Location = new System.Drawing.Point(6, 3);
-            this.X_numericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.X_numericUpDown.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            -2147483648});
-            this.X_numericUpDown.Name = "X_numericUpDown";
-            this.X_numericUpDown.Size = new System.Drawing.Size(67, 19);
-            this.X_numericUpDown.TabIndex = 26;
-            this.X_numericUpDown.TabStop = false;
-            this.X_numericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown_ValueChanged);
-            // 
-            // SCALE_numericUpDown
-            // 
-            this.SCALE_numericUpDown.DecimalPlaces = 3;
-            this.SCALE_numericUpDown.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.SCALE_numericUpDown.Location = new System.Drawing.Point(152, 3);
-            this.SCALE_numericUpDown.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.SCALE_numericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.SCALE_numericUpDown.Name = "SCALE_numericUpDown";
-            this.SCALE_numericUpDown.Size = new System.Drawing.Size(67, 19);
-            this.SCALE_numericUpDown.TabIndex = 28;
-            this.SCALE_numericUpDown.TabStop = false;
-            this.SCALE_numericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.SCALE_numericUpDown.ValueChanged += new System.EventHandler(this.SCALE_numericUpDown_ValueChanged);
-            // 
-            // Y_numericUpDown
-            // 
-            this.Y_numericUpDown.Location = new System.Drawing.Point(79, 3);
-            this.Y_numericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.Y_numericUpDown.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            -2147483648});
-            this.Y_numericUpDown.Name = "Y_numericUpDown";
-            this.Y_numericUpDown.Size = new System.Drawing.Size(67, 19);
-            this.Y_numericUpDown.TabIndex = 27;
-            this.Y_numericUpDown.TabStop = false;
-            this.Y_numericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Enabled = false;
-            this.label3.Location = new System.Drawing.Point(6, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 12);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "label3";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Enabled = false;
-            this.label5.Location = new System.Drawing.Point(6, 77);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 12);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Debug info";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(5, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 12);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Enabled = false;
-            this.label1.Location = new System.Drawing.Point(5, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
-            // 
-            // AplicationOpenFile_button
-            // 
-            this.AplicationOpenFile_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AplicationOpenFile_button.Enabled = false;
-            this.AplicationOpenFile_button.Location = new System.Drawing.Point(7, 400);
-            this.AplicationOpenFile_button.Name = "AplicationOpenFile_button";
-            this.AplicationOpenFile_button.Size = new System.Drawing.Size(131, 23);
-            this.AplicationOpenFile_button.TabIndex = 23;
-            this.AplicationOpenFile_button.Text = "ｱﾌﾟﾘｹｰｼｮﾝから開く";
-            this.AplicationOpenFile_button.UseVisualStyleBackColor = true;
-            this.AplicationOpenFile_button.Visible = false;
-            this.AplicationOpenFile_button.Click += new System.EventHandler(this.AplicationOpenFile_button_Click);
-            // 
-            // sasaLibBasicPageControl
-            // 
-            this.sasaLibBasicPageControl.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sasaLibBasicPageControl.CurrentPage = 0;
-            this.sasaLibBasicPageControl.Location = new System.Drawing.Point(170, 401);
-            this.sasaLibBasicPageControl.MaxPage = 0;
-            this.sasaLibBasicPageControl.Name = "sasaLibBasicPageControl";
-            this.sasaLibBasicPageControl.Size = new System.Drawing.Size(130, 22);
-            this.sasaLibBasicPageControl.TabIndex = 8;
-            this.sasaLibBasicPageControl.CurrentPageChanged += new System.EventHandler<System.EventArgs>(this.sasaLibBasicPageControl_CurrentPageChanged);
-            // 
-            // ArcsuitePreviewForm_Msg_label
-            // 
-            this.ArcsuitePreviewForm_Msg_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcsuitePreviewForm_Msg_label.BackColor = System.Drawing.Color.Transparent;
-            this.ArcsuitePreviewForm_Msg_label.Enabled = false;
-            this.ArcsuitePreviewForm_Msg_label.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ArcsuitePreviewForm_Msg_label.Location = new System.Drawing.Point(12, 15);
-            this.ArcsuitePreviewForm_Msg_label.Name = "ArcsuitePreviewForm_Msg_label";
-            this.ArcsuitePreviewForm_Msg_label.Size = new System.Drawing.Size(426, 156);
-            this.ArcsuitePreviewForm_Msg_label.TabIndex = 1;
-            this.ArcsuitePreviewForm_Msg_label.Text = "検索指示待ち";
-            this.ArcsuitePreviewForm_Msg_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ArcSuite_Status_label
-            // 
-            this.ArcSuite_Status_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcSuite_Status_label.BackColor = System.Drawing.Color.Transparent;
-            this.ArcSuite_Status_label.Enabled = false;
-            this.ArcSuite_Status_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ArcSuite_Status_label.ForeColor = System.Drawing.Color.Red;
-            this.ArcSuite_Status_label.Location = new System.Drawing.Point(50, 194);
-            this.ArcSuite_Status_label.Name = "ArcSuite_Status_label";
-            this.ArcSuite_Status_label.Size = new System.Drawing.Size(348, 64);
-            this.ArcSuite_Status_label.TabIndex = 2;
-            this.ArcSuite_Status_label.Text = "...";
-            this.ArcSuite_Status_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ArcSuitePreviewPictureBox
-            // 
-            this.ArcSuitePreviewPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArcSuitePreviewPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.ArcSuitePreviewPictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.ArcSuitePreviewPictureBox.Name = "ArcSuitePreviewPictureBox";
-            this.ArcSuitePreviewPictureBox.Size = new System.Drawing.Size(451, 400);
-            this.ArcSuitePreviewPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ArcSuitePreviewPictureBox.TabIndex = 0;
-            this.ArcSuitePreviewPictureBox.TabStop = false;
-            this.ArcSuitePreviewPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.ArcSuitePreviewPictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.ArcSuitePreviewPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.AttrPanel);
-            this.flowLayoutPanel1.Controls.Add(this.VaultPanel);
-            this.flowLayoutPanel1.Controls.Add(this.PreviewControlPanel);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(451, 408);
-            this.flowLayoutPanel1.TabIndex = 35;
-            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
-            // 
-            // AttrPanel
-            // 
-            this.AttrPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AttrPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AttrPanel.Controls.Add(this.currentStageServer_label);
-            this.AttrPanel.Controls.Add(this.ArcSuiteAttr_groupBox);
-            this.AttrPanel.Controls.Add(this.FindTimeStamp_label);
-            this.AttrPanel.Location = new System.Drawing.Point(1, 1);
-            this.AttrPanel.Margin = new System.Windows.Forms.Padding(1);
-            this.AttrPanel.MinimumSize = new System.Drawing.Size(390, 150);
-            this.AttrPanel.Name = "AttrPanel";
-            this.AttrPanel.Size = new System.Drawing.Size(442, 207);
-            this.AttrPanel.TabIndex = 14;
-            // 
-            // currentStageServer_label
-            // 
-            this.currentStageServer_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.currentStageServer_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.currentStageServer_label.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.currentStageServer_label.Location = new System.Drawing.Point(379, 185);
-            this.currentStageServer_label.Name = "currentStageServer_label";
-            this.currentStageServer_label.Size = new System.Drawing.Size(60, 19);
-            this.currentStageServer_label.TabIndex = 25;
-            this.currentStageServer_label.Text = "---";
-            this.currentStageServer_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.currentStageServer_label.Paint += new System.Windows.Forms.PaintEventHandler(this.currentStageServer_label_Paint);
-            // 
-            // ArcSuiteAttr_groupBox
-            // 
-            this.ArcSuiteAttr_groupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.DrawingInfoLabel4);
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.OnOrderClear_button);
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.UserCadType_AddRemove_button);
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.DrawingInfoLabel3);
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.OP_PartListIllust_groupbox);
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.DrawingInfoLabel2);
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.modelcreationonorder_label);
-            this.ArcSuiteAttr_groupBox.Controls.Add(this.ArcSuiteCreatedOn_label);
-            this.ArcSuiteAttr_groupBox.Location = new System.Drawing.Point(3, 5);
-            this.ArcSuiteAttr_groupBox.Name = "ArcSuiteAttr_groupBox";
-            this.ArcSuiteAttr_groupBox.Size = new System.Drawing.Size(434, 178);
-            this.ArcSuiteAttr_groupBox.TabIndex = 24;
-            this.ArcSuiteAttr_groupBox.TabStop = false;
-            this.ArcSuiteAttr_groupBox.Text = "ｱｰｸｽｲｰﾄでの属性値";
-            // 
-            // DrawingInfoLabel4
-            // 
-            this.DrawingInfoLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawingInfoLabel4.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.DrawingInfoLabel4.Location = new System.Drawing.Point(12, 130);
-            this.DrawingInfoLabel4.Name = "DrawingInfoLabel4";
-            this.DrawingInfoLabel4.Size = new System.Drawing.Size(416, 18);
-            this.DrawingInfoLabel4.TabIndex = 18;
-            this.DrawingInfoLabel4.Text = "---";
-            // 
-            // OnOrderClear_button
-            // 
-            this.OnOrderClear_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OnOrderClear_button.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.OnOrderClear_button.Location = new System.Drawing.Point(160, 150);
-            this.OnOrderClear_button.Margin = new System.Windows.Forms.Padding(0);
-            this.OnOrderClear_button.Name = "OnOrderClear_button";
-            this.OnOrderClear_button.Size = new System.Drawing.Size(134, 22);
-            this.OnOrderClear_button.TabIndex = 20;
-            this.OnOrderClear_button.TabStop = false;
-            this.OnOrderClear_button.Text = "3D作成発注中を解除";
-            this.toolTip1.SetToolTip(this.OnOrderClear_button, "3D作成発注中をクリア");
-            this.OnOrderClear_button.UseVisualStyleBackColor = true;
-            this.OnOrderClear_button.Click += new System.EventHandler(this.OnOrderClear_button_Click);
-            // 
-            // UserCadType_AddRemove_button
-            // 
-            this.UserCadType_AddRemove_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserCadType_AddRemove_button.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.UserCadType_AddRemove_button.Location = new System.Drawing.Point(300, 150);
-            this.UserCadType_AddRemove_button.Name = "UserCadType_AddRemove_button";
-            this.UserCadType_AddRemove_button.Size = new System.Drawing.Size(134, 22);
-            this.UserCadType_AddRemove_button.TabIndex = 21;
-            this.UserCadType_AddRemove_button.TabStop = false;
-            this.UserCadType_AddRemove_button.Text = "CAD有効(申告/取消)";
-            this.toolTip1.SetToolTip(this.UserCadType_AddRemove_button, "3Dモデルの 申告/取消");
-            this.UserCadType_AddRemove_button.UseVisualStyleBackColor = true;
-            this.UserCadType_AddRemove_button.Click += new System.EventHandler(this.UserCadType_AddRemove_button_Click);
-            // 
-            // DrawingInfoLabel3
-            // 
-            this.DrawingInfoLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawingInfoLabel3.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.DrawingInfoLabel3.Location = new System.Drawing.Point(12, 60);
-            this.DrawingInfoLabel3.Name = "DrawingInfoLabel3";
-            this.DrawingInfoLabel3.Size = new System.Drawing.Size(295, 18);
-            this.DrawingInfoLabel3.TabIndex = 19;
-            this.DrawingInfoLabel3.Text = "---";
-            // 
-            // OP_PartListIllust_groupbox
-            // 
-            this.OP_PartListIllust_groupbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.OP_PartListIllust_groupbox.Controls.Add(this.PartListIllust_pictureBox);
-            this.OP_PartListIllust_groupbox.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.OP_PartListIllust_groupbox.Location = new System.Drawing.Point(313, 12);
-            this.OP_PartListIllust_groupbox.Name = "OP_PartListIllust_groupbox";
-            this.OP_PartListIllust_groupbox.Size = new System.Drawing.Size(115, 72);
-            this.OP_PartListIllust_groupbox.TabIndex = 35;
-            this.OP_PartListIllust_groupbox.TabStop = false;
-            this.OP_PartListIllust_groupbox.Text = "パーツリストイラスト";
-            // 
-            // PartListIllust_pictureBox
-            // 
-            this.PartListIllust_pictureBox.Location = new System.Drawing.Point(6, 13);
-            this.PartListIllust_pictureBox.Name = "PartListIllust_pictureBox";
-            this.PartListIllust_pictureBox.Size = new System.Drawing.Size(103, 54);
-            this.PartListIllust_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PartListIllust_pictureBox.TabIndex = 34;
-            this.PartListIllust_pictureBox.TabStop = false;
-            this.PartListIllust_pictureBox.DoubleClick += new System.EventHandler(this.PartListIllust_pictureBox_DoubleClick);
-            // 
-            // DrawingInfoLabel2
-            // 
-            this.DrawingInfoLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawingInfoLabel2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.DrawingInfoLabel2.Location = new System.Drawing.Point(12, 37);
-            this.DrawingInfoLabel2.Name = "DrawingInfoLabel2";
-            this.DrawingInfoLabel2.Size = new System.Drawing.Size(295, 18);
-            this.DrawingInfoLabel2.TabIndex = 16;
-            this.DrawingInfoLabel2.Text = "---";
-            // 
-            // modelcreationonorder_label
-            // 
-            this.modelcreationonorder_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modelcreationonorder_label.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.modelcreationonorder_label.Location = new System.Drawing.Point(12, 16);
-            this.modelcreationonorder_label.Name = "modelcreationonorder_label";
-            this.modelcreationonorder_label.Size = new System.Drawing.Size(295, 18);
-            this.modelcreationonorder_label.TabIndex = 17;
-            this.modelcreationonorder_label.Text = "---";
-            // 
-            // ArcSuiteCreatedOn_label
-            // 
-            this.ArcSuiteCreatedOn_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcSuiteCreatedOn_label.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ArcSuiteCreatedOn_label.ForeColor = System.Drawing.Color.Crimson;
-            this.ArcSuiteCreatedOn_label.Location = new System.Drawing.Point(12, 87);
-            this.ArcSuiteCreatedOn_label.Name = "ArcSuiteCreatedOn_label";
-            this.ArcSuiteCreatedOn_label.Size = new System.Drawing.Size(416, 41);
-            this.ArcSuiteCreatedOn_label.TabIndex = 21;
-            this.ArcSuiteCreatedOn_label.Text = "---";
-            this.toolTip1.SetToolTip(this.ArcSuiteCreatedOn_label, "AAA");
-            // 
-            // FindTimeStamp_label
-            // 
-            this.FindTimeStamp_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FindTimeStamp_label.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FindTimeStamp_label.Location = new System.Drawing.Point(4, 185);
-            this.FindTimeStamp_label.Name = "FindTimeStamp_label";
-            this.FindTimeStamp_label.Size = new System.Drawing.Size(366, 19);
-            this.FindTimeStamp_label.TabIndex = 19;
-            this.FindTimeStamp_label.Text = "---";
-            // 
-            // VaultPanel
-            // 
-            this.VaultPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.VaultPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VaultPanel.Controls.Add(this.panel3);
-            this.VaultPanel.Controls.Add(this.ArcSuiteWebSearchAndView_button);
-            this.VaultPanel.Controls.Add(this.OP_ManualSearchPanel);
-            this.VaultPanel.Controls.Add(this.ClipBoardTextSearch_button);
-            this.VaultPanel.Controls.Add(this.OP_ActiveDocmentSearch_Button);
-            this.VaultPanel.Location = new System.Drawing.Point(1, 210);
-            this.VaultPanel.Margin = new System.Windows.Forms.Padding(1);
-            this.VaultPanel.Name = "VaultPanel";
-            this.VaultPanel.Size = new System.Drawing.Size(442, 74);
-            this.VaultPanel.TabIndex = 34;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.Vault_DrawingSearch_button);
-            this.panel3.Controls.Add(this.Vault_AutoCAD_DWGSearch_button);
-            this.panel3.Controls.Add(this.Vault_ContentCenter_ComponentSearch_button);
-            this.panel3.Location = new System.Drawing.Point(3, 39);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(434, 30);
-            this.panel3.TabIndex = 27;
-            // 
-            // Vault_DrawingSearch_button
-            // 
-            this.Vault_DrawingSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Vault_DrawingSearch_button.Font = new System.Drawing.Font("MS UI Gothic", 7F);
-            this.Vault_DrawingSearch_button.Location = new System.Drawing.Point(177, 3);
-            this.Vault_DrawingSearch_button.Name = "Vault_DrawingSearch_button";
-            this.Vault_DrawingSearch_button.Size = new System.Drawing.Size(116, 23);
-            this.Vault_DrawingSearch_button.TabIndex = 28;
-            this.Vault_DrawingSearch_button.TabStop = false;
-            this.Vault_DrawingSearch_button.Text = "Vaultから図面を開く";
-            this.Vault_DrawingSearch_button.UseVisualStyleBackColor = true;
-            this.Vault_DrawingSearch_button.Click += new System.EventHandler(this.Vault_DrawingSearch_button_Click);
-            // 
-            // Vault_AutoCAD_DWGSearch_button
-            // 
-            this.Vault_AutoCAD_DWGSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Vault_AutoCAD_DWGSearch_button.Font = new System.Drawing.Font("MS UI Gothic", 7F);
-            this.Vault_AutoCAD_DWGSearch_button.Location = new System.Drawing.Point(299, 3);
-            this.Vault_AutoCAD_DWGSearch_button.Name = "Vault_AutoCAD_DWGSearch_button";
-            this.Vault_AutoCAD_DWGSearch_button.Size = new System.Drawing.Size(130, 23);
-            this.Vault_AutoCAD_DWGSearch_button.TabIndex = 27;
-            this.Vault_AutoCAD_DWGSearch_button.TabStop = false;
-            this.Vault_AutoCAD_DWGSearch_button.Text = "AutoCADのDWGﾌｧｲﾙを開く";
-            this.toolTip1.SetToolTip(this.Vault_AutoCAD_DWGSearch_button, "Vaultから最初に見つかったAutoCADファイルをInventorで開きます");
-            this.Vault_AutoCAD_DWGSearch_button.UseVisualStyleBackColor = true;
-            this.Vault_AutoCAD_DWGSearch_button.Click += new System.EventHandler(this.Vault_AutoCAD_DWGSearch_button_Click);
-            // 
-            // Vault_ContentCenter_ComponentSearch_button
-            // 
-            this.Vault_ContentCenter_ComponentSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Vault_ContentCenter_ComponentSearch_button.Font = new System.Drawing.Font("MS UI Gothic", 7F);
-            this.Vault_ContentCenter_ComponentSearch_button.Location = new System.Drawing.Point(1, 3);
-            this.Vault_ContentCenter_ComponentSearch_button.Name = "Vault_ContentCenter_ComponentSearch_button";
-            this.Vault_ContentCenter_ComponentSearch_button.Size = new System.Drawing.Size(173, 23);
-            this.Vault_ContentCenter_ComponentSearch_button.TabIndex = 1;
-            this.Vault_ContentCenter_ComponentSearch_button.TabStop = false;
-            this.Vault_ContentCenter_ComponentSearch_button.Text = "ｺﾝﾃﾝﾂｾﾝﾀ・Vaultからﾓﾃﾞﾙﾌｧｲﾙを開く";
-            this.toolTip1.SetToolTip(this.Vault_ContentCenter_ComponentSearch_button, "最初にVaultを検索し、見つからなければコンテンツセンタを検索してコンポーネントを開きます");
-            this.Vault_ContentCenter_ComponentSearch_button.UseVisualStyleBackColor = true;
-            this.Vault_ContentCenter_ComponentSearch_button.Click += new System.EventHandler(this.Vault_ContentCenter_ComponentSearch_button_Click);
-            // 
-            // ArcSuiteWebSearchAndView_button
-            // 
-            this.ArcSuiteWebSearchAndView_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArcSuiteWebSearchAndView_button.Location = new System.Drawing.Point(239, 3);
-            this.ArcSuiteWebSearchAndView_button.Name = "ArcSuiteWebSearchAndView_button";
-            this.ArcSuiteWebSearchAndView_button.Size = new System.Drawing.Size(91, 33);
-            this.ArcSuiteWebSearchAndView_button.TabIndex = 0;
-            this.ArcSuiteWebSearchAndView_button.Text = "ArcSuiteWeb版\r\n検索・表示";
-            this.ArcSuiteWebSearchAndView_button.UseVisualStyleBackColor = true;
-            this.ArcSuiteWebSearchAndView_button.Click += new System.EventHandler(this.ArcSuiteWebSearchAndView_button_Click);
-            // 
-            // OP_ManualSearchPanel
-            // 
-            this.OP_ManualSearchPanel.Controls.Add(this.ManualSearch_button);
-            this.OP_ManualSearchPanel.Controls.Add(this.ManualSearch_textBox);
-            this.OP_ManualSearchPanel.Location = new System.Drawing.Point(7, 3);
-            this.OP_ManualSearchPanel.Name = "OP_ManualSearchPanel";
-            this.OP_ManualSearchPanel.Size = new System.Drawing.Size(228, 32);
-            this.OP_ManualSearchPanel.TabIndex = 26;
-            // 
-            // ManualSearch_button
-            // 
-            this.ManualSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ManualSearch_button.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.ManualSearch_button.Location = new System.Drawing.Point(164, 3);
-            this.ManualSearch_button.Name = "ManualSearch_button";
-            this.ManualSearch_button.Size = new System.Drawing.Size(60, 25);
-            this.ManualSearch_button.TabIndex = 1;
-            this.ManualSearch_button.Text = "←検索";
-            this.ManualSearch_button.UseVisualStyleBackColor = true;
-            this.ManualSearch_button.Click += new System.EventHandler(this.ManualSearch_button_Click);
-            // 
-            // ManualSearch_textBox
-            // 
-            this.ManualSearch_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ManualSearch_textBox.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ManualSearch_textBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ManualSearch_textBox.Location = new System.Drawing.Point(6, 4);
-            this.ManualSearch_textBox.Name = "ManualSearch_textBox";
-            this.ManualSearch_textBox.Size = new System.Drawing.Size(153, 23);
-            this.ManualSearch_textBox.TabIndex = 0;
-            this.ManualSearch_textBox.Click += new System.EventHandler(this.ManualSearch_textBox_Click);
-            this.ManualSearch_textBox.TextChanged += new System.EventHandler(this.ManualSearch_textBox_TextChanged);
-            this.ManualSearch_textBox.Enter += new System.EventHandler(this.ManualSearch_textBox_Enter);
-            this.ManualSearch_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ManualSearch_textBox_KeyDown);
-            this.ManualSearch_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ManualSearch_textBox_KeyPress);
-            // 
-            // ClipBoardTextSearch_button
-            // 
-            this.ClipBoardTextSearch_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClipBoardTextSearch_button.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.ClipBoardTextSearch_button.Location = new System.Drawing.Point(411, 3);
-            this.ClipBoardTextSearch_button.Name = "ClipBoardTextSearch_button";
-            this.ClipBoardTextSearch_button.Size = new System.Drawing.Size(26, 33);
-            this.ClipBoardTextSearch_button.TabIndex = 3;
-            this.ClipBoardTextSearch_button.Text = "CP";
-            this.toolTip1.SetToolTip(this.ClipBoardTextSearch_button, "ｸﾘｯﾌﾟﾎﾞｰﾄﾞの文字列をArcSuiteにて検索");
-            this.ClipBoardTextSearch_button.UseVisualStyleBackColor = false;
-            this.ClipBoardTextSearch_button.Click += new System.EventHandler(this.ClipBoardTextSearch_button_Click);
-            // 
-            // OP_ActiveDocmentSearch_Button
-            // 
-            this.OP_ActiveDocmentSearch_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.OP_ActiveDocmentSearch_Button.Location = new System.Drawing.Point(334, 3);
-            this.OP_ActiveDocmentSearch_Button.Name = "OP_ActiveDocmentSearch_Button";
-            this.OP_ActiveDocmentSearch_Button.Size = new System.Drawing.Size(73, 33);
-            this.OP_ActiveDocmentSearch_Button.TabIndex = 2;
-            this.OP_ActiveDocmentSearch_Button.Text = "ｱｸﾃｨﾌﾞﾄﾞｷｭﾒﾝﾄ検索";
-            this.OP_ActiveDocmentSearch_Button.UseVisualStyleBackColor = true;
-            this.OP_ActiveDocmentSearch_Button.Click += new System.EventHandler(this.ActiveDocmentSearch_Button_Click);
-            // 
-            // PreviewControlPanel
-            // 
-            this.PreviewControlPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PreviewControlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PreviewControlPanel.Controls.Add(this.Redraw_button);
-            this.PreviewControlPanel.Controls.Add(this.DrawText_button);
-            this.PreviewControlPanel.Controls.Add(this.Close_panel);
-            this.PreviewControlPanel.Controls.Add(this.panel1);
-            this.PreviewControlPanel.Controls.Add(this.ColorSet2_checkBox);
-            this.PreviewControlPanel.Controls.Add(this.REDO_button);
-            this.PreviewControlPanel.Controls.Add(this.OP_CAD_MeasureTool_Panel);
-            this.PreviewControlPanel.Controls.Add(this.UNDO_button);
-            this.PreviewControlPanel.Controls.Add(this.OP_MaximizeWindow_button);
-            this.PreviewControlPanel.Controls.Add(this.MidLabel1_label);
-            this.PreviewControlPanel.Controls.Add(this.SendClipBord_Button);
-            this.PreviewControlPanel.Controls.Add(this.MidLabel2_label);
-            this.PreviewControlPanel.Controls.Add(this.TitleBlockScale_button);
-            this.PreviewControlPanel.Controls.Add(this.SavedMsg_label);
-            this.PreviewControlPanel.Controls.Add(this.SaveCurrent_button);
-            this.PreviewControlPanel.Controls.Add(this.ImageReLoad_button);
-            this.PreviewControlPanel.Location = new System.Drawing.Point(0, 285);
-            this.PreviewControlPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.PreviewControlPanel.MinimumSize = new System.Drawing.Size(390, 117);
-            this.PreviewControlPanel.Name = "PreviewControlPanel";
-            this.PreviewControlPanel.Size = new System.Drawing.Size(442, 122);
-            this.PreviewControlPanel.TabIndex = 33;
-            // 
-            // Redraw_button
-            // 
-            this.Redraw_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Redraw_button.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Redraw_button.Location = new System.Drawing.Point(388, 52);
-            this.Redraw_button.Name = "Redraw_button";
-            this.Redraw_button.Size = new System.Drawing.Size(49, 20);
-            this.Redraw_button.TabIndex = 24;
-            this.Redraw_button.Text = "再描画";
-            this.toolTip1.SetToolTip(this.Redraw_button, "再描画");
-            this.Redraw_button.UseVisualStyleBackColor = true;
-            this.Redraw_button.Click += new System.EventHandler(this.Redraw_button_Click);
-            // 
-            // DrawText_button
-            // 
-            this.DrawText_button.Location = new System.Drawing.Point(269, 26);
-            this.DrawText_button.Name = "DrawText_button";
-            this.DrawText_button.Size = new System.Drawing.Size(43, 24);
-            this.DrawText_button.TabIndex = 39;
-            this.DrawText_button.TabStop = false;
-            this.DrawText_button.Text = "ｺﾒﾝﾄ";
-            this.toolTip1.SetToolTip(this.DrawText_button, "１つ前に戻す");
-            this.DrawText_button.UseVisualStyleBackColor = true;
-            this.DrawText_button.Click += new System.EventHandler(this.DrawText_button_Click);
-            // 
-            // Close_panel
-            // 
-            this.Close_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Close_panel.Controls.Add(this.Hide_button);
-            this.Close_panel.Location = new System.Drawing.Point(388, 74);
-            this.Close_panel.Name = "Close_panel";
-            this.Close_panel.Size = new System.Drawing.Size(51, 44);
-            this.Close_panel.TabIndex = 34;
-            // 
-            // Hide_button
-            // 
-            this.Hide_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hide_button.Location = new System.Drawing.Point(1, 4);
-            this.Hide_button.Name = "Hide_button";
-            this.Hide_button.Size = new System.Drawing.Size(49, 39);
-            this.Hide_button.TabIndex = 19;
-            this.Hide_button.TabStop = false;
-            this.Hide_button.Text = "閉じる";
-            this.Hide_button.UseVisualStyleBackColor = true;
-            this.Hide_button.Click += new System.EventHandler(this.Hide_button_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.OP_SendVault_button);
-            this.panel1.Controls.Add(this.OP_LoadVault_button);
-            this.panel1.Controls.Add(this.VaultCheckInPngSuffix_textBox);
-            this.panel1.Location = new System.Drawing.Point(1, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 26);
-            this.panel1.TabIndex = 38;
-            // 
-            // OP_SendVault_button
-            // 
-            this.OP_SendVault_button.Location = new System.Drawing.Point(3, 1);
-            this.OP_SendVault_button.Name = "OP_SendVault_button";
-            this.OP_SendVault_button.Size = new System.Drawing.Size(90, 23);
-            this.OP_SendVault_button.TabIndex = 14;
-            this.OP_SendVault_button.TabStop = false;
-            this.OP_SendVault_button.Text = "Vaultへ送信";
-            this.OP_SendVault_button.UseVisualStyleBackColor = true;
-            this.OP_SendVault_button.Click += new System.EventHandler(this.OP_SendVault_button_Click);
-            // 
-            // OP_LoadVault_button
-            // 
-            this.OP_LoadVault_button.Location = new System.Drawing.Point(97, 1);
-            this.OP_LoadVault_button.Name = "OP_LoadVault_button";
-            this.OP_LoadVault_button.Size = new System.Drawing.Size(90, 23);
-            this.OP_LoadVault_button.TabIndex = 15;
-            this.OP_LoadVault_button.TabStop = false;
-            this.OP_LoadVault_button.Text = "Vaultから受信";
-            this.toolTip1.SetToolTip(this.OP_LoadVault_button, "Vaultに保存した赤黄図面を取得");
-            this.OP_LoadVault_button.UseVisualStyleBackColor = true;
-            this.OP_LoadVault_button.Click += new System.EventHandler(this.OP_LoadVault_button_Click);
-            // 
-            // VaultCheckInPngSuffix_textBox
-            // 
-            this.VaultCheckInPngSuffix_textBox.Location = new System.Drawing.Point(189, 3);
-            this.VaultCheckInPngSuffix_textBox.Name = "VaultCheckInPngSuffix_textBox";
-            this.VaultCheckInPngSuffix_textBox.Size = new System.Drawing.Size(39, 19);
-            this.VaultCheckInPngSuffix_textBox.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.VaultCheckInPngSuffix_textBox, "Vaultにこのイメージをチェックインする時のﾌｧｲﾙｻﾌｨｯｸｽ");
-            // 
-            // ColorSet2_checkBox
-            // 
-            this.ColorSet2_checkBox.AutoSize = true;
-            this.ColorSet2_checkBox.Location = new System.Drawing.Point(201, 31);
-            this.ColorSet2_checkBox.Name = "ColorSet2_checkBox";
-            this.ColorSet2_checkBox.Size = new System.Drawing.Size(65, 16);
-            this.ColorSet2_checkBox.TabIndex = 9;
-            this.ColorSet2_checkBox.TabStop = false;
-            this.ColorSet2_checkBox.Text = "ﾍﾟﾝ切替";
-            this.toolTip1.SetToolTip(this.ColorSet2_checkBox, "ペン色を切替");
-            this.ColorSet2_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // REDO_button
-            // 
-            this.REDO_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.REDO_button.Location = new System.Drawing.Point(318, 27);
-            this.REDO_button.Name = "REDO_button";
-            this.REDO_button.Size = new System.Drawing.Size(43, 24);
-            this.REDO_button.TabIndex = 11;
-            this.REDO_button.TabStop = false;
-            this.REDO_button.Text = "Redo";
-            this.toolTip1.SetToolTip(this.REDO_button, "１つ先に進める");
-            this.REDO_button.UseVisualStyleBackColor = true;
-            this.REDO_button.Click += new System.EventHandler(this.REDO_button_Click);
-            // 
-            // OP_CAD_MeasureTool_Panel
-            // 
-            this.OP_CAD_MeasureTool_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OP_CAD_MeasureTool_Panel.Controls.Add(this.SectionViewStart_button);
-            this.OP_CAD_MeasureTool_Panel.Controls.Add(this.SectionViewEnd_button);
-            this.OP_CAD_MeasureTool_Panel.Controls.Add(this.MeasureTool_Button);
-            this.OP_CAD_MeasureTool_Panel.Location = new System.Drawing.Point(234, 74);
-            this.OP_CAD_MeasureTool_Panel.Name = "OP_CAD_MeasureTool_Panel";
-            this.OP_CAD_MeasureTool_Panel.Size = new System.Drawing.Size(150, 45);
-            this.OP_CAD_MeasureTool_Panel.TabIndex = 32;
-            // 
-            // SectionViewStart_button
-            // 
-            this.SectionViewStart_button.Location = new System.Drawing.Point(4, 4);
-            this.SectionViewStart_button.Name = "SectionViewStart_button";
-            this.SectionViewStart_button.Size = new System.Drawing.Size(94, 20);
-            this.SectionViewStart_button.TabIndex = 16;
-            this.SectionViewStart_button.TabStop = false;
-            this.SectionViewStart_button.Text = "断面表示・実行";
-            this.SectionViewStart_button.UseVisualStyleBackColor = true;
-            this.SectionViewStart_button.Click += new System.EventHandler(this.SectionViewStart_button_Click);
-            // 
-            // SectionViewEnd_button
-            // 
-            this.SectionViewEnd_button.Location = new System.Drawing.Point(4, 25);
-            this.SectionViewEnd_button.Name = "SectionViewEnd_button";
-            this.SectionViewEnd_button.Size = new System.Drawing.Size(94, 20);
-            this.SectionViewEnd_button.TabIndex = 17;
-            this.SectionViewEnd_button.TabStop = false;
-            this.SectionViewEnd_button.Text = "断面表示・終了";
-            this.SectionViewEnd_button.UseVisualStyleBackColor = true;
-            this.SectionViewEnd_button.Click += new System.EventHandler(this.SectionViewEnd_button_Click);
-            // 
-            // MeasureTool_Button
-            // 
-            this.MeasureTool_Button.Location = new System.Drawing.Point(99, 4);
-            this.MeasureTool_Button.Name = "MeasureTool_Button";
-            this.MeasureTool_Button.Size = new System.Drawing.Size(49, 39);
-            this.MeasureTool_Button.TabIndex = 18;
-            this.MeasureTool_Button.TabStop = false;
-            this.MeasureTool_Button.Text = "計測";
-            this.MeasureTool_Button.UseVisualStyleBackColor = true;
-            this.MeasureTool_Button.Click += new System.EventHandler(this.MeasureTool_Button_Click);
-            // 
-            // UNDO_button
-            // 
-            this.UNDO_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UNDO_button.Location = new System.Drawing.Point(318, 2);
-            this.UNDO_button.Name = "UNDO_button";
-            this.UNDO_button.Size = new System.Drawing.Size(43, 24);
-            this.UNDO_button.TabIndex = 10;
-            this.UNDO_button.TabStop = false;
-            this.UNDO_button.Text = "Undo";
-            this.toolTip1.SetToolTip(this.UNDO_button, "１つ前に戻す");
-            this.UNDO_button.UseVisualStyleBackColor = true;
-            this.UNDO_button.Click += new System.EventHandler(this.UNDO_button_Click);
-            // 
-            // OP_MaximizeWindow_button
-            // 
-            this.OP_MaximizeWindow_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.OP_MaximizeWindow_button.Location = new System.Drawing.Point(363, 27);
-            this.OP_MaximizeWindow_button.Name = "OP_MaximizeWindow_button";
-            this.OP_MaximizeWindow_button.Size = new System.Drawing.Size(74, 24);
-            this.OP_MaximizeWindow_button.TabIndex = 13;
-            this.OP_MaximizeWindow_button.TabStop = false;
-            this.OP_MaximizeWindow_button.Text = "最大化";
-            this.OP_MaximizeWindow_button.UseVisualStyleBackColor = true;
-            this.OP_MaximizeWindow_button.Click += new System.EventHandler(this.MaximizeWindow_button_Click);
-            // 
-            // MidLabel1_label
-            // 
-            this.MidLabel1_label.AutoSize = true;
-            this.MidLabel1_label.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.MidLabel1_label.Location = new System.Drawing.Point(9, 9);
-            this.MidLabel1_label.Name = "MidLabel1_label";
-            this.MidLabel1_label.Size = new System.Drawing.Size(299, 12);
-            this.MidLabel1_label.TabIndex = 19;
-            this.MidLabel1_label.Text = "中央ﾎﾞﾀﾝで移動。ﾎｲｰﾙ回転で拡縮. 左/右 ボタンでマーカー";
-            // 
-            // SendClipBord_Button
-            // 
-            this.SendClipBord_Button.Location = new System.Drawing.Point(10, 28);
-            this.SendClipBord_Button.Name = "SendClipBord_Button";
-            this.SendClipBord_Button.Size = new System.Drawing.Size(56, 46);
-            this.SendClipBord_Button.TabIndex = 6;
-            this.SendClipBord_Button.TabStop = false;
-            this.SendClipBord_Button.Text = "ｸﾘｯﾌﾟ\r\nﾎﾞｰﾄﾞに\r\n送信";
-            this.SendClipBord_Button.UseVisualStyleBackColor = true;
-            this.SendClipBord_Button.Click += new System.EventHandler(this.SendClipBord_Button_Click);
-            // 
-            // MidLabel2_label
-            // 
-            this.MidLabel2_label.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.MidLabel2_label.Location = new System.Drawing.Point(6, 126);
-            this.MidLabel2_label.Name = "MidLabel2_label";
-            this.MidLabel2_label.Size = new System.Drawing.Size(280, 14);
-            this.MidLabel2_label.TabIndex = 27;
-            this.MidLabel2_label.Text = "---";
-            this.MidLabel2_label.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // TitleBlockScale_button
-            // 
-            this.TitleBlockScale_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TitleBlockScale_button.Location = new System.Drawing.Point(363, 2);
-            this.TitleBlockScale_button.Name = "TitleBlockScale_button";
-            this.TitleBlockScale_button.Size = new System.Drawing.Size(74, 24);
-            this.TitleBlockScale_button.TabIndex = 12;
-            this.TitleBlockScale_button.TabStop = false;
-            this.TitleBlockScale_button.Text = "右下部拡大";
-            this.TitleBlockScale_button.UseVisualStyleBackColor = true;
-            this.TitleBlockScale_button.Click += new System.EventHandler(this.TitleBlockScale_button_Click);
-            // 
-            // SavedMsg_label
-            // 
-            this.SavedMsg_label.AutoSize = true;
-            this.SavedMsg_label.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SavedMsg_label.ForeColor = System.Drawing.Color.Red;
-            this.SavedMsg_label.Location = new System.Drawing.Point(198, 55);
-            this.SavedMsg_label.Name = "SavedMsg_label";
-            this.SavedMsg_label.Size = new System.Drawing.Size(70, 15);
-            this.SavedMsg_label.TabIndex = 8;
-            this.SavedMsg_label.Text = "-------";
-            // 
-            // SaveCurrent_button
-            // 
-            this.SaveCurrent_button.Location = new System.Drawing.Point(72, 28);
-            this.SaveCurrent_button.Name = "SaveCurrent_button";
-            this.SaveCurrent_button.Size = new System.Drawing.Size(123, 23);
-            this.SaveCurrent_button.TabIndex = 7;
-            this.SaveCurrent_button.TabStop = false;
-            this.SaveCurrent_button.Text = "赤図一時保存";
-            this.SaveCurrent_button.UseVisualStyleBackColor = true;
-            this.SaveCurrent_button.Click += new System.EventHandler(this.SaveCurrent_button_Click);
-            // 
-            // ImageReLoad_button
-            // 
-            this.ImageReLoad_button.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ImageReLoad_button.ForeColor = System.Drawing.Color.Red;
-            this.ImageReLoad_button.Location = new System.Drawing.Point(72, 51);
-            this.ImageReLoad_button.Name = "ImageReLoad_button";
-            this.ImageReLoad_button.Size = new System.Drawing.Size(123, 23);
-            this.ImageReLoad_button.TabIndex = 8;
-            this.ImageReLoad_button.TabStop = false;
-            this.ImageReLoad_button.Text = "保存済みを再読込";
-            this.ImageReLoad_button.UseVisualStyleBackColor = true;
-            this.ImageReLoad_button.Click += new System.EventHandler(this.Load_button_Click);
+            PreviewPanel.SuspendLayout();
+            Debug_panel.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)X_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SCALE_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Y_numericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ArcSuitePreviewPictureBox).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
+            AttrPanel.SuspendLayout();
+            ArcSuiteAttr_groupBox.SuspendLayout();
+            OP_PartListIllust_groupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PartListIllust_pictureBox).BeginInit();
+            VaultPanel.SuspendLayout();
+            panel3.SuspendLayout();
+            OP_ManualSearchPanel.SuspendLayout();
+            PreviewControlPanel.SuspendLayout();
+            Close_panel.SuspendLayout();
+            panel1.SuspendLayout();
+            OP_CAD_MeasureTool_Panel.SuspendLayout();
+            SuspendLayout();
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            splitContainer1.Location = new System.Drawing.Point(0, 0);
-            splitContainer1.Margin = new System.Windows.Forms.Padding(0);
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Margin = new Padding(0);
             splitContainer1.Name = "splitContainer1";
-            splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            splitContainer1.Orientation = Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(this.PreviewPanel);
+            splitContainer1.Panel1.Controls.Add(PreviewPanel);
             splitContainer1.Panel1MinSize = 370;
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
+            splitContainer1.Panel2.Controls.Add(flowLayoutPanel1);
             splitContainer1.Panel2MinSize = 50;
-            splitContainer1.Size = new System.Drawing.Size(451, 816);
+            splitContainer1.Size = new Size(451, 816);
             splitContainer1.SplitterDistance = 400;
             splitContainer1.SplitterWidth = 8;
             splitContainer1.TabIndex = 35;
             splitContainer1.TabStop = false;
-            splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
+            // 
+            // PreviewPanel
+            // 
+            PreviewPanel.Controls.Add(label4);
+            PreviewPanel.Controls.Add(Debug_panel);
+            PreviewPanel.Controls.Add(AplicationOpenFile_button);
+            PreviewPanel.Controls.Add(sasaLibBasicPageControl);
+            PreviewPanel.Controls.Add(ArcsuitePreviewForm_Msg_label);
+            PreviewPanel.Controls.Add(ArcSuite_Status_label);
+            PreviewPanel.Controls.Add(ArcSuitePreviewPictureBox);
+            PreviewPanel.Dock = DockStyle.Fill;
+            PreviewPanel.Location = new Point(0, 0);
+            PreviewPanel.Margin = new Padding(1);
+            PreviewPanel.Name = "PreviewPanel";
+            PreviewPanel.Size = new Size(451, 400);
+            PreviewPanel.TabIndex = 11;
+            // 
+            // Debug_panel
+            // 
+            Debug_panel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Debug_panel.BackColor = Color.Transparent;
+            Debug_panel.Controls.Add(panel2);
+            Debug_panel.Controls.Add(label3);
+            Debug_panel.Controls.Add(label5);
+            Debug_panel.Controls.Add(label2);
+            Debug_panel.Controls.Add(label1);
+            Debug_panel.Location = new Point(143, 15);
+            Debug_panel.Name = "Debug_panel";
+            Debug_panel.Size = new Size(295, 143);
+            Debug_panel.TabIndex = 7;
+            Debug_panel.Visible = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(QualityMode_comboBox);
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(X_numericUpDown);
+            panel2.Controls.Add(SCALE_numericUpDown);
+            panel2.Controls.Add(Y_numericUpDown);
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(247, 54);
+            panel2.TabIndex = 32;
+            // 
+            // QualityMode_comboBox
+            // 
+            QualityMode_comboBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            QualityMode_comboBox.FormattingEnabled = true;
+            QualityMode_comboBox.Location = new Point(6, 26);
+            QualityMode_comboBox.Name = "QualityMode_comboBox";
+            QualityMode_comboBox.Size = new Size(159, 23);
+            QualityMode_comboBox.TabIndex = 29;
+            QualityMode_comboBox.TabStop = false;
+            QualityMode_comboBox.SelectedIndexChanged += QualityMode_comboBox_SelectedIndexChanged;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.Transparent;
+            button1.Location = new Point(167, 28);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 18);
+            button1.TabIndex = 6;
+            button1.TabStop = false;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // X_numericUpDown
+            // 
+            X_numericUpDown.Location = new Point(6, 3);
+            X_numericUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            X_numericUpDown.Minimum = new decimal(new int[] { 10000, 0, 0, int.MinValue });
+            X_numericUpDown.Name = "X_numericUpDown";
+            X_numericUpDown.Size = new Size(67, 23);
+            X_numericUpDown.TabIndex = 26;
+            X_numericUpDown.TabStop = false;
+            X_numericUpDown.ValueChanged += numericUpDown_ValueChanged;
+            // 
+            // SCALE_numericUpDown
+            // 
+            SCALE_numericUpDown.DecimalPlaces = 3;
+            SCALE_numericUpDown.Increment = new decimal(new int[] { 1, 0, 0, 196608 });
+            SCALE_numericUpDown.Location = new Point(152, 3);
+            SCALE_numericUpDown.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            SCALE_numericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 196608 });
+            SCALE_numericUpDown.Name = "SCALE_numericUpDown";
+            SCALE_numericUpDown.Size = new Size(67, 23);
+            SCALE_numericUpDown.TabIndex = 28;
+            SCALE_numericUpDown.TabStop = false;
+            SCALE_numericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            SCALE_numericUpDown.ValueChanged += SCALE_numericUpDown_ValueChanged;
+            // 
+            // Y_numericUpDown
+            // 
+            Y_numericUpDown.Location = new Point(79, 3);
+            Y_numericUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            Y_numericUpDown.Minimum = new decimal(new int[] { 10000, 0, 0, int.MinValue });
+            Y_numericUpDown.Name = "Y_numericUpDown";
+            Y_numericUpDown.Size = new Size(67, 23);
+            Y_numericUpDown.TabIndex = 27;
+            Y_numericUpDown.TabStop = false;
+            Y_numericUpDown.ValueChanged += numericUpDown_ValueChanged;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Enabled = false;
+            label3.Location = new Point(6, 125);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 31;
+            label3.Text = "label3";
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Enabled = false;
+            label5.Location = new Point(6, 77);
+            label5.Name = "label5";
+            label5.Size = new Size(66, 15);
+            label5.TabIndex = 30;
+            label5.Text = "Debug info";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Enabled = false;
+            label2.Location = new Point(5, 109);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 8;
+            label2.Text = "label2";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Enabled = false;
+            label1.Location = new Point(5, 93);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 7;
+            label1.Text = "label1";
+            // 
+            // AplicationOpenFile_button
+            // 
+            AplicationOpenFile_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            AplicationOpenFile_button.Enabled = false;
+            AplicationOpenFile_button.Location = new Point(7, 400);
+            AplicationOpenFile_button.Name = "AplicationOpenFile_button";
+            AplicationOpenFile_button.Size = new Size(131, 23);
+            AplicationOpenFile_button.TabIndex = 23;
+            AplicationOpenFile_button.Text = "ｱﾌﾟﾘｹｰｼｮﾝから開く";
+            AplicationOpenFile_button.UseVisualStyleBackColor = true;
+            AplicationOpenFile_button.Visible = false;
+            AplicationOpenFile_button.Click += AplicationOpenFile_button_Click;
+            // 
+            // sasaLibBasicPageControl
+            // 
+            sasaLibBasicPageControl.Anchor = AnchorStyles.Bottom;
+            sasaLibBasicPageControl.CurrentPage = 0;
+            sasaLibBasicPageControl.Location = new Point(170, 401);
+            sasaLibBasicPageControl.Margin = new Padding(4);
+            sasaLibBasicPageControl.MaxPage = 0;
+            sasaLibBasicPageControl.Name = "sasaLibBasicPageControl";
+            sasaLibBasicPageControl.Size = new Size(130, 22);
+            sasaLibBasicPageControl.TabIndex = 8;
+            sasaLibBasicPageControl.CurrentPageChanged += sasaLibBasicPageControl_CurrentPageChanged;
+            // 
+            // ArcsuitePreviewForm_Msg_label
+            // 
+            ArcsuitePreviewForm_Msg_label.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ArcsuitePreviewForm_Msg_label.BackColor = Color.Transparent;
+            ArcsuitePreviewForm_Msg_label.Enabled = false;
+            ArcsuitePreviewForm_Msg_label.Font = new Font("メイリオ", 18F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ArcsuitePreviewForm_Msg_label.Location = new Point(12, 15);
+            ArcsuitePreviewForm_Msg_label.Name = "ArcsuitePreviewForm_Msg_label";
+            ArcsuitePreviewForm_Msg_label.Size = new Size(426, 156);
+            ArcsuitePreviewForm_Msg_label.TabIndex = 1;
+            ArcsuitePreviewForm_Msg_label.Text = "検索指示待ち";
+            ArcsuitePreviewForm_Msg_label.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ArcSuite_Status_label
+            // 
+            ArcSuite_Status_label.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ArcSuite_Status_label.BackColor = Color.Transparent;
+            ArcSuite_Status_label.Enabled = false;
+            ArcSuite_Status_label.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ArcSuite_Status_label.ForeColor = Color.Red;
+            ArcSuite_Status_label.Location = new Point(50, 194);
+            ArcSuite_Status_label.Name = "ArcSuite_Status_label";
+            ArcSuite_Status_label.Size = new Size(348, 64);
+            ArcSuite_Status_label.TabIndex = 2;
+            ArcSuite_Status_label.Text = "...";
+            ArcSuite_Status_label.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ArcSuitePreviewPictureBox
+            // 
+            ArcSuitePreviewPictureBox.Dock = DockStyle.Fill;
+            ArcSuitePreviewPictureBox.Location = new Point(0, 0);
+            ArcSuitePreviewPictureBox.Margin = new Padding(1);
+            ArcSuitePreviewPictureBox.Name = "ArcSuitePreviewPictureBox";
+            ArcSuitePreviewPictureBox.Size = new Size(451, 400);
+            ArcSuitePreviewPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            ArcSuitePreviewPictureBox.TabIndex = 0;
+            ArcSuitePreviewPictureBox.TabStop = false;
+            ArcSuitePreviewPictureBox.MouseDown += pictureBox1_MouseDown;
+            ArcSuitePreviewPictureBox.MouseMove += pictureBox1_MouseMove;
+            ArcSuitePreviewPictureBox.MouseUp += pictureBox1_MouseUp;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(AttrPanel);
+            flowLayoutPanel1.Controls.Add(VaultPanel);
+            flowLayoutPanel1.Controls.Add(PreviewControlPanel);
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(451, 408);
+            flowLayoutPanel1.TabIndex = 35;
+            flowLayoutPanel1.Resize += flowLayoutPanel1_Resize;
+            // 
+            // AttrPanel
+            // 
+            AttrPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            AttrPanel.BorderStyle = BorderStyle.FixedSingle;
+            AttrPanel.Controls.Add(currentStageServer_label);
+            AttrPanel.Controls.Add(ArcSuiteAttr_groupBox);
+            AttrPanel.Controls.Add(FindTimeStamp_label);
+            AttrPanel.Location = new Point(1, 1);
+            AttrPanel.Margin = new Padding(1);
+            AttrPanel.MinimumSize = new Size(390, 150);
+            AttrPanel.Name = "AttrPanel";
+            AttrPanel.Size = new Size(442, 207);
+            AttrPanel.TabIndex = 14;
+            // 
+            // currentStageServer_label
+            // 
+            currentStageServer_label.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            currentStageServer_label.BorderStyle = BorderStyle.FixedSingle;
+            currentStageServer_label.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            currentStageServer_label.Location = new Point(379, 185);
+            currentStageServer_label.Name = "currentStageServer_label";
+            currentStageServer_label.Size = new Size(60, 19);
+            currentStageServer_label.TabIndex = 25;
+            currentStageServer_label.Text = "---";
+            currentStageServer_label.TextAlign = ContentAlignment.MiddleCenter;
+            currentStageServer_label.Paint += currentStageServer_label_Paint;
+            // 
+            // ArcSuiteAttr_groupBox
+            // 
+            ArcSuiteAttr_groupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ArcSuiteAttr_groupBox.Controls.Add(DrawingInfoLabel4);
+            ArcSuiteAttr_groupBox.Controls.Add(OnOrderClear_button);
+            ArcSuiteAttr_groupBox.Controls.Add(UserCadType_AddRemove_button);
+            ArcSuiteAttr_groupBox.Controls.Add(DrawingInfoLabel3);
+            ArcSuiteAttr_groupBox.Controls.Add(OP_PartListIllust_groupbox);
+            ArcSuiteAttr_groupBox.Controls.Add(DrawingInfoLabel2);
+            ArcSuiteAttr_groupBox.Controls.Add(modelcreationonorder_label);
+            ArcSuiteAttr_groupBox.Controls.Add(ArcSuiteCreatedOn_label);
+            ArcSuiteAttr_groupBox.Location = new Point(3, 5);
+            ArcSuiteAttr_groupBox.Name = "ArcSuiteAttr_groupBox";
+            ArcSuiteAttr_groupBox.Size = new Size(434, 178);
+            ArcSuiteAttr_groupBox.TabIndex = 24;
+            ArcSuiteAttr_groupBox.TabStop = false;
+            ArcSuiteAttr_groupBox.Text = "ｱｰｸｽｲｰﾄでの属性値";
+            // 
+            // DrawingInfoLabel4
+            // 
+            DrawingInfoLabel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DrawingInfoLabel4.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            DrawingInfoLabel4.Location = new Point(12, 130);
+            DrawingInfoLabel4.Name = "DrawingInfoLabel4";
+            DrawingInfoLabel4.Size = new Size(416, 18);
+            DrawingInfoLabel4.TabIndex = 18;
+            DrawingInfoLabel4.Text = "---";
+            // 
+            // OnOrderClear_button
+            // 
+            OnOrderClear_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            OnOrderClear_button.Font = new Font("MS UI Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            OnOrderClear_button.Location = new Point(160, 150);
+            OnOrderClear_button.Margin = new Padding(0);
+            OnOrderClear_button.Name = "OnOrderClear_button";
+            OnOrderClear_button.Size = new Size(134, 22);
+            OnOrderClear_button.TabIndex = 20;
+            OnOrderClear_button.TabStop = false;
+            OnOrderClear_button.Text = "3D作成発注中を解除";
+            toolTip1.SetToolTip(OnOrderClear_button, "3D作成発注中をクリア");
+            OnOrderClear_button.UseVisualStyleBackColor = true;
+            OnOrderClear_button.Click += OnOrderClear_button_Click;
+            // 
+            // UserCadType_AddRemove_button
+            // 
+            UserCadType_AddRemove_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            UserCadType_AddRemove_button.Font = new Font("MS UI Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            UserCadType_AddRemove_button.Location = new Point(300, 150);
+            UserCadType_AddRemove_button.Name = "UserCadType_AddRemove_button";
+            UserCadType_AddRemove_button.Size = new Size(134, 22);
+            UserCadType_AddRemove_button.TabIndex = 21;
+            UserCadType_AddRemove_button.TabStop = false;
+            UserCadType_AddRemove_button.Text = "CAD有効(申告/取消)";
+            toolTip1.SetToolTip(UserCadType_AddRemove_button, "3Dモデルの 申告/取消");
+            UserCadType_AddRemove_button.UseVisualStyleBackColor = true;
+            UserCadType_AddRemove_button.Click += UserCadType_AddRemove_button_Click;
+            // 
+            // DrawingInfoLabel3
+            // 
+            DrawingInfoLabel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DrawingInfoLabel3.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            DrawingInfoLabel3.Location = new Point(12, 60);
+            DrawingInfoLabel3.Name = "DrawingInfoLabel3";
+            DrawingInfoLabel3.Size = new Size(295, 18);
+            DrawingInfoLabel3.TabIndex = 19;
+            DrawingInfoLabel3.Text = "---";
+            // 
+            // OP_PartListIllust_groupbox
+            // 
+            OP_PartListIllust_groupbox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            OP_PartListIllust_groupbox.Controls.Add(PartListIllust_pictureBox);
+            OP_PartListIllust_groupbox.Font = new Font("MS UI Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            OP_PartListIllust_groupbox.Location = new Point(313, 12);
+            OP_PartListIllust_groupbox.Name = "OP_PartListIllust_groupbox";
+            OP_PartListIllust_groupbox.Size = new Size(115, 72);
+            OP_PartListIllust_groupbox.TabIndex = 35;
+            OP_PartListIllust_groupbox.TabStop = false;
+            OP_PartListIllust_groupbox.Text = "パーツリストイラスト";
+            // 
+            // PartListIllust_pictureBox
+            // 
+            PartListIllust_pictureBox.Location = new Point(6, 13);
+            PartListIllust_pictureBox.Name = "PartListIllust_pictureBox";
+            PartListIllust_pictureBox.Size = new Size(103, 54);
+            PartListIllust_pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            PartListIllust_pictureBox.TabIndex = 34;
+            PartListIllust_pictureBox.TabStop = false;
+            PartListIllust_pictureBox.DoubleClick += PartListIllust_pictureBox_DoubleClick;
+            // 
+            // DrawingInfoLabel2
+            // 
+            DrawingInfoLabel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DrawingInfoLabel2.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            DrawingInfoLabel2.Location = new Point(12, 37);
+            DrawingInfoLabel2.Name = "DrawingInfoLabel2";
+            DrawingInfoLabel2.Size = new Size(295, 18);
+            DrawingInfoLabel2.TabIndex = 16;
+            DrawingInfoLabel2.Text = "---";
+            // 
+            // modelcreationonorder_label
+            // 
+            modelcreationonorder_label.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            modelcreationonorder_label.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            modelcreationonorder_label.Location = new Point(12, 16);
+            modelcreationonorder_label.Name = "modelcreationonorder_label";
+            modelcreationonorder_label.Size = new Size(295, 18);
+            modelcreationonorder_label.TabIndex = 17;
+            modelcreationonorder_label.Text = "---";
+            // 
+            // ArcSuiteCreatedOn_label
+            // 
+            ArcSuiteCreatedOn_label.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ArcSuiteCreatedOn_label.Font = new Font("MS UI Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ArcSuiteCreatedOn_label.ForeColor = Color.Crimson;
+            ArcSuiteCreatedOn_label.Location = new Point(12, 87);
+            ArcSuiteCreatedOn_label.Name = "ArcSuiteCreatedOn_label";
+            ArcSuiteCreatedOn_label.Size = new Size(416, 41);
+            ArcSuiteCreatedOn_label.TabIndex = 21;
+            ArcSuiteCreatedOn_label.Text = "---";
+            toolTip1.SetToolTip(ArcSuiteCreatedOn_label, "AAA");
+            // 
+            // FindTimeStamp_label
+            // 
+            FindTimeStamp_label.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            FindTimeStamp_label.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            FindTimeStamp_label.Location = new Point(4, 185);
+            FindTimeStamp_label.Name = "FindTimeStamp_label";
+            FindTimeStamp_label.Size = new Size(366, 19);
+            FindTimeStamp_label.TabIndex = 19;
+            FindTimeStamp_label.Text = "---";
+            // 
+            // VaultPanel
+            // 
+            VaultPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            VaultPanel.BorderStyle = BorderStyle.FixedSingle;
+            VaultPanel.Controls.Add(panel3);
+            VaultPanel.Controls.Add(ArcSuiteWebSearchAndView_button);
+            VaultPanel.Controls.Add(OP_ManualSearchPanel);
+            VaultPanel.Controls.Add(ClipBoardTextSearch_button);
+            VaultPanel.Controls.Add(OP_ActiveDocmentSearch_Button);
+            VaultPanel.Location = new Point(1, 210);
+            VaultPanel.Margin = new Padding(1);
+            VaultPanel.Name = "VaultPanel";
+            VaultPanel.Size = new Size(442, 74);
+            VaultPanel.TabIndex = 34;
+            // 
+            // panel3
+            // 
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(Vault_DrawingSearch_button);
+            panel3.Controls.Add(Vault_AutoCAD_DWGSearch_button);
+            panel3.Controls.Add(Vault_ContentCenter_ComponentSearch_button);
+            panel3.Location = new Point(3, 39);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(434, 30);
+            panel3.TabIndex = 27;
+            // 
+            // Vault_DrawingSearch_button
+            // 
+            Vault_DrawingSearch_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Vault_DrawingSearch_button.Font = new Font("MS UI Gothic", 7F);
+            Vault_DrawingSearch_button.Location = new Point(177, 3);
+            Vault_DrawingSearch_button.Name = "Vault_DrawingSearch_button";
+            Vault_DrawingSearch_button.Size = new Size(116, 23);
+            Vault_DrawingSearch_button.TabIndex = 28;
+            Vault_DrawingSearch_button.TabStop = false;
+            Vault_DrawingSearch_button.Text = "Vaultから図面を開く";
+            Vault_DrawingSearch_button.UseVisualStyleBackColor = true;
+            Vault_DrawingSearch_button.Click += Vault_DrawingSearch_button_Click;
+            // 
+            // Vault_AutoCAD_DWGSearch_button
+            // 
+            Vault_AutoCAD_DWGSearch_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Vault_AutoCAD_DWGSearch_button.Font = new Font("MS UI Gothic", 7F);
+            Vault_AutoCAD_DWGSearch_button.Location = new Point(299, 3);
+            Vault_AutoCAD_DWGSearch_button.Name = "Vault_AutoCAD_DWGSearch_button";
+            Vault_AutoCAD_DWGSearch_button.Size = new Size(130, 23);
+            Vault_AutoCAD_DWGSearch_button.TabIndex = 27;
+            Vault_AutoCAD_DWGSearch_button.TabStop = false;
+            Vault_AutoCAD_DWGSearch_button.Text = "AutoCADのDWGﾌｧｲﾙを開く";
+            toolTip1.SetToolTip(Vault_AutoCAD_DWGSearch_button, "Vaultから最初に見つかったAutoCADファイルをInventorで開きます");
+            Vault_AutoCAD_DWGSearch_button.UseVisualStyleBackColor = true;
+            Vault_AutoCAD_DWGSearch_button.Click += Vault_AutoCAD_DWGSearch_button_Click;
+            // 
+            // Vault_ContentCenter_ComponentSearch_button
+            // 
+            Vault_ContentCenter_ComponentSearch_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Vault_ContentCenter_ComponentSearch_button.Font = new Font("MS UI Gothic", 7F);
+            Vault_ContentCenter_ComponentSearch_button.Location = new Point(1, 3);
+            Vault_ContentCenter_ComponentSearch_button.Name = "Vault_ContentCenter_ComponentSearch_button";
+            Vault_ContentCenter_ComponentSearch_button.Size = new Size(173, 23);
+            Vault_ContentCenter_ComponentSearch_button.TabIndex = 1;
+            Vault_ContentCenter_ComponentSearch_button.TabStop = false;
+            Vault_ContentCenter_ComponentSearch_button.Text = "ｺﾝﾃﾝﾂｾﾝﾀ・Vaultからﾓﾃﾞﾙﾌｧｲﾙを開く";
+            toolTip1.SetToolTip(Vault_ContentCenter_ComponentSearch_button, "最初にVaultを検索し、見つからなければコンテンツセンタを検索してコンポーネントを開きます");
+            Vault_ContentCenter_ComponentSearch_button.UseVisualStyleBackColor = true;
+            Vault_ContentCenter_ComponentSearch_button.Click += Vault_ContentCenter_ComponentSearch_button_Click;
+            // 
+            // ArcSuiteWebSearchAndView_button
+            // 
+            ArcSuiteWebSearchAndView_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ArcSuiteWebSearchAndView_button.Location = new Point(239, 3);
+            ArcSuiteWebSearchAndView_button.Name = "ArcSuiteWebSearchAndView_button";
+            ArcSuiteWebSearchAndView_button.Size = new Size(91, 33);
+            ArcSuiteWebSearchAndView_button.TabIndex = 0;
+            ArcSuiteWebSearchAndView_button.Text = "ArcSuiteWeb版\r\n検索・表示";
+            ArcSuiteWebSearchAndView_button.UseVisualStyleBackColor = true;
+            ArcSuiteWebSearchAndView_button.Click += ArcSuiteWebSearchAndView_button_Click;
+            // 
+            // OP_ManualSearchPanel
+            // 
+            OP_ManualSearchPanel.Controls.Add(ManualSearch_button);
+            OP_ManualSearchPanel.Controls.Add(ManualSearch_textBox);
+            OP_ManualSearchPanel.Location = new Point(7, 3);
+            OP_ManualSearchPanel.Name = "OP_ManualSearchPanel";
+            OP_ManualSearchPanel.Size = new Size(228, 32);
+            OP_ManualSearchPanel.TabIndex = 26;
+            // 
+            // ManualSearch_button
+            // 
+            ManualSearch_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ManualSearch_button.Font = new Font("MS UI Gothic", 9F);
+            ManualSearch_button.Location = new Point(164, 3);
+            ManualSearch_button.Name = "ManualSearch_button";
+            ManualSearch_button.Size = new Size(60, 25);
+            ManualSearch_button.TabIndex = 1;
+            ManualSearch_button.Text = "←検索";
+            ManualSearch_button.UseVisualStyleBackColor = true;
+            ManualSearch_button.Click += ManualSearch_button_Click;
+            // 
+            // ManualSearch_textBox
+            // 
+            ManualSearch_textBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            ManualSearch_textBox.Font = new Font("MS UI Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ManualSearch_textBox.ImeMode = ImeMode.Disable;
+            ManualSearch_textBox.Location = new Point(6, 4);
+            ManualSearch_textBox.Name = "ManualSearch_textBox";
+            ManualSearch_textBox.Size = new Size(153, 23);
+            ManualSearch_textBox.TabIndex = 0;
+            ManualSearch_textBox.Click += ManualSearch_textBox_Click;
+            ManualSearch_textBox.TextChanged += ManualSearch_textBox_TextChanged;
+            ManualSearch_textBox.Enter += ManualSearch_textBox_Enter;
+            ManualSearch_textBox.KeyDown += ManualSearch_textBox_KeyDown;
+            ManualSearch_textBox.KeyPress += ManualSearch_textBox_KeyPress;
+            // 
+            // ClipBoardTextSearch_button
+            // 
+            ClipBoardTextSearch_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ClipBoardTextSearch_button.Font = new Font("MS UI Gothic", 9F);
+            ClipBoardTextSearch_button.Location = new Point(411, 3);
+            ClipBoardTextSearch_button.Name = "ClipBoardTextSearch_button";
+            ClipBoardTextSearch_button.Size = new Size(26, 33);
+            ClipBoardTextSearch_button.TabIndex = 3;
+            ClipBoardTextSearch_button.Text = "CP";
+            toolTip1.SetToolTip(ClipBoardTextSearch_button, "ｸﾘｯﾌﾟﾎﾞｰﾄﾞの文字列をArcSuiteにて検索");
+            ClipBoardTextSearch_button.UseVisualStyleBackColor = false;
+            ClipBoardTextSearch_button.Click += ClipBoardTextSearch_button_Click;
+            // 
+            // OP_ActiveDocmentSearch_Button
+            // 
+            OP_ActiveDocmentSearch_Button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            OP_ActiveDocmentSearch_Button.Location = new Point(334, 3);
+            OP_ActiveDocmentSearch_Button.Name = "OP_ActiveDocmentSearch_Button";
+            OP_ActiveDocmentSearch_Button.Size = new Size(73, 33);
+            OP_ActiveDocmentSearch_Button.TabIndex = 2;
+            OP_ActiveDocmentSearch_Button.Text = "ｱｸﾃｨﾌﾞﾄﾞｷｭﾒﾝﾄ検索";
+            OP_ActiveDocmentSearch_Button.UseVisualStyleBackColor = true;
+            OP_ActiveDocmentSearch_Button.Click += ActiveDocmentSearch_Button_Click;
+            // 
+            // PreviewControlPanel
+            // 
+            PreviewControlPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            PreviewControlPanel.BorderStyle = BorderStyle.FixedSingle;
+            PreviewControlPanel.Controls.Add(Redraw_button);
+            PreviewControlPanel.Controls.Add(DrawText_button);
+            PreviewControlPanel.Controls.Add(Close_panel);
+            PreviewControlPanel.Controls.Add(panel1);
+            PreviewControlPanel.Controls.Add(ColorSet2_checkBox);
+            PreviewControlPanel.Controls.Add(REDO_button);
+            PreviewControlPanel.Controls.Add(OP_CAD_MeasureTool_Panel);
+            PreviewControlPanel.Controls.Add(UNDO_button);
+            PreviewControlPanel.Controls.Add(OP_MaximizeWindow_button);
+            PreviewControlPanel.Controls.Add(MidLabel1_label);
+            PreviewControlPanel.Controls.Add(SendClipBord_Button);
+            PreviewControlPanel.Controls.Add(MidLabel2_label);
+            PreviewControlPanel.Controls.Add(TitleBlockScale_button);
+            PreviewControlPanel.Controls.Add(SavedMsg_label);
+            PreviewControlPanel.Controls.Add(SaveCurrent_button);
+            PreviewControlPanel.Controls.Add(ImageReLoad_button);
+            PreviewControlPanel.Location = new Point(0, 285);
+            PreviewControlPanel.Margin = new Padding(0);
+            PreviewControlPanel.MinimumSize = new Size(390, 117);
+            PreviewControlPanel.Name = "PreviewControlPanel";
+            PreviewControlPanel.Size = new Size(442, 122);
+            PreviewControlPanel.TabIndex = 33;
+            // 
+            // Redraw_button
+            // 
+            Redraw_button.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Redraw_button.Font = new Font("MS UI Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            Redraw_button.Location = new Point(388, 52);
+            Redraw_button.Name = "Redraw_button";
+            Redraw_button.Size = new Size(49, 20);
+            Redraw_button.TabIndex = 24;
+            Redraw_button.Text = "再描画";
+            toolTip1.SetToolTip(Redraw_button, "再描画");
+            Redraw_button.UseVisualStyleBackColor = true;
+            Redraw_button.Click += Redraw_button_Click;
+            // 
+            // DrawText_button
+            // 
+            DrawText_button.Location = new Point(269, 26);
+            DrawText_button.Name = "DrawText_button";
+            DrawText_button.Size = new Size(43, 24);
+            DrawText_button.TabIndex = 39;
+            DrawText_button.TabStop = false;
+            DrawText_button.Text = "ｺﾒﾝﾄ";
+            toolTip1.SetToolTip(DrawText_button, "１つ前に戻す");
+            DrawText_button.UseVisualStyleBackColor = true;
+            DrawText_button.Click += DrawText_button_Click;
+            // 
+            // Close_panel
+            // 
+            Close_panel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Close_panel.Controls.Add(Hide_button);
+            Close_panel.Location = new Point(388, 74);
+            Close_panel.Name = "Close_panel";
+            Close_panel.Size = new Size(51, 44);
+            Close_panel.TabIndex = 34;
+            // 
+            // Hide_button
+            // 
+            Hide_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Hide_button.Location = new Point(1, 4);
+            Hide_button.Name = "Hide_button";
+            Hide_button.Size = new Size(49, 39);
+            Hide_button.TabIndex = 19;
+            Hide_button.TabStop = false;
+            Hide_button.Text = "閉じる";
+            Hide_button.UseVisualStyleBackColor = true;
+            Hide_button.Click += Hide_button_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(OP_SendVault_button);
+            panel1.Controls.Add(OP_LoadVault_button);
+            panel1.Controls.Add(VaultCheckInPngSuffix_textBox);
+            panel1.Location = new Point(1, 76);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(231, 26);
+            panel1.TabIndex = 38;
+            // 
+            // OP_SendVault_button
+            // 
+            OP_SendVault_button.Location = new Point(3, 1);
+            OP_SendVault_button.Name = "OP_SendVault_button";
+            OP_SendVault_button.Size = new Size(90, 23);
+            OP_SendVault_button.TabIndex = 14;
+            OP_SendVault_button.TabStop = false;
+            OP_SendVault_button.Text = "Vaultへ送信";
+            OP_SendVault_button.UseVisualStyleBackColor = true;
+            OP_SendVault_button.Click += OP_SendVault_button_Click;
+            // 
+            // OP_LoadVault_button
+            // 
+            OP_LoadVault_button.Location = new Point(97, 1);
+            OP_LoadVault_button.Name = "OP_LoadVault_button";
+            OP_LoadVault_button.Size = new Size(90, 23);
+            OP_LoadVault_button.TabIndex = 15;
+            OP_LoadVault_button.TabStop = false;
+            OP_LoadVault_button.Text = "Vaultから受信";
+            toolTip1.SetToolTip(OP_LoadVault_button, "Vaultに保存した赤黄図面を取得");
+            OP_LoadVault_button.UseVisualStyleBackColor = true;
+            OP_LoadVault_button.Click += OP_LoadVault_button_Click;
+            // 
+            // VaultCheckInPngSuffix_textBox
+            // 
+            VaultCheckInPngSuffix_textBox.Location = new Point(189, 3);
+            VaultCheckInPngSuffix_textBox.Name = "VaultCheckInPngSuffix_textBox";
+            VaultCheckInPngSuffix_textBox.Size = new Size(39, 23);
+            VaultCheckInPngSuffix_textBox.TabIndex = 2;
+            toolTip1.SetToolTip(VaultCheckInPngSuffix_textBox, "Vaultにこのイメージをチェックインする時のﾌｧｲﾙｻﾌｨｯｸｽ");
+            // 
+            // ColorSet2_checkBox
+            // 
+            ColorSet2_checkBox.AutoSize = true;
+            ColorSet2_checkBox.Location = new Point(201, 31);
+            ColorSet2_checkBox.Name = "ColorSet2_checkBox";
+            ColorSet2_checkBox.Size = new Size(68, 19);
+            ColorSet2_checkBox.TabIndex = 9;
+            ColorSet2_checkBox.TabStop = false;
+            ColorSet2_checkBox.Text = "ﾍﾟﾝ切替";
+            toolTip1.SetToolTip(ColorSet2_checkBox, "ペン色を切替");
+            ColorSet2_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // REDO_button
+            // 
+            REDO_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            REDO_button.Location = new Point(318, 27);
+            REDO_button.Name = "REDO_button";
+            REDO_button.Size = new Size(43, 24);
+            REDO_button.TabIndex = 11;
+            REDO_button.TabStop = false;
+            REDO_button.Text = "Redo";
+            toolTip1.SetToolTip(REDO_button, "１つ先に進める");
+            REDO_button.UseVisualStyleBackColor = true;
+            REDO_button.Click += REDO_button_Click;
+            // 
+            // OP_CAD_MeasureTool_Panel
+            // 
+            OP_CAD_MeasureTool_Panel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            OP_CAD_MeasureTool_Panel.Controls.Add(SectionViewStart_button);
+            OP_CAD_MeasureTool_Panel.Controls.Add(SectionViewEnd_button);
+            OP_CAD_MeasureTool_Panel.Controls.Add(MeasureTool_Button);
+            OP_CAD_MeasureTool_Panel.Location = new Point(234, 74);
+            OP_CAD_MeasureTool_Panel.Name = "OP_CAD_MeasureTool_Panel";
+            OP_CAD_MeasureTool_Panel.Size = new Size(150, 45);
+            OP_CAD_MeasureTool_Panel.TabIndex = 32;
+            // 
+            // SectionViewStart_button
+            // 
+            SectionViewStart_button.Location = new Point(4, 4);
+            SectionViewStart_button.Name = "SectionViewStart_button";
+            SectionViewStart_button.Size = new Size(94, 20);
+            SectionViewStart_button.TabIndex = 16;
+            SectionViewStart_button.TabStop = false;
+            SectionViewStart_button.Text = "断面表示・実行";
+            SectionViewStart_button.UseVisualStyleBackColor = true;
+            SectionViewStart_button.Click += SectionViewStart_button_Click;
+            // 
+            // SectionViewEnd_button
+            // 
+            SectionViewEnd_button.Location = new Point(4, 25);
+            SectionViewEnd_button.Name = "SectionViewEnd_button";
+            SectionViewEnd_button.Size = new Size(94, 20);
+            SectionViewEnd_button.TabIndex = 17;
+            SectionViewEnd_button.TabStop = false;
+            SectionViewEnd_button.Text = "断面表示・終了";
+            SectionViewEnd_button.UseVisualStyleBackColor = true;
+            SectionViewEnd_button.Click += SectionViewEnd_button_Click;
+            // 
+            // MeasureTool_Button
+            // 
+            MeasureTool_Button.Location = new Point(99, 4);
+            MeasureTool_Button.Name = "MeasureTool_Button";
+            MeasureTool_Button.Size = new Size(49, 39);
+            MeasureTool_Button.TabIndex = 18;
+            MeasureTool_Button.TabStop = false;
+            MeasureTool_Button.Text = "計測";
+            MeasureTool_Button.UseVisualStyleBackColor = true;
+            MeasureTool_Button.Click += MeasureTool_Button_Click;
+            // 
+            // UNDO_button
+            // 
+            UNDO_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            UNDO_button.Location = new Point(318, 2);
+            UNDO_button.Name = "UNDO_button";
+            UNDO_button.Size = new Size(43, 24);
+            UNDO_button.TabIndex = 10;
+            UNDO_button.TabStop = false;
+            UNDO_button.Text = "Undo";
+            toolTip1.SetToolTip(UNDO_button, "１つ前に戻す");
+            UNDO_button.UseVisualStyleBackColor = true;
+            UNDO_button.Click += UNDO_button_Click;
+            // 
+            // OP_MaximizeWindow_button
+            // 
+            OP_MaximizeWindow_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            OP_MaximizeWindow_button.Location = new Point(363, 27);
+            OP_MaximizeWindow_button.Name = "OP_MaximizeWindow_button";
+            OP_MaximizeWindow_button.Size = new Size(74, 24);
+            OP_MaximizeWindow_button.TabIndex = 13;
+            OP_MaximizeWindow_button.TabStop = false;
+            OP_MaximizeWindow_button.Text = "最大化";
+            OP_MaximizeWindow_button.UseVisualStyleBackColor = true;
+            OP_MaximizeWindow_button.Click += MaximizeWindow_button_Click;
+            // 
+            // MidLabel1_label
+            // 
+            MidLabel1_label.AutoSize = true;
+            MidLabel1_label.Font = new Font("MS UI Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            MidLabel1_label.Location = new Point(9, 9);
+            MidLabel1_label.Name = "MidLabel1_label";
+            MidLabel1_label.Size = new Size(299, 12);
+            MidLabel1_label.TabIndex = 19;
+            MidLabel1_label.Text = "中央ﾎﾞﾀﾝで移動。ﾎｲｰﾙ回転で拡縮. 左/右 ボタンでマーカー";
+            // 
+            // SendClipBord_Button
+            // 
+            SendClipBord_Button.Location = new Point(10, 28);
+            SendClipBord_Button.Name = "SendClipBord_Button";
+            SendClipBord_Button.Size = new Size(56, 46);
+            SendClipBord_Button.TabIndex = 6;
+            SendClipBord_Button.TabStop = false;
+            SendClipBord_Button.Text = "ｸﾘｯﾌﾟ\r\nﾎﾞｰﾄﾞに\r\n送信";
+            SendClipBord_Button.UseVisualStyleBackColor = true;
+            SendClipBord_Button.Click += SendClipBord_Button_Click;
+            // 
+            // MidLabel2_label
+            // 
+            MidLabel2_label.Font = new Font("MS UI Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            MidLabel2_label.Location = new Point(6, 126);
+            MidLabel2_label.Name = "MidLabel2_label";
+            MidLabel2_label.Size = new Size(280, 14);
+            MidLabel2_label.TabIndex = 27;
+            MidLabel2_label.Text = "---";
+            MidLabel2_label.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // TitleBlockScale_button
+            // 
+            TitleBlockScale_button.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            TitleBlockScale_button.Location = new Point(363, 2);
+            TitleBlockScale_button.Name = "TitleBlockScale_button";
+            TitleBlockScale_button.Size = new Size(74, 24);
+            TitleBlockScale_button.TabIndex = 12;
+            TitleBlockScale_button.TabStop = false;
+            TitleBlockScale_button.Text = "右下部拡大";
+            TitleBlockScale_button.UseVisualStyleBackColor = true;
+            TitleBlockScale_button.Click += TitleBlockScale_button_Click;
+            // 
+            // SavedMsg_label
+            // 
+            SavedMsg_label.AutoSize = true;
+            SavedMsg_label.Font = new Font("MS UI Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SavedMsg_label.ForeColor = Color.Red;
+            SavedMsg_label.Location = new Point(198, 55);
+            SavedMsg_label.Name = "SavedMsg_label";
+            SavedMsg_label.Size = new Size(70, 15);
+            SavedMsg_label.TabIndex = 8;
+            SavedMsg_label.Text = "-------";
+            // 
+            // SaveCurrent_button
+            // 
+            SaveCurrent_button.Location = new Point(72, 28);
+            SaveCurrent_button.Name = "SaveCurrent_button";
+            SaveCurrent_button.Size = new Size(123, 23);
+            SaveCurrent_button.TabIndex = 7;
+            SaveCurrent_button.TabStop = false;
+            SaveCurrent_button.Text = "赤図一時保存";
+            SaveCurrent_button.UseVisualStyleBackColor = true;
+            SaveCurrent_button.Click += SaveCurrent_button_Click;
+            // 
+            // ImageReLoad_button
+            // 
+            ImageReLoad_button.Font = new Font("MS UI Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            ImageReLoad_button.ForeColor = Color.Red;
+            ImageReLoad_button.Location = new Point(72, 51);
+            ImageReLoad_button.Name = "ImageReLoad_button";
+            ImageReLoad_button.Size = new Size(123, 23);
+            ImageReLoad_button.TabIndex = 8;
+            ImageReLoad_button.TabStop = false;
+            ImageReLoad_button.Text = "保存済みを再読込";
+            ImageReLoad_button.UseVisualStyleBackColor = true;
+            ImageReLoad_button.Click += Load_button_Click;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label4.BackColor = Color.Transparent;
+            label4.Location = new Point(351, 336);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 53);
+            label4.TabIndex = 36;
+            label4.Text = "マウス中ボタンで移動・ホイール操作で拡大縮小";
             // 
             // ArcSuitePreviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(451, 816);
-            this.ControlBox = false;
-            this.Controls.Add(splitContainer1);
-            this.MinimizeBox = false;
-            this.Name = "ArcSuitePreviewForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "■東陽ﾂｰﾙ ArcSuiteﾌﾟﾚﾋﾞｭｰ";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArcSuitePreviewForm_FormClosing);
-            this.Load += new System.EventHandler(this.ArcSuitePreviewForm_Load);
-            this.Shown += new System.EventHandler(this.ArcSuitePreviewForm_Shown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ArcSuitePreviewForm_KeyUp);
-            this.Resize += new System.EventHandler(this.ArcSuitePreviewForm_Resize);
-            this.PreviewPanel.ResumeLayout(false);
-            this.Debug_panel.ResumeLayout(false);
-            this.Debug_panel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.X_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SCALE_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Y_numericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ArcSuitePreviewPictureBox)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.AttrPanel.ResumeLayout(false);
-            this.ArcSuiteAttr_groupBox.ResumeLayout(false);
-            this.OP_PartListIllust_groupbox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PartListIllust_pictureBox)).EndInit();
-            this.VaultPanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.OP_ManualSearchPanel.ResumeLayout(false);
-            this.OP_ManualSearchPanel.PerformLayout();
-            this.PreviewControlPanel.ResumeLayout(false);
-            this.PreviewControlPanel.PerformLayout();
-            this.Close_panel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.OP_CAD_MeasureTool_Panel.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(451, 816);
+            ControlBox = false;
+            Controls.Add(splitContainer1);
+            MinimizeBox = false;
+            Name = "ArcSuitePreviewForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "■東陽ﾂｰﾙ ArcSuiteﾌﾟﾚﾋﾞｭｰ";
+            FormClosing += ArcSuitePreviewForm_FormClosing;
+            Load += ArcSuitePreviewForm_Load;
+            Shown += ArcSuitePreviewForm_Shown;
+            KeyUp += ArcSuitePreviewForm_KeyUp;
+            Resize += ArcSuitePreviewForm_Resize;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(splitContainer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            this.ResumeLayout(false);
+            PreviewPanel.ResumeLayout(false);
+            Debug_panel.ResumeLayout(false);
+            Debug_panel.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)X_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SCALE_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Y_numericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ArcSuitePreviewPictureBox).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
+            AttrPanel.ResumeLayout(false);
+            ArcSuiteAttr_groupBox.ResumeLayout(false);
+            OP_PartListIllust_groupbox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)PartListIllust_pictureBox).EndInit();
+            VaultPanel.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            OP_ManualSearchPanel.ResumeLayout(false);
+            OP_ManualSearchPanel.PerformLayout();
+            PreviewControlPanel.ResumeLayout(false);
+            PreviewControlPanel.PerformLayout();
+            Close_panel.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            OP_CAD_MeasureTool_Panel.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
@@ -1113,5 +1085,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Vault_DrawingSearch_button;
         internal System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Label label4;
     }
 }
