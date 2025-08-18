@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             SplitContainer splitContainer1;
             PreviewPanel = new Panel();
+            label4 = new Label();
             Debug_panel = new Panel();
             panel2 = new Panel();
             QualityMode_comboBox = new ComboBox();
@@ -97,7 +98,6 @@
             SaveCurrent_button = new Button();
             ImageReLoad_button = new Button();
             toolTip1 = new ToolTip(components);
-            label4 = new Label();
             splitContainer1 = new SplitContainer();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -163,6 +163,16 @@
             PreviewPanel.Name = "PreviewPanel";
             PreviewPanel.Size = new Size(451, 400);
             PreviewPanel.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label4.BackColor = Color.Transparent;
+            label4.Location = new Point(351, 336);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 53);
+            label4.TabIndex = 36;
+            label4.Text = "マウス中ボタンで移動・ホイール操作で拡大縮小";
             // 
             // Debug_panel
             // 
@@ -958,16 +968,6 @@
             ImageReLoad_button.Text = "保存済みを再読込";
             ImageReLoad_button.UseVisualStyleBackColor = true;
             ImageReLoad_button.Click += Load_button_Click;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label4.BackColor = Color.Transparent;
-            label4.Location = new Point(351, 336);
-            label4.Name = "label4";
-            label4.Size = new Size(92, 53);
-            label4.TabIndex = 36;
-            label4.Text = "マウス中ボタンで移動・ホイール操作で拡大縮小";
             // 
             // ArcSuitePreviewForm
             // 
