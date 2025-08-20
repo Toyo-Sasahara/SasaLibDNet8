@@ -495,14 +495,14 @@ namespace SasaLib.ArcSuitePreview
 
         private void WindowFit()
         {
-            if (splitContainer1.Size.Width > 1300
-                )
-            {
-                splitContainer1.SplitterDistance = splitContainer1.Size.Height - 230;
+            if (splitContainer1 != null)
+                if (splitContainer1.Size.Width > 1300)
+                {
+                    splitContainer1.SplitterDistance = splitContainer1.Size.Height - 230;
 
-            }
-            else
-                splitContainer1.SplitterDistance = splitContainer1.Size.Height - 420;
+                }
+                else
+                    splitContainer1.SplitterDistance = splitContainer1.Size.Height - 420;
         }
 
         /// <summary>
@@ -1570,7 +1570,7 @@ namespace SasaLib.ArcSuitePreview
             Task.Run(async () =>
             {
                 //cadSetControl.SetUnsetCadTypeFlag(User_zuban, ref msg, this.SetUnsetCadType, thisNativeWindow, false);
-                var result = await cadSetControl.SetUnsetCadTypeFlagAsync(User_zuban, this.SetUnsetCadType, thisNativeWindow, MsgBoxShow:false, objectConvNew:true, WriteLine:WriteLine);
+                var result = await cadSetControl.SetUnsetCadTypeFlagAsync(User_zuban, this.SetUnsetCadType, thisNativeWindow, MsgBoxShow: false, objectConvNew: true, WriteLine: WriteLine);
 
                 InvokeRequired_Control_Text(UserCadType_AddRemove_button, recentTtile);
 
@@ -1594,7 +1594,7 @@ namespace SasaLib.ArcSuitePreview
         /// <param name="ArcSuiteUserPass"></param>
         public void SetUnsetCadTypeFlagControlDatas(RemoteClientCadType.CadType cadType)
         {
-           
+
 
             this.SetUnsetCadType = cadType;
             this.UserCadType_AddRemove_button.Enabled = true;
