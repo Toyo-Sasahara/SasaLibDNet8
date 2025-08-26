@@ -1,14 +1,19 @@
 using SasaLib;
 using SasaLib.VariableControlPipeServer;
 using StreamCommandBridge;
+using StreamCommandExecutorServer;
 using System.Windows.Forms;
 using ToyoStageService;
 using ToyoStageService.StreamBasedServer;
 
 public class VariableControlStreamServer
 {
-    public VariableControlStreamServer(int baseTcpPort, string pipeName, string handShareStr, Action<string> WriteLine)
+    public object TargetObject { get; private set; }
+
+    public VariableControlStreamServer(int baseTcpPort, string pipeName, string handShareStr,object targetObj, Action<string> WriteLine)
     {
+        TargetObject = targetObj;
+
         /// ■抽象化サーバータスク生成
         Task.Run(async () =>
         {
@@ -48,28 +53,20 @@ public class VariableControlStreamServer
         switch (command)
         {
             // ■
-            case CMDNAME.GetValue:// 公開されているパブリックフィールド／パブリックプロパティを指定し値を表示
-                                  //commandResult = oExecute_ValueContro.HandShakeProcess_GetVaule();
+            case "CommandSample":
+                success = await CCMD_CommandSample_Server.ExecuteAsync(context, WriteLine: WriteLine);
                 break;
-            case CMDNAME.GetValue_V2:// 公開されているパブリックフィールド／パブリックプロパティを指定し値を表示
-                                     //commandResult = oExecute_ValueContro.HandShakeProcess_GetVaule_V2();
+            case CMDNAME.GetValue:// 公開されているパブリックフィールド／パブリックプロパティを指定し値を表示
+                success = await CCMD_GeValue_Server.ExecuteAsync(context, TargetObject, WriteLine: WriteLine);
                 break;
             case CMDNAME.SetValue: // 公開されているパブリックフィールド／パブリックプロパティを指定し値を設定
                                    //commandResult = oExecute_ValueContro.HandShakeProcess_SetVaule();
                 break;
-            case CMDNAME.SetValue_V2: // 公開されているパブリックフィールド／パブリックプロパティを指定し値を設定
-                break;
             case CMDNAME.ListAllValue: // 公開されているパブリックフィールド／パブリックプロパティ すべての名前と値を調査
-                break;
-            case CMDNAME.ListAllValue_V2: // 公開されているパブリックフィールド／パブリックプロパティ すべての名前と値を調査
                 break;
             case CMDNAME.WinFormMessageBox: // このライブラリに用意され自動クローズ機能付きダイアログメッセージ表示機能を使ってメッセージを表示させる
                 break;
-            case CMDNAME.WinFormMessageBox_V2: // このライブラリに用意され自動クローズ機能付きダイアログメッセージ表示機能を使ってメッセージを表示させる
-                break;
             case CMDNAME.CAD_MessageBox: // CADアプリケーション側に準備されていればそれらのダイアログメッセージ表示機能を使ってメッセージを表示させる
-                break;
-            case CMDNAME.CAD_MessageBox_V2: // CADアプリケーション側に準備されていればそれらのダイアログメッセージ表示機能を使ってメッセージを表示させる
                 break;
             case CMDNAME.CheckFileHash: // ファイルを指定し、ハッシュ情報を調査
                 break;
@@ -86,8 +83,6 @@ public class VariableControlStreamServer
             case CMDNAME.GetFileTimeStamp: // 
                 break;
             case CMDNAME.XmlFileTagUpdate: // 
-                break;
-            case CMDNAME.XmlFileTagUpdate_V2: // 
                 break;
             case CMDNAME.GetInstalledSoftwareVersion: // 
                 break;
