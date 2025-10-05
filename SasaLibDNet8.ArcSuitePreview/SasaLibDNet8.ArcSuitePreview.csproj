@@ -50,7 +50,6 @@
     <PackageReference Include="System.Buffers" Version="4.6.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
     <PackageReference Include="System.IO.Packaging" Version="9.0.0" />
     <PackageReference Include="System.Management" Version="9.0.0" />
     <PackageReference Include="System.Memory" Version="4.6.0" />
@@ -65,8 +64,8 @@
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClient\RemoteClientDNet8.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\SharedClassLibrary\SharedClassLibraryDNet8.csproj" />
-    <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandBridge\StreamCommandBridgeDNet8.csproj" />
-    <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandExecutorClient\StreamCommandExecutorClientDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandBridgeDNet8\StreamCommandBridgeDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandExecutorClientDNet8\StreamCommandExecutorClientDNet8.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
   </ItemGroup>
