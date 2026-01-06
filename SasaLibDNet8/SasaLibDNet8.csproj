@@ -150,9 +150,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="Interop.IWshRuntimeLibrary">
-		  <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Inventor 2022\Bin\interop.iwshruntimelibrary.dll</HintPath>
-		</Reference>
+	  <Reference Include="Interop.IWshRuntimeLibrary">
+	    <HintPath>IWshRuntimeLibrary\interop.iwshruntimelibrary.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
