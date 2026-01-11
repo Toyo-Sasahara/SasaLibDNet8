@@ -548,7 +548,7 @@ namespace SasaLib.VariableControlPipeClient
 
                 var output = await Task.Run(() =>
                 {
-                    SasaLib.DoEvents.Run();
+                    DoEvents.Run();
                     VariableControlPipeClient oVCPipeClient = new VariableControlPipeClient("", "", "", false, hostname, PIPENAME);
                     string result_UserDomainFullName = oVCPipeClient.GetZeroValue_DataCommandAsync(CMDNAME.GetCurrentUserDomainFullName, WriteLine: WriteLine).Result;
 

@@ -1367,7 +1367,7 @@ namespace SasaLib.SysConfigurator
             // bool result = FileFolder.CopyFileWithIncrementedFileName(newsource, Dist);
             Console.WriteLine($"{newsource} を {Dist} へ複製を試みます");
             //bool result = FileFolder.CopyWithFileRotation(newsource, Dist);            bool result = FileFolder.CopyWithFileRotation(newsource, Dist);
-            bool result = SasaLib.FileFolder.CopyFile(newsource, Dist, true);
+            bool result = FileFolder.CopyFile(newsource, Dist, true);
             if (result)
                 Console.WriteLine($"{newsource} を {Dist} へ複製 成功");
             else
