@@ -10,7 +10,7 @@ namespace SasaLib.SysConfigurator
     [SupportedOSPlatform("windows")]
     public static class TestRun
     {
-        public static void Execute(string ControlFile, string baseFolder = null)
+        public static void Execute(string ControlFile, string baseFolder = null, string loggingFolder = null)
         {
             byte[] AESkey
                 = {
@@ -33,10 +33,67 @@ namespace SasaLib.SysConfigurator
             else
                 baseDir = baseFolder;
 
-            XML_Control xML_ConfigxFile = new XML_Control(Base64AES_key, System.IO.Path.GetDirectoryName(ControlFile));
-                       
+            if (string.IsNullOrWhiteSpace(loggingFolder))
+                loggingFolder = System.IO.Path.GetDirectoryName(ControlFile);
 
-            xML_ConfigxFile.JobLoadAndExecute(ControlFile, baseDir, DebugConsole.WriteLine,foreceExecute:true,IsRemoveControlFile:false);
+            // loggingFolder の存在確認と作成
+            if (!string.IsNullOrWhiteSpace(loggingFolder))
+            {
+                try
+                {
+                    if (!System.IO.Directory.Exists(loggingFolder))
+                    {
+                        System.IO.Directory.CreateDirectory(loggingFolder);
+                        DebugConsole.WriteLine($"ログフォルダを作成しました {loggingFolder}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DebugConsole.WriteLine($"ログフォルダの作成に失敗しました: {loggingFolder} - {ex.Message}");
+                    throw;
+                }
+            }
+
+            // loggingFolder の存在確認と作成
+            if (!string.IsNullOrWhiteSpace(loggingFolder))
+            {
+                try
+                {
+                    if (!System.IO.Directory.Exists(loggingFolder))
+                    {
+                        System.IO.Directory.CreateDirectory(loggingFolder);
+                        DebugConsole.WriteLine($"ログフォルダを作成しました {loggingFolder}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DebugConsole.WriteLine($"ログフォルダの作成に失敗しました: {loggingFolder} - {ex.Message}");
+                    throw;
+                }
+
+                // ログフォルダへの書き込み可否チェック（不可なら例外送出）
+                string testFilePath = System.IO.Path.Combine(loggingFolder, $"._write_test_{Guid.NewGuid():N}.tmp");
+                try
+                {
+                    System.IO.File.WriteAllText(testFilePath, "permission test");
+                    System.IO.File.Delete(testFilePath);
+                    DebugConsole.WriteLine($"ログフォルダへの書き込みを確認しました {loggingFolder}");
+                }
+                catch (UnauthorizedAccessException uaex)
+                {
+                    DebugConsole.WriteLine($"ログフォルダへの書き込み権限がありません: {loggingFolder} - {uaex.Message}");
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    DebugConsole.WriteLine($"ログフォルダへの書き込みチェックに失敗しました: {loggingFolder} - {ex.Message}");
+                    throw;
+                }
+            }
+
+            XML_Control xML_ConfigxFile = new XML_Control(Base64AES_key, loggingFolder, ControlFile);
+
+            xML_ConfigxFile.JobLoadAndExecute(ControlFile, baseDir, DebugConsole.WriteLine, foreceExecute: true, IsRemoveControlFile: false, loggingFolder: loggingFolder);
 
         }
 

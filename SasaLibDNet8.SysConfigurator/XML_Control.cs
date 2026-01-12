@@ -201,7 +201,7 @@ namespace SasaLib.SysConfigurator
         /// <param name="LogWrite"></param>
         /// <param name="foreceExecute"></param>
         /// <returns></returns>
-        public bool JobLoadAndExecute(string ConfigFullFileName, string baseDir, Action<string> LogWrite, bool foreceExecute = false, bool IsRemoveControlFile = false)
+        public bool JobLoadAndExecute(string ConfigFullFileName, string baseDir, Action<string> LogWrite, bool foreceExecute = false, bool IsRemoveControlFile = false, string loggingFolder = null)
         {
             if (LogWrite == null) LogWrite = DebugConsole.WriteLine;
 
@@ -232,6 +232,13 @@ namespace SasaLib.SysConfigurator
             //LogWrite($"■ｺﾝﾄﾛｰﾙﾌｧｲﾙ {configFileNameShort} 処理開始. DATETIMEタグは {ConfigDateTime}です");
 
             string applied_Instructions_fullfilename = Applied_GetInstructions_fullfilename(ConfigFullFileName, ConfigDateTime, LogWrite);
+
+            if (string.IsNullOrWhiteSpace(loggingFolder) == false)
+            {
+                var onlyFile = System.IO.Path.GetFileName(applied_Instructions_fullfilename);
+
+                applied_Instructions_fullfilename = System.IO.Path.Combine(loggingFolder, onlyFile);
+            }
 
             if (foreceExecute)
             {

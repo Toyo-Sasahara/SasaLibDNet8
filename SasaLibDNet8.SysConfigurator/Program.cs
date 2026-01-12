@@ -31,19 +31,23 @@ namespace SasaLib.SysConfigurator
 
         private static void RunOptions(Options opts)
         {
-
-
             Console.WriteLine($"必須オプションを確認。スクリプトを実行します。");
 
-            Console.WriteLine($"--control-file = \"{opts.ControlFullFileName}\"");
-            Console.WriteLine($"--base-folder = \"{opts.RootFolder}\"");
+            Console.WriteLine($"-c, --control-file = \"{opts.ControlFullFileName}\"");
+            Console.WriteLine($"-b, --base-folder = \"{opts.RootFolder}\"");
+            if (string.IsNullOrWhiteSpace(opts.LoggingFolder) == false)
+                Console.WriteLine($"-l, --logging-folder = \"{opts.LoggingFolder}\"");
+            else
+                Console.WriteLine($"-l, --logging-folder 指定なし。--control-file のフォルダが指定されます");
+
+            Console.WriteLine($"-v, --verbose = \"{opts.Verbose}\"");
 
             if (opts.Verbose)
                 VerboseMode = true;
             else
                 VerboseMode = false;
 
-            TestRun.Execute(opts.ControlFullFileName, opts.RootFolder);
+            TestRun.Execute(opts.ControlFullFileName, opts.RootFolder, opts.LoggingFolder);
 
 
         }

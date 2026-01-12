@@ -2,7 +2,9 @@
   "profiles": {
     "SasaLibDNet8.SysConfigurator": {
       "commandName": "Project",
-      "commandLineArgs": "--version --config-file \"C:\\Users\\sasahara\\source\\repos\\SasaLibDNet8\\SasaLibDNet8.SysConfigurator\\スタンドアロンAutoCAD設定インストール\\AM2025テンプレート・図枠・表題欄など取得.Conf\" --base-folder \"C:\\Users\\sasahara\\source\\repos\\SasaLibDNet8\\SasaLibDNet8.SysConfigurator\\スタンドアロンAutoCAD設定インストール\""
+      "commandLineArgs": "-c \"\\\\mpb03\\SasaLibDNet8.SysConfigurator\\スタンドアロンAutoCAD設定インストール\\AM2020テンプレート・図枠・表題欄など取得.Conf\" -b \"\\\\mpb03\\SasaLibDNet8.SysConfigurator\\スタンドアロンAutoCAD設定インストール\" -l %PUBLIC%\\test\\logs",
+      "remoteDebugEnabled": false,
+      "remoteDebugMachine": "MPC16:4026"
     }
   }
 }
