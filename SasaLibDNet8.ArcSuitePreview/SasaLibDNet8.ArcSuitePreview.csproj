@@ -62,7 +62,7 @@
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteClientCADtype\RemoteClientCADtypeDNet8.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\RemoteObjects\RemoteObjectsDNet8.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\SharedClassLibrary\SharedClassLibraryDNet8.csproj" />
-    <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandBridgeDNet8\StreamCommandBridgeDNet8.csproj" />
+    <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandBridge\StreamCommandBridgeDNet8.csproj" />
     <ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandExecutorClientDNet8\StreamCommandExecutorClientDNet8.csproj" />
     <ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
     <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
