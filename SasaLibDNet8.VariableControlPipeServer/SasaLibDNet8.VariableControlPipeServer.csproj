@@ -24,6 +24,10 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\CommandAnalyze.cs" Link="サーバー\CommandAnalyze.cs">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Compile>
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\CMD_CommandSample_Server.cs" Link="サーバー\TcpStream\CMD_CommandSample_Server.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\CommandExecutor.cs" Link="サーバー\TcpStream\CommandExecutor.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\TestData.cs" Link="サーバー\TcpStream\TestData.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\VariableControlServer.cs" Link="サーバー\TcpStream\VariableControlServer.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\VariableControlPipeServer.cs" Link="サーバー\VariableControlPipeServer.cs" />
 	  <Compile Include="..\SasaLibDNet8.VariableContolerStreamServer\VariableControlStreamServer.cs" Link="StremServer\VariableControlStreamServer.cs" />
 	</ItemGroup>
@@ -81,6 +85,9 @@
 		<ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.SysConfigurator\SasaLibDNet8.SysConfigurator.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="サーバー\TcpStream\" />
 	</ItemGroup>
 	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 </Project>
