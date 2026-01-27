@@ -19,17 +19,19 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_MessageBox.cs" Link="ExecuteCommands\Execute_MessageBox.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_MsiTool.cs" Link="ExecuteCommands\Execute_MsiTool.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_ValueControl.cs" Link="ExecuteCommands\Execute_ValueControl.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ServerInfo.cs" Link="ServerInfo.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\ExtensionMethod.cs" Link="クライアント\ExtensionMethod.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\TcpStream\CMD_GetOneValue.cs" Link="クライアント\TcpStream\CMD_GetOneValue.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\VariableControlPipeClient.cs" Link="クライアント\VariableControlPipeClient.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\CommandAnalyze.cs" Link="サーバー\CommandAnalyze.cs">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Compile>
-	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\CMD_CommandSample_Server.cs" Link="サーバー\TcpStream\CMD_CommandSample_Server.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\CMD_VCS_CommandSample_Server.cs" Link="サーバー\TcpStream\CMD_VCS_CommandSample_Server.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\CMD_VCS_GetValue_Server.cs" Link="サーバー\TcpStream\CMD_VCS_GetValue_Server.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\CommandExecutor.cs" Link="サーバー\TcpStream\CommandExecutor.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\TestData.cs" Link="サーバー\TcpStream\TestData.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\TcpStream\VariableControlServer.cs" Link="サーバー\TcpStream\VariableControlServer.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\サーバー\VariableControlPipeServer.cs" Link="サーバー\VariableControlPipeServer.cs" />
-	  <Compile Include="..\SasaLibDNet8.VariableContolerStreamServer\VariableControlStreamServer.cs" Link="StremServer\VariableControlStreamServer.cs" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Update="Properties\Resources.Designer.cs">
@@ -87,6 +89,7 @@
 		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Folder Include="クライアント\TcpStream\" />
 	  <Folder Include="サーバー\TcpStream\" />
 	</ItemGroup>
 	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
