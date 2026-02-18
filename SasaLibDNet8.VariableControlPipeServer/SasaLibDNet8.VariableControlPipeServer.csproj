@@ -20,6 +20,12 @@
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_MsiTool.cs" Link="ExecuteCommands\Execute_MsiTool.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ExecuteCommands\Execute_ValueControl.cs" Link="ExecuteCommands\Execute_ValueControl.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\ServerInfo.cs" Link="ServerInfo.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\StreamClient\CCMD_CommandSample_Client.cs" Link="StramClient\CCMD_CommandSample_Client.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\StreamServer\CCMD_CommandSample_Server.cs" Link="StreamServer\CCMD_CommandSample_Server.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\StreamServer\CCMD_GeValue_Server.cs" Link="StreamServer\CCMD_GeValue_Server.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\StreamServer\CCMD_SeValue_Server.cs" Link="StreamServer\CCMD_SeValue_Server.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\StreamServer\CommandExecutor.cs" Link="StreamServer\CommandExecutor.cs" />
+	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\StreamServer\VariableControlStreamServer.cs" Link="StreamServer\VariableControlStreamServer.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\ExtensionMethod.cs" Link="クライアント\ExtensionMethod.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\TcpStream\CMD_GetOneValue.cs" Link="クライアント\TcpStream\CMD_GetOneValue.cs" />
 	  <Compile Include="..\..\SasaLibTestFrame\SasaLib.VariableControlPipeServer\SasaLib.VariableControlPipeServer\クライアント\VariableControlPipeClient.cs" Link="クライアント\VariableControlPipeClient.cs" />
@@ -79,7 +85,6 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandBridge\StreamCommandBridgeDNet8.csproj" />
-		<ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandExecutorClientDNet8\StreamCommandExecutorClientDNet8.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.LDAP\SasaLibDNet8.LDAP.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
@@ -91,6 +96,9 @@
 	<ItemGroup>
 	  <Folder Include="クライアント\TcpStream\" />
 	  <Folder Include="サーバー\TcpStream\" />
+	  <Folder Include="サーバー\TcpStream\" />
+	  <Folder Include="StreamServer\" />
+	  <Folder Include="StramClient\" />
 	</ItemGroup>
 	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
 </Project>
