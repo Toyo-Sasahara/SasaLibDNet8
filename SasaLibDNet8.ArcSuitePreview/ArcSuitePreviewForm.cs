@@ -1623,7 +1623,7 @@ namespace SasaLib.ArcSuitePreview
                 RemoteClientCadType rmcCadType = new RemoteClientCadType(ConnectionDataSet);
 
                 // 処理１ 検索
-                bool result = rmcCadType.MergeArcSuiteAttribute1(arcSuiteZuban, attributeName, attributeString, ConnectionDataSet.ArcSuiteUserName, ConnectionDataSet.ArcSuiteUserPass);
+                bool result = rmcCadType.MergeArcSuiteAttribute1(arcSuiteZuban, attributeName, attributeString, ConnectionDataSet.ArcSuiteUserName, ConnectionDataSet.ArcSuiteUserPass, objectConvNew: true);
 
                 if (result)
                 {

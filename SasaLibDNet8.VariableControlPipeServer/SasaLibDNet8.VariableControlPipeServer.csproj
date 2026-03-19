@@ -86,7 +86,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\StreamCommandBridge\StreamCommandBridgeDNet8.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
-		<ProjectReference Include="..\SasaLibDNet8.LDAP\SasaLibDNet8.LDAP.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
