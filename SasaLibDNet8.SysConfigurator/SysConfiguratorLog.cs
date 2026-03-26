@@ -174,7 +174,7 @@ namespace SasaLib.SysConfigurator
         }
 
         /// <summary>
-        /// 
+        ///  
         /// </summary>
         /// <param name="Msg"></param>
         public void WriteLine(string Msg)
