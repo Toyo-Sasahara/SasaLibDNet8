@@ -14,10 +14,10 @@
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 	</PropertyGroup>
 
-	<ItemGroup>
-    <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
-  </ItemGroup>
-
 	<Import Project="..\SasaLibDNet8_AssemblyInfo\SasaLibDNet8_AssemblyInfo.projitems" Label="Shared" />
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
+	</ItemGroup>
 
 </Project>
