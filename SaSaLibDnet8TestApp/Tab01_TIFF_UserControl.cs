@@ -9,6 +9,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 using System.Runtime.Versioning;
+using SharedClassLibrary;
 
 namespace SaSaLibDNet8TestAPP
 {
@@ -378,8 +379,8 @@ namespace SaSaLibDNet8TestAPP
 
                 // Inventorアプリケーションのウィンドハンドル取得
                 //owner.AssignHandle((System.IntPtr)InventorApp.MainFrameHWND);
-
-                ArcSuitePreviewForm ArcSuitePreviewForm = new ArcSuitePreviewForm(new System.Windows.Forms.NativeWindow());
+                ConnectionDataSet connectionDataSet = new ConnectionDataSet();
+                ArcSuitePreviewForm ArcSuitePreviewForm = new ArcSuitePreviewForm(new System.Windows.Forms.NativeWindow(), connectionDataSet);
                 ArcSuitePreviewForm.DebugMode = checkBox1.Checked;
                 ArcSuitePreviewForm.Show();
 
