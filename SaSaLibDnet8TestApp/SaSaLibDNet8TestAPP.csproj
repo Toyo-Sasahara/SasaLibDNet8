@@ -87,11 +87,6 @@
 		<Reference Include="PDMWorks.Interop.pdmworks">
 		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\SolidworksSDK\api\redist\PDMWorks.Interop.pdmworks.dll</HintPath>
 		</Reference>
-		<Reference Include="System.Web.Services">
-		  <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.Services.dll</HintPath>
-		  <Private>True</Private>
-		  <EmbedInteropTypes>False</EmbedInteropTypes>
-		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>

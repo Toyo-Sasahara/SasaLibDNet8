@@ -16,13 +16,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\ArcsuitePreview.cs" Link="ArcsuitePreview.cs" />
-    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\ArcSuitePreviewFormSearch.cs" Link="ArcSuitePreviewFormSearch.cs" />
-    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\CadTypeArcSuiteControl.cs" Link="CadTypeArcSuiteControl.cs" />
-    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\CheckArcSuiteData.cs" Link="CheckArcSuiteData.cs" />
-    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\MultiImageTiff.cs" Link="MultiImageTiff.cs" />
-    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\RingBuffer.cs" Link="RingBuffer.cs" />
-    <Compile Include="..\..\SasaLibTestFrame\SasaLib.ArcSuitePreview\SasaLibArcSuitePreviewInfo.cs" Link="SasaLibArcSuitePreviewInfo.cs" />
+    <Compile Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\SasaLib.ArcSuitePreview\ArcSuitePreviewFormSearch.cs" Link="ArcSuitePreviewFormSearch.cs" />
+    <Compile Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\SasaLib.ArcSuitePreview\CadTypeArcSuiteControl.cs" Link="CadTypeArcSuiteControl.cs" />
+    <Compile Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\SasaLib.ArcSuitePreview\CheckArcSuiteData.cs" Link="CheckArcSuiteData.cs" />
+    <Compile Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\SasaLib.ArcSuitePreview\MultiImageTiff.cs" Link="MultiImageTiff.cs" />
+    <Compile Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\SasaLib.ArcSuitePreview\RingBuffer.cs" Link="RingBuffer.cs" />
+    <Compile Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\SasaLib.ArcSuitePreview\SasaLibArcSuitePreviewInfo.cs" Link="SasaLibArcSuitePreviewInfo.cs" />
+    <Compile Include="..\..\TOYOSTAGINGSYSTEM\STAGINGSYSTEM_Share\SasaLib.ArcSuitePreview\ArcsuitePreview.cs" Link="ArcsuitePreview.cs" />
   </ItemGroup>
 
 	<ItemGroup>
