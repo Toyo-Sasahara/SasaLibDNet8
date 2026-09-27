@@ -1,0 +1,2 @@
+ここは以下のフォルダから必要なDLLをコピーしている
+C:\ProgramData\Autodesk\ApplicationPlugins\VaultInventor2025.bundle\Contents

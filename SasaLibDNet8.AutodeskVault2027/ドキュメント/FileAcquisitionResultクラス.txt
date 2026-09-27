@@ -1,0 +1,24 @@
+﻿
+名前空間　Autodesk.DataManagement.Client.Framework.Vault.Results
+クラス FileAcquisitionResult
+
+ファイル取得操作における個々のファイルの結果
+
+パブリック・プロパティ AcquisitionOption	ファイルがダウンロードされたか、チェックアウトされたか、またはその両方かを取得します。 
+パブリック・プロパティ Exception			ファイル取得中に発生した例外を取得します。Status が FileAcquisitionResult.AcquisitionStatus.Exception に等しい場合、これは表示されます。 
+パブリック・プロパティ File					この結果オブジェクトが表すファイルを取得します。 
+パブリック・プロパティ FileReferenceUpdates 取得したファイル内で更新されたファイル参照のリストを取得します。 
+パブリック・プロパティ  LocalPath			ファイルがダウンロードされるパスを取得します。これは、ダウンロードのために AcquisitionOption が構成されている場合にのみ有効です。 
+パブリック・プロパティ NewFileIteration		チェックアウト操作の結果として得られるファイルの新しいイテレーションを取得します。 
+パブリック・プロパティ Restrictions		ファイルの取得を妨げた制限を取得します。Status が FileAcquisitionResult.AcquisitionStatus.Restriction に等しい場合に表示されます。 
+パブリック・プロパティ Status			ファイル取得のステータスを取得する。 
+
+
+public enum FileAcquisitionResult.AcquisitionStatus	Status
+
+Exception					ファイルを取得しようとしたときに例外が発生しました。例外の詳細は、FileAcquisitionResult.Exceptionで確認できます。
+FileNeedsSyncOnRemoteSite	マルチサイト環境ではリモートサイトとの同期が必要なため、取得できませんでした。
+NotExecuted					このファイルの取得は実行されませんでした。
+Restriction					制限により、ファイルを取得できません。
+Skipped						ファイルは取得されませんでした。検証中に発生したユーザーの選択に基づいてスキップされました。
+Success						ファイルの取得に成功しました。
