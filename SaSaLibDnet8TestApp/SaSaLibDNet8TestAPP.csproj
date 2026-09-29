@@ -21,17 +21,14 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\SasaLibTestFrame\SasaLib.DelegateWriteLine\SasaLib.DelegateWriteLine.csproj" />
-		<ProjectReference Include="..\SasaLibDNet8.ArcSuitePreview\SasaLibDNet8.ArcSuitePreview.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.Barcode\SasaLibDNet8.Barcode.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.ImageMagic\SasaLibDNet8.ImageMagic.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.Inventor2025\SasaLibDNet8.Inventor2025.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MSIDLL\SasaLibDNet8.MSIDLL.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.MySQLConnect\SasaLibDNet8.MySQLConnect.csproj" />
-		<ProjectReference Include="..\SasaLibDNet8.NumberingSupport\SasaLibDNet8.NumberingSupport.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.PageControl\SasaLibDNet8.PageControl.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.PictureBoxControlLibrary\SasaLibDNet8.PictureBoxControlLibrary.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8.SysConfigurator\SasaLibDNet8.SysConfigurator.csproj" />
-		<ProjectReference Include="..\SasaLibDNet8.VariableControlPipeServer\SasaLibDNet8.VariableControlPipeServer.csproj" />
 		<ProjectReference Include="..\SasaLibDNet8\SasaLibDNet8.csproj" />
 	</ItemGroup>
 
@@ -75,6 +72,9 @@
 		<Reference Include="Autodesk.DataManagement.Server.Extensibility">
 		  <HintPath>..\SasaLibDNet8.AutodeskVault2025\VaultAddinDnet8DLLcopy\Autodesk.DataManagement.Server.Extensibility.dll</HintPath>
 		</Reference>
+		<Reference Include="DefineCOMDS.DNet8">
+		  <HintPath>..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\DefineCOMDS\bin\Debug\net8.0-windows\DefineCOMDS.DNet8.dll</HintPath>
+		</Reference>
 		<Reference Include="EPDM.Interop.epdm">
 		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\SolidworksSDK\SolidWorks2018 EPDM\EPDM.Interop.epdm.dll</HintPath>
 		</Reference>
@@ -86,6 +86,18 @@
 		</Reference>
 		<Reference Include="PDMWorks.Interop.pdmworks">
 		  <HintPath>..\..\SasaLibTestFrame\SasaLib.SolidWorks\SolidworksSDK\api\redist\PDMWorks.Interop.pdmworks.dll</HintPath>
+		</Reference>
+		<Reference Include="SasaLibDNet8.ArcSuitePreview">
+		  <HintPath>..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\SasaLibDNet8.ArcSuitePreview\bin\Debug\net8.0-windows\SasaLibDNet8.ArcSuitePreview.dll</HintPath>
+		</Reference>
+		<Reference Include="SasaLibDNet8.NumberingSupport">
+		  <HintPath>..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\SasaLibDNet8.NumberingSupport\bin\Debug\net8.0-windows\SasaLibDNet8.NumberingSupport.dll</HintPath>
+		</Reference>
+		<Reference Include="SasaLibDNet8.VariableControlPipeServer">
+		  <HintPath>..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\VariableControlPipeServer\bin\Debug\net8.0-windows\SasaLibDNet8.VariableControlPipeServer.dll</HintPath>
+		</Reference>
+		<Reference Include="SharedClassLibrary">
+		  <HintPath>..\..\TOYOStagingSystemDNet8\STAGINGSYSTEM_Share\SharedClassLibrary\bin\Debug\net8.0-windows\SharedClassLibrary.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

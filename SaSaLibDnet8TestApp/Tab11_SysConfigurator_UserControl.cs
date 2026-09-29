@@ -3,7 +3,7 @@ using SasaLib.PIPE;
 using SasaLib.SysConfigurator;
 using SasaLib.VariableControlPipeClient;
 using SasaLib.VariableControlPipeServer;
-using StageServerRemote;
+//using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -129,7 +129,7 @@ namespace SaSaLibDNet8TestAPP
 
             //コントロールに対する処理
             //WriteLine($"Inventor 利用状況ﾁｪｯｸ開始・・");
-            startDateTImeObj = await remote.GetValueAndValueType_DataCommandAsync(CMDNAME.StartUpDateTime, objectConvNew: checkBox1.Checked, WriteLine: DebugConsole.WriteLine);
+            startDateTImeObj = await remote.GetValueAndValueType_DataCommandAsync(SasaLib.VariableControlPipeServer.CMDNAME.StartUpDateTime, objectConvNew: checkBox1.Checked, WriteLine: DebugConsole.WriteLine);
             //WriteLine($"Inventor 利用状況ﾁｪｯｸ終了。ﾘﾋﾟｰﾄﾓｰﾄﾞ{LoopcheckMode}");
 
 

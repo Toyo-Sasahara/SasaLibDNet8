@@ -1,6 +1,8 @@
 ﻿using SasaLib;
+using stdole;
+
 //using SasaLibPictureBoxControlLibrary;
-using StageServerRemote;
+//using StageServerRemote;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -229,7 +231,7 @@ namespace SaSaLibDNet8TestAPP
 
         private void CurrentImagSaveButton_Click(object sender, EventArgs e)
         {
-                currentImage.Save(@"D:\currentImage.Save.bmp");
+            currentImage.Save(@"D:\currentImage.Save.bmp");
         }
 
         /// <summary>
@@ -353,9 +355,9 @@ namespace SaSaLibDNet8TestAPP
 
             GUIDExtensions guide = new GUIDExtensions(true);
             ImageUtilBarcode.DrawBarcodeFromRightButtom(currentImage, guide, 100, 10, 165, 10, 8, 10, 25);
-            imagePictureBox.Image = currentImage;
+            pictureBox1.Image = currentImage;
             SetImageInfo();
-
+            ImageUtilBarcode.DrawBarcodeFromRightButtom(pictureBox1.Image, guide, 100, 10, 165, 10, 8, 10, 25);
         }
 
         /// <summary>
@@ -416,7 +418,7 @@ namespace SaSaLibDNet8TestAPP
 
         private void button7_Click(object sender, EventArgs e)
         {
-           currentImage = Properties.Resources.TESTIMAGE_A4;
+            currentImage = Properties.Resources.TESTIMAGE_A4;
             imagePictureBox.Image = currentImage;
             SetImageInfo();
 
