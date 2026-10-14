@@ -1,0 +1,13 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Debug-2027" />
+    <BuildType Name="Release" />
+    <BuildType Name="Release-2027" />
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="SasaLibDNet8.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>

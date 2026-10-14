@@ -48,6 +48,9 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '2025-Debug|AnyCPU'">
+    <OutputPath>bin\2025-Debug\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autodesk.DataManagement.Client.Framework.Vault, Version=30.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
